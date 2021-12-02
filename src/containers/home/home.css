@@ -1,0 +1,8 @@
+.homeBg {
+	background-image: url('../../assets/images/home-loginBg.jpg');
+	width: 1920px;
+	height: 900px;
+	position: relative;
+	left: 00px;
+	top: -10px;
+}
