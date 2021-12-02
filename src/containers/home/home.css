@@ -1,8 +1,42 @@
 .homeBg {
-	background-image: url('../../assets/images/home-loginBg.jpg');
-	width: 1920px;
-	height: 900px;
-	position: relative;
+	background-image: url('../../assets/images/home-loginBg.png');
+	height: 910px;
+	width: 100vw;
+	position: absolute;
+	top: 00px;
 	left: 00px;
-	top: -10px;
+}
+.homeLogo {
+	position: relative;
+	left: 33px;
+	top: 19px;
+}
+.homeInfo {
+	width: 730px;
+	height: 166px;
+	position: absolute;
+	top: 227px;
+	left: 413px;
+}
+.homeInfo1 {
+	height: 166px;
+	width: 719px;
+	color: #4c4c4c;
+	font-family: 'Open Sans';
+	font-size: 60px;
+	letter-spacing: 0;
+	line-height: 83px;
+	text-shadow: 0 0 9px 0 #ffffff;
+	justify-content: center;
+}
+.homeInfo2 {
+	height: 166px;
+	width: 719px;
+	color: #4c4c4c;
+	font-family: 'Open Sans';
+	font-size: 60px;
+	letter-spacing: 0;
+	line-height: 83px;
+	text-shadow: 0 0 9px 0 #ffffff;
+	justify-content: center;
 }
