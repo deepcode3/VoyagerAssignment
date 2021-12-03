@@ -16,7 +16,7 @@ const SearchBar = () => {
 		navigator.geolocation.watchPosition((pos) => {
 			const Longitude = pos.coords.longitude;
 			const Latitude = pos.coords.latitude;
-			Geocode.setApiKey('AIzaSyD45sM9f24ebYIQEz7iJMm-FDLIh3ydUbg');
+			Geocode.setApiKey('AIzaSyB2LQDL0xgHE_xT-TvAlZ-2Xhil3R8btLo');
 			Geocode.setLanguage('en');
 			Geocode.setLocationType('ROOFTOP');
 			Geocode.fromLatLng(Latitude, Longitude).then(
