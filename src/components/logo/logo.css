@@ -1,0 +1,25 @@
+.logo {
+	position: relative;
+	top: 10px;
+	left: 33px;
+}
+.logoPart1 {
+	height: 60px;
+	width: 103px;
+	color: #e6602c;
+	font-family: 'Bebas Neue';
+	font-size: 50px;
+	letter-spacing: 0;
+	line-height: 60px;
+	text-align: center;
+}
+.logoPart2 {
+	height: 60px;
+	width: 103px;
+	color: #e6612cde;
+	font-family: 'Bebas Neue';
+	font-size: 50px;
+	letter-spacing: 0;
+	line-height: 60px;
+	text-align: center;
+}
