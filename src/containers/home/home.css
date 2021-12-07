@@ -1,7 +1,7 @@
 .homeBg {
 	background-image: url('../../assets/images/home-loginBg.png');
 	height: 935px;
-	width: 100vw;
+	width: 100%;
 	position: absolute;
 	top: 00px;
 	left: 00px;
@@ -40,10 +40,29 @@
 	text-shadow: 0 0 9px 0 #ffffff;
 	justify-content: center;
 }
+.homeSearchBar {
+	height: 175px;
+	width: 611px;
+	position: absolute;
+	left: 420px;
+	top: 456px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.homeLocation {
+	position: relative;
+	left: 00px;
+	top: 50px;
+}
+.homeDate {
+	position: relative;
+	left: 400px;
+	top: -20px;
+}
 .scroller {
 	width: 119px;
 	height: 77px;
-	position: relative;
+	position: absolute;
 	left: 901px;
 	top: 807px;
 	align-items: center;
@@ -61,4 +80,7 @@
 	position: relative;
 	top: 10px;
 	left: -40px;
+}
+.assigner {
+	display: none;
 }
