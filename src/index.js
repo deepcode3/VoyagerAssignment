@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import App from './App';
-import Description from './components/description/Description'
-//import Progressbar from './components/description/Progressbar';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Description/>
+    <App/>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

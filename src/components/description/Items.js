@@ -1,8 +1,9 @@
 import React,{useState} from "react";
 import './Description.css';
+import { itemData } from "./itemData";
 //  import {itemData} from './itemData';
 
-const Items=({ itemm,price,amount,id}) => {
+const Items=({ itemm,price,amount,id,icon}) => {
      const [count,setCount]=useState(1)
 
      const incnum=()=>{
@@ -17,14 +18,26 @@ const Items=({ itemm,price,amount,id}) => {
              setCount(1)
          }
      }
+     
+     const [list,Setlist]=useState(itemData)
+     const handleRemove = (id) =>{
+         const newitem=list.filter((item)=>item.id !==id)
+         Setlist(newitem)
+
+        //  console.log("clicked")
+        // {itemData.filter(id)}
+     }
+    
 
     return(
         <>
 
 <div className="orderitems">
-        <div className="symbol"></div>
-        <div className="item"><p className="itemname">{itemm} </p></div>
-        <div classname="cost"><p className="icost">{price}</p></div>
+       
+        <div className="item"><p className="itemname">{itemm} </p>
+         <div className="symbol">{icon}</div>
+        </div>
+        <div classname="cost"><p className="icost">AED{price}</p></div>
         <div className="addon"><p className="addons">Add On : Avacado, Seasoned Grilled Chicken, Grilled Salmon</p></div>
         <div className="incdeccount">
             <div className="decbutton" onClick={decnum}>_</div>
@@ -32,8 +45,8 @@ const Items=({ itemm,price,amount,id}) => {
             <div className="incbutton" onClick={incnum} >+</div>
 
         </div>
-        <div className="itemtotalcost">{price*count}</div>
-        <div className="remove" >Remove</div>
+        <div className="itemtotalcost">AED{price*count}</div>
+        <div className="remove" onClick={() => handleRemove(id)}>Remove</div>
         <div className="greyline"></div>
     </div>
     

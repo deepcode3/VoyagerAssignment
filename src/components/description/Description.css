@@ -42,6 +42,7 @@
 .orderdisplay_rectangle {
   /* height: auto; */
   /* height: 519px; */
+  height: 100%;
   width: 634px;
   border-radius: 6px;
   background-color: #ffffff;
@@ -49,15 +50,27 @@
   position: relative;
   left: 0px;
   top: 17px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .orderitems {
   height: 99px;
   width: 593px;
-  /* background-color: coral; */
+  background-color: coral;
   position: relative;
   top: 20px;
   left: 20px;
-  margin-top: 20px;
+  margin-top: 25px;
+  /* padding-top: 20px; */
+  /* padding-left: 20px; */
+}
+
+.symbol {
+  height: 14px;
+  width: 14px;
+  position: relative;
+  top: -19px;
+  left: 0px;
 }
 .itemname {
   height: 27px;
@@ -95,8 +108,9 @@
   font-size: 11px;
   letter-spacing: 0;
   line-height: 15px;
-  position: absolute;
-  top: 47px;
+  position: relative;
+  top: 14px;
+  /* bottom: 37px; */
   margin: 0px;
 }
 
@@ -156,7 +170,8 @@
   letter-spacing: 0;
   line-height: 27px;
   text-align: center;
-  position: relative;
+  position: absolute;
+  top: 32px;
   left: 538px;
 }
 
@@ -177,13 +192,13 @@
 }
 .greyline {
   box-sizing: border-box;
-  height: 3px;
+  height: 2px;
   width: 589px;
   border: 1px solid #ededed;
   position: relative;
   /* top: 30px; */
-  top: 30px;
-  left: 20px;
+  top: 40px;
+  left: 0px;
   /* top: 20px; */
   /* background-color: black;
   color: #ed1b2e; */
@@ -196,7 +211,7 @@
   border-radius: 6px;
   box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
   position: relative;
-  top: 40px;
+  top: 62px;
   /* bottom: 20px; */
   left: 266px;
 }
@@ -211,9 +226,10 @@
   letter-spacing: 0;
   line-height: 19px;
   position: relative;
-  left: 46.66px;
-  bottom: 3px;
+  left: 42.66px;
+  top: 13px;
   cursor: pointer;
+  margin: 0px;
 }
 .choseaddbtn {
   height: 45px;
@@ -224,7 +240,7 @@
   position: relative;
   left: 416px;
   /* bottom: 20px; */
-  top: -20px;
+  top: 2px;
 }
 .chooseadd {
   height: 19px;
@@ -237,18 +253,18 @@
   line-height: 19px;
   position: relative;
   left: 34px;
-  top: 11px;
+  top: 12px;
   cursor: pointer;
 }
 
 .cookinginsdiv {
   height: 67px;
   width: 590px;
-  /* background-color: darkseagreen; */
+  background-color: darkseagreen;
   position: relative;
   left: 18px;
   /* bottom: 87px; */
-  top: 35px;
+  top: 45px;
 }
 
 .cookinginstext {
@@ -271,9 +287,11 @@
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
-  position: relative;
+  /* position: relative;
   top: 15px;
-  left: 4px;
+  left: 4px; */
+  position: absolute;
+  top: 28px;
   border: none;
   padding: none;
   outline: none;
@@ -291,4 +309,17 @@ input[type="text"]:focus {
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
+}
+
+.mentiongreyline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 590px;
+  border: 1px solid #a4a4a4;
+  opacity: 0.53;
+  position: relative;
+  top: 66px;
+  left: 0px;
+  /* position: absolute;
+  top: 66px; */
 }
