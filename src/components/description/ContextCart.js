@@ -9,7 +9,7 @@ import { useHistory} from "react-router-dom"
     const item =useContext(CartContext)
     const history=useHistory()
     const addresspage=()=>{
-        history.pushState('/address')
+        history.push('/address')
     }
     
     return(
@@ -36,6 +36,7 @@ import { useHistory} from "react-router-dom"
             <input type="text" className="mention" placeholder="Mention it here..."></input>
             <div className="mentiongreyline"></div>
         </div>
+        <div className="cfinalgreyline"></div>
     </div>
     <div className="backbutton"><p className="back">BACK</p></div>
     <div className="choseaddbtn"><p className="chooseadd" onclick={addresspage}>CHOOSE ADDRESS</p></div>

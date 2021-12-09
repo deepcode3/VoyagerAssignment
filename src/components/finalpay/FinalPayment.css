@@ -1,0 +1,117 @@
+.paytext {
+  height: 30px;
+  width: 95px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: absolute;
+  top: 378px;
+  left: 478px;
+  margin: 0px;
+}
+
+.finalpaycontainer {
+  height: 918px;
+  width: 634px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 427px;
+  left: 477px;
+}
+
+.mycards {
+  height: 23px;
+  width: 63px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 17px;
+  letter-spacing: -0.41px;
+  line-height: 23px;
+  position: absolute;
+  top: 159px;
+  left: 20px;
+  margin: 0px;
+}
+
+.payaddnew {
+  height: 30px;
+  width: 96px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: absolute;
+  left: 519px;
+  top: 149px;
+}
+
+.payaddnewtext {
+  height: 19px;
+  width: 95px;
+  /* color: #ffffff; */
+  color: orange;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 19px;
+  text-align: center;
+  text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  margin: 0px;
+  position: relative;
+  top: 7px;
+}
+
+.cardsdiv {
+  height: 166px;
+  width: 595px;
+  /* background-color: orange; */
+  position: absolute;
+  top: 195px;
+  left: 20px;
+}
+
+.visaimg {
+  height: 165px;
+  width: 286px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+.masterimg {
+  height: 185px;
+  width: 320px;
+  position: relative;
+  left: 290px;
+  top: -7px;
+}
+.fpaypoints {
+  position: absolute;
+  top: -120px;
+}
+
+.fpaydeldetails {
+  position: absolute;
+  top: 300px;
+}
+
+.fpayres {
+  position: absolute;
+  top: -140px;
+}
+
+.fpayback {
+  position: absolute;
+  left: 333px;
+  bottom: 10px;
+}
+.fpaynow {
+  position: absolute;
+  left: 472px;
+  bottom: -12px;
+}

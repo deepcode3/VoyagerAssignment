@@ -42,8 +42,8 @@
 .orderdisplay_rectangle {
   /* height: auto; */
   /* height: 519px; */
-  height: 100%;
-  width: 634px;
+  /* height: 100%; */
+  width: 654px;
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
@@ -55,8 +55,8 @@
 }
 .orderitems {
   height: 99px;
-  width: 593px;
-  background-color: coral;
+  width: 614px;
+
   position: relative;
   top: 20px;
   left: 20px;
@@ -260,7 +260,7 @@
 .cookinginsdiv {
   height: 67px;
   width: 590px;
-  background-color: darkseagreen;
+
   position: relative;
   left: 18px;
   /* bottom: 87px; */
@@ -323,3 +323,11 @@ input[type="text"]:focus {
   /* position: absolute;
   top: 66px; */
 }
+
+/* .cfinalgreyline {
+  box-sizing: border-box;
+  height: 3px;
+  width: 631px;
+  border: 1px solid #ededed;
+  position: relative;
+} */
