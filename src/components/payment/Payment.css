@@ -159,7 +159,7 @@
 .cardnumberdiv {
   height: 67px;
   width: 336px;
-  background-color: gold;
+
   position: relative;
   left: 0px;
   top: 16px;
@@ -215,7 +215,7 @@
 .nameoncarddiv {
   height: 67px;
   width: 339px;
-  background-color: greenyellow;
+
   position: relative;
   top: 30px;
   left: 0px;
@@ -262,7 +262,7 @@
 .expirydatediv {
   height: 67px;
   width: 334px;
-  background-color: hotpink;
+
   position: relative;
   left: 0px;
   top: 54px;
@@ -448,7 +448,7 @@
 .verticalline {
   box-sizing: border-box;
   height: 32px;
-  width: 3px;
+  width: 2px;
   border: 1px solid #979797;
   opacity: 0.27;
   position: relative;
@@ -515,8 +515,8 @@
   letter-spacing: -0.41px;
   line-height: 23px;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 607px;
+  left: 20px;
   margin: 0px;
 }
 
@@ -722,8 +722,19 @@
 .paynowbutton {
   height: 45px;
   width: 130px;
-  /* box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38); */
+
   position: absolute;
   left: 470px;
   bottom: 28px;
 }
+
+/* .testpaynowbutton {
+  height: 45px;
+  width: 130px;
+  border-radius: 6px;
+  background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: absolute;
+  left: 470px;
+  bottom: 20px;
+} */

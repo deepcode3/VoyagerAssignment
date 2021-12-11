@@ -4,6 +4,7 @@ import cashicon from '../../assets/icons/cashicon.png';
 import creditcardicon from '../../assets/icons/creditcardicon.png'
 
 
+
 const PaymentOption=()=>{
     return(
         <>

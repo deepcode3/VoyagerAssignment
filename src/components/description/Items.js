@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import './Description.css';
-import { itemData } from "./itemData";
+import { itemData} from "./itemData";
 //  import {itemData} from './itemData';
 
 const Items=({ itemm,price,amount,id,icon}) => {

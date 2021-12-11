@@ -1,16 +1,16 @@
 import React ,{useContext}from "react";
 import Items from './Items';
-import {itemData} from './itemData';
+// import {itemData} from './itemData';
 import { CartContext } from "./Description";
 import { useHistory} from "react-router-dom"
 
 
+
  const ContextCart=()=>{
     const item =useContext(CartContext)
-    const history=useHistory()
-    const addresspage=()=>{
-        history.push('/address')
-    }
+    const history=useHistory();
+    
+        
     
     return(
         <>
@@ -39,7 +39,9 @@ import { useHistory} from "react-router-dom"
         <div className="cfinalgreyline"></div>
     </div>
     <div className="backbutton"><p className="back">BACK</p></div>
-    <div className="choseaddbtn"><p className="chooseadd" onclick={addresspage}>CHOOSE ADDRESS</p></div>
+    <div className="choseaddbtn"><p className="chooseadd" onClick={()=>{
+        history.push('/address')
+    }}>CHOOSE ADDRESS</p></div>
     </div>
     </div>
         </>

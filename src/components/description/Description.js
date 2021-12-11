@@ -13,14 +13,17 @@ const Description=()=>{
     // const [item,setItem]=useState(itemData)
 
     return(
+        <>
 
-    
     <CartContext.Provider value={itemData}>
     <ContextCart/>
     </CartContext.Provider>
-   
-    
+    {console.log(itemData)}
+    <div></div>
+    </>
 
     );
+    
+
 }
 export default Description

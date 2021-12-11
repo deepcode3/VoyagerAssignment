@@ -1,12 +1,13 @@
 import React from "react";
 import './Payment.css';
 
+
 const PaymentDeliveryDetails=()=>{
     return(
         <>
 
 <div className="paydeliverydetails">
-                    <p className="paymentdeliverydetails">Delivery Details</p>
+                    
                     <div className="locationtimediv">
                         <div className="paydeliverylocation">
                             <p className="paydeliverylocationtext">Delivery location</p>

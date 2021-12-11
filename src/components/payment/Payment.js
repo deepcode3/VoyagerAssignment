@@ -7,9 +7,23 @@ import PaymentDeliveryDetails from "./PaymentDeliveryDetails";
 import PaymentresDetails from "./PaymentresDetails";
 import payback from '../../assets/images/payback.png'
 import paynow from '../../assets/images/paynow.png'
+import { useHistory} from "react-router-dom"
+import { withRouter } from "react-router-dom";
 
 
-const Payment=()=>{
+
+
+
+const Payment=(props)=>{
+
+    // const history={useHistory}
+    const history= useHistory();
+    const loadfinalpay=()=>{
+        history.push('/finalpay')
+    }
+    const loadaddress=()=>{
+        history.goBack('/address')
+    }
     return(
 
         <>
@@ -50,15 +64,16 @@ const Payment=()=>{
                 </div>
 
                 <PaymentPoints/>
+                <p className="paymentdeliverydetails">Delivery Details</p>
                 <PaymentDeliveryDetails/>
                 <PaymentresDetails/>
                 
-                <div className="paybackbutton"><img src={payback} alt=""></img></div>
-                <div className="paynowbutton"><img src={paynow} alt=""></img></div>
+                <div className="paybackbutton" onClick={loadaddress}><img src={payback} alt=""></img></div>
+                <div className="paynowbutton" onClick={loadfinalpay}><img src={paynow} alt=""></img></div>
 
         </div>
         </>
 
     )
 }
-export default Payment
+export default withRouter(Payment);
