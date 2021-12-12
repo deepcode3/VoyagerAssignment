@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./modal";
 import styled from "styled-components";
-import rightArrow from "../../assets/icons/right_arrow@3x.png";
+//import rightArrow from "../../assets/icons/right_arrow@3x.png";
 
 const Orders = () => {
 	const [open, setOpen] = useState(false);
@@ -15,11 +15,6 @@ const Orders = () => {
 						<option value="2">Cancelled Orders</option>
 						<option value="3">Past Orders</option>
 					</select>
-
-					{/*<span className="active-orders">
-						Active Orders
-						<img className="right-arrow " src={rightArrow} alt="icons" />
-  </span>*/}
 				</div>
 				<div className="align-2">
 					<div className="rectangle-3">
@@ -28,18 +23,22 @@ const Orders = () => {
 						<span className="road">Shiekh Zayed Road, , Dubai, UAE</span>
 						<span className="itemsAED">3 Items | AED85.76</span>
 						<span className="delivery-status-text ">Out for Delivery</span>
-						<button
-							className="details"
-							type="button"
-							onClick={() => {
-								setOpen(true);
-							}}
-						>
-							DETAILS
-						</button>
-						<button className="status" type="button">
-							STATUS
-						</button>
+						<div className="details">
+							<span
+								className="detail-text"
+								type="button"
+								onClick={() => {
+									setOpen(true);
+								}}
+							>
+								DETAILS
+							</span>
+						</div>
+						<div className="status">
+							<span className="" type="button">
+								STATUS
+							</span>
+						</div>
 					</div>
 					<div className="rectangle-3">
 						<span className="order-id">Order id: 1234567890</span>
@@ -47,18 +46,22 @@ const Orders = () => {
 						<span className="road">Shiekh Zayed Road, , Dubai, UAE</span>
 						<span className="itemsAED">3 Items | AED85.76</span>
 						<span className="delivery-status-text ">In kitchen</span>
-						<button
-							className="details"
-							type="button"
-							onClick={() => {
-								setOpen(true);
-							}}
-						>
-							DETAILS
-						</button>
-						<button className="status" type="button">
-							STATUS
-						</button>
+						<div className="details">
+							<span
+								className="detail-text"
+								type="button"
+								onClick={() => {
+									setOpen(true);
+								}}
+							>
+								DETAILS
+							</span>
+						</div>
+						<div className="status">
+							<span className="" type="button">
+								STATUS
+							</span>
+						</div>
 					</div>
 				</div>
 				{open && <Modal setOpen={setOpen} open={open} />}
@@ -196,23 +199,55 @@ const Div = styled.div`
 		left: 330px;
 	}
 	.details {
-		box-sizing: border-box;
 		height: 36px;
 		width: 111px;
+		box-sizing: border-box;
 		border: 1px solid #7b7676;
 		border-radius: 18px;
 		box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
 		position: absolute;
 		top: 191px;
 		left: 197px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.detail-text {
+		height: 19px;
+		width: 79px;
+		color: #726e6e;
+		font-family: "Open Sans";
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: -0.2px;
+		line-height: 19px;
+		text-align: center;
+		text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
 	}
 	.status {
 		height: 36px;
 		width: 111px;
+		box-sizing: border-box;
+		border: 1px solid #f57c00;
 		border-radius: 18px;
 		box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
 		position: absolute;
 		top: 191px;
 		left: 327px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.status-text {
+		height: 19px;
+		width: 58px;
+		color: #ffffff;
+		font-family: "Open Sans";
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: -0.2px;
+		line-height: 19px;
+		text-align: center;
+		text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
 	}
 `;

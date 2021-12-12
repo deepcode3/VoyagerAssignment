@@ -5,15 +5,26 @@ import phoneicn from "../../assets/icons/phone_icn.png";
 import mailicn from "../../assets/icons/mail_icn.png";
 import icn_info from "../../assets/icons/icn_info_small.png";
 import { Link } from "react-router-dom";
+import profile_pic from "../../assets/images/profile_pic.png";
 
-const Profile = () => {
+const Profile = ({ setOpen }) => {
 	return (
 		<Profilediv>
 			<div className="align">
-				<div className="mask"></div>
+				<div className="mask">
+					<img src={profile_pic} alt="pic" className="profile_img" />
+				</div>
 				<div className="name-section">
 					<span className="username">Abdulla</span>
-					<span className="edit">Edit</span>
+					<span
+						className="edit"
+						type="button"
+						onClick={() => {
+							setOpen(true);
+						}}
+					>
+						Edit
+					</span>
 					<span className="name">Abdulla Mohammad</span>
 					<span className="num">
 						<img className="phone-icn" src={phoneicn} alt="icn" />
@@ -127,10 +138,21 @@ const Profilediv = styled.div`
 		box-sizing: border-box;
 		height: 109px;
 		width: 109px;
-		border: 3px solid #ffffff;
-		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+		//border: 3px solid #ffffff;
+		//box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
 		position: absolute;
 		top: 38px;
+	}
+	.profile_img {
+		height: 100%;
+		width: 100%;
+		display: inline-block;
+		background-image: url("profile_pic ");
+		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+		background-position: 50% 50%;
+		background-size: cover;
+		border-radius: 50%;
+		position: absolute;
 	}
 	.name-section {
 		height: 113px;
@@ -236,7 +258,8 @@ const Profilediv = styled.div`
 	.edit {
 		height: 19px;
 		width: 30px;
-		color: #fda200;
+		//color: #fda200;
+		color: red;
 		font-family: "SF UI Text";
 		font-size: 16px;
 		font-weight: 500;

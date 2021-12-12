@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import icn_pin from "../../assets/icons/icn_pin.png";
+import icn_save_card_unchecked from "../../assets/icons/icn_save_card_unchecked.png";
 
-const Model = ({ setOpen }) => {
+const Modal = ({ setOpen }) => {
 	return (
 		<ModalBack>
 			<ModalContainer>
@@ -15,54 +15,54 @@ const Model = ({ setOpen }) => {
 					X
 				</span>
 				<div className="navbar">
-					<h1 className="add-new-address ">Add new address</h1>
+					<h1 className="add-new-address ">Add New Card</h1>
 				</div>
-				<form>
-					<div className="mask">
-						<img src={icn_pin} alt="location" className="icn_pin" />
-						<input
-							type=""
-							id=""
-							name=""
-							className="location-1"
-							placeholder="Downtown Burj Khalifa, Dubai."
+				<div className="enter-cards">
+					<span className="enter-credit">Enter Credit/Debit card details</span>
+					<form>
+						<div className="field">
+							<label for="fname" className="label">
+								Card number
+							</label>
+							<input
+								type="text"
+								value="4022 8888 8888 1881"
+								className="input"
+							/>
+						</div>
+						<div className="field-1">
+							<label for="fname" className="label">
+								Name on card
+							</label>
+							<input type="text" className="input" value="Abdullah" />
+						</div>
+						<div className="field-2">
+							Date
+							<label for="fname" className="label">
+								Security card
+							</label>
+							<input type="text" className="input" value="566" />
+						</div>
+					</form>
+					<span className="add-this-card-to-sav">
+						<img
+							src={icn_save_card_unchecked}
+							alt="checked_icn"
+							style={{ paddingRight: "10px" }}
 						/>
-					</div>
-					<div className="field">
-						<label for="fname" className="label">
-							City
-						</label>
-						<input type="text" value="Dubai" className="input" />
-					</div>
-					<div className="field-1">
-						<label for="fname" className="label">
-							Area
-						</label>
-						<input type="text" className="input" />
-					</div>
-					<div className="field-2">
-						<label for="fname" className="label">
-							Address
-						</label>
-						<input type="text" className="input" />
-					</div>
-					<div className="field-3">
-						<label for="fname" className="label">
-							Address label
-						</label>
-						<input type="text" className="input" />
-					</div>
-				</form>
+						Add this card to saved cards
+					</span>
+				</div>
 				<div className="rectangle-copy">
 					<span className="save-address" type="button">
-						SAVE ADDRESS
+						SAVE Card
 					</span>
 				</div>
 			</ModalContainer>
 		</ModalBack>
 	);
 };
-export default Model;
+export default Modal;
 
 const ModalBack = styled.div`
 	position: fixed;
@@ -78,18 +78,17 @@ const ModalBack = styled.div`
 `;
 
 const ModalContainer = styled.div`
-	height: 650px;
+	height: 552px;
 	width: 530px;
 	border-radius: 8px;
 	background-color: #ffffff;
 	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-	position: fixed;
-	padding: 40px;
 	display: flex;
 	justify-content: center;
 	align-items: start;
 	flex-direction: column;
 	position: relative;
+	padding: 40px;
 	.dismiss-button {
 		height: 12px;
 		width: 12px;
@@ -116,29 +115,21 @@ const ModalContainer = styled.div`
 		line-height: 33px;
 		margin: 0 auto;
 	}
-	.mask {
-		height: 70px;
-		width: 502px;
-		border-radius: 10px;
-		background-color: #ffffff;
-		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-		display: flex;
-		align-items: center;
-		position: absolute;
-		top: 121px;
+	.enter-cards {
+		height: 359px;
+		width: 560px;
+		position: relative;
 	}
-	.icn_pin {
-		padding: 10px;
-	}
-	.location-1 {
-		height: 19px;
-		width: 192px;
-		color: #4c4c4c;
+	.enter-credit {
+		height: 23px;
+		width: 227px;
+		color: #000000;
 		font-family: "Open Sans";
-		font-size: 14px;
-		letter-spacing: -0.24px;
-		line-height: 19px;
+		font-size: 17px;
+		letter-spacing: -0.41px;
+		line-height: 23px;
 	}
+
 	input[type="text"] {
 		width: 100%;
 		padding: 12px 20px;
@@ -161,25 +152,19 @@ const ModalContainer = styled.div`
 		height: 67px;
 		width: 502px;
 		position: absolute;
-		top: 219px;
+		top: 39px;
 	}
 	.field-1 {
 		height: 67px;
 		width: 502px;
 		position: absolute;
-		top: 310px;
+		top: 130px;
 	}
 	.field-2 {
 		height: 67px;
 		width: 502px;
 		position: absolute;
-		top: 401px;
-	}
-	.field-3 {
-		height: 67px;
-		width: 502px;
-		position: absolute;
-		top: 492px;
+		top: 221px;
 	}
 	.line {
 		box-sizing: border-box;
@@ -187,6 +172,18 @@ const ModalContainer = styled.div`
 		width: 498px;
 		border: 1px solid #4a4a4a;
 		opacity: 0.53;
+	}
+	.add-this-card-to-sav {
+		height: 19px;
+		width: 210px;
+		color: #070707;
+		font-family: "Open Sans";
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 0;
+		line-height: 19px;
+		position: absolute;
+		top: 320px;
 	}
 	.rectangle-copy {
 		height: 50px;
