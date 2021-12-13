@@ -8,7 +8,7 @@ import creditcardicon from '../../assets/icons/creditcardicon.png'
 const PaymentOption=()=>{
     return(
         <>
-<div className="preferdway"><p className="preferedtext">Please select your preferred way to pay.</p></div>
+<div className="preferdway"><p className="preferedtext">Please select your preferred way to pay. </p></div>
         <div className="cashcarddiv">
             <div className="cashdiv">
                 <input type="radio" name="payment" className="cashradio"></input>

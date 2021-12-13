@@ -11,6 +11,7 @@ import mastercardicon from '../../assets/icons/mastercard_icon.png'
 import visabg from '../../assets/images/visabg.png';
 import pvisaicon from '../../assets/icons/Visa_icon.png';
 import { useHistory} from "react-router-dom"
+import CommonHeader from "../headercommon/CommonHeader";
 const FinalPayment=()=>{
 
     const history=useHistory()
@@ -19,6 +20,7 @@ const FinalPayment=()=>{
     }
     return(
         <>
+        <CommonHeader/>
         <p className="paytext">Payment</p>
         <div className="finalpaycontainer">
             <PaymentOption/>

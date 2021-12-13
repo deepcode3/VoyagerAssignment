@@ -72,13 +72,21 @@
   top: -19px;
   left: 0px;
 }
+/* 
+.dBbgbody {
+  position: relative;
+  top: -78px;
+  background-color: #cecfd4;
+  width: 1900px;
+  height: 1600px;
+} */
 .itemname {
   height: 27px;
   width: 132px;
   color: #2d2d2d;
   font-family: "Open Sans";
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 900;
   letter-spacing: 0;
   line-height: 27px;
   position: relative;
@@ -166,7 +174,7 @@
   color: #2d2d2d;
   font-family: "Open Sans";
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0;
   line-height: 27px;
   text-align: center;

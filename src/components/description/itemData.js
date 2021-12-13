@@ -26,7 +26,8 @@ export const itemData=[
         id:4,
         itemm:"Ice Cream",
         price:"50",
-        amount:1, icon:<img src={vegicon} alt=""></img>
+        amount:5,
+         icon:<img src={vegicon} alt=""></img>
     }
     
         

@@ -4,7 +4,7 @@ import { itemData} from "./itemData";
 //  import {itemData} from './itemData';
 
 const Items=({ itemm,price,amount,id,icon}) => {
-     const [count,setCount]=useState(1)
+     const [count,setCount]=useState(amount)
 
      const incnum=()=>{
          setCount(count+1)

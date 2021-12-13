@@ -4,6 +4,7 @@ import Items from './Items';
 import {itemData} from './itemData';
 //import ContextCart from './ContextCart';
 import  ContextCart from './ContextCart';
+import CommonHeader from '../headercommon/CommonHeader';
 
 export  const CartContext=createContext();
 
@@ -14,12 +15,17 @@ const Description=()=>{
 
     return(
         <>
+       
+        <CommonHeader/>
+        <div className="dBbgbody">
 
     <CartContext.Provider value={itemData}>
     <ContextCart/>
     </CartContext.Provider>
     {console.log(itemData)}
     <div></div>
+    </div>
+    
     </>
 
     );

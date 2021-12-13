@@ -8,7 +8,8 @@ import PaymentresDetails from "./PaymentresDetails";
 import payback from '../../assets/images/payback.png'
 import paynow from '../../assets/images/paynow.png'
 import { useHistory} from "react-router-dom"
-import { withRouter } from "react-router-dom";
+import CommonHeader from "../headercommon/CommonHeader";
+
 
 
 
@@ -27,8 +28,10 @@ const Payment=(props)=>{
     return(
 
         <>
+        <CommonHeader/>
         <div className="paymentheading"><p className="paymenttext">Payment</p></div>
         <div className="paymentcontainer">
+            
             <div className="Preferdpaymentdiv"><PaymentOption/></div>
             <div className="carddetailscontainer">
                 <p  className="entercarddetailstext">Enter Credit/Debit card details</p>
@@ -76,4 +79,4 @@ const Payment=(props)=>{
 
     )
 }
-export default withRouter(Payment);
+export default Payment;
