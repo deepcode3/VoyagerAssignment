@@ -43,37 +43,27 @@ const Profile = ({ setOpen }) => {
 			</div>
 			<div className="links">
 				<ul className="list-container">
-					<li className="list-item">
-						<MenuLink to="/">Order</MenuLink>
-					</li>
-					<li className="list-item">
-						<MenuLink to="/Address">Address</MenuLink>
-					</li>
-					<li className="list-item">
-						<MenuLink to="/Pay"> Payment</MenuLink>
-					</li>
-					<li className="list-item">
-						<MenuLink to="/Pay"> Reviews</MenuLink>
-					</li>
-					<li className="list-item">
-						<MenuLink to="/Pay"> Gallary</MenuLink>
-					</li>
+					<Link to="/" className="Link">
+						<li className="span">Order</li>
+					</Link>
+					<Link to="/Address" className="Link">
+						<li className="span">Address</li>
+					</Link>
+					<Link to="/Pay" className="Link">
+						<li className="span">Payment</li>
+					</Link>
+					<Link to="/Pay" className="Link">
+						<li className="span">Reviews</li>
+					</Link>
+					<Link to="/Pay" className="Link">
+						<li className="span">Gallary</li>
+					</Link>
 				</ul>
-
-				{/*	<ul className="list-container ">
-					<Link to="/">
-						<li className="list-item">Orders</li>
-					</Link>
-
-					<Link to="/Address">
-						<li className="list-item">Address</li>
-					</Link>
-					<Link to="/Pay">
-						<li className="list-item">paymentMethods</li>
-					</Link>
-					<li className="list-item">Reviews </li>
-					<li className="list-item">Gallary</li>
-							</ul>*/}
+				{/** 
+				<Link className="Link">
+					<span className="span">link texts</span>
+				</Link>
+				*/}
 			</div>
 		</Profilediv>
 	);
@@ -102,7 +92,6 @@ const Profilediv = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-image: url(${banner});
-
 	.align {
 		position: relative;
 		height: 160px;
@@ -133,7 +122,39 @@ const Profilediv = styled.div`
 			}
 		}
 	}
+	.Link {
+		display: inline-block;
+		position: relative;
+		text-decoration: none;
+		text-align: center;
+		text-decoration: none;
+		color: #ffffff;
+		font-family: "Open Sans";
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 0;
+		line-height: 24px;
+		margin-right: 20px;
+	}
 
+	.Link:hover:before {
+		content: "";
+		height: 4px;
+		width: 38px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		border-radius: 2px;
+		background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
+		box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+	}
+
+	.Link span {
+		display: block;
+		width: 100px;
+		height: 40px;
+		padding-top: 20px;
+	}
 	.mask {
 		box-sizing: border-box;
 		height: 109px;
