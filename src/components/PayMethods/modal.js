@@ -21,27 +21,43 @@ const Modal = ({ setOpen }) => {
 					<span className="enter-credit">Enter Credit/Debit card details</span>
 					<form>
 						<div className="field">
-							<label for="fname" className="label">
-								Card number
-							</label>
+							<label className="label">Card number</label>
+
 							<input
 								type="text"
-								value="4022 8888 8888 1881"
+								value=""
 								className="input"
+								placeholder="4022 8888 8888 1881"
 							/>
 						</div>
 						<div className="field-1">
-							<label for="fname" className="label">
-								Name on card
-							</label>
-							<input type="text" className="input" value="Abdullah" />
+							<label className="label">Name on card</label>
+							<input type="text" className="input" placeholder="Abdullah" />
 						</div>
 						<div className="field-2">
-							Date
-							<label for="fname" className="label">
-								Security card
-							</label>
-							<input type="text" className="input" value="566" />
+							<div className="extra">
+								<label className="label-1">Expiary</label>
+								<input
+									type="text"
+									name="month"
+									className="input-1"
+									placeholder="11"
+									maxlength="2"
+									size="2"
+								/>
+								<span className="dash">/</span>
+								<input
+									type="text"
+									name="year"
+									className="input-1"
+									placeholder="2021"
+									maxlength="4"
+									size="4"
+									style={{ marginLeft: "60px" }}
+								/>
+								<label className="label-2">Security card</label>
+								<input type="text" className="input-2" placeholder="XXX" />
+							</div>
 						</div>
 					</form>
 					<span className="add-this-card-to-sav">
@@ -130,7 +146,7 @@ const ModalContainer = styled.div`
 		line-height: 23px;
 	}
 
-	input[type="text"] {
+	.input[type="text"] {
 		width: 100%;
 		padding: 12px 20px;
 		margin: 8px 0;
@@ -138,6 +154,11 @@ const ModalContainer = styled.div`
 		border: none;
 		border-bottom: 2px solid #4a4a4a;
 		opacity: 0.53;
+	}
+	.input-image {
+		height: 12px;
+		width: 40px;
+		padding: 41px 0 0 200px;
 	}
 	.label {
 		height: 17px;
@@ -165,6 +186,62 @@ const ModalContainer = styled.div`
 		width: 502px;
 		position: absolute;
 		top: 221px;
+	}
+	.extra {
+		height: 67px;
+		width: 502px;
+		position: relative;
+	}
+	.label-1 {
+		height: 17px;
+		//width: 20px;
+		color: #858585;
+		font-family: "Open Sans";
+		font-size: 12px;
+		letter-spacing: -0.24px;
+		line-height: 17px;
+		position: absolute;
+		top: 0px;
+	}
+	.label-2 {
+		height: 17px;
+		//width: 20px;
+		color: #858585;
+		font-family: "Open Sans";
+		font-size: 12px;
+		letter-spacing: -0.24px;
+		line-height: 17px;
+		position: absolute;
+		top: 0px;
+		left: 160px;
+	}
+	.input-1[type="text"] {
+		width: 8%;
+		padding: 12px 0;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 2px solid #4a4a4a;
+		opacity: 0.53;
+		position: absolute;
+		top: 18px;
+	}
+	.input-2[type="text"] {
+		width: 50%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 2px solid #4a4a4a;
+		opacity: 0.53;
+		position: absolute;
+		top: 18px;
+		left: 160px;
+	}
+	.dash {
+		position: absolute;
+		top: 35px;
+		left: 47px;
 	}
 	.line {
 		box-sizing: border-box;
