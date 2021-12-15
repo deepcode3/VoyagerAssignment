@@ -15,7 +15,7 @@ const Foot = styled.div`
 	height: 227px;
 	//width: 2023px;
 	width: 100vw;
-	position: absolute;
+	//position: absolute;
 	background-color: #ffffff;
 	.headder {
 		height: 43px;
