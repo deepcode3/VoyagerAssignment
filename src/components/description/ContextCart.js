@@ -11,8 +11,6 @@ import './Description.css'
     const item =useContext(CartContext)
     const history=useHistory();
     
-        
-    
     return(
         <>
         <div className="dbgbody">
