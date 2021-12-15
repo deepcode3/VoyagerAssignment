@@ -65,6 +65,7 @@ const Model = ({ setOpen }) => {
 export default Model;
 
 const ModalBack = styled.div`
+	height: 100%;
 	position: fixed;
 	align-items: center;
 	justify-content: center;
