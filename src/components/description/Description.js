@@ -1,26 +1,22 @@
-import React,{createContext} from 'react';
+import React, { createContext } from 'react';
 import './Description.css';
 import Items from './Items';
-import {itemData} from './itemData';
+//import {itemData} from './itemData';
 //import ContextCart from './ContextCart';
-import  ContextCart from './ContextCart';
+import ContextCart from './ContextCart';
+import { itemData } from './itemData';
+import Menu from '../../containers/menu';
 
-export  const CartContext=createContext();
+const CartContext = createContext();
+export { CartContext };
 
-const Description=()=>{
-    
-
-    // const [item,setItem]=useState(itemData)
-
-    return(
-
-    
-    <CartContext.Provider value={itemData}>
-    <ContextCart/>
-    </CartContext.Provider>
-   
-    
-
-    );
-}
-export default Description
+const CartContextProvider = (props) => {
+	// const [item,setItem]=useState(itemData)
+	return (
+		<CartContext.Provider value={itemData}>
+			<ContextCart />
+			<Menu />
+		</CartContext.Provider>
+	);
+};
+export default CartContextProvider;
