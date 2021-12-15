@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import icn_check from "../../assets/icons/icn_check.png";
 import Modal from "./modal";
+import { Data } from "../../components/data";
 
 const Address = () => {
 	const [open, setOpen] = useState(false);
@@ -22,30 +23,18 @@ const Address = () => {
 				</div>
 				<div className="recommendation-2">
 					<div className="order-1">
-						<span className="home">Home</span>
-						<div className="primary-1">
-							<img src={icn_check} alt="icn" style={{ float: "left" }} />
-							<span className="primary">Primary</span>
-						</div>
-						<span className="address">
-							Downtown Burj Khalifa, Sheikh Mohammed bin Rashid Blvd - Dubai -
-							United Arab EmiratesDubai, UAE
-						</span>
-						<span className="edit">Edit</span>
-						<span className="delete">Delete</span>
-					</div>
-					<div className="order-1">
-						<span className="home">Home</span>
-						<div className="primary-1">
-							<img src={icn_check} alt="icn" style={{ float: "left" }} />
-							<span className="primary">Primary</span>
-						</div>
-						<span className="address">
-							Downtown Burj Khalifa, Sheikh Mohammed bin Rashid Blvd - Dubai -
-							United Arab EmiratesDubai, UAE
-						</span>
-						<span className="edit">Edit</span>
-						<span className="delete">Delete</span>
+						{Data.map((data, key) => (
+							<div key={key} className="order-2">
+								<span className="home">Home</span>
+								<div className="primary-1">
+									<img src={icn_check} alt="icn" style={{ float: "left" }} />
+									<span className="primary">Primary</span>
+								</div>
+								<span className="address">{data.fulladdress}</span>
+								<span className="edit">Edit</span>
+								<span className="delete">Delete</span>
+							</div>
+						))}
 					</div>
 				</div>
 				{open && <Modal setOpen={setOpen} />}
@@ -69,10 +58,26 @@ const Div = styled.div`
 
 	}
 	.recommendation-2 {
-		width: 960px;
-    display:flex;
-    flex-direction:row;
+		height: 536px;
+		width: 980px;
+		overflow-y: scroll;
+        position: relative;
 	}
+	.order-1 {
+	    width: 980px;
+		max-height: 100%;
+		}
+		.order-2 {
+			height: 186px;
+			width: 469px;
+			float: left;
+			border-radius: 6px;
+			background-color: #ffffff;
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+			margin: 7px;
+			position:relative;
+			flex: 1;
+			}
 	.my-addresses-2 {
 		height: 22px;
 		width: 122px;
@@ -92,17 +97,8 @@ const Div = styled.div`
 		letter-spacing: 0;
 		line-height: 19px;
 		text-align: right;
-    margin-left:720px;
+        margin-left:720px;
 	}
-	.order-1 {
-		height: 186px;
-		width: 469px;
-		background-color: #ffffff;
-		margin: 14px;
-		border-radius: 6px;
-		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-    position:relative;
-		}
     .home {
       height: 19px;
       width: 39px;

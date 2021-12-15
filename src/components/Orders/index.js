@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./modal";
 import styled from "styled-components";
-//import rightArrow from "../../assets/icons/right_arrow@3x.png";
+import { Data } from "../../components/data";
 
 const Orders = () => {
 	const [open, setOpen] = useState(false);
@@ -17,51 +17,32 @@ const Orders = () => {
 					</select>
 				</div>
 				<div className="align-2">
-					<div className="rectangle-3">
-						<span className="order-id">Order id: 1234567890</span>
-						<span className="kitchen-type">The Boutique Kitchen</span>
-						<span className="road">Shiekh Zayed Road, , Dubai, UAE</span>
-						<span className="itemsAED">3 Items | AED85.76</span>
-						<span className="delivery-status-text ">Out for Delivery</span>
-						<div className="details">
-							<span
-								className="detail-text"
-								type="button"
-								onClick={() => {
-									setOpen(true);
-								}}
-							>
-								DETAILS
-							</span>
-						</div>
-						<div className="status">
-							<span className="" type="button">
-								STATUS
-							</span>
-						</div>
-					</div>
-					<div className="rectangle-3">
-						<span className="order-id">Order id: 1234567890</span>
-						<span className="kitchen-type">The Boutique Kitchen</span>
-						<span className="road">Shiekh Zayed Road, , Dubai, UAE</span>
-						<span className="itemsAED">3 Items | AED85.76</span>
-						<span className="delivery-status-text ">In kitchen</span>
-						<div className="details">
-							<span
-								className="detail-text"
-								type="button"
-								onClick={() => {
-									setOpen(true);
-								}}
-							>
-								DETAILS
-							</span>
-						</div>
-						<div className="status">
-							<span className="" type="button">
-								STATUS
-							</span>
-						</div>
+					<div className="rectangle-2">
+						{Data.map((data, key) => (
+							<div key={key} className="rectangle-3">
+								<span className="order-id">Order id:{data.orderId}</span>
+								<span className="kitchen-type">The Boutique Kitchen</span>
+								<span className="road">Shiekh Zayed Road, , Dubai, UAE</span>
+								<span className="itemsAED">3 Items | AED85.76</span>
+								<span className="delivery-status-text ">Out for Delivery</span>
+								<div className="details">
+									<span
+										className="detail-text"
+										type="button"
+										onClick={() => {
+											setOpen(true);
+										}}
+									>
+										DETAILS
+									</span>
+								</div>
+								<div className="status">
+									<span className="" type="button">
+										STATUS
+									</span>
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
 				{open && <Modal setOpen={setOpen} open={open} />}
@@ -72,38 +53,40 @@ const Orders = () => {
 export default Orders;
 
 const Div = styled.div`
-	height: 100vh;
-	weidth: 100vw;
+	width: 100vw;
 	display: flex;
 	align-items: center;
 	padding: 75px 0;
 	flex-direction: column;
+	position: relative;
 	background-color: #f1f3fb;
 	.align-1 {
 		width: 940px;
 		height: 33px;
 		display: flex;
-		justify-content: start;
 		position: relative;
+		justify-content: start;
 	}
 	.align-2 {
-		display: flex;
-		width: 960px;
-		flex-wrap: wrap;
-		//align-items: start;
-		//flex-direction: row;
+		height: 536px;
+		width: 980px;
+		overflow-y: scroll;
+		position: relative;
 	}
-	.align-2 > * {
-		flex: 1 1;
+	.rectangle-2 {
+		width: 980px;
+		max-height: 100%;
 	}
 	.rectangle-3 {
 		height: 248px;
 		width: 469px;
+		float: left;
 		border-radius: 6px;
 		background-color: #ffffff;
 		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-		margin: 10px;
+		margin: 7px;
 		position: relative;
+		flex: 1;
 	}
 	.active-orders {
 		height: 22px;

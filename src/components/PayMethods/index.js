@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import bitmap from "../../assets/icons/Bitmap.png";
+import visa from "../../assets/icons/visa.png";
+import mastercard from "../../assets/icons/mastercard.png";
 import icn_check from "../../assets/icons/icn_check.png";
 import Modal from "./modal";
+import { Data } from "../../components/data";
 
 const PayAmount = () => {
 	const [open, setOpen] = useState(false);
@@ -23,16 +25,20 @@ const PayAmount = () => {
 				</div>
 				<div className="recommendation-2">
 					<div className="order-1">
-						<img src={bitmap} alt="bank" className="bitmap" />
-						<span className="account">2345 XXXX XXXX 6574</span>
-						<span className="card-type">American Experess</span>
-						<div className="primary-1">
-							<img src={icn_check} alt="icn" style={{ float: "left" }} />
-							<span className="primary">Primary</span>
-						</div>
+						{Data.map((data, key) => (
+							<div key={key} className="order-2">
+								<img src={visa} alt="bank" className="bitmap" />
+								<span className="account">{data.payment?.pay1?.type}</span>
+								<span className="card-type">{data.payment?.pay1?.account}</span>
+								<div className="primary-1">
+									<img src={icn_check} alt="icn" style={{ float: "left" }} />
+									<span className="primary">Primary</span>
+								</div>
 
-						<span className="edit">Edit</span>
-						<span className="delete">Delete</span>
+								<span className="edit">Edit</span>
+								<span className="delete">Delete</span>
+							</div>
+						))}
 					</div>
 				</div>
 				{open && <Modal setOpen={setOpen} />}
@@ -43,25 +49,20 @@ const PayAmount = () => {
 export default PayAmount;
 
 const Div = styled.div`
-	height: 100vh;
+	//height: 100vh;
 	weidth: 100wh;
 	display: flex;
 	align-items: center;
- padding-top:75px;
+ padding:75px 0;
   flex-direction:column;
+  position: relative;
 	background-color: #f1f3fb;
   .recommendation-1 {
 		width: 930px;
     display:flex;
 
 	}
-	.recommendation-2 {
-		height: 222px;
-		width: 960px;
-    display:flex;
-    flex-direction:row;
-	}
-	.my-addresses-2 {
+  .my-addresses-2 {
 		height: 22px;
 		width: 122px;
 		color: #6f6f6f;
@@ -83,15 +84,27 @@ const Div = styled.div`
 		text-align: right;
     margin-left:720px;
 	}
-	.order-1 {
-		height: 186px;
-		width: 469px;
-		background-color: #ffffff;
-		margin: 14px;
-		border-radius: 6px;
-		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-    position:relative;
+  .recommendation-2 {
+		height: 536px;
+		width: 980px;
+    overflow-y: scroll;
+    position: relative;
+	}
+	  .order-1 {
+    width: 980px;
+		max-height: 100%;
 		}
+    .order-2 {
+      height: 186px;
+      width: 469px;
+      float: left;
+      border-radius: 6px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+      margin: 7px;
+      position:relative;
+      flex: 1;
+      }
     .bitmap {
       height: 24.65px;
       width: 76.64px;

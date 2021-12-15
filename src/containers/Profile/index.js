@@ -12,7 +12,7 @@ const Main = () => {
 		<Div>
 			<NavBar />
 			<Profile open={open} setOpen={setOpen} />
-			<div className="edit-part">
+			<div className="body">
 				<Router />
 				{open && <EditModal setOpen={setOpen} />}
 			</div>
@@ -25,9 +25,8 @@ export default Main;
 const Div = styled.div`
 	width: 100vw;
 	height: 100vh;
-	.edit-part {
-		height: 100vh;
+	position: relative;
+	.body {
 		weidth: 100vw;
-		background-color: red;
 	}
 `;

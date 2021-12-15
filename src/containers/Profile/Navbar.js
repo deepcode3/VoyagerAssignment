@@ -12,6 +12,7 @@ export default NavBar;
 
 const Nav = styled.nav`
 	height: 70px;
+	width: 100vw;
 	background-color: #ffffff;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
 	.span {

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import banner from "../../assets/images/login-background.png";
+//import banner from "../../assets/images/login-background.png";
+import banner from "../../assets/images/Profilebackground.png";
 import phoneicn from "../../assets/icons/phone_icn.png";
 import mailicn from "../../assets/icons/mail_icn.png";
 import icn_info from "../../assets/icons/icn_info_small.png";
@@ -50,7 +51,7 @@ const Profile = ({ setOpen }) => {
 						<li className="span">Address</li>
 					</Link>
 					<Link to="/Pay" className="Link">
-						<li className="span">Payment</li>
+						<li className="span">Payment Methods</li>
 					</Link>
 					<Link to="/Pay" className="Link">
 						<li className="span">Reviews</li>
@@ -59,32 +60,12 @@ const Profile = ({ setOpen }) => {
 						<li className="span">Gallary</li>
 					</Link>
 				</ul>
-				{/** 
-				<Link className="Link">
-					<span className="span">link texts</span>
-				</Link>
-				*/}
 			</div>
 		</Profilediv>
 	);
 };
 export default Profile;
 
-export const MenuLink = styled(Link)`
-	text-decoration: none;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-right: 50px;
-	height: 19px;
-	width: 62px;
-	color: #ffffff;
-	font-family: "Open Sans";
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 24px;
-`;
 const Profilediv = styled.div`
 	height: 262px;
 	display: flex;
@@ -92,6 +73,7 @@ const Profilediv = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-image: url(${banner});
+
 	.align {
 		position: relative;
 		height: 160px;
@@ -100,7 +82,6 @@ const Profilediv = styled.div`
 	}
 	.links {
 		width: 800px;
-		display: flex;
 	}
 
 	.list-container {
@@ -134,7 +115,8 @@ const Profilediv = styled.div`
 		font-weight: 600;
 		letter-spacing: 0;
 		line-height: 24px;
-		margin-right: 20px;
+		margin-right: 30px;
+		padding-bottom: 11px;
 	}
 
 	.Link:hover:before {
@@ -159,16 +141,17 @@ const Profilediv = styled.div`
 		box-sizing: border-box;
 		height: 109px;
 		width: 109px;
-		//border: 3px solid #ffffff;
-		//box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+		border: 3px solid #ffffff;
+		border-radius: 50%;
+		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
 		position: absolute;
 		top: 38px;
+		background-image: url(${profile_pic});
 	}
 	.profile_img {
 		height: 100%;
 		width: 100%;
 		display: inline-block;
-		background-image: url("profile_pic ");
 		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
 		background-position: 50% 50%;
 		background-size: cover;
@@ -279,8 +262,7 @@ const Profilediv = styled.div`
 	.edit {
 		height: 19px;
 		width: 30px;
-		//color: #fda200;
-		color: red;
+		color: #fda200;
 		font-family: "SF UI Text";
 		font-size: 16px;
 		font-weight: 500;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import dismiss_button from "../../assets/icons/dismiss button.png";
 import icn_star_gray from "../../assets/icons/icn_star_red.png";
 import icn_star_green from "../../assets/icons/icn_star_yellow.png";
-import red_dot from "../../assets/icons/Group 8 Copy 2.png";
-import green_dot from "../../assets/icons/Group 6.png";
+import red_dot from "../../assets/icons/non_veg.png";
+import green_dot from "../../assets/icons/veg.png";
 
 const Modal = ({ setOpen, open }) => {
 	const [active, setActive] = useState(false);
