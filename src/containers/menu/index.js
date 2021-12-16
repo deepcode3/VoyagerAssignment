@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import MenuHalfCompo from '../../components/menuSemiCompo';
 import { cartContext } from '../../context/cartContext';
@@ -19,7 +19,9 @@ import increaseButton from '../../assets/icons/increaseButton.png';
 import decreaseButton from '../../assets/icons/decreaseButton.png';
 import costShowHideButton from '../../assets/icons/collapseButton.png';
 import proceedToCheckOutButton from '../../assets/icons/proceedToCheckOut.png';
+import emptyImg from '../../assets/images/empty.png';
 import './menu.css';
+import { itemData } from '../../components/description/itemData';
 const Menu = () => {
 	const { searchKey } = useParams();
 	const { location } = useParams();
@@ -27,6 +29,7 @@ const Menu = () => {
 	const { item } = useParams();
 	const [searchItem, setSearchItem] = useState('');
 	const [costDeatilsButton, setcostDetailsButton] = useState(false);
+	const [exsistingData, setExistingData] = useState();
 	const {
 		cartItems,
 		addItem,
@@ -191,126 +194,137 @@ const Menu = () => {
 					></input>
 					<img src={searchIcon} alt="" className="menuSearchIcon"></img>
 					<div className="menuCart">
-						<div className="menuCartHeader">My Order</div>
-						<div className="menuClearCart" onClick={clearCartContext}>
-							Clear cart
-						</div>
-						<div className="menuCartLine1"></div>
-						<div className="menuCartItems">
-							{Object.values(cartItems)
-								?.filter((value) => {
-									if (value.status === true) {
-										return value;
-									}
-								})
-								.map((item) => {
-									return (
-										<div className="menuCartItem" key={item.name}>
-											{item.isVeg === false ? (
-												<img
-													src={nonVeg}
-													alt=""
-													className="menuCartnonVeg"
-												></img>
-											) : (
-												<img src={veg} alt="" className="menuCartVeg"></img>
-											)}
-											<div className="menuCartItemName">{item.item}</div>
-											<div className="menuCartItemPrice">
-												AED{item.price}.00
-											</div>
-											<div className="itemQuantitySetter">
-												<img
-													src={decreaseButton}
-													className="decreseButton"
-													alt=""
-													onClick={() => decreaseItemQuantity(item.item)}
-												></img>
-												<span className="quantity">{item.quantity}</span>
-												<img
-													src={increaseButton}
-													className="increaseButton"
-													alt=""
-													onClick={() => increaseItemQuantity(item.item)}
-												></img>
-											</div>
-											{item.addOn ? (
-												<div className="menuCartItemAddOn">{item.addOn}</div>
-											) : null}
-											{item.isCustomizable ? (
-												<div className="menuCartCustomizable">
-													Customize
-													<div className="menuCartCustomizableArrow"></div>{' '}
+						{cartItems !== null ? (
+							<>
+								<div className="menuCartHeader">My Order</div>
+								<div className="menuClearCart" onClick={clearCartContext}>
+									Clear cart
+								</div>
+								<div className="menuCartLine1"></div>
+								<div className="menuCartItems">
+									{Object.values(cartItems)
+										?.filter((value) => {
+											if (value.status === true) {
+												return value;
+											}
+										})
+										.map((item) => {
+											return (
+												<div className="menuCartItem" key={item.name}>
+													{item.isVeg === false ? (
+														<img
+															src={nonVeg}
+															alt=""
+															className="menuCartnonVeg"
+														></img>
+													) : (
+														<img src={veg} alt="" className="menuCartVeg"></img>
+													)}
+													<div className="menuCartItemName">{item.item}</div>
+													<div className="menuCartItemPrice">
+														AED{item.price}.00
+													</div>
+													<div className="itemQuantitySetter">
+														<img
+															src={decreaseButton}
+															className="decreseButton"
+															alt=""
+															onClick={() => decreaseItemQuantity(item.item)}
+														></img>
+														<span className="quantity">{item.quantity}</span>
+														<img
+															src={increaseButton}
+															className="increaseButton"
+															alt=""
+															onClick={() => increaseItemQuantity(item.item)}
+														></img>
+													</div>
+													{item.addOn ? (
+														<div className="menuCartItemAddOn">
+															{item.addOn}
+														</div>
+													) : null}
+													{item.isCustomizable ? (
+														<div className="menuCartCustomizable">
+															Customize
+															<div className="menuCartCustomizableArrow"></div>{' '}
+														</div>
+													) : null}
+													<div
+														className={
+															item.isCustomizable && !item.addOn
+																? 'menuCartRemove3'
+																: item.isCustomizable
+																? 'menuCartRemove'
+																: 'menuCartRemove2'
+														}
+														onClick={() => deleteItem(item.item)}
+													>
+														Remove
+													</div>
+													<div
+														className={
+															item.isCustomizable && !item.addOn
+																? 'menuCartBoxLine3'
+																: item.isCustomizable
+																? 'menuCartBoxLine'
+																: 'menuCartBoxLine2'
+														}
+													></div>
 												</div>
-											) : null}
-											<div
-												className={
-													item.isCustomizable && !item.addOn
-														? 'menuCartRemove3'
-														: item.isCustomizable
-														? 'menuCartRemove'
-														: 'menuCartRemove2'
-												}
-												onClick={() => deleteItem(item.item)}
-											>
-												Remove
-											</div>
-											<div
-												className={
-													item.isCustomizable && !item.addOn
-														? 'menuCartBoxLine3'
-														: item.isCustomizable
-														? 'menuCartBoxLine'
-														: 'menuCartBoxLine2'
-												}
-											></div>
+											);
+										})}
+								</div>
+								<div className="price">
+									<span className="priceLabel">To Pay</span>
+									<div className="totalPriceDiscount">
+										AED{getTotalPriceWithDiscount().toFixed(2)}
+									</div>
+									<img
+										src={costShowHideButton}
+										className={
+											costDeatilsButton
+												? 'showCostDetailsButton'
+												: 'hideCostDetailsButton'
+										}
+										alt=""
+										onClick={() =>
+											costDeatilsButton
+												? setcostDetailsButton(false)
+												: setcostDetailsButton(true)
+										}
+									></img>
+								</div>
+								{costDeatilsButton ? (
+									<div className="priceDetails">
+										<div className="totalPrice">
+											<span className="itemsTotalLabel">Items Total</span>
+											<span className="totalAmount">
+												AED{getTotalPrice().toFixed(2)}
+											</span>
 										</div>
-									);
-								})}
-						</div>
-						<div className="price">
-							<span className="priceLabel">To Pay</span>
-							<div className="totalPriceDiscount">
-								AED{getTotalPriceWithDiscount().toFixed(2)}
-							</div>
-							<img
-								src={costShowHideButton}
-								className={
-									costDeatilsButton
-										? 'showCostDetailsButton'
-										: 'hideCostDetailsButton'
-								}
-								alt=""
-								onClick={() =>
-									costDeatilsButton
-										? setcostDetailsButton(false)
-										: setcostDetailsButton(true)
-								}
-							></img>
-						</div>
-						{costDeatilsButton ? (
-							<div className="priceDetails">
-								<div className="totalPrice">
-									<span className="itemsTotalLabel">Items Total</span>
-									<span className="totalAmount">
-										AED{getTotalPrice().toFixed(2)}
-									</span>
-								</div>
-								<div className="charges">
-									<span className="itemsTotalLabel">Fee/Charges</span>
-									<span className="totalAmount">AED10.00</span>
-								</div>
-								<div className="discount">
-									<span className="itemsTotalLabel">Discount</span>
-									<span className="totalAmount">AED24.22</span>
-								</div>
-							</div>
-						) : null}
-						<img
-							className="proccedToCheckOutButton"
-							src={proceedToCheckOutButton}
-							alt=""
-						></img>
+										<div className="charges">
+											<span className="itemsTotalLabel">Fee/Charges</span>
+											<span className="totalAmount">AED10.00</span>
+										</div>
+										<div className="discount">
+											<span className="itemsTotalLabel">Discount</span>
+											<span className="totalAmount">AED24.22</span>
+										</div>
+									</div>
+								) : null}
+								<img
+									className="proccedToCheckOutButton"
+									src={proceedToCheckOutButton}
+									alt=""
+								></img>
+							</>
+						) : (
+							<>
+								<img className="emptyCartImage" src={emptyImg} alt=""></img>
+								<div className="emptyCartText">There are no items in cart</div>
+							</>
+						)}
 					</div>
 					<div className="menuList">
 						<div className="menuRecomended">
