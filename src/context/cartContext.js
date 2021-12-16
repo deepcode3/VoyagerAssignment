@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { itemData } from '../components/description/itemData';
 export const cartContext = createContext({
 	cartItems: [],
@@ -10,15 +10,24 @@ export const cartContext = createContext({
 });
 
 const CartContextProvider = (props) => {
-	const [cartItems, setCartItems] = useState(itemData);
+	const [cartItems, setCartItems] = useState(
+		JSON.parse(localStorage.getItem('cartItems'))
+	);
+	useEffect(() => {
+		localStorage.setItem('cartItems', JSON.stringify(cartItems));
+	}, [cartItems]);
 	const addItem = (item) => {
-		setCartItems((cartItems) => [...cartItems, item]);
+		if (cartItems === null) setCartItems([item]);
+		if (cartItems) {
+			setCartItems((cartItems) => [...cartItems, item]);
+		}
 	};
 	const deleteItem = (id) => {
 		setCartItems(cartItems.filter((item) => item.item !== id));
 	};
 	const clearCartContext = () => {
-		setCartItems([]);
+		localStorage.clear('cartItems');
+		window.location.reload();
 	};
 	const increaseItemQuantity = (id) => {
 		let updatedArray = [...cartItems];
