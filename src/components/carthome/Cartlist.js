@@ -19,7 +19,7 @@ const Cartlist=( {Hotelname,hoteladdress, totalproduct,productcost})=>{
                     <p className='Carthometotal'>AED<span>{productcost}</span></p>
 
                 </div>
-                <div className='cartproceedbtn' onClick={()=>history.push('/description')}><p className='cartproceedtext'>PROCEED</p></div>
+                <div className='cartproceedbtn' onClick={()=>history.push('/cart')}><p className='cartproceedtext'>PROCEED</p></div>
 
             </div>
         </>

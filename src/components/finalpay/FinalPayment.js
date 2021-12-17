@@ -8,7 +8,7 @@ import PaymentresDetails from '../payment/PaymentresDetails';
 import payback from '../../assets/images/payback.png'
 import paynow from '../../assets/images/paynow.png'
 import mastercardicon from '../../assets/icons/mastercard_icon.png'
-import visabg from '../../assets/images/visabg.png';
+
 import pvisaicon from '../../assets/icons/Visa_icon.png';
 import { useHistory} from "react-router-dom"
 import CommonHeader from "../headercommon/CommonHeader";

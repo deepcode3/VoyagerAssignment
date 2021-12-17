@@ -1,14 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RestaurantData from '../components/restaurentsData';
-import Home from '../containers/home';
-import Addresscomp from '../components/address/Address';
+
+
 import Payment from '../components/payment/Payment';
-import ContextCart from '../components/description/ContextCart'
+
 import FinalPayment from '../components/finalpay/FinalPayment'
-import Description from '../components/description/Description';
+
 import CartHome from '../components/carthome/CartHome';
 
+import Addresscomp from '../components/address/Address';
+import Home from '../containers/home';
+import Menu from '../containers/menu';
+import OverView from '../components/menuComponent/overview';
+import Reviews from '../components/menuComponent/review';
+import Gallery from '../components/menuComponent/gallery';
+import CartContextProvider from '../context/cartContext';
+import Cart from '../components/description/cart'
 const Routing = () => {
 	return (
 		<Router>
@@ -19,20 +27,38 @@ const Routing = () => {
 				<Route exact path="/restaurants/:searchKey/:location">
 					<RestaurantData />
 				</Route>
-
-
+				<Route path="/cart">
+				<CartContextProvider>
+					<Cart/>
+				</CartContextProvider>
+				</Route>
 				<Route path="/address">
 				<Addresscomp/>
 				</Route>
 				<Route  path="/payment" component={Payment}/>
-				<Route path="/description">
-					<Description/>
-				</Route>
+				
 				<Route path="/finalpay" component={FinalPayment}>
 					
 				</Route>
 				<Route path="/carthome">
 					<CartHome/>
+					</Route>
+				<Route path="/address">
+					<Addresscomp />
+				</Route>
+				<Route path="/:searchKey/:location/menu/:restaurant/:item">
+					<CartContextProvider>
+						<Menu />
+					</CartContextProvider>
+				</Route>
+				<Route path="/:searchKey/:location/overview/:restaurant/:item">
+					<OverView />
+				</Route>
+				<Route path="/:searchKey/:location/reviews/:restaurant/:item">
+					<Reviews />
+				</Route>
+				<Route path="/:searchKey/:location/gallery/:restaurant/:item">
+					<Gallery />
 				</Route>
 			</Switch>
 		</Router>

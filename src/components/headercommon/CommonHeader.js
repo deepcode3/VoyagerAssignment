@@ -1,7 +1,7 @@
 import React from "react"
 import Logo from '../logo/index';
 import SearchBar, {
-	DateTimeSetter,
+
 	LocationSetter,
 } from '../homeComponents/searchbar/index'
 import '../../containers/restaurants/index';

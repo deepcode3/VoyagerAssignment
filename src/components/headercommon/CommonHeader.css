@@ -1,26 +1,13 @@
-/* .cheader {
-  height: 43px;
-  width: 72.97px;
-  color: #0275d8;
-  font-family: "Bebas Neue";
-  font-size: 35px;
-  letter-spacing: 0;
-  line-height: 43px;
-  text-align: center;
-  position: relative;
-  top: -20px;
-} */
-
 .csearch {
   position: relative;
   left: 460px;
-  top: -20px;
+  top: 6px;
 }
 
 .clsetter {
   position: relative;
   left: 466px;
-  top: -20px;
+  top: 6px;
 }
 
 .crestaurantDateTimeButton {
@@ -44,7 +31,7 @@
   letter-spacing: -0.2px;
   line-height: 17px;
   position: relative;
-  top: -20px;
+  top: 5px;
   left: 470px;
 }
 

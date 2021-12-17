@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../../components/logo';
+import { useHistory } from 'react-router-dom';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -8,6 +8,7 @@ import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import SearchBar, {
 	LocationSetter,
 } from '../../components/homeComponents/searchbar';
+import Logo from '../../components/logo';
 import menuSemiBg from '../../assets/images/menuSemiBg.png';
 import dateTime from '../../assets/icons/dateTime.png';
 import menuButton from '../../assets/icons/menuButton.png';
@@ -22,6 +23,7 @@ const Restaurant = ({ data, searchKey, location }) => {
 	const [deliveryTimevalue, setDeliveryTimeValue] = useState('30');
 	const [averageMealCostValue, setAveregaeMealCostValue] = useState('30');
 	const [minimumOrderValue, setMinimumOrderValue] = useState('60');
+	const history = useHistory();
 	const theme = createTheme({
 		palette: {
 			primary: { main: '#FFA500' },
@@ -39,7 +41,6 @@ const Restaurant = ({ data, searchKey, location }) => {
 			<div className="body">
 				<div className="restaurantSearchBar">
 					<span className="restaurantsInfo">Delivery ASAP</span>
-					{console.log(data)}
 					<div className="restaurantSearch">
 						<SearchBar searchValue={searchKey} from="restaurant" />
 					</div>
@@ -309,6 +310,11 @@ const Restaurant = ({ data, searchKey, location }) => {
 											className="menuButton"
 											alt="menuButton"
 											src={menuButton}
+											onClick={() => {
+												history.push(
+													`/${searchKey}/${location}/menu/${res.name}/${res.item}`
+												);
+											}}
 										></img>
 									</div>
 									<br />

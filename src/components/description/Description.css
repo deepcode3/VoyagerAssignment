@@ -82,7 +82,7 @@
 } */
 .itemname {
   height: 27px;
-  width: 132px;
+  width: 232px;
   color: #2d2d2d;
   font-family: "Open Sans";
   font-size: 14px;
@@ -339,3 +339,23 @@ input[type="text"]:focus {
   border: 1px solid #ededed;
   position: relative;
 } */
+
+.emptyimgcart {
+  position: absolute;
+  left: 200px;
+}
+
+.emptytext {
+  height: 27px;
+  width: 250px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  line-height: 27px;
+  position: absolute;
+  left: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
