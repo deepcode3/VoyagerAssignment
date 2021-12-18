@@ -1,17 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RestaurantData from '../components/restaurentsData';
-<<<<<<< HEAD
-=======
-
 
 import Payment from '../components/payment/Payment';
 
-import FinalPayment from '../components/finalpay/FinalPayment'
+import FinalPayment from '../components/finalpay/FinalPayment';
 
 import CartHome from '../components/carthome/CartHome';
 
->>>>>>> a4a2ddd5506842111d5a61ab142a588c34a1b8a4
 import Addresscomp from '../components/address/Address';
 import Home from '../containers/home';
 import Menu from '../containers/menu';
@@ -19,10 +15,7 @@ import OverView from '../components/menuComponent/overview';
 import Reviews from '../components/menuComponent/review';
 import Gallery from '../components/menuComponent/gallery';
 import CartContextProvider from '../context/cartContext';
-<<<<<<< HEAD
-=======
-import Cart from '../components/description/cart'
->>>>>>> a4a2ddd5506842111d5a61ab142a588c34a1b8a4
+import Cart from '../components/description/cart';
 const Routing = () => {
 	return (
 		<Router>
@@ -33,25 +26,20 @@ const Routing = () => {
 				<Route exact path="/restaurants/:searchKey/:location">
 					<RestaurantData />
 				</Route>
-<<<<<<< HEAD
-=======
 				<Route path="/cart">
-				<CartContextProvider>
-					<Cart/>
-				</CartContextProvider>
+					<CartContextProvider>
+						<Cart />
+					</CartContextProvider>
 				</Route>
 				<Route path="/address">
-				<Addresscomp/>
+					<Addresscomp />
 				</Route>
-				<Route  path="/payment" component={Payment}/>
-				
-				<Route path="/finalpay" component={FinalPayment}>
-					
-				</Route>
+				<Route path="/payment" component={Payment} />
+
+				<Route path="/finalpay" component={FinalPayment}></Route>
 				<Route path="/carthome">
-					<CartHome/>
-					</Route>
->>>>>>> a4a2ddd5506842111d5a61ab142a588c34a1b8a4
+					<CartHome />
+				</Route>
 				<Route path="/address">
 					<Addresscomp />
 				</Route>
