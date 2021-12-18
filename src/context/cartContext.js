@@ -1,5 +1,9 @@
 import { createContext, useEffect, useState } from 'react';
+<<<<<<< HEAD
 import { itemData } from '../components/description/itemData';
+=======
+
+>>>>>>> a4a2ddd5506842111d5a61ab142a588c34a1b8a4
 export const cartContext = createContext({
 	cartItems: [],
 	addItem: () => {},

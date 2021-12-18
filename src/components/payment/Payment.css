@@ -1,0 +1,794 @@
+.paymenttext {
+  height: 30px;
+  width: 95px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: absolute;
+  top: 378px;
+  left: 478px;
+  margin: 0px;
+}
+
+.paymentcontainer {
+  height: 1060px;
+  width: 634px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 427px;
+  left: 472px;
+}
+
+.preferedtext {
+  height: 19px;
+  width: 290px;
+  color: #4a4a4a;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  margin: 0px;
+}
+.cashcarddiv {
+  height: 66px;
+  width: 382px;
+  position: relative;
+  top: 45px;
+  left: 20px;
+  /* background-color: darkgoldenrod; */
+}
+
+.cashdiv {
+  height: 66px;
+  width: 138px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 0px;
+}
+
+.carddiv {
+  height: 66px;
+  width: 224px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 158px;
+  top: 0px;
+}
+
+.cashradio {
+  height: 15.28px;
+  width: 16px;
+  background-color: #b9b9b9;
+  position: relative;
+  top: 25px;
+  left: 11px;
+  margin: 0px;
+  accent-color: black;
+}
+
+.cashicons {
+  height: 36px;
+  width: 37px;
+  position: relative;
+  left: 37px;
+  bottom: 7px;
+}
+.Cashtext {
+  height: 19px;
+  width: 31px;
+  color: #4a4a4a;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  left: 84px;
+  top: 24px;
+  margin: 0px;
+}
+
+.cardradio {
+  height: 15.28px;
+  width: 16px;
+  position: relative;
+  top: 25px;
+  left: 11px;
+  margin: 0px;
+  accent-color: black;
+}
+.cardicons {
+  height: 30px;
+  width: 37px;
+  position: relative;
+  top: 0px;
+  left: 37px;
+}
+.Cardtext {
+  height: 22px;
+  width: 126px;
+  color: #4a4a4a;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: absolute;
+  left: 84px;
+  top: 22px;
+  margin: 0px;
+}
+
+.Preferdpaymentdiv {
+  position: relative;
+
+  /* top: 0px;
+  left: 0px; */
+}
+
+.carddetailscontainer {
+  height: 339px;
+  width: 560px;
+  position: relative;
+  top: 50px;
+  left: 20px;
+  /* background-color: deepskyblue; */
+}
+
+.entercarddetailstext {
+  height: 23px;
+  width: 227px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 17px;
+  letter-spacing: -0.41px;
+  line-height: 23px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+.cardnumberdiv {
+  height: 67px;
+  width: 336px;
+
+  position: relative;
+  left: 0px;
+  top: 16px;
+}
+
+.cardnumbertext {
+  height: 17px;
+  width: 72px;
+  color: #858585;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  margin: 0px;
+}
+.cardnumber {
+  height: 22px;
+  width: 154px;
+  color: #4a4a4a;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: relative;
+  top: 11px;
+  left: 0px;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+}
+
+.Visaicon {
+  height: 12px;
+  width: 40px;
+  position: absolute;
+  top: 35px;
+  right: 0px;
+}
+
+.cardnumberline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 334px;
+  border: 1px solid #000000;
+  opacity: 0.53;
+  position: absolute;
+  bottom: 0px;
+}
+
+.nameoncarddiv {
+  height: 67px;
+  width: 339px;
+
+  position: relative;
+  top: 30px;
+  left: 0px;
+}
+.nameoncard {
+  height: 17px;
+  width: 77px;
+  color: #858585;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+.namecard {
+  height: 22px;
+  width: 165px;
+  color: #4a4a4a;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: relative;
+  top: 11px;
+  left: 0px;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+}
+
+.namecardline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 338px;
+  border: 1px solid #000000;
+  opacity: 0.53;
+  position: absolute;
+  bottom: 0px;
+}
+.expirydatediv {
+  height: 67px;
+  width: 334px;
+
+  position: relative;
+  left: 0px;
+  top: 54px;
+}
+
+.expiry {
+  height: 17px;
+  width: 33px;
+  color: #858585;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+.security {
+  height: 17px;
+  width: 70px;
+  color: #858585;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  top: 0px;
+  left: 160px;
+  margin: 0px;
+}
+
+.date {
+  height: 22px;
+  width: 18px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+  position: relative;
+  left: 0px;
+  top: 11px;
+}
+
+.bar {
+  height: 22px;
+  width: 6px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: absolute;
+  left: 35px;
+  top: 29px;
+  /* background-color: brown; */
+}
+
+.year {
+  height: 22px;
+  width: 36px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+  position: absolute;
+  top: 28px;
+  left: 50px;
+}
+
+.code {
+  height: 22px;
+  width: 47px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  border: 0px;
+  margin: 0px;
+  outline: none;
+  position: absolute;
+  top: 27px;
+  left: 160px;
+}
+
+.datelines {
+  box-sizing: border-box;
+  height: 2px;
+  width: 22px;
+  border: 1px solid #000000;
+  opacity: 0.53;
+  margin: 0px;
+
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.yearline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 42px;
+  border: 1px solid #000000;
+  opacity: 0.53;
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+}
+.codeline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 170px;
+  border: 1px solid #000000;
+  opacity: 0.53;
+  position: absolute;
+  bottom: 0px;
+  left: 160px;
+}
+.somename {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  left: 0px;
+  bottom: 1px;
+  margin: 0px;
+  /* background-color: navy; */
+}
+
+.addtosave {
+  height: 19px;
+  width: 190px;
+  color: #070707;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
+  position: absolute;
+  bottom: 0px;
+  left: 31px;
+  margin: 0px;
+}
+
+.earnedpointsdiv {
+  box-sizing: border-box;
+  height: 73px;
+  width: 594px;
+  border: 1px solid #cdc7c7;
+  border-radius: 6px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  /* background-color: burlywood; */
+  position: absolute;
+  top: 500px;
+  left: 20px;
+  border: 0px;
+}
+
+.credits {
+  height: 22px;
+  width: 90px;
+  color: #223136;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: absolute;
+  top: 20px;
+  left: 27px;
+  margin: 0px;
+}
+
+.verticalline {
+  box-sizing: border-box;
+  height: 32px;
+  width: 2px;
+  border: 1px solid #979797;
+  opacity: 0.27;
+  position: relative;
+  left: 131px;
+  top: 21px;
+}
+.points {
+  height: 33px;
+  width: 42px;
+  color: #223136;
+  font-family: "Open Sans";
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 33px;
+  position: absolute;
+  left: 150px;
+  top: 13px;
+  margin: 0px;
+}
+.earnedcash {
+  height: 17px;
+  width: 54px;
+  color: #36393b;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: absolute;
+  top: 42px;
+  left: 150px;
+  margin: 0px;
+}
+.pcheckbox {
+  position: absolute;
+  top: 26px;
+  left: 448px;
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  accent-color: #000000;
+}
+
+/* 
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 16px;
+  left: 448px;
+  position: absolute;
+  top: 0px;
+  width: 16px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+.round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+} */
+
+.redeem {
+  height: 19px;
+  width: 95px;
+  color: #4a4a4a;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  left: 474px;
+  top: 27px;
+  margin: 0px;
+}
+
+.paydeliverydetails {
+  height: 203px;
+  width: 592px;
+  /* background-color: chocolate; */
+  position: relative;
+  top: 180px;
+  left: 21px;
+}
+
+.paymentdeliverydetails {
+  height: 23px;
+  width: 117px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 17px;
+  letter-spacing: -0.41px;
+  line-height: 23px;
+  position: absolute;
+  top: 607px;
+  left: 20px;
+  margin: 0px;
+}
+
+.locationtimediv {
+  height: 164px;
+  width: 592px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 39px;
+  left: 0px;
+}
+
+.paydeliverylocation {
+  height: 37px;
+  width: 532px;
+  /* background-color: chocolate; */
+  position: relative;
+  top: 20px;
+  left: 30px;
+  margin: 0px;
+}
+
+.paydeliverylocationtext {
+  height: 17px;
+  width: 153.81px;
+  color: #6a6a6a;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+.paydeliveryaddress {
+  height: 19px;
+  width: 383.66px;
+  color: #2d2d2d;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  top: 18px;
+  left: 0px;
+  margin: 0px;
+}
+
+.paychange {
+  height: 17px;
+  width: 76.04px;
+  color: #f67e03;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-align: right;
+  position: absolute;
+  top: 18px;
+  left: 456px;
+  cursor: pointer;
+}
+
+.payonegreyline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 530px;
+  border: 1px solid #ededed;
+  position: absolute;
+  top: 77px;
+  left: 35px;
+}
+.paydateandtime {
+  height: 37px;
+  width: 533px;
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  /* background-color: cornflowerblue; */
+}
+
+.dateandtime {
+  height: 17px;
+  width: 115.79px;
+  color: #6a6a6a;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+.todayat11 {
+  height: 19px;
+  width: 200.47px;
+  color: #2d2d2d;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  top: 18px;
+  left: 0px;
+  margin: 0px;
+}
+
+.datetimedivchange {
+  height: 17px;
+  width: 76.04px;
+  color: #f67e03;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-align: right;
+  position: absolute;
+  top: 18px;
+  left: 456px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.payoitemsorderdfrom {
+  height: 129px;
+  width: 592px;
+  /* background-color: lightblue; */
+  position: absolute;
+  top: 846px;
+  left: 21px;
+  margin: 0px;
+  border: 0px;
+}
+.payitemsyouorderdfrom {
+  height: 23px;
+  width: 186px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 17px;
+  letter-spacing: -0.41px;
+  line-height: 23px;
+  margin: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.subdiv {
+  height: 90px;
+  width: 592px;
+  border-radius: 6px;
+  /* background-color: lightcoral; */
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.subdivresname {
+  height: 22px;
+  width: 161px;
+  color: #2d2d2d;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: absolute;
+  top: 24px;
+  left: 17px;
+  margin: 0px;
+}
+.subdivaddress {
+  height: 19px;
+  width: 203px;
+  color: #2d2d2d;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  top: 48px;
+  left: 17px;
+  margin: 0px;
+}
+
+.paybackbutton {
+  height: 45px;
+  width: 130px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: absolute;
+  left: 333px;
+  bottom: 20px;
+  cursor: pointer;
+}
+
+.paynowbutton {
+  height: 45px;
+  width: 130px;
+
+  position: absolute;
+  left: 470px;
+  bottom: 28px;
+  cursor: pointer;
+}
+
+/* .testpaynowbutton {
+  height: 45px;
+  width: 130px;
+  border-radius: 6px;
+  background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: absolute;
+  left: 470px;
+  bottom: 20px;
+} */

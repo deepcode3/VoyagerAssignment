@@ -42,8 +42,8 @@
 .orderdisplay_rectangle {
   /* height: auto; */
   /* height: 519px; */
-  height: 100%;
-  width: 634px;
+  /* height: 100%; */
+  width: 654px;
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
@@ -55,8 +55,8 @@
 }
 .orderitems {
   height: 99px;
-  width: 593px;
-  background-color: coral;
+  width: 614px;
+
   position: relative;
   top: 20px;
   left: 20px;
@@ -72,13 +72,21 @@
   top: -19px;
   left: 0px;
 }
+/* 
+.dBbgbody {
+  position: relative;
+  top: -78px;
+  background-color: #cecfd4;
+  width: 1900px;
+  height: 1600px;
+} */
 .itemname {
   height: 27px;
-  width: 132px;
+  width: 232px;
   color: #2d2d2d;
   font-family: "Open Sans";
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 900;
   letter-spacing: 0;
   line-height: 27px;
   position: relative;
@@ -123,7 +131,7 @@
   background-color: #ffffff;
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: 20px;
 }
 .decbutton {
   height: 2px;
@@ -166,7 +174,7 @@
   color: #2d2d2d;
   font-family: "Open Sans";
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0;
   line-height: 27px;
   text-align: center;
@@ -260,7 +268,7 @@
 .cookinginsdiv {
   height: 67px;
   width: 590px;
-  background-color: darkseagreen;
+
   position: relative;
   left: 18px;
   /* bottom: 87px; */
@@ -322,4 +330,32 @@ input[type="text"]:focus {
   left: 0px;
   /* position: absolute;
   top: 66px; */
+}
+
+/* .cfinalgreyline {
+  box-sizing: border-box;
+  height: 3px;
+  width: 631px;
+  border: 1px solid #ededed;
+  position: relative;
+} */
+
+.emptyimgcart {
+  position: absolute;
+  left: 200px;
+}
+
+.emptytext {
+  height: 27px;
+  width: 250px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  line-height: 27px;
+  position: absolute;
+  left: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
