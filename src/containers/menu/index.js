@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import MenuHalfCompo from '../../components/menuSemiCompo';
 import { cartContext } from '../../context/cartContext';
@@ -21,7 +21,6 @@ import costShowHideButton from '../../assets/icons/collapseButton.png';
 import proceedToCheckOutButton from '../../assets/icons/proceedToCheckOut.png';
 import emptyImg from '../../assets/images/empty.png';
 import './menu.css';
-import { itemData } from '../../components/description/itemData';
 const Menu = () => {
 	const { searchKey } = useParams();
 	const { location } = useParams();
@@ -29,7 +28,6 @@ const Menu = () => {
 	const { item } = useParams();
 	const [searchItem, setSearchItem] = useState('');
 	const [costDeatilsButton, setcostDetailsButton] = useState(false);
-	const [exsistingData, setExistingData] = useState();
 	const {
 		cartItems,
 		addItem,
@@ -210,7 +208,7 @@ const Menu = () => {
 										})
 										.map((item) => {
 											return (
-												<div className="menuCartItem" key={item.name}>
+												<div className="menuCartItem" key={item.item}>
 													{item.isVeg === false ? (
 														<img
 															src={nonVeg}

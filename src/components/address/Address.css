@@ -1,3 +1,13 @@
+.addressbody {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .addressheading {
   height: 30px;
   width: 170px;
@@ -28,7 +38,7 @@
 .preferencetext {
   position: relative;
   top: 20px;
-  left: 0px;
+  left: 20px;
   margin: 0px;
 }
 
@@ -46,7 +56,7 @@
 .deliveryoptiondiv {
   height: 115px;
   width: 344px;
-  /* background-color: coral; */
+
   position: absolute;
   top: 55px;
   left: 20px;
@@ -157,7 +167,7 @@
 .addnewtext {
   height: 19px;
   width: 85px;
-  /* color: rgba(246, 126, 126, 0.38); */
+
   color: #f57c00;
   font-family: "Open Sans";
   font-size: 14px;
@@ -378,7 +388,7 @@
   border: 1px solid #000000;
   opacity: 0.53;
   position: absolute;
-  top: 587.5px;
+  top: 586.5px;
   left: 22px;
 }
 
@@ -428,8 +438,8 @@
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
-  position: absolute;
-  top: 651px;
+  position: relative;
+  top: 621px;
   left: 21px;
   border: 0px;
   outline: none;
@@ -438,30 +448,30 @@
   overflow-y: hidden;
 }
 
-.mentiongreyline {
+.mentiongreyline1 {
   box-sizing: border-box;
   height: 2px;
   width: 576px;
   border: 1px solid #a4a4a4;
   opacity: 0.53;
   position: relative;
-  top: 669px;
+  top: 634px;
   left: 20px;
 }
 
-.Backbuttondiv {
+.aBackbuttondiv {
   box-sizing: border-box;
   height: 45px;
   width: 130px;
   border: 1px solid #979797;
   border-radius: 6px;
   box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-  position: relative;
-  top: 710px;
+  position: absolute;
+  top: 715px;
   left: 266px;
 }
 
-.BACKtext {
+.aBACKtext {
   height: 19px;
   width: 40.69px;
   color: #979797;
@@ -474,19 +484,20 @@
   top: 13px;
   left: 40.66px;
   margin: 0px;
+  cursor: pointer;
 }
-.Choosepayment {
+.aChoosepayment {
   height: 45px;
   width: 198px;
   border-radius: 6px;
   background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
   box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-  position: relative;
-  top: 665px;
+  position: absolute;
+  top: 715px;
   left: 416px;
 }
 
-.Choosepaymenttext {
+.aChoosepaymenttext {
   height: 19px;
   width: 161px;
   color: #ffffff;
@@ -499,6 +510,7 @@
   left: 30px;
   top: 12px;
   margin: 0px;
+  cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,

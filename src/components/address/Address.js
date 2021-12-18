@@ -1,10 +1,13 @@
-import React,{useState} from "react";
+import React from "react";
 import './Address.css';
 import delivericon from '../../assets/icons/delivericon.png'
 import pickupicon from '../../assets/icons/pickupicon.png'
 import addnewbtn  from '../../assets/icons/button.png'
-// import paymentbutton from '../../assets/icons/choosepayment.png'
+
 import check from '../../assets/icons/check.png'
+import { useHistory} from "react-router-dom"
+import CommonHeader from "../headercommon/CommonHeader";
+
 
 const Address=()=>{
 
@@ -15,10 +18,18 @@ const Address=()=>{
             </>
         )
     }
+    
+    const history=useHistory()
+    
+  
+
+
 
     
     return(
         <>
+        <div className="addressbody">
+        <CommonHeader/>
         <div className="adress"><p className="addressheading">Choose Address</p></div>
         <div className="addresscontainer">
             <div className="preferencetext"><p className="preference">How would you like us to get your meal to you?</p></div>
@@ -43,8 +54,8 @@ const Address=()=>{
         <p className="addnewtext">ADD NEW</p>
         <div className="homeaddressdiv" onClick={usecheck}>
             <p className="home">Home</p>
-            {/* <input type="radio" name="address" value="office" className="officeradio"/> */}
-            <div className="checkimg" ><img src={check} className="officeradio" ></img></div>
+            
+            <div className="checkimg" ><img src={check} className="officeradio" alt=""></img></div>
             <p className="addressline">Downtown Burj Khalifa, Dubai, UAE</p>
             <div className="editbtn">Edit</div>
             <div className="deletebtn">Delete</div>
@@ -52,7 +63,7 @@ const Address=()=>{
 
         <div className="officeaddressdiv">
             <p className="office">Office</p>
-            {/* <input type="radio" name="address" value="office" className="officeradio"/> */}
+           
             <p className="addressline">Downtown Burj Khalifa, Dubai, UAE</p>
             <div className="editbtn1">Edit</div>
             <div className="deletebtn1">Delete</div>
@@ -75,10 +86,11 @@ const Address=()=>{
         <div className="delins"><p className="deliveryins">Delivery Instructions?</p></div>
         <div className="mention">
             <textarea type="text" placeholder="Mention it here..." className="mntn"></textarea>
-            <div className="mentiongreyline"></div>
+            <div className="mentiongreyline1"></div>
         </div>
-        <div className="Backbuttondiv"><p className="BACKtext">BACK</p></div>
-        <div className="Choosepayment"><p className="Choosepaymenttext">CHOOSE PAYMENT</p></div>
+        <div className="aBackbuttondiv" onClick={()=>history.goBack('/description')}><p className="aBACKtext">BACK</p></div>
+        <div className="aChoosepayment" onClick={()=>history.push('/payment')}><p className="aChoosepaymenttext">CHOOSE PAYMENT</p></div>
+        </div>
         </div>
         
         </>

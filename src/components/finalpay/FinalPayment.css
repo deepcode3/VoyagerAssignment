@@ -1,0 +1,324 @@
+.paytext {
+  height: 30px;
+  width: 95px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: absolute;
+  top: 378px;
+  left: 478px;
+  margin: 0px;
+}
+
+.finalpaycontainer {
+  height: 918px;
+  width: 634px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 427px;
+  left: 477px;
+}
+
+.mycards {
+  height: 23px;
+  width: 63px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 17px;
+  letter-spacing: -0.41px;
+  line-height: 23px;
+  position: absolute;
+  top: 159px;
+  left: 20px;
+  margin: 0px;
+}
+
+.payaddnew {
+  height: 30px;
+  width: 96px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: absolute;
+  left: 519px;
+  top: 149px;
+  cursor: pointer;
+}
+
+.payaddnewtext {
+  height: 19px;
+  width: 95px;
+  /* color: #ffffff; */
+  color: orange;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 19px;
+  text-align: center;
+  text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  margin: 0px;
+  position: relative;
+  top: 7px;
+}
+
+.cardsdiv {
+  height: 166px;
+  width: 595px;
+
+  position: absolute;
+  top: 195px;
+  left: 20px;
+}
+
+.visaimg {
+  height: 165px;
+  width: 286px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+}
+
+.masterimg {
+  height: 185px;
+  width: 320px;
+  position: relative;
+  left: 290px;
+  top: -7px;
+}
+/* .fpaypoints {
+  position: relative;
+  top: 0px;
+} */
+.Fpaypoints {
+  position: absolute;
+  top: -120px;
+  left: 0px;
+  background-color: #52c7ca;
+}
+.Fpaymentdeliverydetails {
+  margin: 0px;
+  position: absolute;
+  top: 480px;
+  left: 21px;
+}
+
+.Fpaydeldetails {
+  position: absolute;
+  top: 296px;
+  height: 20px;
+}
+
+.fpayres {
+  position: absolute;
+  top: -140px;
+}
+
+.fpayback {
+  position: absolute;
+  left: 333px;
+  bottom: 10px;
+  cursor: pointer;
+}
+.fpaynow {
+  position: absolute;
+  left: 472px;
+  bottom: -12px;
+  cursor: pointer;
+}
+
+.mask {
+  height: 165px;
+  width: 288.01px;
+  border-radius: 6px;
+  background: linear-gradient(146.86deg, #52c7ca 0%, #6c6fff 100%);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0px;
+  left: 306px;
+}
+.mcardicon {
+  height: 35px;
+  width: 55.91px;
+  position: relative;
+  top: 10px;
+  left: 12.66px;
+}
+.cardnums {
+  height: 19px;
+  width: 200px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2.26px;
+  line-height: 19px;
+  margin: 0px;
+  position: relative;
+  top: 14px;
+  left: 18px;
+}
+
+.mcardname {
+  height: 17px;
+  width: 50.64px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: relative;
+  left: 17px;
+  top: 20px;
+  margin: 0px;
+}
+
+.mexpdate {
+  height: 17px;
+  width: 73.85px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: relative;
+  left: 102.33px;
+  top: 2px;
+  margin: 0px;
+}
+
+.entercode {
+  height: 26px;
+  width: 132.97px;
+  color: #ffffff;
+
+  font-family: "SF UI Text";
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 26px;
+  position: relative;
+  top: 16px;
+  left: 17px;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+
+  background: transparent;
+}
+
+.mcardline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 159.81px;
+  border: 1px solid #ffffff;
+  opacity: 0.38;
+  position: relative;
+  left: 17px;
+  top: 20px;
+  margin: 0px;
+}
+
+.mask1 {
+  height: 165px;
+  width: 286px;
+  border-radius: 6px;
+  background: linear-gradient(146.86deg, #c365f2 0%, #6241d0 100%);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.vicon {
+  height: 19px;
+  width: 56.2px;
+  position: absolute;
+  top: 19px;
+  left: 13px;
+  margin: 0px;
+}
+
+.vcardnums {
+  height: 19px;
+  width: 200px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2.26px;
+  line-height: 19px;
+  margin: 0px;
+  position: absolute;
+  top: 53px;
+  left: 18px;
+}
+.vcardname {
+  height: 17px;
+  width: 50.64px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  left: 18px;
+  top: 79px;
+  margin: 0px;
+}
+
+.vexpdate {
+  height: 17px;
+  width: 73.85px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  left: 98.34px;
+  top: 79px;
+  margin: 0px;
+}
+
+.ventercode {
+  height: 26px;
+  width: 77.27px;
+  color: #ffffff;
+  /* color: #000000; */
+  font-family: "SF UI Text";
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 26px;
+  position: absolute;
+  top: 112px;
+  left: 17.06px;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+  background: transparent;
+}
+
+.vcardline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 73.3px;
+  border: 1px solid #ffffff;
+  opacity: 0.38;
+  position: absolute;
+  left: 18.56px;
+  top: 143.5px;
+}
+
+.entercode::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+.ventercode::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}

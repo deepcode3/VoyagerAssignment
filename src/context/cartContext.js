@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from 'react';
-import { itemData } from '../components/description/itemData';
 export const cartContext = createContext({
 	cartItems: [],
 	addItem: () => {},

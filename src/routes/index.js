@@ -1,6 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RestaurantData from '../components/restaurentsData';
+
+import Payment from '../components/payment/Payment';
+
+import FinalPayment from '../components/finalpay/FinalPayment';
+
+import CartHome from '../components/carthome/CartHome';
+
 import Addresscomp from '../components/address/Address';
 import Home from '../containers/home';
 import Menu from '../containers/menu';
@@ -8,6 +15,7 @@ import OverView from '../components/menuComponent/overview';
 import Reviews from '../components/menuComponent/review';
 import Gallery from '../components/menuComponent/gallery';
 import CartContextProvider from '../context/cartContext';
+import Cart from '../components/description/cart';
 const Routing = () => {
 	return (
 		<Router>
@@ -17,6 +25,20 @@ const Routing = () => {
 				</Route>
 				<Route exact path="/restaurants/:searchKey/:location">
 					<RestaurantData />
+				</Route>
+				<Route path="/cart">
+					<CartContextProvider>
+						<Cart />
+					</CartContextProvider>
+				</Route>
+				<Route path="/address">
+					<Addresscomp />
+				</Route>
+				<Route path="/payment" component={Payment} />
+
+				<Route path="/finalpay" component={FinalPayment}></Route>
+				<Route path="/carthome">
+					<CartHome />
 				</Route>
 				<Route path="/address">
 					<Addresscomp />
