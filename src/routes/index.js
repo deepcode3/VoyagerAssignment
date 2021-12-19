@@ -1,13 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RestaurantData from '../components/restaurentsData';
-
 import Payment from '../components/payment/Payment';
-
 import FinalPayment from '../components/finalpay/FinalPayment';
-
 import CartHome from '../components/carthome/CartHome';
-
+import HomeTobeDeleted from '../containers/HomeTobeDeleted';
 import Addresscomp from '../components/address/Address';
 import Home from '../containers/home';
 import Menu from '../containers/menu';
@@ -34,6 +31,7 @@ const Routing = () => {
 				<Route path="/address">
 					<Addresscomp />
 				</Route>
+				<Route path="/home-header" component={HomeTobeDeleted} />
 				<Route path="/payment" component={Payment} />
 
 				<Route path="/finalpay" component={FinalPayment}></Route>
