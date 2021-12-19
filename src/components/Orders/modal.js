@@ -8,10 +8,22 @@ import green_dot from "../../assets/icons/veg.png";
 
 const Modal = ({ setOpen, open }) => {
 	const [active, setActive] = useState(false);
+	const [rating, setRating] = useState(0);
 	const handlerating = () => {
 		setActive(true);
 		console.log(active, "active");
 	};
+	const Star = ({ filled, onClick }) => {
+		return (
+			<img
+				src={filled ? icn_star_green : icn_star_gray}
+				alt="star"
+				className="star"
+				onClick={onClick}
+			/>
+		);
+	};
+
 	console.log("open state in modal:", open);
 	console.log("rating:", active);
 	return (
@@ -164,46 +176,29 @@ const Modal = ({ setOpen, open }) => {
 						<div className="rectangle-7">
 							<span className="rate-your-delivery ">Rate your Delivery</span>
 							<div className="ratings">
-								<div className="group-2" onClick={handlerating} type="button">
-									<img
-										src={active ? icn_star_green : icn_star_gray}
-										alt="star"
-										className="star"
-									/>
-									<span className="num">1</span>
-								</div>
-								<div className="group-2">
-									<img
-										src={active ? icn_star_green : icn_star_gray}
-										alt="star"
-										className="star"
-									/>
-									<span className="num">2</span>
-								</div>
-								<div className="group-2">
-									<img
-										src={active ? icn_star_green : icn_star_gray}
-										alt="star"
-										className="star"
-									/>
-									<span className="num">3</span>
-								</div>
-								<div className="group-2">
-									<img
-										src={active ? icn_star_green : icn_star_gray}
-										alt="star"
-										className="star"
-									/>
-									<span className="num">4</span>
-								</div>
-								<div className="group-2">
-									<img
-										src={active ? icn_star_green : icn_star_gray}
-										alt="star"
-										className="star"
-									/>
-									<span className="num">5</span>
-								</div>
+								{[1, 2, 3, 4, 5].fill().map((_, index) => (
+									<div
+										className="group-2"
+										type="button"
+										onClick={() => setRating(index + 1)}
+										style={{
+											border: `${
+												index < rating
+													? "1px solid #5fb700"
+													: "1px solid #C2C2C2"
+											}`,
+										}}
+									>
+										<Star key={index} filled={index < rating} />
+										<span
+											style={{
+												color: `${index < rating ? "#5fb700" : "#C2C2C2"}`,
+											}}
+										>
+											{index + 1}
+										</span>
+									</div>
+								))}
 							</div>
 							<div className="field">
 								<label htmlFor="comment" className="write-a-review">
@@ -503,8 +498,6 @@ const ModalBack = styled.div`
 		box-sizing: border-box;
 		height: 21px;
 		width: 42.35px;
-		border: ${({ active }) =>
-			active ? "1px solid #5fb700" : "1px solid #C2C2C2"};
 		border-radius: 4px;
 		display: flex;
 		flex-direction: row;
@@ -515,9 +508,7 @@ const ModalBack = styled.div`
 		height: 11px;
 		width: 12.1px;
 	}
-	.num {
-		color: ${({ active }) => (active ? " #5fb700" : "#C2C2C2")};
-	}
+
 	.field {
 		height: 67px;
 		width: 432px;

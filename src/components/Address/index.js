@@ -1,11 +1,26 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import icn_check from "../../assets/icons/icn_check.png";
+import icn_check_active from "../../assets/icons/icn_check.png";
+import icn_check_inactive from "../../assets/icons/icn_check_inactive.png";
 import Modal from "./modal";
 import { Data } from "../../components/data";
 
 const Address = () => {
 	const [open, setOpen] = useState(false);
+	const buttonMap = {
+		button1: "button1",
+		button2: "button2",
+	};
+	const [primary, setPrimary] = useState();
+	const handleClick = (button) => {
+		setPrimary(button);
+	};
+
+	// const handlePrimary = () => {
+	// 	setPrimary((previousState) => {
+	// 		return !previousState;
+	// 	});
+	// };
 	return (
 		<>
 			<Div>
@@ -23,18 +38,92 @@ const Address = () => {
 				</div>
 				<div className="recommendation-2">
 					<div className="order-1">
-						{Data.map((data, key) => (
+						<div className="order-2">
+							<span className="home">Home</span>
+							<span className="address">
+								Downtown Burj Khalifa, Sheikh Mohammed bin Rashid Blvd - Dubai -
+								United Arab EmiratesDubai, UAE
+							</span>
+							<div
+								className="primary-1"
+								onClick={() => handleClick(buttonMap.button1)}
+							>
+								<img
+									src={
+										primary === buttonMap.button1
+											? icn_check_active
+											: icn_check_inactive
+									}
+									alt="icn"
+									style={{ float: "left" }}
+								/>
+								<span
+									className="primary"
+									style={{
+										color: `${
+											primary === buttonMap.button1 ? "#6A6A6A" : "#B8B8B8"
+										}`,
+									}}
+								>
+									Primary
+								</span>
+							</div>
+							<span className="edit">Edit</span>
+							<span className="delete">Delete</span>
+						</div>
+						<div className="order-2">
+							<span className="home">Office</span>
+							<div
+								className="primary-1"
+								onClick={() => handleClick(buttonMap.button2)}
+							>
+								<img
+									src={
+										primary === buttonMap.button2
+											? icn_check_active
+											: icn_check_inactive
+									}
+									alt="icn"
+									style={{ float: "left" }}
+								/>
+								<span
+									className="primary"
+									style={{
+										color: `${
+											primary === buttonMap.button2 ? "#6A6A6A" : "#B8B8B8"
+										}`,
+									}}
+								>
+									Primary
+								</span>
+							</div>
+							<span className="address">
+								Downtown Burj Khalifa,- Dubai - United Arab EmiratesDubai, UAE
+							</span>
+							<span className="edit">Edit</span>
+							<span className="delete">Delete</span>
+						</div>
+						{/* {Data.map((data, key) => (
 							<div key={key} className="order-2">
 								<span className="home">Home</span>
-								<div className="primary-1">
-									<img src={icn_check} alt="icn" style={{ float: "left" }} />
-									<span className="primary">Primary</span>
+								<div className="primary-1" onClick={handlePrimary}>
+									<img
+										src={primary ? icn_check_active : icn_check_inactive}
+										alt="icn"
+										style={{ float: "left" }}
+									/>
+									<span
+										className="primary"
+										style={{ color: `${primary ? "#6A6A6A" : "#B8B8B8"}` }}
+									>
+										Primary
+									</span>
 								</div>
 								<span className="address">{data.fulladdress}</span>
 								<span className="edit">Edit</span>
 								<span className="delete">Delete</span>
 							</div>
-						))}
+						))} */}
 					</div>
 				</div>
 				{open && <Modal setOpen={setOpen} />}
@@ -119,7 +208,7 @@ const Div = styled.div`
     .primary {
       height: 19px;
       width: 52px;
-      color: #6A6A6A;
+      
       font-family: "Open Sans";
       font-size: 14px;
       font-weight: 600;

@@ -21,10 +21,12 @@ const Orders = () => {
 						{Data.map((data, key) => (
 							<div key={key} className="rectangle-3">
 								<span className="order-id">Order id:{data.orderId}</span>
-								<span className="kitchen-type">The Boutique Kitchen</span>
-								<span className="road">Shiekh Zayed Road, , Dubai, UAE</span>
-								<span className="itemsAED">3 Items | AED85.76</span>
-								<span className="delivery-status-text ">Out for Delivery</span>
+								<span className="kitchen-type">{data.kitchen}</span>
+								<span className="road">{data.address}</span>
+								<span className="itemsAED">
+									{data.items} Items | AED{data.cost}
+								</span>
+								<span className="delivery-status-text ">{data.status}</span>
 								<div className="details">
 									<span
 										className="detail-text"
@@ -37,7 +39,7 @@ const Orders = () => {
 									</span>
 								</div>
 								<div className="status">
-									<span className="" type="button">
+									<span className="status-text" type="button">
 										STATUS
 									</span>
 								</div>
@@ -187,7 +189,6 @@ const Div = styled.div`
 		box-sizing: border-box;
 		border: 1px solid #7b7676;
 		border-radius: 18px;
-		box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
 		position: absolute;
 		top: 191px;
 		left: 197px;
@@ -199,6 +200,7 @@ const Div = styled.div`
 		height: 19px;
 		width: 79px;
 		color: #726e6e;
+		color: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
 		font-family: "Open Sans";
 		font-size: 14px;
 		font-weight: 600;
@@ -213,7 +215,6 @@ const Div = styled.div`
 		box-sizing: border-box;
 		border: 1px solid #f57c00;
 		border-radius: 18px;
-		box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
 		position: absolute;
 		top: 191px;
 		left: 327px;
@@ -224,7 +225,9 @@ const Div = styled.div`
 	.status-text {
 		height: 19px;
 		width: 58px;
-		color: #ffffff;
+		background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 		font-family: "Open Sans";
 		font-size: 14px;
 		font-weight: 600;

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-//import banner from "../../assets/images/login-background.png";
 import banner from "../../assets/images/Profilebackground.png";
 import phoneicn from "../../assets/icons/phone_icn.png";
 import mailicn from "../../assets/icons/mail_icn.png";

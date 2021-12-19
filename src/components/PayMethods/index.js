@@ -2,12 +2,22 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import visa from "../../assets/icons/visa.png";
 import mastercard from "../../assets/icons/mastercard.png";
-import icn_check from "../../assets/icons/icn_check.png";
+import icn_check_active from "../../assets/icons/icn_check.png";
+import icn_check_inactive from "../../assets/icons/icn_check_inactive.png";
 import Modal from "./modal";
 import { Data } from "../../components/data";
 
 const PayAmount = () => {
 	const [open, setOpen] = useState(false);
+	const buttonMap = {
+		button1: "button1",
+		button2: "button2",
+	};
+	const [primary, setPrimary] = useState();
+	const handleClick = (button) => {
+		setPrimary(button);
+	};
+
 	return (
 		<>
 			<Div>
@@ -25,7 +35,71 @@ const PayAmount = () => {
 				</div>
 				<div className="recommendation-2">
 					<div className="order-1">
-						{Data.map((data, key) => (
+						<div className="order-2">
+							<img src={visa} alt="bank" className="bitmap" />
+							<span className="account">American Experess</span>
+							<span className="card-type">2345222233336574</span>
+							<div
+								className="primary-1"
+								onClick={() => handleClick(buttonMap.button1)}
+							>
+								<img
+									src={
+										primary === buttonMap.button1
+											? icn_check_active
+											: icn_check_inactive
+									}
+									alt="icn"
+									style={{ float: "left" }}
+								/>
+								<span
+									className="primary"
+									style={{
+										color: `${
+											primary === buttonMap.button1 ? "#6A6A6A" : "#B8B8B8"
+										}`,
+									}}
+								>
+									Primary
+								</span>
+							</div>
+
+							<span className="edit">Edit</span>
+							<span className="delete">Delete</span>
+						</div>
+						<div className="order-2">
+							<img src={mastercard} alt="bank" className="bitmap" />
+							<span className="account">master card</span>
+							<span className="card-type">2345222233336574</span>
+							<div
+								className="primary-1"
+								onClick={() => handleClick(buttonMap.button2)}
+							>
+								<img
+									src={
+										primary === buttonMap.button2
+											? icn_check_active
+											: icn_check_inactive
+									}
+									alt="icn"
+									style={{ float: "left" }}
+								/>
+								<span
+									className="primary"
+									style={{
+										color: `${
+											primary === buttonMap.button2 ? "#6A6A6A" : "#B8B8B8"
+										}`,
+									}}
+								>
+									Primary
+								</span>
+							</div>
+
+							<span className="edit">Edit</span>
+							<span className="delete">Delete</span>
+						</div>
+						{/* {Data.map((data, key) => (
 							<div key={key} className="order-2">
 								<img src={visa} alt="bank" className="bitmap" />
 								<span className="account">{data.payment?.pay1?.type}</span>
@@ -38,7 +112,7 @@ const PayAmount = () => {
 								<span className="edit">Edit</span>
 								<span className="delete">Delete</span>
 							</div>
-						))}
+						))} */}
 					</div>
 				</div>
 				{open && <Modal setOpen={setOpen} />}
@@ -144,7 +218,6 @@ const Div = styled.div`
     .primary {
       height: 19px;
       width: 52px;
-      color: #6A6A6A;
       font-family: "Open Sans";
       font-size: 14px;
       font-weight: 600;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import icn_pin from "../../assets/icons/icn_pin.png";
+import icn_gps_indicator from "../../assets/icons/icn_gps_indicator.png";
 
 const Model = ({ setOpen }) => {
 	return (
@@ -27,18 +28,19 @@ const Model = ({ setOpen }) => {
 							className="location-1"
 							placeholder="Downtown Burj Khalifa, Dubai."
 						/>
+						<img src={icn_gps_indicator} alt="gps" className="icn_gps" />
 					</div>
 					<div className="field">
 						<label for="fname" className="label">
 							City
 						</label>
-						<input type="text" value="Dubai" className="input" />
+						<input type="text" value="" placeholder="Dubai" className="input" />
 					</div>
 					<div className="field-1">
 						<label for="fname" className="label">
 							Area
 						</label>
-						<input type="text" className="input" />
+						<input type="text" className="input" placeholder="" />
 					</div>
 					<div className="field-2">
 						<label for="fname" className="label">
@@ -139,6 +141,12 @@ const ModalContainer = styled.div`
 		font-size: 14px;
 		letter-spacing: -0.24px;
 		line-height: 19px;
+		border: none;
+	}
+	.icn_gps {
+		height: 20px;
+		width: 20px;
+		margin-left: 230px;
 	}
 	input[type="text"] {
 		width: 100%;

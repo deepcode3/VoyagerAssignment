@@ -64,7 +64,7 @@ const Modal = ({ setOpen }) => {
 						<img
 							src={icn_save_card_unchecked}
 							alt="checked_icn"
-							style={{ paddingRight: "10px" }}
+							style={{ paddingRight: "10px", color: "#5fb700" }}
 						/>
 						Add this card to saved cards
 					</span>
@@ -105,6 +105,7 @@ const ModalContainer = styled.div`
 	flex-direction: column;
 	position: relative;
 	padding: 40px;
+
 	.dismiss-button {
 		height: 12px;
 		width: 12px;
@@ -136,6 +137,7 @@ const ModalContainer = styled.div`
 		width: 560px;
 		position: relative;
 	}
+
 	.enter-credit {
 		height: 23px;
 		width: 227px;
@@ -252,7 +254,7 @@ const ModalContainer = styled.div`
 	}
 	.add-this-card-to-sav {
 		height: 19px;
-		width: 210px;
+		width: 260px;
 		color: #070707;
 		font-family: "Open Sans";
 		font-size: 14px;
@@ -261,6 +263,12 @@ const ModalContainer = styled.div`
 		line-height: 19px;
 		position: absolute;
 		top: 320px;
+	}
+	.green {
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		background-color: #5fb700;
 	}
 	.rectangle-copy {
 		height: 50px;

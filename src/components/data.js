@@ -2,17 +2,20 @@ import React from "react";
 import non_veg from "../assets/icons/non_veg.png";
 import veg from "../assets/icons/veg.png";
 import visa from "../assets/icons/visa.png";
-import mastercard from "../assets/icons/mastercard.png";
+//import mastercard from "../assets/icons/mastercard.png";
 
 export const Data = [
 	{
 		id: 1,
-		orderId: 1234567890,
+		orderId: 123456781,
 		status: "Out for delivary",
 		kitchen: "The Boutique Kitchen",
 		address: "Shiekh Zayed Road, Dubai, UAE",
-		fulladdress:
-			"Downtown Burj Khalifa, Sheikh Mohammed bin Rashid Blvd - Dubai - United Arab EmiratesDubai, UAE",
+		fulladdress: {
+			Home: "Downtown Burj Khalifa, Sheikh Mohammed bin Rashid Blvd - Dubai - United Arab EmiratesDubai, UAE",
+			Office:
+				"A-214, 4th Burj Khalifa, Dubai, UAE -Dubai - United Arab EmiratesDubai, UAE",
+		},
 		items: 3,
 		cost: 85.75,
 		time: 11.3,
@@ -66,20 +69,20 @@ export const Data = [
 	},
 	{
 		id: 2,
-		orderId: 1234567890,
+		orderId: 123456782,
 		status: "In kitchen",
-		kitchen: "The Boutique Kitchen",
-		address: "Shiekh Zayed Road, , Dubai, UAE",
-		items: 3,
-		cost: 85.75,
+		kitchen: "The Palace Kitchen",
+		address: "Bazilla  Road , Dubai, UAE",
+		items: 4,
+		cost: 92.75,
 	},
 	{
 		id: 3,
-		orderId: 1234567890,
+		orderId: 123456783,
 		status: "Out for delivary",
-		kitchen: "The Boutique Kitchen",
-		address: "Shiekh Zayed Road, , Dubai, UAE",
-		items: 3,
-		cost: 85.75,
+		kitchen: "The Boutiqq Kitchen",
+		address: "outlook town, up Road, , Dubai, UAE",
+		items: 2,
+		cost: 45.75,
 	},
 ];
