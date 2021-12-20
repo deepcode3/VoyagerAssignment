@@ -1,12 +1,7 @@
 import React from "react";
-import Profile from "./containers/Profile/index";
-
+import Routing from "./routes/index";
 function App() {
-	return (
-		<>
-			<Profile />
-		</>
-	);
+	return <Routing />;
 }
 
 export default App;

@@ -40,22 +40,21 @@ const Profile = ({ setOpen }) => {
 					<span className="credits-num">256</span>
 					<img className="icn-info-small" src={icn_info} alt="icn" />
 				</div>
-			</div>
-			<div className="links">
+
 				<ul className="list-container">
-					<Link to="/" className="Link">
+					<Link to="/profile/profile-order" className="Link">
 						<li className="span">Order</li>
 					</Link>
-					<Link to="/Address" className="Link">
+					<Link to="/profile/profile-address" className="Link">
 						<li className="span">Address</li>
 					</Link>
-					<Link to="/Pay" className="Link">
+					<Link to="/profile/profile-Pay" className="Link">
 						<li className="span">Payment Methods</li>
 					</Link>
-					<Link to="/Pay" className="Link">
+					<Link to="/profile-reviews" className="Link">
 						<li className="span">Reviews</li>
 					</Link>
-					<Link to="/Pay" className="Link">
+					<Link to="/profile-gallary" className="Link">
 						<li className="span">Gallary</li>
 					</Link>
 				</ul>
@@ -66,6 +65,7 @@ const Profile = ({ setOpen }) => {
 export default Profile;
 
 const Profilediv = styled.div`
+	//weidth:100vw;
 	height: 262px;
 	display: flex;
 	flex-direction: column;
@@ -74,24 +74,21 @@ const Profilediv = styled.div`
 	background-image: url(${banner});
 
 	.align {
-		position: relative;
-		height: 160px;
-		width: 800px;
+		height: 261px;
+		width: 940px;
 		display: flex;
+		position: relative;
 	}
-	.links {
-		width: 800px;
-	}
-
 	.list-container {
 		display: flex;
-		align-items: center;
-		text-align: center;
+		height: 35px;
 		list-style-type: none;
 		padding-left: 0;
+		position: absolute;
+		top: 209px;
 		.list-item {
 			list-style: none;
-			height: 40px;
+			//height: 40px;
 			&:hover {
 				margin-right: 50px;
 				height: 4px;
@@ -107,15 +104,13 @@ const Profilediv = styled.div`
 		position: relative;
 		text-decoration: none;
 		text-align: center;
-		text-decoration: none;
 		color: #ffffff;
 		font-family: "Open Sans";
 		font-size: 14px;
 		font-weight: 600;
 		letter-spacing: 0;
 		line-height: 24px;
-		margin-right: 30px;
-		padding-bottom: 11px;
+		margin-right: 35px;
 	}
 
 	.Link:hover:before {
@@ -137,15 +132,15 @@ const Profilediv = styled.div`
 		padding-top: 20px;
 	}
 	.mask {
-		box-sizing: border-box;
 		height: 109px;
 		width: 109px;
 		border: 3px solid #ffffff;
+		box-sizing: border-box;
 		border-radius: 50%;
 		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
 		position: absolute;
 		top: 38px;
-		background-image: url(${profile_pic});
+		left: 0px;
 	}
 	.profile_img {
 		height: 100%;
@@ -155,15 +150,15 @@ const Profilediv = styled.div`
 		background-position: 50% 50%;
 		background-size: cover;
 		border-radius: 50%;
-		position: absolute;
+		//position: absolute;
 	}
 	.name-section {
 		height: 113px;
-		width: 653px;
+		width: 663px;
 		position: absolute;
 		top: 38px;
+		left: 164px;
 		padding: 1px;
-		right: 0px;
 	}
 	.username {
 		height: 42px;
@@ -191,13 +186,8 @@ const Profilediv = styled.div`
 		position: absolute;
 		left: 1px;
 	}
-	.phone-icn {
-		height: 22px;
-		width: 16.5px;
-	}
 	.num {
 		height: 22px;
-		width: 137px;
 		color: #ffffff;
 		font-family: "Open Sans";
 		font-size: 16px;
@@ -206,36 +196,37 @@ const Profilediv = styled.div`
 		display: flex;
 		position: absolute;
 		top: 86px;
-		justify-content: space-between;
+	}
+	.phone-icn {
+		height: 22px;
+		width: 16.5px;
+		padding-right: 10px;
 	}
 	.mail-icn {
 		height: 18px;
 		width: 25px;
+		padding-right: 10px;
 	}
 	.abdulla-foodie-com {
 		height: 22px;
-		width: 170px;
 		color: #ffffff;
 		font-family: "Open Sans";
 		font-size: 16px;
 		letter-spacing: 0;
 		line-height: 22px;
-		display: flex;
 		position: absolute;
 		top: 86px;
 		left: 213px;
-		justify-content: space-between;
 	}
 	.credits-earned {
 		height: 22px;
-		width: 124px;
 		color: #ffffff;
 		font-family: "Open Sans";
 		font-size: 16px;
 		letter-spacing: 0;
 		line-height: 22px;
 		top: 86px;
-		left: 446px;
+		left: 443px;
 		position: absolute;
 	}
 	.credits-num {
@@ -247,15 +238,15 @@ const Profilediv = styled.div`
 		font-weight: bold;
 		letter-spacing: 0;
 		line-height: 33px;
-		top: 83px;
-		left: 550px;
+		top: 79px;
+		left: 565px;
 		position: absolute;
 	}
 	.icn-info-small {
 		height: 19px;
 		width: 19px;
-		top: 86px;
-		left: 600px;
+		top: 89px;
+		left: 620px;
 		position: absolute;
 	}
 	.edit {

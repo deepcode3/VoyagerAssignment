@@ -3,7 +3,7 @@ import styled from "styled-components";
 import icn_check_active from "../../assets/icons/icn_check.png";
 import icn_check_inactive from "../../assets/icons/icn_check_inactive.png";
 import Modal from "./modal";
-import { Data } from "../../components/data";
+//import { Data } from "../Profiledata";
 
 const Address = () => {
 	const [open, setOpen] = useState(false);
@@ -16,11 +16,6 @@ const Address = () => {
 		setPrimary(button);
 	};
 
-	// const handlePrimary = () => {
-	// 	setPrimary((previousState) => {
-	// 		return !previousState;
-	// 	});
-	// };
 	return (
 		<>
 			<Div>

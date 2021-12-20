@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./modal";
 import styled from "styled-components";
-import { Data } from "../../components/data";
+import { Data } from "../Profiledata";
 
 const Orders = () => {
 	const [open, setOpen] = useState(false);

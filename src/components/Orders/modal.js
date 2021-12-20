@@ -6,13 +6,9 @@ import icn_star_green from "../../assets/icons/icn_star_yellow.png";
 import red_dot from "../../assets/icons/non_veg.png";
 import green_dot from "../../assets/icons/veg.png";
 
-const Modal = ({ setOpen, open }) => {
-	const [active, setActive] = useState(false);
+const Modal = ({ setOpen }) => {
 	const [rating, setRating] = useState(0);
-	const handlerating = () => {
-		setActive(true);
-		console.log(active, "active");
-	};
+
 	const Star = ({ filled, onClick }) => {
 		return (
 			<img
@@ -24,8 +20,6 @@ const Modal = ({ setOpen, open }) => {
 		);
 	};
 
-	console.log("open state in modal:", open);
-	console.log("rating:", active);
 	return (
 		<ModalBack>
 			<div

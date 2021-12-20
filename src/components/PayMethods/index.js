@@ -5,7 +5,7 @@ import mastercard from "../../assets/icons/mastercard.png";
 import icn_check_active from "../../assets/icons/icn_check.png";
 import icn_check_inactive from "../../assets/icons/icn_check_inactive.png";
 import Modal from "./modal";
-import { Data } from "../../components/data";
+//import { Data } from "../../components/Profiledata/index";
 
 const PayAmount = () => {
 	const [open, setOpen] = useState(false);
