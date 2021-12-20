@@ -84,6 +84,7 @@
   position: relative;
   top: 22px;
   left: 18px;
+  accent-color: black;
 }
 
 .delivertometxt {
@@ -126,6 +127,7 @@
   position: relative;
   top: 30px;
   left: 18px;
+  accent-color: black;
 }
 
 .pickuptext {
@@ -360,7 +362,7 @@
 .blackline {
   box-sizing: border-box;
   height: 1px;
-  width: 338px;
+  width: 383px;
   border: 1px solid #000000;
   opacity: 0.53;
   position: absolute;
@@ -376,10 +378,11 @@
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
-  position: absolute;
-  top: 522px;
+  position: relative;
+  top: 200px;
   left: 22px;
   margin: 0px;
+  background-color: #f57c00;
 }
 .bline1 {
   box-sizing: border-box;
@@ -541,5 +544,27 @@ input[type="radio"] {
   top: 16px;
   left: 261px;
   margin: 0px;
-  visibility: none;
+  /* visibility: none; */
+  accent-color: black;
+}
+
+/* .tpicker {
+  width: 80px;
+  height: 80px;
+} */
+
+.sc-jrQzAO {
+  position: absolute;
+  top: 522px;
+  left: 22px;
+  margin: 0px;
+}
+.homecheck {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  left: 261px;
+  top: 16px;
+  accent-color: black;
+  margin: 0px;
 }
