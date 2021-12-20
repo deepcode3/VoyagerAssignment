@@ -342,7 +342,9 @@ input[type="text"]:focus {
 
 .emptyimgcart {
   position: absolute;
-  left: 200px;
+  top: 400px;
+  left: 800px;
+  justify-content: center;
 }
 
 .emptytext {
