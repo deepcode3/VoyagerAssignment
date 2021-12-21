@@ -19,7 +19,7 @@ const Model = ({ setOpen }) => {
 					<h1 className="add-new-address ">Add new address</h1>
 				</div>
 				<form>
-					<div className="mask">
+					<div className="location_settter ">
 						<img src={icn_pin} alt="location" className="icn_pin" />
 						<input
 							type=""
@@ -34,7 +34,7 @@ const Model = ({ setOpen }) => {
 						<label for="fname" className="label">
 							City
 						</label>
-						<input type="text" value="" placeholder="Dubai" className="input" />
+						<input type="text" value="" placeholder="" className="input" />
 					</div>
 					<div className="field-1">
 						<label for="fname" className="label">
@@ -119,7 +119,7 @@ const ModalContainer = styled.div`
 		line-height: 33px;
 		margin: 0 auto;
 	}
-	.mask {
+	.location_settter {
 		height: 70px;
 		width: 502px;
 		border-radius: 10px;
@@ -129,13 +129,14 @@ const ModalContainer = styled.div`
 		align-items: center;
 		position: absolute;
 		top: 121px;
+		left: 42px;
 	}
 	.icn_pin {
 		padding: 10px;
 	}
 	.location-1 {
 		height: 19px;
-		width: 192px;
+		width: 230px;
 		color: #4c4c4c;
 		font-family: "Open Sans";
 		font-size: 14px;
@@ -146,7 +147,7 @@ const ModalContainer = styled.div`
 	.icn_gps {
 		height: 20px;
 		width: 20px;
-		margin-left: 230px;
+		margin-left: 200px;
 	}
 	input[type="text"] {
 		width: 100%;

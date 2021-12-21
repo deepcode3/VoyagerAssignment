@@ -138,7 +138,7 @@ const Div = styled.div`
 	}
   .my-addresses-2 {
 		height: 22px;
-		width: 122px;
+		width: 160px;
 		color: #6f6f6f;
 		font-family: "Open Sans";
 		font-size: 16px;

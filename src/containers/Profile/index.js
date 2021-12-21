@@ -12,8 +12,6 @@ const ProfileMain = () => {
 		<Div>
 			<NavBar />
 			<Profile open={open} setOpen={setOpen} />
-			.
-			<Profileroute />
 			{open && <EditModal setOpen={setOpen} />}
 			<Footer />
 		</Div>

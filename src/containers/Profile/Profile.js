@@ -6,60 +6,64 @@ import mailicn from "../../assets/icons/mail_icn.png";
 import icn_info from "../../assets/icons/icn_info_small.png";
 import { Link } from "react-router-dom";
 import profile_pic from "../../assets/images/profile_pic.png";
+import Profileroute from "../../components/Profilerouter/index";
 
 const Profile = ({ setOpen }) => {
 	return (
-		<Profilediv>
-			<div className="align">
-				<div className="mask">
-					<img src={profile_pic} alt="pic" className="profile_img" />
-				</div>
-				<div className="name-section">
-					<span className="username">Abdulla</span>
-					<span
-						className="edit"
-						type="button"
-						onClick={() => {
-							setOpen(true);
-						}}
-					>
-						Edit
-					</span>
-					<span className="name">Abdulla Mohammad</span>
-					<span className="num">
-						<img className="phone-icn" src={phoneicn} alt="icn" />
-						+971 876561234
-					</span>
-					<br className="line-3 " />
-					<span className="abdulla-foodie-com ">
-						<img className="mail-icn" src={mailicn} alt="icn" />
-						abdulla@foodie.com
-					</span>
-					<br className="line-3 " />
-					<span className="credits-earned">Credits earned-</span>
-					<span className="credits-num">256</span>
-					<img className="icn-info-small" src={icn_info} alt="icn" />
-				</div>
+		<>
+			<Profilediv>
+				<div className="align">
+					<div className="mask">
+						<img src={profile_pic} alt="pic" className="profile_img" />
+					</div>
+					<div className="name-section">
+						<span className="username">Abdulla</span>
+						<span
+							className="edit"
+							type="button"
+							onClick={() => {
+								setOpen(true);
+							}}
+						>
+							Edit
+						</span>
+						<span className="name">Abdulla Mohammad</span>
+						<span className="num">
+							<img className="phone-icn" src={phoneicn} alt="icn" />
+							+971 876561234
+						</span>
+						<br className="line-3 " />
+						<span className="abdulla-foodie-com ">
+							<img className="mail-icn" src={mailicn} alt="icn" />
+							abdulla@foodie.com
+						</span>
+						<br className="line-3 " />
+						<span className="credits-earned">Credits earned-</span>
+						<span className="credits-num">256</span>
+						<img className="icn-info-small" src={icn_info} alt="icn" />
+					</div>
 
-				<ul className="list-container">
-					<Link to="/profile/profile-order" className="Link">
-						<li className="span">Order</li>
-					</Link>
-					<Link to="/profile/profile-address" className="Link">
-						<li className="span">Address</li>
-					</Link>
-					<Link to="/profile/profile-Pay" className="Link">
-						<li className="span">Payment Methods</li>
-					</Link>
-					<Link to="/profile-reviews" className="Link">
-						<li className="span">Reviews</li>
-					</Link>
-					<Link to="/profile-gallary" className="Link">
-						<li className="span">Gallary</li>
-					</Link>
-				</ul>
-			</div>
-		</Profilediv>
+					<ul className="list-container">
+						<Link to="/profile" className="Link">
+							<li className="span">Order</li>
+						</Link>
+						<Link to="/profile/profile-address" className="Link">
+							<li className="span">Address</li>
+						</Link>
+						<Link to="/profile/profile-Pay" className="Link">
+							<li className="span">Payment Methods</li>
+						</Link>
+						<Link to="/profile-reviews" className="Link">
+							<li className="span">Reviews</li>
+						</Link>
+						<Link to="/profile-gallary" className="Link">
+							<li className="span">Gallary</li>
+						</Link>
+					</ul>
+				</div>
+			</Profilediv>
+			<Profileroute />
+		</>
 	);
 };
 export default Profile;
