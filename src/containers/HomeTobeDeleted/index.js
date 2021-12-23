@@ -12,7 +12,7 @@ import PasswordChangeSuccess from '../PasswordChangeSuccess';
 
 const HomeTobeDeleted = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [pageStatus, setPageStatus] = useState('login');
+  const [pageStatus, setPageStatus] = useState('welcome-page');
   return (
     <Wrapper>
       <button

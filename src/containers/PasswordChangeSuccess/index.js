@@ -47,8 +47,8 @@ const PasswordChangeSuccess = ({ modalIsOpen, setModalIsOpen, setPageStatus }) =
 export default PasswordChangeSuccess;
 PasswordChangeSuccess.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

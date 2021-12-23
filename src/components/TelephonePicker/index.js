@@ -71,11 +71,11 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
 export default TelephonePicker;
 TelephonePicker.propTypes = {
   name: PropTypes.string.isRequired,
-  register: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired,
   msg: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  selectedCode: PropTypes.number.isRequired,
-  setSelectedCode: PropTypes.number.isRequired,
+  selectedCode: PropTypes.string.isRequired,
+  setSelectedCode: PropTypes.func.isRequired,
 };
 const FormContainer = styled.div`
   position: relative;

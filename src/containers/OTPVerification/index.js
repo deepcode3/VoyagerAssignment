@@ -68,8 +68,8 @@ const OTPVerification = ({ modalIsOpen, setModalIsOpen, setPageStatus, purpose }
 export default OTPVerification;
 OTPVerification.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
   purpose: PropTypes.string.isRequired,
 };
 const Wrapper = styled.div`

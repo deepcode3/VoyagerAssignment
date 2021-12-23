@@ -57,7 +57,6 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
           <BlackText>Lets get started!</BlackText>
           <Form onSubmit={handleSubmit(submitForm)}>
             <InputField name='email' register={register} msg={errors.email.message} label='Email' />
-
             <InputField
               name='password'
               register={register}
