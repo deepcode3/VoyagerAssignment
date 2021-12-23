@@ -1,173 +1,156 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import visa from "../../assets/icons/visa.png";
-import mastercard from "../../assets/icons/mastercard.png";
-import icn_check_active from "../../assets/icons/icn_check.png";
-import icn_check_inactive from "../../assets/icons/icn_check_inactive.png";
-import Modal from "./modal";
-//import { Data } from "../../components/Profiledata/index";
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import visa from '../../assets/icons/visa.png';
+import mastercard from '../../assets/icons/mastercard.png';
+import icnCheckActive from '../../assets/icons/icn_check.png';
+import icnCheckInactive from '../../assets/icons/icn_check_inactive.png';
+import Modal from './modal';
 
 const PayAmount = () => {
-	const [open, setOpen] = useState(false);
-	const buttonMap = {
-		button1: "button1",
-		button2: "button2",
-	};
-	const [primary, setPrimary] = useState();
-	const handleClick = (button) => {
-		setPrimary(button);
-	};
+  const [open, setOpen] = useState(false);
+  const buttonMap = {
+    button1: 'button1',
+    button2: 'button2',
+  };
+  const [primary, setPrimary] = useState();
+  const handleClick = (button) => {
+    setPrimary(button);
+  };
 
-	return (
-		<>
-			<Div>
-				<div className="recommendation-1">
-					<span className="my-addresses-2">Payment Methods</span>
-					<span
-						className="add-new"
-						type="button"
-						onClick={() => {
-							setOpen(true);
-						}}
-					>
-						+ Add new
-					</span>
-				</div>
-				<div className="recommendation-2">
-					<div className="order-1">
-						<div className="order-2">
-							<img src={visa} alt="bank" className="bitmap" />
-							<span className="account">American Experess</span>
-							<span className="card-type">2345222233336574</span>
-							<div
-								className="primary-1"
-								onClick={() => handleClick(buttonMap.button1)}
-							>
-								<img
-									src={
-										primary === buttonMap.button1
-											? icn_check_active
-											: icn_check_inactive
-									}
-									alt="icn"
-									style={{ float: "left" }}
-								/>
-								<span
-									className="primary"
-									style={{
-										color: `${
-											primary === buttonMap.button1 ? "#6A6A6A" : "#B8B8B8"
-										}`,
-									}}
-								>
-									Primary
-								</span>
-							</div>
+  return (
+    <Div>
+      <div className='recommendation-1'>
+        <span className='my-addresses-2'>Payment Methods</span>
+        <span
+          className='add-new'
+          type='button'
+          onClick={() => {
+            setOpen(true);
+          }}
+          role='button'
+          onKeyDown={null}
+        >
+          + Add new
+        </span>
+      </div>
+      <div className='recommendation-2'>
+        <div className='order-1'>
+          <div className='order-2'>
+            <img src={visa} alt='bank' className='bitmap' />
+            <span className='account'>American Experess</span>
+            <span className='card-type'>2345222233336574</span>
+            <div
+              className='primary-1'
+              onClick={() => {
+                return handleClick(buttonMap.button1);
+              }}
+              onKeyDown={null}
+              role='button'
+            >
+              <img
+                src={primary === buttonMap.button1 ? icnCheckActive : icnCheckInactive}
+                alt='icn'
+                style={{ float: 'left' }}
+              />
+              <span
+                className='primary'
+                style={{
+                  color: `${primary === buttonMap.button1 ? '#6A6A6A' : '#B8B8B8'}`,
+                }}
+              >
+                Primary
+              </span>
+            </div>
 
-							<span className="edit">Edit</span>
-							<span className="delete">Delete</span>
-						</div>
-						<div className="order-2">
-							<img src={mastercard} alt="bank" className="bitmap" />
-							<span className="account">master card</span>
-							<span className="card-type">2345222233336574</span>
-							<div
-								className="primary-1"
-								onClick={() => handleClick(buttonMap.button2)}
-							>
-								<img
-									src={
-										primary === buttonMap.button2
-											? icn_check_active
-											: icn_check_inactive
-									}
-									alt="icn"
-									style={{ float: "left" }}
-								/>
-								<span
-									className="primary"
-									style={{
-										color: `${
-											primary === buttonMap.button2 ? "#6A6A6A" : "#B8B8B8"
-										}`,
-									}}
-								>
-									Primary
-								</span>
-							</div>
+            <span className='edit'>Edit</span>
+            <span className='delete'>Delete</span>
+          </div>
+          <div className='order-2'>
+            <img src={mastercard} alt='bank' className='bitmap' />
+            <span className='account'>master card</span>
+            <span className='card-type'>2345222233336574</span>
+            <div
+              className='primary-1'
+              onClick={() => {
+                return handleClick(buttonMap.button2);
+              }}
+              onKeyDown={null}
+              role='button'
+            >
+              <img
+                src={primary === buttonMap.button2 ? icnCheckActive : icnCheckInactive}
+                alt='icn'
+                style={{ float: 'left' }}
+              />
+              <span
+                className='primary'
+                style={{
+                  color: `${primary === buttonMap.button2 ? '#6A6A6A' : '#B8B8B8'}`,
+                }}
+              >
+                Primary
+              </span>
+            </div>
 
-							<span className="edit">Edit</span>
-							<span className="delete">Delete</span>
-						</div>
-						{/* {Data.map((data, key) => (
-							<div key={key} className="order-2">
-								<img src={visa} alt="bank" className="bitmap" />
-								<span className="account">{data.payment?.pay1?.type}</span>
-								<span className="card-type">{data.payment?.pay1?.account}</span>
-								<div className="primary-1">
-									<img src={icn_check} alt="icn" style={{ float: "left" }} />
-									<span className="primary">Primary</span>
-								</div>
-
-								<span className="edit">Edit</span>
-								<span className="delete">Delete</span>
-							</div>
-						))} */}
-					</div>
-				</div>
-				{open && <Modal setOpen={setOpen} />}
-			</Div>
-		</>
-	);
+            <span className='edit'>Edit</span>
+            <span className='delete'>Delete</span>
+          </div>
+        </div>
+      </div>
+      {open && <Modal setOpen={setOpen} />}
+    </Div>
+  );
 };
 export default PayAmount;
 
 const Div = styled.div`
-	//height: 100vh;
-	weidth: 100wh;
-	display: flex;
-	align-items: center;
+height: 100vh;
+weidth: 100wh;
+display: flex;
+align-items: center;
  padding:75px 0;
   flex-direction:column;
   position: relative;
-	background-color: #f1f3fb;
+background-color: #f1f3fb;
   .recommendation-1 {
-		width: 930px;
+width: 930px;
     display:flex;
 
-	}
+}
   .my-addresses-2 {
-		height: 22px;
-		width: 160px;
-		color: #6f6f6f;
-		font-family: "Open Sans";
-		font-size: 16px;
-		letter-spacing: -0.27px;
-		line-height: 22px;
+height: 22px;
+width: 160px;
+color: #6f6f6f;
+font-family: "Open Sans";
+font-size: 16px;
+letter-spacing: -0.27px;
+line-height: 22px;
     margin
-	}
-	.add-new {
-		height: 19px;
-		width: 83px;
-		color: #fda200;
-		font-family: "SF UI Text";
-		font-size: 16px;
-		font-weight: 500;
-		letter-spacing: 0;
-		line-height: 19px;
-		text-align: right;
+}
+.add-new {
+height: 19px;
+width: 83px;
+color: #fda200;
+font-family: "SF UI Text";
+font-size: 16px;
+font-weight: 500;
+letter-spacing: 0;
+line-height: 19px;
+text-align: right;
     margin-left:720px;
-	}
+}
   .recommendation-2 {
-		height: 536px;
-		width: 980px;
+height: 536px;
+width: 980px;
     overflow-y: scroll;
     position: relative;
-	}
-	  .order-1 {
+}
+ .order-1 {
     width: 980px;
-		max-height: 100%;
-		}
+max-height: 100%;
+}
     .order-2 {
       height: 186px;
       width: 469px;
@@ -253,5 +236,5 @@ const Div = styled.div`
       top:143px;
       left:400px;
     }
-	}
+}
 `;

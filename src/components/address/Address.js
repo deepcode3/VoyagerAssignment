@@ -11,7 +11,7 @@ import pickupicon from '../../assets/icons/pickupicon.png';
 import addnewbtn from '../../assets/icons/button.png';
 import './Address.css';
 
-const Address = () => {
+const CartAddress = () => {
   const mobileSchema = yup.object().shape({
     mobile: yup
       .string()
@@ -23,7 +23,6 @@ const Address = () => {
   const [selectedCode, setSelectedCode] = useState('91');
   const {
     register: register2,
-    // handleSubmit: handleSubmit2,
     formState: { errors: errors2 },
   } = useForm({
     resolver: yupResolver(mobileSchema),
@@ -145,4 +144,4 @@ const Address = () => {
   );
 };
 
-export default Address;
+export default CartAddress;
