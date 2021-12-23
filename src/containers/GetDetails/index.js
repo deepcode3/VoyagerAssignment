@@ -68,19 +68,19 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             <InputField
               name='firstName'
               register={register}
-              msg={errors.firstName.message}
+              msg={errors.firstName?.message}
               label='First Name'
             />
             <InputField
               name='lastName'
               register={register}
-              msg={errors.lastName.message}
+              msg={errors.lastName?.message}
               label='Last Name'
             />
             <TelephonePicker
               name='mobile'
               register={register}
-              msg={errors.mobile.message}
+              msg={errors.mobile?.message}
               label='Enter mobile number (optional)'
               selectedCode={selectedCode}
               setSelectedCode={setSelectedCode}
@@ -88,7 +88,7 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             <InputField
               name='password'
               register={register}
-              msg={errors.password.message}
+              msg={errors.password?.message}
               label='Create Password'
             />
 

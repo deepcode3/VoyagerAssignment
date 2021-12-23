@@ -52,9 +52,13 @@ export default InputField;
 InputField.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  isPassword: PropTypes.bool.isRequired,
+  isPassword: PropTypes.bool,
   register: PropTypes.func.isRequired,
-  msg: PropTypes.string.isRequired,
+  msg: PropTypes.string,
+};
+InputField.defaultProps = {
+  isPassword: false,
+  msg: null
 };
 const FormContainer = styled.div`
   position: relative;

@@ -57,7 +57,7 @@ const OTPVerification = ({ modalIsOpen, setModalIsOpen, setPageStatus, purpose }
             soon!
           </Description>
           <Container onSubmit={handleSubmit(submitForm)}>
-            <InputField name='otp' register={register} msg={errors.otp.message} label='Enter OTP' />
+            <InputField name='otp' register={register} msg={errors.otp?.message} label='Enter OTP' />
             <StyledButton type='submit'>VERIFY</StyledButton>
           </Container>
         </RightWrapper>
@@ -70,7 +70,10 @@ OTPVerification.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
-  purpose: PropTypes.string.isRequired,
+  purpose: PropTypes.string,
+};
+OTPVerification.defaultProps = {
+  purpose: null
 };
 const Wrapper = styled.div`
   height: 588px;

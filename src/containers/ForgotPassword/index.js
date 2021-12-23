@@ -105,7 +105,7 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
                 <InputField
                   name='email'
                   register={register}
-                  msg={errors.email.message}
+                  msg={errors.email?.message}
                   label='Email'
                 />
                 <StyledButton type='submit'>SEND OTP</StyledButton>
@@ -115,7 +115,7 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
                 <TelephonePicker
                   name='mobile'
                   register={register2}
-                  msg={errors2.mobile.message}
+                  msg={errors2.mobile?.message}
                   label='Mobile no.'
                   selectedCode={selectedCode}
                   setSelectedCode={setSelectedCode}
@@ -222,7 +222,6 @@ const Navbar = styled.div`
   width: 40%;
   justify-content: space-between;
 `;
-
 const TypeContainer = styled.div`
   display: flex;
   flex-direction: column;

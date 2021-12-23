@@ -62,7 +62,7 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             Share your email address to send you the OTP to get yourself registered!
           </Description>
           <DataContainer onSubmit={handleSubmit(submitForm)}>
-            <InputField name='email' register={register} msg={errors.email.message} label='Email' />
+            <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
             <StyledButton type='submit'>CREATE ACCOUNT</StyledButton>
           </DataContainer>
           <TextWithButton
@@ -84,8 +84,8 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
 export default Signup;
 Signup.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

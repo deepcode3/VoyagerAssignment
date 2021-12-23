@@ -57,7 +57,7 @@ const PasswordChange = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
               // eslint-disable-next-line react/jsx-boolean-value
               isPassword={true}
               register={register}
-              msg={errors.password.message}
+              msg={errors.password?.message}
               label='Enter New Password'
             />
             <StyledButton type='submit'>CHANGE PASSWORD</StyledButton>

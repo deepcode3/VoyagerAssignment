@@ -32,7 +32,10 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
     console.log(data);
     setModalIsOpen(false);
   };
-
+  const handleForgotClick = () => {
+    setPageStatus('forgot-password');
+  };
+  console.log(errors);
   return (
     <Modal
       className='wrapper'
@@ -56,21 +59,18 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
           </Button>
           <BlackText>Lets get started!</BlackText>
           <Form onSubmit={handleSubmit(submitForm)}>
-            <InputField name='email' register={register} msg={errors.email.message} label='Email' />
+            <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
             <InputField
               name='password'
               register={register}
               // eslint-disable-next-line react/jsx-boolean-value
               isPassword={true}
-              msg={errors.password.message}
+              msg={errors.password?.message}
               label='Password'
             />
 
             <ForgotButton
-              type='button'
-              onClick={() => {
-                return setPageStatus('forgot-password');
-              }}
+              onClick={handleForgotClick}
             >
               Forgot Password?
             </ForgotButton>
@@ -148,12 +148,18 @@ const Form = styled.form`
 `;
 
 const ForgotButton = styled.button`
-  color: black;
+  height: 19px;
+  width: 135px;
+  color: #4A4A4A;
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  text-align: right;
   border: none;
-  font-weight: 100;
   outline: none;
-  margin-left: 67%;
+  margin-left: 60%;
   margin-top: -8%;
 `;

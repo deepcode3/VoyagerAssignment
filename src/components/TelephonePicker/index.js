@@ -21,7 +21,7 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
   };
 
   return (
-    <FormContainer>
+    <FormContainerTel>
       <Label>{label}</Label>
       <MobileNumberContainer>
         <OptionSelected>
@@ -65,22 +65,26 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
         <MobileNumber name={name} {...register(name)} />
       </MobileNumberContainer>
       {msg !== undefined ? <p className='error'>{msg}</p> : null}
-    </FormContainer>
+    </FormContainerTel>
   );
 };
 export default TelephonePicker;
 TelephonePicker.propTypes = {
   name: PropTypes.string.isRequired,
   register: PropTypes.func.isRequired,
-  msg: PropTypes.string.isRequired,
+  msg: PropTypes.string,
   label: PropTypes.string.isRequired,
   selectedCode: PropTypes.string.isRequired,
   setSelectedCode: PropTypes.func.isRequired,
 };
-const FormContainer = styled.div`
+TelephonePicker.defaultProps = {
+  msg: undefined
+};
+const FormContainerTel = styled.div`
   position: relative;
   height: 53px;
   width: 380px;
+
   .error {
     margin-top: 3px;
     margin-left: 34%;
