@@ -1,27 +1,22 @@
-import {React,useState} from 'react'
-import CommonHeader from '../headercommon/CommonHeader'
+import { React, useState } from 'react';
+import CommonHeader from '../headercommon/CommonHeader';
 import Cartdata from './Cartdata';
 import Cartlist from './Cartlist';
-import './CartHome.css'
+import './CartHome.css';
 
-const CartHome=()=>{
-    const[cartifo, setCartinfo]=useState(Cartdata)
-    return(
-        <>
-        <CommonHeader/>
-        <div className='cartbg'>
-            {
-                cartifo.map((val)=>{
-                    return  <Cartlist key={val.id} {...val}/>
-                    
-                })
-            }
-            
-           
+const CartHome = () => {
+  const [cartifo] = useState(Cartdata);
+  return (
+    <>
+      <CommonHeader />
+      <div className='cartbg'>
+        {cartifo.map((val) => {
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          return <Cartlist key={val.id} {...val} />;
+        })}
+      </div>
+    </>
+  );
+};
 
-        </div>
-        </>
-    )
-}
-
-export default CartHome
+export default CartHome;

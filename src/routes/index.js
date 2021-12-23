@@ -13,50 +13,51 @@ import Reviews from '../components/menuComponent/review';
 import Gallery from '../components/menuComponent/gallery';
 import CartContextProvider from '../context/cartContext';
 import Cart from '../components/description/cart';
-const Routing = () => {
-	return (
-		<Router>
-			<Switch>
-				<Route exact path="/">
-					<Home />
-				</Route>
-				<Route exact path="/restaurants/:searchKey/:location">
-					<RestaurantData />
-				</Route>
-				<Route path="/cart">
-					<CartContextProvider>
-						<Cart />
-					</CartContextProvider>
-				</Route>
-				<Route path="/address">
-					<Addresscomp />
-				</Route>
-				<Route path="/home-header" component={HomeTobeDeleted} />
-				<Route path="/payment" component={Payment} />
 
-				<Route path="/finalpay" component={FinalPayment}></Route>
-				<Route path="/carthome">
-					<CartHome />
-				</Route>
-				<Route path="/address">
-					<Addresscomp />
-				</Route>
-				<Route path="/:searchKey/:location/menu/:restaurant/:item">
-					<CartContextProvider>
-						<Menu />
-					</CartContextProvider>
-				</Route>
-				<Route path="/:searchKey/:location/overview/:restaurant/:item">
-					<OverView />
-				</Route>
-				<Route path="/:searchKey/:location/reviews/:restaurant/:item">
-					<Reviews />
-				</Route>
-				<Route path="/:searchKey/:location/gallery/:restaurant/:item">
-					<Gallery />
-				</Route>
-			</Switch>
-		</Router>
-	);
+const Routing = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route exact path='/restaurants/:searchKey/:location'>
+          <RestaurantData />
+        </Route>
+        <Route path='/cart'>
+          <CartContextProvider>
+            <Cart />
+          </CartContextProvider>
+        </Route>
+        <Route path='/address'>
+          <Addresscomp />
+        </Route>
+        <Route path='/home-header' component={HomeTobeDeleted} />
+        <Route path='/payment' component={Payment} />
+
+        <Route path='/finalpay' component={FinalPayment} />
+        <Route path='/carthome'>
+          <CartHome />
+        </Route>
+        <Route path='/address'>
+          <Addresscomp />
+        </Route>
+        <Route path='/:searchKey/:location/menu/:restaurant/:item'>
+          <CartContextProvider>
+            <Menu />
+          </CartContextProvider>
+        </Route>
+        <Route path='/:searchKey/:location/overview/:restaurant/:item'>
+          <OverView />
+        </Route>
+        <Route path='/:searchKey/:location/reviews/:restaurant/:item'>
+          <Reviews />
+        </Route>
+        <Route path='/:searchKey/:location/gallery/:restaurant/:item'>
+          <Gallery />
+        </Route>
+      </Switch>
+    </Router>
+  );
 };
 export default Routing;
