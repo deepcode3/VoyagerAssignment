@@ -53,7 +53,7 @@ InputField.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   isPassword: PropTypes.bool.isRequired,
-  register: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired,
   msg: PropTypes.string.isRequired,
 };
 const FormContainer = styled.div`
