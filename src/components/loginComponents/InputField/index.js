@@ -78,7 +78,7 @@ const FormContainer = styled.div`
     font-weight: 400;
     letter-spacing: -0.2px;
     line-height: 17px;
-    margin-top: 35px;
+    margin-top: 25px;
   }
   .redBorder {
     border-bottom: 1px solid #ed1b2e;

@@ -225,6 +225,7 @@ const Navbar = styled.div`
 const TypeContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height:20px;
 `;
 const InputTypeButton = styled.button`
   height: 24px;

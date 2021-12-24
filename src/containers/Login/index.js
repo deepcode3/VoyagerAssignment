@@ -71,6 +71,7 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
 
             <ForgotButton
               onClick={handleForgotClick}
+              type='button'
             >
               Forgot Password?
             </ForgotButton>
