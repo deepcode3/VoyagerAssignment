@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 import * as yup from 'yup';
 import Modal from 'react-modal';
 import { yupResolver } from '@hookform/resolvers/yup';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import InputField from '../../components/loginComponents/InputField/index';
-import StyledButton from '../../components/commonButton/index';
-import TextWithButton from '../../components/loginComponents/TextWithButton';
-import LoginOptions from '../../components/loginComponents/LoginOptions';
+import LogoWithText from '../../components/LoginComponents/logoWithText/index';
+import InputField from '../../components/LoginComponents/InputField/index';
+import StyledButton from '../../components/CommonButton/index';
+import TextWithButton from '../../components/LoginComponents/TextWithButton';
+import LoginOptions from '../../components/LoginComponents/LoginOptions';
 import closeButton from '../../assets/icons/close_button.png';
 
 Modal.setAppElement('#root');

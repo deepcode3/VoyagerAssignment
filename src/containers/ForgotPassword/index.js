@@ -5,11 +5,11 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import StyledButton from '../../components/commonButton/index';
+import LogoWithText from '../../components/LoginComponents/logoWithText/index';
+import StyledButton from '../../components/CommonButton/index';
 import forgotPasswordIcon from '../../assets/icons/icn_forgot_password.png';
 import BackIcon from '../../assets/icons/back_icon.png';
-import InputField from '../../components/loginComponents/InputField';
+import InputField from '../../components/LoginComponents/InputField';
 import border from '../../assets/icons/border.png';
 import TelephonePicker from '../../components/TelephonePicker/index';
 

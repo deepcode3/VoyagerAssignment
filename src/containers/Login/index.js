@@ -5,11 +5,11 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import InputField from '../../components/loginComponents/InputField/index';
-import StyledButton from '../../components/commonButton/index';
-import LoginOptions from '../../components/loginComponents/LoginOptions';
-import TextWithButton from '../../components/loginComponents/TextWithButton';
+import LogoWithText from '../../components/LoginComponents/logoWithText/index';
+import InputField from '../../components/LoginComponents/InputField/index';
+import StyledButton from '../../components/CommonButton/index';
+import LoginOptions from '../../components/LoginComponents/LoginOptions/index';
+import TextWithButton from '../../components/LoginComponents/TextWithButton/index';
 import closeButton from '../../assets/icons/close_button.png';
 
 Modal.setAppElement('#root');
