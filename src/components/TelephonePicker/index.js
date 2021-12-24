@@ -19,11 +19,10 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
     );
     setDropDownStatus(false);
   };
-
   return (
     <FormContainerTel>
       <Label>{label}</Label>
-      <NumberContainer>
+      <NumContainer>
         <OptionSelected>
           <OptionWrapper>
             <Flag src={`/assets/images/${selectedCountry}.png`} />
@@ -63,7 +62,7 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
           </OutsideAlerter>
         ) : null}
         <MobileNumber name={name} {...register(name)} />
-      </NumberContainer>
+      </NumContainer>
       {msg !== undefined ? <p className='errorMobile'>{msg}</p> : null}
     </FormContainerTel>
   );
@@ -81,10 +80,8 @@ TelephonePicker.defaultProps = {
   msg: null
 };
 const FormContainerTel = styled.div`
-  position: relative;
   height: 53px;
   width: 380px;
-
   .errorMobile {
     margin-left: 34%;
     color: #ed1b2e;
@@ -95,11 +92,11 @@ const FormContainerTel = styled.div`
     height: 17px;
   }
 `;
-const NumberContainer = styled.div`
+const NumContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;
-  height:70%;
   justify-content: space-between;
 `;
 const DropDown = styled.img`
