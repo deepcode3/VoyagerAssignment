@@ -10,7 +10,7 @@ import Header from '../../components/Header';
 const Home = () => {
   return (
     <div className='homeBg'>
-      {localStorage.getItem('accessToken') ? <Header afterLogin /> : <Header />}
+      <Header />
       <div className='homeInfo'>
         <span className='homeInfo1'>Order your food</span>
         <br />

@@ -1,7 +1,6 @@
 import { React, useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Logo from '../logo';
 import ForgotPassword from '../../containers/ForgotPassword';
 import Login from '../../containers/Login';
@@ -14,18 +13,20 @@ import PasswordChangeSuccess from '../../containers/PasswordChangeSuccess';
 import iconCart from '../../assets/icons/icn_cart.png';
 import icnProfile from '../../assets/icons/icn_profile.svg';
 
-const Header = ({ afterLogin }) => {
+const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
+    window.location.reload();
   };
+  const loginStatus = localStorage.getItem('accessToken');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
-
+  console.log(loginStatus);
   return (
     <HeaderWrapper>
-      {afterLogin ? <Logo afterLogin /> : <Logo />}
+      {loginStatus ? <Logo afterLogin /> : <Logo />}
       <LinkContainer>
-        {afterLogin ? (
+        {loginStatus ? (
           <>
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
@@ -42,7 +43,7 @@ const Header = ({ afterLogin }) => {
             LOGIN
           </Button>
         )}
-        {afterLogin ? (
+        {loginStatus ? (
           <Button onClick={handleLogout}>LOGOUT</Button>
         ) : (
           <Button
@@ -54,7 +55,7 @@ const Header = ({ afterLogin }) => {
             CREATE AN ACCOUNT
           </Button>
         )}
-        {afterLogin ? (
+        {loginStatus ? (
           <>
             <CartIconOrange src={iconCart} alt='icon' />
             <CartLinkOrange to='/cart'>CART</CartLinkOrange>
@@ -135,10 +136,6 @@ const Header = ({ afterLogin }) => {
   );
 };
 export default Header;
-Header.propTypes = {
-  afterLogin: PropTypes.bool,
-};
-Header.defaultProps = { afterLogin: false };
 
 const HeaderWrapper = styled.div`
   background-color: transparent;
