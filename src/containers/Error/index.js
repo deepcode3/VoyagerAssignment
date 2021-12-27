@@ -11,15 +11,17 @@ const Error404 = () => {
   return (
     <Wrapper>
       <CommonHeader />
-      <ErrorStatus src={Image404} alt='Error' />
-      <ErrorMessage>That page doesnot exist on our website</ErrorMessage>
-      <TakeHomeButton
-        onClick={() => {
-          history.push('/');
-        }}
-      >
-        <ButtonImage src={takeHome} alt='takeHomeButton' />
-      </TakeHomeButton>
+      <ErrorContainer>
+        <ErrorStatus src={Image404} alt='Error' />
+        <ErrorMessage>That page doesnot exist on our website</ErrorMessage>
+        <TakeHomeButton
+          onClick={() => {
+            history.push('/');
+          }}
+        >
+          <ButtonImage src={takeHome} alt='takeHomeButton' />
+        </TakeHomeButton>
+      </ErrorContainer>
       <Footer />
     </Wrapper>
   );
@@ -36,10 +38,8 @@ const Wrapper = styled.div`
 `;
 
 const ErrorStatus = styled.img`
-  height: 317px;
-  width: 479px;
-  opacity: 0.92;
-  margin-top: 10%;
+  height: 175px;
+  width: 450px;
 `;
 const ErrorMessage = styled.p`
   height: 27px;
@@ -51,7 +51,6 @@ const ErrorMessage = styled.p`
   line-height: 27px;
 `;
 const TakeHomeButton = styled.button`
-  margin-bottom: 40%;
   height: 56px;
   width: 156px;
   padding: 0;
@@ -61,4 +60,15 @@ const TakeHomeButton = styled.button`
 const ButtonImage = styled.img`
   height: 56px;
   width: 156px;
+`;
+const ErrorContainer = styled.div`
+  background-color: #e3e6f0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: 0.92;
+  align-items: center;
+  padding-top: 14%;
+  padding-bottom: 34%;
+  margin-top: -80px;
 `;
