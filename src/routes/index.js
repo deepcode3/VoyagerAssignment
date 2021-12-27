@@ -14,6 +14,7 @@ import CartContextProvider from '../context/cartContext';
 import Cart from '../components/description/cart';
 import ProfileMain from '../containers/Profile/index';
 import Footer from '../components/Footer/index';
+import Error from '../containers/Error/index';
 
 const Routing = () => {
   return (
@@ -25,9 +26,15 @@ const Routing = () => {
         <Route exact path='/restaurants/:searchKey/:location'>
           <RestaurantData />
         </Route>
-        <Route exact path='/footer'>
-          <Footer />
-        </Route>
+        <Route path='/footer' component={Footer} />
+        <Route path='/about' component={Error} />
+        <Route path='/careers' component={Error} />
+        <Route path='/privacy-policy' component={Error} />
+        <Route path='/terms-&-conditions' component={Error} />
+        <Route path='/mobile-app' component={Error} />
+        <Route path='/blog' component={Error} />
+        <Route path='/contact' component={Error} />
+        <Route path='/sitemap' component={Error} />
         <Route exact path='/cart'>
           <CartContextProvider>
             <Cart />
