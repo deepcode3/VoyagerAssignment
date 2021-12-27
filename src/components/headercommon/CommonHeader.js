@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Header from '../Header';
 import SearchBar, { LocationSetter } from '../homeComponents/searchbar/index';
-import Logo from '../logo/index';
 import '../../containers/restaurants/index';
 import menuSemiBg from '../../assets/images/menuSemiBg.png';
 import dateTime from '../../assets/icons/dateTime.png';
@@ -11,7 +11,7 @@ const CommonHeader = ({ data, searchKey, location }) => {
   return (
     <>
       <div className='cheader'>
-        <Logo />
+        <Header />
       </div>
       <img src={menuSemiBg} alt='semiBg' className='csemiBg' />
 

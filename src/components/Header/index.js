@@ -25,7 +25,7 @@ const Header = ({ isHome }) => {
 
   return (
     <HeaderWrapper>
-      {loginStatus && !isHome ? <Logo afterLogin /> : <Logo />}
+      {isHome ? <Logo /> : <Logo afterLogin />}
       <LinkContainer>
         {loginStatus ? (
           <>
@@ -48,6 +48,7 @@ const Header = ({ isHome }) => {
           <Button onClick={handleLogout}>LOGOUT</Button>
         ) : (
           <Button
+            className='createNew'
             onClick={() => {
               setPageStatus('signup');
               setModalIsOpen(true);
@@ -56,16 +57,16 @@ const Header = ({ isHome }) => {
             CREATE AN ACCOUNT
           </Button>
         )}
-        {loginStatus && !isHome ? (
+        <VerticalLine className='smallLine' />
+        {isHome ? (
           <>
-            <CartIconOrange src={iconCart} alt='icon' />
-            <CartLinkOrange to='/cart'>CART</CartLinkOrange>
+            <CartIcon src={iconCart} alt='icon' />
+            <CartLink to='/cart'>CART</CartLink>
           </>
         ) : (
           <>
-            <VerticalLine />
-            <CartIcon src={iconCart} alt='icon' />
-            <CartLink to='/cart'>CART</CartLink>
+            <CartIconOrange src={iconCart} alt='icon' />
+            <CartLinkOrange to='/cart'>CART</CartLinkOrange>
           </>
         )}
       </LinkContainer>
@@ -152,13 +153,16 @@ const HeaderWrapper = styled.div`
   .smallLine {
     height: 30px;
   }
+  .createNew {
+    margin-right: 7.75%;
+  }
 `;
 const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 21%;
-  margin-right: 1%;
+  right: 1%;
   align-items: center;
 `;
 const ProfileConatiner = styled.div`
@@ -210,7 +214,6 @@ const CartIconOrange = styled.img`
   width: 20px;
   margin-right: 8%;
   background-color: #fda5a3;
-  margin-left: 15%;
 `;
 const CartLink = styled(NavLink)`
   height: 19px;
