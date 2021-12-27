@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/LoginComponents/logoWithText/index';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
 import InputField from '../../components/LoginComponents/InputField/index';
 import StyledButton from '../../components/CommonButton/index';
 import LoginOptions from '../../components/LoginComponents/LoginOptions/index';

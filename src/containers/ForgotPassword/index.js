@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/LoginComponents/logoWithText/index';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
 import StyledButton from '../../components/CommonButton/index';
 import forgotPasswordIcon from '../../assets/icons/icn_forgot_password.png';
 import BackIcon from '../../assets/icons/back_icon.png';

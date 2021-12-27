@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
-import LogoWithText from '../../components/LoginComponents/logoWithText/index';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
 import StyledButton from '../../components/CommonButton/index';
 import closeButton from '../../assets/icons/close_button.png';
 import icnRegisterSuccess from '../../assets/icons/icn_register_success.png';
