@@ -13,6 +13,7 @@ import Gallery from '../components/menuComponent/gallery';
 import CartContextProvider from '../context/cartContext';
 import Cart from '../components/description/cart';
 import ProfileMain from '../containers/Profile/index';
+import Footer from '../components/Footer/index';
 
 const Routing = () => {
   return (
@@ -23,6 +24,9 @@ const Routing = () => {
         </Route>
         <Route exact path='/restaurants/:searchKey/:location'>
           <RestaurantData />
+        </Route>
+        <Route exact path='/footer'>
+          <Footer />
         </Route>
         <Route exact path='/cart'>
           <CartContextProvider>
