@@ -150,6 +150,7 @@ const HeaderWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-left: 30px;
   .smallLine {
     height: 30px;
   }
@@ -162,7 +163,7 @@ const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 21%;
-  right: 1%;
+  margin-right: 1%;
   align-items: center;
 `;
 const ProfileConatiner = styled.div`
