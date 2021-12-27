@@ -553,11 +553,10 @@ input[type="radio"] {
   height: 80px;
 } */
 
-.sc-jrQzAO {
-  position: absolute;
-  top: 522px;
-  left: 22px;
-  margin: 0px;
+.mobnumdiv{position: absolute;
+  width: 100%;
+  top:67%;
+  left:4%;
 }
 .homecheck {
   height: 16px;
