@@ -1,22 +1,27 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import './logo.css';
 
-const Logo = () => {
+const Logo = ({ afterLogin }) => {
   const history = useHistory();
   return (
     <div
-      className='logo'
+      className={afterLogin ? 'logosmall' : 'logo'}
       onClick={() => {
         history.push('/');
       }}
-      role='button'
       onKeyDown={null}
+      role='button'
     >
-      <span className='logoPart1'>LO</span>
-      <span className='logoPart2'>REM</span>
+      LOREM
     </div>
   );
 };
+
 export default Logo;
+Logo.propTypes = {
+  afterLogin: PropTypes.bool,
+};
+Logo.defaultProps = { afterLogin: false };

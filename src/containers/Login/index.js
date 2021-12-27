@@ -30,12 +30,13 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   };
   const submitForm = (data) => {
     console.log(data);
+    localStorage.setItem('accessToken', JSON.stringify('success'));
     setModalIsOpen(false);
   };
   const handleForgotClick = () => {
     setPageStatus('forgot-password');
   };
-  console.log(errors);
+
   return (
     <Modal
       className='wrapper'
@@ -59,7 +60,12 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
           </Button>
           <BlackText>Lets get started!</BlackText>
           <Form onSubmit={handleSubmit(submitForm)}>
-            <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
+            <InputField
+              name='email'
+              register={register}
+              msg={errors.email?.message}
+              label='Email'
+            />
             <InputField
               name='password'
               register={register}
@@ -69,10 +75,7 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
               label='Password'
             />
 
-            <ForgotButton
-              onClick={handleForgotClick}
-              type='button'
-            >
+            <ForgotButton onClick={handleForgotClick} type='button'>
               Forgot Password?
             </ForgotButton>
             <StyledButton type='submit'>LOGIN</StyledButton>
@@ -151,7 +154,7 @@ const Form = styled.form`
 const ForgotButton = styled.button`
   height: 19px;
   width: 135px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
