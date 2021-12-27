@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Logo from '../logo';
 import ForgotPassword from '../../containers/ForgotPassword';
 import Login from '../../containers/Login';
@@ -13,7 +14,7 @@ import PasswordChangeSuccess from '../../containers/PasswordChangeSuccess';
 import iconCart from '../../assets/icons/icn_cart.png';
 import icnProfile from '../../assets/icons/icn_profile.svg';
 
-const Header = () => {
+const Header = ({ isHome }) => {
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
     window.location.reload();
@@ -21,10 +22,10 @@ const Header = () => {
   const loginStatus = localStorage.getItem('accessToken');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
-  console.log(loginStatus);
+
   return (
     <HeaderWrapper>
-      {loginStatus ? <Logo afterLogin /> : <Logo />}
+      {loginStatus && !isHome ? <Logo afterLogin /> : <Logo />}
       <LinkContainer>
         {loginStatus ? (
           <>
@@ -55,7 +56,7 @@ const Header = () => {
             CREATE AN ACCOUNT
           </Button>
         )}
-        {loginStatus ? (
+        {loginStatus && !isHome ? (
           <>
             <CartIconOrange src={iconCart} alt='icon' />
             <CartLinkOrange to='/cart'>CART</CartLinkOrange>
@@ -136,7 +137,10 @@ const Header = () => {
   );
 };
 export default Header;
-
+Header.propTypes = {
+  isHome: PropTypes.bool,
+};
+Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
   height: 70px;
