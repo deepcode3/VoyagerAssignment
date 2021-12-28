@@ -8,7 +8,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import SearchBar, { LocationSetter } from '../../components/homeComponents/searchbar';
-import Logo from '../../components/logo';
+import Header from '../../components/Header';
 import menuSemiBg from '../../assets/images/menuSemiBg.png';
 import dateTime from '../../assets/icons/dateTime.png';
 import menuButton from '../../assets/icons/menuButton.png';
@@ -36,7 +36,7 @@ const Restaurant = ({ data, searchKey, location }) => {
   return (
     <>
       <div className='header'>
-        <Logo />
+        <Header isHome />
       </div>
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
       <div className='body'>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import Logo from '../logo';
+import Header from '../Header';
 import SearchBar, { LocationSetter } from '../homeComponents/searchbar';
 import menuSemiBg from '../../assets/images/menuSemiBg.png';
 import dateTime from '../../assets/icons/dateTime.png';
@@ -17,7 +17,7 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
   return (
     <>
       <div className='header'>
-        <Logo />
+        <Header isHome />
       </div>
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
       <div className='body'>
