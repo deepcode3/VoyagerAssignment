@@ -23,51 +23,56 @@ const Cart = () => {
       ) : (
         <>
           <CommonHeader />
-          <div className='firstmain'>
-            <div className='restaurent'>
-              <p className='restaurentname'>The Botique Kitchen</p>
-            </div>
-            <div className='estimated-delivery-t'>
-              <p className='edtime'>Estimated Delivery time - 60 - 80 min</p>
-            </div>
-            <div className='orderdisplay_rectangle' />
-            <div className='dispitemsdiv'>
-              {cartItems.map((curritem) => {
-                return <Items key={curritem.id} {...curritem} />;
-              })}
-            </div>
+          <div className='desbg'>
+            <div className='firstmain'>
+              <div className='restaurent'>
+                <p className='restaurentname'>The Botique Kitchen</p>
+              </div>
+              <div className='estimated-delivery-t'>
+                <p className='edtime'>Estimated Delivery time - 60 - 80 min</p>
+              </div>
+              <div className='descriptioncontainer'>
+                <div className='orderdisplay_rectangle'>
+                  <div className='dispitemsdiv'>
+                    {cartItems.map((curritem) => {
+                      return <Items key={curritem.id} {...curritem} />;
+                    })}
+                  </div>
 
-            <div className='cookinginsdiv'>
-              <div className='cookins'>
-                <p className='cookinginstext'>Cooking instructions?</p>
+                  <div className='cookinginsdiv'>
+                    <div className='cookins'>
+                      <p className='cookinginstext'>Cooking instructions?</p>
+                    </div>
+                    <div className='mentioninput'>
+                      <input type='text' className='mention' placeholder='Mention it here...' />
+                      <div className='mentiongreyline' />
+                    </div>
+                    <div className='cfinalgreyline' />
+                  </div>
+                  <div
+                    className='backbutton'
+                    onClick={() => {
+                      history.goBack('/carthome');
+                    }}
+                    role='button'
+                    onKeyDown={null}
+                  >
+                    {' '}
+                    <p className='back'>BACK</p>
+                  </div>
+                  <div className='choseaddbtn'>
+                    <p
+                      className='chooseadd'
+                      onClick={() => {
+                        history.push('/address');
+                      }}
+                      onKeyDown={null}
+                    >
+                      CHOOSE ADDRESS
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className='mentioninput'>
-                <input type='text' className='mention' placeholder='Mention it here...' />
-                <div className='mentiongreyline' />
-              </div>
-              <div className='cfinalgreyline' />
-            </div>
-            <div
-              className='backbutton'
-              onClick={() => {
-                history.goBack('/carthome');
-              }}
-              role='button'
-              onKeyDown={null}
-            >
-              {' '}
-              <p className='back'>BACK</p>
-            </div>
-            <div className='choseaddbtn'>
-              <p
-                className='chooseadd'
-                onClick={() => {
-                  history.push('/address');
-                }}
-                onKeyDown={null}
-              >
-                CHOOSE ADDRESS
-              </p>
             </div>
           </div>
         </>

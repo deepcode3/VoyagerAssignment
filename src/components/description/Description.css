@@ -1,11 +1,18 @@
 .firstmain {
-  height: 593px;
+  /* height: 593px; */
   width: 634px;
   /* background-color: blue; */
   position: absolute;
-  top: 380px;
-  /* bottom: 302px; */
+  top: 134px;
+
   left: 479px;
+}
+.desbg {
+  position: absolute;
+  height: 1500px;
+  width: 1900px;
+  top: 238px;
+  background-color: #dee6ed;
 }
 
 .restaurentname {
@@ -39,11 +46,23 @@
   margin-top: 0px;
 }
 
+.discriptioncontainer {
+  height: 918px;
+  width: 634px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 181px;
+  left: 477px;
+}
+
 .orderdisplay_rectangle {
-  /* height: auto; */
+  /* height: 1000px; */
   /* height: 519px; */
   /* height: 100%; */
-  width: 654px;
+  height: fit-content;
+  width: 634px;
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
@@ -54,7 +73,7 @@
   margin-right: auto;
 }
 .orderitems {
-  height: 99px;
+  height: 100px;
   width: 614px;
 
   position: relative;
@@ -72,13 +91,13 @@
   top: -19px;
   left: 0px;
 }
-/* 
-.dBbgbody {
-  position: relative;
-  top: -78px;
-  background-color: #cecfd4;
+
+/* .dBbgbody {
+  background-color: #dee6ed;
+  position: absolute;
+  top: 515px;
+  height: 1500px;
   width: 1900px;
-  height: 1600px;
 } */
 .itemname {
   height: 27px;
@@ -249,6 +268,7 @@
   left: 416px;
   /* bottom: 20px; */
   top: 2px;
+  margin: 0px;
 }
 .chooseadd {
   height: 19px;
@@ -360,4 +380,10 @@ input[type="text"]:focus {
   left: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.dispitemsdiv {
+  height: fit-content;
+  width: 634px;
+  background-color: white;
 }
