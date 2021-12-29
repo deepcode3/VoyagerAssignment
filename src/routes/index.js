@@ -15,6 +15,7 @@ import Cart from '../components/description/cart';
 import ProfileMain from '../containers/Profile/index';
 import Footer from '../components/Footer/index';
 import Error from '../containers/Error/index';
+import Orderstatus from '../components/orderstatus/Orderstatus';
 
 const Routing = () => {
   return (
@@ -48,6 +49,9 @@ const Routing = () => {
         <Route path='/carthome'>
           <CartHome />
         </Route>
+        <Route path='/status'>
+          <Orderstatus />
+        </Route>
         <Route path='/:searchKey/:location/menu/:restaurant/:item'>
           <CartContextProvider>
             <Menu />
@@ -65,6 +69,7 @@ const Routing = () => {
         <Route path='/profile'>
           <ProfileMain />
         </Route>
+        <Route path='*' component={Error} />
       </Switch>
     </Router>
   );
