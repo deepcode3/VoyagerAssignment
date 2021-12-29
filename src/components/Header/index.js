@@ -163,7 +163,7 @@ const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 21%;
-  margin-right: 5%;
+  margin-right: 4%;
   align-items: center;
 `;
 const ProfileConatiner = styled.div`
