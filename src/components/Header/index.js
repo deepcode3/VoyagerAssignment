@@ -57,7 +57,7 @@ const Header = ({ isHome }) => {
             CREATE AN ACCOUNT
           </Button>
         )}
-        <VerticalLine className='smallLine' />
+        <VerticalLine className={!isHome ? 'smallLine' : null} />
         {isHome ? (
           <>
             <CartIcon src={iconCart} alt='icon' />
@@ -163,7 +163,7 @@ const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 21%;
-  margin-right: 1%;
+  margin-right: 5%;
   align-items: center;
 `;
 const ProfileConatiner = styled.div`
