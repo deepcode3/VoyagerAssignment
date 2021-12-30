@@ -33,7 +33,7 @@ const Header = ({ isHome }) => {
               <ProfileIcon src={icnProfile} alt='icon' />
             </ProfileConatiner>
             <User>ASHLEY</User>
-            <VerticalLine className='smallLine' />
+            <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
         ) : (
           <Button
@@ -144,8 +144,8 @@ Header.propTypes = {
 Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
-  height: 70px;
-  width: 100%;
+  height: 60px;
+  width: 1890px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
