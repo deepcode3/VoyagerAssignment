@@ -13,7 +13,6 @@ import Gallery from '../components/menuComponent/gallery';
 import CartContextProvider from '../context/cartContext';
 import Cart from '../components/description/cart';
 import ProfileMain from '../containers/Profile/index';
-import Footer from '../components/Footer/index';
 import Error from '../containers/Error/index';
 import Orderstatus from '../components/orderstatus/Orderstatus';
 import About from '../components/footerlinker/About';
