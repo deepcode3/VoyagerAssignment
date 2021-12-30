@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 import Logo from '../logo';
 import ForgotPassword from '../../containers/ForgotPassword';
@@ -15,8 +16,10 @@ import iconCart from '../../assets/icons/icn_cart.png';
 import icnProfile from '../../assets/icons/icn_profile.svg';
 
 const Header = ({ isHome }) => {
+  const history = useHistory();
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
+    history.push('/');
     window.location.reload();
   };
   const loginStatus = localStorage.getItem('accessToken');
