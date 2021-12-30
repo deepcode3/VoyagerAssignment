@@ -7,6 +7,23 @@ import Modal from './modal';
 
 const Address = () => {
   const [open, setOpen] = useState(false);
+  const [items, setItems] = useState([
+    {
+      location: 'dubai',
+      city: 'dubai',
+      area: 'dubai',
+      address: 'dubai',
+      addressLabel: 'dubai',
+    },
+  ]);
+  const initialFormData = Object.freeze({
+    location: '',
+    city: '',
+    area: '',
+    address: '',
+    addressLabel: '',
+  });
+  const [values, setValues] = useState(initialFormData);
   const buttonMap = {
     button1: 'button1',
     button2: 'button2',
@@ -15,7 +32,8 @@ const Address = () => {
   const handleClick = (button) => {
     setPrimary(button);
   };
-
+  // const storedvalues1 = JSON.parse(localStorage.getItem('address1'));
+  // console.log(storedvalues1[0]?.city);
   return (
     <Div>
       <div className='recommendation-1'>
@@ -37,8 +55,8 @@ const Address = () => {
           <div className='order-2'>
             <span className='home'>Home</span>
             <span className='address'>
-              Downtown Burj Khalifa, Sheikh Mohammed bin Rashid Blvd - Dubai - United Arab
-              EmiratesDubai, UAE
+              Downtown Burj Khalif,Sheikh Mohammad bin Rashid - Dubai - United Arab
+              EmiratesDubai,Uae
             </span>
             <div
               className='primary-1'
@@ -65,39 +83,59 @@ const Address = () => {
             <span className='edit'>Edit</span>
             <span className='delete'>Delete</span>
           </div>
-          <div className='order-2'>
-            <span className='home'>Office</span>
-            <div
-              className='primary-1'
-              onClick={() => {
-                return handleClick(buttonMap.button2);
-              }}
-              role='button'
-              onKeyDown={null}
-            >
-              <img
-                src={primary === buttonMap.button2 ? icnCheckActive : icnCheckInactive}
-                alt='icn'
-                style={{ float: 'left' }}
-              />
-              <span
-                className='primary'
-                style={{
-                  color: `${primary === buttonMap.button2 ? '#6A6A6A' : '#B8B8B8'}`,
-                }}
-              >
-                Primary
-              </span>
-            </div>
-            <span className='address'>
-              Downtown Burj Khalifa,- Dubai - United Arab EmiratesDubai, UAE
-            </span>
-            <span className='edit'>Edit</span>
-            <span className='delete'>Delete</span>
-          </div>
+          {items.map((item, index) => {
+            console.log(index.toString());
+            return (
+              <div key={index.toString()} className='order-2'>
+                <span className='home'>{`${item.addressLabel}`}</span>
+                <div
+                  className='primary-1'
+                  onClick={() => {
+                    return handleClick(buttonMap.button2);
+                  }}
+                  role='button'
+                  onKeyDown={null}
+                >
+                  <img
+                    src={primary === buttonMap.button2 ? icnCheckActive : icnCheckInactive}
+                    alt='icn'
+                    style={{ float: 'left' }}
+                  />
+                  <span
+                    className='primary'
+                    style={{
+                      color: `${primary === buttonMap.button2 ? '#6A6A6A' : '#B8B8B8'}`,
+                    }}
+                  >
+                    Primary
+                  </span>
+                </div>
+                <span className='address'>{`${item.location}, -${item.city} - ${item.area} - ${item.address}, `}</span>
+                <span className='edit'>Edit</span>
+                <button
+                  key={index.toString()}
+                  onClick={localStorage.removeItem('address')}
+                  className='delete'
+                  type='button'
+                  onKeyDown={null}
+                  style={{}}
+                >
+                  Delete
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
-      {open && <Modal setOpen={setOpen} />}
+      {open && (
+        <Modal
+          setOpen={setOpen}
+          values={values}
+          setValues={setValues}
+          setItems={setItems}
+          items={items}
+        />
+      )}
     </Div>
   );
 };

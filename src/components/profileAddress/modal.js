@@ -3,10 +3,57 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import icnPin from '../../assets/icons/icn_pin.png';
-import icnGpsIndicator from '../../assets/icons/icn_gps_indicator.png';
+import Geocode from 'react-geocode';
+import locationImg from '../../assets/icons/location.png';
+import gps from '../../assets/icons/gps.png';
+// import { LocationSetter } from '../homeComponents/searchbar';
 
-const Model = ({ setOpen }) => {
+const Model = ({ setOpen, values, setValues, items, setItems }) => {
+  console.log(values);
+  const handleChange = (e) => {
+    e.persist();
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+  const handleSubmit = (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+    console.log('values', values);
+    const newItems = [...items, values];
+    setItems(newItems);
+    localStorage.setItem('address1', JSON.stringify(newItems));
+    setValues({
+      location: '',
+      city: '',
+      area: '',
+      address: '',
+      addressLabel: '',
+    });
+    console.log(values.city);
+    console.log(items.city);
+  };
+  const findMyLocation = () => {
+    navigator.geolocation.watchPosition((pos) => {
+      const Longitude = pos.coords.longitude;
+      const Latitude = pos.coords.latitude;
+      Geocode.setApiKey('AIzaSyB2LQDL0xgHE_xT-TvAlZ-2Xhil3R8btLo');
+      Geocode.setLanguage('en');
+      Geocode.setLocationType('ROOFTOP');
+      Geocode.fromLatLng(Latitude, Longitude).then(
+        (response) => {
+          const address = response.results[0].formatted_address;
+          console.log(address);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    });
+  };
   return (
     <ModalBack>
       <ModalContainer>
@@ -23,47 +70,92 @@ const Model = ({ setOpen }) => {
         <div className='navbar'>
           <h1 className='add-new-address '>Add new address</h1>
         </div>
-        <form>
-          <div className='location_settter '>
-            <img src={icnPin} alt='location' className='icn_pin' />
+        <form onSubmit={handleSubmit}>
+          <div className='location_settter'>
+            <img src={locationImg} alt='location' className='icn_pin' />
             <input
-              type=''
-              id=''
-              name=''
               className='location-1'
+              type='text'
+              name='location'
+              value={values.location}
+              onChange={handleChange}
               placeholder='Downtown Burj Khalifa, Dubai.'
+              required
             />
-            <img src={icnGpsIndicator} alt='gps' className='icn_gps' />
+            <img
+              src={gps}
+              className='icn_gps'
+              alt='gpstracker'
+              onClick={findMyLocation}
+              onKeyDown={null}
+            />
           </div>
           <div className='field'>
             <label className='label'>City</label>
-            <input type='text' value='' placeholder='' className='input' />
+            <input
+              id='city'
+              className='input'
+              value={values.city}
+              required
+              onChange={handleChange}
+              name='city'
+              type='text'
+              placeholder='Dubai'
+            />
           </div>
           <div className='field-1'>
             <label className='label'>Area</label>
-            <input type='text' className='input' placeholder='' />
+            <input
+              type='text'
+              className='input'
+              placeholder='52 street'
+              value={values.area}
+              required
+              onChange={handleChange}
+              name='area'
+            />
           </div>
           <div className='field-2'>
             <label className='label'>Address</label>
-            <input type='text' className='input' />
+            <input
+              type='text'
+              className='input'
+              placeholder='there here and there'
+              value={values.address}
+              required
+              onChange={handleChange}
+              name='address'
+            />
           </div>
           <div className='field-3'>
             <label className='label'>Address label</label>
-            <input type='text' className='input' />
+            <input
+              type='text'
+              className='input'
+              placeholder='home'
+              value={values.addressLabel}
+              required
+              onChange={handleChange}
+              name='addressLabel'
+            />
+          </div>
+          <div className='rectangle-copy'>
+            <button className='save-address' type='submit'>
+              submit
+            </button>
           </div>
         </form>
-        <div className='rectangle-copy'>
-          <span className='save-address' type='button'>
-            SAVE ADDRESS
-          </span>
-        </div>
       </ModalContainer>
     </ModalBack>
   );
 };
 export default Model;
 Model.propTypes = {
-  setOpen: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
+  setValues: PropTypes.func.isRequired,
+  values: PropTypes.objectOf(PropTypes.string).isRequired,
+  setItems: PropTypes.func.isRequired,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const ModalBack = styled.div`
@@ -124,9 +216,9 @@ const ModalContainer = styled.div`
   .location_settter {
     height: 70px;
     width: 502px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    // border-radius: 10px;
+    // background-color: #ffffff;
+    // box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     position: absolute;
@@ -151,7 +243,7 @@ const ModalContainer = styled.div`
     width: 20px;
     margin-left: 200px;
   }
-  input[type='text'] {
+  .input[type='text'] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -221,5 +313,8 @@ const ModalContainer = styled.div`
     letter-spacing: 0;
     line-height: 50px;
     text-align: center;
+    padding: 0;
+    border: none;
+    background: none;
   }
 `;

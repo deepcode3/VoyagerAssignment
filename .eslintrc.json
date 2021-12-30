@@ -27,6 +27,13 @@
     "comma-dangle": ["error", "only-multiline"],
     "no-return-assign": ["error", "except-parens"],
     "react/destructuring-assignment": ["error", "always"],
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "no-console": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectPattern": { "multiline": true, "minProperties": 8 }
+      }
+    ]
   }
 }
