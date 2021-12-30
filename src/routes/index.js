@@ -16,6 +16,10 @@ import ProfileMain from '../containers/Profile/index';
 import Footer from '../components/Footer/index';
 import Error from '../containers/Error/index';
 import Orderstatus from '../components/orderstatus/Orderstatus';
+import About from '../components/footerlinker/About';
+import Terms from '../components/footerlinker/Terms';
+import PrivacyPolicy from '../components/footerlinker/PrivacyPolicy';
+import Contacts from '../components/footerlinker/FooterContact';
 
 const Routing = () => {
   return (
@@ -28,13 +32,13 @@ const Routing = () => {
           <RestaurantData />
         </Route>
         <Route path='/footer' component={Footer} />
-        <Route path='/about' component={Error} />
+        <Route path='/about' component={About} />
         <Route path='/careers' component={Error} />
-        <Route path='/privacy-policy' component={Error} />
-        <Route path='/terms-&-conditions' component={Error} />
+        <Route path='/privacy-policy' component={PrivacyPolicy} />
+        <Route path='/terms-&-conditions' component={Terms} />
         <Route path='/mobile-app' component={Error} />
         <Route path='/blog' component={Error} />
-        <Route path='/contact' component={Error} />
+        <Route path='/contact' component={Contacts} />
         <Route path='/sitemap' component={Error} />
         <Route exact path='/cart'>
           <CartContextProvider>
