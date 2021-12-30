@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
-import FooterContact from './components/footerlinker/FooterContact';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FooterContact />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
