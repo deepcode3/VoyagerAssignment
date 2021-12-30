@@ -31,7 +31,6 @@ const Routing = () => {
         <Route exact path='/restaurants/:searchKey/:location'>
           <RestaurantData />
         </Route>
-        <Route path='/footer' component={Footer} />
         <Route path='/about' component={About} />
         <Route path='/careers' component={Error} />
         <Route path='/privacy-policy' component={PrivacyPolicy} />
