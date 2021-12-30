@@ -7,10 +7,12 @@ import burgerimg from '../../assets/images/burger.png';
 import burgerline from '../../assets/images/burgerline.png';
 import aboutcart from '../../assets/images/aboutcart.png';
 import PageHeader from './PageHeader';
+import Header from '../Header';
 
 const About = () => {
   return (
     <>
+      <Header />
       <PageHeader />
       <div className='aboutbackground'>
         <div className='aboutcontainer'>
@@ -22,15 +24,13 @@ const About = () => {
           <p className='whowearetext'> Who we are </p>
           <div className='wearetext'>
             <p className='fulltext'>
-              We are an online ordering service and our aim is to become the best
-              delivery service platform for our users by diversifying our
-              services portfolio and providing best-in-class customer experience.
-              Our online food ordering portal helps you find restaurants in your area,
-              filter by cuisine/ time/ price, browse menus and place orders
-              via multiple payment options. Our delivery platform ensures that you receive
-              your order
-              in shortest possible time, can track your order and can interact with our awesome
-              support folks in case of any query
+              We are an online ordering service and our aim is to become the best delivery service
+              platform for our users by diversifying our services portfolio and providing
+              best-in-class customer experience. Our online food ordering portal helps you find
+              restaurants in your area, filter by cuisine/ time/ price, browse menus and place
+              orders via multiple payment options. Our delivery platform ensures that you receive
+              your order in shortest possible time, can track your order and can interact with our
+              awesome support folks in case of any query
             </p>
           </div>
           <p className='howweworktext'> How we work </p>
