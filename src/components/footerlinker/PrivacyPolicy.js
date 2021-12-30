@@ -2,6 +2,7 @@ import React from 'react';
 import './PrivacyPolicy.css';
 import PageHeader from './PageHeader';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const Privacypolicy = () => {
   return (
@@ -64,6 +65,7 @@ const Privacypolicy = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

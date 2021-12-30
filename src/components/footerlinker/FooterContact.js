@@ -4,6 +4,7 @@ import contactbanner from '../../assets/images/about_banner 2.png';
 import sendbutton from '../../assets/icons/buttonbox.png';
 import PageHeader from './PageHeader';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const FooterContact = () => {
   return (
@@ -82,6 +83,7 @@ const FooterContact = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

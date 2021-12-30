@@ -8,6 +8,7 @@ import burgerline from '../../assets/images/burgerline.png';
 import aboutcart from '../../assets/images/aboutcart.png';
 import PageHeader from './PageHeader';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const About = () => {
   return (
@@ -43,6 +44,9 @@ const About = () => {
           <p className='burgertext'> Browse menus and build your order in seconds. </p>
           <p className='aboutcarttext'> Follow the status of your order with real-time alerts. </p>
         </div>
+      </div>
+      <div className='footerDiv'>
+        <Footer />
       </div>
     </>
   );
