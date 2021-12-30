@@ -145,7 +145,7 @@ Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
   height: 60px;
-  width: 1890px;
+  width: 1865px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

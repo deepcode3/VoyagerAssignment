@@ -30,7 +30,7 @@ const Footer = () => {
 export default Footer;
 const FooterContainer = styled.div`
   height: 227px;
-  width: 1910px;
+  width: 1895px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
