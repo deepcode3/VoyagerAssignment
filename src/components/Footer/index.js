@@ -29,13 +29,13 @@ const Footer = () => {
 };
 export default Footer;
 const FooterContainer = styled.div`
- height: 227px;
- width: 100%
- background-color: #ffffff;
- display: flex;
- flex-direction: column;
- justify-content:flex-start;
- align-items:center;
+  height: 227px;
+  width: 1910px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 `;
 const FlexRow = styled.div`
   display: flex;

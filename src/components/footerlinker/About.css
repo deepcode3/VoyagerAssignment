@@ -10,7 +10,7 @@
 }
 
 .aboutbackground {
-  height: 1200px;
+  height: 1000px;
   width: 1920px;
   background-color: #d8d8d8;
   position: absolute;
@@ -181,7 +181,7 @@
   margin: 0px;
 }
 .footerDiv {
-  top: 1361px;
+  top: 1150px;
   position: relative;
   align-items: center;
 }
