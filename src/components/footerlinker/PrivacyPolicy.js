@@ -65,7 +65,9 @@ const Privacypolicy = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className='footerDivPricayPolicy'>
+        <Footer />
+      </div>
     </>
   );
 };

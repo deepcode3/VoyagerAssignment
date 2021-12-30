@@ -2,10 +2,12 @@ import React from 'react';
 import './Terms.css';
 import PageHeader from './PageHeader';
 import Footer from '../Footer';
+import Header from '../Header';
 
 const Terms = () => {
   return (
     <>
+      <Header />
       <PageHeader />
       <div className='termsbg'>
         <div className='termscontainer'>
@@ -54,7 +56,9 @@ const Terms = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className='footerDivTerms'>
+        <Footer />
+      </div>
     </>
   );
 };

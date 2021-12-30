@@ -20,7 +20,7 @@
   height: 64px;
   width: 501px;
   color: #000000;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0;
@@ -34,7 +34,7 @@
 .fsemiBg {
   position: absolute;
   top: 70px;
-  width: 1900px;
+  width: 1920px;
   height: 133px;
 }
 

@@ -45,7 +45,7 @@ const About = () => {
           <p className='aboutcarttext'> Follow the status of your order with real-time alerts. </p>
         </div>
       </div>
-      <div className='footerDiv'>
+      <div className='footerDivAbout'>
         <Footer />
       </div>
     </>

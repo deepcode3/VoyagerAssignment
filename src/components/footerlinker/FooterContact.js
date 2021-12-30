@@ -83,7 +83,9 @@ const FooterContact = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className='footerDiv'>
+        <Footer />
+      </div>
     </>
   );
 };
