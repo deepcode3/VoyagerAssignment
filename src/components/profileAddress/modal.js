@@ -8,7 +8,7 @@ import locationImg from '../../assets/icons/location.png';
 import gps from '../../assets/icons/gps.png';
 // import { LocationSetter } from '../homeComponents/searchbar';
 
-const Model = ({ setOpen, values, setValues, items, setItems }) => {
+const Model = ({ setOpen, values, setValues, addItem }) => {
   console.log(values);
   const handleChange = (e) => {
     e.persist();
@@ -18,14 +18,10 @@ const Model = ({ setOpen, values, setValues, items, setItems }) => {
       [name]: value,
     });
   };
+
   const handleSubmit = (e) => {
-    if (e) {
-      e.preventDefault();
-    }
-    console.log('values', values);
-    const newItems = [...items, values];
-    setItems(newItems);
-    localStorage.setItem('address1', JSON.stringify(newItems));
+    e.preventDefault();
+    addItem(values);
     setValues({
       location: '',
       city: '',
@@ -33,8 +29,6 @@ const Model = ({ setOpen, values, setValues, items, setItems }) => {
       address: '',
       addressLabel: '',
     });
-    console.log(values.city);
-    console.log(items.city);
   };
   const findMyLocation = () => {
     navigator.geolocation.watchPosition((pos) => {
@@ -154,8 +148,7 @@ Model.propTypes = {
   setOpen: PropTypes.func.isRequired,
   setValues: PropTypes.func.isRequired,
   values: PropTypes.objectOf(PropTypes.string).isRequired,
-  setItems: PropTypes.func.isRequired,
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  addItem: PropTypes.func.isRequired,
 };
 
 const ModalBack = styled.div`
