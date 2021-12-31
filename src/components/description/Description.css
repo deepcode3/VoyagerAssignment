@@ -9,10 +9,10 @@
 }
 .desbg {
   position: absolute;
-  height: 1500px;
   width: 1895px;
   top: 238px;
   background-color: #dee6ed;
+  height: 1200px;
 }
 
 .restaurentname {
@@ -71,6 +71,7 @@
   top: 17px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;
 }
 .orderitems {
   height: 100px;
@@ -383,12 +384,14 @@ input[type='text']:focus {
 }
 
 .dispitemsdiv {
-  height: fit-content;
   width: 634px;
   background-color: white;
+  height: 700px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .footerDivCart {
-  top: 750px;
   position: relative;
   align-items: center;
+  top: 1120px;
 }
