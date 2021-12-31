@@ -14,6 +14,12 @@ import CartContextProvider from '../context/cartContext';
 import ReviewContext from '../context/reviewContext';
 import Cart from '../components/description/cart';
 import ProfileMain from '../containers/Profile/index';
+import Error from '../containers/Error/index';
+import Orderstatus from '../components/orderstatus/Orderstatus';
+import About from '../components/footerlinker/About';
+import Terms from '../components/footerlinker/Terms';
+import PrivacyPolicy from '../components/footerlinker/PrivacyPolicy';
+import Contacts from '../components/footerlinker/FooterContact';
 
 const Routing = () => {
   return (
@@ -25,6 +31,14 @@ const Routing = () => {
         <Route exact path='/restaurants/:searchKey/:location'>
           <RestaurantData />
         </Route>
+        <Route path='/about' component={About} />
+        <Route path='/careers' component={Error} />
+        <Route path='/privacy-policy' component={PrivacyPolicy} />
+        <Route path='/terms-&-conditions' component={Terms} />
+        <Route path='/mobile-app' component={Error} />
+        <Route path='/blog' component={Error} />
+        <Route path='/contact' component={Contacts} />
+        <Route path='/sitemap' component={Error} />
         <Route exact path='/cart'>
           <CartContextProvider>
             <Cart />
@@ -37,6 +51,9 @@ const Routing = () => {
         <Route path='/finalpay' component={FinalPayment} />
         <Route path='/carthome'>
           <CartHome />
+        </Route>
+        <Route path='/status'>
+          <Orderstatus />
         </Route>
         <Route path='/:searchKey/:location/menu/:restaurant/:item'>
           <CartContextProvider>
@@ -57,6 +74,7 @@ const Routing = () => {
         <Route path='/profile'>
           <ProfileMain />
         </Route>
+        <Route path='*' component={Error} />
       </Switch>
     </Router>
   );

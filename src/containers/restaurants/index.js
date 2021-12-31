@@ -35,9 +35,7 @@ const Restaurant = ({ data, searchKey, location }) => {
   });
   return (
     <>
-      <div className='header'>
-        <Header />
-      </div>
+      <Header />
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
       <div className='body'>
         <div className='restaurantSearchBar'>

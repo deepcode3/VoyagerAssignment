@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 import Logo from '../logo';
 import ForgotPassword from '../../containers/ForgotPassword';
@@ -15,8 +16,10 @@ import iconCart from '../../assets/icons/icn_cart.png';
 import icnProfile from '../../assets/icons/icn_profile.svg';
 
 const Header = ({ isHome }) => {
+  const history = useHistory();
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
+    history.push('/');
     window.location.reload();
   };
   const loginStatus = localStorage.getItem('accessToken');
@@ -33,7 +36,7 @@ const Header = ({ isHome }) => {
               <ProfileIcon src={icnProfile} alt='icon' />
             </ProfileConatiner>
             <User>ASHLEY</User>
-            <VerticalLine className='smallLine' />
+            <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
         ) : (
           <Button
@@ -57,7 +60,7 @@ const Header = ({ isHome }) => {
             CREATE AN ACCOUNT
           </Button>
         )}
-        <VerticalLine className='smallLine' />
+        <VerticalLine className={!isHome ? 'smallLine' : null} />
         {isHome ? (
           <>
             <CartIcon src={iconCart} alt='icon' />
@@ -144,12 +147,13 @@ Header.propTypes = {
 Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
-  height: 70px;
-  width: 100%;
+  height: 60px;
+  width: 1865px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-left: 30px;
   .smallLine {
     height: 30px;
   }
@@ -162,7 +166,7 @@ const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 21%;
-  right: 1%;
+  margin-right: 1%;
   align-items: center;
 `;
 const ProfileConatiner = styled.div`

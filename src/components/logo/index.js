@@ -8,7 +8,7 @@ const Logo = ({ afterLogin }) => {
   const history = useHistory();
   return (
     <div
-      className={afterLogin ? 'logosmall' : 'logo'}
+      className={afterLogin ? 'logosmalllorem' : 'logolorem'}
       onClick={() => {
         history.push('/');
       }}
