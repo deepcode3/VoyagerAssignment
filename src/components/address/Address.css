@@ -10,9 +10,9 @@
 
 .addressbg {
   position: absolute;
-  height: 1500px;
-  width: 1900px;
-  top: 238px;
+  height: 1050px;
+  width: 1890px;
+  top: 233px;
   background-color: #dee6ed;
 }
 
@@ -20,7 +20,7 @@
   height: 30px;
   width: 170px;
   color: #000000;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0;
@@ -54,7 +54,7 @@
   height: 19px;
   width: 296px;
   color: #4a4a4a;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -99,7 +99,7 @@
   height: 19px;
   width: 85px;
   color: #4a4a4a;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -142,7 +142,7 @@
   height: 22px;
   width: 52px;
   color: #4a4a4a;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -155,7 +155,7 @@
   height: 23px;
   width: 128px;
   color: #000000;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 17px;
   letter-spacing: -0.41px;
   line-height: 23px;
@@ -179,7 +179,7 @@
   width: 85px;
 
   color: #f57c00;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -205,7 +205,7 @@
   height: 17px;
   width: 34px;
   color: #6a6a6a;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -218,7 +218,7 @@
   height: 19px;
   width: 222px;
   color: #2d2d2d;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -232,7 +232,7 @@
   height: 17px;
   width: 26px;
   color: #f57c00;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -247,7 +247,7 @@
   height: 19px;
   width: 44px;
   color: #f57c00;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -272,7 +272,7 @@
   height: 17px;
   width: 33px;
   color: #6a6a6a;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -285,7 +285,7 @@
   height: 19px;
   width: 228px;
   color: #2d2d2d;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -298,7 +298,7 @@
   height: 19px;
   width: 26px;
   color: #f57c00;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -313,7 +313,7 @@
   height: 19px;
   width: 44px;
   color: #f57c00;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -327,7 +327,7 @@
   height: 23px;
   width: 114px;
   color: #000000;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 17px;
   letter-spacing: -0.41px;
   line-height: 23px;
@@ -340,7 +340,7 @@
   height: 17px;
   width: 33px;
   color: #858585;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -354,7 +354,7 @@
   height: 22px;
   width: 338px;
   color: #4a4a4a;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -382,7 +382,7 @@
   height: 17px;
   width: 89px;
   color: #858585;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -410,7 +410,7 @@
   height: 22px;
   width: 120px;
   color: #000000;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -431,7 +431,7 @@
   height: 17px;
   width: 115px;
   color: #858585;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -445,7 +445,7 @@
   height: 22px;
   width: 576px;
   color: #4a4a4a;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -486,7 +486,7 @@
   height: 19px;
   width: 40.69px;
   color: #979797;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
@@ -512,7 +512,7 @@
   height: 19px;
   width: 161px;
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
@@ -540,7 +540,7 @@ input::-webkit-inner-spin-button {
   margin: 0px;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
 }
 
@@ -561,10 +561,11 @@ input[type="radio"] {
   height: 80px;
 } */
 
-.mobnumdiv{position: absolute;
+.mobnumdiv {
+  position: absolute;
   width: 100%;
-  top:67%;
-  left:4%;
+  top: 67%;
+  left: 4%;
 }
 .homecheck {
   height: 16px;
@@ -574,4 +575,9 @@ input[type="radio"] {
   top: 16px;
   accent-color: black;
   margin: 0px;
+}
+.footerDivAddress {
+  top: 950px;
+  position: relative;
+  align-items: center;
 }

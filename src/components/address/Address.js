@@ -10,6 +10,7 @@ import delivericon from '../../assets/icons/delivericon.png';
 import pickupicon from '../../assets/icons/pickupicon.png';
 import addnewbtn from '../../assets/icons/button.png';
 import './Address.css';
+import Footer from '../Footer';
 
 const CartAddress = () => {
   const mobileSchema = yup.object().shape({
@@ -142,6 +143,9 @@ const CartAddress = () => {
             <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
           </div>
         </div>
+      </div>
+      <div className='footerDivAddress'>
+        <Footer />
       </div>
     </div>
   );

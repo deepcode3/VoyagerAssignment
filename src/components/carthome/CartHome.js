@@ -3,6 +3,7 @@ import CommonHeader from '../headercommon/CommonHeader';
 import Cartdata from './Cartdata';
 import Cartlist from './Cartlist';
 import './CartHome.css';
+import Footer from '../Footer';
 
 const CartHome = () => {
   const [cartifo] = useState(Cartdata);
@@ -14,6 +15,9 @@ const CartHome = () => {
           // eslint-disable-next-line react/jsx-props-no-spreading
           return <Cartlist key={val.id} {...val} />;
         })}
+      </div>
+      <div className='footerDivCartHome'>
+        <Footer />
       </div>
     </>
   );
