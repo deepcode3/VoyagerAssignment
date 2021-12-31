@@ -13,6 +13,8 @@ import greycheck from '../../assets/icons/greycheck.png';
 import yellowtime from '../../assets/icons/yellowtime.png';
 import trackline from '../../assets/images/trackline.png';
 import Modal from './Modal';
+import Header from '../Header';
+import Footer from '../Footer';
 
 const Orderstatus = () => {
   const history = useHistory();
@@ -88,6 +90,7 @@ const Orderstatus = () => {
 
   return (
     <div className='orderbody'>
+      <Header />
       <div className='statusbg'>
         <p className='orderid'>Order id: 1234567890</p>
         <div className='statuscontainer'>
@@ -260,6 +263,9 @@ const Orderstatus = () => {
         </div>
       </div>
       {openModal && <Modal closemodal={setOpenModal} />}
+      <div className='footerDivStatus'>
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -12,6 +12,7 @@ import pvisaicon from '../../assets/icons/Visa_icon.png';
 import CommonHeader from '../headercommon/CommonHeader';
 import '../payment/Payment.css';
 import './FinalPayment.css';
+import Footer from '../Footer';
 
 const FinalPayment = () => {
   const history = useHistory();
@@ -73,6 +74,9 @@ const FinalPayment = () => {
             <img src={paynow} alt='' />
           </div>
         </div>
+      </div>
+      <div className='footerDivFinalPay'>
+        <Footer />
       </div>
     </>
   );

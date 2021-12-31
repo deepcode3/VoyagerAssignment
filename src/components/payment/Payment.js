@@ -10,6 +10,7 @@ import PaymentresDetails from './PaymentresDetails';
 import payback from '../../assets/images/payback.png';
 import paynow from '../../assets/images/paynow.png';
 import CommonHeader from '../headercommon/CommonHeader';
+import Footer from '../Footer';
 
 const Payment = () => {
   // const history={useHistory}
@@ -74,6 +75,9 @@ const Payment = () => {
             <img src={paynow} alt='' />
           </div>
         </div>
+      </div>
+      <div className='footerDivPayment'>
+        <Footer />
       </div>
     </>
   );

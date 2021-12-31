@@ -28,8 +28,8 @@
   background-color: #dee6ed;
   position: absolute;
   top: 115px;
-  height: 1500px;
-  width: 1900px;
+  height: 1450px;
+  width: 1895px;
 }
 
 .imgcontainer {
@@ -598,3 +598,8 @@
   overflow-y: hidden;
   overflow: hidden;
 } */
+.footerDivStatus {
+  top: 1500px;
+  position: relative;
+  align-items: center;
+}

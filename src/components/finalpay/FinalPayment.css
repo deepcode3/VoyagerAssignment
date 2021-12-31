@@ -2,7 +2,7 @@
   height: 30px;
   width: 95px;
   color: #000000;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0;
@@ -14,8 +14,8 @@
 }
 .finalpaymentbg {
   position: absolute;
-  height: 1500px;
-  width: 1900px;
+  height: 1200px;
+  width: 1895px;
   top: 238px;
   background-color: #dee6ed;
 }
@@ -35,7 +35,7 @@
   height: 23px;
   width: 63px;
   color: #000000;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 17px;
   letter-spacing: -0.41px;
   line-height: 23px;
@@ -61,7 +61,7 @@
   width: 95px;
   /* color: #ffffff; */
   color: orange;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -160,7 +160,7 @@
   height: 19px;
   width: 200px;
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2.26px;
@@ -175,7 +175,7 @@
   height: 17px;
   width: 50.64px;
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -189,7 +189,7 @@
   height: 17px;
   width: 73.85px;
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -204,7 +204,7 @@
   width: 132.97px;
   color: #ffffff;
 
-  font-family: "SF UI Text";
+  font-family: 'SF UI Text';
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0;
@@ -252,7 +252,7 @@
   height: 19px;
   width: 200px;
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2.26px;
@@ -266,7 +266,7 @@
   height: 17px;
   width: 50.64px;
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -280,7 +280,7 @@
   height: 17px;
   width: 73.85px;
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -295,7 +295,7 @@
   width: 77.27px;
   color: #ffffff;
   /* color: #000000; */
-  font-family: "SF UI Text";
+  font-family: 'SF UI Text';
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0;
@@ -328,4 +328,9 @@
 .ventercode::placeholder {
   color: white;
   opacity: 1; /* Firefox */
+}
+.footerDivFinalPay {
+  top: 1100px;
+  position: relative;
+  align-items: center;
 }
