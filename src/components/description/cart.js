@@ -7,6 +7,7 @@ import { cartContext } from '../../context/cartContext';
 import empty from '../../assets/images/empty.png';
 import './Description.css';
 import CommonHeader from '../headercommon/CommonHeader';
+import Footer from '../Footer';
 
 const Cart = () => {
   const history = useHistory();
@@ -74,6 +75,9 @@ const Cart = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className='footerDivCart'>
+            <Footer />
           </div>
         </>
       )}
