@@ -8,13 +8,22 @@ const Gallery = () => {
   const { restaurant } = useParams();
   const { item } = useParams();
   return (
-    <MenuHalfCompo
-      searchKey={searchKey}
-      location={location}
-      restaurant={restaurant}
-      item={item}
-      from='gallery'
-    />
+    <>
+      <MenuHalfCompo
+        searchKey={searchKey}
+        location={location}
+        restaurant={restaurant}
+        item={item}
+        from='gallery'
+      />
+      <div className='menuCommomBg'>
+        <div className='overViewBody'>
+          <div className='galleryFilterButton'>
+            <span className='allPhotos'>All Photos</span>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 export default Gallery;

@@ -17,7 +17,7 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
   return (
     <>
       <div className='header'>
-        <Header isHome />
+        <Header />
       </div>
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
       <div className='body'>
