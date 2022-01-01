@@ -105,8 +105,10 @@ const Textbox = styled.input`
   :focus {
     border-bottom: 1px solid black;
   }
-  .redBorder {
-    border-bottom: 1px solid #ed1b2e;
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s !important;
   }
 `;
 
