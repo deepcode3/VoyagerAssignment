@@ -124,6 +124,10 @@ const MobileNumber = styled.input`
   :focus {
     border-bottom: 1px solid black;
   }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s !important;
 `;
 const Label = styled.label`
   width: 86.36px;
