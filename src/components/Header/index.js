@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useContext } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -14,8 +14,11 @@ import WelcomePage from '../../containers/WelcomePage';
 import PasswordChangeSuccess from '../../containers/PasswordChangeSuccess';
 import iconCart from '../../assets/icons/icn_cart.png';
 import icnProfile from '../../assets/icons/icn_profile.svg';
+import { UserContext } from '../../context/UserContext';
 
 const Header = ({ isHome }) => {
+  const userDetails = useContext(UserContext);
+  console.log(userDetails);
   const history = useHistory();
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
@@ -35,7 +38,7 @@ const Header = ({ isHome }) => {
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
             </ProfileConatiner>
-            <User>ASHLEY</User>
+            <User>{ userDetails.name.toUpperCase()}</User>
             <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
         ) : (
