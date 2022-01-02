@@ -1,4 +1,4 @@
-import { React, useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -20,16 +20,17 @@ const Header = ({ isHome }) => {
   const { currentUser } = useContext(UserContext);
   console.log(currentUser);
   const history = useHistory();
-  const handleLogout = () => {
-    localStorage.removeItem('accessToken');
-    history.push('/');
-    window.location.reload();
-  };
+  const [state, trigger] = useState(true);
   const loginStatus = localStorage.getItem('accessToken');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
   const [email, setEmail] = useState('');
-
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    trigger(!state);
+    history.push('/');
+  };
+  useEffect(() => {}, [trigger]);
   return (
     <HeaderWrapper>
       {isHome ? <Logo /> : <Logo afterLogin />}
