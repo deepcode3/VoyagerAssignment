@@ -15,7 +15,6 @@ const InputField = ({ label, name, isPassword, register, msg }) => {
   const handleFocusChange = (e) => {
     if (e.target.value === '') changeFocusState(false);
   };
-
   return (
     <FormContainer>
       <Textbox
@@ -58,7 +57,7 @@ InputField.propTypes = {
 };
 InputField.defaultProps = {
   isPassword: false,
-  msg: null
+  msg: null,
 };
 const FormContainer = styled.div`
   position: relative;
