@@ -1,9 +1,7 @@
-import {
-  React, useState, createContext, useMemo
-} from 'react';
+import { React, useState, createContext } from 'react';
 import PropTypes from 'prop-types';
 
-const accounts = [
+const createdAccounts = [
   {
     firstname: 'John',
     lastname: 'Salvankar',
@@ -21,14 +19,23 @@ const accounts = [
     mobile: '97978787878',
   },
 ];
-export const AccountsContext = createContext(accounts);
-const ProviderComponent = ({ children }) => {
-  const [context, setContext] = useState(accounts);
-  // eslint-disable-next-line arrow-body-style
-  const value = useMemo(() => [context, setContext], [context]);
-  return <AccountsContext.Provider value={value}>{children}</AccountsContext.Provider>;
+export const AccountsContext = createContext(createdAccounts);
+const AccountsContextProvider = ({ children }) => {
+  const [accounts, setAccounts] = useState(createdAccounts);
+  const checkIfAccountExists = (data) => {
+    const result = accounts.filter((obj) => {
+      return obj.email === data.email;
+    });
+    return result;
+  };
+  return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <AccountsContext.Provider value={{ accounts, setAccounts, checkIfAccountExists }}>
+      {children}
+    </AccountsContext.Provider>
+  );
 };
-ProviderComponent.propTypes = {
+AccountsContextProvider.propTypes = {
   children: PropTypes.element.isRequired,
 };
-export default ProviderComponent;
+export default AccountsContextProvider;

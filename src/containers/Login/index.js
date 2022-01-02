@@ -16,8 +16,8 @@ import { UserContext } from '../../context/UserContext';
 
 Modal.setAppElement('#root');
 const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
-  const allAccounts = useContext(AccountsContext);
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { checkIfAccountExists } = useContext(AccountsContext);
+  const { setCurrentUser } = useContext(UserContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required('Email id is required'),
     password: yup.string().required('Password is required'),
@@ -35,9 +35,8 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   };
   const submitForm = (data) => {
     console.log(data);
-    const result = allAccounts.filter((obj) => {
-      return obj.email === data.email;
-    });
+    const result = checkIfAccountExists(data);
+    console.log('res', result);
     if (result.length === 0) {
       setError('email', { type: 'manual', message: 'Email id is not registered' });
     } else if (result[0].password !== data.password) {
@@ -51,7 +50,6 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   const handleForgotClick = () => {
     setPageStatus('forgot-password');
   };
-  console.log(currentUser);
   return (
     <Modal
       className='wrapper'
