@@ -1,23 +1,22 @@
-import {
-  React, useState, createContext, useMemo
-} from 'react';
+import { React, useState, createContext } from 'react';
 import PropTypes from 'prop-types';
 
 const userObjectContext = {
-  name: 'John',
-  email: 'john.snow@thewall.north',
-  password: '123',
+  firstname: 'John',
 };
 
 export const UserContext = createContext(userObjectContext);
 
-const ProviderComponent = ({ children }) => {
-  const [context, setContext] = useState(userObjectContext);
+const UserContextProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(userObjectContext);
   // eslint-disable-next-line arrow-body-style
-  const value = useMemo(() => [context, setContext], [context]);
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  // const value = useMemo(() => [context, setContext], [context]);
+  return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <UserContext.Provider value={{ currentUser, setCurrentUser }}>{children}</UserContext.Provider>
+  );
 };
-ProviderComponent.propTypes = {
+UserContextProvider.propTypes = {
   children: PropTypes.element.isRequired,
 };
-export default ProviderComponent;
+export default UserContextProvider;

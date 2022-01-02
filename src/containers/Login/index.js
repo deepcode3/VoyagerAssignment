@@ -12,10 +12,12 @@ import LoginOptions from '../../components/LoginComponents/LoginOptions/index';
 import TextWithButton from '../../components/LoginComponents/TextWithButton/index';
 import closeButton from '../../assets/icons/close_button.png';
 import { AccountsContext } from '../../context/AccountsContext';
+import { UserContext } from '../../context/UserContext';
 
 Modal.setAppElement('#root');
 const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
-  const allAccoiunts = useContext(AccountsContext);
+  const allAccounts = useContext(AccountsContext);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required('Email id is required'),
     password: yup.string().required('Password is required'),
@@ -33,7 +35,7 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   };
   const submitForm = (data) => {
     console.log(data);
-    const result = allAccoiunts.filter((obj) => {
+    const result = allAccounts.filter((obj) => {
       return obj.email === data.email;
     });
     if (result.length === 0) {
@@ -42,13 +44,14 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
       setError('password', { type: 'manual', message: 'Incorrect password entered' });
     } else {
       localStorage.setItem('accessToken', JSON.stringify('success'));
+      setCurrentUser(result[0]);
     }
     if (localStorage.getItem('accessToken')) setModalIsOpen(false);
   };
   const handleForgotClick = () => {
     setPageStatus('forgot-password');
   };
-  console.log(allAccoiunts);
+  console.log(currentUser);
   return (
     <Modal
       className='wrapper'

@@ -17,8 +17,8 @@ import icnProfile from '../../assets/icons/icn_profile.svg';
 import { UserContext } from '../../context/UserContext';
 
 const Header = ({ isHome }) => {
-  const userDetails = useContext(UserContext);
-  console.log(userDetails);
+  const { currentUser } = useContext(UserContext);
+  console.log(currentUser);
   const history = useHistory();
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
@@ -38,7 +38,7 @@ const Header = ({ isHome }) => {
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
             </ProfileConatiner>
-            <User>{ userDetails.name.toUpperCase()}</User>
+            <User>{ currentUser.firstname.toUpperCase()}</User>
             <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
         ) : (
