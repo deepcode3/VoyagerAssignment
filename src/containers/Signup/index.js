@@ -14,7 +14,9 @@ import LoginOptions from '../../components/LoginComponents/LoginOptions';
 import closeButton from '../../assets/icons/close_button.png';
 
 Modal.setAppElement('#root');
-const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+const Signup = ({
+  modalIsOpen, setModalIsOpen, setPageStatus, setEmail
+}) => {
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required(),
   });
@@ -34,6 +36,7 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   };
   const submitForm = (data) => {
     console.log(data);
+    setEmail(data.email);
     setPageStatus('otp-verification');
   };
   return (
@@ -62,7 +65,12 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             Share your email address to send you the OTP to get yourself registered!
           </Description>
           <DataContainer onSubmit={handleSubmit(submitForm)}>
-            <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
+            <InputField
+              name='email'
+              register={register}
+              msg={errors.email?.message}
+              label='Email'
+            />
             <StyledButton type='submit'>CREATE ACCOUNT</StyledButton>
           </DataContainer>
           <TextWithButton
@@ -86,6 +94,7 @@ Signup.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
+  setEmail: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

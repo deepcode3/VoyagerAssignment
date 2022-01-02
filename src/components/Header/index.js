@@ -28,6 +28,7 @@ const Header = ({ isHome }) => {
   const loginStatus = localStorage.getItem('accessToken');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
+  const [email, setEmail] = useState('');
 
   return (
     <HeaderWrapper>
@@ -38,7 +39,7 @@ const Header = ({ isHome }) => {
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
             </ProfileConatiner>
-            <User>{ currentUser.firstname.toUpperCase()}</User>
+            <User>{currentUser.firstname.toUpperCase()}</User>
             <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
         ) : (
@@ -88,6 +89,7 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          setEmail={setEmail}
         />
       ) : null}
       {pageStatus === 'otp-verification' ? (
@@ -110,6 +112,7 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          email={email}
         />
       ) : null}
       {pageStatus === 'welcome-page' ? (

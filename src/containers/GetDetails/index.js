@@ -13,7 +13,9 @@ import BackIcon from '../../assets/icons/back_icon.png';
 import { AccountsContext } from '../../context/AccountsContext';
 
 Modal.setAppElement('#root');
-const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+const GetDetails = ({
+  modalIsOpen, setModalIsOpen, setPageStatus, email
+}) => {
   const { addAccount } = useContext(AccountsContext);
   const [selectedCode, setSelectedCode] = useState('91');
   const schema = yup.object().shape({
@@ -44,7 +46,7 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
     addAccount({
       firstname: data.firstName,
       lastname: data.lastName,
-      email: 'anu@gmail.com',
+      email,
       password: data.password,
       conuntrycode: data.code,
       mobile: data.mobile,
@@ -114,6 +116,7 @@ GetDetails.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired
 };
 const Wrapper = styled.div`
   height: 588px;
