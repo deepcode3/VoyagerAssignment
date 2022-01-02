@@ -37,7 +37,9 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
     console.log(data);
     const result = checkIfAccountExists(data);
     console.log('res', result);
-    if (result.length === 0) {
+    if (result === null) {
+      setError('email', { type: 'manual', message: 'Email id is not registered' });
+    } else if (result.length === 0) {
       setError('email', { type: 'manual', message: 'Email id is not registered' });
     } else if (result[0].password !== data.password) {
       setError('password', { type: 'manual', message: 'Incorrect password entered' });

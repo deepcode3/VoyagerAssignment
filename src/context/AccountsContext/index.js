@@ -28,12 +28,26 @@ const AccountsContextProvider = ({ children }) => {
     });
     return result;
   };
+  const addAccount = (data) => {
+    const finalArray = [...accounts, data];
+    console.log('final', finalArray);
+    setAccounts(finalArray);
+    console.log(accounts);
+  };
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AccountsContext.Provider value={{ accounts, setAccounts, checkIfAccountExists }}>
+    /* eslint-disable react/jsx-no-constructed-context-values */
+    <AccountsContext.Provider
+      value={{
+        accounts,
+        setAccounts,
+        checkIfAccountExists,
+        addAccount,
+      }}
+    >
       {children}
     </AccountsContext.Provider>
   );
+  /* eslint-enable react/jsx-no-constructed-context-values */
 };
 AccountsContextProvider.propTypes = {
   children: PropTypes.element.isRequired,

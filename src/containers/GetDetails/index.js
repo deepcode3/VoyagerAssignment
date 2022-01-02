@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import Modal from 'react-modal';
@@ -10,9 +10,11 @@ import StyledButton from '../../components/CommonButton/index';
 import InputField from '../../components/LoginComponents/InputField';
 import TelephonePicker from '../../components/TelephonePicker/index';
 import BackIcon from '../../assets/icons/back_icon.png';
+import { AccountsContext } from '../../context/AccountsContext';
 
 Modal.setAppElement('#root');
 const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+  const { addAccount } = useContext(AccountsContext);
   const [selectedCode, setSelectedCode] = useState('91');
   const schema = yup.object().shape({
     firstName: yup.string().required('First name is required'),
@@ -39,6 +41,14 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   const submitForm = (data) => {
     data.code = selectedCode;
     console.log(data);
+    addAccount({
+      firstname: data.firstName,
+      lastname: data.lastName,
+      email: 'anu@gmail.com',
+      password: data.password,
+      conuntrycode: data.code,
+      mobile: data.mobile,
+    });
     setPageStatus('welcome-page');
   };
   return (
