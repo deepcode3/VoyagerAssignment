@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useForm } from 'react-hook-form';
@@ -12,17 +12,20 @@ import StyledButton from '../../components/CommonButton/index';
 import TextWithButton from '../../components/LoginComponents/TextWithButton';
 import LoginOptions from '../../components/LoginComponents/LoginOptions';
 import closeButton from '../../assets/icons/close_button.png';
+import { AccountsContext } from '../../context/AccountsContext';
 
 Modal.setAppElement('#root');
 const Signup = ({
   modalIsOpen, setModalIsOpen, setPageStatus, setEmail
 }) => {
+  const { checkIfAccountExists } = useContext(AccountsContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required(),
   });
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -36,8 +39,14 @@ const Signup = ({
   };
   const submitForm = (data) => {
     console.log(data);
-    setEmail(data.email);
-    setPageStatus('otp-verification');
+    const result = checkIfAccountExists(data);
+    console.log('res', result);
+    if (result === null || result.length === 0) {
+      setEmail(data.email);
+      setPageStatus('otp-verification');
+    } else {
+      setError('email', { type: 'manual', message: 'You already have an account' });
+    }
   };
   return (
     <Modal
