@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -14,18 +14,22 @@ import WelcomePage from '../../containers/WelcomePage';
 import PasswordChangeSuccess from '../../containers/PasswordChangeSuccess';
 import iconCart from '../../assets/icons/icn_cart.png';
 import icnProfile from '../../assets/icons/icn_profile.svg';
+import { UserContext } from '../../context/UserContext';
 
 const Header = ({ isHome }) => {
+  const { currentUser } = useContext(UserContext);
   const history = useHistory();
-  const handleLogout = () => {
-    localStorage.removeItem('accessToken');
-    history.push('/');
-    window.location.reload();
-  };
+  const [state, trigger] = useState(true);
   const loginStatus = localStorage.getItem('accessToken');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
-
+  const [email, setEmail] = useState('');
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    trigger(!state);
+    history.push('/');
+  };
+  useEffect(() => {}, [trigger]);
   return (
     <HeaderWrapper>
       {isHome ? <Logo /> : <Logo afterLogin />}
@@ -35,7 +39,13 @@ const Header = ({ isHome }) => {
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
             </ProfileConatiner>
-            <User>ASHLEY</User>
+            <User
+              onClick={() => {
+                history.push('/profile');
+              }}
+            >
+              {currentUser.firstname.toUpperCase()}
+            </User>
             <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
         ) : (
@@ -85,6 +95,7 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          setEmail={setEmail}
         />
       ) : null}
       {pageStatus === 'otp-verification' ? (
@@ -107,6 +118,7 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          email={email}
         />
       ) : null}
       {pageStatus === 'welcome-page' ? (
@@ -181,7 +193,7 @@ const ProfileIcon = styled.img`
   width: 19px;
   padding: 9px;
 `;
-const User = styled.p`
+const User = styled.button`
   height: 19px;
   color: #303134;
   font-family: 'Open Sans', sans-serif;
@@ -190,6 +202,8 @@ const User = styled.p`
   letter-spacing: 0.5px;
   line-height: 19px;
   margin-right: 8%;
+  background-color: transparent;
+  border: none;
 `;
 const Button = styled.button`
   height: 19px;

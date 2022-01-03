@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useForm } from 'react-hook-form';
@@ -12,15 +12,20 @@ import StyledButton from '../../components/CommonButton/index';
 import TextWithButton from '../../components/LoginComponents/TextWithButton';
 import LoginOptions from '../../components/LoginComponents/LoginOptions';
 import closeButton from '../../assets/icons/close_button.png';
+import { AccountsContext } from '../../context/AccountsContext';
 
 Modal.setAppElement('#root');
-const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+const Signup = ({
+  modalIsOpen, setModalIsOpen, setPageStatus, setEmail
+}) => {
+  const { checkIfAccountExists } = useContext(AccountsContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required(),
   });
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -33,8 +38,13 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
     setPageStatus('login');
   };
   const submitForm = (data) => {
-    console.log(data);
-    setPageStatus('otp-verification');
+    const result = checkIfAccountExists(data);
+    if (result === null || result.length === 0) {
+      setEmail(data.email);
+      setPageStatus('otp-verification');
+    } else {
+      setError('email', { type: 'manual', message: 'You already have an account' });
+    }
   };
   return (
     <Modal
@@ -62,7 +72,12 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             Share your email address to send you the OTP to get yourself registered!
           </Description>
           <DataContainer onSubmit={handleSubmit(submitForm)}>
-            <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
+            <InputField
+              name='email'
+              register={register}
+              msg={errors.email?.message}
+              label='Email'
+            />
             <StyledButton type='submit'>CREATE ACCOUNT</StyledButton>
           </DataContainer>
           <TextWithButton
@@ -86,6 +101,7 @@ Signup.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
+  setEmail: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;
