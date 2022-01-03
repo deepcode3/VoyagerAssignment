@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Header';
-import SearchBar, { LocationSetter } from '../HomeComponents/searchbar/index';
+import SearchBar, { LocationSetter } from '../HomeComponents/SearchBar';
 import '../../Containers/Restaurants/index';
 import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
