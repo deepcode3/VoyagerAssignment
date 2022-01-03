@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
+import { addressContext } from '../../context/profileContext';
 import Modal from './modal';
 import AddressCard from './AddressCard';
 
 const Address = () => {
+  const { addressItems, addItem, removeItem } = useContext(addressContext);
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState([]);
   const initialFormData = Object.freeze({
@@ -15,26 +17,30 @@ const Address = () => {
     addressLabel: '',
   });
   const [values, setValues] = useState(initialFormData);
-  const removeItem = (itemToBeDeleted) => {
-    setItems(
-      items.filter((item) => {
-        return itemToBeDeleted !== item;
-      })
-    );
-  };
-  useEffect(() => {
-    const storedvalues1 = JSON.parse(localStorage.getItem('address'));
-    if (storedvalues1) {
-      setItems(storedvalues1);
-    }
-  }, []);
+  // const removeItem = (itemToBeDeleted) => {
+  //   setItems(
+  //     items.filter((item) => {
+  //       return itemToBeDeleted !== item;
+  //     })
+  //   );
+  // };
+  // useEffect(() => {
+  //   const storedvalues1 = JSON.parse(localStorage.getItem('address'));
+  //   if (storedvalues1) {
+  //     setItems(storedvalues1);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem('address', JSON.stringify(items));
-  }, [items]);
-  const addItem = (i) => {
-    setItems([...items, i]);
-  };
+  // useEffect(() => {
+  //   localStorage.setItem('address', JSON.stringify(items));
+  // }, [items]);
+
+  // const addItem = (i) => {
+  //   if (items === null) setItems([i]);
+  //   if (items) {
+  //     setItems([...items, i]);
+  //   }
+  // };
   return (
     <Div>
       <div className='recommendation-1'>
@@ -54,7 +60,7 @@ const Address = () => {
       <div className='recommendation-2'>
         <div className='order-1'>
           <ul>
-            {items.map((item, index) => {
+            {addressItems.map((item, index) => {
               return (
                 <li key={index.toString()} className='list'>
                   <AddressCard item={item} removeItem={removeItem} index={index} />

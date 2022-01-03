@@ -12,6 +12,7 @@ import OverView from '../components/menuComponent/overview';
 import Reviews from '../components/menuComponent/review';
 import Gallery from '../components/menuComponent/gallery';
 import CartContextProvider from '../context/cartContext';
+import AddressContextProvider from '../context/profileContext';
 import Cart from '../components/description/cart';
 import ProfileMain from '../containers/Profile/index';
 
@@ -54,7 +55,9 @@ const Routing = () => {
           <Gallery />
         </Route>
         <Route path='/profile'>
-          <ProfileMain />
+          <AddressContextProvider>
+            <ProfileMain />
+          </AddressContextProvider>
         </Route>
       </Switch>
     </Router>
