@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Modal from 'react-modal';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -12,6 +12,7 @@ import BackIcon from '../../Assets/Icons/back_icon.png';
 import InputField from '../../Components/LoginComponents/InputField';
 import border from '../../Assets/Icons/border.png';
 import TelephonePicker from '../../Components/TelephonePicker/index';
+import { AccountsContext } from '../../Context/AccountsContext';
 
 Modal.setAppElement('#root');
 const ForgotPassword = ({

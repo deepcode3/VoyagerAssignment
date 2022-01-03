@@ -13,9 +13,7 @@ import BackIcon from '../../Assets/Icons/back_icon.png';
 import { AccountsContext } from '../../Context/AccountsContext';
 
 Modal.setAppElement('#root');
-const GetDetails = ({
-  modalIsOpen, setModalIsOpen, setPageStatus, email, setName
-}) => {
+const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus, email, setName }) => {
   const { addAccount } = useContext(AccountsContext);
   const [selectedCode, setSelectedCode] = useState('91');
   const schema = yup.object().shape({
