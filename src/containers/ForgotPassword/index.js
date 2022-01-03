@@ -9,7 +9,7 @@ import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
 import StyledButton from '../../components/CommonButton/index';
 import forgotPasswordIcon from '../../assets/icons/icn_forgot_password.png';
 import BackIcon from '../../assets/icons/back_icon.png';
-import InputField from '../../components/LoginComponents/InputField';
+import InputField from '../../components/LoginComponents/InputField/index';
 import border from '../../assets/icons/border.png';
 import TelephonePicker from '../../components/TelephonePicker/index';
 
@@ -225,7 +225,7 @@ const Navbar = styled.div`
 const TypeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height:20px;
+  height: 20px;
 `;
 const InputTypeButton = styled.button`
   height: 24px;

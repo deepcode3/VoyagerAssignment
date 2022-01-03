@@ -1,14 +1,16 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import { React, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
+import { addressContext } from '../../context/profileContext';
 import CommonHeader from '../headercommon/CommonHeader';
 import TelephonePicker from '../TelephonePicker/index';
 import delivericon from '../../assets/icons/delivericon.png';
 import pickupicon from '../../assets/icons/pickupicon.png';
 import addnewbtn from '../../assets/icons/button.png';
+import AddressCard from './AddressCard';
 import './Address.css';
 
 const CartAddress = () => {
@@ -27,9 +29,10 @@ const CartAddress = () => {
   } = useForm({
     resolver: yupResolver(mobileSchema),
   });
-  const usecheck = () => {
-    return null;
-  };
+  const { addressItems, removeItem } = useContext(addressContext);
+  // const usecheck = () => {
+  //   return null;
+  // };
 
   const history = useHistory();
 
@@ -74,24 +77,18 @@ const CartAddress = () => {
         <div className='addnew'>
           <img src={addnewbtn} className='addnewbtn' alt='adnewbtn' />
           <p className='addnewtext'>ADD NEW</p>
-          <div className='homeaddressdiv' onClick={usecheck} role='button' onKeyDown={null}>
-            <p className='home'>Home</p>
-
-            <div className='checkeraddress'>
-              <input type='checkbox' className='officeradio' name='addcheck' />
+          <div className='address_container'>
+            <div className='address_scroller'>
+              <ul className='list'>
+                {addressItems.map((item, index) => {
+                  return (
+                    <li key={index.toString()}>
+                      <AddressCard item={item} removeItem={removeItem} index={index} />
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
-            <p className='addressline'>Downtown Burj Khalifa, Dubai, UAE</p>
-            <div className='editbtn'>Edit</div>
-            <div className='deletebtn'>Delete</div>
-          </div>
-
-          <div className='officeaddressdiv'>
-            <p className='office'>Office</p>
-            <input type='checkbox' name='addcheck' className='homecheck' />
-
-            <p className='addressline'>Downtown Burj Khalifa, Dubai, UAE</p>
-            <div className='editbtn1'>Edit</div>
-            <div className='deletebtn1'>Delete</div>
           </div>
         </div>
         <form className='contactdetailsdiv'>

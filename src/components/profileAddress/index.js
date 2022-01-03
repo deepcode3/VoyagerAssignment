@@ -17,30 +17,6 @@ const Address = () => {
     addressLabel: '',
   });
   const [values, setValues] = useState(initialFormData);
-  // const removeItem = (itemToBeDeleted) => {
-  //   setItems(
-  //     items.filter((item) => {
-  //       return itemToBeDeleted !== item;
-  //     })
-  //   );
-  // };
-  // useEffect(() => {
-  //   const storedvalues1 = JSON.parse(localStorage.getItem('address'));
-  //   if (storedvalues1) {
-  //     setItems(storedvalues1);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem('address', JSON.stringify(items));
-  // }, [items]);
-
-  // const addItem = (i) => {
-  //   if (items === null) setItems([i]);
-  //   if (items) {
-  //     setItems([...items, i]);
-  //   }
-  // };
   return (
     <Div>
       <div className='recommendation-1'>
@@ -106,17 +82,6 @@ const Div = styled.div`
     .order-1 {
        width: 1050px;
        max-height: 100%;
-    }
-    .order-2 {
-       height: 186px;
-       width: 469px;
-       float: left;
-       border-radius: 6px;
-       background-color: #ffffff;
-       box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-       margin: 7px;
-       position:relative;
-       flex: 1;
     }
     .my-addresses-2 {
        height: 22px;

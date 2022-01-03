@@ -31,7 +31,9 @@ const Routing = () => {
           </CartContextProvider>
         </Route>
         <Route exact path='/address'>
-          <CartAddress />
+          <AddressContextProvider>
+            <CartAddress />
+          </AddressContextProvider>
         </Route>
         <Route path='/payment' component={Payment} />
         <Route path='/finalpay' component={FinalPayment} />
