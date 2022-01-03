@@ -69,12 +69,13 @@
   height: 296px;
   width: 441px;
   border: 1px solid #979797;
-  opacity: 0.25;
   border-radius: 5px;
   position: absolute;
   top: 127px;
   left: 30px;
   margin: 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .statusmaount {
