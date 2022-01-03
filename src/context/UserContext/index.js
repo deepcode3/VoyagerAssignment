@@ -6,11 +6,8 @@ const userObjectContext = {
 };
 
 export const UserContext = createContext(userObjectContext);
-
 const UserContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(userObjectContext);
-  // eslint-disable-next-line arrow-body-style
-  // const value = useMemo(() => [context, setContext], [context]);
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>{children}</UserContext.Provider>
