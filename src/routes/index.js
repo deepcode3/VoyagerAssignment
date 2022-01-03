@@ -1,27 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import RestaurantData from '../components/restaurentsData';
-import Payment from '../components/payment/Payment';
-import FinalPayment from '../components/finalpay/FinalPayment';
-import CartHome from '../components/carthome/CartHome';
-import CartAddress from '../components/address/Address';
-import Home from '../containers/home';
-import Menu from '../containers/menu';
-import OverView from '../components/menuComponent/overview';
-import Reviews from '../components/menuComponent/review';
-import Gallery from '../components/menuComponent/gallery';
-import CartContextProvider from '../context/cartContext';
-import ReviewContext from '../context/reviewContext';
-import Cart from '../components/description/cart';
-import ProfileMain from '../containers/Profile/index';
-import Error from '../containers/Error/index';
-import Orderstatus from '../components/orderstatus/Orderstatus';
-import About from '../components/footerlinker/About';
-import Terms from '../components/footerlinker/Terms';
-import PrivacyPolicy from '../components/footerlinker/PrivacyPolicy';
-import Contacts from '../components/footerlinker/FooterContact';
-import UserContextProvider from '../context/UserContext';
-import AccountsContextProvider from '../context/AccountsContext';
+import RestaurantData from '../Components/RestaurentsData';
+import Payment from '../Components/payment/Payment';
+import FinalPayment from '../Components/finalpay/FinalPayment';
+import CartHome from '../Components/carthome/CartHome';
+import CartAddress from '../Components/address/Address';
+import Home from '../Containers/Home';
+import Menu from '../Containers/Menu';
+import OverView from '../Components/MenuComponent/Overview';
+import Reviews from '../Components/MenuComponent/Review';
+import Gallery from '../Components/MenuComponent/Gallery';
+import CartContextProvider from '../Context/CartContext';
+import ReviewContext from '../Context/ReviewContext';
+import Cart from '../Components/description/cart';
+import ProfileMain from '../Containers/Profile/index';
+import Error from '../Containers/Error/index';
+import Orderstatus from '../Components/orderstatus/Orderstatus';
+import About from '../Components/footerlinker/About';
+import Terms from '../Components/footerlinker/Terms';
+import PrivacyPolicy from '../Components/footerlinker/PrivacyPolicy';
+import Contacts from '../Components/footerlinker/FooterContact';
+import UserContextProvider from '../Context/UserContext';
+import AccountsContextProvider from '../Context/AccountsContext';
 
 const Routing = () => {
   return (
@@ -68,7 +68,9 @@ const Routing = () => {
               <OverView />
             </Route>
             <Route path='/:searchKey/:location/reviews/:restaurant/:item'>
-              <Reviews />
+              <ReviewContext>
+                <Reviews />
+              </ReviewContext>
             </Route>
             <Route path='/:searchKey/:location/gallery/:restaurant/:item'>
               <Gallery />

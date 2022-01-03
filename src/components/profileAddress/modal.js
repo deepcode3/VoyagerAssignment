@@ -3,8 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import icnPin from '../../assets/icons/icn_pin.png';
-import icnGpsIndicator from '../../assets/icons/icn_gps_indicator.png';
+import icnPin from '../../Assets/Icons/icn_pin.png';
+import icnGpsIndicator from '../../Assets/Icons/icn_gps_indicator.png';
 
 const Model = ({ setOpen }) => {
   return (

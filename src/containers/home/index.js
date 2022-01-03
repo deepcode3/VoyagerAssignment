@@ -2,10 +2,10 @@ import React from 'react';
 import SearchBar, {
   DateTimeSetter,
   LocationSetter,
-} from '../../components/homeComponents/searchbar';
-import mouse from '../../assets/icons/mouse.png';
-import './home.css';
-import Header from '../../components/Header';
+} from '../../Components/HomeComponents/searchbar';
+import mouse from '../../Assets/Icons/mouse.png';
+import Header from '../../Components/Header';
+import './Home.css';
 
 const Home = () => {
   return (

@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import icnCheckActive from '../../assets/icons/icn_check.png';
-import icnCheckInactive from '../../assets/icons/icn_check_inactive.png';
+import icnCheckActive from '../../Assets/Icons/icn_check.png';
+import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
 import Modal from './modal';
 
 const Address = () => {

@@ -9,14 +9,14 @@ import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import MenuHalfCompo from '../menuSemiCompo';
-import cancelButton from '../../assets/icons/cancel.png';
-import item1 from '../../assets/images/item1.png';
-import item2 from '../../assets/images/item2.jpeg';
-import item3 from '../../assets/images/item3.jpeg';
-import item4 from '../../assets/images/item4.jpeg';
-import item5 from '../../assets/images/item5.jpeg';
-import item6 from '../../assets/images/item6.jpeg';
-import './menuNav.css';
+import cancelButton from '../../Assets/Icons/cancel.png';
+import item1 from '../../Assets/Images/item1.png';
+import item2 from '../../Assets/Images/item2.jpeg';
+import item3 from '../../Assets/Images/item3.jpeg';
+import item4 from '../../Assets/Images/item4.jpeg';
+import item5 from '../../Assets/Images/item5.jpeg';
+import item6 from '../../Assets/Images/item6.jpeg';
+import './MenuNav.css';
 
 const galleryData = [
   { img: item1, name: 'Chicken Leg Fry' },

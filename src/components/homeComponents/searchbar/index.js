@@ -3,12 +3,12 @@ import Geocode from 'react-geocode';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
-import searchIcon from '../../../assets/icons/searchIcon.png';
-import clearButton from '../../../assets/icons/dismissButton.png';
-import locationImg from '../../../assets/icons/location.png';
-import gps from '../../../assets/icons/gps.png';
-import dateTime from '../../../assets/icons/dateTime.png';
-import './serachBar.css';
+import searchIcon from '../../../Assets/Icons/searchIcon.png';
+import clearButton from '../../../Assets/Icons/dismissButton.png';
+import locationImg from '../../../Assets/Icons/location.png';
+import gps from '../../../Assets/Icons/gps.png';
+import dateTime from '../../../Assets/Icons/dateTime.png';
+import './SerachBar.css';
 
 let location;
 const SearchBar = ({ searchValue, from }) => {

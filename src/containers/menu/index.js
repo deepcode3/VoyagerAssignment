@@ -7,27 +7,27 @@
 /* eslint-disable no-restricted-syntax */
 import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import MenuHalfCompo from '../../components/menuSemiCompo';
-import { cartContext } from '../../context/cartContext';
-import searchIcon from '../../assets/icons/searchIcon.png';
-import item1 from '../../assets/images/item1.png';
-import item2 from '../../assets/images/item2.jpeg';
-import item3 from '../../assets/images/item3.jpeg';
-import item4 from '../../assets/images/item4.jpeg';
-import item5 from '../../assets/images/item5.jpeg';
-import item6 from '../../assets/images/item6.jpeg';
-import item7 from '../../assets/images/item7.jpeg';
-import item8 from '../../assets/images/item8.jpeg';
-import item9 from '../../assets/images/item9.jpeg';
-import bestSeller from '../../assets/icons/bestSeller.png';
-import nonVeg from '../../assets/icons/nonveg.png';
-import veg from '../../assets/icons/vegicon.png';
-import increaseButton from '../../assets/icons/increaseButton.png';
-import decreaseButton from '../../assets/icons/decreaseButton.png';
-import costShowHideButton from '../../assets/icons/collapseButton.png';
-import proceedToCheckOutButton from '../../assets/icons/proceedToCheckOut.png';
-import emptyImg from '../../assets/images/empty.png';
-import './menu.css';
+import MenuHalfCompo from '../../Components/menuSemiCompo';
+import { cartContext } from '../../Context/CartContext';
+import searchIcon from '../../Assets/Icons/searchIcon.png';
+import item1 from '../../Assets/Images/item1.png';
+import item2 from '../../Assets/Images/item2.jpeg';
+import item3 from '../../Assets/Images/item3.jpeg';
+import item4 from '../../Assets/Images/item4.jpeg';
+import item5 from '../../Assets/Images/item5.jpeg';
+import item6 from '../../Assets/Images/item6.jpeg';
+import item7 from '../../Assets/Images/item7.jpeg';
+import item8 from '../../Assets/Images/item8.jpeg';
+import item9 from '../../Assets/Images/item9.jpeg';
+import bestSeller from '../../Assets/Icons/bestSeller.png';
+import nonVeg from '../../Assets/Icons/nonveg.png';
+import veg from '../../Assets/Icons/vegicon.png';
+import increaseButton from '../../Assets/Icons/increaseButton.png';
+import decreaseButton from '../../Assets/Icons/decreaseButton.png';
+import costShowHideButton from '../../Assets/Icons/collapseButton.png';
+import proceedToCheckOutButton from '../../Assets/Icons/proceedToCheckOut.png';
+import emptyImg from '../../Assets/Images/empty.png';
+import './Menu.css';
 
 const Menu = () => {
   const { searchKey } = useParams();

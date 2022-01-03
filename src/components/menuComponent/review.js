@@ -4,16 +4,15 @@ import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import MenuHalfCompo from '../menuSemiCompo';
-import { reviewsContext } from '../../context/reviewContext';
-import selectedRatingStar from '../../assets/icons/ratingStar.png';
-import nonSelectedRatingStar from '../../assets/icons/icn_star_red.png';
-import whiteStar from '../../assets/icons/whiteStar.png';
-import saved from '../../assets/icons/saved.png';
-import like from '../../assets/icons/like.png';
-import empty from '../../assets/images/empty.png';
-import unSelectedLike from '../../assets/icons/unSelectedLike.png';
-
-import './menuNav.css';
+import { reviewsContext } from '../../Context/ReviewContext';
+import selectedRatingStar from '../../Assets/Icons/ratingStar.png';
+import nonSelectedRatingStar from '../../Assets/Icons/icn_star_red.png';
+import whiteStar from '../../Assets/Icons/whiteStar.png';
+import saved from '../../Assets/Icons/saved.png';
+import like from '../../Assets/Icons/like.png';
+import empty from '../../Assets/Images/empty.png';
+import unSelectedLike from '../../Assets/Icons/unSelectedLike.png';
+import './MenuNav.css';
 
 const Reviews = () => {
   const { searchKey } = useParams();

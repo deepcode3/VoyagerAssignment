@@ -2,8 +2,8 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import viewActive from '../../../assets/icons/view_active.png';
-import viewInactive from '../../../assets/icons/view_inactive.png';
+import viewActive from '../../../Assets/Icons/view_active.png';
+import viewInactive from '../../../Assets/Icons/view_inactive.png';
 
 // eslint-disable-next-line object-curly-newline
 const InputField = ({ label, name, isPassword, register, msg }) => {

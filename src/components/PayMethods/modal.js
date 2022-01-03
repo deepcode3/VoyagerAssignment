@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import icnAaveCardUnchecked from '../../assets/icons/icn_save_card_unchecked.png';
+import icnAaveCardUnchecked from '../../Assets/Icons/icn_save_card_unchecked.png';
 
 const Modal = ({ setOpen }) => {
   return (

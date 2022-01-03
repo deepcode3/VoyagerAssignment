@@ -2,10 +2,10 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import visa from '../../assets/icons/visa.png';
-import mastercard from '../../assets/icons/mastercard.png';
-import icnCheckActive from '../../assets/icons/icn_check.png';
-import icnCheckInactive from '../../assets/icons/icn_check_inactive.png';
+import visa from '../../Assets/Icons/visa.png';
+import mastercard from '../../Assets/Icons/mastercard.png';
+import icnCheckActive from '../../Assets/Icons/icn_check.png';
+import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
 import Modal from './modal';
 
 const PayAmount = () => {

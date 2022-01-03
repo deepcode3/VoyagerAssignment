@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Restaurant from '../../containers/restaurants';
-import breakfast1 from '../../assets/images/breakfast1.png';
-import breakfast2 from '../../assets/images/breakfast2.png';
+import Restaurant from '../../Containers/Restaurants';
+import breakfast1 from '../../Assets/Images/breakfast1.png';
+import breakfast2 from '../../Assets/Images/breakfast2.png';
 
 const RestaurantData = () => {
   const { searchKey } = useParams();

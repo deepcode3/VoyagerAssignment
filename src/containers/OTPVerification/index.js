@@ -5,11 +5,11 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
-import StyledButton from '../../components/CommonButton/index';
-import verifyIcon from '../../assets/icons/icn_verify_icon.png';
-import InputField from '../../components/LoginComponents/InputField';
-import BackIcon from '../../assets/icons/back_icon.png';
+import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../Components/CommonButton/index';
+import verifyIcon from '../../Assets/Icons/icn_verify_icon.png';
+import InputField from '../../Components/LoginComponents/InputField';
+import BackIcon from '../../Assets/Icons/back_icon.png';
 
 Modal.setAppElement('#root');
 // eslint-disable-next-line object-curly-newline
@@ -57,7 +57,12 @@ const OTPVerification = ({ modalIsOpen, setModalIsOpen, setPageStatus, purpose }
             soon!
           </Description>
           <Container onSubmit={handleSubmit(submitForm)}>
-            <InputField name='otp' register={register} msg={errors.otp?.message} label='Enter OTP' />
+            <InputField
+              name='otp'
+              register={register}
+              msg={errors.otp?.message}
+              label='Enter OTP'
+            />
             <StyledButton type='submit'>VERIFY</StyledButton>
           </Container>
         </RightWrapper>
@@ -73,7 +78,7 @@ OTPVerification.propTypes = {
   purpose: PropTypes.string,
 };
 OTPVerification.defaultProps = {
-  purpose: null
+  purpose: null,
 };
 const Wrapper = styled.div`
   height: 588px;

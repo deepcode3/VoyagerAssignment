@@ -6,18 +6,16 @@ import PropTypes from 'prop-types';
 import * as yup from 'yup';
 import Modal from 'react-modal';
 import { yupResolver } from '@hookform/resolvers/yup';
-import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
-import InputField from '../../components/LoginComponents/InputField/index';
-import StyledButton from '../../components/CommonButton/index';
-import TextWithButton from '../../components/LoginComponents/TextWithButton';
-import LoginOptions from '../../components/LoginComponents/LoginOptions';
-import closeButton from '../../assets/icons/close_button.png';
-import { AccountsContext } from '../../context/AccountsContext';
+import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
+import InputField from '../../Components/LoginComponents/InputField/index';
+import StyledButton from '../../Components/CommonButton/index';
+import TextWithButton from '../../Components/LoginComponents/TextWithButton';
+import LoginOptions from '../../Components/LoginComponents/LoginOptions';
+import closeButton from '../../Assets/Icons/close_button.png';
+import { AccountsContext } from '../../Context/AccountsContext';
 
 Modal.setAppElement('#root');
-const Signup = ({
-  modalIsOpen, setModalIsOpen, setPageStatus, setEmail
-}) => {
+const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus, setEmail }) => {
   const { checkIfAccountExists } = useContext(AccountsContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required(),

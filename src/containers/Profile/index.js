@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
+import Footer from '../../Components/Footer';
+import Header from '../../Components/Header';
 import Profile from './Profile';
-import EditModal from '../../components/Editmodel/index';
+import EditModal from '../../Components/Editmodel/index';
 
 const ProfileMain = () => {
   const [open, setOpen] = useState(false);

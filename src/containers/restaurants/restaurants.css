@@ -69,7 +69,7 @@
   left: -352px;
   background-color: #c5cae238;
   width: 1700px;
-  height: 750px;
+  height: fit-content;
 }
 .heading {
   height: 34px;

@@ -1,11 +1,11 @@
 import React from 'react';
 import './About.css';
-import aboutbanner from '../../assets/images/about_banner.png';
-import shopimg from '../../assets/images/shop.png';
-import shopline from '../../assets/images/shopline.png';
-import burgerimg from '../../assets/images/burger.png';
-import burgerline from '../../assets/images/burgerline.png';
-import aboutcart from '../../assets/images/aboutcart.png';
+import aboutbanner from '../../Assets/Images/about_banner.png';
+import shopimg from '../../Assets/Images/shop.png';
+import shopline from '../../Assets/Images/shopline.png';
+import burgerimg from '../../Assets/Images/burger.png';
+import burgerline from '../../Assets/Images/burgerline.png';
+import aboutcart from '../../Assets/Images/aboutcart.png';
 import PageHeader from './PageHeader';
 import Header from '../Header';
 import Footer from '../Footer';

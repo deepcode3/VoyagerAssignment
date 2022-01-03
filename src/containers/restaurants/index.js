@@ -7,16 +7,16 @@ import PropTypes from 'prop-types';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
-import SearchBar, { LocationSetter } from '../../components/homeComponents/searchbar';
-import Header from '../../components/Header';
-import menuSemiBg from '../../assets/images/menuSemiBg.png';
-import dateTime from '../../assets/icons/dateTime.png';
-import menuButton from '../../assets/icons/menuButton.png';
-import downArrow from '../../assets/icons/downArrow.png';
-import hideButton from '../../assets/icons/hide.png';
-import showButton from '../../assets/icons/show.png';
-import checkBox from '../../assets/icons/checkBox.png';
-import './restaurants.css';
+import SearchBar, { LocationSetter } from '../../Components/HomeComponents/searchbar';
+import Header from '../../Components/Header';
+import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
+import dateTime from '../../Assets/Icons/dateTime.png';
+import menuButton from '../../Assets/Icons/menuButton.png';
+import downArrow from '../../Assets/Icons/downArrow.png';
+import hideButton from '../../Assets/Icons/hide.png';
+import showButton from '../../Assets/Icons/show.png';
+import checkBox from '../../Assets/Icons/checkBox.png';
+import './Restaurants.css';
 
 const Restaurant = ({ data, searchKey, location }) => {
   const [TimeSortHide, setTimeSortHide] = useState(false);

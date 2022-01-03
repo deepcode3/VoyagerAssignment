@@ -5,11 +5,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import dismissButton from '../../assets/icons/dismiss button.png';
-import icnStarGray from '../../assets/icons/icn_star_red.png';
-import icnStarGreen from '../../assets/icons/icn_star_yellow.png';
-import redDot from '../../assets/icons/non_veg.png';
-import greenDot from '../../assets/icons/veg.png';
+import dismissButton from '../../Assets/Icons/dismiss button.png';
+import icnStarGray from '../../Assets/Icons/icn_star_red.png';
+import icnStarGreen from '../../Assets/Icons/icn_star_yellow.png';
+import redDot from '../../Assets/Icons/non_veg.png';
+import greenDot from '../../Assets/Icons/veg.png';
 
 const Modal = ({ setOpen }) => {
   const [rating, setRating] = useState(0);

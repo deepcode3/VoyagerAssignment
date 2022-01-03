@@ -1,5 +1,5 @@
 import React from 'react';
-import Routing from './routes/index';
+import Routing from './Routes/index';
 
 const App = () => {
   return <Routing />;

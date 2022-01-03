@@ -5,17 +5,15 @@ import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
-import StyledButton from '../../components/CommonButton/index';
-import InputField from '../../components/LoginComponents/InputField';
-import TelephonePicker from '../../components/TelephonePicker/index';
-import BackIcon from '../../assets/icons/back_icon.png';
-import { AccountsContext } from '../../context/AccountsContext';
+import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../Components/CommonButton/index';
+import InputField from '../../Components/LoginComponents/InputField';
+import TelephonePicker from '../../Components/TelephonePicker/index';
+import BackIcon from '../../Assets/Icons/back_icon.png';
+import { AccountsContext } from '../../Context/AccountsContext';
 
 Modal.setAppElement('#root');
-const GetDetails = ({
-  modalIsOpen, setModalIsOpen, setPageStatus, email
-}) => {
+const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus, email }) => {
   const { addAccount } = useContext(AccountsContext);
   const [selectedCode, setSelectedCode] = useState('91');
   const schema = yup.object().shape({
@@ -115,7 +113,7 @@ GetDetails.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
-  email: PropTypes.string.isRequired
+  email: PropTypes.string.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

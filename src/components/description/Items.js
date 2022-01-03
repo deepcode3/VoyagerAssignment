@@ -2,9 +2,9 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import './Description.css';
-import { cartContext } from '../../context/cartContext';
-import vegicon from '../../assets/icons/vegicon.png';
-import nonveg from '../../assets/icons/nonveg.png';
+import { cartContext } from '../../Context/CartContext';
+import vegicon from '../../Assets/Icons/vegicon.png';
+import nonveg from '../../Assets/Icons/nonveg.png';
 
 // eslint-disable-next-line object-curly-newline
 const Items = ({ item, price, quantity, isVeg }) => {
