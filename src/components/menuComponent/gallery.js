@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import MenuHalfCompo from '../menuSemiCompo';
+import MenuHalfCompo from '../MenuSemiCompo';
 import cancelButton from '../../Assets/Icons/cancel.png';
 import item1 from '../../Assets/Images/item1.png';
 import item2 from '../../Assets/Images/item2.jpeg';

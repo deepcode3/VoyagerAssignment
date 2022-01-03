@@ -3,7 +3,7 @@
 import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
-import MenuHalfCompo from '../menuSemiCompo';
+import MenuHalfCompo from '../MenuSemiCompo';
 import { reviewsContext } from '../../Context/ReviewContext';
 import selectedRatingStar from '../../Assets/Icons/ratingStar.png';
 import nonSelectedRatingStar from '../../Assets/Icons/icn_star_red.png';
