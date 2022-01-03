@@ -39,7 +39,13 @@ const Header = ({ isHome }) => {
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
             </ProfileConatiner>
-            <User>{currentUser.firstname.toUpperCase()}</User>
+            <User
+              onClick={() => {
+                history.push('/profile');
+              }}
+            >
+              {currentUser.firstname.toUpperCase()}
+            </User>
             <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
         ) : (
@@ -187,7 +193,7 @@ const ProfileIcon = styled.img`
   width: 19px;
   padding: 9px;
 `;
-const User = styled.p`
+const User = styled.button`
   height: 19px;
   color: #303134;
   font-family: 'Open Sans', sans-serif;
@@ -196,6 +202,8 @@ const User = styled.p`
   letter-spacing: 0.5px;
   line-height: 19px;
   margin-right: 8%;
+  background-color: transparent;
+  border: none;
 `;
 const Button = styled.button`
   height: 19px;
