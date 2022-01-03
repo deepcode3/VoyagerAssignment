@@ -6,7 +6,7 @@ import Items from './Items';
 import { cartContext } from '../../Context/CartContext';
 import empty from '../../Assets/Images/empty.png';
 import './Description.css';
-import CommonHeader from '../headercommon/CommonHeader';
+import CommonHeader from '../HeaderCommon/CommonHeader';
 import Footer from '../Footer';
 
 const Cart = () => {
