@@ -25,6 +25,10 @@ const Header = ({ isHome }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [inputType, setInputType] = useState('email');
+  const [selectedCode, setSelectedCode] = useState('91');
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
     trigger(!state);
@@ -35,7 +39,7 @@ const Header = ({ isHome }) => {
     <HeaderWrapper>
       {isHome ? <Logo /> : <Logo afterLogin />}
       <LinkContainer>
-        {loginStatus ? (
+        {loginStatus && currentUser !== null ? (
           <>
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
@@ -120,6 +124,7 @@ const Header = ({ isHome }) => {
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
           email={email}
+          setName={setName}
         />
       ) : null}
       {pageStatus === 'welcome-page' ? (
@@ -127,6 +132,8 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          name={name}
+          email={email}
         />
       ) : null}
       {pageStatus === 'forgot-password' ? (
@@ -134,6 +141,12 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          setInputType={setInputType}
+          inputType={inputType}
+          selectedCode={selectedCode}
+          setSelectedCode={setSelectedCode}
+          setEmail={setEmail}
+          setMobile={setMobile}
         />
       ) : null}
       {pageStatus === 'new-password' ? (
@@ -141,6 +154,10 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          email={email}
+          mobile={mobile}
+          inputType={inputType}
+          selectedCode={selectedCode}
         />
       ) : null}
       {pageStatus === 'password-change-success' ? (

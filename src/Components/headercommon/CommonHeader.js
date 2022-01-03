@@ -15,7 +15,7 @@ const CommonHeader = ({ data, searchKey, location }) => {
       <div className='restaurantSearchBar'>
         <span className='crestaurantsInfo'>Delivery ASAP</span>
         {console.log(data)}
-        <div className='csearch'>
+        <div className='cseardch'>
           <div className='restaurantSearch'>
             <SearchBar searchValue={searchKey} from='restaurant' />
           </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
 import { useForm } from 'react-hook-form';
@@ -10,9 +10,19 @@ import StyledButton from '../../Components/CommonButton/index';
 import icnVerified from '../../Assets/Icons/icn_verified_icon.png';
 import InputField from '../../Components/LoginComponents/InputField';
 import BackIcon from '../../Assets/Icons/back_icon.png';
+import { AccountsContext } from '../../Context/AccountsContext';
 
 Modal.setAppElement('#root');
-const PasswordChange = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+const PasswordChange = ({
+  modalIsOpen,
+  setModalIsOpen,
+  setPageStatus,
+  email,
+  mobile,
+  selectedCode,
+  inputType,
+}) => {
+  const { changePassword } = useContext(AccountsContext);
   const schema = yup.object().shape({
     password: yup.string().required('Password is required'),
   });
@@ -24,7 +34,16 @@ const PasswordChange = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
     resolver: yupResolver(schema),
   });
   const submitForm = (data) => {
-    console.log(data);
+    if (inputType === 'email') {
+      changePassword({ email, password: data.password, type: 'email' });
+    } else {
+      changePassword({
+        countrycode: selectedCode,
+        mobile,
+        password: data.password,
+        type: 'mobile',
+      });
+    }
     setPageStatus('password-change-success');
   };
   return (
@@ -72,6 +91,10 @@ PasswordChange.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
+  mobile: PropTypes.string.isRequired,
+  inputType: PropTypes.string.isRequired,
+  selectedCode: PropTypes.string.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

@@ -7,7 +7,7 @@ import StyledButton from '../../Components/CommonButton/index';
 import closeButton from '../../Assets/Icons/close_button.png';
 import icnRegisterSuccess from '../../Assets/Icons/icn_register_success.png';
 
-const WelcomePage = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+const WelcomePage = ({ modalIsOpen, setModalIsOpen, setPageStatus, name, email }) => {
   return (
     <Modal
       className='wrapper'
@@ -30,9 +30,9 @@ const WelcomePage = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             <img src={closeButton} alt='cut' />
           </Button>
           <StyledImg src={icnRegisterSuccess} alt='icon' />
-          <BlackText>Hi Abdulla, </BlackText>
+          <BlackText>{`Hi, ${name}`}</BlackText>
           <BlackText> Welcome to Zadoh </BlackText>
-          <Description>We’ve sent you an email on abdulla.mohammad for verification.</Description>
+          <Description>{`We’ve sent you an email on ${email} for verification.`}</Description>
           <StyledButton
             onClick={() => {
               setPageStatus('login');
@@ -50,6 +50,8 @@ WelcomePage.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

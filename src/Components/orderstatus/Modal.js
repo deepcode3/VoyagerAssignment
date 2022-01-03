@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Modal.css';
 import PropTypes from 'prop-types';
 import StarIcon from '@mui/icons-material/Star';
-// import Items from '../description/Items'
-// import {cartContext} from '../../context/cartContext'
+import Items from '../description/Items';
+import { cartContext } from '../../Context/CartContext';
 
 const Modal = ({ closemodal }) => {
-  // const {cartItems}=useContext(cartContext)
+  const { cartItems } = useContext(cartContext);
   const [star1, setStar1] = useState(false);
   const [star2, setStar2] = useState(false);
   const [star3, setStar3] = useState(false);
@@ -27,9 +27,10 @@ const Modal = ({ closemodal }) => {
         <p className='statusorderdetails'>Order Details</p>
         <p className='statusitems'>Items</p>
         <div className='statusitemsrectangle'>
-          {/* {cartItems.map((curritem)=>{
-            return  <Items key={curritem.id}{...curritem}/>
-        })} */}
+          {cartItems.map((curritem) => {
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            return <Items key={curritem.id} {...curritem} />;
+          })}
         </div>
         <p className='statusmaount'>Amount</p>
         <div className='statusamountrect'>

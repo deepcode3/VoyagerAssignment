@@ -4,8 +4,8 @@ import SearchBar, {
   LocationSetter,
 } from '../../Components/HomeComponents/SearchBar';
 import mouse from '../../Assets/Icons/mouse.png';
-import Header from '../../Components/Header';
 import './Home.css';
+import Header from '../../Components/Header';
 
 const Home = () => {
   return (
