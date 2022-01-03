@@ -108,7 +108,7 @@ const Restaurant = ({ data, searchKey, location }) => {
               </div>
               <div className={!TimeSortHide ? 'timeSortUnderLine1' : 'timeSortUnderLine2'} />
               <div className={TimeSortHide ? 'timeSortInfo' : 'revTimeSortInfo'}>
-                <div className='status'>
+                <div className='status1'>
                   <span className='statusLabel'>Show restaurant with</span>
                   <div className='statusButton'>
                     <img src={checkBox} className='statusButtonImg' alt='statusbuttonImg' />
