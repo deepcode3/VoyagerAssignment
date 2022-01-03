@@ -38,9 +38,7 @@ const Signup = ({
     setPageStatus('login');
   };
   const submitForm = (data) => {
-    console.log(data);
     const result = checkIfAccountExists(data);
-    console.log('res', result);
     if (result === null || result.length === 0) {
       setEmail(data.email);
       setPageStatus('otp-verification');

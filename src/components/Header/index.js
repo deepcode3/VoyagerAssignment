@@ -18,7 +18,6 @@ import { UserContext } from '../../context/UserContext';
 
 const Header = ({ isHome }) => {
   const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
   const history = useHistory();
   const [state, trigger] = useState(true);
   const loginStatus = localStorage.getItem('accessToken');

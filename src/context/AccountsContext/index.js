@@ -29,10 +29,7 @@ const AccountsContextProvider = ({ children }) => {
     return result;
   };
   const addAccount = (data) => {
-    const finalArray = [...accounts, data];
-    console.log('final', finalArray);
-    setAccounts(finalArray);
-    console.log(accounts);
+    setAccounts([...accounts, data]);
   };
   return (
     /* eslint-disable react/jsx-no-constructed-context-values */

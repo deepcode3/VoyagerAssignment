@@ -42,7 +42,6 @@ const GetDetails = ({
   });
   const submitForm = (data) => {
     data.code = selectedCode;
-    console.log(data);
     addAccount({
       firstname: data.firstName,
       lastname: data.lastName,
