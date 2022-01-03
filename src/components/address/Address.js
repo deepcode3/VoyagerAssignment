@@ -75,7 +75,15 @@ const CartAddress = () => {
           </div>
           <div className='addnew'>
             <img src={addnewbtn} className='addnewbtn' alt='adnewbtn' />
-            <p className='addnewtext'>ADD NEW</p>
+            <p
+              onKeyDown={null}
+              className='addnewtext'
+              onClick={() => {
+                history.push('/profile/profile-address');
+              }}
+            >
+              ADD NEW
+            </p>
             <div className='homeaddressdiv' onClick={usecheck} role='button' onKeyDown={null}>
               <p className='home'>Home</p>
 
