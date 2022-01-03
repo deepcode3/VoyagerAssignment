@@ -211,6 +211,7 @@ const BackButton = styled.button`
   border: none;
   margin-right: 95%;
   margin-top: 2%;
+  cursor: pointer;
   .backArrow {
     height: 17px;
     width: 17px;
@@ -282,6 +283,7 @@ const InputTypeButton = styled.button`
   background-color: transparent;
   border: none;
   padding: 0;
+  cursor: pointer;
 `;
 const Form = styled.form`
   height: 57%;

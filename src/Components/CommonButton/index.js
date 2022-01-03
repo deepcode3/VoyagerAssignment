@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const CommonButton = styled.button`
+  cursor: pointer;
   height: 50px;
   width: 380px;
   border-radius: 6px;

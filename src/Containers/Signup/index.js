@@ -134,6 +134,7 @@ const Button = styled.button`
   right: 0px;
   position: absolute;
   top: 3%;
+  cursor: pointer;
 `;
 const BlackText = styled.p`
   color: #2a2c30;

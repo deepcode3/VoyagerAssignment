@@ -86,6 +86,7 @@ const Button = styled.button`
   right: 0px;
   position: absolute;
   top: 3%;
+  cursor: pointer;
 `;
 const StyledImg = styled.img`
   height: 30%;

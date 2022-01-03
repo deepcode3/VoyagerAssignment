@@ -126,5 +126,6 @@ const ViewIcon = styled.img`
   height: 17px;
   width: 20px;
   margin-top: 5%;
+  cursor: pointer;
   position: absolute;
 `;

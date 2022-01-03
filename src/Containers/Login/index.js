@@ -143,6 +143,7 @@ const Button = styled.button`
   right: 0px;
   position: absolute;
   top: 3%;
+  cursor: pointer;
 `;
 const BlackText = styled.p`
   height: 38px;
@@ -179,4 +180,5 @@ const ForgotButton = styled.button`
   outline: none;
   margin-left: 60%;
   margin-top: -8%;
+  cursor: pointer;
 `;

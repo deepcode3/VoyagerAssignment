@@ -112,6 +112,7 @@ const BackButton = styled.button`
   border: none;
   margin-right: 95%;
   margin-top: 2%;
+  cursor: pointer;
   .backArrow {
     height: 17px;
     width: 17px;
