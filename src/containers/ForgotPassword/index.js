@@ -82,6 +82,7 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
                   onClick={() => {
                     return setInputType('email');
                   }}
+                  className={inputType === 'email' ? 'boldButton' : null}
                 >
                   Email
                 </InputTypeButton>
@@ -93,6 +94,7 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
                   onClick={() => {
                     return setInputType('mobile');
                   }}
+                  className={inputType === 'mobile' ? 'boldButton' : null}
                 >
                   Mobile No.
                 </InputTypeButton>
@@ -149,6 +151,10 @@ const Wrapper = styled.div`
   bottom: 0;
   right: 0;
   margin: auto;
+  .boldButton {
+    color: #000000;
+    font-weight: 600;
+  }
 `;
 
 const RightWrapper = styled.div`
@@ -225,7 +231,7 @@ const Navbar = styled.div`
 const TypeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height:20px;
+  height: 20px;
 `;
 const InputTypeButton = styled.button`
   height: 24px;

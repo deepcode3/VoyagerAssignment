@@ -10,11 +10,8 @@ import './CommonHeader.css';
 const CommonHeader = ({ data, searchKey, location }) => {
   return (
     <>
-      <div className='cheader'>
-        <Header />
-      </div>
+      <Header />
       <img src={menuSemiBg} alt='semiBg' className='csemiBg' />
-
       <div className='restaurantSearchBar'>
         <span className='crestaurantsInfo'>Delivery ASAP</span>
         {console.log(data)}

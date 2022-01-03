@@ -15,7 +15,6 @@ const InputField = ({ label, name, isPassword, register, msg }) => {
   const handleFocusChange = (e) => {
     if (e.target.value === '') changeFocusState(false);
   };
-
   return (
     <FormContainer>
       <Textbox
@@ -58,7 +57,7 @@ InputField.propTypes = {
 };
 InputField.defaultProps = {
   isPassword: false,
-  msg: null
+  msg: null,
 };
 const FormContainer = styled.div`
   position: relative;
@@ -105,8 +104,10 @@ const Textbox = styled.input`
   :focus {
     border-bottom: 1px solid black;
   }
-  .redBorder {
-    border-bottom: 1px solid #ed1b2e;
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s !important;
   }
 `;
 

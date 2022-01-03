@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useContext } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
@@ -11,9 +11,13 @@ import StyledButton from '../../components/CommonButton/index';
 import LoginOptions from '../../components/LoginComponents/LoginOptions/index';
 import TextWithButton from '../../components/LoginComponents/TextWithButton/index';
 import closeButton from '../../assets/icons/close_button.png';
+import { AccountsContext } from '../../context/AccountsContext';
+import { UserContext } from '../../context/UserContext';
 
 Modal.setAppElement('#root');
 const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+  const { checkIfAccountExists } = useContext(AccountsContext);
+  const { setCurrentUser } = useContext(UserContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required('Email id is required'),
     password: yup.string().required('Password is required'),
@@ -21,6 +25,7 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -29,14 +34,22 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
     setPageStatus('signup');
   };
   const submitForm = (data) => {
-    console.log(data);
-    localStorage.setItem('accessToken', JSON.stringify('success'));
-    setModalIsOpen(false);
+    const result = checkIfAccountExists(data);
+    if (result === null) {
+      setError('email', { type: 'manual', message: 'Email id is not registered' });
+    } else if (result.length === 0) {
+      setError('email', { type: 'manual', message: 'Email id is not registered' });
+    } else if (result[0].password !== data.password) {
+      setError('password', { type: 'manual', message: 'Incorrect password entered' });
+    } else {
+      localStorage.setItem('accessToken', JSON.stringify('success'));
+      setCurrentUser(result[0]);
+    }
+    if (localStorage.getItem('accessToken')) setModalIsOpen(false);
   };
   const handleForgotClick = () => {
     setPageStatus('forgot-password');
   };
-
   return (
     <Modal
       className='wrapper'

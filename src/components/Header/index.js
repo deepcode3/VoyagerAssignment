@@ -1,6 +1,7 @@
-import { React, useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 import Logo from '../logo';
 import ForgotPassword from '../../containers/ForgotPassword';
@@ -13,16 +14,22 @@ import WelcomePage from '../../containers/WelcomePage';
 import PasswordChangeSuccess from '../../containers/PasswordChangeSuccess';
 import iconCart from '../../assets/icons/icn_cart.png';
 import icnProfile from '../../assets/icons/icn_profile.svg';
+import { UserContext } from '../../context/UserContext';
 
 const Header = ({ isHome }) => {
-  const handleLogout = () => {
-    localStorage.removeItem('accessToken');
-    window.location.reload();
-  };
+  const { currentUser } = useContext(UserContext);
+  const history = useHistory();
+  const [state, trigger] = useState(true);
   const loginStatus = localStorage.getItem('accessToken');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
-
+  const [email, setEmail] = useState('');
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    trigger(!state);
+    history.push('/');
+  };
+  useEffect(() => {}, [trigger]);
   return (
     <HeaderWrapper>
       {isHome ? <Logo /> : <Logo afterLogin />}
@@ -32,8 +39,14 @@ const Header = ({ isHome }) => {
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
             </ProfileConatiner>
-            <User>ASHLEY</User>
-            <VerticalLine className='smallLine' />
+            <User
+              onClick={() => {
+                history.push('/profile');
+              }}
+            >
+              {currentUser.firstname.toUpperCase()}
+            </User>
+            <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
         ) : (
           <Button
@@ -57,7 +70,7 @@ const Header = ({ isHome }) => {
             CREATE AN ACCOUNT
           </Button>
         )}
-        <VerticalLine className='smallLine' />
+        <VerticalLine className={!isHome ? 'smallLine' : null} />
         {isHome ? (
           <>
             <CartIcon src={iconCart} alt='icon' />
@@ -82,6 +95,7 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          setEmail={setEmail}
         />
       ) : null}
       {pageStatus === 'otp-verification' ? (
@@ -104,6 +118,7 @@ const Header = ({ isHome }) => {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           setPageStatus={setPageStatus}
+          email={email}
         />
       ) : null}
       {pageStatus === 'welcome-page' ? (
@@ -144,12 +159,13 @@ Header.propTypes = {
 Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
-  height: 70px;
-  width: 100%;
+  height: 60px;
+  width: 1865px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-left: 30px;
   .smallLine {
     height: 30px;
   }
@@ -162,7 +178,7 @@ const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 21%;
-  right: 1%;
+  margin-right: 1%;
   align-items: center;
 `;
 const ProfileConatiner = styled.div`
@@ -177,7 +193,7 @@ const ProfileIcon = styled.img`
   width: 19px;
   padding: 9px;
 `;
-const User = styled.p`
+const User = styled.button`
   height: 19px;
   color: #303134;
   font-family: 'Open Sans', sans-serif;
@@ -186,6 +202,8 @@ const User = styled.p`
   letter-spacing: 0.5px;
   line-height: 19px;
   margin-right: 8%;
+  background-color: transparent;
+  border: none;
 `;
 const Button = styled.button`
   height: 19px;
