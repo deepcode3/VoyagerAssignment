@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
-import SearchBar, { LocationSetter } from '../../Components/HomeComponents/searchbar';
+import SearchBar, { LocationSetter } from '../../Components/HomeComponents/SearchBar';
 import Header from '../../Components/Header';
 import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';

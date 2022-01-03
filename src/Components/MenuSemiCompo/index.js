@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import Header from '../Header';
-import SearchBar, { LocationSetter } from '../HomeComponents/searchbar';
+import SearchBar, { LocationSetter } from '../HomeComponents/SearchBar';
 import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
 import halfBg from '../../Assets/Images/halfBg.jpg';
