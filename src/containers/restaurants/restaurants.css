@@ -1,589 +1,589 @@
 .header {
-	height: 70px;
-	width: 1700px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  height: 70px;
+  width: 1700px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
 }
 .semiBg {
-	height: 130px;
-	width: 1700px;
+  height: 130px;
+  width: 1700px;
 }
 .body {
-	width: 961px;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	margin-left: auto;
-	margin-right: auto;
+  width: 961px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 .restaurantSearchBar {
-	height: 76px;
-	width: 961px;
-	position: relative;
-	top: -115px;
+  height: 76px;
+  width: 961px;
+  position: relative;
+  top: -115px;
 }
 .restaurantsInfo {
-	width: 78px;
-	color: #636364;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	font-weight: 600;
-	letter-spacing: -0.2px;
-	line-height: 17px;
+  width: 78px;
+  color: #636364;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 17px;
 }
 .restaurantSearch {
-	height: 50px;
-	width: 605px;
+  height: 50px;
+  width: 605px;
 }
 .restaurantDateTimeButton {
-	height: 50px;
-	width: 50px;
-	position: relative;
-	left: 880px;
-	top: -90px;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  left: 880px;
+  top: -90px;
 }
 .restaurantLocators {
-	position: relative;
-	top: -80px;
-	left: -352px;
-	height: 44px;
-	width: 1700px;
-	background-color: #c5cae238;
+  position: relative;
+  top: -80px;
+  left: -352px;
+  height: 44px;
+  width: 1700px;
+  background-color: #c5cae238;
 }
 .restaurantLocatorInfo {
-	height: 17px;
-	width: 961px;
-	color: #6f6f6f;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	font-weight: 600;
-	line-height: 17px;
-	position: relative;
-	left: 355px;
-	top: 14px;
-	word-spacing: 3px;
+  height: 17px;
+  width: 961px;
+  color: #6f6f6f;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  position: relative;
+  left: 355px;
+  top: 14px;
+  word-spacing: 3px;
 }
 .restaurantHalfBg {
-	top: -78px;
-	position: relative;
-	left: -352px;
-	background-color: #c5cae238;
-	width: 1700px;
-	height: 750px;
+  top: -78px;
+  position: relative;
+  left: -352px;
+  background-color: #c5cae238;
+  width: 1700px;
+  height: 750px;
 }
 .heading {
-	height: 34px;
-	width: 961px;
-	color: #636364;
-	font-family: 'Open Sans';
-	font-size: 25px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 34px;
-	position: relative;
-	left: 355px;
-	top: 16px;
+  height: 34px;
+  width: 961px;
+  color: #636364;
+  font-family: 'Open Sans';
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 34px;
+  position: relative;
+  left: 355px;
+  top: 16px;
 }
 .restaurantBody {
-	height: 1140px;
-	width: 1150px;
-	position: relative;
-	top: 50px;
-	left: -190px;
-	display: flex;
-	flex-direction: column;
-	margin-left: auto;
-	margin-right: auto;
-	justify-content: space-between, 10px;
+  height: 1140px;
+  width: 1150px;
+  position: relative;
+  top: 50px;
+  left: -190px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between, 10px;
 }
 .filterBox {
-	height: 665px;
-	width: 304px;
-	border-radius: 6px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-	position: absolute;
-	left: 270px;
-	max-height: 665px;
-	overflow-y: scroll;
+  height: 665px;
+  width: 304px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 270px;
+  max-height: 665px;
+  overflow-y: scroll;
 }
 .filterHeading {
-	height: 27px;
-	width: 60px;
-	color: #1b1c1d;
-	font-family: 'Open Sans';
-	font-size: 20px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 27px;
-	position: relative;
-	left: 21px;
-	top: 14px;
+  height: 27px;
+  width: 60px;
+  color: #1b1c1d;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 27px;
+  position: relative;
+  left: 21px;
+  top: 14px;
 }
 .resetAll {
-	height: 22px;
-	width: 64px;
-	color: #f57c00;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	letter-spacing: 0;
-	line-height: 22px;
-	text-align: right;
-	position: relative;
-	left: 220px;
-	top: -7px;
-	cursor: pointer;
+  height: 22px;
+  width: 64px;
+  color: #f57c00;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: right;
+  position: relative;
+  left: 220px;
+  top: -7px;
+  cursor: pointer;
 }
 .filterUnderLine {
-	box-sizing: border-box;
-	height: 2px;
-	width: 303px;
-	border: 1px solid #e1e1e1;
-	box-sizing: border-box;
-	height: 2px;
-	width: 303px;
-	border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  height: 2px;
+  width: 303px;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  height: 2px;
+  width: 303px;
+  border: 1px solid #e1e1e1;
 }
 .resBox {
-	height: 166.79px;
-	width: 627px;
-	border-radius: 6px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-	position: relative;
-	left: 600px;
+  height: 166.79px;
+  width: 627px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 600px;
 }
 .resImage {
-	height: 135.48px;
-	width: 137.82px;
-	border-radius: 4px;
-	position: relative;
-	left: 15px;
-	top: -10px;
+  height: 135.48px;
+  width: 137.82px;
+  border-radius: 4px;
+  position: relative;
+  left: 15px;
+  top: -10px;
 }
 .resName {
-	position: relative;
-	top: 00px;
-	left: 168px;
-	top: 15px;
-	height: 30px;
-	width: 326px;
-	color: #223136;
-	font-family: 'Open Sans';
-	font-size: 22px;
-	font-weight: bold;
-	letter-spacing: 0;
-	line-height: 30px;
+  position: relative;
+  top: 00px;
+  left: 168px;
+  top: 15px;
+  height: 30px;
+  width: 326px;
+  color: #223136;
+  font-family: 'Open Sans';
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 30px;
 }
 .resLocation {
-	height: 17px;
-	width: 175px;
-	color: #858484;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	letter-spacing: 0;
-	line-height: 17px;
-	position: relative;
-	top: -125px;
-	left: 170px;
+  height: 17px;
+  width: 175px;
+  color: #858484;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -125px;
+  left: 170px;
 }
 .resUnderline {
-	box-sizing: border-box;
-	height: 2px;
-	width: 448.3px;
-	border: 1px solid #979797;
-	opacity: 0.1;
-	position: relative;
-	left: 170px;
-	top: -115px;
+  box-sizing: border-box;
+  height: 2px;
+  width: 448.3px;
+  border: 1px solid #979797;
+  opacity: 0.1;
+  position: relative;
+  left: 170px;
+  top: -115px;
 }
 .resItem {
-	height: 17px;
-	width: 134px;
-	color: #9f9f9f;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	letter-spacing: 0;
-	line-height: 17px;
-	position: relative;
-	top: -110px;
-	left: 170px;
+  height: 17px;
+  width: 134px;
+  color: #9f9f9f;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -110px;
+  left: 170px;
 }
 .resStatus {
-	height: 17px;
-	width: 62px;
-	color: #5fb700;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 17px;
-	position: relative;
-	top: -100px;
-	left: 170px;
+  height: 17px;
+  width: 62px;
+  color: #5fb700;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -100px;
+  left: 170px;
 }
 .resDetails {
-	height: 17px;
-	width: 313px;
-	color: #757575;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	letter-spacing: 0;
-	line-height: 17px;
-	position: relative;
-	top: -90px;
-	left: 170px;
-	word-spacing: 5px;
+  height: 17px;
+  width: 313px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -90px;
+  left: 170px;
+  word-spacing: 5px;
 }
 .resRating {
-	height: 27.25px;
-	width: 43.6px;
-	border-radius: 4px;
-	background-color: #f5a623;
-	position: relative;
-	top: -230px;
-	left: 570px;
+  height: 27.25px;
+  width: 43.6px;
+  border-radius: 4px;
+  background-color: #f5a623;
+  position: relative;
+  top: -230px;
+  left: 570px;
 }
 .ratingInfo {
-	height: 22px;
-	width: 23px;
-	color: #ffffff;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	font-weight: bold;
-	letter-spacing: 0;
-	line-height: 22px;
-	text-align: center;
-	position: relative;
-	left: 10px;
-	top: 2px;
+  height: 22px;
+  width: 23px;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: center;
+  position: relative;
+  left: 10px;
+  top: 2px;
 }
 .menuButton {
-	height: 35.43px;
-	width: 110.14px;
-	border-radius: 17.71px;
-	box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-	position: relative;
-	top: -155px;
-	left: 500px;
-	cursor: pointer;
+  height: 35.43px;
+  width: 110.14px;
+  border-radius: 17.71px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: -155px;
+  left: 500px;
+  cursor: pointer;
 }
 .filterOption {
-	position: absolute;
-	left: 1080px;
-	top: 40px;
-	display: flex;
-	flex-direction: row;
+  position: absolute;
+  left: 1080px;
+  top: 40px;
+  display: flex;
+  flex-direction: row;
 }
 .listBy {
-	height: 22px;
-	width: 59px;
-	color: #303134;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 22px;
+  height: 22px;
+  width: 59px;
+  color: #303134;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
 }
 .listByOption {
-	height: 22px;
-	width: 19px;
-	color: #fca100;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	letter-spacing: 0;
-	line-height: 22px;
-	position: relative;
-	left: 5px;
+  height: 22px;
+  width: 19px;
+  color: #fca100;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: relative;
+  left: 5px;
 }
 .resSortBy {
-	position: relative;
-	left: 30px;
+  position: relative;
+  left: 30px;
 }
 .sortBy {
-	height: 22px;
-	width: 64px;
-	color: #303134;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 22px;
+  height: 22px;
+  width: 64px;
+  color: #303134;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
 }
 .sortByOption {
-	height: 19px;
-	width: 47px;
-	color: #fca100;
-	font-family: Helvetica;
-	font-size: 16px;
-	letter-spacing: 0;
-	line-height: 19px;
-	text-align: right;
-	position: relative;
-	left: 5px;
+  height: 19px;
+  width: 47px;
+  color: #fca100;
+  font-family: Helvetica;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
+  text-align: right;
+  position: relative;
+  left: 5px;
 }
 
 /* Filters Css */
 .timeAndAverageMealCost {
-	height: 19px;
-	width: 260px;
-	display: flex;
-	flex-direction: row;
-	position: relative;
-	top: 20px;
-	left: 20px;
+  height: 19px;
+  width: 260px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 20px;
+  left: 20px;
 }
 .timeInfo {
-	color: #5e5e5e;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 19px;
+  color: #5e5e5e;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
 }
 .timeHideButton {
-	height: 3px;
-	width: 15px;
-	opacity: 1;
-	position: relative;
-	left: 50px;
-	top: 9px;
-	cursor: pointer;
+  height: 3px;
+  width: 15px;
+  opacity: 1;
+  position: relative;
+  left: 50px;
+  top: 9px;
+  cursor: pointer;
 }
 .timeShowButton {
-	height: 15px;
-	width: 15px;
-	opacity: 1;
-	position: relative;
-	left: 50px;
-	top: 3px;
-	cursor: pointer;
+  height: 15px;
+  width: 15px;
+  opacity: 1;
+  position: relative;
+  left: 50px;
+  top: 3px;
+  cursor: pointer;
 }
 .timeSortInfo {
-	height: 430px;
-	width: 303px;
-	position: relative;
-	top: 15px;
-	transition-timing-function: ease;
-	transition-delay: 10s;
+  height: 430px;
+  width: 303px;
+  position: relative;
+  top: 15px;
+  transition-timing-function: ease;
+  transition-delay: 10s;
 }
 .revTimeSortInfo {
-	display: none;
+  display: none;
 }
-.status {
-	height: 47px;
-	width: 130px;
-	position: relative;
+.status1 {
+  height: 47px;
+  width: 130px;
+  position: relative;
 }
 .statusLabel {
-	height: 19px;
-	width: 130px;
-	color: #9e9999;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	letter-spacing: -0.48px;
-	line-height: 19px;
-	position: relative;
-	left: 21px;
-	top: 26px;
+  height: 19px;
+  width: 130px;
+  color: #9e9999;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.48px;
+  line-height: 19px;
+  position: relative;
+  left: 21px;
+  top: 26px;
 }
 .statusButtonImg {
-	position: relative;
-	top: 34px;
-	left: 21px;
+  position: relative;
+  top: 34px;
+  left: 21px;
 }
 .statusButtonLabel {
-	height: 19px;
-	width: 70px;
-	color: #f78713;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: -0.24px;
-	line-height: 19px;
-	position: relative;
-	top: 30px;
-	left: 30px;
+  height: 19px;
+  width: 70px;
+  color: #f78713;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: relative;
+  top: 30px;
+  left: 30px;
 }
 .timeSortUnderLine1 {
-	box-sizing: border-box;
-	height: 2px;
-	width: 303px;
-	border: 1px solid #e1e1e1;
-	box-sizing: border-box;
-	height: 2px;
-	width: 303px;
-	border: 1px solid #e1e1e1;
-	position: relative;
-	top: 40px;
+  box-sizing: border-box;
+  height: 2px;
+  width: 303px;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  height: 2px;
+  width: 303px;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  top: 40px;
 }
 .timeSortUnderLine2 {
-	box-sizing: border-box;
-	height: 2px;
-	width: 303px;
-	border: 1px solid #e1e1e1;
-	box-sizing: border-box;
-	height: 2px;
-	width: 303px;
-	border: 1px solid #e1e1e1;
-	position: relative;
-	top: 470px;
+  box-sizing: border-box;
+  height: 2px;
+  width: 303px;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  height: 2px;
+  width: 303px;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  top: 470px;
 }
 .deliveryTime {
-	position: relative;
-	top: 50px;
-	left: 21px;
+  position: relative;
+  top: 50px;
+  left: 21px;
 }
 .deliverTimeLabel {
-	height: 19px;
-	width: 64px;
-	color: #9e9999;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	letter-spacing: -0.48px;
-	line-height: 19px;
+  height: 19px;
+  width: 64px;
+  color: #9e9999;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.48px;
+  line-height: 19px;
 }
 .deliveryTimeFilter {
-	position: relative;
-	top: 10px;
+  position: relative;
+  top: 10px;
 }
 .timeRadioButtons {
-	position: relative;
-	display: row;
-	flex-direction: column;
-	justify-content: space-between;
+  position: relative;
+  display: row;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .selected {
-	height: 19px;
-	width: 200px;
-	color: #f78713;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: -0.24px;
-	line-height: 19px;
-	display: flex;
-	flex-direction: row;
-	padding-bottom: 10px;
+  height: 19px;
+  width: 200px;
+  color: #f78713;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
 }
 .disSelected {
-	height: 19px;
-	width: 200px;
-	color: #606060;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: -0.24px;
-	line-height: 19px;
-	display: flex;
-	flex-direction: row;
-	padding-bottom: 10px;
+  height: 19px;
+  width: 200px;
+  color: #606060;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
 }
 .averageMealCost {
-	position: relative;
-	top: 70px;
-	left: 21px;
+  position: relative;
+  top: 70px;
+  left: 21px;
 }
 .averageMealCostLabel {
-	height: 19px;
-	width: 150px;
-	color: #9e9999;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	letter-spacing: -0.48px;
-	line-height: 19px;
+  height: 19px;
+  width: 150px;
+  color: #9e9999;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.48px;
+  line-height: 19px;
 }
 .avereageMealCostFiltter {
-	position: relative;
-	top: 10px;
+  position: relative;
+  top: 10px;
 }
 .minimumOrder {
-	position: relative;
-	top: 90px;
-	left: 21px;
+  position: relative;
+  top: 90px;
+  left: 21px;
 }
 .minimumOrderLabel {
-	height: 19px;
-	width: 97px;
-	color: #9e9999;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	letter-spacing: -0.48px;
-	line-height: 19px;
+  height: 19px;
+  width: 97px;
+  color: #9e9999;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.48px;
+  line-height: 19px;
 }
 .minimumOrderFilter {
-	position: relative;
-	top: 10px;
+  position: relative;
+  top: 10px;
 }
 .cuisines {
-	position: relative;
-	top: 50px;
-	left: 20px;
+  position: relative;
+  top: 50px;
+  left: 20px;
 }
 .cuisinesLabel {
-	height: 19px;
-	width: 62px;
-	color: #5e5e5e;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 19px;
+  height: 19px;
+  width: 62px;
+  color: #5e5e5e;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
 }
 .cuisinesShowButton {
-	height: 15px;
-	width: 15px;
-	opacity: 1;
-	position: relative;
-	left: 245px;
-	top: -14px;
-	cursor: pointer;
+  height: 15px;
+  width: 15px;
+  opacity: 1;
+  position: relative;
+  left: 245px;
+  top: -14px;
+  cursor: pointer;
 }
 .cuisinesHideButton {
-	height: 3px;
-	width: 15px;
-	opacity: 1;
-	position: relative;
-	left: 245px;
-	top: -20px;
-	cursor: pointer;
+  height: 3px;
+  width: 15px;
+  opacity: 1;
+  position: relative;
+  left: 245px;
+  top: -20px;
+  cursor: pointer;
 }
 .cuisinesSortUnderLine {
-	box-sizing: border-box;
-	height: 2px;
-	width: 303px;
-	border: 1px solid #e1e1e1;
-	position: relative;
-	top: 50px;
+  box-sizing: border-box;
+  height: 2px;
+  width: 303px;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  top: 50px;
 }
 .cuisinesInfo {
-	width: 303px;
-	height: 40px;
+  width: 303px;
+  height: 40px;
 }
 .applyButtonBox {
-	height: 45px;
-	width: 265px;
-	border-radius: 6px;
-	box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-	position: relative;
-	left: 20px;
-	top: 65px;
-	cursor: pointer;
-	border-style: solid;
-	border-width: thin;
-	border-color: #ff5e00;
+  height: 45px;
+  width: 265px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  left: 20px;
+  top: 65px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: thin;
+  border-color: #ff5e00;
 }
 .applyButtonLabel {
-	height: 19px;
-	width: 79px;
-	color: #ff5e00;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: bold;
-	letter-spacing: -0.18px;
-	line-height: 19px;
-	text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-	position: relative;
-	top: 12px;
-	left: 100px;
+  height: 19px;
+  width: 79px;
+  color: #ff5e00;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  line-height: 19px;
+  text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: 12px;
+  left: 100px;
 }

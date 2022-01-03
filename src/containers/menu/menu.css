@@ -1,677 +1,685 @@
 .menuBody {
-	width: 961px;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	top: -550px;
-	left: 40px;
+  width: 961px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 230px;
+  left: 40px;
+}
+.menuBg {
+  background-color: #c5cae238;
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 520px;
+  padding-bottom: 300px;
 }
 .menuSearchBar {
-	height: 50px;
-	width: 580px;
-	border-radius: 4px;
-	background-color: #ffffff;
-	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.07);
-	border: none;
-	padding-left: 65px;
-	outline: none;
-	position: relative;
-	left: -30px;
+  height: 50px;
+  width: 580px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.07);
+  border: none;
+  padding-left: 65px;
+  outline: none;
+  position: relative;
+  left: -30px;
 }
 .menuSearchBar::placeholder {
-	height: 19px;
-	width: 310px;
-	opacity: 0.44;
-	color: #4a4a4a;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 19px;
+  height: 19px;
+  width: 310px;
+  opacity: 0.44;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
 }
 .menuSearchIcon {
-	position: relative;
-	left: -655px;
-	top: 7px;
-	height: 18px;
-	width: 22px;
-	opacity: 0.6;
-	transform: rotate(42deg);
-	box-sizing: border-box;
-	transform: rotate(0deg);
-	cursor: pointer;
+  position: relative;
+  left: -655px;
+  top: 7px;
+  height: 18px;
+  width: 22px;
+  opacity: 0.6;
+  transform: rotate(42deg);
+  box-sizing: border-box;
+  transform: rotate(0deg);
+  cursor: pointer;
 }
 .menuCart {
-	height: 816px;
-	width: 300px;
-	border-radius: 6px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-	position: relative;
-	top: -55px;
-	left: 640px;
-	display: block;
-	overflow: auto;
+  height: 816px;
+  width: 300px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: -55px;
+  left: 640px;
+  display: block;
+  overflow: auto;
 }
 .menuCartHeader {
-	height: 30px;
-	width: 101px;
-	color: #000000;
-	font-family: 'Open Sans';
-	font-size: 22px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 30px;
-	position: relative;
-	top: 20px;
-	left: 20px;
+  height: 30px;
+  width: 101px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: relative;
+  top: 20px;
+  left: 20px;
 }
 .menuClearCart {
-	height: 19px;
-	width: 66px;
-	color: #f57c00;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 19px;
-	text-align: right;
-	position: relative;
-	left: 218px;
-	top: -2px;
-	cursor: pointer;
+  height: 19px;
+  width: 66px;
+  color: #f57c00;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
+  text-align: right;
+  position: relative;
+  left: 218px;
+  top: -2px;
+  cursor: pointer;
 }
 .menuCartLine1 {
-	box-sizing: border-box;
-	height: 1px;
-	width: 307px;
-	border: 1px solid #f1efef;
-	position: relative;
-	top: 20px;
+  box-sizing: border-box;
+  height: 1px;
+  width: 307px;
+  border: 1px solid #f1efef;
+  position: relative;
+  top: 20px;
 }
 .menuCartItems {
-	width: 264px;
-	height: auto;
-	position: relative;
-	top: 40px;
+  width: 264px;
+  height: auto;
+  position: relative;
+  top: 40px;
 }
 .menuCartItem {
-	height: 98px;
-	width: 160px;
-	margin-bottom: 20px;
-	position: relative;
-	left: 20px;
-	padding-bottom: 25px;
+  height: 98px;
+  width: 160px;
+  margin-bottom: 20px;
+  position: relative;
+  left: 20px;
+  padding-bottom: 25px;
 }
 .menuCartnonVeg {
-	height: 14px;
-	width: 14px;
-	position: relative;
-	top: 10px;
-	left: 00px;
+  height: 14px;
+  width: 14px;
+  position: relative;
+  top: 10px;
+  left: 00px;
 }
 .menuCartVeg {
-	height: 14px;
-	width: 14px;
-	position: relative;
-	top: 10px;
-	left: 00px;
+  height: 14px;
+  width: 14px;
+  position: relative;
+  top: 10px;
+  left: 00px;
 }
 .menuCartItemName {
-	position: relative;
-	top: -10px;
-	left: 25px;
-	height: 19px;
-	width: auto;
-	color: #2d2d2d;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 19px;
+  position: relative;
+  top: -10px;
+  left: 25px;
+  height: 19px;
+  width: auto;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
 }
 .menuCartItemPrice {
-	height: 27px;
-	width: fit-content;
-	color: #2d2d2d;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	letter-spacing: 0;
-	line-height: 27px;
-	position: relative;
-	left: 27px;
-	top: 5px;
+  height: 27px;
+  width: fit-content;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 27px;
+  position: relative;
+  left: 27px;
+  top: 5px;
 }
 .menuCartItemAddOn {
-	height: 30px;
-	width: 183px;
-	color: #9b9b9b;
-	font-family: 'Open Sans';
-	font-size: 11px;
-	letter-spacing: 0;
-	line-height: 15px;
-	position: relative;
-	left: 25px;
-	top: -30px;
+  height: 30px;
+  width: 183px;
+  color: #9b9b9b;
+  font-family: 'Open Sans';
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: relative;
+  left: 25px;
+  top: -30px;
 }
 .itemQuantitySetter {
-	box-sizing: border-box;
-	height: 30px;
-	width: 87px;
-	border: 1px solid #cecfd4;
-	border-radius: 15px;
-	background-color: #ffffff;
-	position: relative;
-	top: -55px;
-	left: 180px;
+  box-sizing: border-box;
+  height: 30px;
+  width: 87px;
+  border: 1px solid #cecfd4;
+  border-radius: 15px;
+  background-color: #ffffff;
+  position: relative;
+  top: -55px;
+  left: 180px;
 }
 .decreseButton {
-	height: 10px;
-	width: 2px;
-	transform: rotate(90deg);
-	position: relative;
-	top: 2px;
-	left: 15px;
-	cursor: pointer;
+  height: 10px;
+  width: 2px;
+  transform: rotate(90deg);
+  position: relative;
+  top: 2px;
+  left: 15px;
+  cursor: pointer;
 }
 .increaseButton {
-	height: 10px;
-	width: 10px;
-	position: relative;
-	left: 55px;
-	top: 2px;
-	cursor: pointer;
+  height: 10px;
+  width: 10px;
+  position: relative;
+  left: 55px;
+  top: 2px;
+  cursor: pointer;
 }
 .quantity {
-	height: 27px;
-	width: 30px;
-	color: #f67e03;
-	font-family: 'Open Sans';
-	font-size: 13px;
-	font-weight: bold;
-	letter-spacing: 0;
-	line-height: 27px;
-	text-align: center;
-	position: relative;
-	left: 38px;
-	top: 2px;
+  height: 27px;
+  width: 30px;
+  color: #f67e03;
+  font-family: 'Open Sans';
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 27px;
+  text-align: center;
+  position: relative;
+  left: 38px;
+  top: 2px;
 }
 .menuCartCustomizable {
-	height: 15px;
-	width: 54px;
-	color: #a08234;
-	font-family: 'Open Sans';
-	font-size: 11px;
-	letter-spacing: 0;
-	line-height: 15px;
-	position: relative;
-	top: -30px;
-	left: 25px;
-	cursor: pointer;
+  height: 15px;
+  width: 54px;
+  color: #a08234;
+  font-family: 'Open Sans';
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: relative;
+  top: -30px;
+  left: 25px;
+  cursor: pointer;
 }
 .menuCartCustomizableArrow {
-	border: solid #f57c00;
-	border-width: 0 2px 2px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	position: relative;
-	top: -15px;
-	left: 65px;
-	cursor: pointer;
+  border: solid #f57c00;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  top: -15px;
+  left: 65px;
+  cursor: pointer;
 }
 .menuCartBoxLine {
-	box-sizing: border-box;
-	height: 2px;
-	width: 266px;
-	border: 1px solid #ededed;
-	position: relative;
-	top: -30px;
+  box-sizing: border-box;
+  height: 2px;
+  width: 266px;
+  border: 1px solid #ededed;
+  position: relative;
+  top: -30px;
 }
 .menuCartBoxLine2 {
-	box-sizing: border-box;
-	height: 2px;
-	width: 266px;
-	border: 1px solid #ededed;
-	position: relative;
-	top: 10px;
+  box-sizing: border-box;
+  height: 2px;
+  width: 266px;
+  border: 1px solid #ededed;
+  position: relative;
+  top: 10px;
 }
 .menuCartBoxLine3 {
-	box-sizing: border-box;
-	height: 2px;
-	width: 266px;
-	border: 1px solid #ededed;
-	position: relative;
-	top: -15px;
+  box-sizing: border-box;
+  height: 2px;
+  width: 266px;
+  border: 1px solid #ededed;
+  position: relative;
+  top: -15px;
 }
 .menuCartRemove {
-	height: 15px;
-	width: 43px;
-	color: #ed1b2e;
-	font-family: 'Open Sans';
-	font-size: 11px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 15px;
-	text-align: right;
-	position: relative;
-	top: -50px;
-	left: 200px;
-	cursor: pointer;
+  height: 15px;
+  width: 43px;
+  color: #ed1b2e;
+  font-family: 'Open Sans';
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 15px;
+  text-align: right;
+  position: relative;
+  top: -50px;
+  left: 200px;
+  cursor: pointer;
 }
 .menuCartRemove2 {
-	height: 15px;
-	width: 43px;
-	color: #ed1b2e;
-	font-family: 'Open Sans';
-	font-size: 11px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 15px;
-	text-align: right;
-	position: relative;
-	top: -10px;
-	left: 200px;
-	cursor: pointer;
+  height: 15px;
+  width: 43px;
+  color: #ed1b2e;
+  font-family: 'Open Sans';
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 15px;
+  text-align: right;
+  position: relative;
+  top: -10px;
+  left: 200px;
+  cursor: pointer;
 }
 .menuCartRemove3 {
-	height: 15px;
-	width: 43px;
-	color: #ed1b2e;
-	font-family: 'Open Sans';
-	font-size: 11px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 15px;
-	text-align: right;
-	position: relative;
-	top: -30px;
-	left: 200px;
-	cursor: pointer;
+  height: 15px;
+  width: 43px;
+  color: #ed1b2e;
+  font-family: 'Open Sans';
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 15px;
+  text-align: right;
+  position: relative;
+  top: -30px;
+  left: 200px;
+  cursor: pointer;
 }
 .priceDetails {
-	box-sizing: border-box;
-	height: 169px;
-	width: 267px;
-	border: 1px solid #f5eeee;
-	border-radius: 3px;
-	background-color: #fcfcfc;
-	box-shadow: 0 0 14px 0 rgba(202, 194, 194, 0.5);
-	position: relative;
-	top: -10px;
-	left: 17px;
-	justify-content: center;
+  box-sizing: border-box;
+  height: 169px;
+  width: 267px;
+  border: 1px solid #f5eeee;
+  border-radius: 3px;
+  background-color: #fcfcfc;
+  box-shadow: 0 0 14px 0 rgba(202, 194, 194, 0.5);
+  position: relative;
+  top: -10px;
+  left: 17px;
+  justify-content: center;
 }
 .price {
-	height: 61px;
-	width: 267px;
-	border-radius: 3px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(198, 198, 198, 0.5);
-	position: relative;
-	top: 50px;
-	left: 17px;
-	z-index: 1;
+  height: 61px;
+  width: 267px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(198, 198, 198, 0.5);
+  position: relative;
+  top: 50px;
+  left: 17px;
+  z-index: 1;
 }
 .priceLabel {
-	height: 22px;
-	width: 54px;
-	color: #223136;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	letter-spacing: 0;
-	line-height: 22px;
-	position: relative;
-	top: 20px;
-	left: 20px;
+  height: 22px;
+  width: 54px;
+  color: #223136;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: relative;
+  top: 20px;
+  left: 20px;
 }
 .totalPriceDiscount {
-	height: 22px;
-	width: auto;
-	color: #223136;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	font-weight: bolder;
-	letter-spacing: 0;
-	line-height: 22px;
-	text-align: right;
-	position: absolute;
-	left: 150px;
-	top: 20px;
+  height: 22px;
+  width: auto;
+  color: #223136;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: bolder;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: right;
+  position: absolute;
+  left: 150px;
+  top: 20px;
 }
 .showCostDetailsButton {
-	height: 7px;
-	width: 10px;
-	position: absolute;
-	top: 26px;
-	left: 238px;
-	cursor: pointer;
+  height: 7px;
+  width: 10px;
+  position: absolute;
+  top: 26px;
+  left: 238px;
+  cursor: pointer;
 }
 .hideCostDetailsButton {
-	height: 7px;
-	width: 10px;
-	transform: rotate(270deg);
-	position: absolute;
-	top: 26px;
-	left: 238px;
-	cursor: pointer;
+  height: 7px;
+  width: 10px;
+  transform: rotate(270deg);
+  position: absolute;
+  top: 26px;
+  left: 238px;
+  cursor: pointer;
 }
 .totalPrice {
-	width: 227px;
-	height: 20px;
-	position: absolute;
-	top: 79px;
-	left: 13px;
+  width: 227px;
+  height: 20px;
+  position: absolute;
+  top: 79px;
+  left: 13px;
 }
 .itemsTotalLabel {
-	height: 17px;
-	width: auto;
-	color: #9b9b9b;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	letter-spacing: 0;
-	line-height: 17px;
-	position: absolute;
-	left: 7px;
+  height: 17px;
+  width: auto;
+  color: #9b9b9b;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: absolute;
+  left: 7px;
 }
 .totalAmount {
-	height: 17px;
-	width: auto;
-	color: #9b9b9b;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	letter-spacing: 0;
-	line-height: 17px;
-	position: absolute;
-	left: 150px;
+  height: 17px;
+  width: auto;
+  color: #9b9b9b;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: absolute;
+  left: 150px;
 }
 .charges {
-	width: 227px;
-	height: 20px;
-	position: absolute;
-	top: 99px;
-	left: 13px;
+  width: 227px;
+  height: 20px;
+  position: absolute;
+  top: 99px;
+  left: 13px;
 }
 .discount {
-	width: 227px;
-	height: 20px;
-	position: absolute;
-	top: 119px;
-	left: 13px;
+  width: 227px;
+  height: 20px;
+  position: absolute;
+  top: 119px;
+  left: 13px;
 }
 .emptyCartImage {
-	height: 100px;
-	width: 150px;
-	position: relative;
-	top: 50px;
-	left: 60px;
+  height: 100px;
+  width: 150px;
+  position: relative;
+  top: 50px;
+  left: 60px;
 }
 .emptyCartText {
-	height: 27px;
-	width: 250px;
-	color: #000000;
-	font-family: 'Open Sans';
-	font-size: 20px;
-	font-weight: 600;
-	letter-spacing: -0.48px;
-	line-height: 27px;
-	position: relative;
-	top: 50px;
-	margin-left: auto;
-	margin-right: auto;
+  height: 27px;
+  width: 250px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  line-height: 27px;
+  position: relative;
+  top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .menuList {
-	width: 637px;
-	height: auto;
-	position: relative;
-	left: -30px;
-	top: -580px;
+  width: 637px;
+  height: auto;
+  position: relative;
+  left: -30px;
+  top: -580px;
 }
 .menuRecomended {
-	width: 637px;
-	height: fit-content;
-	display: flex;
-	justify-content: space-between 10px;
-	flex-direction: column;
-	position: relative;
-	top: -200px;
+  width: 637px;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between 10px;
+  flex-direction: column;
+  position: relative;
+  top: -200px;
 }
 .proccedToCheckOutButton {
-	position: relative;
-	top: 50px;
-	left: 10px;
-	cursor: pointer;
+  position: relative;
+  top: 50px;
+  left: 10px;
+  cursor: pointer;
 }
 .menuRecamendedLabel {
-	height: 22px;
-	width: 133px;
-	color: #4a4a4a;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	letter-spacing: -0.27px;
-	line-height: 22px;
-	position: relative;
-	top: 00px;
+  height: 22px;
+  width: 133px;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: relative;
+  top: 00px;
 }
 .menuRecomandedItemBox {
-	height: 126px;
-	width: 650px;
-	border-radius: 6px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-	position: relative;
-	top: 20px;
-	margin-bottom: 20px;
+  height: 126px;
+  width: 650px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 20px;
+  margin-bottom: 20px;
 }
 .menuApptizers {
-	width: 637px;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	top: -200px;
+  width: 637px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -200px;
 }
 .menuApptizersLabel {
-	height: 22px;
-	width: 133px;
-	color: #4a4a4a;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	letter-spacing: -0.27px;
-	line-height: 22px;
-	position: relative;
-	top: 50px;
+  height: 22px;
+  width: 133px;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: relative;
+  top: 50px;
 }
 .menuApptizersItemBox {
-	height: 126px;
-	width: 650px;
-	border-radius: 6px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-	position: relative;
-	top: 75px;
-	margin-bottom: 20px;
+  height: 126px;
+  width: 650px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 75px;
+  margin-bottom: 20px;
 }
 .menuSoups {
-	width: 637px;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	top: -200px;
+  width: 637px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -200px;
 }
 .menuSoupsLabel {
-	height: 22px;
-	width: 133px;
-	color: #4a4a4a;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	letter-spacing: -0.27px;
-	line-height: 22px;
-	position: relative;
-	top: 100px;
+  height: 22px;
+  width: 133px;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: relative;
+  top: 100px;
 }
 .menuSoupsItemBox {
-	height: 126px;
-	width: 650px;
-	border-radius: 6px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-	position: relative;
-	top: 135px;
-	margin-bottom: 20px;
+  height: 126px;
+  width: 650px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 135px;
+  margin-bottom: 20px;
 }
 .itemImage {
-	height: 105px;
-	width: 105px;
-	position: relative;
-	top: 10px;
-	left: 10px;
-	border-radius: 5px;
+  height: 105px;
+  width: 105px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
 }
 .recomendedItemName {
-	height: 22px;
-	width: auto;
-	color: #223136;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 22px;
-	position: relative;
-	top: -100px;
-	left: 130px;
+  height: 22px;
+  width: auto;
+  color: #223136;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: relative;
+  top: -100px;
+  left: 130px;
 }
 .recomendedItemCost {
-	height: 17px;
-	width: 54px;
-	color: #2d2d2d;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	letter-spacing: 0;
-	line-height: 17px;
-	position: relative;
-	top: -98px;
-	left: 130px;
+  height: 17px;
+  width: 54px;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -98px;
+  left: 130px;
 }
 .recomendedCustomizable {
-	height: 15px;
-	width: 70px;
-	color: #a08234;
-	font-family: 'Open Sans';
-	font-size: 11px;
-	letter-spacing: 0;
-	line-height: 15px;
-	position: relative;
-	top: -90px;
-	left: 130px;
+  height: 15px;
+  width: 70px;
+  color: #a08234;
+  font-family: 'Open Sans';
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 15px;
+  position: relative;
+  top: -90px;
+  left: 130px;
 }
 .recomendedDescription {
-	height: 34px;
-	width: 349px;
-	color: #9b9b9b;
-	font-family: 'Open Sans';
-	font-size: 12px;
-	letter-spacing: 0;
-	line-height: 17px;
-	position: relative;
-	top: -90px;
-	left: 130px;
+  height: 34px;
+  width: 349px;
+  color: #9b9b9b;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -90px;
+  left: 130px;
 }
 .nonVeg {
-	height: 14px;
-	width: 14px;
-	position: relative;
-	top: -40px;
-	left: 15px;
+  height: 14px;
+  width: 14px;
+  position: relative;
+  top: -40px;
+  left: 15px;
 }
 .veg {
-	height: 14px;
-	width: 14px;
-	position: relative;
-	top: -40px;
-	left: 15px;
+  height: 14px;
+  width: 14px;
+  position: relative;
+  top: -40px;
+  left: 15px;
 }
 .bestSellerIcon {
-	position: relative;
-	top: -200px;
-	left: 550px;
+  position: relative;
+  top: -200px;
+  left: 550px;
 }
 .addAgainToCartButton {
-	height: 30px;
-	width: 106px;
-	border: #ff7c02 1px solid;
-	border-radius: 15px;
-	box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-	position: relative;
-	top: -150px;
-	left: 530px;
-	cursor: pointer;
+  height: 30px;
+  width: 106px;
+  border: #ff7c02 1px solid;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: -150px;
+  left: 530px;
+  cursor: pointer;
 }
 .addAgainToCartButtonText {
-	height: 19px;
-	width: 30px;
-	color: #ff7300;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: -0.2px;
-	line-height: 19px;
-	text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-	position: relative;
-	top: 5px;
-	left: 20px;
+  height: 19px;
+  width: 30px;
+  color: #ff7300;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 19px;
+  text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: 5px;
+  left: 20px;
 }
 .alreadyInCart {
-	height: 14px;
-	width: 78px;
-	color: #49bb5c;
-	font-family: 'Open Sans';
-	font-size: 10px;
-	letter-spacing: 0;
-	line-height: 14px;
-	text-align: center;
-	position: relative;
-	top: -155px;
-	left: 480px;
+  height: 14px;
+  width: 78px;
+  color: #49bb5c;
+  font-family: 'Open Sans';
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 14px;
+  text-align: center;
+  position: relative;
+  top: -155px;
+  left: 480px;
 }
 .alreadyInCart1 {
-	height: 14px;
-	width: 78px;
-	color: #49bb5c;
-	font-family: 'Open Sans';
-	font-size: 10px;
-	letter-spacing: 0;
-	line-height: 14px;
-	text-align: center;
-	position: relative;
-	top: -155px;
-	left: 550px;
+  height: 14px;
+  width: 78px;
+  color: #49bb5c;
+  font-family: 'Open Sans';
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 14px;
+  text-align: center;
+  position: relative;
+  top: -155px;
+  left: 550px;
 }
 .addToCart {
-	height: 30px;
-	width: 87px;
-	border-radius: 15px;
-	box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-	border: #ff7c02 1px solid;
-	position: relative;
-	top: -155px;
-	left: 540px;
-	cursor: pointer;
+  height: 30px;
+  width: 87px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  border: #ff7c02 1px solid;
+  position: relative;
+  top: -155px;
+  left: 540px;
+  cursor: pointer;
 }
 .addToCartText {
-	height: 19px;
-	width: 30px;
-	color: #ff7300;
-	font-family: 'Open Sans';
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: -0.2px;
-	line-height: 19px;
-	text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-	position: relative;
-	top: 5px;
-	left: 27px;
-	cursor: pointer;
+  height: 19px;
+  width: 30px;
+  color: #ff7300;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 19px;
+  text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: 5px;
+  left: 27px;
+  cursor: pointer;
 }
