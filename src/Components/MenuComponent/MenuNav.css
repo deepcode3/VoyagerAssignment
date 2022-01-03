@@ -1,0 +1,953 @@
+.menuCommomBg {
+  background-color: #c5cae238;
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 500px;
+  padding-bottom: 500px;
+}
+.overViewBody {
+  height: auto;
+  width: 1100px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
+  left: 70px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 200px;
+}
+.description {
+  position: absolute;
+  top: 130px;
+  left: 10px;
+}
+.descriptionText {
+  height: 22px;
+  width: 89px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+.descriptionParagraph {
+  height: 52px;
+  width: 960px;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+  top: 10px;
+}
+.cuisinesOverview {
+  position: relative;
+  top: 250px;
+  left: 10px;
+}
+.cuisinesText {
+  height: 22px;
+  width: 65px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+.cuisinesParagraph {
+  height: 68px;
+  width: 170px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 10px;
+}
+.overViewFlexBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.linebetween {
+  box-sizing: border-box;
+  height: 101px;
+  width: 3px;
+  border: 1px solid #979797;
+  opacity: 0.25;
+  position: relative;
+  top: 250px;
+  left: 00px;
+}
+.averasgeMealCost {
+  position: relative;
+  top: 250px;
+  left: 10px;
+}
+.averasgeMealCostText {
+  height: 22px;
+  width: 65px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+.averasgeMealCostParagraph {
+  height: 68px;
+  width: 170px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 10px;
+}
+.phone {
+  position: relative;
+  top: 250px;
+  left: 40px;
+}
+.phoneText {
+  height: 22px;
+  width: 65px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+.phoneParagraph1 {
+  height: 68px;
+  width: 170px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 10px;
+}
+.phoneParagraph2 {
+  height: 68px;
+  width: 170px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 10px;
+}
+.address {
+  position: relative;
+  top: 250px;
+  left: 30px;
+}
+.addressText {
+  height: 22px;
+  width: 65px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+.addressParagraph {
+  height: 68px;
+  width: 170px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 10px;
+}
+.openingHours {
+  position: absolute;
+  top: 400px;
+  left: 10px;
+}
+.openingHoursDiv {
+  height: 178px;
+  width: 353px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 20px;
+}
+.presentDayTimming {
+  height: 85px;
+  width: 314px;
+  position: relative;
+  top: 16px;
+  left: 20px;
+}
+.presentDate {
+  height: 17px;
+  width: 123px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+.presentDayOpeningTimming {
+  height: 19px;
+  width: 175px;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
+  position: relative;
+  top: 10px;
+}
+.status {
+  height: 17px;
+  width: 34px;
+  color: #01ff01;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-align: right;
+  position: relative;
+  top: -55px;
+  left: 270px;
+}
+.plannedOff {
+  height: 17px;
+  width: 248px;
+  color: #ed1b2e;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 0px;
+}
+.openingLine {
+  box-sizing: border-box;
+  height: 3px;
+  width: 301px;
+  border: 1px solid #979797;
+  opacity: 0.3;
+  position: relative;
+  top: 10px;
+}
+.workHoursForNextDays {
+  position: relative;
+  top: 20px;
+  left: 40px;
+}
+.workHoursForNext7Days {
+  background-clip: text;
+  background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.17px;
+  line-height: 22px;
+  height: 22px;
+  width: 212px;
+}
+
+.workHoursArrow {
+  border: 6px solid #f5a623;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  top: -15px;
+  left: 65px;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  left: 250px;
+  cursor: pointer;
+}
+
+/* Reviews */
+.reviewsHeading {
+  height: 22px;
+  width: 62px;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  position: relative;
+  top: 150px;
+  left: 10px;
+}
+.showRecent {
+  height: 20px;
+  width: 110px;
+  position: relative;
+  top: 130px;
+  left: 580px;
+}
+.show {
+  height: 19px;
+  width: 43px;
+  color: #6a6a6a;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 19px;
+}
+.recent {
+  height: 19px;
+  width: 47px;
+  color: #f67e03;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
+  text-align: right;
+}
+.reviewsSubmiter {
+  height: 526px;
+  width: 360px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 200px;
+  left: -120px;
+}
+.reviewsSubmiterHeader {
+  height: 30px;
+  width: 221px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 30px;
+  position: relative;
+  top: 10px;
+  left: 30px;
+}
+.reviewsSubmiterHeader2 {
+  height: 22px;
+  width: 38px;
+  color: #565454;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 22px;
+  position: relative;
+  top: 40px;
+  left: -180px;
+}
+.reveiwerBox {
+  height: 21px;
+  width: 245px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  top: 60px;
+  left: 33px;
+}
+.selectedReviewBox {
+  box-sizing: border-box;
+  height: 21px;
+  width: 42px;
+  border: 1px solid #5fb700;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.nonSelectedReviewBox {
+  box-sizing: border-box;
+  height: 21px;
+  width: 42px;
+  border: 1px solid #8f8d8d;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.selectedRatingStar {
+  height: 11px;
+  width: 12px;
+  position: relative;
+  top: 3px;
+}
+.nonSelectedRatingStar {
+  height: 11px;
+  width: 12px;
+  position: relative;
+  top: 3px;
+}
+.selectedratingNumber {
+  height: 17px;
+  width: 9.17px;
+  color: #5fb700;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+.nonSelectedratingNumber {
+  height: 17px;
+  width: 9.17px;
+  color: #8f8d8d;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+.ratingLine {
+  box-sizing: border-box;
+  height: 2px;
+  width: 260px;
+  border: 1px solid #ededed;
+  position: relative;
+  top: 80px;
+  left: 30px;
+}
+.reviewsSubmiterHeader3 {
+  height: 22px;
+  width: 38px;
+  color: #565454;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 22px;
+  position: relative;
+  top: 130px;
+  left: 35px;
+}
+.reveiwerBox2 {
+  height: 21px;
+  width: 245px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  top: 150px;
+  left: 33px;
+}
+.ratingLine2 {
+  box-sizing: border-box;
+  height: 2px;
+  width: 265px;
+  border: 1px solid #ededed;
+  position: relative;
+  top: 170px;
+  left: 30px;
+}
+.savedBox {
+  width: 48px;
+  height: 13px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  top: 90px;
+  left: 240px;
+}
+.savedImage {
+  height: 13px;
+  width: 14px;
+  position: relative;
+  left: -3px;
+  top: 1px;
+}
+.savedText {
+  height: 17px;
+  width: 34px;
+  color: #223136;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+.savedBox2 {
+  width: 48px;
+  height: 13px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  top: 180px;
+  left: 240px;
+}
+.reviewInput {
+  height: 67px;
+  width: 262px;
+  position: relative;
+  top: 200px;
+  left: 15px;
+}
+.reviewInputHeader {
+  height: 17px;
+  width: 76px;
+  color: #858585;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: relative;
+  left: 20px;
+}
+.textArea {
+  width: 227px;
+  height: 20px;
+  position: relative;
+  left: 20px;
+  top: 10px;
+  border: none;
+  outline: none;
+  resize: none;
+  cursor: pointer;
+}
+.textArea::placeholder {
+  height: 22px;
+  width: 200px;
+  color: #919191;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+}
+.ratingLine3 {
+  box-sizing: border-box;
+  height: 2px;
+  width: 265px;
+  border: 1px solid #ededed;
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+.imageAdder {
+  height: 19px;
+  width: 84px;
+  background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 19px;
+  text-align: right;
+  position: relative;
+  top: 30px;
+  left: 200px;
+  cursor: pointer;
+}
+.submitButton {
+  height: 50px;
+  width: 290px;
+  border-radius: 6px;
+  background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: 250px;
+  left: 15px;
+  cursor: pointer;
+}
+.submitText {
+  height: 39px;
+  width: 67px;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.56px;
+  line-height: 38px;
+  text-align: center;
+  text-shadow: 0 0 9px 0 #ffffff;
+  position: relative;
+  left: 110px;
+  top: 3px;
+}
+.reviewDisplayer {
+  width: 630px;
+  height: auto;
+  position: relative;
+  top: 200px;
+  left: -170px;
+}
+.reviewCard {
+  height: 213px;
+  width: 630px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 20px;
+  margin-bottom: 20px;
+}
+.profilePic {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: rgb(194, 189, 189);
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+.userName {
+  height: 22px;
+  width: 70px;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: relative;
+  top: -30px;
+  left: 80px;
+}
+.reviewsAndRatings {
+  height: 17px;
+  width: 117px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -30px;
+  left: 80px;
+}
+.ratingBox {
+  height: 18px;
+  width: 32px;
+  border-radius: 4px;
+  background-color: #5fb700;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: -20px;
+  left: 80px;
+}
+.whiteStar {
+  height: 12px;
+  width: 12px;
+  position: relative;
+  top: 2px;
+  left: 3px;
+}
+.ratingNumber {
+  height: 17px;
+  width: 7px;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  left: 4px;
+}
+.cartComment {
+  height: 57px;
+  width: 588px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 19px;
+  position: relative;
+  left: 30px;
+  top: -20px;
+}
+.commentDate {
+  height: 17px;
+  width: auto;
+  color: #b9b9b9;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  left: 30px;
+  top: -10px;
+}
+.likeBox {
+  height: 17px;
+  width: 44px;
+  position: relative;
+  left: 570px;
+  top: -25px;
+  cursor: pointer;
+}
+.selectedLike {
+  height: 16px;
+  width: 17.78px;
+}
+.selectedNumberOfLikes {
+  height: 17px;
+  width: 17px;
+  color: #f67e03;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  left: 7px;
+  top: -3px;
+}
+.unSelectedNumberOfLikes {
+  height: 17px;
+  width: 17px;
+  color: #b9b9b9;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  left: 5px;
+  top: -2px;
+}
+.emptyReviews {
+  width: 630px;
+  height: 400px;
+  position: relative;
+  top: 00px;
+  left: 25px;
+}
+.reviewEmptyImg {
+  width: 630px;
+  height: 400px;
+  background-color: #000000;
+}
+.emptyReviewsText {
+  height: 17px;
+  width: 17px;
+  color: #f67e03;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  left: 100px;
+  top: 30px;
+}
+/* Gallery */
+.galleryBody {
+  height: auto;
+  width: 960px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 250px;
+  left: 00px;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 500px;
+}
+.galleryFilterButton {
+  height: 38px;
+  width: 130px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+  top: -10px;
+  left: 800px;
+  cursor: pointer;
+}
+.allPhotos {
+  height: 19px;
+  width: 69px;
+  color: #4a4a4a;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 19px;
+  position: relative;
+  left: 20px;
+  top: 10px;
+}
+.galleryArrow {
+  border: 6px solid #f5a623;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  top: -15px;
+  left: 65px;
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+  left: 30px;
+  cursor: pointer;
+}
+.galleryView {
+  width: 960px;
+  height: 600px;
+  position: relative;
+  left: -830px;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.imageContainer {
+  height: 131px;
+  width: 140px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  left: -10px;
+  top: 10px;
+}
+.galleryImage {
+  height: 131px;
+  width: 140px;
+  border-radius: 10px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.viewAllText {
+  position: relative;
+  top: 100px;
+  left: 10px;
+  height: 22px;
+  width: 93px;
+  background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.17px;
+  line-height: 22px;
+  cursor: pointer;
+}
+.viewAllArrow {
+  height: 22px;
+  width: 93px;
+  position: relative;
+  top: 100px;
+  left: 20px;
+  background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.modalImage {
+  height: auto;
+  width: 1110px;
+  position: relative;
+  left: 45px;
+}
+.cancelButton {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: -40px;
+  left: 1030px;
+  cursor: pointer;
+}
+.nextPrevButton {
+  width: 160px;
+  height: 60px;
+  position: relative;
+  left: -100px;
+  top: 600px;
+  display: flex;
+  flex-direction: row;
+}
+.index {
+  height: 24px;
+  width: 38px;
+  color: #d6d3d3;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+  top: 20px;
+}
+.nextPrevBox {
+  height: 57px;
+  width: 111px;
+  border-radius: 9px;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 11px 0 rgba(198, 188, 188, 0.17);
+  display: flex;
+  flex-direction: row;
+}
+.seperateLine {
+  box-sizing: border-box;
+  height: 57px;
+  width: 3px;
+  border: 1px solid #979797;
+  opacity: 0.29;
+  position: relative;
+  left: 40px;
+}
+.prevButton {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #3e3e3e;
+  border-left: 2px solid #3e3e3e;
+  transform: rotate(-45deg);
+  position: relative;
+  left: 25px;
+  top: 20px;
+  cursor: pointer;
+}
+.nextButton {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #3e3e3e;
+  border-left: 2px solid #3e3e3e;
+  transform: rotate(135deg);
+  position: relative;
+  left: 55px;
+  top: 20px;
+  cursor: pointer;
+}

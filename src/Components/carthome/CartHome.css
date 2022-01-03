@@ -1,0 +1,156 @@
+.cartbg {
+  position: absolute;
+  top: 247px;
+  width: 1895px;
+  height: 800px;
+
+  background-color: #f1f3fb;
+}
+
+.mycarttext {
+  height: 30px;
+  width: 115px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 22px;
+  font-weight: bolder;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: absolute;
+  top: 31px;
+  left: 477px;
+  margin: 0px;
+}
+
+.cartdiv {
+  height: 172px;
+  width: 303px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 75px;
+  left: 480px;
+  float: left;
+  margin-right: 20px;
+}
+
+.cartresname {
+  height: 22px;
+  width: 166px;
+  color: #223136;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: relative;
+  top: 28px;
+  left: 20px;
+  margin: 0px;
+}
+.cartremovebtn {
+  height: 15px;
+  width: 43px;
+  color: #ed1b2e;
+  font-family: 'Open Sans';
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 15px;
+  text-align: right;
+  position: absolute;
+  left: 240px;
+  top: 30px;
+  margin: 0px;
+}
+
+.cartresaddress {
+  height: 17px;
+  width: 181px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: absolute;
+  left: 20px;
+  top: 54px;
+  margin: 0px;
+}
+
+.itemandcostdiv {
+  height: 17px;
+  width: 117px;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: absolute;
+  left: 21px;
+  top: 78px;
+  margin: 0px;
+}
+
+.totalresitems {
+  height: 17px;
+  width: 117px;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  left: 0px;
+  top: -12px;
+}
+
+.cartvertical {
+  position: absolute;
+  top: -1px;
+  left: 50px;
+  margin: 0px;
+}
+
+.Carthometotal {
+  position: absolute;
+  left: 62px;
+  top: 0px;
+  margin: 0px;
+}
+
+.cartproceedbtn {
+  height: 30px;
+  width: 111px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: absolute;
+  top: 120px;
+  left: 171px;
+  cursor: pointer;
+}
+
+.cartproceedtext {
+  height: 19px;
+  width: 79px;
+  color: #e6602c;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 19px;
+  text-align: center;
+  text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  margin: 0px;
+}
+.footerDivCartHome {
+  top: 700px;
+  position: relative;
+  align-items: center;
+}

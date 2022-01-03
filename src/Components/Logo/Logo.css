@@ -1,0 +1,28 @@
+.logolorem {
+  height: 60px;
+  width: 103px;
+  position: relative;
+  cursor: pointer;
+  font-size: 72px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 50px;
+  letter-spacing: 0;
+  background-clip: text;
+  background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.logosmalllorem {
+  height: 43px;
+  width: 72.97px;
+  position: relative;
+  cursor: pointer;
+  font-size: 72px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 35px;
+  letter-spacing: 0;
+  background-clip: text;
+  background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
