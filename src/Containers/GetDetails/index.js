@@ -13,7 +13,9 @@ import BackIcon from '../../Assets/Icons/back_icon.png';
 import { AccountsContext } from '../../Context/AccountsContext';
 
 Modal.setAppElement('#root');
-const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus, email }) => {
+const GetDetails = ({
+  modalIsOpen, setModalIsOpen, setPageStatus, email, setName
+}) => {
   const { addAccount } = useContext(AccountsContext);
   const [selectedCode, setSelectedCode] = useState('91');
   const schema = yup.object().shape({
@@ -39,15 +41,24 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus, email }) => {
     resolver: yupResolver(schema),
   });
   const submitForm = (data) => {
-    data.code = selectedCode;
-    addAccount({
-      firstname: data.firstName,
-      lastname: data.lastName,
-      email,
-      password: data.password,
-      conuntrycode: data.code,
-      mobile: data.mobile,
-    });
+    setName(data.firstName);
+    if (data.mobile === '') {
+      addAccount({
+        firstname: data.firstName,
+        lastname: data.lastName,
+        email,
+        password: data.password,
+      });
+    } else {
+      addAccount({
+        firstname: data.firstName,
+        lastname: data.lastName,
+        email,
+        password: data.password,
+        countrycode: selectedCode,
+        mobile: data.mobile,
+      });
+    }
     setPageStatus('welcome-page');
   };
   return (
@@ -114,6 +125,7 @@ GetDetails.propTypes = {
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
+  setName: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

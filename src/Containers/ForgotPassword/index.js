@@ -14,9 +14,18 @@ import border from '../../Assets/Icons/border.png';
 import TelephonePicker from '../../Components/TelephonePicker/index';
 
 Modal.setAppElement('#root');
-const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
-  const [inputType, setInputType] = useState('email');
-  const [selectedCode, setSelectedCode] = useState('91');
+const ForgotPassword = ({
+  modalIsOpen,
+  setModalIsOpen,
+  setPageStatus,
+  setEmail,
+  setMobile,
+  inputType,
+  setInputType,
+  selectedCode,
+  setSelectedCode,
+}) => {
+  const { checkIfAccountExists, checkIfNumberExists } = useContext(AccountsContext);
   const emailSchema = yup.object().shape({
     email: yup.string().required('Email id is required ').email('Invalid email address'),
   });
@@ -31,6 +40,7 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(emailSchema),
@@ -38,14 +48,34 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   const {
     register: register2,
     handleSubmit: handleSubmit2,
+    setError: setError2,
     formState: { errors: errors2 },
   } = useForm({
     resolver: yupResolver(mobileSchema),
   });
   const submitForm = (data) => {
-    if (inputType === 'mobile') data.code = selectedCode;
-    console.log(data);
-    setPageStatus('otp-verification-for-password-change');
+    if (inputType === 'email') {
+      const result = checkIfAccountExists(data);
+      if (result === null) {
+        setError('email', { type: 'manual', message: 'Email id is not registered' });
+      } else if (result.length === 0) {
+        setError('email', { type: 'manual', message: 'Email id is not registered' });
+      } else {
+        setEmail(data.email);
+        setPageStatus('otp-verification-for-password-change');
+      }
+    } else {
+      const result = checkIfNumberExists({ mobile: data.mobile, countrycode: selectedCode });
+      if (result === null) {
+        setError2('mobile', { type: 'manual', message: 'Mobile number is not registered' });
+      } else if (result.length === 0) {
+        setError2('mobile', { type: 'manual', message: 'Mobile number is not registered' });
+      } else {
+        setSelectedCode(selectedCode);
+        setMobile(data.mobile);
+        setPageStatus('otp-verification-for-password-change');
+      }
+    }
   };
 
   return (
@@ -136,7 +166,14 @@ ForgotPassword.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setPageStatus: PropTypes.func.isRequired,
+  setEmail: PropTypes.func.isRequired,
+  setMobile: PropTypes.func.isRequired,
+  inputType: PropTypes.string.isRequired,
+  setInputType: PropTypes.func.isRequired,
+  selectedCode: PropTypes.string.isRequired,
+  setSelectedCode: PropTypes.func.isRequired,
 };
+
 const Wrapper = styled.div`
   height: 588px;
   width: 960px;

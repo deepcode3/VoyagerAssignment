@@ -30,7 +30,7 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus, setEmail }) => {
   });
   const history = useHistory();
   const handleTermsClick = () => {
-    history.push('/terms-and-conditions');
+    history.push('/terms-&-conditions');
   };
   const handleLoginClick = () => {
     setPageStatus('login');
