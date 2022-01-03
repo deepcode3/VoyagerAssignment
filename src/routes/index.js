@@ -4,7 +4,6 @@ import RestaurantData from '../components/restaurentsData';
 import Payment from '../components/payment/Payment';
 import FinalPayment from '../components/finalpay/FinalPayment';
 import CartHome from '../components/carthome/CartHome';
-import HomeTobeDeleted from '../containers/HomeTobeDeleted';
 import CartAddress from '../components/address/Address';
 import Home from '../containers/home';
 import Menu from '../containers/menu';
@@ -34,7 +33,6 @@ const Routing = () => {
         <Route exact path='/address'>
           <CartAddress />
         </Route>
-        <Route path='/home-header' component={HomeTobeDeleted} />
         <Route path='/payment' component={Payment} />
         <Route path='/finalpay' component={FinalPayment} />
         <Route path='/carthome'>

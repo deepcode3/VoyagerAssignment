@@ -5,9 +5,9 @@ import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import StyledButton from '../../components/commonButton/index';
-import InputField from '../../components/loginComponents/InputField';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../components/CommonButton/index';
+import InputField from '../../components/LoginComponents/InputField';
 import TelephonePicker from '../../components/TelephonePicker/index';
 import BackIcon from '../../assets/icons/back_icon.png';
 
@@ -68,19 +68,19 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             <InputField
               name='firstName'
               register={register}
-              msg={errors.firstName.message}
+              msg={errors.firstName?.message}
               label='First Name'
             />
             <InputField
               name='lastName'
               register={register}
-              msg={errors.lastName.message}
+              msg={errors.lastName?.message}
               label='Last Name'
             />
             <TelephonePicker
               name='mobile'
               register={register}
-              msg={errors.mobile.message}
+              msg={errors.mobile?.message}
               label='Enter mobile number (optional)'
               selectedCode={selectedCode}
               setSelectedCode={setSelectedCode}
@@ -88,7 +88,7 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             <InputField
               name='password'
               register={register}
-              msg={errors.password.message}
+              msg={errors.password?.message}
               label='Create Password'
             />
 
@@ -102,8 +102,8 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
 export default GetDetails;
 GetDetails.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

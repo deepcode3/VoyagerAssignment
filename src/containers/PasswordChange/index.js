@@ -5,10 +5,10 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import StyledButton from '../../components/commonButton/index';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../components/CommonButton/index';
 import icnVerified from '../../assets/icons/icn_verified_icon.png';
-import InputField from '../../components/loginComponents/InputField';
+import InputField from '../../components/LoginComponents/InputField';
 import BackIcon from '../../assets/icons/back_icon.png';
 
 Modal.setAppElement('#root');
@@ -57,7 +57,7 @@ const PasswordChange = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
               // eslint-disable-next-line react/jsx-boolean-value
               isPassword={true}
               register={register}
-              msg={errors.password.message}
+              msg={errors.password?.message}
               label='Enter New Password'
             />
             <StyledButton type='submit'>CHANGE PASSWORD</StyledButton>
@@ -70,8 +70,8 @@ const PasswordChange = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
 export default PasswordChange;
 PasswordChange.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

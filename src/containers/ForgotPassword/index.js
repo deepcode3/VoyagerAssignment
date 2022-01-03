@@ -5,11 +5,11 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import StyledButton from '../../components/commonButton/index';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../components/CommonButton/index';
 import forgotPasswordIcon from '../../assets/icons/icn_forgot_password.png';
 import BackIcon from '../../assets/icons/back_icon.png';
-import InputField from '../../components/loginComponents/InputField';
+import InputField from '../../components/LoginComponents/InputField';
 import border from '../../assets/icons/border.png';
 import TelephonePicker from '../../components/TelephonePicker/index';
 
@@ -105,7 +105,7 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
                 <InputField
                   name='email'
                   register={register}
-                  msg={errors.email.message}
+                  msg={errors.email?.message}
                   label='Email'
                 />
                 <StyledButton type='submit'>SEND OTP</StyledButton>
@@ -115,7 +115,7 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
                 <TelephonePicker
                   name='mobile'
                   register={register2}
-                  msg={errors2.mobile.message}
+                  msg={errors2.mobile?.message}
                   label='Mobile no.'
                   selectedCode={selectedCode}
                   setSelectedCode={setSelectedCode}
@@ -132,8 +132,8 @@ const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
 export default ForgotPassword;
 ForgotPassword.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;
@@ -222,10 +222,10 @@ const Navbar = styled.div`
   width: 40%;
   justify-content: space-between;
 `;
-
 const TypeContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height:20px;
 `;
 const InputTypeButton = styled.button`
   height: 24px;

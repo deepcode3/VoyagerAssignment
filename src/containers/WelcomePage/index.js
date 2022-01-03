@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import StyledButton from '../../components/commonButton/index';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../components/CommonButton/index';
 import closeButton from '../../assets/icons/close_button.png';
 import icnRegisterSuccess from '../../assets/icons/icn_register_success.png';
 
@@ -48,8 +48,8 @@ const WelcomePage = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
 export default WelcomePage;
 WelcomePage.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

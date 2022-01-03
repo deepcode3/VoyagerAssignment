@@ -52,9 +52,13 @@ export default InputField;
 InputField.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  isPassword: PropTypes.bool.isRequired,
-  register: PropTypes.string.isRequired,
-  msg: PropTypes.string.isRequired,
+  isPassword: PropTypes.bool,
+  register: PropTypes.func.isRequired,
+  msg: PropTypes.string,
+};
+InputField.defaultProps = {
+  isPassword: false,
+  msg: null
 };
 const FormContainer = styled.div`
   position: relative;
@@ -74,7 +78,7 @@ const FormContainer = styled.div`
     font-weight: 400;
     letter-spacing: -0.2px;
     line-height: 17px;
-    margin-top: 35px;
+    margin-top: 25px;
   }
   .redBorder {
     border-bottom: 1px solid #ed1b2e;

@@ -5,11 +5,11 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import InputField from '../../components/loginComponents/InputField/index';
-import StyledButton from '../../components/commonButton/index';
-import LoginOptions from '../../components/loginComponents/LoginOptions';
-import TextWithButton from '../../components/loginComponents/TextWithButton';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
+import InputField from '../../components/LoginComponents/InputField/index';
+import StyledButton from '../../components/CommonButton/index';
+import LoginOptions from '../../components/LoginComponents/LoginOptions/index';
+import TextWithButton from '../../components/LoginComponents/TextWithButton/index';
 import closeButton from '../../assets/icons/close_button.png';
 
 Modal.setAppElement('#root');
@@ -30,7 +30,11 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   };
   const submitForm = (data) => {
     console.log(data);
+    localStorage.setItem('accessToken', JSON.stringify('success'));
     setModalIsOpen(false);
+  };
+  const handleForgotClick = () => {
+    setPageStatus('forgot-password');
   };
 
   return (
@@ -56,23 +60,22 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
           </Button>
           <BlackText>Lets get started!</BlackText>
           <Form onSubmit={handleSubmit(submitForm)}>
-            <InputField name='email' register={register} msg={errors.email.message} label='Email' />
-
+            <InputField
+              name='email'
+              register={register}
+              msg={errors.email?.message}
+              label='Email'
+            />
             <InputField
               name='password'
               register={register}
               // eslint-disable-next-line react/jsx-boolean-value
               isPassword={true}
-              msg={errors.password.message}
+              msg={errors.password?.message}
               label='Password'
             />
 
-            <ForgotButton
-              type='button'
-              onClick={() => {
-                return setPageStatus('forgot-password');
-              }}
-            >
+            <ForgotButton onClick={handleForgotClick} type='button'>
               Forgot Password?
             </ForgotButton>
             <StyledButton type='submit'>LOGIN</StyledButton>
@@ -91,8 +94,8 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
 export default Login;
 Login.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;
@@ -149,12 +152,18 @@ const Form = styled.form`
 `;
 
 const ForgotButton = styled.button`
-  color: black;
+  height: 19px;
+  width: 135px;
+  color: #4a4a4a;
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  text-align: right;
   border: none;
-  font-weight: 100;
   outline: none;
-  margin-left: 67%;
+  margin-left: 60%;
   margin-top: -8%;
 `;

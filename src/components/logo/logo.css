@@ -1,26 +1,28 @@
 .logo {
+	left: 30px;
 	position: relative;
-	top: 10px;
-	left: 33px;
 	cursor: pointer;
-}
-.logoPart1 {
-	height: 60px;
-	width: 103px;
-	color: #e6602c;
+	font-size: 72px;
 	font-family: 'Bebas Neue';
 	font-size: 50px;
 	letter-spacing: 0;
 	line-height: 60px;
-	text-align: center;
+	background-clip: text;
+	background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
-.logoPart2 {
-	height: 60px;
-	width: 103px;
-	color: #e6612cde;
+.logosmall {
+	left: 30px;
+	position: relative;
+	cursor: pointer;
+	font-size: 72px;
 	font-family: 'Bebas Neue';
-	font-size: 50px;
+	font-size: 35px;
 	letter-spacing: 0;
 	line-height: 60px;
-	text-align: center;
+	background-clip: text;
+	background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

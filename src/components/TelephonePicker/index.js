@@ -19,11 +19,10 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
     );
     setDropDownStatus(false);
   };
-
   return (
-    <FormContainer>
+    <FormContainerTel>
       <Label>{label}</Label>
-      <MobileNumberContainer>
+      <NumContainer>
         <OptionSelected>
           <OptionWrapper>
             <Flag src={`/assets/images/${selectedCountry}.png`} />
@@ -63,35 +62,38 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
           </OutsideAlerter>
         ) : null}
         <MobileNumber name={name} {...register(name)} />
-      </MobileNumberContainer>
-      {msg !== undefined ? <p className='error'>{msg}</p> : null}
-    </FormContainer>
+      </NumContainer>
+      {msg !== undefined ? <p className='errorMobile'>{msg}</p> : null}
+    </FormContainerTel>
   );
 };
 export default TelephonePicker;
 TelephonePicker.propTypes = {
   name: PropTypes.string.isRequired,
-  register: PropTypes.string.isRequired,
-  msg: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired,
+  msg: PropTypes.string,
   label: PropTypes.string.isRequired,
-  selectedCode: PropTypes.number.isRequired,
-  setSelectedCode: PropTypes.number.isRequired,
+  selectedCode: PropTypes.string.isRequired,
+  setSelectedCode: PropTypes.func.isRequired,
 };
-const FormContainer = styled.div`
-  position: relative;
+TelephonePicker.defaultProps = {
+  msg: null
+};
+const FormContainerTel = styled.div`
   height: 53px;
   width: 380px;
-  .error {
-    margin-top: 3px;
+  .errorMobile {
     margin-left: 34%;
     color: #ed1b2e;
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.2px;
+    height: 17px;
   }
 `;
-const MobileNumberContainer = styled.div`
+const NumContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -105,7 +107,7 @@ const DropDown = styled.img`
 `;
 const MobileNumber = styled.input`
   top: 0;
-  height: 90%;
+  height: 45%;
   width: 65%;
   background-color: transparent;
   border: none;

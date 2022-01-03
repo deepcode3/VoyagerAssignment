@@ -105,7 +105,7 @@ const CartAddress = () => {
             <TelephonePicker
               name='mobile'
               register={register2}
-              msg={errors2.mobile.message}
+              msg={errors2.mobile?.message}
               label='Mobile no.'
               selectedCode={selectedCode}
               setSelectedCode={setSelectedCode}

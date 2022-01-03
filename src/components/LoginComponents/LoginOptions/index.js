@@ -3,18 +3,18 @@ import styled from 'styled-components';
 
 const LoginOptions = () => {
   return (
-    <LinkContainer>
+    <LoginOptionsLinkContainer>
       <Facebook target='_blank' rel='noreferrer' href='http://facebook.com'>
         Facebook
       </Facebook>
       <Google target='_blank' rel='noreferrer' href='http://google.com'>
         Google+
       </Google>
-    </LinkContainer>
+    </LoginOptionsLinkContainer>
   );
 };
 export default LoginOptions;
-const LinkContainer = styled.div`
+const LoginOptionsLinkContainer = styled.div`
   margin-top: 6%;
   margin-bottom: 6%;
   display: flex;
@@ -25,7 +25,7 @@ const LinkContainer = styled.div`
 const Facebook = styled.a`
   height: 50px;
   width: 180px;
-  padding: 4%;
+  padding: 3%;
   box-sizing: border-box;
   border: 1px solid #02a7fd;
   border-radius: 6px;
@@ -40,7 +40,7 @@ const Facebook = styled.a`
 const Google = styled.a`
   height: 50px;
   width: 180px;
-  padding: 4%;
+  padding: 3%;
   box-sizing: border-box;
   border: 1px solid #ff8c7d;
   border-radius: 6px;

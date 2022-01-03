@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 import * as yup from 'yup';
 import Modal from 'react-modal';
 import { yupResolver } from '@hookform/resolvers/yup';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import InputField from '../../components/loginComponents/InputField/index';
-import StyledButton from '../../components/commonButton/index';
-import TextWithButton from '../../components/loginComponents/TextWithButton';
-import LoginOptions from '../../components/loginComponents/LoginOptions';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
+import InputField from '../../components/LoginComponents/InputField/index';
+import StyledButton from '../../components/CommonButton/index';
+import TextWithButton from '../../components/LoginComponents/TextWithButton';
+import LoginOptions from '../../components/LoginComponents/LoginOptions';
 import closeButton from '../../assets/icons/close_button.png';
 
 Modal.setAppElement('#root');
@@ -62,7 +62,7 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
             Share your email address to send you the OTP to get yourself registered!
           </Description>
           <DataContainer onSubmit={handleSubmit(submitForm)}>
-            <InputField name='email' register={register} msg={errors.email.message} label='Email' />
+            <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
             <StyledButton type='submit'>CREATE ACCOUNT</StyledButton>
           </DataContainer>
           <TextWithButton
@@ -84,8 +84,8 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
 export default Signup;
 Signup.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
 };
 const Wrapper = styled.div`
   height: 588px;

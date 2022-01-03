@@ -5,10 +5,10 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/loginComponents/logoWithText/index';
-import StyledButton from '../../components/commonButton/index';
+import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../components/CommonButton/index';
 import verifyIcon from '../../assets/icons/icn_verify_icon.png';
-import InputField from '../../components/loginComponents/InputField';
+import InputField from '../../components/LoginComponents/InputField';
 import BackIcon from '../../assets/icons/back_icon.png';
 
 Modal.setAppElement('#root');
@@ -57,7 +57,7 @@ const OTPVerification = ({ modalIsOpen, setModalIsOpen, setPageStatus, purpose }
             soon!
           </Description>
           <Container onSubmit={handleSubmit(submitForm)}>
-            <InputField name='otp' register={register} msg={errors.otp.message} label='Enter OTP' />
+            <InputField name='otp' register={register} msg={errors.otp?.message} label='Enter OTP' />
             <StyledButton type='submit'>VERIFY</StyledButton>
           </Container>
         </RightWrapper>
@@ -68,9 +68,12 @@ const OTPVerification = ({ modalIsOpen, setModalIsOpen, setPageStatus, purpose }
 export default OTPVerification;
 OTPVerification.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.bool.isRequired,
-  setPageStatus: PropTypes.bool.isRequired,
-  purpose: PropTypes.string.isRequired,
+  setModalIsOpen: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func.isRequired,
+  purpose: PropTypes.string,
+};
+OTPVerification.defaultProps = {
+  purpose: null
 };
 const Wrapper = styled.div`
   height: 588px;
