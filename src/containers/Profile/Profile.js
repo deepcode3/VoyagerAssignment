@@ -3,12 +3,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import banner from '../../assets/images/Profilebackground.png';
-import phoneicn from '../../assets/icons/phone_icn.png';
-import mailicn from '../../assets/icons/mail_icn.png';
-import icnInfo from '../../assets/icons/icn_info_small.png';
-import profilePic from '../../assets/images/profile_pic.png';
-import Profileroute from '../../components/Profilerouter/index';
+import banner from '../../Assets/Images/Profilebackground.png';
+import phoneicn from '../../Assets/Icons/phone_icn.png';
+import mailicn from '../../Assets/Icons/mail_icn.png';
+import icnInfo from '../../Assets/Icons/icn_info_small.png';
+import profilePic from '../../Assets/Images/profile_pic.png';
+import Profileroute from '../../Components/Profilerouter/index';
 
 const Profile = ({ setOpen }) => {
   return (

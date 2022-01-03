@@ -1,87 +1,87 @@
 .homeBg {
-	background-image: url('../../assets/images/home-loginBg.png');
-	height: 935px;
-	width: 100%;
-	position: absolute;
-	top: 00px;
-	left: 00px;
-	padding-top: 2%;
+  background-image: url('../../Assets/Images/home-loginBg.png');
+  height: 935px;
+  width: 100%;
+  position: absolute;
+  top: 00px;
+  left: 00px;
+  padding-top: 2%;
 }
 .homeLogo {
-	position: relative;
-	left: 33px;
-	top: 19px;
+  position: relative;
+  left: 33px;
+  top: 19px;
 }
 .homeInfo {
-	width: 730px;
-	height: 166px;
-	position: absolute;
-	top: 227px;
-	left: 413px;
+  width: 730px;
+  height: 166px;
+  position: absolute;
+  top: 227px;
+  left: 413px;
 }
 .homeInfo1 {
-	height: 166px;
-	width: 719px;
-	color: #4c4c4c;
-	font-family: 'Open Sans';
-	font-size: 60px;
-	letter-spacing: 0;
-	line-height: 83px;
-	text-shadow: 0 0 9px 0 #ffffff;
-	justify-content: center;
+  height: 166px;
+  width: 719px;
+  color: #4c4c4c;
+  font-family: 'Open Sans';
+  font-size: 60px;
+  letter-spacing: 0;
+  line-height: 83px;
+  text-shadow: 0 0 9px 0 #ffffff;
+  justify-content: center;
 }
 .homeInfo2 {
-	height: 166px;
-	width: 719px;
-	color: #4c4c4c;
-	font-family: 'Open Sans';
-	font-size: 60px;
-	letter-spacing: 0;
-	line-height: 83px;
-	text-shadow: 0 0 9px 0 #ffffff;
-	justify-content: center;
+  height: 166px;
+  width: 719px;
+  color: #4c4c4c;
+  font-family: 'Open Sans';
+  font-size: 60px;
+  letter-spacing: 0;
+  line-height: 83px;
+  text-shadow: 0 0 9px 0 #ffffff;
+  justify-content: center;
 }
 .homeSearchBar {
-	height: 175px;
-	width: 611px;
-	position: absolute;
-	left: 420px;
-	top: 456px;
-	margin-left: auto;
-	margin-right: auto;
+  height: 175px;
+  width: 611px;
+  position: absolute;
+  left: 420px;
+  top: 456px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .homeLocation {
-	position: relative;
-	left: 00px;
-	top: 50px;
+  position: relative;
+  left: 00px;
+  top: 50px;
 }
 .homeDate {
-	position: relative;
-	left: 400px;
-	top: -20px;
+  position: relative;
+  left: 400px;
+  top: -20px;
 }
 .scroller {
-	width: 119px;
-	height: 77px;
-	position: absolute;
-	left: 901px;
-	top: 807px;
-	align-items: center;
+  width: 119px;
+  height: 77px;
+  position: absolute;
+  left: 901px;
+  top: 807px;
+  align-items: center;
 }
 .scrollInfo {
-	height: 18px;
-	width: 118.55px;
-	opacity: 0.66;
-	color: #848484;
-	font-family: 'Open Sans';
-	font-size: 13px;
-	letter-spacing: 3.66px;
-	line-height: 18px;
-	text-align: center;
-	position: relative;
-	top: 10px;
-	left: -40px;
+  height: 18px;
+  width: 118.55px;
+  opacity: 0.66;
+  color: #848484;
+  font-family: 'Open Sans';
+  font-size: 13px;
+  letter-spacing: 3.66px;
+  line-height: 18px;
+  text-align: center;
+  position: relative;
+  top: 10px;
+  left: -40px;
 }
 .assigner {
-	display: none;
+  display: none;
 }

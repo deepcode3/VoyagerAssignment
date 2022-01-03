@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
-import StyledButton from '../../components/CommonButton/index';
-import closeButton from '../../assets/icons/close_button.png';
-import icnRegisterSuccess from '../../assets/icons/icn_register_success.png';
+import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../Components/CommonButton/index';
+import closeButton from '../../Assets/Icons/close_button.png';
+import icnRegisterSuccess from '../../Assets/Icons/icn_register_success.png';
 
 const WelcomePage = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   return (

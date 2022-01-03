@@ -5,14 +5,14 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
-import InputField from '../../components/LoginComponents/InputField/index';
-import StyledButton from '../../components/CommonButton/index';
-import LoginOptions from '../../components/LoginComponents/LoginOptions/index';
-import TextWithButton from '../../components/LoginComponents/TextWithButton/index';
-import closeButton from '../../assets/icons/close_button.png';
-import { AccountsContext } from '../../context/AccountsContext';
-import { UserContext } from '../../context/UserContext';
+import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
+import InputField from '../../Components/LoginComponents/InputField/index';
+import StyledButton from '../../Components/CommonButton/index';
+import LoginOptions from '../../Components/LoginComponents/LoginOptions/index';
+import TextWithButton from '../../Components/LoginComponents/TextWithButton/index';
+import closeButton from '../../Assets/Icons/close_button.png';
+import { AccountsContext } from '../../Context/AccountsContext';
+import { UserContext } from '../../Context/UserContext';
 
 Modal.setAppElement('#root');
 const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import Image404 from '../../assets/images/404.png';
-import CommonHeader from '../../components/headercommon/CommonHeader';
-import takeHome from '../../assets/images/takeHome.png';
-import Footer from '../../components/Footer';
+import Image404 from '../../Assets/Images/404.png';
+import CommonHeader from '../../Components/headercommon/CommonHeader';
+import takeHome from '../../Assets/Images/takeHome.png';
+import Footer from '../../Components/Footer';
 
 const Error404 = () => {
   const history = useHistory();

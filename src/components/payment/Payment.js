@@ -2,13 +2,13 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './Payment.css';
-import visaicon from '../../assets/icons/visaicon.png';
+import visaicon from '../../Assets/Icons/visaicon.png';
 import PaymentOption from './PaymentOption';
 import PaymentPoints from './PaymentPoints';
 import PaymentDeliveryDetails from './PaymentDeliveryDetails';
 import PaymentresDetails from './PaymentresDetails';
-import payback from '../../assets/images/payback.png';
-import paynow from '../../assets/images/paynow.png';
+import payback from '../../Assets/Images/payback.png';
+import paynow from '../../Assets/Images/paynow.png';
 import CommonHeader from '../headercommon/CommonHeader';
 import Footer from '../Footer';
 

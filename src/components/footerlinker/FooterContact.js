@@ -1,7 +1,7 @@
 import React from 'react';
 import './FooterContact.css';
-import contactbanner from '../../assets/images/about_banner 2.png';
-import sendbutton from '../../assets/icons/buttonbox.png';
+import contactbanner from '../../Assets/Images/about_banner 2.png';
+import sendbutton from '../../Assets/Icons/buttonbox.png';
 import PageHeader from './PageHeader';
 import Header from '../Header';
 import Footer from '../Footer';

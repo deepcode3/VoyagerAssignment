@@ -1,7 +1,7 @@
 import React from 'react';
-import nonVeg from '../../assets/icons/non_veg.png';
-import veg from '../../assets/icons/veg.png';
-import visa from '../../assets/icons/visa.png';
+import nonVeg from '../../Assets/Icons/non_veg.png';
+import veg from '../../Assets/Icons/veg.png';
+import visa from '../../Assets/Icons/visa.png';
 
 // eslint-disable-next-line import/prefer-default-export
 export const Data = [

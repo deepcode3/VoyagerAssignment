@@ -1,7 +1,7 @@
 import React from 'react';
 import './Payment.css';
-import cashicon from '../../assets/icons/cashicon.png';
-import creditcardicon from '../../assets/icons/creditcardicon.png';
+import cashicon from '../../Assets/Icons/cashicon.png';
+import creditcardicon from '../../Assets/Icons/creditcardicon.png';
 
 const PaymentOption = () => {
   return (

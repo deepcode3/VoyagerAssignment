@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import MenuHalfCompo from '../menuSemiCompo';
-import './menuNav.css';
+import './MenuNav.css';
 
 const OverView = () => {
   const { searchKey } = useParams();

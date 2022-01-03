@@ -1,20 +1,21 @@
+/* eslint-disable import/no-named-as-default-member */
 import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
-import Logo from '../logo';
-import ForgotPassword from '../../containers/ForgotPassword';
-import Login from '../../containers/Login';
-import PasswordChange from '../../containers/PasswordChange';
-import Signup from '../../containers/Signup';
-import OTPVerification from '../../containers/OTPVerification';
-import GetDetails from '../../containers/GetDetails';
-import WelcomePage from '../../containers/WelcomePage';
-import PasswordChangeSuccess from '../../containers/PasswordChangeSuccess';
-import iconCart from '../../assets/icons/icn_cart.png';
-import icnProfile from '../../assets/icons/icn_profile.svg';
-import { UserContext } from '../../context/UserContext';
+import Logo from '../Logo';
+import ForgotPassword from '../../Containers/ForgotPassword';
+import Login from '../../Containers/Login';
+import PasswordChange from '../../Containers/PasswordChange';
+import Signup from '../../Containers/Signup';
+import OTPVerification from '../../Containers/OTPVerification';
+import GetDetails from '../../Containers/GetDetails';
+import WelcomePage from '../../Containers/WelcomePage';
+import PasswordChangeSuccess from '../../Containers/PasswordChangeSuccess';
+import iconCart from '../../Assets/Icons/icn_cart.png';
+import icnProfile from '../../Assets/Icons/icn_profile.svg';
+import { UserContext } from '../../Context/UserContext';
 
 const Header = ({ isHome }) => {
   const { currentUser } = useContext(UserContext);

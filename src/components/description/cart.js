@@ -3,8 +3,8 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Items from './Items';
-import { cartContext } from '../../context/cartContext';
-import empty from '../../assets/images/empty.png';
+import { cartContext } from '../../Context/CartContext';
+import empty from '../../Assets/Images/empty.png';
 import './Description.css';
 import CommonHeader from '../headercommon/CommonHeader';
 import Footer from '../Footer';

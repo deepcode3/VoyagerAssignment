@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import './logo.css';
+import './Logo.css';
 
 const Logo = ({ afterLogin }) => {
   const history = useHistory();

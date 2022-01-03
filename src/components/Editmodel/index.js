@@ -3,17 +3,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import icnAddPhoto from '../../assets/icons/icn_add_photo.png';
-import profilePic from '../../assets/images/profile_pic.png';
-import icnBeer from '../../assets/icons/icn_beer.png';
-import icnBread from '../../assets/icons/icn_bread.png';
-import icnBurger from '../../assets/icons/icn_burger.png';
-import icnChicken from '../../assets/icons/icn_chicken.png';
-import icnCupcake from '../../assets/icons/icn_cupcake.png';
-import icnDonut from '../../assets/icons/icn_donut.png';
-import icnFrenchfries from '../../assets/icons/icn_frenchfries.png';
-import icnIcecream from '../../assets/icons/icn_icecream.png';
-import icnPizza from '../../assets/icons/icn_pizza.png';
+import icnAddPhoto from '../../Assets/Icons/icn_add_photo.png';
+import profilePic from '../../Assets/Images/profile_pic.png';
+import icnBeer from '../../Assets/Icons/icn_beer.png';
+import icnBread from '../../Assets/Icons/icn_bread.png';
+import icnBurger from '../../Assets/Icons/icn_burger.png';
+import icnChicken from '../../Assets/Icons/icn_chicken.png';
+import icnCupcake from '../../Assets/Icons/icn_cupcake.png';
+import icnDonut from '../../Assets/Icons/icn_donut.png';
+import icnFrenchfries from '../../Assets/Icons/icn_frenchfries.png';
+import icnIcecream from '../../Assets/Icons/icn_icecream.png';
+import icnPizza from '../../Assets/Icons/icn_pizza.png';
 
 const EditModal = ({ setOpen }) => {
   return (

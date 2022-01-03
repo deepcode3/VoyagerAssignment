@@ -6,9 +6,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
 import CommonHeader from '../headercommon/CommonHeader';
 import TelephonePicker from '../TelephonePicker/index';
-import delivericon from '../../assets/icons/delivericon.png';
-import pickupicon from '../../assets/icons/pickupicon.png';
-import addnewbtn from '../../assets/icons/button.png';
+import delivericon from '../../Assets/Icons/delivericon.png';
+import pickupicon from '../../Assets/Icons/pickupicon.png';
+import addnewbtn from '../../Assets/Icons/button.png';
 import './Address.css';
 import Footer from '../Footer';
 

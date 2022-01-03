@@ -5,13 +5,13 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../components/LoginComponents/LogoWithText/index';
-import StyledButton from '../../components/CommonButton/index';
-import forgotPasswordIcon from '../../assets/icons/icn_forgot_password.png';
-import BackIcon from '../../assets/icons/back_icon.png';
-import InputField from '../../components/LoginComponents/InputField';
-import border from '../../assets/icons/border.png';
-import TelephonePicker from '../../components/TelephonePicker/index';
+import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
+import StyledButton from '../../Components/CommonButton/index';
+import forgotPasswordIcon from '../../Assets/Icons/icn_forgot_password.png';
+import BackIcon from '../../Assets/Icons/back_icon.png';
+import InputField from '../../Components/LoginComponents/InputField';
+import border from '../../Assets/Icons/border.png';
+import TelephonePicker from '../../Components/TelephonePicker/index';
 
 Modal.setAppElement('#root');
 const ForgotPassword = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {

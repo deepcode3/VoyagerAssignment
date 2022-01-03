@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import iconDropdown from '../../assets/icons/icon_dropdown.png';
+import iconDropdown from '../../Assets/Icons/icon_dropdown.png';
 import array from './data';
 import OutsideAlerter from '../OutsideClickAlerter';
 
@@ -77,7 +77,7 @@ TelephonePicker.propTypes = {
   setSelectedCode: PropTypes.func.isRequired,
 };
 TelephonePicker.defaultProps = {
-  msg: null
+  msg: null,
 };
 const FormContainerTel = styled.div`
   height: 53px;
