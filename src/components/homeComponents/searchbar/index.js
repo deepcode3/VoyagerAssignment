@@ -8,7 +8,7 @@ import clearButton from '../../../Assets/Icons/dismissButton.png';
 import locationImg from '../../../Assets/Icons/location.png';
 import gps from '../../../Assets/Icons/gps.png';
 import dateTime from '../../../Assets/Icons/dateTime.png';
-import './SerachBar.css';
+import './SearchBar.css';
 
 let location;
 const SearchBar = ({ searchValue, from }) => {

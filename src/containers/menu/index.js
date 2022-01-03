@@ -7,7 +7,7 @@
 /* eslint-disable no-restricted-syntax */
 import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import MenuHalfCompo from '../../Components/menuSemiCompo';
+import MenuHalfCompo from '../../Components/MenuSemiCompo';
 import { cartContext } from '../../Context/CartContext';
 import searchIcon from '../../Assets/Icons/searchIcon.png';
 import item1 from '../../Assets/Images/item1.png';

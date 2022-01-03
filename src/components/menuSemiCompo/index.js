@@ -8,7 +8,7 @@ import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
 import halfBg from '../../Assets/Images/halfBg.jpg';
 import menuKebab from '../../Assets/Images/menuKebab.png';
-import './menuSemiCompo.css';
+import './MenuSemiCompo.css';
 
 // eslint-disable-next-line object-curly-newline
 const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
