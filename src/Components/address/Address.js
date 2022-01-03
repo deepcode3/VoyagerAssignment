@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import { React, useState } from 'react';
+import { React, useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
+import { addressContext } from '../../Context/ProfileContext';
+import AddressCard from './AddressCard';
 import CommonHeader from '../headercommon/CommonHeader';
 import TelephonePicker from '../TelephonePicker/index';
 import delivericon from '../../Assets/Icons/delivericon.png';
@@ -28,9 +30,7 @@ const CartAddress = () => {
   } = useForm({
     resolver: yupResolver(mobileSchema),
   });
-  const usecheck = () => {
-    return null;
-  };
+  const { addressItems, removeItem } = useContext(addressContext);
 
   const history = useHistory();
 
@@ -84,13 +84,26 @@ const CartAddress = () => {
             >
               ADD NEW
             </p>
-            <div className='homeaddressdiv' onClick={usecheck} role='button' onKeyDown={null}>
+            <div className='address_container'>
+              <div className='address_scroller'>
+                <ul className='list'>
+                  {addressItems.map((item, index) => {
+                    return (
+                      <li key={index.toString()}>
+                        <AddressCard item={item} removeItem={removeItem} index={index} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+            {/* <div className='homeaddressdiv' onClick={usecheck} role='button' onKeyDown={null}>
               <p className='home'>Home</p>
 
               <div className='checkeraddress'>
                 <input type='checkbox' className='officeradio' name='addcheck' />
                 {/* <img src={check} className="officeradio" alt=""></img> */}
-              </div>
+            {/* </div>
               <p className='addressline'>Downtown Burj Khalifa, Dubai, UAE</p>
               <div className='editbtn'>Edit</div>
               <div className='deletebtn'>Delete</div>
@@ -103,7 +116,7 @@ const CartAddress = () => {
               <p className='addressline'>Downtown Burj Khalifa, Dubai, UAE</p>
               <div className='editbtn1'>Edit</div>
               <div className='deletebtn1'>Delete</div>
-            </div>
+            </div> */}
           </div>
           <form className='contactdetailsdiv'>
             <p className='contactdetails'>Contact Details</p>

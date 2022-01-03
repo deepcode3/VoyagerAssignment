@@ -1,21 +1,22 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
-import icnCheckActive from '../../Assets/Icons/icn_check.png';
-import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
+import { addressContext } from '../../Context/ProfileContext';
 import Modal from './modal';
+import AddressCard from './AddressCard';
 
 const Address = () => {
+  const { addressItems, addItem, removeItem } = useContext(addressContext);
   const [open, setOpen] = useState(false);
-  const buttonMap = {
-    button1: 'button1',
-    button2: 'button2',
-  };
-  const [primary, setPrimary] = useState();
-  const handleClick = (button) => {
-    setPrimary(button);
-  };
-
+  const [items, setItems] = useState([]);
+  const initialFormData = Object.freeze({
+    location: '',
+    city: '',
+    area: '',
+    address: '',
+    addressLabel: '',
+  });
+  const [values, setValues] = useState(initialFormData);
   return (
     <Div>
       <div className='recommendation-1'>
@@ -34,130 +35,75 @@ const Address = () => {
       </div>
       <div className='recommendation-2'>
         <div className='order-1'>
-          <div className='order-2'>
-            <span className='home'>Home</span>
-            <span className='address'>
-              Downtown Burj Khalifa, Sheikh Mohammed bin Rashid Blvd - Dubai - United Arab
-              EmiratesDubai, UAE
-            </span>
-            <div
-              className='primary-1'
-              onClick={() => {
-                return handleClick(buttonMap.button1);
-              }}
-              role='button'
-              onKeyDown={null}
-            >
-              <img
-                src={primary === buttonMap.button1 ? icnCheckActive : icnCheckInactive}
-                alt='icn'
-                style={{ float: 'left' }}
-              />
-              <span
-                className='primary'
-                style={{
-                  color: `${primary === buttonMap.button1 ? '#6A6A6A' : '#B8B8B8'}`,
-                }}
-              >
-                Primary
-              </span>
-            </div>
-            <span className='edit'>Edit</span>
-            <span className='delete'>Delete</span>
-          </div>
-          <div className='order-2'>
-            <span className='home'>Office</span>
-            <div
-              className='primary-1'
-              onClick={() => {
-                return handleClick(buttonMap.button2);
-              }}
-              role='button'
-              onKeyDown={null}
-            >
-              <img
-                src={primary === buttonMap.button2 ? icnCheckActive : icnCheckInactive}
-                alt='icn'
-                style={{ float: 'left' }}
-              />
-              <span
-                className='primary'
-                style={{
-                  color: `${primary === buttonMap.button2 ? '#6A6A6A' : '#B8B8B8'}`,
-                }}
-              >
-                Primary
-              </span>
-            </div>
-            <span className='address'>
-              Downtown Burj Khalifa,- Dubai - United Arab EmiratesDubai, UAE
-            </span>
-            <span className='edit'>Edit</span>
-            <span className='delete'>Delete</span>
-          </div>
+          <ul>
+            {addressItems.map((item, index) => {
+              return (
+                <li key={index.toString()} className='list'>
+                  <AddressCard item={item} removeItem={removeItem} index={index} />
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
-      {open && <Modal setOpen={setOpen} />}
+      {open && (
+        <Modal
+          setOpen={setOpen}
+          values={values}
+          setValues={setValues}
+          addItem={addItem}
+          setItems={setItems}
+          items={items}
+        />
+      )}
     </Div>
   );
 };
 export default Address;
 
 const Div = styled.div`
-  height: 100vh;
-  weidth: 100vw;
-  display: flex;
-  align-items: center;
- padding-top:75px;
-  flex-direction:column;
-  background-color: #f1f3fb;
-  .recommendation-1 {
-width: 930px;
-    display:flex;
-
- }
- .recommendation-2 {
- height: 536px;
-width: 980px;
-overflow-y: scroll;
-position: relative;
-}
-.order-1 {
-width: 980px;
-max-height: 100%;
-}
-.order-2 {
-height: 186px;
-width: 469px;
-float: left;
-border-radius: 6px;
-background-color: #ffffff;
-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-margin: 7px;
-position:relative;
-flex: 1;
-}
-.my-addresses-2 {
-height: 22px;
-width: 122px;
-color: #6f6f6f;
-font-family: "Open Sans";
-font-size: 16px;
-letter-spacing: -0.27px;
-line-height: 22px;
-}
-.add-new {
-height: 19px;
-width: 83px;
-color: #fda200;
-font-family: "SF UI Text";
-font-size: 16px;
-font-weight: 500;
-letter-spacing: 0;
-line-height: 19px;
-text-align: right;
-margin-left:720px;
-}
+    height: 100vh;
+    weidth: 100vw;
+    display: flex;
+    align-items: center;
+    padding-top:75px;
+    flex-direction:column;
+    background-color: #f1f3fb;
+    .recommendation-1 {
+        width: 930px;
+        display:flex;
+    }
+    .recommendation-2 {
+        height: 536px;
+        width: 1050px;
+        overflow-y: scroll;
+        position: relative;
+    }
+    .order-1 {
+       width: 1050px;
+       max-height: 100%;
+    }
+    .my-addresses-2 {
+       height: 22px;
+       width: 122px;
+       color: #6f6f6f;
+       font-family: "Open Sans";
+       font-size: 16px;
+       letter-spacing: -0.27px;
+       line-height: 22px;
+    }
+    .add-new {
+       height: 19px;
+       width: 83px;
+       color: #fda200;
+       font-family: "SF UI Text";
+       font-size: 16px;
+       font-weight: 500;
+       letter-spacing: 0;
+       line-height: 19px;
+       text-align: right;
+       margin-left:720px;
+     }
     .home {
       height: 19px;
       width: 39px;
@@ -167,9 +113,12 @@ margin-left:720px;
       letter-spacing: -0.27px;
       line-height: 19px;
       position: absolute;
-    top:29px;
-    left:26px;
+      top:29px;
+      left:26px;
     }
+  .list{
+    list-style-type: none;
+  }
     .primary-1{
       position: absolute;
       top:21px;

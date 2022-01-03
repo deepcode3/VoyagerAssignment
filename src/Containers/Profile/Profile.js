@@ -72,8 +72,9 @@ const Profile = ({ setOpen }) => {
 };
 export default Profile;
 Profile.propTypes = {
-  setOpen: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
+
 const Profilediv = styled.div`
   //weidth:100vw;
   height: 262px;

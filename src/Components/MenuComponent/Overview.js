@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
-import MenuHalfCompo from '../MenuSemiCompo';
+import MenuHalfCompo from '../MenuSemiCompo/index';
 import './MenuNav.css';
 
 const OverView = () => {
