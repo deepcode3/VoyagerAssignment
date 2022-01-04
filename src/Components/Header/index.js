@@ -84,7 +84,7 @@ const Header = ({ isHome }) => {
         ) : (
           <>
             <CartIconOrange src={iconCart} alt='icon' />
-            <CartLinkOrange to='/cart'>CART</CartLinkOrange>
+            <CartLinkOrange to='/cart-home'>CART</CartLinkOrange>
           </>
         )}
       </LinkContainer>
