@@ -399,9 +399,10 @@ input[type='text']:focus {
 .dispitemsdiv {
   width: 634px;
   background-color: white;
-  height: 700px;
+  max-height: 700px;
   overflow-y: scroll;
   overflow-x: hidden;
+  height: auto;
 }
 .footerDivCart {
   position: relative;
