@@ -9,7 +9,7 @@ import payback from '../../Assets/Images/payback.png';
 import paynow from '../../Assets/Images/paynow.png';
 import mastercardicon from '../../Assets/Icons/mastercard_icon.png';
 import pvisaicon from '../../Assets/Icons/Visa_icon.png';
-import CommonHeader from '../HeaderCommon/CommonHeader';
+import CommonHeader from '../Headercommon/CommonHeader';
 import '../Payment/Payment.css';
 import './FinalPayment.css';
 import Footer from '../Footer';

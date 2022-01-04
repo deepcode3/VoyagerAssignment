@@ -52,7 +52,7 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus, setEmail }) => {
         setPageStatus('login');
         setModalIsOpen(false);
       }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)' } }}
+      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)', zIndex: 2 } }}
     >
       <Wrapper>
         <LogoWithText />

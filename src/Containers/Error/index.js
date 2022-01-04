@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Image404 from '../../Assets/Images/404.png';
-import CommonHeader from '../../Components/HeaderCommon/CommonHeader';
+import CommonHeader from '../../Components/Headercommon/CommonHeader';
 import takeHome from '../../Assets/Images/takeHome.png';
 import Footer from '../../Components/Footer';
 

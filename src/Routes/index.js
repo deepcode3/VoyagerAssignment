@@ -15,7 +15,7 @@ import ReviewContext from '../Context/ReviewContext';
 import Cart from '../Components/ItemDescription/CartOrders';
 import ProfileMain from '../Containers/Profile/index';
 import Error from '../Containers/Error/index';
-import Orderstatus from '../Components/OrderStatus/Orderstatus';
+import Orderstatus from '../Components/Orderstatus/Orderstatus';
 import About from '../Components/Footerlinker/About';
 import Terms from '../Components/Footerlinker/Terms';
 import PrivacyPolicy from '../Components/Footerlinker/PrivacyPolicy';
