@@ -212,6 +212,7 @@ const ProfileIcon = styled.img`
   padding: 9px;
 `;
 const User = styled.button`
+  cursor: pointer;
   height: 19px;
   color: #303134;
   font-family: 'Open Sans', sans-serif;
