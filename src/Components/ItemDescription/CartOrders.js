@@ -36,7 +36,7 @@ const Cart = () => {
                 <div className='orderdisplay_rectangle'>
                   <div className='dispitemsdiv'>
                     {cartItems.map((curritem) => {
-                      return <Items key={curritem.id} {...curritem} />;
+                      return <Items key={curritem.id} {...curritem} from='cart' />;
                     })}
                   </div>
 

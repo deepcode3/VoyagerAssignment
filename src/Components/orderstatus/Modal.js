@@ -29,7 +29,7 @@ const Modal = ({ closemodal }) => {
         <div className='statusitemsrectangle'>
           {cartItems.map((curritem) => {
             // eslint-disable-next-line react/jsx-props-no-spreading
-            return <Items key={curritem.id} {...curritem} />;
+            return <Items key={curritem.id} {...curritem} from='orderDetails' />;
           })}
         </div>
         <p className='statusmaount'>Amount</p>
@@ -208,6 +208,6 @@ const Modal = ({ closemodal }) => {
 };
 
 Modal.propTypes = {
-  closemodal: PropTypes.bool.isRequired,
+  closemodal: PropTypes.func.isRequired,
 };
 export default Modal;

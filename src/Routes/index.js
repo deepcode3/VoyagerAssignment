@@ -12,7 +12,7 @@ import Reviews from '../Components/MenuComponent/Review';
 import Gallery from '../Components/MenuComponent/Gallery';
 import CartContextProvider from '../Context/CartContext';
 import ReviewContext from '../Context/ReviewContext';
-import Cart from '../Components/ItemDescription/cart';
+import Cart from '../Components/ItemDescription/CartOrders';
 import ProfileMain from '../Containers/Profile/index';
 import Error from '../Containers/Error/index';
 import Orderstatus from '../Components/OrderStatus/Orderstatus';
