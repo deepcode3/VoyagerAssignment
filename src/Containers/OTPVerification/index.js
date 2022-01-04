@@ -133,11 +133,11 @@ const BlackText = styled.p`
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   font-weight: bold;
-  letter-spacing: -0.37px;
   text-align: center;
-  text-shadow: 0 0 9px 0 #ffffff;
   margin: 0;
   padding-top: 5%;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Description = styled.p`
   height: 38px;
@@ -155,7 +155,7 @@ const Description = styled.p`
 `;
 const Container = styled.form`
   width: 100%;
-  height: 40%;
+  height: 30.5%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

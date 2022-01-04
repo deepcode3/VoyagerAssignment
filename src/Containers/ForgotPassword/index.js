@@ -100,7 +100,7 @@ const ForgotPassword = ({
             <img className='backArrow' src={BackIcon} alt='back' />
           </BackButton>
           <StyledImg src={forgotPasswordIcon} alt='icon' />
-          <BlackText>ForgotPassword! </BlackText>
+          <BlackText>Forgot Password! </BlackText>
           <Description>
             Share your registered either email address or mobile number to send you the OTP to reset
             your password
@@ -231,11 +231,13 @@ const BlackText = styled.p`
   color: #2a2c30;
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: -0.37px;
   text-align: center;
   text-shadow: 0 0 9px 0 #ffffff;
   margin: 0;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Description = styled.p`
   height: 38px;

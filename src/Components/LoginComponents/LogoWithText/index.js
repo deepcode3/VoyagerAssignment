@@ -30,11 +30,11 @@ const Lorem = styled.p`
   width: 103px;
   color: #ffffff;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 30px;
+  font-size: 50px;
   margin-bottom: 10.5%;
   margin-top: 35%;
-  transform: scaleY(1.4);
-  font-weight: 600;
+  font-weight: 400;
+  transform: scaleY(1.1);
 `;
 const Text = styled.p`
   width: 323px;

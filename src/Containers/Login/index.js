@@ -151,12 +151,14 @@ const BlackText = styled.p`
   color: #2a2c30;
   font-family: 'Open Sans', sans-serif;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 800;
   line-height: 38px;
   text-shadow: 0 0 9px 0 #ffffff;
   margin-bottom: 10%;
   margin-top: 10%;
-  margin-right: 3%;
+  margin-right: 35%;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Form = styled.form`
   height: 50%;
