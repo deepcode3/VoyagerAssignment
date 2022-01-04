@@ -17,6 +17,7 @@ import item4 from '../../Assets/Images/item4.jpeg';
 import item5 from '../../Assets/Images/item5.jpeg';
 import item6 from '../../Assets/Images/item6.jpeg';
 import './MenuNav.css';
+import Footer from '../Footer';
 
 const galleryData = [
   { img: item1, name: 'Chicken Leg Fry' },
@@ -93,6 +94,9 @@ const Gallery = () => {
             <span className='viewAllArrow'>{'>'}</span>
           </div>
         </div>
+      </div>
+      <div className='footerDivGallery'>
+        <Footer />
       </div>
     </>
   );
