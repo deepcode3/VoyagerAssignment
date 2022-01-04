@@ -7,14 +7,16 @@ import PropTypes from 'prop-types';
 
 export const UserContext = createContext(JSON.parse(localStorage.getItem('curntUser')));
 const UserContextProvider = ({ children }) => {
-  const [currentUser, resetUser] = useState(JSON.parse(localStorage.getItem('curntUser')));
-  const setCurrentUser = (data) => {
+  const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem('curntUser')));
+  const resetCurrentUser = (data) => {
+    setCurrentUser(data);
     localStorage.setItem('curntUser', JSON.stringify(data));
-    resetUser(data);
   };
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <UserContext.Provider value={{ currentUser, setCurrentUser }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ currentUser, resetCurrentUser }}>
+      {children}
+    </UserContext.Provider>
   );
 };
 UserContextProvider.propTypes = {
