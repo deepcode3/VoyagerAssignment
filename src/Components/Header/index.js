@@ -195,8 +195,8 @@ const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 21%;
-  margin-right: 1%;
+  width: 20%;
+  margin-right: 14%;
   align-items: center;
 `;
 const ProfileConatiner = styled.div`

@@ -8,6 +8,12 @@ import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
 import halfBg from '../../Assets/Images/halfBg.jpg';
 import menuKebab from '../../Assets/Images/menuKebab.png';
+import spoonPoke from '../../Assets/Icons/spoonPoke.png';
+import greenRectange from '../../Assets/Icons/greeenRect.png';
+import timing from '../../Assets/Icons/time_icon.png';
+import greenStar from '../../Assets/Icons/ratingStar.png';
+import yellowStar from '../../Assets/Icons/yellowStar.png';
+import redStar from '../../Assets/Icons/redStar.png';
 import './MenuSemiCompo.css';
 
 // eslint-disable-next-line object-curly-newline
@@ -39,6 +45,46 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
         </div>
         <img src={halfBg} alt='' className='menuHalfBgImage' />
         <img src={menuKebab} alt='' className='menuKebabImage' />
+        <img src={spoonPoke} className='spoonPoke' alt='' />
+        <div className='restaurantDetails'>
+          <span className='menuRestaurantName'>{restaurant}</span>
+          <br />
+          <span className='menuItemName'>{item}</span>
+          <div className='menuRatingDetails'>
+            <img src={greenRectange} className='greenRect' alt='' />
+            <span className='menuRestaurantRating'>4.3</span>
+            <span className='menuDot' />
+            <span className='menuTimming'>63 mins</span>
+            <span className='menuDot1' />
+            <span className='menuMinOrder'>AED30 min order</span>
+            <img src={timing} className='timming' alt='' />
+            <span className='timmingaText'>11:00 AM - 10:00 PM</span>
+          </div>
+          <span className='deliveryRatings'>Delivery rating for last 5 orders</span>
+          <div className='menuLine' />
+          <div className='menuRatingStars'>
+            <div className='menuStarBox1'>
+              <img src={greenStar} className='menuStar' alt='' />
+              <div className='menuRating1'>4</div>
+            </div>
+            <div className='menuStarBox2'>
+              <img src={greenStar} className='menuStar' alt='' />
+              <div className='menuRating1'>4</div>
+            </div>
+            <div className='menuStarBox3'>
+              <img src={yellowStar} className='menuStar' alt='' />
+              <div className='menuRating2'>3</div>
+            </div>
+            <div className='menuStarBox4'>
+              <img src={greenStar} className='menuStar' alt='' />
+              <div className='menuRating1'>4</div>
+            </div>
+            <div className='menuStarBox5'>
+              <img src={redStar} className='menuStar' alt='' />
+              <div className='menuRating3'>2</div>
+            </div>
+          </div>
+        </div>
         <div className='menuKebab' />
         <div className='navBar'>
           <div
