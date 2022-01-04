@@ -78,7 +78,7 @@ const Header = ({ isHome }) => {
         {isHome ? (
           <>
             <CartIcon src={iconCart} alt='icon' />
-            <CartLink to='/cart'>CART</CartLink>
+            <CartLink to='/cart-home'>CART</CartLink>
           </>
         ) : (
           <>
