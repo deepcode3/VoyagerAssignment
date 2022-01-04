@@ -57,10 +57,10 @@ const ForgotPassword = ({
   const submitForm = (data) => {
     if (inputType === 'email') {
       const result = checkIfAccountExists(data);
-      if (result === null) {
-        setError('email', { type: 'manual', message: 'Email id is not registered' });
-      } else if (result.length === 0) {
-        setError('email', { type: 'manual', message: 'Email id is not registered' });
+      if (result === 'Email id is not registered') {
+        setError('email', { type: 'manual', message: result });
+      } else if (result === 'Incorrect password entered') {
+        setError('password', { type: 'manual', message: result });
       } else {
         setEmail(data.email);
         setPageStatus('otp-verification-for-password-change');

@@ -37,7 +37,8 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus, setEmail }) => {
   };
   const submitForm = (data) => {
     const result = checkIfAccountExists(data);
-    if (result === null || result.length === 0) {
+
+    if (result === 'Email id is not registered') {
       setEmail(data.email);
       setPageStatus('otp-verification');
     } else {

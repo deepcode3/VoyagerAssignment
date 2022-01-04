@@ -35,14 +35,12 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   };
   const submitForm = (data) => {
     const result = checkIfAccountExists(data);
-    if (result === null) {
-      setError('email', { type: 'manual', message: 'Email id is not registered' });
-    } else if (result.length === 0) {
-      setError('email', { type: 'manual', message: 'Email id is not registered' });
-    } else if (result[0].password !== data.password) {
-      setError('password', { type: 'manual', message: 'Incorrect password entered' });
+    if (result === 'Email id is not registered') {
+      setError('email', { type: 'manual', message: result });
+    } else if (result === 'Incorrect password entered') {
+      setError('password', { type: 'manual', message: result });
     } else {
-      signIn(result[0]);
+      signIn(result);
       setModalIsOpen(false);
     }
   };

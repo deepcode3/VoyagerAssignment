@@ -6,12 +6,18 @@ const AccountsContextProvider = ({ children }) => {
   const [accounts, setAccounts] = useState(JSON.parse(localStorage.getItem('createdAccounts')));
   const checkIfAccountExists = (data) => {
     if (accounts === null) {
-      return null;
+      return 'Email id is not registered';
     }
     const result = accounts.filter((obj) => {
       return obj.email === data.email;
     });
-    return result;
+    if (result.length === 0) {
+      return 'Email id is not registered';
+    }
+    if (result[0].password !== data.password) {
+      return 'Incorrect password entered';
+    }
+    return result[0];
   };
   const checkIfNumberExists = (data) => {
     if (accounts === null) {
