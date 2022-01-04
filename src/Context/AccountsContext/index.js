@@ -21,12 +21,15 @@ const AccountsContextProvider = ({ children }) => {
   };
   const checkIfNumberExists = (data) => {
     if (accounts === null) {
-      return null;
+      return 'Mobile number is not registered';
     }
     const result = accounts.filter((obj) => {
       return obj.countrycode === data.countrycode && obj.mobile === data.mobile;
     });
-    return result;
+    if (result.length === 0) {
+      return 'Mobile number is not registered';
+    }
+    return result[0];
   };
   const addAccount = (data) => {
     if (accounts === null) {
