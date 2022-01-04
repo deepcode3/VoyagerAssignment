@@ -89,7 +89,8 @@ const FormContainerTel = styled.div`
     font-size: 12px;
     font-weight: 400;
     letter-spacing: -0.2px;
-    height: 17px;
+    height: 10px;
+    margin-top: 0px;
   }
 `;
 const NumContainer = styled.div`
@@ -105,30 +106,7 @@ const DropDown = styled.img`
   margin-top: 8px;
   margin-left: 10px;
 `;
-const MobileNumber = styled.input`
-  top: 0;
-  height: 45%;
-  width: 65%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #a4a4a4;
-  color: #000000;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 100;
-  letter-spacing: -0.27px;
-  line-height: 22px;
-  outline: none;
-  pointer-events: all;
-  padding-bottom: 5%;
-  :focus {
-    border-bottom: 1px solid black;
-  }
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
-    transition: background-color 5000s ease-in-out 0s !important;
-`;
+
 const Label = styled.label`
   width: 86.36px;
   color: #858585;
@@ -200,4 +178,28 @@ const DropDownContainer = styled.div`
   flex-direction: column;
   top: 0;
   margin-top: -5px;
+`;
+const MobileNumber = styled.input`
+  top: 0;
+  height: 45%;
+  width: 65%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #a4a4a4;
+  color: #000000;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: -0.27px;
+  line-height: 22px;
+  outline: none;
+  pointer-events: all;
+  padding-bottom: 5%;
+  :focus {
+    border-bottom: 1px solid black;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s !important;
 `;
