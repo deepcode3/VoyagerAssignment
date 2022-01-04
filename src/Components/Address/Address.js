@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
 import { addressContext } from '../../Context/ProfileContext';
 import AddressCard from './AddressCard';
-import CommonHeader from '../Headercommon/CommonHeader';
+import CommonHeader from '../HeaderCommon/CommonHeader';
 import TelephonePicker from '../TelephonePicker/index';
 import delivericon from '../../Assets/Icons/delivericon.png';
 import pickupicon from '../../Assets/Icons/pickupicon.png';
