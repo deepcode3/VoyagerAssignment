@@ -1,22 +1,23 @@
 import { React, useState, createContext } from 'react';
 import PropTypes from 'prop-types';
-
-// const userObjectContext = {
-//   firstname: '',
-// };
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export const UserContext = createContext(JSON.parse(localStorage.getItem('curntUser')));
 const UserContextProvider = ({ children }) => {
+  const history = useHistory();
   const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem('curntUser')));
-  const resetCurrentUser = (data) => {
+  const signOut = () => {
+    setCurrentUser(null);
+    localStorage.setItem('curntUser', JSON.stringify(null));
+    history.push('/');
+  };
+  const signIn = (data) => {
     setCurrentUser(data);
     localStorage.setItem('curntUser', JSON.stringify(data));
   };
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <UserContext.Provider value={{ currentUser, resetCurrentUser }}>
-      {children}
-    </UserContext.Provider>
+    <UserContext.Provider value={{ currentUser, signOut, signIn }}>{children}</UserContext.Provider>
   );
 };
 UserContextProvider.propTypes = {

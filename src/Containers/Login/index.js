@@ -17,7 +17,7 @@ import { UserContext } from '../../Context/UserContext';
 Modal.setAppElement('#root');
 const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   const { checkIfAccountExists } = useContext(AccountsContext);
-  const { resetCurrentUser } = useContext(UserContext);
+  const { signIn } = useContext(UserContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required('Email id is required'),
     password: yup.string().required('Password is required'),
@@ -42,7 +42,7 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
     } else if (result[0].password !== data.password) {
       setError('password', { type: 'manual', message: 'Incorrect password entered' });
     } else {
-      resetCurrentUser(result[0]);
+      signIn(result[0]);
       setModalIsOpen(false);
     }
   };

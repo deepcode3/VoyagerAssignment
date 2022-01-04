@@ -18,7 +18,7 @@ import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import { UserContext } from '../../Context/UserContext';
 
 const Header = ({ isHome }) => {
-  const { currentUser, resetCurrentUser } = useContext(UserContext);
+  const { currentUser, signOut } = useContext(UserContext);
   const history = useHistory();
   const [state, trigger] = useState(true);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -29,7 +29,7 @@ const Header = ({ isHome }) => {
   const [inputType, setInputType] = useState('email');
   const [selectedCode, setSelectedCode] = useState('91');
   const handleLogout = () => {
-    resetCurrentUser(null);
+    signOut();
     trigger(!state);
     history.push('/');
   };
