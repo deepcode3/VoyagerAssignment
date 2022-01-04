@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Order from '../Orders/index';
-import Address from '../ProfileAddress/index';
+import Address from '../profileAddress';
 import PayAmount from '../PayMethods/index';
 
 const Profileroute = () => {

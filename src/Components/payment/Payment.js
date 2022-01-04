@@ -9,7 +9,7 @@ import PaymentDeliveryDetails from './PaymentDeliveryDetails';
 import PaymentresDetails from './PaymentresDetails';
 import payback from '../../Assets/Images/payback.png';
 import paynow from '../../Assets/Images/paynow.png';
-import CommonHeader from '../HeaderCommon/CommonHeader';
+import CommonHeader from '../Headercommon/CommonHeader';
 import Footer from '../Footer';
 
 const Payment = () => {

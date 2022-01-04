@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import CommonHeader from '../HeaderCommon/CommonHeader';
+import CommonHeader from '../Headercommon/CommonHeader';
 import Cartdata from './Cartdata';
 import Cartlist from './Cartlist';
 import './CartHome.css';
