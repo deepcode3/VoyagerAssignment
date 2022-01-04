@@ -178,7 +178,7 @@ Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
   height: 60px;
-  width: 1865px;
+  width: 97%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -212,6 +212,7 @@ const ProfileIcon = styled.img`
   padding: 9px;
 `;
 const User = styled.button`
+  cursor: pointer;
   height: 19px;
   color: #303134;
   font-family: 'Open Sans', sans-serif;
@@ -233,6 +234,7 @@ const Button = styled.button`
   letter-spacing: 0.5px;
   padding: 0;
   margin-right: 8%;
+  cursor: pointer;
 `;
 const VerticalLine = styled.div`
   height: 54px;

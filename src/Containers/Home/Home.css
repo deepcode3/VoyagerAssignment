@@ -85,3 +85,8 @@
 .assigner {
   display: none;
 }
+.footerDivHome {
+  top: 900px;
+  position: relative;
+  align-items: center;
+}

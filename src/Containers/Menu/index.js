@@ -28,6 +28,7 @@ import costShowHideButton from '../../Assets/Icons/collapseButton.png';
 import proceedToCheckOutButton from '../../Assets/Icons/proceedToCheckOut.png';
 import emptyImg from '../../Assets/Images/empty.png';
 import './Menu.css';
+import Footer from '../../Components/Footer';
 
 const Menu = () => {
   const { searchKey } = useParams();
@@ -581,6 +582,9 @@ const Menu = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='footerDivMenu'>
+        <Footer />
       </div>
     </>
   );

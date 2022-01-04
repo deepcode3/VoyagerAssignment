@@ -13,6 +13,7 @@ import like from '../../Assets/Icons/like.png';
 import empty from '../../Assets/Images/empty.png';
 import unSelectedLike from '../../Assets/Icons/unSelectedLike.png';
 import './MenuNav.css';
+import Footer from '../Footer';
 
 const Reviews = () => {
   const { searchKey } = useParams();
@@ -395,6 +396,9 @@ const Reviews = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='footerDivReview'>
+        <Footer />
       </div>
     </>
   );

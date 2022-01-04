@@ -128,6 +128,7 @@ const BackButton = styled.button`
   border: none;
   margin-right: 95%;
   margin-top: 2%;
+  cursor: pointer;
   .backArrow {
     height: 17px;
     width: 17px;
@@ -147,11 +148,11 @@ const BlackText = styled.p`
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   font-weight: bold;
-  letter-spacing: -0.37px;
   text-align: center;
-  text-shadow: 0 0 9px 0 #ffffff;
   margin: 0;
   padding-bottom: 3%;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Description = styled.p`
   color: #4a4a4a;
@@ -164,7 +165,7 @@ const Description = styled.p`
   margin: 0;
 `;
 const DataContainer = styled.form`
-  margin-top: 24%;
+  margin-top: 23%;
   width: 100%;
   height: 40%;
   display: flex;

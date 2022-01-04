@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import PaymentOption from '../payment/PaymentOption';
-import PaymentPoints from '../payment/PaymentPoints';
-import PaymentDeliveryDetails from '../payment/PaymentDeliveryDetails';
-import PaymentresDetails from '../payment/PaymentresDetails';
+import PaymentOption from '../Payment/PaymentOption';
+import PaymentPoints from '../Payment/PaymentPoints';
+import PaymentDeliveryDetails from '../Payment/PaymentDeliveryDetails';
+import PaymentresDetails from '../Payment/PaymentresDetails';
 import payback from '../../Assets/Images/payback.png';
 import paynow from '../../Assets/Images/paynow.png';
 import mastercardicon from '../../Assets/Icons/mastercard_icon.png';
 import pvisaicon from '../../Assets/Icons/Visa_icon.png';
-import CommonHeader from '../headercommon/CommonHeader';
-import '../payment/Payment.css';
+import CommonHeader from '../HeaderCommon/CommonHeader';
+import '../Payment/Payment.css';
 import './FinalPayment.css';
 import Footer from '../Footer';
 

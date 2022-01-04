@@ -37,6 +37,7 @@ const Text = styled.p`
   padding-right: 5px;
 `;
 const Button = styled.button`
+  cursor: pointer;
   padding: 0;
   padding-bottom: 2px;
   height: 20px;
