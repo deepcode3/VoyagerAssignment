@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import './Modal.css';
 import PropTypes from 'prop-types';
 import StarIcon from '@mui/icons-material/Star';
-import Items from '../description/Items';
+import Items from '../ItemDescription/Items';
 import { cartContext } from '../../Context/CartContext';
 
 const Modal = ({ closemodal }) => {
@@ -29,7 +29,7 @@ const Modal = ({ closemodal }) => {
         <div className='statusitemsrectangle'>
           {cartItems.map((curritem) => {
             // eslint-disable-next-line react/jsx-props-no-spreading
-            return <Items key={curritem.id} {...curritem} />;
+            return <Items key={curritem.id} {...curritem} from='orderDetails' />;
           })}
         </div>
         <p className='statusmaount'>Amount</p>
@@ -208,6 +208,6 @@ const Modal = ({ closemodal }) => {
 };
 
 Modal.propTypes = {
-  closemodal: PropTypes.bool.isRequired,
+  closemodal: PropTypes.func.isRequired,
 };
 export default Modal;

@@ -5,6 +5,7 @@
   margin-right: auto;
   top: 230px;
   left: 40px;
+  height: 2000px;
 }
 .menuBg {
   background-color: #c5cae238;
@@ -682,4 +683,9 @@
   top: 5px;
   left: 27px;
   cursor: pointer;
+}
+.footerDivMenu {
+  top: 1300px;
+  position: relative;
+  align-items: center;
 }

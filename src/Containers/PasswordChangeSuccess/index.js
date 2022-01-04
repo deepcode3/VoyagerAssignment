@@ -83,6 +83,7 @@ const Button = styled.button`
   right: 0px;
   position: absolute;
   top: 3%;
+  cursor: pointer;
 `;
 const StyledImg = styled.img`
   height: 30%;
@@ -97,12 +98,12 @@ const BlackText = styled.p`
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   font-weight: bold;
-  letter-spacing: -0.37px;
   text-align: center;
-  text-shadow: 0 0 9px 0 #ffffff;
   margin: 0;
   padding-top: 10%;
   padding-left: 1%;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Description = styled.p`
   height: 38px;
@@ -113,5 +114,5 @@ const Description = styled.p`
   line-height: 19px;
   text-align: center;
   font-weight: 100;
-  margin-bottom: 22%;
+  margin-bottom: 22.75%;
 `;

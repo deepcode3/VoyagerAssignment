@@ -157,16 +157,17 @@ const BackButton = styled.button`
   border: none;
   margin-right: 95%;
   margin-top: 1%;
+  cursor: pointer;
   .backArrow {
     height: 17px;
     width: 17px;
   }
 `;
 const DataContainer = styled.form`
-  height: 76%;
+  height: 77%;
   width: 100%;
-  margin-bottom: 1.75%;
-  margin-top: 3%;
+  margin-bottom: 1%;
+  margin-top: 1.5%;
   margin-left: 21%;
   display: flex;
   flex-direction: column;
@@ -179,10 +180,10 @@ const BlackText = styled.p`
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   font-weight: bold;
-  letter-spacing: -0.37px;
   text-align: center;
-  text-shadow: 0 0 9px 0 #ffffff;
   margin-bottom: 10%;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Description = styled.p`
   width: 100%;

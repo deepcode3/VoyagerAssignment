@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import MenuHalfCompo from '../MenuSemiCompo';
+import MenuHalfCompo from '../MenuSemiCompo/index';
 import cancelButton from '../../Assets/Icons/cancel.png';
 import item1 from '../../Assets/Images/item1.png';
 import item2 from '../../Assets/Images/item2.jpeg';
@@ -17,6 +17,7 @@ import item4 from '../../Assets/Images/item4.jpeg';
 import item5 from '../../Assets/Images/item5.jpeg';
 import item6 from '../../Assets/Images/item6.jpeg';
 import './MenuNav.css';
+import Footer from '../Footer';
 
 const galleryData = [
   { img: item1, name: 'Chicken Leg Fry' },
@@ -93,6 +94,9 @@ const Gallery = () => {
             <span className='viewAllArrow'>{'>'}</span>
           </div>
         </div>
+      </div>
+      <div className='footerDivGallery'>
+        <Footer />
       </div>
     </>
   );

@@ -134,6 +134,7 @@ const Button = styled.button`
   right: 0px;
   position: absolute;
   top: 3%;
+  cursor: pointer;
 `;
 const BlackText = styled.p`
   color: #2a2c30;
@@ -141,9 +142,10 @@ const BlackText = styled.p`
   font-size: 28px;
   font-weight: bold;
   line-height: 38px;
-  text-shadow: 0 0 9px 0 #ffffff;
   margin-bottom: 3%;
   margin-top: 10%;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Description = styled.p`
   height: 10%;

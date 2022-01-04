@@ -30,9 +30,11 @@ const WelcomePage = ({ modalIsOpen, setModalIsOpen, setPageStatus, name, email }
             <img src={closeButton} alt='cut' />
           </Button>
           <StyledImg src={icnRegisterSuccess} alt='icon' />
-          <BlackText>{`Hi, ${name}`}</BlackText>
+          <BlackText>{`Hi ${name},`}</BlackText>
           <BlackText> Welcome to Zadoh </BlackText>
-          <Description>{`We’ve sent you an email on ${email} for verification.`}</Description>
+          <Description>
+            {`We’ve sent you an email on ${email.split('@')[0]} for verification.`}
+          </Description>
           <StyledButton
             onClick={() => {
               setPageStatus('login');
@@ -86,6 +88,7 @@ const Button = styled.button`
   right: 0px;
   position: absolute;
   top: 3%;
+  cursor: pointer;
 `;
 const StyledImg = styled.img`
   height: 30%;
@@ -102,7 +105,8 @@ const BlackText = styled.p`
   font-weight: bold;
   letter-spacing: -0.37px;
   text-align: center;
-  text-shadow: 0 0 9px 0 #ffffff;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
   margin: 0;
 `;
 const Description = styled.p`
@@ -116,5 +120,5 @@ const Description = styled.p`
   text-align: center;
   font-weight: 100;
   margin-top: 7%;
-  margin-bottom: 18%;
+  margin-bottom: 18.5%;
 `;

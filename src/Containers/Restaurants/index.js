@@ -17,6 +17,7 @@ import hideButton from '../../Assets/Icons/hide.png';
 import showButton from '../../Assets/Icons/show.png';
 import checkBox from '../../Assets/Icons/checkBox.png';
 import './Restaurants.css';
+import Footer from '../../Components/Footer';
 
 const Restaurant = ({ data, searchKey, location }) => {
   const [TimeSortHide, setTimeSortHide] = useState(false);
@@ -287,6 +288,8 @@ const Restaurant = ({ data, searchKey, location }) => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

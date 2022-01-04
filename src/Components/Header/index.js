@@ -5,14 +5,14 @@ import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 import Logo from '../Logo';
-import ForgotPassword from '../../Containers/ForgotPassword';
-import Login from '../../Containers/Login';
-import PasswordChange from '../../Containers/PasswordChange';
-import Signup from '../../Containers/Signup';
-import OTPVerification from '../../Containers/OTPVerification';
-import GetDetails from '../../Containers/GetDetails';
-import WelcomePage from '../../Containers/WelcomePage';
-import PasswordChangeSuccess from '../../Containers/PasswordChangeSuccess';
+import ForgotPassword from '../../Containers/ForgotPassword/index';
+import Login from '../../Containers/Login/index';
+import PasswordChange from '../../Containers/PasswordChange/index';
+import Signup from '../../Containers/Signup/index';
+import OTPVerification from '../../Containers/OTPVerification/index';
+import GetDetails from '../../Containers/GetDetails/index';
+import WelcomePage from '../../Containers/WelcomePage/index';
+import PasswordChangeSuccess from '../../Containers/PasswordChangeSuccess/index';
 import iconCart from '../../Assets/Icons/icn_cart.png';
 import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import { UserContext } from '../../Context/UserContext';
@@ -178,7 +178,7 @@ Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
   height: 60px;
-  width: 1865px;
+  width: 97%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -212,6 +212,7 @@ const ProfileIcon = styled.img`
   padding: 9px;
 `;
 const User = styled.button`
+  cursor: pointer;
   height: 19px;
   color: #303134;
   font-family: 'Open Sans', sans-serif;
@@ -233,6 +234,7 @@ const Button = styled.button`
   letter-spacing: 0.5px;
   padding: 0;
   margin-right: 8%;
+  cursor: pointer;
 `;
 const VerticalLine = styled.div`
   height: 54px;

@@ -202,7 +202,20 @@
   top: 32px;
   left: 538px;
 }
-
+.orderDetailsTotalCost {
+  height: 27px;
+  width: 55px;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 27px;
+  text-align: center;
+  position: absolute;
+  top: 32px;
+  left: 338px;
+}
 .remove {
   height: 15px;
   width: 43px;
@@ -386,9 +399,10 @@ input[type='text']:focus {
 .dispitemsdiv {
   width: 634px;
   background-color: white;
-  height: 700px;
+  max-height: 700px;
   overflow-y: scroll;
   overflow-x: hidden;
+  height: auto;
 }
 .footerDivCart {
   position: relative;

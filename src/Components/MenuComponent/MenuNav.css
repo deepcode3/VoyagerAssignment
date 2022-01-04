@@ -951,3 +951,13 @@
   top: 20px;
   cursor: pointer;
 }
+.footerDivReview {
+  top: 250px;
+  position: relative;
+  align-items: center;
+}
+.footerDivGallery {
+  top: 270px;
+  position: relative;
+  align-items: center;
+}

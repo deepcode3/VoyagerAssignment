@@ -1,168 +1,190 @@
 .searchBox {
-	height: 70px;
-	width: 611px;
-	/* position: absolute;
+  height: 70px;
+  width: 611px;
+  /* position: absolute;
 	top: 456px;
 	left: 420px; */
 }
 .searchInput {
-	height: 70px;
-	width: 611px;
-	border-radius: 10px;
-	background-color: #ffffff;
-	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14);
-	outline: none;
-	border: none;
-	padding-left: 61px;
-	cursor: pointer;
+  height: 70px;
+  width: 611px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14);
+  outline: none;
+  border: none;
+  padding-left: 61px;
+  cursor: pointer;
 }
 .searchInput::placeholder {
-	padding-left: -10px;
-	height: 22px;
-	width: 296px;
-	color: #bdbdbd;
-	font-family: 'Open Sans';
-	font-size: 16px;
-	letter-spacing: -0.27px;
-	line-height: 22px;
+  padding-left: -10px;
+  height: 22px;
+  width: 296px;
+  color: #bdbdbd;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  letter-spacing: -0.27px;
+  line-height: 22px;
 }
 .searchIcon {
-	box-sizing: border-box;
-	height: 20px;
-	width: 20px;
-	position: absolute;
-	left: 25px;
-	top: 25px;
-	cursor: pointer;
+  box-sizing: border-box;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  cursor: pointer;
 }
 .clearButton {
-	height: 12px;
-	width: 12px;
-	position: absolute;
-	left: 576px;
-	top: 29px;
-	cursor: pointer;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  left: 576px;
+  top: 29px;
+  cursor: pointer;
 }
 .locationSetter {
-	width: 310px;
-	height: 70px;
+  width: 310px;
+  height: 70px;
 }
 .locationInput {
-	height: 70px;
-	width: 310px;
-	border-radius: 10px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-	border: none;
-	padding-left: 61px;
-	outline: none;
-	cursor: pointer;
+  height: 70px;
+  width: 310px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  border: none;
+  padding-left: 61px;
+  outline: none;
+  cursor: pointer;
 }
 .location {
-	height: 18px;
-	width: 12px;
-	position: absolute;
-	left: 20px;
-	top: 25px;
-	cursor: pointer;
+  height: 18px;
+  width: 12px;
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  cursor: pointer;
 }
 .gpsTracker {
-	height: 20px;
-	width: 20px;
-	position: absolute;
-	top: 24px;
-	left: 340px;
-	cursor: pointer;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 24px;
+  left: 340px;
+  cursor: pointer;
 }
 .dateTime {
-	height: 70px;
-	width: 247px;
-	/* position: absolute;
+  height: 70px;
+  width: 247px;
+  /* position: absolute;
 	left: 825px;
 	top: 561px; */
-	height: 70px;
-	width: 270px;
-	border-radius: 10px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  height: 70px;
+  width: 270px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 .dateText {
-	height: 17px;
-	width: 150px;
-	color: #4c4c4c;
-	font-family: '.SF NS Text';
-	font-size: 14px;
-	letter-spacing: -0.24px;
-	line-height: 17px;
-	position: absolute;
-	left: 23px;
-	top: 30px;
+  height: 17px;
+  width: 150px;
+  color: #4c4c4c;
+  font-family: '.SF NS Text';
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  left: 23px;
+  top: 30px;
 }
 .dateButton {
-	position: absolute;
-	left: 200px;
-	top: 5px;
+  position: absolute;
+  left: 200px;
+  top: 5px;
 }
 
 /*Search bar placements other then home page */
 .restaurantSearchBox {
-	height: 50px;
-	width: 570px;
-	position: relative;
-	left: 275px;
-	top: 9px;
+  height: 50px;
+  width: 570px;
+  position: relative;
+  left: 275px;
+  top: 9px;
 }
 .restaurantSearchInput {
-	height: 50px;
-	width: 570px;
-	border-radius: 10px;
-	background-color: #ffffff;
-	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14);
-	outline: none;
-	border: none;
-	padding-left: 15px;
-	cursor: pointer;
+  height: 50px;
+  width: 570px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14);
+  outline: none;
+  border: none;
+  padding-left: 15px;
+  cursor: pointer;
 }
 .restaurantLocationSetter {
-	height: 50px;
-	width: 283px;
-	position: relative;
-	top: -40px;
-	left: 00px;
+  height: 50px;
+  width: 283px;
+  position: relative;
+  top: -40px;
+  left: 00px;
 }
 .restaurantLocationInput {
-	height: 50px;
-	width: 220px;
-	border-radius: 10px;
-	background-color: #ffffff;
-	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.07);
-	outline: none;
-	border: none;
-	padding-left: 34px;
-	cursor: pointer;
+  height: 50px;
+  width: 220px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.07);
+  outline: none;
+  border: none;
+  padding-left: 34px;
+  cursor: pointer;
+}
+.profileLocationSetter {
+  height: 70px;
+  width: 502px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 121px;
+  left: 42px;
+}
+.profileLocationInput {
+  height: 19px;
+  width: 230px;
+  color: #4c4c4c;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  border: none;
 }
 .restaurantSearchIcon {
-	height: 20px;
-	width: 20px;
-	opacity: 0.6;
-	position: absolute;
-	top: 16px;
-	left: 550px;
+  height: 20px;
+  width: 20px;
+  opacity: 0.6;
+  position: absolute;
+  top: 16px;
+  left: 550px;
 }
 .restaurantclearButton {
-	display: none;
+  display: none;
 }
 .retsurantLocation {
-	height: 12px;
-	width: 8px;
-	position: absolute;
-	left: 15px;
-	top: 20px;
+  height: 12px;
+  width: 8px;
+  position: absolute;
+  left: 15px;
+  top: 20px;
 }
 .retsurantGpsTracker {
-	height: 20px;
-	width: 20px;
-	position: absolute;
-	left: 225px;
-	top: 16px;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 225px;
+  top: 16px;
 }
