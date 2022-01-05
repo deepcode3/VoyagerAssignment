@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RestaurantData from '../Components/RestaurentsData';
 import Payment from '../Components/Payment/Payment';
 import FinalPayment from '../Components/Finalpay/FinalPayment';
-import CartHome from '../Components/carthome/CartHome';
+import CartHome from '../Components/CartHome/CartHome';
 import CartAddress from '../Components/Address/Address';
 import Home from '../Containers/Home';
 import Menu from '../Containers/Menu';
@@ -15,7 +15,7 @@ import ReviewContext from '../Context/ReviewContext';
 import Cart from '../Components/ItemDescription/CartOrders';
 import ProfileMain from '../Containers/Profile/index';
 import Error from '../Containers/Error/index';
-import Orderstatus from '../Components/Orderstatus/Orderstatus';
+import Orderstatus from '../Components/OrderStatus/Orderstatus';
 import About from '../Components/Footerlinker/About';
 import Terms from '../Components/Footerlinker/Terms';
 import PrivacyPolicy from '../Components/Footerlinker/PrivacyPolicy';
@@ -57,7 +57,7 @@ const Routing = () => {
               </Route>
               <Route path='/payment' component={Payment} />
               <Route path='/finalpay' component={FinalPayment} />
-              <Route path='/carthome'>
+              <Route path='/cart-home'>
                 <CartHome />
               </Route>
               <Route path='/status'>
