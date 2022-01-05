@@ -6,7 +6,7 @@ import Items from './Items';
 import { cartContext } from '../../Context/CartContext';
 import empty from '../../Assets/Images/empty.png';
 import './Description.css';
-import CommonHeader from '../HeaderCommon/CommonHeader';
+import SearchRestaurantView from '../SearchRestaurant/SearchRestaurantView';
 import Footer from '../Footer';
 
 const Cart = () => {
@@ -23,7 +23,7 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <CommonHeader />
+          <SearchRestaurantView />
           <div className='desbg'>
             <div className='firstmain'>
               <div className='restaurent'>
@@ -36,7 +36,9 @@ const Cart = () => {
                 <div className='orderdisplay_rectangle'>
                   <div className='dispitemsdiv'>
                     {cartItems.map((curritem) => {
-                      return <Items key={curritem.id} {...curritem} from='cart' />;
+                      return (
+                        <Items key={curritem.id} {...curritem} from='cart' />
+                      );
                     })}
                   </div>
 
@@ -45,7 +47,11 @@ const Cart = () => {
                       <p className='cookinginstext'>Cooking instructions?</p>
                     </div>
                     <div className='mentioninput'>
-                      <input type='text' className='mention' placeholder='Mention it here...' />
+                      <input
+                        type='text'
+                        className='mention'
+                        placeholder='Mention it here...'
+                      />
                       <div className='mentiongreyline' />
                     </div>
                     <div className='cfinalgreyline' />

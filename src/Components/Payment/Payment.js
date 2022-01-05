@@ -9,7 +9,7 @@ import PaymentDeliveryDetails from './PaymentDeliveryDetails';
 import PaymentresDetails from './PaymentresDetails';
 import payback from '../../Assets/Images/payback.png';
 import paynow from '../../Assets/Images/paynow.png';
-import CommonHeader from '../HeaderCommon/CommonHeader';
+import SearchRestaurantView from '../SearchRestaurant/SearchRestaurantView';
 import Footer from '../Footer';
 
 const Payment = () => {
@@ -23,7 +23,7 @@ const Payment = () => {
   };
   return (
     <>
-      <CommonHeader />
+      <SearchRestaurantView />
       <div className='paymentbg'>
         <div className='paymentheading'>
           <p className='paymenttext'>Payment</p>
@@ -33,7 +33,9 @@ const Payment = () => {
             <PaymentOption />
           </div>
           <div className='carddetailscontainer'>
-            <p className='entercarddetailstext'>Enter Credit/Debit card details</p>
+            <p className='entercarddetailstext'>
+              Enter Credit/Debit card details
+            </p>
             <div className='cardnumberdiv'>
               <p className='cardnumbertext'>Card number</p>
               <input type='text' className='cardnumber' />
@@ -68,10 +70,20 @@ const Payment = () => {
           <PaymentDeliveryDetails />
           <PaymentresDetails />
 
-          <div className='paybackbutton' onClick={loadaddress} role='button' onKeyDown={null}>
+          <div
+            className='paybackbutton'
+            onClick={loadaddress}
+            role='button'
+            onKeyDown={null}
+          >
             <img src={payback} alt='' />
           </div>
-          <div className='paynowbutton' onClick={loadfinalpay} role='button' onKeyDown={null}>
+          <div
+            className='paynowbutton'
+            onClick={loadfinalpay}
+            role='button'
+            onKeyDown={null}
+          >
             <img src={paynow} alt='' />
           </div>
         </div>

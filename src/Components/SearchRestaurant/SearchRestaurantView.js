@@ -5,9 +5,9 @@ import SearchBar, { LocationSetter } from '../HomeComponents/SearchBar';
 import '../../Containers/Restaurants/index';
 import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
-import './CommonHeader.css';
+import './SearchRestaurantView.css';
 
-const CommonHeader = ({ data, searchKey, location }) => {
+const SearchRestaurantView = ({ data, searchKey, location }) => {
   return (
     <>
       <Header />
@@ -25,17 +25,23 @@ const CommonHeader = ({ data, searchKey, location }) => {
             <LocationSetter locationValue={location} />
           </div>
         </div>
-        <img className='crestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
+        <img
+          className='crestaurantDateTimeButton'
+          alt='schedule-button'
+          src={dateTime}
+        />
       </div>
       <div className='crestaurantLocators'>
-        <div className='crestaurantLocatorInfo'>Home UAE Explore Great breakfasts My Cart</div>
+        <div className='crestaurantLocatorInfo'>
+          Home UAE Explore Great breakfasts My Cart
+        </div>
       </div>
     </>
   );
 };
 
-export default CommonHeader;
-CommonHeader.propTypes = {
+export default SearchRestaurantView;
+SearchRestaurantView.propTypes = {
   data: PropTypes.arrayOf.isRequired,
   searchKey: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,

@@ -9,7 +9,7 @@ import payback from '../../Assets/Images/payback.png';
 import paynow from '../../Assets/Images/paynow.png';
 import mastercardicon from '../../Assets/Icons/mastercard_icon.png';
 import pvisaicon from '../../Assets/Icons/Visa_icon.png';
-import CommonHeader from '../HeaderCommon/CommonHeader';
+import SearchRestaurantView from '../SearchRestaurant/SearchRestaurantView';
 import '../Payment/Payment.css';
 import './FinalPayment.css';
 import Footer from '../Footer';
@@ -21,7 +21,7 @@ const FinalPayment = () => {
   };
   return (
     <>
-      <CommonHeader />
+      <SearchRestaurantView />
       <div className='finalpaymentbg'>
         <p className='paytext'>Payment</p>
         <div className='finalpaycontainer'>
@@ -36,7 +36,11 @@ const FinalPayment = () => {
               <p className='vcardnums'>54XX XXXX XXXX 1267</p>
               <p className='vcardname'>Abdullah</p>
               <p className='vexpdate'>Expiry:03/22</p>
-              <input type='text' className='ventercode' placeholder='Enter CVV' />
+              <input
+                type='text'
+                className='ventercode'
+                placeholder='Enter CVV'
+              />
               <div className='vcardline' />
             </div>
 
@@ -45,7 +49,11 @@ const FinalPayment = () => {
               <p className='cardnums'>54XX XXXX XXXX 1267</p>
               <p className='mcardname'>Abdullah</p>
               <p className='mexpdate'>Expiry:03/22</p>
-              <input type='text' className='entercode' placeholder='Enter security code' />
+              <input
+                type='text'
+                className='entercode'
+                placeholder='Enter security code'
+              />
               <div className='mcardline' />
             </div>
           </div>
@@ -60,7 +68,12 @@ const FinalPayment = () => {
           <div className='fpayres'>
             <PaymentresDetails />
           </div>
-          <div className='fpayback' onClick={prepay} role='button' onKeyDown={null}>
+          <div
+            className='fpayback'
+            onClick={prepay}
+            role='button'
+            onKeyDown={null}
+          >
             <img src={payback} alt='' />
           </div>
           <div

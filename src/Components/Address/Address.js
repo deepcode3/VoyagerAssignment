@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
 import { addressContext } from '../../Context/ProfileContext';
 import AddressCard from './AddressCard';
-import CommonHeader from '../HeaderCommon/CommonHeader';
+import SearchRestaurantView from '../SearchRestaurant/SearchRestaurantView';
 import TelephonePicker from '../TelephonePicker/index';
 import delivericon from '../../Assets/Icons/delivericon.png';
 import pickupicon from '../../Assets/Icons/pickupicon.png';
@@ -36,19 +36,25 @@ const CartAddress = () => {
 
   return (
     <div className='addressbody'>
-      <CommonHeader />
+      <SearchRestaurantView />
       <div className='addressbg'>
         <div className='adress'>
           <p className='addressheading'>Choose Address</p>
         </div>
         <div className='addresscontainer'>
           <div className='preferencetext'>
-            <p className='preference'>How would you like us to get your meal to you?</p>
+            <p className='preference'>
+              How would you like us to get your meal to you?
+            </p>
           </div>
           <div className='deliveryoptiondiv'>
             <div className='deliverdiv'>
               <div className='deliver'>
-                <img src={delivericon} className='scootericon' alt='deliveryicon' />
+                <img
+                  src={delivericon}
+                  className='scootericon'
+                  alt='deliveryicon'
+                />
               </div>
 
               <input
@@ -63,7 +69,12 @@ const CartAddress = () => {
               <div className='pickup'>
                 <img src={pickupicon} className='pickupicon' alt='pickupicon' />
               </div>
-              <input type='radio' value='pickup' name='deliveryoption' className='pickupbtn' />
+              <input
+                type='radio'
+                value='pickup'
+                name='deliveryoption'
+                className='pickupbtn'
+              />
               <p className='pickuptext'>Pick up</p>
             </div>
           </div>
@@ -90,7 +101,11 @@ const CartAddress = () => {
                   {addressItems.map((item, index) => {
                     return (
                       <li key={index.toString()}>
-                        <AddressCard item={item} removeItem={removeItem} index={index} />
+                        <AddressCard
+                          item={item}
+                          removeItem={removeItem}
+                          index={index}
+                        />
                       </li>
                     );
                   })}
@@ -140,7 +155,11 @@ const CartAddress = () => {
             <p className='deliveryins'>Delivery Instructions?</p>
           </div>
           <div className='mention'>
-            <textarea type='text' placeholder='Mention it here...' className='mntn' />
+            <textarea
+              type='text'
+              placeholder='Mention it here...'
+              className='mntn'
+            />
             <div className='mentiongreyline1' />
           </div>
           <div

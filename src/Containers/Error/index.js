@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Image404 from '../../Assets/Images/404.png';
-import CommonHeader from '../../Components/HeaderCommon/CommonHeader';
+import SearchRestaurantView from '../../Components/SearchRestaurant/SearchRestaurantView';
 import takeHome from '../../Assets/Images/takeHome.png';
 import Footer from '../../Components/Footer';
 
@@ -10,7 +10,7 @@ const Error404 = () => {
   const history = useHistory();
   return (
     <Wrapper>
-      <CommonHeader />
+      <SearchRestaurantView />
       <ErrorContainer>
         <ErrorStatus src={Image404} alt='Error' />
         <ErrorMessage>That page doesnot exist on our website</ErrorMessage>

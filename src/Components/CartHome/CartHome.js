@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import CommonHeader from '../HeaderCommon/CommonHeader';
+import SearchRestaurantView from '../SearchRestaurant/SearchRestaurantView';
 import Cartdata from './CartData';
 import Cartlist from './CartList';
 import './CartHome.css';
@@ -9,7 +9,7 @@ const CartHome = () => {
   const [cartifo] = useState(Cartdata);
   return (
     <>
-      <CommonHeader />
+      <SearchRestaurantView />
       <div className='cartbg'>
         {cartifo.map((val) => {
           // eslint-disable-next-line react/jsx-props-no-spreading
