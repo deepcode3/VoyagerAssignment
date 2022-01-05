@@ -18,10 +18,9 @@ import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import { UserContext } from '../../Context/UserContext';
 
 const Header = ({ isHome }) => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, signOut } = useContext(UserContext);
   const history = useHistory();
   const [state, trigger] = useState(true);
-  const loginStatus = localStorage.getItem('accessToken');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
   const [email, setEmail] = useState('');
@@ -30,7 +29,7 @@ const Header = ({ isHome }) => {
   const [inputType, setInputType] = useState('email');
   const [selectedCode, setSelectedCode] = useState('91');
   const handleLogout = () => {
-    localStorage.removeItem('accessToken');
+    signOut();
     trigger(!state);
     history.push('/');
   };
@@ -39,7 +38,7 @@ const Header = ({ isHome }) => {
     <HeaderWrapper>
       {isHome ? <Logo /> : <Logo afterLogin />}
       <LinkContainer>
-        {loginStatus && currentUser !== null ? (
+        {currentUser !== null ? (
           <>
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
@@ -62,7 +61,7 @@ const Header = ({ isHome }) => {
             LOGIN
           </Button>
         )}
-        {loginStatus ? (
+        {currentUser !== null ? (
           <Button onClick={handleLogout}>LOGOUT</Button>
         ) : (
           <Button
@@ -79,7 +78,7 @@ const Header = ({ isHome }) => {
         {isHome ? (
           <>
             <CartIcon src={iconCart} alt='icon' />
-            <CartLink to='/cart'>CART</CartLink>
+            <CartLink to='/cart-home'>CART</CartLink>
           </>
         ) : (
           <>

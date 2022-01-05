@@ -57,19 +57,15 @@ const ForgotPassword = ({
   const submitForm = (data) => {
     if (inputType === 'email') {
       const result = checkIfAccountExists(data);
-      if (result === null) {
-        setError('email', { type: 'manual', message: 'Email id is not registered' });
-      } else if (result.length === 0) {
-        setError('email', { type: 'manual', message: 'Email id is not registered' });
+      if (result === 'Email id is not registered') {
+        setError('email', { type: 'manual', message: result });
       } else {
         setEmail(data.email);
         setPageStatus('otp-verification-for-password-change');
       }
     } else {
       const result = checkIfNumberExists({ mobile: data.mobile, countrycode: selectedCode });
-      if (result === null) {
-        setError2('mobile', { type: 'manual', message: 'Mobile number is not registered' });
-      } else if (result.length === 0) {
+      if (result === 'Mobile number is not registered') {
         setError2('mobile', { type: 'manual', message: 'Mobile number is not registered' });
       } else {
         setSelectedCode(selectedCode);

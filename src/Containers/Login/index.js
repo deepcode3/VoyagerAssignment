@@ -17,7 +17,7 @@ import { UserContext } from '../../Context/UserContext';
 Modal.setAppElement('#root');
 const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   const { checkIfAccountExists } = useContext(AccountsContext);
-  const { setCurrentUser } = useContext(UserContext);
+  const { signIn } = useContext(UserContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required('Email id is required'),
     password: yup.string().required('Password is required'),
@@ -35,17 +35,14 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   };
   const submitForm = (data) => {
     const result = checkIfAccountExists(data);
-    if (result === null) {
-      setError('email', { type: 'manual', message: 'Email id is not registered' });
-    } else if (result.length === 0) {
-      setError('email', { type: 'manual', message: 'Email id is not registered' });
-    } else if (result[0].password !== data.password) {
-      setError('password', { type: 'manual', message: 'Incorrect password entered' });
+    if (result === 'Email id is not registered') {
+      setError('email', { type: 'manual', message: result });
+    } else if (result === 'Incorrect password entered') {
+      setError('password', { type: 'manual', message: result });
     } else {
-      localStorage.setItem('accessToken', JSON.stringify('success'));
-      setCurrentUser(result[0]);
+      signIn(result);
+      setModalIsOpen(false);
     }
-    if (localStorage.getItem('accessToken')) setModalIsOpen(false);
   };
   const handleForgotClick = () => {
     setPageStatus('forgot-password');
