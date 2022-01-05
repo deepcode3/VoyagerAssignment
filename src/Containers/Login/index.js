@@ -47,7 +47,7 @@ const Login = ({ setModalIsOpen, setPageStatus }) => {
     setPageStatus('forgot-password');
   };
   return (
-    <RightWrapper>
+    <Wrapper>
       <Button
         onClick={() => {
           setPageStatus('login');
@@ -79,7 +79,7 @@ const Login = ({ setModalIsOpen, setPageStatus }) => {
         buttonName='Get one now!'
         handleClick={handleSignupClick}
       />
-    </RightWrapper>
+    </Wrapper>
   );
 };
 export default Login;
@@ -91,7 +91,7 @@ Login.defaultProps = {
   setModalIsOpen: () => {},
   setPageStatus: () => {},
 };
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;

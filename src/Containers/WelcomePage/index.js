@@ -7,7 +7,7 @@ import icnRegisterSuccess from '../../Assets/Icons/icn_register_success.png';
 
 const WelcomePage = ({ setModalIsOpen, setPageStatus, name, email }) => {
   return (
-    <RightWrapper>
+    <Wrapper>
       <Button
         onClick={() => {
           setPageStatus('login');
@@ -29,7 +29,7 @@ const WelcomePage = ({ setModalIsOpen, setPageStatus, name, email }) => {
       >
         BROWSE TO START ORDERING
       </StyledButton>
-    </RightWrapper>
+    </Wrapper>
   );
 };
 export default WelcomePage;
@@ -43,7 +43,7 @@ WelcomePage.defaultProps = {
   setPageStatus: () => {},
   setModalIsOpen: () => {},
 };
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;

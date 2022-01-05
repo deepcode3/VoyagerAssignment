@@ -36,7 +36,7 @@ const PasswordChange = ({ setPageStatus, email, mobile, selectedCode, inputType 
     setPageStatus('password-change-success');
   };
   return (
-    <RightWrapper>
+    <Wrapper>
       <BackButton
         onClick={() => {
           return setPageStatus('otp-verification-for-password-change');
@@ -59,7 +59,7 @@ const PasswordChange = ({ setPageStatus, email, mobile, selectedCode, inputType 
         />
         <StyledButton type='submit'>CHANGE PASSWORD</StyledButton>
       </DataContainer>
-    </RightWrapper>
+    </Wrapper>
   );
 };
 export default PasswordChange;
@@ -73,7 +73,7 @@ PasswordChange.propTypes = {
 PasswordChange.defaultProps = {
   setPageStatus: () => {},
 };
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;

@@ -71,7 +71,7 @@ const ForgotPassword = ({
   };
 
   return (
-    <RightWrapper>
+    <Wrapper>
       <BackButton
         onClick={() => {
           return setPageStatus('login');
@@ -137,7 +137,7 @@ const ForgotPassword = ({
           </Form>
         )}
       </Container>
-    </RightWrapper>
+    </Wrapper>
   );
 };
 export default ForgotPassword;
@@ -154,7 +154,7 @@ ForgotPassword.defaultProps = {
   setPageStatus: () => {},
 };
 
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;

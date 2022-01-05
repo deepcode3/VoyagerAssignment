@@ -43,7 +43,7 @@ const Signup = ({ setModalIsOpen, setPageStatus, setEmail }) => {
     }
   };
   return (
-    <RightWrapper>
+    <Wrapper>
       <Button
         onClick={() => {
           setPageStatus('login');
@@ -71,7 +71,7 @@ const Signup = ({ setModalIsOpen, setPageStatus, setEmail }) => {
         buttonName='Login'
         handleClick={handleLoginClick}
       />
-    </RightWrapper>
+    </Wrapper>
   );
 };
 export default Signup;
@@ -84,7 +84,7 @@ Signup.defaultProps = {
   setModalIsOpen: () => {},
   setPageStatus: () => {},
 };
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;

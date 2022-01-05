@@ -7,7 +7,7 @@ import icnRegisterSuccess from '../../Assets/Icons/icn_register_success.png';
 
 const PasswordChangeSuccess = ({ setModalIsOpen, setPageStatus }) => {
   return (
-    <RightWrapper>
+    <Wrapper>
       <Button
         onClick={() => {
           setPageStatus('login');
@@ -26,7 +26,7 @@ const PasswordChangeSuccess = ({ setModalIsOpen, setPageStatus }) => {
       >
         LOGIN NOW
       </StyledButton>
-    </RightWrapper>
+    </Wrapper>
   );
 };
 export default PasswordChangeSuccess;
@@ -38,7 +38,7 @@ PasswordChangeSuccess.defaultProps = {
   setPageStatus: () => {},
   setModalIsOpen: () => {},
 };
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;

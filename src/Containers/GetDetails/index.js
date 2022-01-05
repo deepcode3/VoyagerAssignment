@@ -60,7 +60,7 @@ const GetDetails = ({ setPageStatus, email, setName }) => {
     setPageStatus('welcome-page');
   };
   return (
-    <RightWrapper>
+    <Wrapper>
       <BackButton
         onClick={() => {
           return setPageStatus('otp-verification');
@@ -100,7 +100,7 @@ const GetDetails = ({ setPageStatus, email, setName }) => {
         />
         <StyledButton type='submit'>DONE</StyledButton>
       </DataContainer>
-    </RightWrapper>
+    </Wrapper>
   );
 };
 export default GetDetails;
@@ -113,7 +113,7 @@ GetDetails.defaultProps = {
   setPageStatus: () => {},
 };
 
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;

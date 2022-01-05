@@ -27,7 +27,7 @@ const OTPVerification = ({ setPageStatus, purpose }) => {
     else setPageStatus('get-details');
   };
   return (
-    <RightWrapper>
+    <Wrapper>
       <BackButton
         onClick={() => {
           if (purpose === 'password-change') setPageStatus('forgot-password');
@@ -45,7 +45,7 @@ const OTPVerification = ({ setPageStatus, purpose }) => {
         <InputField name='otp' register={register} msg={errors.otp?.message} label='Enter OTP' />
         <StyledButton type='submit'>VERIFY</StyledButton>
       </Container>
-    </RightWrapper>
+    </Wrapper>
   );
 };
 export default OTPVerification;
@@ -58,7 +58,7 @@ OTPVerification.defaultProps = {
   setPageStatus: () => {},
 };
 
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;
