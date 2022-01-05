@@ -1,71 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
-import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
 import StyledButton from '../../Components/CommonButton/index';
 import closeButton from '../../Assets/Icons/close_button.png';
 import icnRegisterSuccess from '../../Assets/Icons/icn_register_success.png';
 
-const PasswordChangeSuccess = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+const PasswordChangeSuccess = ({ setModalIsOpen, setPageStatus }) => {
   return (
-    <Modal
-      className='wrapper'
-      isOpen={modalIsOpen}
-      onRequestClose={() => {
-        setPageStatus('login');
-        setModalIsOpen(false);
-      }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)' } }}
-    >
-      <Wrapper>
-        <LogoWithText />
-        <RightWrapper>
-          <Button
-            onClick={() => {
-              setPageStatus('login');
-              setModalIsOpen(false);
-            }}
-          >
-            <img src={closeButton} alt='cut' />
-          </Button>
-          <StyledImg src={icnRegisterSuccess} alt='icon' />
-          <BlackText>Great!</BlackText>
-          <Description>Your password has been successfully reset</Description>
-          <StyledButton
-            onClick={() => {
-              return setPageStatus('login');
-            }}
-          >
-            LOGIN NOW
-          </StyledButton>
-        </RightWrapper>
-      </Wrapper>
-    </Modal>
+    <RightWrapper>
+      <Button
+        onClick={() => {
+          setPageStatus('login');
+          setModalIsOpen(false);
+        }}
+      >
+        <img src={closeButton} alt='cut' />
+      </Button>
+      <StyledImg src={icnRegisterSuccess} alt='icon' />
+      <BlackText>Great!</BlackText>
+      <Description>Your password has been successfully reset</Description>
+      <StyledButton
+        onClick={() => {
+          return setPageStatus('login');
+        }}
+      >
+        LOGIN NOW
+      </StyledButton>
+    </RightWrapper>
   );
 };
 export default PasswordChangeSuccess;
 PasswordChangeSuccess.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
-  setPageStatus: PropTypes.func.isRequired,
+  setModalIsOpen: PropTypes.func,
+  setPageStatus: PropTypes.func,
 };
-const Wrapper = styled.div`
-  height: 588px;
-  width: 960px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-`;
-
+PasswordChangeSuccess.defaultProps = {
+  setPageStatus: () => {},
+  setModalIsOpen: () => {},
+};
 const RightWrapper = styled.div`
   background-color: white;
   height: 588px;

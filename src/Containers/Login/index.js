@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
 import InputField from '../../Components/LoginComponents/InputField/index';
 import StyledButton from '../../Components/CommonButton/index';
 import LoginOptions from '../../Components/LoginComponents/LoginOptions/index';
@@ -15,7 +14,7 @@ import { AccountsContext } from '../../Context/AccountsContext';
 import { UserContext } from '../../Context/UserContext';
 
 Modal.setAppElement('#root');
-const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+const Login = ({ setModalIsOpen, setPageStatus }) => {
   const { checkIfAccountExists } = useContext(AccountsContext);
   const { signIn } = useContext(UserContext);
   const schema = yup.object().shape({
@@ -48,81 +47,50 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
     setPageStatus('forgot-password');
   };
   return (
-    <Modal
-      className='wrapper'
-      isOpen={modalIsOpen}
-      onRequestClose={() => {
-        setPageStatus('login');
-        setModalIsOpen(false);
-      }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)', zIndex: 2 } }}
-    >
-      <Wrapper>
-        <LogoWithText />
-        <RightWrapper>
-          <Button
-            onClick={() => {
-              setPageStatus('login');
-              setModalIsOpen(false);
-            }}
-          >
-            <img src={closeButton} alt='cut' />
-          </Button>
-          <BlackText>Lets get started!</BlackText>
-          <Form onSubmit={handleSubmit(submitForm)}>
-            <InputField
-              name='email'
-              register={register}
-              msg={errors.email?.message}
-              label='Email'
-            />
-            <InputField
-              name='password'
-              register={register}
-              // eslint-disable-next-line react/jsx-boolean-value
-              isPassword={true}
-              msg={errors.password?.message}
-              label='Password'
-            />
+    <RightWrapper>
+      <Button
+        onClick={() => {
+          setPageStatus('login');
+          setModalIsOpen(false);
+        }}
+      >
+        <img src={closeButton} alt='cut' />
+      </Button>
+      <BlackText>Lets get started!</BlackText>
+      <Form onSubmit={handleSubmit(submitForm)}>
+        <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
+        <InputField
+          name='password'
+          register={register}
+          // eslint-disable-next-line react/jsx-boolean-value
+          isPassword={true}
+          msg={errors.password?.message}
+          label='Password'
+        />
 
-            <ForgotButton onClick={handleForgotClick} type='button'>
-              Forgot Password?
-            </ForgotButton>
-            <StyledButton type='submit'>LOGIN</StyledButton>
-          </Form>
-          <LoginOptions />
-          <TextWithButton
-            text="Don't have an account?"
-            buttonName='Get one now!'
-            handleClick={handleSignupClick}
-          />
-        </RightWrapper>
-      </Wrapper>
-    </Modal>
+        <ForgotButton onClick={handleForgotClick} type='button'>
+          Forgot Password?
+        </ForgotButton>
+        <StyledButton type='submit'>LOGIN</StyledButton>
+      </Form>
+      <LoginOptions />
+      <TextWithButton
+        text="Don't have an account?"
+        buttonName='Get one now!'
+        handleClick={handleSignupClick}
+      />
+    </RightWrapper>
   );
 };
 export default Login;
 Login.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
-  setPageStatus: PropTypes.func.isRequired,
+  setModalIsOpen: PropTypes.func,
+  setPageStatus: PropTypes.func,
 };
-const Wrapper = styled.div`
-  height: 588px;
-  width: 960px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-`;
-
+Login.defaultProps = {
+  setModalIsOpen: () => {},
+  setPageStatus: () => {},
+};
 const RightWrapper = styled.div`
   background-color: white;
   height: 588px;

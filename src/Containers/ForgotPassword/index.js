@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
-import Modal from 'react-modal';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
 import StyledButton from '../../Components/CommonButton/index';
 import forgotPasswordIcon from '../../Assets/Icons/icn_forgot_password.png';
 import BackIcon from '../../Assets/Icons/back_icon.png';
@@ -14,10 +12,7 @@ import border from '../../Assets/Icons/border.png';
 import TelephonePicker from '../../Components/TelephonePicker/index';
 import { AccountsContext } from '../../Context/AccountsContext';
 
-Modal.setAppElement('#root');
 const ForgotPassword = ({
-  modalIsOpen,
-  setModalIsOpen,
   setPageStatus,
   setEmail,
   setMobile,
@@ -76,93 +71,78 @@ const ForgotPassword = ({
   };
 
   return (
-    <Modal
-      className='wrapper'
-      isOpen={modalIsOpen}
-      onRequestClose={() => {
-        setPageStatus('login');
-        setModalIsOpen(false);
-      }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)' } }}
-    >
-      <Wrapper>
-        <LogoWithText />
-        <RightWrapper>
-          <BackButton
-            onClick={() => {
-              return setPageStatus('login');
-            }}
-          >
-            <img className='backArrow' src={BackIcon} alt='back' />
-          </BackButton>
-          <StyledImg src={forgotPasswordIcon} alt='icon' />
-          <BlackText>Forgot Password! </BlackText>
-          <Description>
-            Share your registered either email address or mobile number to send you the OTP to reset
-            your password
-          </Description>
-          <Container>
-            <Navbar>
-              <TypeContainer>
-                <InputTypeButton
-                  type='button'
-                  onClick={() => {
-                    return setInputType('email');
-                  }}
-                  className={inputType === 'email' ? 'boldButton' : null}
-                >
-                  Email
-                </InputTypeButton>
-                {inputType === 'email' ? <Border src={border} alt='border' /> : null}
-              </TypeContainer>
-              <TypeContainer>
-                <InputTypeButton
-                  type='button'
-                  onClick={() => {
-                    return setInputType('mobile');
-                  }}
-                  className={inputType === 'mobile' ? 'boldButton' : null}
-                >
-                  Mobile No.
-                </InputTypeButton>
-                {inputType === 'mobile' ? <Border src={border} alt='border' /> : null}
-              </TypeContainer>
-            </Navbar>
+    <RightWrapper>
+      <BackButton
+        onClick={() => {
+          return setPageStatus('login');
+        }}
+      >
+        <img className='backArrow' src={BackIcon} alt='back' />
+      </BackButton>
+      <StyledImg src={forgotPasswordIcon} alt='icon' />
+      <BlackText>Forgot Password! </BlackText>
+      <Description>
+        Share your registered either email address or mobile number to send you the OTP to reset
+        your password
+      </Description>
+      <Container>
+        <Navbar>
+          <TypeContainer>
+            <InputTypeButton
+              type='button'
+              onClick={() => {
+                return setInputType('email');
+              }}
+              className={inputType === 'email' ? 'boldButton' : null}
+            >
+              Email
+            </InputTypeButton>
+            {inputType === 'email' ? <Border src={border} alt='border' /> : null}
+          </TypeContainer>
+          <TypeContainer>
+            <InputTypeButton
+              type='button'
+              onClick={() => {
+                return setInputType('mobile');
+              }}
+              className={inputType === 'mobile' ? 'boldButton' : null}
+            >
+              Mobile No.
+            </InputTypeButton>
+            {inputType === 'mobile' ? <Border src={border} alt='border' /> : null}
+          </TypeContainer>
+        </Navbar>
 
-            {inputType === 'email' ? (
-              <Form onSubmit={handleSubmit(submitForm)}>
-                <InputField
-                  name='email'
-                  register={register}
-                  msg={errors.email?.message}
-                  label='Email'
-                />
-                <StyledButton type='submit'>SEND OTP</StyledButton>
-              </Form>
-            ) : (
-              <Form onSubmit={handleSubmit2(submitForm)}>
-                <TelephonePicker
-                  name='mobile'
-                  register={register2}
-                  msg={errors2.mobile?.message}
-                  label='Mobile no.'
-                  selectedCode={selectedCode}
-                  setSelectedCode={setSelectedCode}
-                />
-                <StyledButton type='submit'>SEND OTP</StyledButton>
-              </Form>
-            )}
-          </Container>
-        </RightWrapper>
-      </Wrapper>
-    </Modal>
+        {inputType === 'email' ? (
+          <Form onSubmit={handleSubmit(submitForm)}>
+            <InputField
+              name='email'
+              register={register}
+              msg={errors.email?.message}
+              label='Email'
+            />
+            <StyledButton type='submit'>SEND OTP</StyledButton>
+          </Form>
+        ) : (
+          <Form onSubmit={handleSubmit2(submitForm)}>
+            <TelephonePicker
+              name='mobile'
+              register={register2}
+              msg={errors2.mobile?.message}
+              label='Mobile no.'
+              selectedCode={selectedCode}
+              setSelectedCode={setSelectedCode}
+            />
+            <StyledButton type='submit'>SEND OTP</StyledButton>
+          </Form>
+        )}
+      </Container>
+    </RightWrapper>
   );
 };
 export default ForgotPassword;
 ForgotPassword.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
-  setPageStatus: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func,
   setEmail: PropTypes.func.isRequired,
   setMobile: PropTypes.func.isRequired,
   inputType: PropTypes.string.isRequired,
@@ -170,26 +150,9 @@ ForgotPassword.propTypes = {
   selectedCode: PropTypes.string.isRequired,
   setSelectedCode: PropTypes.func.isRequired,
 };
-
-const Wrapper = styled.div`
-  height: 588px;
-  width: 960px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  .boldButton {
-    color: #000000;
-    font-weight: 600;
-  }
-`;
+ForgotPassword.defaultProps = {
+  setPageStatus: () => {},
+};
 
 const RightWrapper = styled.div`
   background-color: white;
@@ -199,6 +162,10 @@ const RightWrapper = styled.div`
   flex-direction: column;
   border-radius: 0 7px 7px 0;
   align-items: center;
+  .boldButton {
+    color: #000000;
+    font-weight: 600;
+  }
 `;
 const BackButton = styled.button`
   height: 17px;

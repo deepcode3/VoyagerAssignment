@@ -1,4 +1,5 @@
 /* eslint-disable import/no-named-as-default-member */
+/* eslint-disable no-nested-ternary */
 import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
@@ -16,6 +17,7 @@ import PasswordChangeSuccess from '../../Containers/PasswordChangeSuccess/index'
 import iconCart from '../../Assets/Icons/icn_cart.png';
 import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import { UserContext } from '../../Context/UserContext';
+import LoginLayout from '../LoginLayout';
 
 const Header = ({ isHome }) => {
   const { currentUser, signOut } = useContext(UserContext);
@@ -87,85 +89,43 @@ const Header = ({ isHome }) => {
           </>
         )}
       </LinkContainer>
-      {pageStatus === 'login' ? (
-        <Login
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-        />
-      ) : null}
-      {pageStatus === 'signup' ? (
-        <Signup
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          setEmail={setEmail}
-        />
-      ) : null}
-      {pageStatus === 'otp-verification' ? (
-        <OTPVerification
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-        />
-      ) : null}
-      {pageStatus === 'otp-verification-for-password-change' ? (
-        <OTPVerification
-          purpose='password-change'
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-        />
-      ) : null}
-      {pageStatus === 'get-details' ? (
-        <GetDetails
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          email={email}
-          setName={setName}
-        />
-      ) : null}
-      {pageStatus === 'welcome-page' ? (
-        <WelcomePage
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          name={name}
-          email={email}
-        />
-      ) : null}
-      {pageStatus === 'forgot-password' ? (
-        <ForgotPassword
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          setInputType={setInputType}
-          inputType={inputType}
-          selectedCode={selectedCode}
-          setSelectedCode={setSelectedCode}
-          setEmail={setEmail}
-          setMobile={setMobile}
-        />
-      ) : null}
-      {pageStatus === 'new-password' ? (
-        <PasswordChange
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          email={email}
-          mobile={mobile}
-          inputType={inputType}
-          selectedCode={selectedCode}
-        />
-      ) : null}
-      {pageStatus === 'password-change-success' ? (
-        <PasswordChangeSuccess
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-        />
-      ) : null}
+      <LoginLayout
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
+        setPageStatus={setPageStatus}
+      >
+        {pageStatus === 'login' ? (
+          <Login />
+        ) : pageStatus === 'signup' ? (
+          <Signup setEmail={setEmail} />
+        ) : pageStatus === 'otp-verification' ? (
+          <OTPVerification />
+        ) : pageStatus === 'otp-verification-for-password-change' ? (
+          <OTPVerification purpose='password-change' />
+        ) : pageStatus === 'get-details' ? (
+          <GetDetails email={email} setName={setName} />
+        ) : pageStatus === 'welcome-page' ? (
+          <WelcomePage name={name} email={email} />
+        ) : pageStatus === 'forgot-password' ? (
+          <ForgotPassword
+            setInputType={setInputType}
+            inputType={inputType}
+            selectedCode={selectedCode}
+            setSelectedCode={setSelectedCode}
+            setEmail={setEmail}
+            setMobile={setMobile}
+          />
+        ) : pageStatus === 'new-password' ? (
+          <PasswordChange
+            email={email}
+            mobile={mobile}
+            inputType={inputType}
+            selectedCode={selectedCode}
+          />
+        ) : pageStatus === 'password-change-success' ? (
+          <PasswordChangeSuccess />
+        ) : null}
+      </LoginLayout>
     </HeaderWrapper>
   );
 };

@@ -1,27 +1,16 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import Modal from 'react-modal';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
-import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
 import StyledButton from '../../Components/CommonButton/index';
 import icnVerified from '../../Assets/Icons/icn_verified_icon.png';
 import InputField from '../../Components/LoginComponents/InputField';
 import BackIcon from '../../Assets/Icons/back_icon.png';
 import { AccountsContext } from '../../Context/AccountsContext';
 
-Modal.setAppElement('#root');
-const PasswordChange = ({
-  modalIsOpen,
-  setModalIsOpen,
-  setPageStatus,
-  email,
-  mobile,
-  selectedCode,
-  inputType,
-}) => {
+const PasswordChange = ({ setPageStatus, email, mobile, selectedCode, inputType }) => {
   const { changePassword } = useContext(AccountsContext);
   const schema = yup.object().shape({
     password: yup.string().required('Password is required'),
@@ -47,71 +36,43 @@ const PasswordChange = ({
     setPageStatus('password-change-success');
   };
   return (
-    <Modal
-      className='wrapper'
-      isOpen={modalIsOpen}
-      onRequestClose={() => {
-        setPageStatus('login');
-        setModalIsOpen(false);
-      }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)' } }}
-    >
-      <Wrapper>
-        <LogoWithText />
-        <RightWrapper>
-          <BackButton
-            onClick={() => {
-              return setPageStatus('otp-verification-for-password-change');
-            }}
-          >
-            <img className='backArrow' src={BackIcon} alt='back' />
-          </BackButton>
-          <StyledImg src={icnVerified} alt='icon' />
-          <BlackText>Verified! </BlackText>
-          <Description>Your mobile no. is verified.</Description>
-          <Description>Enter the new password to reset you account.</Description>
-          <DataContainer onSubmit={handleSubmit(submitForm)}>
-            <InputField
-              name='password'
-              // eslint-disable-next-line react/jsx-boolean-value
-              isPassword={true}
-              register={register}
-              msg={errors.password?.message}
-              label='Enter New Password'
-            />
-            <StyledButton type='submit'>CHANGE PASSWORD</StyledButton>
-          </DataContainer>
-        </RightWrapper>
-      </Wrapper>
-    </Modal>
+    <RightWrapper>
+      <BackButton
+        onClick={() => {
+          return setPageStatus('otp-verification-for-password-change');
+        }}
+      >
+        <img className='backArrow' src={BackIcon} alt='back' />
+      </BackButton>
+      <StyledImg src={icnVerified} alt='icon' />
+      <BlackText>Verified! </BlackText>
+      <Description>Your mobile no. is verified.</Description>
+      <Description>Enter the new password to reset you account.</Description>
+      <DataContainer onSubmit={handleSubmit(submitForm)}>
+        <InputField
+          name='password'
+          // eslint-disable-next-line react/jsx-boolean-value
+          isPassword={true}
+          register={register}
+          msg={errors.password?.message}
+          label='Enter New Password'
+        />
+        <StyledButton type='submit'>CHANGE PASSWORD</StyledButton>
+      </DataContainer>
+    </RightWrapper>
   );
 };
 export default PasswordChange;
 PasswordChange.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
-  setPageStatus: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func,
   email: PropTypes.string.isRequired,
   mobile: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
   selectedCode: PropTypes.string.isRequired,
 };
-const Wrapper = styled.div`
-  height: 588px;
-  width: 960px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-`;
-
+PasswordChange.defaultProps = {
+  setPageStatus: () => {},
+};
 const RightWrapper = styled.div`
   background-color: white;
   height: 588px;
