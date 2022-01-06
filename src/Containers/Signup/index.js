@@ -4,9 +4,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import * as yup from 'yup';
-import Modal from 'react-modal';
 import { yupResolver } from '@hookform/resolvers/yup';
-import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
 import InputField from '../../Components/LoginComponents/InputField/index';
 import StyledButton from '../../Components/CommonButton/index';
 import TextWithButton from '../../Components/LoginComponents/TextWithButton';
@@ -14,8 +12,7 @@ import LoginOptions from '../../Components/LoginComponents/LoginOptions';
 import closeButton from '../../Assets/Icons/close_button.png';
 import { AccountsContext } from '../../Context/AccountsContext';
 
-Modal.setAppElement('#root');
-const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus, setEmail }) => {
+const Signup = ({ setModalIsOpen, setPageStatus, setEmail }) => {
   const { checkIfAccountExists } = useContext(AccountsContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required(),
@@ -46,79 +43,48 @@ const Signup = ({ modalIsOpen, setModalIsOpen, setPageStatus, setEmail }) => {
     }
   };
   return (
-    <Modal
-      className='wrapper'
-      isOpen={modalIsOpen}
-      onRequestClose={() => {
-        setPageStatus('login');
-        setModalIsOpen(false);
-      }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)', zIndex: 2 } }}
-    >
-      <Wrapper>
-        <LogoWithText />
-        <RightWrapper>
-          <Button
-            onClick={() => {
-              setPageStatus('login');
-              setModalIsOpen(false);
-            }}
-          >
-            <img src={closeButton} alt='cut' />
-          </Button>
-          <BlackText>Create your account</BlackText>
-          <Description>
-            Share your email address to send you the OTP to get yourself registered!
-          </Description>
-          <DataContainer onSubmit={handleSubmit(submitForm)}>
-            <InputField
-              name='email'
-              register={register}
-              msg={errors.email?.message}
-              label='Email'
-            />
-            <StyledButton type='submit'>CREATE ACCOUNT</StyledButton>
-          </DataContainer>
-          <TextWithButton
-            text='By registering you agree to the'
-            buttonName='Terms & Conditions'
-            handleClick={handleTermsClick}
-          />
-          <LoginOptions />
-          <TextWithButton
-            text='Already havean account?'
-            buttonName='Login'
-            handleClick={handleLoginClick}
-          />
-        </RightWrapper>
-      </Wrapper>
-    </Modal>
+    <Wrapper>
+      <Button
+        onClick={() => {
+          setPageStatus('login');
+          setModalIsOpen(false);
+        }}
+      >
+        <img src={closeButton} alt='cut' />
+      </Button>
+      <BlackText>Create your account</BlackText>
+      <Description>
+        Share your email address to send you the OTP to get yourself registered!
+      </Description>
+      <DataContainer onSubmit={handleSubmit(submitForm)}>
+        <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
+        <StyledButton type='submit'>CREATE ACCOUNT</StyledButton>
+      </DataContainer>
+      <TextWithButton
+        text='By registering you agree to the'
+        buttonName='Terms & Conditions'
+        handleClick={handleTermsClick}
+      />
+      <LoginOptions />
+      <TextWithButton
+        text='Already havean account?'
+        buttonName='Login'
+        handleClick={handleLoginClick}
+      />
+    </Wrapper>
   );
 };
 export default Signup;
 Signup.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
-  setPageStatus: PropTypes.func.isRequired,
+  setModalIsOpen: PropTypes.func,
+  setPageStatus: PropTypes.func,
   setEmail: PropTypes.func.isRequired,
 };
+Signup.defaultProps = {
+  setModalIsOpen: () => {},
+  setPageStatus: () => {},
+};
 const Wrapper = styled.div`
-  height: 588px;
-  width: 960px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-`;
-
-const RightWrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;
