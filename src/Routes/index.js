@@ -23,6 +23,7 @@ import Contacts from '../Components/FooterLinker/FooterContact';
 import UserContextProvider from '../Context/UserContext';
 import AccountsContextProvider from '../Context/AccountsContext';
 import AddressContextProvider from '../Context/ProfileContext';
+import CartLayout from '../Containers/CartLayouts/CartLayout';
 
 const Routing = () => {
   return (
@@ -47,18 +48,22 @@ const Routing = () => {
               <Route path='/sitemap' component={Error} />
               <Route exact path='/cart'>
                 <CartContextProvider>
-                  <Cart />
+                  <CartLayout Component={Cart} />
                 </CartContextProvider>
               </Route>
               <Route exact path='/address'>
                 <AddressContextProvider>
-                  <CartAddress />
+                  <CartLayout Component={CartAddress} />
                 </AddressContextProvider>
               </Route>
-              <Route path='/payment' component={Payment} />
-              <Route path='/finalpay' component={FinalPayment} />
+              <Route path='/payment'>
+                <CartLayout Component={Payment} />
+              </Route>
+              <Route path='/finalpay'>
+                <CartLayout Component={FinalPayment} />
+              </Route>
               <Route path='/cart-home'>
-                <CartHome />
+                <CartLayout Component={CartHome} />
               </Route>
               <Route path='/status'>
                 <Orderstatus />
@@ -83,6 +88,9 @@ const Routing = () => {
                 <AddressContextProvider>
                   <ProfileMain />
                 </AddressContextProvider>
+              </Route>
+              <Route path='/cart-layout'>
+                <CartLayout />
               </Route>
               <Route path='*' component={Error} />
             </Switch>

@@ -3,15 +3,13 @@
   top: 247px;
   width: 1895px;
   height: 800px;
-
-  background-color: #f1f3fb;
 }
 
 .mycarttext {
   height: 30px;
   width: 115px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 22px;
   font-weight: bolder;
   letter-spacing: 0;
@@ -39,7 +37,7 @@
   height: 22px;
   width: 166px;
   color: #223136;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0;
@@ -53,7 +51,7 @@
   height: 15px;
   width: 43px;
   color: #ed1b2e;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0;
@@ -69,7 +67,7 @@
   height: 17px;
   width: 181px;
   color: #757575;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -83,7 +81,7 @@
   height: 17px;
   width: 117px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -98,7 +96,7 @@
   height: 17px;
   width: 117px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -137,7 +135,7 @@
   height: 19px;
   width: 79px;
   color: #e6602c;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.2px;

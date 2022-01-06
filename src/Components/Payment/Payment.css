@@ -2,23 +2,17 @@
   height: 30px;
   width: 95px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 30px;
   position: absolute;
-  top: 132px;
-  left: 478px;
+  top: 372px;
+  left: 650px;
   margin: 0px;
 }
-.paymentbg {
-  position: absolute;
-  height: 1500px;
-  width: 1895px;
-  top: 245px;
-  background-color: #dee6ed;
-}
+
 .paymentcontainer {
   height: 1060px;
   width: 634px;
@@ -26,15 +20,16 @@
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 181px;
-  left: 472px;
+  top: 420px;
+  /* left: 472px; */
+  left: 650px;
 }
 
 .preferedtext {
   height: 19px;
   width: 290px;
   color: #4a4a4a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -95,7 +90,7 @@
   height: 19px;
   width: 31px;
   color: #4a4a4a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -125,7 +120,7 @@
   height: 22px;
   width: 126px;
   color: #4a4a4a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -155,7 +150,7 @@
   height: 23px;
   width: 227px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 17px;
   letter-spacing: -0.41px;
   line-height: 23px;
@@ -178,7 +173,7 @@
   height: 17px;
   width: 72px;
   color: #858585;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -191,7 +186,7 @@
   height: 22px;
   width: 154px;
   color: #4a4a4a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -233,7 +228,7 @@
   height: 17px;
   width: 77px;
   color: #858585;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -247,7 +242,7 @@
   height: 22px;
   width: 165px;
   color: #4a4a4a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -281,7 +276,7 @@
   height: 17px;
   width: 33px;
   color: #858585;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -295,7 +290,7 @@
   height: 17px;
   width: 70px;
   color: #858585;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -309,7 +304,7 @@
   height: 22px;
   width: 18px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -325,7 +320,7 @@
   height: 22px;
   width: 6px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -339,7 +334,7 @@
   height: 22px;
   width: 36px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -355,7 +350,7 @@
   height: 22px;
   width: 47px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -414,7 +409,7 @@
   height: 19px;
   width: 190px;
   color: #070707;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -444,7 +439,7 @@
   height: 22px;
   width: 90px;
   color: #223136;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 22px;
@@ -468,7 +463,7 @@
   height: 33px;
   width: 42px;
   color: #223136;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 0;
@@ -482,7 +477,7 @@
   height: 17px;
   width: 54px;
   color: #36393b;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -543,7 +538,7 @@
   height: 19px;
   width: 95px;
   color: #4a4a4a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -566,7 +561,7 @@
   height: 23px;
   width: 117px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 17px;
   letter-spacing: -0.41px;
   line-height: 23px;
@@ -601,7 +596,7 @@
   height: 17px;
   width: 153.81px;
   color: #6a6a6a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -615,7 +610,7 @@
   height: 19px;
   width: 383.66px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -629,7 +624,7 @@
   height: 17px;
   width: 76.04px;
   color: #f67e03;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0;
@@ -663,7 +658,7 @@
   height: 17px;
   width: 115.79px;
   color: #6a6a6a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -677,7 +672,7 @@
   height: 19px;
   width: 200.47px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -691,7 +686,7 @@
   height: 17px;
   width: 76.04px;
   color: #f67e03;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0;
@@ -718,7 +713,7 @@
   height: 23px;
   width: 186px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 17px;
   letter-spacing: -0.41px;
   line-height: 23px;
@@ -744,7 +739,7 @@
   height: 22px;
   width: 161px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.27px;
@@ -758,7 +753,7 @@
   height: 19px;
   width: 203px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -802,3 +797,85 @@
   left: 470px;
   bottom: 20px;
 } */
+
+.Pactive {
+  position: absolute;
+  top: -127px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.pcart {
+  height: 17px;
+  width: 24px;
+  color: #6f6e6e;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: absolute;
+  top: -90px;
+  left: 3px;
+  margin: 0px;
+  padding: 0px;
+}
+.pactiveline {
+  height: 3px;
+  width: 267px;
+  position: absolute;
+  top: -114px;
+  left: 28px;
+  margin: 0px;
+}
+.Pactive2 {
+  position: absolute;
+  top: -127px;
+  left: 295px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.padresstext {
+  height: 17px;
+  width: 87px;
+  color: #6f6e6e;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: absolute;
+  top: -90px;
+  left: 270px;
+  margin: 0px;
+  padding: 0px;
+}
+.pactiveline2 {
+  height: 3px;
+  width: 267px;
+  position: absolute;
+  top: -114px;
+  left: 324px;
+  margin: 0px;
+}
+
+.pactivestate3 {
+  position: absolute;
+  top: -127px;
+  left: 590px;
+  margin: 0px;
+  padding: 0px;
+}
+.Ppaymenttext {
+  height: 17px;
+  width: 87px;
+  color: #6f6e6e;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: absolute;
+  top: -90px;
+  left: 580px;
+  margin: 0px;
+  padding: 0px;
+}
