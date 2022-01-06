@@ -6,8 +6,9 @@ import Items from './Items';
 import { cartContext } from '../../Context/CartContext';
 import empty from '../../Assets/Images/empty.png';
 import './Description.css';
-import SearchRestaurantView from '../SearchRestaurant/SearchRestaurantView';
-import Footer from '../Footer';
+import cactive from '../../Assets/Icons/Active state.png';
+import partialActive from '../../Assets/Icons/partialactive.png';
+import deactive from '../../Assets/Icons/deactive state.png';
 
 const Cart = () => {
   const history = useHistory();
@@ -22,71 +23,81 @@ const Cart = () => {
           <p className='emptytext'>Cart is empty</p>
         </div>
       ) : (
-        <>
-          <SearchRestaurantView />
-          <div className='desbg'>
-            <div className='firstmain'>
-              <div className='restaurent'>
-                <p className='restaurentname'>The Botique Kitchen</p>
+        <div className='firstmain'>
+          <div className='restaurent'>
+            <p className='restaurentname'>The Botique Kitchen</p>
+          </div>
+          <div className='estimated-delivery-t'>
+            <p className='edtime'>Estimated Delivery time - 60 - 80 min</p>
+          </div>
+          <div className='descriptioncontainer'>
+            <div className='orderdisplay_rectangle'>
+              <div className='dispitemsdiv'>
+                {cartItems.map((curritem) => {
+                  return (
+                    <Items key={curritem.id} {...curritem} from='cart' />
+                  );
+                })}
               </div>
-              <div className='estimated-delivery-t'>
-                <p className='edtime'>Estimated Delivery time - 60 - 80 min</p>
-              </div>
-              <div className='descriptioncontainer'>
-                <div className='orderdisplay_rectangle'>
-                  <div className='dispitemsdiv'>
-                    {cartItems.map((curritem) => {
-                      return (
-                        <Items key={curritem.id} {...curritem} from='cart' />
-                      );
-                    })}
-                  </div>
 
-                  <div className='cookinginsdiv'>
-                    <div className='cookins'>
-                      <p className='cookinginstext'>Cooking instructions?</p>
-                    </div>
-                    <div className='mentioninput'>
-                      <input
-                        type='text'
-                        className='mention'
-                        placeholder='Mention it here...'
-                      />
-                      <div className='mentiongreyline' />
-                    </div>
-                    <div className='cfinalgreyline' />
-                  </div>
-                  <div
-                    className='backbutton'
-                    onClick={() => {
-                      history.goBack('/cart-home');
-                    }}
-                    role='button'
-                    onKeyDown={null}
-                  >
-                    {' '}
-                    <p className='back'>BACK</p>
-                  </div>
-                  <div className='choseaddbtn'>
-                    <p
-                      className='chooseadd'
-                      onClick={() => {
-                        history.push('/address');
-                      }}
-                      onKeyDown={null}
-                    >
-                      CHOOSE ADDRESS
-                    </p>
-                  </div>
+              <div className='cookinginsdiv'>
+                <div className='cookins'>
+                  <p className='cookinginstext'>Cooking instructions?</p>
                 </div>
+                <div className='mentioninput'>
+                  <input
+                    type='text'
+                    className='mention'
+                    placeholder='Mention it here...'
+                  />
+                  <div className='mentiongreyline' />
+                </div>
+                <div className='cfinalgreyline' />
+              </div>
+              <div
+                className='backbutton'
+                onClick={() => {
+                  history.goBack('/cart-home');
+                }}
+                role='button'
+                onKeyDown={null}
+              >
+                {' '}
+                <p className='back'>BACK</p>
+              </div>
+              <div className='choseaddbtn'>
+                <p
+                  className='chooseadd'
+                  onClick={() => {
+                    history.push('/address');
+                  }}
+                  onKeyDown={null}
+                >
+                  CHOOSE ADDRESS
+                </p>
               </div>
             </div>
           </div>
-          <div className='footerDivCart'>
-            <Footer />
-          </div>
-        </>
+        </div>
       )}
+      <div className='Cartactive'>
+        <img src={cactive} alt='' className='cartActive' />
+        <p className='progresscart'>Cart</p>
+      </div>
+      <div className='Cartparatialactiveline'>
+        <img src={partialActive} alt='' className='cartpartialactiveline' />
+      </div>
+      <div className='cartdeactive2'>
+        <img src={deactive} alt='' className='Cdeactive2' />
+        <p className='cartadresstext'>Address Details</p>
+      </div>
+      <div className='deactiveline'>
+        <div className='cartdeactiveline' />
+      </div>
+      <div className='cartdeactive3'>
+        <img src={deactive} alt='' className='cartdeactivestate' />
+        <p className='cartpaymenttext'>Payment</p>
+      </div>
     </div>
   );
 };
