@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable no-nested-ternary */
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -22,7 +22,6 @@ import LoginLayout from '../LoginLayout';
 const Header = ({ isHome }) => {
   const { currentUser, signOut } = useContext(UserContext);
   const history = useHistory();
-  const [state, trigger] = useState(true);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
   const [email, setEmail] = useState('');
@@ -32,10 +31,9 @@ const Header = ({ isHome }) => {
   const [selectedCode, setSelectedCode] = useState('91');
   const handleLogout = () => {
     signOut();
-    trigger(!state);
     history.push('/');
   };
-  useEffect(() => {}, [trigger]);
+
   return (
     <HeaderWrapper>
       {isHome ? <Logo /> : <Logo afterLogin />}
