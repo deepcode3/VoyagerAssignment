@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import CommonHeader from '../headercommon/CommonHeader';
-import Cartdata from './Cartdata';
-import Cartlist from './Cartlist';
+import Cartdata from './CartData';
+import Cartlist from './CartList';
 import './CartHome.css';
 import Footer from '../Footer';
 
