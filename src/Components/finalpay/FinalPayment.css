@@ -72,14 +72,129 @@
   position: relative;
   top: 7px;
 }
+.pay_container {
+  width: 634px;
+  height: 174px;
+  top: 189px;
+  overflow-y: scroll;
+  position: absolute;
+  text-align: justify;
+}
+.pay_scroller {
+  width: 634px;
+  max-height: 100%;
+}
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
+}
+.pay-card {
+  height: 166px;
+  width: 286px;
+  float: left;
+  flex: 1;
+  margin: 4px;
+  position: relative;
+  border-radius: 6px;
+  background: linear-gradient(146.86deg, #c365f2 0%, #6241d0 100%);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.mask1 {
+  height: 165px;
+  width: 289px;
+  float: left;
+  flex: 1;
+  margin: 5px;
+}
+.vicon {
+  height: 19px;
+  width: 56.2px;
+  position: absolute;
+  top: 19px;
+  left: 13px;
+  margin: 0px;
+}
+
+.vcardnums {
+  height: 19px;
+  width: 200px;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2.26px;
+  line-height: 19px;
+  margin: 0px;
+  position: absolute;
+  top: 53px;
+  left: 18px;
+}
+.vcardname {
+  height: 17px;
+  width: 50.64px;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  left: 18px;
+  top: 79px;
+  margin: 0px;
+}
+
+.vexpdate {
+  height: 17px;
+  width: 73.85px;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  left: 98.34px;
+  top: 79px;
+  margin: 0px;
+}
+
+.ventercode {
+  height: 26px;
+  width: 77.27px;
+  color: #ffffff;
+  /* color: #000000; */
+  font-family: 'SF UI Text';
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 26px;
+  position: absolute;
+  top: 112px;
+  left: 17.06px;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+  background: transparent;
+}
+
+.vcardline {
+  box-sizing: border-box;
+  height: 2px;
+  width: 73.3px;
+  border: 1px solid #ffffff;
+  opacity: 0.38;
+  position: absolute;
+  left: 18.56px;
+  top: 143.5px;
+}
 
 .cardsdiv {
   height: 166px;
   width: 595px;
-
   position: absolute;
   top: 195px;
   left: 20px;
+  background-color: royalblue;
 }
 
 .visaimg {

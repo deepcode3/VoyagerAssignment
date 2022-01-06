@@ -3,9 +3,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import icnAaveCardUnchecked from '../../Assets/Icons/icn_save_card_unchecked.png';
+// import icnSaveCardUnchecked from '../../Assets/Icons/icn_save_card_unchecked.png';
+import visaicon from '../../Assets/Icons/visaicon.png';
 
-const Modal = ({ setOpen }) => {
+const Model = ({ setOpen, values, setValues, addItem }) => {
+  console.log(values);
+  const handleChange = (e) => {
+    e.persist();
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addItem(values);
+    setValues({
+      cardNumber: '',
+      cardName: '',
+      expiaryDate: '',
+      expiaryYear: '',
+      securityNumber: '',
+    });
+  };
   return (
     <ModalBack>
       <ModalContainer>
@@ -23,64 +45,103 @@ const Modal = ({ setOpen }) => {
           <h1 className='add-new-address '>Add New Card</h1>
         </div>
         <div className='enter-cards'>
-          <span className='enter-credit'>Enter Credit/Debit card details</span>
-          <form>
-            <div className='field'>
-              <label className='label'>Card number</label>
-
-              <input type='text' value='' className='input' placeholder='4022 8888 8888 1881' />
-            </div>
-            <div className='field-1'>
-              <label className='label'>Name on card</label>
-              <input type='text' className='input' placeholder='Abdullah' />
-            </div>
-            <div className='field-2'>
-              <div className='extra'>
-                <label className='label-1'>Expiary</label>
+          <div className='card-body'>
+            <form onSubmit={handleSubmit}>
+              <span className='enter-credit'>Enter Credit/Debit card details</span>
+              <div className='field'>
+                <label className='label'>Card number</label>
                 <input
                   type='text'
-                  name='month'
-                  className='input-1'
-                  placeholder='11'
-                  maxLength='2'
-                  size='2'
+                  name='cardNumber'
+                  value={values.cardNumber}
+                  className='input'
+                  placeholder='4022 8888 8888 1881'
+                  onChange={handleChange}
+                  required
                 />
-                <span className='dash'>/</span>
-                <input
-                  type='text'
-                  name='year'
-                  className='input-1'
-                  placeholder='2021'
-                  maxLength='4'
-                  size='4'
-                  style={{ marginLeft: '60px' }}
-                />
-                <label className='label-2'>Security card</label>
-                <input type='text' className='input-2' placeholder='XXX' />
+                <img src={visaicon} className='Visaicon' alt='visa' />
+                <div className='line' />
               </div>
-            </div>
-          </form>
-          <span className='add-this-card-to-sav'>
-            <img
-              src={icnAaveCardUnchecked}
-              alt='checked_icn'
-              style={{ paddingRight: '10px', color: '#5fb700' }}
-            />
-            Add this card to saved cards
-          </span>
-        </div>
-        <div className='rectangle-copy'>
-          <span className='save-address' type='button'>
-            SAVE Card
-          </span>
+              <div className='field-1'>
+                <label className='label'>Name on card</label>
+                <input
+                  type='text'
+                  name='cardName'
+                  value={values.cardName}
+                  className='input'
+                  placeholder='Abdullah'
+                  onChange={handleChange}
+                  required
+                />
+                <div className='line' />
+              </div>
+              <div className='field-2'>
+                <div className='extra'>
+                  <label className='label-1'>Expiary</label>
+                  <input
+                    type='text'
+                    name='expiaryDate'
+                    value={values.expiaryDate}
+                    className='input-1'
+                    placeholder='11'
+                    maxLength='2'
+                    size='2'
+                    onChange={handleChange}
+                    required
+                  />
+                  <span className='dash'>/</span>
+                  <input
+                    type='text'
+                    name='expiaryYear'
+                    value={values.expiaryYear}
+                    className='input-1'
+                    placeholder='2021'
+                    maxLength='4'
+                    size='4'
+                    onChange={handleChange}
+                    required
+                    style={{ marginLeft: '60px' }}
+                  />
+                  <label className='label-2'>Security card</label>
+                  <input
+                    type='text'
+                    name='securityNumber'
+                    value={values.securityNumber}
+                    className='input-2'
+                    placeholder='XXX'
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className='add-this-card-to-sav'>
+                {/* <img
+                  src={icnSaveCardUnchecked}
+                  alt='checked_icn'
+                  style={{ paddingRight: '10px', color: '#5fb700' }}
+                /> */}
+                <input type='radio' className='save-check' />
+                <span> Add this card to saved cards</span>
+              </div>
+              <div className='rectangle-copy'>
+                <button className='save-address' type='submit'>
+                  SAVE Card
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </ModalContainer>
     </ModalBack>
   );
 };
-export default Modal;
-Modal.propTypes = {
-  setOpen: PropTypes.bool.isRequired,
+export default Model;
+
+Model.propTypes = {
+  setOpen: PropTypes.func.isRequired,
+  setValues: PropTypes.func.isRequired,
+  values: PropTypes.objectOf(PropTypes.any).isRequired,
+  addItem: PropTypes.func.isRequired,
 };
 
 const ModalBack = styled.div`
@@ -99,18 +160,19 @@ const ModalBack = styled.div`
 `;
 
 const ModalContainer = styled.div`
-  height: 552px;
-  width: 530px;
+  height: 592px;
+  width: 580px;
+  //height: 552px;
+  //width: 530px;
   border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   position: relative;
-  padding: 40px;
-
+  //padding: 40px;
   .dismiss-button {
     height: 12px;
     width: 12px;
@@ -138,8 +200,13 @@ const ModalContainer = styled.div`
     margin: 0 auto;
   }
   .enter-cards {
-    height: 359px;
+    height: 459px;
     width: 560px;
+    position: absolute;
+    padding-left: 30px;
+    top: 100px;
+  }
+  .card-body {
     position: relative;
   }
 
@@ -153,14 +220,29 @@ const ModalContainer = styled.div`
     line-height: 23px;
   }
 
-  .input[type='text'] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+  .input {
+    height: 22px;
+    width: 154px;
+    color: #4a4a4a;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    letter-spacing: -0.27px;
+    line-height: 22px;
+    position: absolute;
+    top: 28px;
+    left: 0px;
+    margin: 0px;
+    border: 0px;
+    outline: none;
+  }
+  .line {
     box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid #4a4a4a;
+    height: 2px;
+    width: 334px;
+    border: 1px solid #000000;
     opacity: 0.53;
+    position: absolute;
+    bottom: 0px;
   }
   .input-image {
     height: 12px;
@@ -219,7 +301,7 @@ const ModalContainer = styled.div`
     letter-spacing: -0.24px;
     line-height: 17px;
     position: absolute;
-    top: 0px;
+    top: 24px;
     left: 160px;
   }
   .input-1[type='text'] {
@@ -258,7 +340,7 @@ const ModalContainer = styled.div`
     opacity: 0.53;
   }
   .add-this-card-to-sav {
-    height: 19px;
+    height: 22px;
     width: 260px;
     color: #070707;
     font-family: 'Open Sans';
@@ -268,6 +350,20 @@ const ModalContainer = styled.div`
     line-height: 19px;
     position: absolute;
     top: 320px;
+    left: 0px;
+  }
+  .save-check {
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #5fb700;
+    appearance: none;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    transition: all ease-in 0.2s;
+  }
+  .save-check:checked {
+    background-color: #5fb700;
   }
   .green {
     height: 20px;
@@ -283,8 +379,8 @@ const ModalContainer = styled.div`
     box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
     text-align: center;
     position: absolute;
-    left: 118px;
-    bottom: 50px;
+    left: 97px;
+    top: 370px;
   }
   .save-address {
     height: 19px;
@@ -296,5 +392,8 @@ const ModalContainer = styled.div`
     letter-spacing: 0;
     line-height: 50px;
     text-align: center;
+    padding: 0;
+    border: none;
+    background: none;
   }
 `;

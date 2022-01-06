@@ -36,7 +36,7 @@ const CommonHeader = ({ data, searchKey, location }) => {
 
 export default CommonHeader;
 CommonHeader.propTypes = {
-  data: PropTypes.arrayOf.isRequired,
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
   searchKey: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
 };

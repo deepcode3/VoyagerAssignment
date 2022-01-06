@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
-import { addressContext } from '../../Context/ProfileContext';
+import { ProfileContext } from '../../Context/ProfileContext';
 import AddressCard from './AddressCard';
 import CommonHeader from '../headercommon/CommonHeader';
 import TelephonePicker from '../TelephonePicker/index';
@@ -30,7 +30,7 @@ const CartAddress = () => {
   } = useForm({
     resolver: yupResolver(mobileSchema),
   });
-  const { addressItems, removeItem } = useContext(addressContext);
+  const { addressItems, removeItem1 } = useContext(ProfileContext);
 
   const history = useHistory();
 
@@ -90,7 +90,7 @@ const CartAddress = () => {
                   {addressItems.map((item, index) => {
                     return (
                       <li key={index.toString()}>
-                        <AddressCard item={item} removeItem={removeItem} index={index} />
+                        <AddressCard item={item} removeItem={removeItem1} index={index} />
                       </li>
                     );
                   })}

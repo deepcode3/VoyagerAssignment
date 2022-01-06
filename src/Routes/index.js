@@ -22,7 +22,7 @@ import PrivacyPolicy from '../Components/footerlinker/PrivacyPolicy';
 import Contacts from '../Components/footerlinker/FooterContact';
 import UserContextProvider from '../Context/UserContext';
 import AccountsContextProvider from '../Context/AccountsContext';
-import AddressContextProvider from '../Context/ProfileContext';
+import ProfileContextProvider from '../Context/ProfileContext';
 
 const Routing = () => {
   return (
@@ -51,12 +51,16 @@ const Routing = () => {
                 </CartContextProvider>
               </Route>
               <Route exact path='/address'>
-                <AddressContextProvider>
+                <ProfileContextProvider>
                   <CartAddress />
-                </AddressContextProvider>
+                </ProfileContextProvider>
               </Route>
               <Route path='/payment' component={Payment} />
-              <Route path='/finalpay' component={FinalPayment} />
+              <Route path='/finalpay'>
+                <ProfileContextProvider>
+                  <FinalPayment />
+                </ProfileContextProvider>
+              </Route>
               <Route path='/carthome'>
                 <CartHome />
               </Route>
@@ -80,9 +84,9 @@ const Routing = () => {
                 <Gallery />
               </Route>
               <Route path='/profile'>
-                <AddressContextProvider>
+                <ProfileContextProvider>
                   <ProfileMain />
-                </AddressContextProvider>
+                </ProfileContextProvider>
               </Route>
               <Route path='*' component={Error} />
             </Switch>
