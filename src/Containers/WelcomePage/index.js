@@ -1,75 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Modal from 'react-modal';
-import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
 import StyledButton from '../../Components/CommonButton/index';
 import closeButton from '../../Assets/Icons/close_button.png';
 import icnRegisterSuccess from '../../Assets/Icons/icn_register_success.png';
 
-const WelcomePage = ({ modalIsOpen, setModalIsOpen, setPageStatus, name, email }) => {
+const WelcomePage = ({ setModalIsOpen, setPageStatus, name, email }) => {
   return (
-    <Modal
-      className='wrapper'
-      isOpen={modalIsOpen}
-      onRequestClose={() => {
-        setPageStatus('login');
-        setModalIsOpen(false);
-      }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)' } }}
-    >
-      <Wrapper>
-        <LogoWithText />
-        <RightWrapper>
-          <Button
-            onClick={() => {
-              setPageStatus('login');
-              setModalIsOpen(false);
-            }}
-          >
-            <img src={closeButton} alt='cut' />
-          </Button>
-          <StyledImg src={icnRegisterSuccess} alt='icon' />
-          <BlackText>{`Hi, ${name}`}</BlackText>
-          <BlackText> Welcome to Zadoh </BlackText>
-          <Description>{`We’ve sent you an email on ${email} for verification.`}</Description>
-          <StyledButton
-            onClick={() => {
-              setPageStatus('login');
-            }}
-          >
-            BROWSE TO START ORDERING
-          </StyledButton>
-        </RightWrapper>
-      </Wrapper>
-    </Modal>
+    <Wrapper>
+      <Button
+        onClick={() => {
+          setPageStatus('login');
+          setModalIsOpen(false);
+        }}
+      >
+        <img src={closeButton} alt='cut' />
+      </Button>
+      <StyledImg src={icnRegisterSuccess} alt='icon' />
+      <BlackText>{`Hi ${name},`}</BlackText>
+      <BlackText> Welcome to Zadoh </BlackText>
+      <Description>
+        {`We’ve sent you an email on ${email.split('@')[0]} for verification.`}
+      </Description>
+      <StyledButton
+        onClick={() => {
+          setPageStatus('login');
+        }}
+      >
+        BROWSE TO START ORDERING
+      </StyledButton>
+    </Wrapper>
   );
 };
 export default WelcomePage;
 WelcomePage.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
-  setPageStatus: PropTypes.func.isRequired,
+  setModalIsOpen: PropTypes.func,
+  setPageStatus: PropTypes.func,
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
 };
+WelcomePage.defaultProps = {
+  setPageStatus: () => {},
+  setModalIsOpen: () => {},
+};
 const Wrapper = styled.div`
-  height: 588px;
-  width: 960px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-`;
-
-const RightWrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;
@@ -86,6 +60,7 @@ const Button = styled.button`
   right: 0px;
   position: absolute;
   top: 3%;
+  cursor: pointer;
 `;
 const StyledImg = styled.img`
   height: 30%;
@@ -102,7 +77,8 @@ const BlackText = styled.p`
   font-weight: bold;
   letter-spacing: -0.37px;
   text-align: center;
-  text-shadow: 0 0 9px 0 #ffffff;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
   margin: 0;
 `;
 const Description = styled.p`
@@ -116,5 +92,5 @@ const Description = styled.p`
   text-align: center;
   font-weight: 100;
   margin-top: 7%;
-  margin-bottom: 18%;
+  margin-bottom: 18.5%;
 `;

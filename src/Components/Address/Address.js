@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
-import { ProfileContext } from '../../Context/ProfileContext';
+import { addressContext } from '../../Context/ProfileContext';
 import AddressCard from './AddressCard';
 import TelephonePicker from '../TelephonePicker/index';
 import delivericon from '../../Assets/Icons/delivericon.png';
@@ -32,7 +32,7 @@ const CartAddress = () => {
   } = useForm({
     resolver: yupResolver(mobileSchema),
   });
-  const { addressItems, removeItem } = useContext(ProfileContext);
+  const { addressItems, removeItem } = useContext(addressContext);
 
   const history = useHistory();
 
@@ -43,12 +43,18 @@ const CartAddress = () => {
       </div>
       <div className='addresscontainer'>
         <div className='preferencetext'>
-          <p className='preference'>How would you like us to get your meal to you?</p>
+          <p className='preference'>
+            How would you like us to get your meal to you?
+          </p>
         </div>
         <div className='deliveryoptiondiv'>
           <div className='deliverdiv'>
             <div className='deliver'>
-              <img src={delivericon} className='scootericon' alt='deliveryicon' />
+              <img
+                src={delivericon}
+                className='scootericon'
+                alt='deliveryicon'
+              />
             </div>
 
             <input
@@ -63,7 +69,12 @@ const CartAddress = () => {
             <div className='pickup'>
               <img src={pickupicon} className='pickupicon' alt='pickupicon' />
             </div>
-            <input type='radio' value='pickup' name='deliveryoption' className='pickupbtn' />
+            <input
+              type='radio'
+              value='pickup'
+              name='deliveryoption'
+              className='pickupbtn'
+            />
             <p className='pickuptext'>Pick up</p>
           </div>
         </div>
@@ -90,13 +101,37 @@ const CartAddress = () => {
                 {addressItems.map((item, index) => {
                   return (
                     <li key={index.toString()}>
-                      <AddressCard item={item} removeItem={removeItem} index={index} />
+                      <AddressCard
+                        item={item}
+                        removeItem={removeItem}
+                        index={index}
+                      />
                     </li>
                   );
                 })}
               </ul>
             </div>
           </div>
+          {/* <div className='homeaddressdiv' onClick={usecheck} role='button' onKeyDown={null}>
+              <p className='home'>Home</p>
+
+              <div className='checkeraddress'>
+                <input type='checkbox' className='officeradio' name='addcheck' />
+                {/* <img src={check} className="officeradio" alt=""></img> */}
+          {/* </div>
+              <p className='addressline'>Downtown Burj Khalifa, Dubai, UAE</p>
+              <div className='editbtn'>Edit</div>
+              <div className='deletebtn'>Delete</div>
+            </div>
+
+            <div className='officeaddressdiv'>
+              <p className='office'>Office</p>
+              <input type='checkbox' name='addcheck' className='homecheck' />
+
+              <p className='addressline'>Downtown Burj Khalifa, Dubai, UAE</p>
+              <div className='editbtn1'>Edit</div>
+              <div className='deletebtn1'>Delete</div>
+            </div> */}
         </div>
         <form className='contactdetailsdiv'>
           <p className='contactdetails'>Contact Details</p>
@@ -120,7 +155,11 @@ const CartAddress = () => {
           <p className='deliveryins'>Delivery Instructions?</p>
         </div>
         <div className='mention'>
-          <textarea type='text' placeholder='Mention it here...' className='mntn' />
+          <textarea
+            type='text'
+            placeholder='Mention it here...'
+            className='mntn'
+          />
           <div className='mentiongreyline1' />
         </div>
         <div

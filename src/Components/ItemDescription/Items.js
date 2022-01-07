@@ -7,7 +7,7 @@ import vegicon from '../../Assets/Icons/vegicon.png';
 import nonveg from '../../Assets/Icons/nonveg.png';
 
 // eslint-disable-next-line object-curly-newline
-const Items = ({ item, price, quantity, isVeg }) => {
+const Items = ({ item, price, quantity, isVeg, from }) => {
   const { deleteItem, increaseItemQuantity, decreaseItemQuantity } = useContext(cartContext);
 
   return (
@@ -56,7 +56,7 @@ const Items = ({ item, price, quantity, isVeg }) => {
           +
         </div>
       </div>
-      <div className='itemtotalcost'>
+      <div className={from === 'cart' ? 'itemtotalcost' : 'orderDetailsTotalCost'}>
         AED
         {price * quantity}
       </div>
@@ -81,4 +81,5 @@ Items.propTypes = {
   price: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   isVeg: PropTypes.number.isRequired,
+  from: PropTypes.string.isRequired,
 };

@@ -5,9 +5,9 @@ import SearchBar, { LocationSetter } from '../HomeComponents/SearchBar';
 import '../../Containers/Restaurants/index';
 import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
-import './CommonHeader.css';
+import './SearchRestaurantView.css';
 
-const CommonHeader = ({ data, searchKey, location }) => {
+const SearchRestaurantView = ({ data, searchKey, location }) => {
   return (
     <>
       <Header />
@@ -15,7 +15,7 @@ const CommonHeader = ({ data, searchKey, location }) => {
       <div className='restaurantSearchBar'>
         <span className='crestaurantsInfo'>Delivery ASAP</span>
         {console.log(data)}
-        <div className='cseardch'>
+        <div className='csearch'>
           <div className='restaurantSearch'>
             <SearchBar searchValue={searchKey} from='restaurant' />
           </div>
@@ -34,9 +34,9 @@ const CommonHeader = ({ data, searchKey, location }) => {
   );
 };
 
-export default CommonHeader;
-CommonHeader.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+export default SearchRestaurantView;
+SearchRestaurantView.propTypes = {
+  data: PropTypes.arrayOf.isRequired,
   searchKey: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
 };

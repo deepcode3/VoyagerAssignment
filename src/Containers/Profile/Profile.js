@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -9,8 +9,10 @@ import mailicn from '../../Assets/Icons/mail_icn.png';
 import icnInfo from '../../Assets/Icons/icn_info_small.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
 import Profileroute from '../../Components/Profilerouter/index';
+import { UserContext } from '../../Context/UserContext';
 
 const Profile = ({ setOpen }) => {
+  const { currentUser } = useContext(UserContext);
   return (
     <>
       <Profilediv>
@@ -19,7 +21,7 @@ const Profile = ({ setOpen }) => {
             <img src={profilePic} alt='pic' className='profile_img' />
           </div>
           <div className='name-section'>
-            <span className='username'>Abdulla</span>
+            <span className='username'>{currentUser.firstname}</span>
             <span
               className='edit'
               type='button'
@@ -31,15 +33,15 @@ const Profile = ({ setOpen }) => {
             >
               Edit
             </span>
-            <span className='name'>Abdulla Mohammad</span>
+            <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
             <span className='num'>
               <img className='phone-icn' src={phoneicn} alt='icn' />
-              +971 876561234
+              {`+${currentUser.countrycode} ${currentUser.mobile}`}
             </span>
             <br className='line-3 ' />
             <span className='abdulla-foodie-com '>
               <img className='mail-icn' src={mailicn} alt='icn' />
-              abdulla@foodie.com
+              {currentUser.email}
             </span>
             <br className='line-3 ' />
             <span className='credits-earned'>Credits earned-</span>

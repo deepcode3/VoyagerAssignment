@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
 import InputField from '../../Components/LoginComponents/InputField/index';
 import StyledButton from '../../Components/CommonButton/index';
 import LoginOptions from '../../Components/LoginComponents/LoginOptions/index';
@@ -15,9 +14,9 @@ import { AccountsContext } from '../../Context/AccountsContext';
 import { UserContext } from '../../Context/UserContext';
 
 Modal.setAppElement('#root');
-const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
+const Login = ({ setModalIsOpen, setPageStatus }) => {
   const { checkIfAccountExists } = useContext(AccountsContext);
-  const { setCurrentUser } = useContext(UserContext);
+  const { signIn } = useContext(UserContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required('Email id is required'),
     password: yup.string().required('Password is required'),
@@ -35,98 +34,64 @@ const Login = ({ modalIsOpen, setModalIsOpen, setPageStatus }) => {
   };
   const submitForm = (data) => {
     const result = checkIfAccountExists(data);
-    if (result === null) {
-      setError('email', { type: 'manual', message: 'Email id is not registered' });
-    } else if (result.length === 0) {
-      setError('email', { type: 'manual', message: 'Email id is not registered' });
-    } else if (result[0].password !== data.password) {
-      setError('password', { type: 'manual', message: 'Incorrect password entered' });
+    if (result === 'Email id is not registered') {
+      setError('email', { type: 'manual', message: result });
+    } else if (result === 'Incorrect password entered') {
+      setError('password', { type: 'manual', message: result });
     } else {
-      localStorage.setItem('accessToken', JSON.stringify('success'));
-      setCurrentUser(result[0]);
+      signIn(result);
+      setModalIsOpen(false);
     }
-    if (localStorage.getItem('accessToken')) setModalIsOpen(false);
   };
   const handleForgotClick = () => {
     setPageStatus('forgot-password');
   };
   return (
-    <Modal
-      className='wrapper'
-      isOpen={modalIsOpen}
-      onRequestClose={() => {
-        setPageStatus('login');
-        setModalIsOpen(false);
-      }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)' } }}
-    >
-      <Wrapper>
-        <LogoWithText />
-        <RightWrapper>
-          <Button
-            onClick={() => {
-              setPageStatus('login');
-              setModalIsOpen(false);
-            }}
-          >
-            <img src={closeButton} alt='cut' />
-          </Button>
-          <BlackText>Lets get started!</BlackText>
-          <Form onSubmit={handleSubmit(submitForm)}>
-            <InputField
-              name='email'
-              register={register}
-              msg={errors.email?.message}
-              label='Email'
-            />
-            <InputField
-              name='password'
-              register={register}
-              // eslint-disable-next-line react/jsx-boolean-value
-              isPassword={true}
-              msg={errors.password?.message}
-              label='Password'
-            />
+    <Wrapper>
+      <Button
+        onClick={() => {
+          setPageStatus('login');
+          setModalIsOpen(false);
+        }}
+      >
+        <img src={closeButton} alt='cut' />
+      </Button>
+      <BlackText>Lets get started!</BlackText>
+      <Form onSubmit={handleSubmit(submitForm)}>
+        <InputField name='email' register={register} msg={errors.email?.message} label='Email' />
+        <InputField
+          name='password'
+          register={register}
+          // eslint-disable-next-line react/jsx-boolean-value
+          isPassword={true}
+          msg={errors.password?.message}
+          label='Password'
+        />
 
-            <ForgotButton onClick={handleForgotClick} type='button'>
-              Forgot Password?
-            </ForgotButton>
-            <StyledButton type='submit'>LOGIN</StyledButton>
-          </Form>
-          <LoginOptions />
-          <TextWithButton
-            text="Don't have an account?"
-            buttonName='Get one now!'
-            handleClick={handleSignupClick}
-          />
-        </RightWrapper>
-      </Wrapper>
-    </Modal>
+        <ForgotButton onClick={handleForgotClick} type='button'>
+          Forgot Password?
+        </ForgotButton>
+        <StyledButton type='submit'>LOGIN</StyledButton>
+      </Form>
+      <LoginOptions />
+      <TextWithButton
+        text="Don't have an account?"
+        buttonName='Get one now!'
+        handleClick={handleSignupClick}
+      />
+    </Wrapper>
   );
 };
 export default Login;
 Login.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
-  setPageStatus: PropTypes.func.isRequired,
+  setModalIsOpen: PropTypes.func,
+  setPageStatus: PropTypes.func,
+};
+Login.defaultProps = {
+  setModalIsOpen: () => {},
+  setPageStatus: () => {},
 };
 const Wrapper = styled.div`
-  height: 588px;
-  width: 960px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-`;
-
-const RightWrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;
@@ -143,6 +108,7 @@ const Button = styled.button`
   right: 0px;
   position: absolute;
   top: 3%;
+  cursor: pointer;
 `;
 const BlackText = styled.p`
   height: 38px;
@@ -150,12 +116,14 @@ const BlackText = styled.p`
   color: #2a2c30;
   font-family: 'Open Sans', sans-serif;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 800;
   line-height: 38px;
   text-shadow: 0 0 9px 0 #ffffff;
   margin-bottom: 10%;
   margin-top: 10%;
-  margin-right: 3%;
+  margin-right: 35%;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Form = styled.form`
   height: 50%;
@@ -179,4 +147,5 @@ const ForgotButton = styled.button`
   outline: none;
   margin-left: 60%;
   margin-top: -8%;
+  cursor: pointer;
 `;

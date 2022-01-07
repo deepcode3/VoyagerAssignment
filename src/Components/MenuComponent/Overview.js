@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import MenuHalfCompo from '../MenuSemiCompo/index';
 import './MenuNav.css';
+import Footer from '../Footer';
 
 const OverView = () => {
   const { searchKey } = useParams();
@@ -87,6 +88,7 @@ const OverView = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

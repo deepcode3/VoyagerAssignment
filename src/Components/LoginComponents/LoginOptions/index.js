@@ -36,6 +36,7 @@ const Facebook = styled.a`
   font-weight: 400;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 `;
 const Google = styled.a`
   height: 50px;
@@ -51,4 +52,5 @@ const Google = styled.a`
   font-weight: 400;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 `;

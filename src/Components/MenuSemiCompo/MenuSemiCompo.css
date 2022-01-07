@@ -1,6 +1,6 @@
 .menuHalfBgImage {
   height: 267px;
-  width: 1700px;
+  width: 177%;
   position: relative;
   left: -350px;
   top: -80px;
@@ -13,6 +13,241 @@
   left: 00px;
   z-index: 1;
 }
+.spoonPoke {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  top: -610px;
+  left: 40px;
+  z-index: 1;
+}
+.restaurantDetails {
+  height: 203px;
+  width: 800px;
+  position: relative;
+  top: -600px;
+  left: 40px;
+  z-index: 1;
+}
+.menuRestaurantName {
+  height: 36px;
+  width: 380px;
+  color: #1c1c1c;
+  font-family: 'Open Sans';
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 36px;
+}
+.menuItemName {
+  height: 19px;
+  width: 156px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 19px;
+  position: relative;
+  top: 7px;
+  left: 5px;
+}
+.greenRect {
+  position: relative;
+  top: 20px;
+  left: 3px;
+  height: 23px;
+  width: 42px;
+}
+.menuRestaurantRating {
+  height: 20px;
+  width: 22px;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  left: -30px;
+  top: 13px;
+}
+.menuDot {
+  height: 4px;
+  width: 4px;
+  background-color: #a3a3a3;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  left: -10px;
+}
+.menuTimming {
+  height: 17px;
+  width: 45px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 12px;
+  left: -5px;
+}
+.menuDot1 {
+  height: 4px;
+  width: 4px;
+  background-color: #a3a3a3;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  left: 5px;
+}
+.menuMinOrder {
+  height: 17px;
+  width: 96px;
+  color: #757575;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 12px;
+  left: 10px;
+}
+.timming {
+  height: 10px;
+  width: 10px;
+  position: relative;
+  top: 13px;
+  left: 20px;
+}
+.timmingaText {
+  height: 17px;
+  width: 116px;
+  color: #7c7c7c;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-align: center;
+  position: relative;
+  top: 12px;
+  left: 25px;
+}
+.deliveryRatings {
+  height: 17px;
+  width: 174px;
+  color: #6a6a6a;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: 30px;
+  left: 5px;
+}
+.menuLine {
+  box-sizing: border-box;
+  height: 3px;
+  width: 297px;
+  border: 1px solid #ededed;
+  position: relative;
+  top: 45px;
+  left: 5px;
+}
+.menuRatingStars {
+  width: 305px;
+  height: 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  top: 60px;
+}
+.menuStarBox1 {
+  box-sizing: border-box;
+  height: 26px;
+  width: 46px;
+  border: 1px solid #5fb700;
+  border-radius: 4px;
+}
+.menuStarBox2 {
+  box-sizing: border-box;
+  height: 26px;
+  width: 46px;
+  border: 1px solid #5fb700;
+  border-radius: 4px;
+}
+.menuStarBox3 {
+  box-sizing: border-box;
+  height: 26px;
+  width: 46px;
+  border: 1px solid #f5a623;
+  border-radius: 4px;
+}
+.menuStarBox4 {
+  box-sizing: border-box;
+  height: 26px;
+  width: 46px;
+  border: 1px solid #5fb700;
+  border-radius: 4px;
+}
+.menuStarBox5 {
+  box-sizing: border-box;
+  height: 26px;
+  width: 46px;
+  border: 1px solid #ed1b2e;
+  border-radius: 4px;
+}
+.menuStar {
+  height: 12.91px;
+  width: 12.91px;
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
+.menuRating1 {
+  height: 17px;
+  width: 10.04px;
+  color: #5fb700;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -13px;
+  left: 25px;
+}
+.menuRating2 {
+  height: 17px;
+  width: 10.04px;
+  color: #f5a623;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -13px;
+  left: 25px;
+}
+.menuRating3 {
+  height: 17px;
+  width: 10.04px;
+  color: #ed1b2e;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -13px;
+  left: 25px;
+}
+
 .menuKebab {
   height: 336px;
   width: 972px;
@@ -24,8 +259,8 @@
   height: 34px;
   width: 490px;
   position: relative;
-  top: -600px;
-  left: 20px;
+  top: -870px;
+  left: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

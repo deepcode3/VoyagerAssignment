@@ -4,7 +4,7 @@
   height: fit-content;
   position: absolute;
   top: 500px;
-  padding-bottom: 500px;
+  padding-bottom: 800px;
 }
 .overViewBody {
   height: auto;
@@ -12,7 +12,7 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  top: 100px;
+  top: 150px;
   left: 70px;
   display: flex;
   flex-direction: row;
@@ -85,12 +85,12 @@
   opacity: 0.25;
   position: relative;
   top: 250px;
-  left: 00px;
+  left: 10px;
 }
 .averasgeMealCost {
   position: relative;
   top: 250px;
-  left: 10px;
+  left: 20px;
 }
 .averasgeMealCostText {
   height: 22px;
@@ -950,4 +950,14 @@
   left: 55px;
   top: 20px;
   cursor: pointer;
+}
+.footerDivReview {
+  top: 250px;
+  position: relative;
+  align-items: center;
+}
+.footerDivGallery {
+  top: 270px;
+  position: relative;
+  align-items: center;
 }

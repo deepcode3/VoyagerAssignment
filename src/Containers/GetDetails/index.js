@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-import LogoWithText from '../../Components/LoginComponents/LogoWithText/index';
+
 import StyledButton from '../../Components/CommonButton/index';
 import InputField from '../../Components/LoginComponents/InputField';
 import TelephonePicker from '../../Components/TelephonePicker/index';
@@ -13,7 +13,7 @@ import BackIcon from '../../Assets/Icons/back_icon.png';
 import { AccountsContext } from '../../Context/AccountsContext';
 
 Modal.setAppElement('#root');
-const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus, email, setName }) => {
+const GetDetails = ({ setPageStatus, email, setName }) => {
   const { addAccount } = useContext(AccountsContext);
   const [selectedCode, setSelectedCode] = useState('91');
   const schema = yup.object().shape({
@@ -60,88 +60,60 @@ const GetDetails = ({ modalIsOpen, setModalIsOpen, setPageStatus, email, setName
     setPageStatus('welcome-page');
   };
   return (
-    <Modal
-      className='wrapper'
-      isOpen={modalIsOpen}
-      onRequestClose={() => {
-        setPageStatus('login');
-        setModalIsOpen(false);
-      }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)' } }}
-    >
-      <Wrapper>
-        <LogoWithText />
-        <RightWrapper>
-          <BackButton
-            onClick={() => {
-              return setPageStatus('otp-verification');
-            }}
-          >
-            <img className='backArrow' src={BackIcon} alt='back' />
-          </BackButton>
-          <BlackText>Verified! </BlackText>
-          <Description>Your Email is verified.</Description>
-          <Description>Finally enter details below to create account.</Description>
-          <DataContainer onSubmit={handleSubmit(submitForm)}>
-            <InputField
-              name='firstName'
-              register={register}
-              msg={errors.firstName?.message}
-              label='First Name'
-            />
-            <InputField
-              name='lastName'
-              register={register}
-              msg={errors.lastName?.message}
-              label='Last Name'
-            />
-            <TelephonePicker
-              name='mobile'
-              register={register}
-              msg={errors.mobile?.message}
-              label='Enter mobile number (optional)'
-              selectedCode={selectedCode}
-              setSelectedCode={setSelectedCode}
-            />
-            <InputField
-              name='password'
-              register={register}
-              msg={errors.password?.message}
-              label='Create Password'
-            />
-
-            <StyledButton type='submit'>DONE</StyledButton>
-          </DataContainer>
-        </RightWrapper>
-      </Wrapper>
-    </Modal>
+    <Wrapper>
+      <BackButton
+        onClick={() => {
+          return setPageStatus('otp-verification');
+        }}
+      >
+        <img className='backArrow' src={BackIcon} alt='back' />
+      </BackButton>
+      <BlackText>Verified! </BlackText>
+      <Description>Your Email is verified.</Description>
+      <Description>Finally enter details below to create account.</Description>
+      <DataContainer onSubmit={handleSubmit(submitForm)}>
+        <InputField
+          name='firstName'
+          register={register}
+          msg={errors.firstName?.message}
+          label='First Name'
+        />
+        <InputField
+          name='lastName'
+          register={register}
+          msg={errors.lastName?.message}
+          label='Last Name'
+        />
+        <TelephonePicker
+          name='mobile'
+          register={register}
+          msg={errors.mobile?.message}
+          label='Enter mobile number (optional)'
+          selectedCode={selectedCode}
+          setSelectedCode={setSelectedCode}
+        />
+        <InputField
+          name='password'
+          register={register}
+          msg={errors.password?.message}
+          label='Create Password'
+        />
+        <StyledButton type='submit'>DONE</StyledButton>
+      </DataContainer>
+    </Wrapper>
   );
 };
 export default GetDetails;
 GetDetails.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
-  setModalIsOpen: PropTypes.func.isRequired,
-  setPageStatus: PropTypes.func.isRequired,
+  setPageStatus: PropTypes.func,
   email: PropTypes.string.isRequired,
   setName: PropTypes.func.isRequired,
 };
-const Wrapper = styled.div`
-  height: 588px;
-  width: 960px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-`;
+GetDetails.defaultProps = {
+  setPageStatus: () => {},
+};
 
-const RightWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: white;
   height: 588px;
   width: 480px;
@@ -157,16 +129,17 @@ const BackButton = styled.button`
   border: none;
   margin-right: 95%;
   margin-top: 1%;
+  cursor: pointer;
   .backArrow {
     height: 17px;
     width: 17px;
   }
 `;
 const DataContainer = styled.form`
-  height: 76%;
+  height: 77%;
   width: 100%;
-  margin-bottom: 1.75%;
-  margin-top: 3%;
+  margin-bottom: 1%;
+  margin-top: 1.5%;
   margin-left: 21%;
   display: flex;
   flex-direction: column;
@@ -179,10 +152,10 @@ const BlackText = styled.p`
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   font-weight: bold;
-  letter-spacing: -0.37px;
   text-align: center;
-  text-shadow: 0 0 9px 0 #ffffff;
   margin-bottom: 10%;
+  text-shadow: 1px 0 #2a2c30;
+  letter-spacing: 0.5px;
 `;
 const Description = styled.p`
   width: 100%;

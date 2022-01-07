@@ -6,7 +6,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-restricted-syntax */
 import React, { useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
 import { cartContext } from '../../Context/CartContext';
 import searchIcon from '../../Assets/Icons/searchIcon.png';
@@ -28,6 +28,7 @@ import costShowHideButton from '../../Assets/Icons/collapseButton.png';
 import proceedToCheckOutButton from '../../Assets/Icons/proceedToCheckOut.png';
 import emptyImg from '../../Assets/Images/empty.png';
 import './Menu.css';
+import Footer from '../../Components/Footer';
 
 const Menu = () => {
   const { searchKey } = useParams();
@@ -36,6 +37,7 @@ const Menu = () => {
   const { item } = useParams();
   const [searchItem, setSearchItem] = useState('');
   const [costDeatilsButton, setcostDetailsButton] = useState(false);
+  const history = useHistory();
   const {
     cartItems,
     addItem,
@@ -339,7 +341,15 @@ const Menu = () => {
                     </div>
                   </div>
                 ) : null}
-                <img className='proccedToCheckOutButton' src={proceedToCheckOutButton} alt='' />
+                <img
+                  className='proccedToCheckOutButton'
+                  src={proceedToCheckOutButton}
+                  alt=''
+                  onClick={() => {
+                    history.push('/address');
+                  }}
+                  onKeyDown={null}
+                />
               </>
             ) : (
               <>
@@ -581,6 +591,9 @@ const Menu = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='footerDivMenu'>
+        <Footer />
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 /* eslint-disable import/no-named-as-default-member */
-import React, { useState, useContext, useEffect } from 'react';
+/* eslint-disable no-nested-ternary */
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -16,12 +17,11 @@ import PasswordChangeSuccess from '../../Containers/PasswordChangeSuccess/index'
 import iconCart from '../../Assets/Icons/icn_cart.png';
 import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import { UserContext } from '../../Context/UserContext';
+import LoginLayout from '../LoginLayout';
 
 const Header = ({ isHome }) => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, signOut } = useContext(UserContext);
   const history = useHistory();
-  const [state, trigger] = useState(true);
-  const loginStatus = localStorage.getItem('accessToken');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
   const [email, setEmail] = useState('');
@@ -30,16 +30,15 @@ const Header = ({ isHome }) => {
   const [inputType, setInputType] = useState('email');
   const [selectedCode, setSelectedCode] = useState('91');
   const handleLogout = () => {
-    localStorage.removeItem('accessToken');
-    trigger(!state);
+    signOut();
     history.push('/');
   };
-  useEffect(() => {}, [trigger]);
+
   return (
     <HeaderWrapper>
       {isHome ? <Logo /> : <Logo afterLogin />}
       <LinkContainer>
-        {loginStatus && currentUser !== null ? (
+        {currentUser !== null ? (
           <>
             <ProfileConatiner>
               <ProfileIcon src={icnProfile} alt='icon' />
@@ -62,7 +61,7 @@ const Header = ({ isHome }) => {
             LOGIN
           </Button>
         )}
-        {loginStatus ? (
+        {currentUser !== null ? (
           <Button onClick={handleLogout}>LOGOUT</Button>
         ) : (
           <Button
@@ -79,94 +78,52 @@ const Header = ({ isHome }) => {
         {isHome ? (
           <>
             <CartIcon src={iconCart} alt='icon' />
-            <CartLink to='/cart'>CART</CartLink>
+            <CartLink to='/cart-home'>CART</CartLink>
           </>
         ) : (
           <>
             <CartIconOrange src={iconCart} alt='icon' />
-            <CartLinkOrange to='/cart'>CART</CartLinkOrange>
+            <CartLinkOrange to='/cart-home'>CART</CartLinkOrange>
           </>
         )}
       </LinkContainer>
-      {pageStatus === 'login' ? (
-        <Login
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-        />
-      ) : null}
-      {pageStatus === 'signup' ? (
-        <Signup
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          setEmail={setEmail}
-        />
-      ) : null}
-      {pageStatus === 'otp-verification' ? (
-        <OTPVerification
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-        />
-      ) : null}
-      {pageStatus === 'otp-verification-for-password-change' ? (
-        <OTPVerification
-          purpose='password-change'
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-        />
-      ) : null}
-      {pageStatus === 'get-details' ? (
-        <GetDetails
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          email={email}
-          setName={setName}
-        />
-      ) : null}
-      {pageStatus === 'welcome-page' ? (
-        <WelcomePage
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          name={name}
-          email={email}
-        />
-      ) : null}
-      {pageStatus === 'forgot-password' ? (
-        <ForgotPassword
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          setInputType={setInputType}
-          inputType={inputType}
-          selectedCode={selectedCode}
-          setSelectedCode={setSelectedCode}
-          setEmail={setEmail}
-          setMobile={setMobile}
-        />
-      ) : null}
-      {pageStatus === 'new-password' ? (
-        <PasswordChange
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-          email={email}
-          mobile={mobile}
-          inputType={inputType}
-          selectedCode={selectedCode}
-        />
-      ) : null}
-      {pageStatus === 'password-change-success' ? (
-        <PasswordChangeSuccess
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-          setPageStatus={setPageStatus}
-        />
-      ) : null}
+      <LoginLayout
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
+        setPageStatus={setPageStatus}
+      >
+        {pageStatus === 'login' ? (
+          <Login />
+        ) : pageStatus === 'signup' ? (
+          <Signup setEmail={setEmail} />
+        ) : pageStatus === 'otp-verification' ? (
+          <OTPVerification />
+        ) : pageStatus === 'otp-verification-for-password-change' ? (
+          <OTPVerification purpose='password-change' />
+        ) : pageStatus === 'get-details' ? (
+          <GetDetails email={email} setName={setName} />
+        ) : pageStatus === 'welcome-page' ? (
+          <WelcomePage name={name} email={email} />
+        ) : pageStatus === 'forgot-password' ? (
+          <ForgotPassword
+            setInputType={setInputType}
+            inputType={inputType}
+            selectedCode={selectedCode}
+            setSelectedCode={setSelectedCode}
+            setEmail={setEmail}
+            setMobile={setMobile}
+          />
+        ) : pageStatus === 'new-password' ? (
+          <PasswordChange
+            email={email}
+            mobile={mobile}
+            inputType={inputType}
+            selectedCode={selectedCode}
+          />
+        ) : pageStatus === 'password-change-success' ? (
+          <PasswordChangeSuccess />
+        ) : null}
+      </LoginLayout>
     </HeaderWrapper>
   );
 };
@@ -178,7 +135,7 @@ Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
   height: 60px;
-  width: 1865px;
+  width: 97%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -195,8 +152,8 @@ const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 21%;
-  margin-right: 1%;
+  width: 30%;
+  margin-right: -2%;
   align-items: center;
 `;
 const ProfileConatiner = styled.div`
@@ -212,6 +169,7 @@ const ProfileIcon = styled.img`
   padding: 9px;
 `;
 const User = styled.button`
+  cursor: pointer;
   height: 19px;
   color: #303134;
   font-family: 'Open Sans', sans-serif;
@@ -233,6 +191,7 @@ const Button = styled.button`
   letter-spacing: 0.5px;
   padding: 0;
   margin-right: 8%;
+  cursor: pointer;
 `;
 const VerticalLine = styled.div`
   height: 54px;

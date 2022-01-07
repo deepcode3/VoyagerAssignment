@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import RestaurantData from '../Components/RestaurentsData';
-import Payment from '../Components/payment/Payment';
-import FinalPayment from '../Components/finalpay/FinalPayment';
-import CartHome from '../Components/carthome/CartHome';
-import CartAddress from '../Components/address/Address';
+import Payment from '../Components/Payment/Payment';
+import FinalPayment from '../Components/Finalpay/FinalPayment';
+import CartHome from '../Components/CartHome/CartHome';
+import CartAddress from '../Components/Address/Address';
 import Home from '../Containers/Home';
 import Menu from '../Containers/Menu';
 import OverView from '../Components/MenuComponent/Overview';
@@ -12,17 +12,18 @@ import Reviews from '../Components/MenuComponent/Review';
 import Gallery from '../Components/MenuComponent/Gallery';
 import CartContextProvider from '../Context/CartContext';
 import ReviewContext from '../Context/ReviewContext';
-import Cart from '../Components/description/cart';
+import Cart from '../Components/ItemDescription/CartOrders';
 import ProfileMain from '../Containers/Profile/index';
 import Error from '../Containers/Error/index';
-import Orderstatus from '../Components/orderstatus/Orderstatus';
-import About from '../Components/footerlinker/About';
-import Terms from '../Components/footerlinker/Terms';
-import PrivacyPolicy from '../Components/footerlinker/PrivacyPolicy';
-import Contacts from '../Components/footerlinker/FooterContact';
+import Orderstatus from '../Components/OrderStatus/Orderstatus';
+import About from '../Components/FooterLinker/About';
+import Terms from '../Components/FooterLinker/Terms';
+import PrivacyPolicy from '../Components/FooterLinker/PrivacyPolicy';
+import Contacts from '../Components/FooterLinker/FooterContact';
 import UserContextProvider from '../Context/UserContext';
 import AccountsContextProvider from '../Context/AccountsContext';
 import ProfileContextProvider from '../Context/ProfileContext';
+import CartLayout from '../Containers/CartLayouts/CartLayout';
 
 const Routing = () => {
   return (
@@ -47,22 +48,24 @@ const Routing = () => {
               <Route path='/sitemap' component={Error} />
               <Route exact path='/cart'>
                 <CartContextProvider>
-                  <Cart />
+                  <CartLayout Component={Cart} />
                 </CartContextProvider>
               </Route>
               <Route exact path='/address'>
                 <ProfileContextProvider>
-                  <CartAddress />
+                  <CartLayout Component={CartAddress} />
                 </ProfileContextProvider>
               </Route>
-              <Route path='/payment' component={Payment} />
+              <Route path='/payment'>
+                <CartLayout Component={Payment} />
+              </Route>
               <Route path='/finalpay'>
                 <ProfileContextProvider>
-                  <FinalPayment />
+                  <CartLayout Component={FinalPayment} />
                 </ProfileContextProvider>
               </Route>
-              <Route path='/carthome'>
-                <CartHome />
+              <Route path='/cart-home'>
+                <CartLayout Component={CartHome} />
               </Route>
               <Route path='/status'>
                 <Orderstatus />
@@ -87,6 +90,9 @@ const Routing = () => {
                 <ProfileContextProvider>
                   <ProfileMain />
                 </ProfileContextProvider>
+              </Route>
+              <Route path='/cart-layout'>
+                <CartLayout />
               </Route>
               <Route path='*' component={Error} />
             </Switch>

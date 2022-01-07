@@ -1,9 +1,9 @@
 .homeBg {
   background-image: url('../../Assets/Images/home-loginBg.png');
-  height: 935px;
+  height: 900px;
   width: 100%;
   position: absolute;
-  top: 00px;
+  top: 0px;
   left: 00px;
   padding-top: 2%;
 }
@@ -84,4 +84,9 @@
 }
 .assigner {
   display: none;
+}
+.footerDivHome {
+  top: 900px;
+  position: relative;
+  align-items: center;
 }
