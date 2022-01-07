@@ -146,7 +146,7 @@ const Menu = () => {
       type: 'non-veg',
     },
     {
-      name: 'Charred Spanish Octopus',
+      name: 'Charred Spanish',
       cost: 27.0,
       description:
         'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.',
@@ -388,11 +388,25 @@ const Menu = () => {
                         </div>
                         {item.customizable === true ? (
                           <div className='recomendedCustomizable'>Customizable</div>
-                        ) : null}
-                        <div className='recomendedDescription'>{item.description}</div>
+                        ) : (
+                          <div className='recomendedCustomizable' />
+                        )}
+                        <div
+                          className={
+                            item.customizable ? 'recomendedDescription' : 'recomendedDescription1'
+                          }
+                        >
+                          {item.description}
+                        </div>
                         {item.bestSeller === true ? (
-                          <img className='bestSellerIcon' src={bestSeller} alt='' />
-                        ) : null}
+                          <img
+                            className={item.customizable ? 'bestSellerIcon' : 'bestSellerIcon1'}
+                            src={bestSeller}
+                            alt=''
+                          />
+                        ) : (
+                          <div className='bestSellerIcon' />
+                        )}
                         {isItemInCart(item) ? (
                           <>
                             <span
@@ -402,7 +416,9 @@ const Menu = () => {
                               Already in Cart
                             </span>
                             <div
-                              className='addAgainToCartButton'
+                              className={
+                                item.bestSeller ? 'addAgainToCartButton' : 'addAgainToCartButton1'
+                              }
                               onClick={() => {
                                 return increaseItemQuantity(item.name);
                               }}
@@ -414,7 +430,7 @@ const Menu = () => {
                           </>
                         ) : (
                           <div
-                            className='addToCart'
+                            className={item.bestSeller ? 'addToCart' : 'addToCart1'}
                             onClick={() => {
                               return addItem({
                                 item: item.name,
@@ -465,21 +481,41 @@ const Menu = () => {
                         </div>
                         {item.customizable === true ? (
                           <div className='recomendedCustomizable'>Customizable</div>
-                        ) : null}
-                        <div className='recomendedDescription'>{item.description}</div>
+                        ) : (
+                          <div className='recomendedCustomizable' />
+                        )}
+                        <div
+                          className={
+                            item.customizable ? 'recomendedDescription' : 'recomendedDescription1'
+                          }
+                        >
+                          {item.description}
+                        </div>
                         {item.bestSeller === true ? (
-                          <img className='bestSellerIcon' src={bestSeller} alt='' />
-                        ) : null}
+                          <img
+                            className={item.bestSeller ? 'bestSellerIcon' : 'bestSellerIcon1'}
+                            src={bestSeller}
+                            alt=''
+                          />
+                        ) : (
+                          <div className='bestSellerIcon' />
+                        )}
                         {isItemInCart(item) ? (
                           <>
                             <span
-                              className={item.bestSeller ? 'alreadyInCart' : 'alreadyInCart1'}
+                              className={
+                                item.bestSeller ? 'apptizeralreadyInCart' : 'apptizeralreadyInCart1'
+                              }
                               key={item.name}
                             >
                               Already in Cart
                             </span>
                             <div
-                              className='addAgainToCartButton'
+                              className={
+                                item.bestSeller
+                                  ? 'apptizeraddAgainToCartButton'
+                                  : 'apptizeraddAgainToCartButton1'
+                              }
                               onClick={() => {
                                 return increaseItemQuantity(item.name);
                               }}
@@ -491,7 +527,7 @@ const Menu = () => {
                           </>
                         ) : (
                           <div
-                            className='addToCart'
+                            className={item.bestSeller ? 'apptizeraddToCart' : 'apptizeraddToCart'}
                             onClick={() => {
                               return addItem({
                                 item: item.name,
@@ -550,13 +586,19 @@ const Menu = () => {
                         {isItemInCart(item) ? (
                           <>
                             <span
-                              className={item.bestSeller ? 'alreadyInCart' : 'alreadyInCart1'}
+                              className={
+                                item.bestSeller ? 'soupsAlreadyInCart' : 'soupsAlreadyInCart1'
+                              }
                               key={item.name}
                             >
                               Already in Cart
                             </span>
                             <div
-                              className='addAgainToCartButton'
+                              className={
+                                item.bestSeller
+                                  ? 'soupsAddAgainToCartButton'
+                                  : 'soupsAddAgainToCartButton1'
+                              }
                               onClick={() => {
                                 return increaseItemQuantity(item.name);
                               }}
@@ -568,7 +610,7 @@ const Menu = () => {
                           </>
                         ) : (
                           <div
-                            className='addToCart'
+                            className={item.bestSeller ? 'soupsAddToCart' : 'soupsAddToCart1'}
                             onClick={() => {
                               return addItem({
                                 item: item.name,

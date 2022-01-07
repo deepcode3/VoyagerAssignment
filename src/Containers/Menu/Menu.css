@@ -12,7 +12,7 @@
   width: 100%;
   height: fit-content;
   position: absolute;
-  top: 520px;
+  top: 500px;
   padding-bottom: 300px;
 }
 .menuSeperator {
@@ -31,6 +31,7 @@
   outline: none;
   position: relative;
   left: -55px;
+  top: 20px;
 }
 .menuSearchBar::placeholder {
   height: 19px;
@@ -45,8 +46,8 @@
 }
 .menuSearchIcon {
   position: relative;
-  left: -680px;
-  top: 8px;
+  left: -970px;
+  top: 27px;
   height: 18px;
   width: 22px;
   opacity: 0.6;
@@ -477,6 +478,7 @@
   position: relative;
   top: 20px;
   margin-bottom: 20px;
+  padding-bottom: 4px;
 }
 .menuApptizers {
   width: 637px;
@@ -506,6 +508,7 @@
   position: relative;
   top: 75px;
   margin-bottom: 20px;
+  padding-bottom: 4px;
 }
 .menuSoups {
   width: 637px;
@@ -535,6 +538,7 @@
   position: relative;
   top: 135px;
   margin-bottom: 20px;
+  padding-bottom: 4px;
 }
 .itemImage {
   height: 105px;
@@ -566,7 +570,7 @@
   letter-spacing: 0;
   line-height: 17px;
   position: relative;
-  top: -98px;
+  top: -115px;
   left: 130px;
 }
 .recomendedCustomizable {
@@ -578,11 +582,11 @@
   letter-spacing: 0;
   line-height: 15px;
   position: relative;
-  top: -90px;
+  top: -110px;
   left: 130px;
 }
 .recomendedDescription {
-  height: 34px;
+  height: fit-content;
   width: 349px;
   color: #9b9b9b;
   font-family: 'Open Sans';
@@ -590,7 +594,19 @@
   letter-spacing: 0;
   line-height: 17px;
   position: relative;
-  top: -90px;
+  top: -110px;
+  left: 130px;
+}
+.recomendedDescription1 {
+  height: fit-content;
+  width: 349px;
+  color: #9b9b9b;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 17px;
+  position: relative;
+  top: -125px;
   left: 130px;
 }
 .nonVeg {
@@ -612,6 +628,11 @@
   top: -200px;
   left: 550px;
 }
+.bestSellerIcon1 {
+  position: relative;
+  top: -200px;
+  left: 550px;
+}
 .addAgainToCartButton {
   height: 30px;
   width: 106px;
@@ -623,6 +644,62 @@
   left: 530px;
   cursor: pointer;
 }
+.addAgainToCartButton1 {
+  height: 30px;
+  width: 106px;
+  border: #ff7c02 1px solid;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: -135px;
+  left: 530px;
+  cursor: pointer;
+}
+.apptizeraddAgainToCartButton {
+  height: 30px;
+  width: 106px;
+  border: #ff7c02 1px solid;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: -150px;
+  left: 530px;
+  cursor: pointer;
+}
+.apptizeraddAgainToCartButton1 {
+  height: 30px;
+  width: 106px;
+  border: #ff7c02 1px solid;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: -150px;
+  left: 530px;
+  cursor: pointer;
+}
+.soupsAddAgainToCartButton {
+  height: 30px;
+  width: 106px;
+  border: #ff7c02 1px solid;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: -160px;
+  left: 530px;
+  cursor: pointer;
+}
+.soupsAddAgainToCartButton1 {
+  height: 30px;
+  width: 106px;
+  border: #ff7c02 1px solid;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  position: relative;
+  top: -160px;
+  left: 530px;
+  cursor: pointer;
+}
+
 .addAgainToCartButtonText {
   height: 19px;
   width: 30px;
@@ -660,9 +737,63 @@
   line-height: 14px;
   text-align: center;
   position: relative;
+  top: -140px;
+  left: 550px;
+}
+.apptizeralreadyInCart {
+  height: 14px;
+  width: 78px;
+  color: #49bb5c;
+  font-family: 'Open Sans';
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 14px;
+  text-align: center;
+  position: relative;
   top: -155px;
   left: 550px;
 }
+
+.apptizeralreadyInCart1 {
+  height: 14px;
+  width: 78px;
+  color: #49bb5c;
+  font-family: 'Open Sans';
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 14px;
+  text-align: center;
+  position: relative;
+  top: -155px;
+  left: 550px;
+}
+.soupsAlreadyInCart {
+  height: 14px;
+  width: 78px;
+  color: #49bb5c;
+  font-family: 'Open Sans';
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 14px;
+  text-align: center;
+  position: relative;
+  top: -165px;
+  left: 480px;
+}
+.soupsAlreadyInCart1 {
+  height: 14px;
+  width: 78px;
+  color: #49bb5c;
+  font-family: 'Open Sans';
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 14px;
+  text-align: center;
+  position: relative;
+  top: -165px;
+  left: 550px;
+}
+
 .addToCart {
   height: 30px;
   width: 87px;
@@ -671,6 +802,61 @@
   border: #ff7c02 1px solid;
   position: relative;
   top: -155px;
+  left: 540px;
+  cursor: pointer;
+}
+.addToCart1 {
+  height: 30px;
+  width: 87px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  border: #ff7c02 1px solid;
+  position: relative;
+  top: -120px;
+  left: 540px;
+  cursor: pointer;
+}
+.apptizeraddToCart {
+  height: 30px;
+  width: 87px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  border: #ff7c02 1px solid;
+  position: relative;
+  top: -140px;
+  left: 540px;
+  cursor: pointer;
+}
+.apptizeraddToCart1 {
+  height: 30px;
+  width: 87px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  border: #ff7c02 1px solid;
+  position: relative;
+  top: -80px;
+  left: 540px;
+  cursor: pointer;
+}
+.soupsAddToCart {
+  height: 30px;
+  width: 87px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  border: #ff7c02 1px solid;
+  position: relative;
+  top: -160px;
+  left: 540px;
+  cursor: pointer;
+}
+.soupsAddToCart1 {
+  height: 30px;
+  width: 87px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+  border: #ff7c02 1px solid;
+  position: relative;
+  top: -145px;
   left: 540px;
   cursor: pointer;
 }
