@@ -65,9 +65,9 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 17px;
-  position: relative;
-  left: 355px;
-  top: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 13px;
   word-spacing: 3px;
 }
 .restaurantHalfBg {
@@ -86,9 +86,10 @@
   font-weight: 600;
   letter-spacing: 0;
   line-height: 34px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-  left: 355px;
-  top: 16px;
+  top: 20px;
 }
 .restaurantBody {
   height: 1140px;
