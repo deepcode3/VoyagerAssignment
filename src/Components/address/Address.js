@@ -32,7 +32,7 @@ const CartAddress = () => {
   } = useForm({
     resolver: yupResolver(mobileSchema),
   });
-  const { addressItems, removeItem } = useContext(ProfileContext);
+  const { addressItems, removeItem1 } = useContext(ProfileContext);
 
   const history = useHistory();
 
@@ -90,7 +90,7 @@ const CartAddress = () => {
                 {addressItems.map((item, index) => {
                   return (
                     <li key={index.toString()}>
-                      <AddressCard item={item} removeItem={removeItem} index={index} />
+                      <AddressCard item={item} removeItem={removeItem1} index={index} />
                     </li>
                   );
                 })}
