@@ -22,114 +22,118 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
   const [navSelected, setNavSelected] = useState(from);
   return (
     <>
-      <div className='header'>
-        <Header />
-      </div>
+      <Header />
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
       <div className='body'>
-        <div className='restaurantSearchBar'>
-          <span className='restaurantsInfo'>Delivery ASAP</span>
-          <div className='restaurantSearch'>
-            <SearchBar searchValue={searchKey} from='menu' />
+        <div className='bodySeperator'>
+          <div className='restaurantSearchBar'>
+            <span className='restaurantsInfo'>Delivery ASAP</span>
+            <div className='restaurantSearch'>
+              <SearchBar searchValue={searchKey} from='menu' />
+            </div>
+            <div className='restaurantLocation' from='menu'>
+              <LocationSetter locationValue={location} />
+            </div>
+            <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
           </div>
-          <div className='restaurantLocation' from='menu'>
-            <LocationSetter locationValue={location} />
-          </div>
-          <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
         </div>
-        <div className='restaurantLocators'>
-          <div className='restaurantLocatorInfo'>
-            Home UAE Explore Great Breakfasts
-            {restaurant}
+        <div className=''>
+          <div className='restaurantLocators'>
+            <div className='restaurantLocatorInfo'>
+              Home UAE Explore Great Breakfasts
+              {restaurant}
+            </div>
           </div>
         </div>
         <img src={halfBg} alt='' className='menuHalfBgImage' />
-        <img src={menuKebab} alt='' className='menuKebabImage' />
-        <img src={spoonPoke} className='spoonPoke' alt='' />
-        <div className='restaurantDetails'>
-          <span className='menuRestaurantName'>{restaurant}</span>
-          <br />
-          <span className='menuItemName'>{item}</span>
-          <div className='menuRatingDetails'>
-            <img src={greenRectange} className='greenRect' alt='' />
-            <span className='menuRestaurantRating'>4.3</span>
-            <span className='menuDot' />
-            <span className='menuTimming'>63 mins</span>
-            <span className='menuDot1' />
-            <span className='menuMinOrder'>AED30 min order</span>
-            <img src={timing} className='timming' alt='' />
-            <span className='timmingaText'>11:00 AM - 10:00 PM</span>
-          </div>
-          <span className='deliveryRatings'>Delivery rating for last 5 orders</span>
-          <div className='menuLine' />
-          <div className='menuRatingStars'>
-            <div className='menuStarBox1'>
-              <img src={greenStar} className='menuStar' alt='' />
-              <div className='menuRating1'>4</div>
+        <div className='semiBgComponentSeperator'>
+          <img src={menuKebab} alt='' className='menuKebabImage' />
+          <img src={spoonPoke} className='spoonPoke' alt='' />
+          <div className='restaurantDetails'>
+            <span className='menuRestaurantName'>{restaurant}</span>
+            <br />
+            <span className='menuItemName'>{item}</span>
+            <div className='menuRatingDetails'>
+              <img src={greenRectange} className='greenRect' alt='' />
+              <span className='menuRestaurantRating'>4.3</span>
+              <span className='menuDot' />
+              <span className='menuTimming'>63 mins</span>
+              <span className='menuDot1' />
+              <span className='menuMinOrder'>AED30 min order</span>
+              <img src={timing} className='timming' alt='' />
+              <span className='timmingaText'>11:00 AM - 10:00 PM</span>
             </div>
-            <div className='menuStarBox2'>
-              <img src={greenStar} className='menuStar' alt='' />
-              <div className='menuRating1'>4</div>
-            </div>
-            <div className='menuStarBox3'>
-              <img src={yellowStar} className='menuStar' alt='' />
-              <div className='menuRating2'>3</div>
-            </div>
-            <div className='menuStarBox4'>
-              <img src={greenStar} className='menuStar' alt='' />
-              <div className='menuRating1'>4</div>
-            </div>
-            <div className='menuStarBox5'>
-              <img src={redStar} className='menuStar' alt='' />
-              <div className='menuRating3'>2</div>
+            <span className='deliveryRatings'>Delivery rating for last 5 orders</span>
+            <div className='menuLine' />
+            <div className='menuRatingStars'>
+              <div className='menuStarBox1'>
+                <img src={greenStar} className='menuStar' alt='' />
+                <div className='menuRating1'>4</div>
+              </div>
+              <div className='menuStarBox2'>
+                <img src={greenStar} className='menuStar' alt='' />
+                <div className='menuRating1'>4</div>
+              </div>
+              <div className='menuStarBox3'>
+                <img src={yellowStar} className='menuStar' alt='' />
+                <div className='menuRating2'>3</div>
+              </div>
+              <div className='menuStarBox4'>
+                <img src={greenStar} className='menuStar' alt='' />
+                <div className='menuRating1'>4</div>
+              </div>
+              <div className='menuStarBox5'>
+                <img src={redStar} className='menuStar' alt='' />
+                <div className='menuRating3'>2</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className='menuKebab' />
-        <div className='navBar'>
-          <div
-            className={navSelected === 'menu' ? 'menu' : 'notMenu'}
-            onClick={() => {
-              setNavSelected('menu');
-              history.push(`/${searchKey}/${location}/menu/${restaurant}/${item}`);
-            }}
-            role='button'
-            onKeyDown={null}
-          >
-            MENU
-          </div>
-          <div
-            className={navSelected === 'overview' ? 'overview' : 'notOverview'}
-            onClick={() => {
-              setNavSelected('overview');
-              history.push(`/${searchKey}/${location}/overview/${restaurant}/${item}`);
-            }}
-            role='button'
-            onKeyDown={null}
-          >
-            OVERVIEW
-          </div>
-          <div
-            className={navSelected === 'reviews' ? 'reviews' : 'notReview'}
-            onClick={() => {
-              setNavSelected('reviews');
-              history.push(`/${searchKey}/${location}/reviews/${restaurant}/${item}`);
-            }}
-            role='button'
-            onKeyDown={null}
-          >
-            REVIEW & RATINGS
-          </div>
-          <div
-            className={navSelected === 'gallery' ? 'gallery' : 'notGallery'}
-            onClick={() => {
-              setNavSelected('gallery');
-              history.push(`/${searchKey}/${location}/gallery/${restaurant}/${item}/`);
-            }}
-            role='button'
-            onKeyDown={null}
-          >
-            GALLERY
+          <div className='menuKebab' />
+          <div className='navBar'>
+            <div
+              className={navSelected === 'menu' ? 'menu' : 'notMenu'}
+              onClick={() => {
+                setNavSelected('menu');
+                history.push(`/${searchKey}/${location}/menu/${restaurant}/${item}`);
+              }}
+              role='button'
+              onKeyDown={null}
+            >
+              MENU
+            </div>
+            <div
+              className={navSelected === 'overview' ? 'overview' : 'notOverview'}
+              onClick={() => {
+                setNavSelected('overview');
+                history.push(`/${searchKey}/${location}/overview/${restaurant}/${item}`);
+              }}
+              role='button'
+              onKeyDown={null}
+            >
+              OVERVIEW
+            </div>
+            <div
+              className={navSelected === 'reviews' ? 'reviews' : 'notReview'}
+              onClick={() => {
+                setNavSelected('reviews');
+                history.push(`/${searchKey}/${location}/reviews/${restaurant}/${item}`);
+              }}
+              role='button'
+              onKeyDown={null}
+            >
+              REVIEW & RATINGS
+            </div>
+            <div
+              className={navSelected === 'gallery' ? 'gallery' : 'notGallery'}
+              onClick={() => {
+                setNavSelected('gallery');
+                history.push(`/${searchKey}/${location}/gallery/${restaurant}/${item}/`);
+              }}
+              role='button'
+              onKeyDown={null}
+            >
+              GALLERY
+            </div>
           </div>
         </div>
       </div>

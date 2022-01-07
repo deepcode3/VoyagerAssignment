@@ -6,7 +6,7 @@
 }
 .semiBg {
   height: 130px;
-  width: 1700px;
+  width: 100%;
 }
 .body {
   width: 100%;
@@ -53,9 +53,8 @@
 .restaurantLocators {
   position: relative;
   top: -80px;
-  left: -352px;
   height: 44px;
-  width: 1700px;
+  width: 100%;
   background-color: #c5cae238;
 }
 .restaurantLocatorInfo {
@@ -74,9 +73,8 @@
 .restaurantHalfBg {
   top: -78px;
   position: relative;
-  left: -352px;
   background-color: #c5cae238;
-  width: 1700px;
+  width: 100%;
   height: fit-content;
 }
 .heading {

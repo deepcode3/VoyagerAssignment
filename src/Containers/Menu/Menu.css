@@ -1,5 +1,5 @@
 .menuBody {
-  width: 960px;
+  width: 100%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -15,9 +15,14 @@
   top: 520px;
   padding-bottom: 300px;
 }
+.menuSeperator {
+  width: 961px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .menuSearchBar {
   height: 50px;
-  width: 580px;
+  width: 870px;
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.07);
@@ -57,7 +62,7 @@
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   position: relative;
-  top: -55px;
+  top: 75px;
   left: 610px;
   display: block;
   overflow: auto;

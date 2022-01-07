@@ -50,9 +50,11 @@ const Restaurant = ({ data, searchKey, location }) => {
             </div>
             <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
           </div>
-          <div className='restaurantLocators'>
-            <div className='restaurantLocatorInfo'>Home UAE Explore Great Breakfasts</div>
-          </div>
+        </div>
+        <div className='restaurantLocators'>
+          <div className='restaurantLocatorInfo'>Home UAE Explore Great Breakfasts</div>
+        </div>
+        <div className=''>
           <div className='restaurantHalfBg'>
             <div className='heading'>Breakfast in Dubai</div>
             <div className='filterOption'>

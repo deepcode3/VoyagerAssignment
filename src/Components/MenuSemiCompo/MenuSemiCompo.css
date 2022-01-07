@@ -1,9 +1,12 @@
 .menuHalfBgImage {
   height: 267px;
-  width: 177%;
+  width: 100%;
   position: relative;
-  left: -350px;
-  top: -80px;
+}
+.semiBgComponentSeperator {
+  width: 961px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .menuKebabImage {
   height: 336px;
