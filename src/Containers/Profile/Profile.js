@@ -9,10 +9,11 @@ import mailicn from '../../Assets/Icons/mail_icn.png';
 import icnInfo from '../../Assets/Icons/icn_info_small.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
 import Profileroute from '../../Components/Profilerouter/index';
-import { UserContext } from '../../Context/UserContext';
+import { UserContext } from '../../Context/UserContext/index';
 
 const Profile = ({ setOpen }) => {
   const { currentUser } = useContext(UserContext);
+  console.log(currentUser);
   return (
     <>
       <Profilediv>
