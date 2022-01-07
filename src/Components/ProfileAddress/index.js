@@ -1,14 +1,13 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
-import { addressContext } from '../../Context/ProfileContext';
+import { ProfileContext } from '../../Context/ProfileContext';
 import Modal from './modal';
 import AddressCard from './AddressCard';
 
 const Address = () => {
-  const { addressItems, addItem, removeItem } = useContext(addressContext);
+  const { addressItems, addItem1, removeItem1 } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
-  const [items, setItems] = useState([]);
   const initialFormData = Object.freeze({
     location: '',
     city: '',
@@ -39,23 +38,14 @@ const Address = () => {
             {addressItems.map((item, index) => {
               return (
                 <li key={index.toString()} className='list'>
-                  <AddressCard item={item} removeItem={removeItem} index={index} />
+                  <AddressCard item={item} removeItem={removeItem1} index={index} />
                 </li>
               );
             })}
           </ul>
         </div>
       </div>
-      {open && (
-        <Modal
-          setOpen={setOpen}
-          values={values}
-          setValues={setValues}
-          addItem={addItem}
-          setItems={setItems}
-          items={items}
-        />
-      )}
+      {open && <Modal setOpen={setOpen} values={values} setValues={setValues} addItem={addItem1} />}
     </Div>
   );
 };

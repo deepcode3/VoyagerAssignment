@@ -25,16 +25,10 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
             <LocationSetter locationValue={location} />
           </div>
         </div>
-        <img
-          className='crestaurantDateTimeButton'
-          alt='schedule-button'
-          src={dateTime}
-        />
+        <img className='crestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
       </div>
       <div className='crestaurantLocators'>
-        <div className='crestaurantLocatorInfo'>
-          Home UAE Explore Great breakfasts My Cart
-        </div>
+        <div className='crestaurantLocatorInfo'>Home UAE Explore Great breakfasts My Cart</div>
       </div>
     </>
   );

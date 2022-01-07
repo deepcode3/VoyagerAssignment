@@ -114,7 +114,7 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
             <input
               type='text'
               className='input'
-              placeholder='there here and there'
+              placeholder='Sheikh Zayed Rd'
               value={values.address}
               required
               onChange={handleChange}

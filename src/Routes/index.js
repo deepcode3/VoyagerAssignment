@@ -22,7 +22,7 @@ import PrivacyPolicy from '../Components/FooterLinker/PrivacyPolicy';
 import Contacts from '../Components/FooterLinker/FooterContact';
 import UserContextProvider from '../Context/UserContext';
 import AccountsContextProvider from '../Context/AccountsContext';
-import AddressContextProvider from '../Context/ProfileContext';
+import ProfileContextProvider from '../Context/ProfileContext';
 import CartLayout from '../Containers/CartLayouts/CartLayout';
 
 const Routing = () => {
@@ -52,15 +52,17 @@ const Routing = () => {
                 </CartContextProvider>
               </Route>
               <Route exact path='/address'>
-                <AddressContextProvider>
+                <ProfileContextProvider>
                   <CartLayout Component={CartAddress} />
-                </AddressContextProvider>
+                </ProfileContextProvider>
               </Route>
               <Route path='/payment'>
                 <CartLayout Component={Payment} />
               </Route>
               <Route path='/finalpay'>
-                <CartLayout Component={FinalPayment} />
+                <ProfileContextProvider>
+                  <CartLayout Component={FinalPayment} />
+                </ProfileContextProvider>
               </Route>
               <Route path='/cart-home'>
                 <CartLayout Component={CartHome} />
@@ -85,9 +87,9 @@ const Routing = () => {
                 <Gallery />
               </Route>
               <Route path='/profile'>
-                <AddressContextProvider>
+                <ProfileContextProvider>
                   <ProfileMain />
-                </AddressContextProvider>
+                </ProfileContextProvider>
               </Route>
               <Route path='/cart-layout'>
                 <CartLayout />

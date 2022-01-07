@@ -7,12 +7,14 @@ import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
 
 const AddressCard = ({ item, removeItem, index }) => {
   const buttonMap = {
-    button1: 'button1',
-    button2: 'button2',
+    active: true,
+    unactive: false,
   };
-  const [primary, setPrimary] = useState();
+  const [primary, setPrimary] = useState(buttonMap.unactive);
   const handleClick = (button) => {
-    setPrimary(button);
+    if (button === index.toString()) {
+      setPrimary(buttonMap.active);
+    }
   };
   return (
     <Div key={index.toString()}>
@@ -20,13 +22,13 @@ const AddressCard = ({ item, removeItem, index }) => {
       <div
         className='primary-1'
         onClick={() => {
-          return handleClick(buttonMap.button2);
+          return handleClick(buttonMap.active);
         }}
         role='button'
         onKeyDown={null}
       >
         <img
-          src={primary === buttonMap.button2 ? icnCheckActive : icnCheckInactive}
+          src={primary === buttonMap.active ? icnCheckActive : icnCheckInactive}
           alt='icn'
           style={{ float: 'left' }}
         />
