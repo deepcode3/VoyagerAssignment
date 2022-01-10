@@ -15,9 +15,11 @@ import icnFrenchfries from '../../Assets/Icons/icn_frenchfries.png';
 import icnIcecream from '../../Assets/Icons/icn_icecream.png';
 import icnPizza from '../../Assets/Icons/icn_pizza.png';
 import { AccountsContext } from '../../Context/AccountsContext';
+import { UserContext } from '../../Context/UserContext';
 
 const EditModal = ({ setOpen }) => {
   const { editProfile } = useContext(AccountsContext);
+  const { currentUser, setUser } = useContext(UserContext);
   return (
     <ModalBack>
       <div className='ModalContainer'>
@@ -62,6 +64,30 @@ const EditModal = ({ setOpen }) => {
               className='save'
               onClick={() => {
                 setOpen(false);
+                editProfile({
+                  email: currentUser.email,
+                  username: 'username',
+                  fullname: 'firstname lastname',
+                  mobilenumber: '991 8999999999',
+                });
+                setUser({
+                  countrycode: '991',
+                  email: currentUser.email,
+                  firstname: 'firstname',
+                  lastname: 'lastname',
+                  mobile: '8999999999',
+                  password: '123',
+                  username: 'username',
+                });
+                // setCurrentUser({
+                //   countrycode: mobilenumber.split(' ')[0],
+                //   email: currentUser.email,
+                //   firstname: fullname.split(' ')[0],
+                //   lastname: fullname.split(' ')[0],
+                //   mobile: mobilenumber.split(' ')[1],
+                //   password: '123',
+                //   username: 'username',
+                // });
               }}
               role='button'
               onKeyDown={null}
