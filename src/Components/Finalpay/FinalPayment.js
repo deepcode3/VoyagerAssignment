@@ -27,7 +27,15 @@ const FinalPayment = () => {
         <PaymentOption />
         <p className='mycards'>My Card</p>
         <div className='payaddnew'>
-          <p className='payaddnewtext'>ADD NEW</p>
+          <p
+            className='payaddnewtext'
+            onKeyDown={null}
+            onClick={() => {
+              history.push('/profile/profile-Pay');
+            }}
+          >
+            ADD NEW
+          </p>
         </div>
         <div>
           <div className='pay_container'>
