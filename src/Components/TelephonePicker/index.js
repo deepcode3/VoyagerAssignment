@@ -61,7 +61,11 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
             </DropDownContainer>
           </OutsideAlerter>
         ) : null}
-        <MobileNumber name={name} {...register(name)} />
+        <MobileNumber
+          name={name}
+          {...register(name)}
+          className={msg !== undefined ? 'redBorder' : null}
+        />
       </NumContainer>
       {msg !== undefined ? <p className='errorMobile'>{msg}</p> : null}
     </FormContainerTel>
@@ -77,7 +81,7 @@ TelephonePicker.propTypes = {
   setSelectedCode: PropTypes.func.isRequired,
 };
 TelephonePicker.defaultProps = {
-  msg: null,
+  msg: undefined,
 };
 const FormContainerTel = styled.div`
   height: 53px;
@@ -91,6 +95,9 @@ const FormContainerTel = styled.div`
     letter-spacing: -0.2px;
     height: 10px;
     margin-top: 0px;
+  }
+  .redBorder {
+    border-bottom: 1px solid #ed1b2e;
   }
 `;
 const NumContainer = styled.div`
