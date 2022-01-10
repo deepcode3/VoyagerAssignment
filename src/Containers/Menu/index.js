@@ -5,6 +5,7 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable no-shadow */
 /* eslint-disable no-restricted-syntax */
+/* eslint-disable operator-linebreak */
 import React, { useContext, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
@@ -161,7 +162,7 @@ const Menu = () => {
     if (cartItems) {
       // eslint-disable-next-line no-restricted-syntax
       for (const value of Object.values(cartItems)) {
-        if (value.item === item.name && value.status === true) {
+        if (value.item === item.name && value.restaurant === restaurant && value.status === true) {
           return true;
         }
       }
@@ -226,7 +227,7 @@ const Menu = () => {
                       // eslint-disable-next-line array-callback-return
                       // eslint-disable-next-line consistent-return
                       .filter((value) => {
-                        if (value.status === true) {
+                        if (value.status === true && value.restaurant === restaurant) {
                           return value;
                         }
                       })
