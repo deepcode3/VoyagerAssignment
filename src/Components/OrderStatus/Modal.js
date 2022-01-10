@@ -200,7 +200,16 @@ const Modal = ({ closemodal }) => {
           <div className='statuslastline' />
         </div>
         <div className='statussubmit'>
-          <p className='statussubtext'>SUBMIT</p>
+          <p
+            className='statussubtext'
+            type='button'
+            onKeyDown={null}
+            onClick={() => {
+              closemodal(false);
+            }}
+          >
+            SUBMIT
+          </p>
         </div>
       </div>
     </div>

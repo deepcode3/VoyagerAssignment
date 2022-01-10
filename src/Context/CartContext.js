@@ -51,6 +51,46 @@ const CartContextProvider = (props) => {
     updatedArray[index].quantity -= 1;
     setCartItems(updatedArray);
   };
+
+  const restaurantItemsCount = (restaurantName) => {
+    if (cartItems === null) {
+      return 0;
+    }
+    const result = cartItems.filter((obj) => {
+      return obj.restaurant === restaurantName;
+    });
+    console.log(result);
+    return result.length;
+  };
+
+  const totalPrice = (restaurantName) => {
+    if (cartItems === null) {
+      return 0;
+    }
+    const result = cartItems.filter((obj) => {
+      return obj.restaurant === restaurantName;
+    });
+    if (result === null) {
+      return 0;
+    }
+    function amount(item) {
+      return item.price * item.quantity;
+    }
+    function sum(prev, next) {
+      return prev + next;
+    }
+
+    const total = result.map(amount).reduce(sum, 0);
+    return total;
+  };
+
+  const removeAllRestaurantItems = (restaurantName) => {
+    setCartItems(
+      cartItems.filter((item) => {
+        return item.restaurant !== restaurantName;
+      })
+    );
+  };
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const value = {
     cartItems,
@@ -59,6 +99,9 @@ const CartContextProvider = (props) => {
     clearCartContext,
     increaseItemQuantity,
     decreaseItemQuantity,
+    restaurantItemsCount,
+    totalPrice,
+    removeAllRestaurantItems,
   };
   // eslint-disable-next-line react/destructuring-assignment
   return <cartContext.Provider value={value}>{props.children}</cartContext.Provider>;

@@ -65,7 +65,9 @@ const Routing = () => {
                 </ProfileContextProvider>
               </Route>
               <Route path='/cart-home'>
-                <CartLayout Component={CartHome} />
+                <CartContextProvider>
+                  <CartLayout Component={CartHome} />
+                </CartContextProvider>
               </Route>
               <Route path='/status'>
                 <Orderstatus />

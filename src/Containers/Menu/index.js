@@ -530,6 +530,7 @@ const Menu = () => {
                             className={item.bestSeller ? 'apptizeraddToCart' : 'apptizeraddToCart'}
                             onClick={() => {
                               return addItem({
+                                restaurant,
                                 item: item.name,
                                 price: item.cost,
                                 icon: item.image,
@@ -613,6 +614,7 @@ const Menu = () => {
                             className={item.bestSeller ? 'soupsAddToCart' : 'soupsAddToCart1'}
                             onClick={() => {
                               return addItem({
+                                restaurant,
                                 item: item.name,
                                 price: item.cost,
                                 icon: item.image,
