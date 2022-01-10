@@ -24,13 +24,27 @@ const CartContextProvider = (props) => {
       });
     }
   };
-  const deleteItem = (id) => {
+  // const spliceFunction = (arr, index) => {
+  //   arr.splice(index, 1);
+  //   return arr;
+  // };
+  // const deleteItem = (id, restaurant) => {
+  //   console.log(id, restaurant);
+  //   const objIndex = cartItems.findIndex((obj) => {
+  //     return obj.item === id && obj.restaurant === restaurant;
+  //   });
+  //   console.log(objIndex);
+  //   delete cartItems[objIndex];
+  //   setCartItems(spliceFunction(cartItems, objIndex));
+  // };
+  const deleteItem = (id, restaurant) => {
     setCartItems(
       cartItems.filter((item) => {
-        return item.item !== id;
+        return !(item.item === id && item.restaurant === restaurant);
       })
     );
   };
+
   const clearCartContext = () => {
     localStorage.clear('cartItems');
     window.location.reload();

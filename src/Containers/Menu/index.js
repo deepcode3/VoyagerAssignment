@@ -284,7 +284,7 @@ const Menu = () => {
                                   : 'menuCartRemove2'
                               }
                               onClick={() => {
-                                return deleteItem(item.item);
+                                return deleteItem(item.item, restaurant);
                               }}
                               role='button'
                               onKeyDown={null}
