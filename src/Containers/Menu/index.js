@@ -416,6 +416,7 @@ const Menu = () => {
                           className='addToCart'
                           onClick={() => {
                             return addItem({
+                              restaurant,
                               item: item.name,
                               price: item.cost,
                               icon: item.image,
@@ -493,6 +494,7 @@ const Menu = () => {
                           className='addToCart'
                           onClick={() => {
                             return addItem({
+                              restaurant,
                               item: item.name,
                               price: item.cost,
                               icon: item.image,
@@ -570,6 +572,7 @@ const Menu = () => {
                           className='addToCart'
                           onClick={() => {
                             return addItem({
+                              restaurant,
                               item: item.name,
                               price: item.cost,
                               icon: item.image,
