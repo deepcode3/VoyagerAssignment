@@ -41,32 +41,32 @@ const EditModal = ({ setOpen }) => {
               <label className='label'>Phone Number</label>
               <input type='text' className='input' placeholder='7975312513' />
             </div>
+            <hr className='line-3' />
+            <span className='avtar_text'>Choose a user avatar</span>
+            <div className='avtars'>
+              <img src={icnBeer} alt='avtars' />
+              <img src={icnBread} alt='avtars' />
+              <img src={icnBurger} alt='avtars' />
+              <img src={icnChicken} alt='avtars' />
+              <img src={icnCupcake} alt='avtars' />
+              <img src={icnDonut} alt='avtars' />
+              <img src={icnFrenchfries} alt='avtars' />
+              <img src={icnIcecream} alt='avtars' />
+              <img src={icnPizza} alt='avtars' />
+            </div>
+            <div className='save-button'>
+              <button
+                className='save'
+                type='button'
+                onClick={() => {
+                  setOpen(false);
+                }}
+                onKeyDown={null}
+              >
+                Save
+              </button>
+            </div>
           </form>
-          <hr className='line-3' />
-          <span className='avtar_text'>Choose a user avatar</span>
-          <div className='avtars'>
-            <img src={icnBeer} alt='avtars' />
-            <img src={icnBread} alt='avtars' />
-            <img src={icnBurger} alt='avtars' />
-            <img src={icnChicken} alt='avtars' />
-            <img src={icnCupcake} alt='avtars' />
-            <img src={icnDonut} alt='avtars' />
-            <img src={icnFrenchfries} alt='avtars' />
-            <img src={icnIcecream} alt='avtars' />
-            <img src={icnPizza} alt='avtars' />
-          </div>
-          <div className='save-button'>
-            <span
-              className='save'
-              onClick={() => {
-                setOpen(false);
-              }}
-              role='button'
-              onKeyDown={null}
-            >
-              Save
-            </span>
-          </div>
         </div>
       </div>
     </ModalBack>
@@ -74,7 +74,7 @@ const EditModal = ({ setOpen }) => {
 };
 export default EditModal;
 EditModal.propTypes = {
-  setOpen: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
 
 const ModalBack = styled.div`

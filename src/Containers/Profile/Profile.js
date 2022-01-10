@@ -22,7 +22,6 @@ const Profile = ({ setOpen }) => {
             <img src={profilePic} alt='pic' className='profile_img' />
           </div>
           <div className='name-section'>
-            <span className='username'>{currentUser.firstname}</span>
             <span
               className='edit'
               type='button'
@@ -34,17 +33,18 @@ const Profile = ({ setOpen }) => {
             >
               Edit
             </span>
+            <span className='username'>{currentUser.firstname}</span>
             <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
             <span className='num'>
               <img className='phone-icn' src={phoneicn} alt='icn' />
               {`+${currentUser.countrycode} ${currentUser.mobile}`}
             </span>
-            <br className='line-3 ' />
+            <hr className='line-1 ' />
             <span className='abdulla-foodie-com '>
               <img className='mail-icn' src={mailicn} alt='icn' />
               {currentUser.email}
             </span>
-            <br className='line-3 ' />
+            <hr className='line-2 ' />
             <span className='credits-earned'>Credits earned-</span>
             <span className='credits-num'>256</span>
             <img className='icn-info-small' src={icnInfo} alt='icn' />
@@ -86,7 +86,6 @@ const Profilediv = styled.div`
   justify-content: center;
   align-items: center;
   background-image: url(${banner});
-
   .align {
     height: 261px;
     width: 940px;
@@ -211,6 +210,16 @@ const Profilediv = styled.div`
     position: absolute;
     top: 86px;
   }
+  .line-1 {
+    box-sizing: border-box;
+    height: 21px;
+    width: 0.5px;
+    color: 1px solid #ffffff;
+    opacity: 0.37;
+    position: absolute;
+    top: 77px;
+    left: 173px;
+  }
   .phone-icn {
     height: 22px;
     width: 16.5px;
@@ -221,6 +230,16 @@ const Profilediv = styled.div`
     width: 25px;
     padding-right: 10px;
   }
+  .line-2 {
+    box-sizing: border-box;
+    height: 21px;
+    width: 0.5px;
+    color: 1px solid #ffffff;
+    opacity: 0.37;
+    position: absolute;
+    top: 77px;
+    left: 487px;
+  }
   .abdulla-foodie-com {
     height: 22px;
     color: #ffffff;
@@ -230,7 +249,7 @@ const Profilediv = styled.div`
     line-height: 22px;
     position: absolute;
     top: 86px;
-    left: 213px;
+    left: 200px;
   }
   .credits-earned {
     height: 22px;
@@ -240,7 +259,7 @@ const Profilediv = styled.div`
     letter-spacing: 0;
     line-height: 22px;
     top: 86px;
-    left: 443px;
+    left: 510px;
     position: absolute;
   }
   .credits-num {
@@ -253,14 +272,14 @@ const Profilediv = styled.div`
     letter-spacing: 0;
     line-height: 33px;
     top: 79px;
-    left: 565px;
+    left: 630px;
     position: absolute;
   }
   .icn-info-small {
     height: 19px;
     width: 19px;
     top: 89px;
-    left: 620px;
+    left: 680px;
     position: absolute;
   }
   .edit {
@@ -280,8 +299,8 @@ const Profilediv = styled.div`
   .line-3 {
     box-sizing: border-box;
     height: 21px;
-    width: 3px;
-    border: 1px solid #ffffff;
+    width: 0.5px;
+    color: 1px solid #ffffff;
     opacity: 0.37;
   }
 `;
