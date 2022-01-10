@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 import { React, useState, createContext } from 'react';
 import PropTypes from 'prop-types';
 
@@ -32,6 +33,7 @@ const AccountsContextProvider = ({ children }) => {
     return result[0];
   };
   const addAccount = (data) => {
+    data.username = data.firstname;
     if (accounts === null) {
       localStorage.setItem('createdAccounts', JSON.stringify([data]));
       setAccounts([data]);
@@ -50,6 +52,17 @@ const AccountsContextProvider = ({ children }) => {
     accounts[objIndex].password = data.password;
     localStorage.setItem('createdAccounts', JSON.stringify(accounts));
   };
+  const editProfile = (data) => {
+    const objIndex = accounts.findIndex((obj) => {
+      return obj.email === data.email;
+    });
+    accounts[objIndex].firstname = data.name.split(' ')[0];
+    accounts[objIndex].lastname = data.name.split(' ')[1];
+    accounts[objIndex].code = data.mobilenumber.split(' ')[0];
+    accounts[objIndex].mobile = data.mobile.split(' ')[1];
+    accounts[objIndex].username = data.username;
+    localStorage.setItem('createdAccounts', JSON.stringify(accounts));
+  };
   return (
     /* eslint-disable react/jsx-no-constructed-context-values */
     <AccountsContext.Provider
@@ -59,6 +72,7 @@ const AccountsContextProvider = ({ children }) => {
         addAccount,
         changePassword,
         checkIfNumberExists,
+        editProfile,
       }}
     >
       {children}
