@@ -277,7 +277,7 @@
 }
 .filterOption {
   position: absolute;
-  left: 1080px;
+  left: 1060px;
   top: 40px;
   display: flex;
   flex-direction: row;
@@ -329,7 +329,10 @@
   position: relative;
   left: 5px;
 }
-
+.downArrow {
+  position: relative;
+  left: 7px;
+}
 /* Filters Css */
 .timeAndAverageMealCost {
   height: 19px;

@@ -66,7 +66,7 @@ const Restaurant = ({ data, searchKey, location }) => {
                 <span className='sortBy'>Sort by :</span>
                 <span className='sortByOption'>
                   Rating
-                  <img src={downArrow} alt='downArrow' />
+                  <img src={downArrow} alt='downArrow' className='downArrow' />
                 </span>
               </div>
             </div>
