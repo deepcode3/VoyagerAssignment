@@ -56,10 +56,10 @@ const AccountsContextProvider = ({ children }) => {
     const objIndex = accounts.findIndex((obj) => {
       return obj.email === data.email;
     });
-    accounts[objIndex].firstname = data.name.split(' ')[0];
-    accounts[objIndex].lastname = data.name.split(' ')[1];
-    accounts[objIndex].code = data.mobilenumber.split(' ')[0];
-    accounts[objIndex].mobile = data.mobile.split(' ')[1];
+    accounts[objIndex].firstname = data.fullname.split(' ')[0];
+    accounts[objIndex].lastname = data.fullname.split(' ')[1];
+    accounts[objIndex].countrycode = data.mobilenumber.split(' ')[0];
+    accounts[objIndex].mobile = data.mobilenumber.split(' ')[1];
     accounts[objIndex].username = data.username;
     localStorage.setItem('createdAccounts', JSON.stringify(accounts));
   };
