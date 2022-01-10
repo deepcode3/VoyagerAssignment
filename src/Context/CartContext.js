@@ -51,18 +51,22 @@ const CartContextProvider = (props) => {
     updatedArray[index].quantity -= 1;
     setCartItems(updatedArray);
   };
-
-  const restaurantItemsCount = (restaurantName) => {
+  const itemsOfRestaurant = (restaurantName) => {
     if (cartItems === null) {
-      return 0;
+      return null;
     }
     const result = cartItems.filter((obj) => {
       return obj.restaurant === restaurantName;
     });
-    console.log(result);
+    return result;
+  };
+  const restaurantItemsCount = (restaurantName) => {
+    const result = itemsOfRestaurant(restaurantName);
+    if (result === null) {
+      return 0;
+    }
     return result.length;
   };
-
   const totalPrice = (restaurantName) => {
     if (cartItems === null) {
       return 0;
@@ -102,6 +106,7 @@ const CartContextProvider = (props) => {
     restaurantItemsCount,
     totalPrice,
     removeAllRestaurantItems,
+    itemsOfRestaurant,
   };
   // eslint-disable-next-line react/destructuring-assignment
   return <cartContext.Provider value={value}>{props.children}</cartContext.Provider>;
