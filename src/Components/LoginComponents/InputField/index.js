@@ -1,4 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-nested-ternary */
+/* eslint-disable indent */
+/* eslint-disable no-param-reassign */
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -27,7 +30,13 @@ const InputField = ({ label, name, isPassword, register, msg }) => {
         onBlur={(e) => {
           handleFocusChange(e);
         }}
-        className={focusState ? 'moveUp' : null}
+        className={
+          msg !== undefined
+            ? 'moveUpWithRedBorder'
+            : focusState && msg === undefined
+            ? 'moveUp'
+            : null
+        }
       />
       {isPassword ? (
         <>
@@ -57,17 +66,19 @@ InputField.propTypes = {
 };
 InputField.defaultProps = {
   isPassword: false,
-  msg: null,
+  msg: undefined,
 };
 const FormContainer = styled.div`
   position: relative;
   height: 50px;
   width: 380px;
   margin-bottom: 5px;
-  .moveUp ~ .form-label {
-    top: -0.6rem;
-    font-size: 0.8rem;
-    position: relative;
+  .moveUp {
+    ~ .form-label {
+      top: -0.6rem;
+      font-size: 0.8rem;
+      position: relative;
+    }
   }
   .error {
     height: 17px;
@@ -79,7 +90,12 @@ const FormContainer = styled.div`
     line-height: 17px;
     margin-top: 25px;
   }
-  .redBorder {
+  .moveUpWithRedBorder {
+    ~ .form-label {
+      top: -0.6rem;
+      font-size: 0.8rem;
+      position: relative;
+    }
     border-bottom: 1px solid #ed1b2e;
   }
 `;

@@ -251,7 +251,7 @@ const InputTypeButton = styled.button`
   cursor: pointer;
 `;
 const Form = styled.form`
-  height: 57%;
+  height: 58%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
