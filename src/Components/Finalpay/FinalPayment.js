@@ -63,7 +63,7 @@ const FinalPayment = () => {
         <div
           className='fpaynow'
           onClick={() => {
-            history.push('/status');
+            history.push({ pathname: '/status', state: { restaurant: location.state.restaurant } });
           }}
           role='button'
           onKeyDown={null}

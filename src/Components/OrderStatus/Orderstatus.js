@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import './Orderstatus.css';
 import waiting from '../../Assets/Images/waiting.png';
 import orderplaced from '../../Assets/Images/orderplaced.png';
@@ -17,6 +18,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 
 const Orderstatus = () => {
+  const location = useLocation();
   const history = useHistory();
   const [openModal, setOpenModal] = useState(false);
   const [seconds, setSeconds] = useState(50);
@@ -98,7 +100,7 @@ const Orderstatus = () => {
           <div
             className='sbacktoorders'
             onClick={() => {
-              history.push('/cart');
+              history.push({ pathname: '/cart', state: { restaurant: location.state.restaurant } });
             }}
             role='button'
             onKeyDown={null}
