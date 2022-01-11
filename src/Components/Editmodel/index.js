@@ -21,20 +21,12 @@ import { AccountsContext } from '../../Context/AccountsContext';
 import { UserContext } from '../../Context/UserContext';
 import InputField from '../LoginComponents/InputField';
 import StyledButton from '../CommonButton/index';
+import OutsideAlerter from '../OutsideClickAlerter';
 
 const EditModal = ({ setOpen }) => {
   const schema = yup.object().shape({
     username: yup.string().required('Username is required'),
-    mobilenumber: yup
-      .string()
-      .matches(/^[0-9]+$/, {
-        message: 'Phone not valid',
-        excludeEmptyString: true,
-      })
-      .matches(/^\d{10}$/, {
-        message: 'Phone not valid',
-        excludeEmptyString: true,
-      }),
+    mobilenumber: yup.string().required('mobile number is required'),
     fullname: yup.string().required('Name is required'),
   });
   const { editProfile } = useContext(AccountsContext);
@@ -50,9 +42,9 @@ const EditModal = ({ setOpen }) => {
     console.log(data);
     editProfile({
       email: currentUser.email,
-      username: 'username',
-      fullname: 'firstname lastname',
-      mobilenumber: '991 8999999999',
+      username: data.username,
+      fullname: data.fullname,
+      mobilenumber: data.mobilenumber,
     });
     setUser({
       countrycode: data.mobilenumber.split(' ')[0],
@@ -60,8 +52,8 @@ const EditModal = ({ setOpen }) => {
       firstname: data.fullname.split(' ')[0],
       lastname: data.fullname.split(' ')[1],
       mobile: data.mobilenumber.split(' ')[1],
-      password: '123',
-      username: 'username',
+      password: currentUser.password,
+      username: data.username,
     });
     setOpen(false);
   };
@@ -69,54 +61,60 @@ const EditModal = ({ setOpen }) => {
     <ModalBack>
       <div className='ModalContainer'>
         <span className='edit'> Edit Profile</span>
-        <form className='card' onSubmit={handleSubmit(submitForm)}>
-          <div className='left'>
-            <div className='rectangle-3 '>
-              <div className='mask'>
-                <img src={profilePic} alt='pic' className='profile_img' />
-                <img src={icnAddPhoto} alt='add_photo' className='pic' />
+        <OutsideAlerter
+          handlePress={() => {
+            return setOpen(false);
+          }}
+        >
+          <form className='card' onSubmit={handleSubmit(submitForm)}>
+            <div className='left'>
+              <div className='rectangle-3 '>
+                <div className='mask'>
+                  <img src={profilePic} alt='pic' className='profile_img' />
+                  <img src={icnAddPhoto} alt='add_photo' className='pic' />
+                </div>
+              </div>
+              <div className='data'>
+                <InputField
+                  name='username'
+                  register={register}
+                  msg={errors.username?.message}
+                  label='Username'
+                />
+                <InputField
+                  name='fullname'
+                  register={register}
+                  msg={errors.fullname?.message}
+                  label='Name'
+                />
+                <InputField
+                  name='mobilenumber'
+                  register={register}
+                  msg={errors.mobilenumber?.message}
+                  label='Phone Number'
+                />
               </div>
             </div>
-            <div className='data'>
-              <InputField
-                name='username'
-                register={register}
-                msg={errors.username?.message}
-                label='Username'
-              />
-              <InputField
-                name='fullname'
-                register={register}
-                msg={errors.fullname?.message}
-                label='Name'
-              />
-              <InputField
-                name='mobilenumber'
-                register={register}
-                msg={errors.mobilenumber?.message}
-                label='Phone Number'
-              />
+            <div className='right'>
+              <hr className='line-3' />
+              <span className='avtar_text'>Choose a user avatar</span>
+              <div className='avtars'>
+                <img src={icnBeer} alt='avtars' />
+                <img src={icnBread} alt='avtars' />
+                <img src={icnBurger} alt='avtars' />
+                <img src={icnChicken} alt='avtars' />
+                <img src={icnCupcake} alt='avtars' />
+                <img src={icnDonut} alt='avtars' />
+                <img src={icnFrenchfries} alt='avtars' />
+                <img src={icnIcecream} alt='avtars' />
+                <img src={icnPizza} alt='avtars' />
+              </div>
+              <div className='save-button'>
+                <StyledButton type='submit'>SAVE</StyledButton>
+              </div>
             </div>
-          </div>
-          <div className='right'>
-            <hr className='line-3' />
-            <span className='avtar_text'>Choose a user avatar</span>
-            <div className='avtars'>
-              <img src={icnBeer} alt='avtars' />
-              <img src={icnBread} alt='avtars' />
-              <img src={icnBurger} alt='avtars' />
-              <img src={icnChicken} alt='avtars' />
-              <img src={icnCupcake} alt='avtars' />
-              <img src={icnDonut} alt='avtars' />
-              <img src={icnFrenchfries} alt='avtars' />
-              <img src={icnIcecream} alt='avtars' />
-              <img src={icnPizza} alt='avtars' />
-            </div>
-            <div className='save-button'>
-              <StyledButton type='submit'>SAVE</StyledButton>
-            </div>
-          </div>
-        </form>
+          </form>
+        </OutsideAlerter>
       </div>
     </ModalBack>
   );
