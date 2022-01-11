@@ -37,7 +37,7 @@ const Items = ({ item, price, quantity, isVeg, from, restaurant }) => {
         <div
           className='decbutton'
           onClick={() => {
-            return decreaseItemQuantity(item);
+            return decreaseItemQuantity(item, restaurant);
           }}
           role='button'
           onKeyDown={null}
@@ -48,7 +48,7 @@ const Items = ({ item, price, quantity, isVeg, from, restaurant }) => {
         <div
           className='incbutton'
           onClick={() => {
-            return increaseItemQuantity(item);
+            return increaseItemQuantity(item, restaurant);
           }}
           role='button'
           onKeyDown={null}

@@ -49,18 +49,18 @@ const CartContextProvider = (props) => {
     localStorage.clear('cartItems');
     window.location.reload();
   };
-  const increaseItemQuantity = (id) => {
+  const increaseItemQuantity = (id, restaurant) => {
     const updatedArray = [...cartItems];
     const index = updatedArray.findIndex((item) => {
-      return item.item === id;
+      return item.item === id && item.restaurant === restaurant;
     });
     updatedArray[index].quantity += 1;
     setCartItems(updatedArray);
   };
-  const decreaseItemQuantity = (id) => {
+  const decreaseItemQuantity = (id, restaurant) => {
     const updatedArray = [...cartItems];
     const index = updatedArray.findIndex((item) => {
-      return item.item === id;
+      return item.item === id && item.restaurant === restaurant;
     });
     updatedArray[index].quantity -= 1;
     setCartItems(updatedArray);

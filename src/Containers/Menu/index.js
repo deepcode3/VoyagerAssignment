@@ -253,7 +253,7 @@ const Menu = () => {
                                 className='decreseButton'
                                 alt=''
                                 onClick={() => {
-                                  return decreaseItemQuantity(item.item);
+                                  return decreaseItemQuantity(item.item, restaurant);
                                 }}
                                 onKeyDown={null}
                               />
@@ -263,7 +263,7 @@ const Menu = () => {
                                 className='increaseButton'
                                 alt=''
                                 onClick={() => {
-                                  return increaseItemQuantity(item.item);
+                                  return increaseItemQuantity(item.item, restaurant);
                                 }}
                                 onKeyDown={null}
                               />
@@ -521,7 +521,7 @@ const Menu = () => {
                                   : 'apptizeraddAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name);
+                                return increaseItemQuantity(item.name, restaurant);
                               }}
                               role='button'
                               onKeyDown={null}
