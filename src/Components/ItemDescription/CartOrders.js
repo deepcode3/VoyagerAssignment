@@ -27,7 +27,7 @@ const Cart = () => {
       ) : (
         <div className='firstmain'>
           <div className='restaurent'>
-            <p className='restaurentname'>The Botique Kitchen</p>
+            <p className='restaurentname'>{location.state.restaurant}</p>
           </div>
           <div className='estimated-delivery-t'>
             <p className='edtime'>Estimated Delivery time - 60 - 80 min</p>
@@ -72,7 +72,10 @@ const Cart = () => {
                 <p
                   className='chooseadd'
                   onClick={() => {
-                    history.push('/address');
+                    history.push({
+                      pathname: '/address',
+                      state: { restaurant: location.state.restaurant },
+                    });
                   }}
                   onKeyDown={null}
                 >

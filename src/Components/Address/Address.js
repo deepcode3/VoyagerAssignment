@@ -2,6 +2,7 @@
 import { React, useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
 import { ProfileContext } from '../../Context/ProfileContext';
@@ -17,6 +18,7 @@ import deactive from '../../Assets/Icons/deactive state.png';
 import './Address.css';
 
 const CartAddress = () => {
+  const location = useLocation();
   const mobileSchema = yup.object().shape({
     mobile: yup
       .string()
@@ -136,7 +138,10 @@ const CartAddress = () => {
         <div
           className='aChoosepayment'
           onClick={() => {
-            history.push('/payment');
+            history.push({
+              pathname: '/payment',
+              state: { restaurant: location.state.restaurant },
+            });
           }}
           role='button'
           onKeyDown={null}
