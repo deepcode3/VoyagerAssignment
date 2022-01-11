@@ -22,20 +22,20 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
   const [navSelected, setNavSelected] = useState(from);
   return (
     <>
-      <div className='header'>
-        <Header />
-      </div>
+      <Header />
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
       <div className='body'>
-        <div className='restaurantSearchBar'>
-          <span className='restaurantsInfo'>Delivery ASAP</span>
-          <div className='restaurantSearch'>
-            <SearchBar searchValue={searchKey} from='menu' />
+        <div className='bodySeperator'>
+          <div className='restaurantSearchBar'>
+            <span className='restaurantsInfo'>Delivery ASAP</span>
+            <div className='restaurantSearch'>
+              <SearchBar searchValue={searchKey} from='menu' />
+            </div>
+            <div className='restaurantLocation' from='menu'>
+              <LocationSetter locationValue={location} />
+            </div>
+            <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
           </div>
-          <div className='restaurantLocation' from='menu'>
-            <LocationSetter locationValue={location} />
-          </div>
-          <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
         </div>
         <div className='restaurantLocators'>
           <div className='restaurantLocatorInfo'>
@@ -43,7 +43,9 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
             {restaurant}
           </div>
         </div>
-        <img src={halfBg} alt='' className='menuHalfBgImage' />
+      </div>
+      <img src={halfBg} alt='' className='menuHalfBgImage' />
+      <div className='semiBgComponentSeperator'>
         <img src={menuKebab} alt='' className='menuKebabImage' />
         <img src={spoonPoke} className='spoonPoke' alt='' />
         <div className='restaurantDetails'>

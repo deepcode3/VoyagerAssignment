@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import icnAddPhoto from '../../Assets/Icons/icn_add_photo.png';
@@ -14,8 +14,12 @@ import icnDonut from '../../Assets/Icons/icn_donut.png';
 import icnFrenchfries from '../../Assets/Icons/icn_frenchfries.png';
 import icnIcecream from '../../Assets/Icons/icn_icecream.png';
 import icnPizza from '../../Assets/Icons/icn_pizza.png';
+import { AccountsContext } from '../../Context/AccountsContext';
+import { UserContext } from '../../Context/UserContext';
 
 const EditModal = ({ setOpen }) => {
+  const { editProfile } = useContext(AccountsContext);
+  const { currentUser, setUser } = useContext(UserContext);
   return (
     <ModalBack>
       <div className='ModalContainer'>
