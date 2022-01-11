@@ -7,35 +7,43 @@ import data from './data';
 const Footer = () => {
   return (
     <FooterContainer>
-      <FlexRow>
-        <Logo />
-        <Number> 24</Number>
-        <Text>CITIES</Text>
-        <VerticalLine />
-        <Number>4</Number>
-        <Text>COUNTRIES</Text>
-      </FlexRow>
-      <FlexRowLinks>
-        {data.map((element) => {
-          return (
-            <FooterLink key={element} to={element.toLowerCase().replaceAll(' ', '-')}>
-              {element}
-            </FooterLink>
-          );
-        })}
-      </FlexRowLinks>
+      <FooterAligner>
+        <FlexRow>
+          <Logo />
+          <Number> 24</Number>
+          <Text>CITIES</Text>
+          <VerticalLine />
+          <Number>4</Number>
+          <Text>COUNTRIES</Text>
+        </FlexRow>
+        <FlexRowLinks>
+          {data.map((element) => {
+            return (
+              <FooterLink key={element} to={element.toLowerCase().replaceAll(' ', '-')}>
+                {element}
+              </FooterLink>
+            );
+          })}
+        </FlexRowLinks>
+      </FooterAligner>
     </FooterContainer>
   );
 };
 export default Footer;
 const FooterContainer = styled.div`
   height: 227px;
-  width: 1895px;
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+`;
+const FooterAligner = styled.div`
+  width: 960px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const FlexRow = styled.div`
   display: flex;
