@@ -3,6 +3,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useForm } from 'react-hook-form';
 import icnAddPhoto from '../../Assets/Icons/icn_add_photo.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
 import icnBeer from '../../Assets/Icons/icn_beer.png';
@@ -20,6 +21,11 @@ import { UserContext } from '../../Context/UserContext';
 const EditModal = ({ setOpen }) => {
   const { editProfile } = useContext(AccountsContext);
   const { currentUser, setUser } = useContext(UserContext);
+  const { register, handleSubmit } = useForm({});
+  const submitForm = (data) => {
+    console.log(data);
+    // setUser(data);
+  };
   return (
     <ModalBack>
       <div className='ModalContainer'>
@@ -32,45 +38,77 @@ const EditModal = ({ setOpen }) => {
               <img src={icnAddPhoto} alt='add_photo' className='pic' />
             </div>
           </div>
-          <form className='form'>
+          <form className='form' onSubmit={handleSubmit(submitForm)}>
             <div className='field'>
               <label className='label'>Username</label>
-              <input type='text' className='input' placeholder='Abdulla' />
+              <input
+                type='text'
+                className='input'
+                placeholder='Abdulla'
+                {...register('username')}
+              />
             </div>
             <div className='field'>
               <label className='label'>Name</label>
-              <input type='text' className='input' placeholder='Abdulla Mohammad' />
+              <input
+                type='text'
+                className='input'
+                placeholder='Abdulla Mohammad'
+                name='fullname'
+                {...register('fullname')}
+              />
             </div>
             <div className='field'>
               <label className='label'>Phone Number</label>
-              <input type='text' className='input' placeholder='7975312513' />
-            </div>
-            <hr className='line-3' />
-            <span className='avtar_text'>Choose a user avatar</span>
-            <div className='avtars'>
-              <img src={icnBeer} alt='avtars' />
-              <img src={icnBread} alt='avtars' />
-              <img src={icnBurger} alt='avtars' />
-              <img src={icnChicken} alt='avtars' />
-              <img src={icnCupcake} alt='avtars' />
-              <img src={icnDonut} alt='avtars' />
-              <img src={icnFrenchfries} alt='avtars' />
-              <img src={icnIcecream} alt='avtars' />
-              <img src={icnPizza} alt='avtars' />
-            </div>
-            <div className='save-button'>
-              <button
-                className='save'
-                type='button'
-                onClick={() => {
-                  setOpen(false);
-                }}
-                onKeyDown={null}
-              >
-                Save
-              </button>
+              <input
+                type='text'
+                className='input'
+                placeholder='7975312513'
+                name='mobilenumber'
+                {...register('mobilenumber')}
+              />
             </div>
           </form>
+          <hr className='line-3' />
+          <span className='avtar_text'>Choose a user avatar</span>
+          <div className='avtars'>
+            <img src={icnBeer} alt='avtars' />
+            <img src={icnBread} alt='avtars' />
+            <img src={icnBurger} alt='avtars' />
+            <img src={icnChicken} alt='avtars' />
+            <img src={icnCupcake} alt='avtars' />
+            <img src={icnDonut} alt='avtars' />
+            <img src={icnFrenchfries} alt='avtars' />
+            <img src={icnIcecream} alt='avtars' />
+            <img src={icnPizza} alt='avtars' />
+          </div>
+          <div className='save-button'>
+            <button
+              className='save'
+              type='submit'
+              onKeyDown={null}
+              onClick={() => {
+                setOpen(false);
+                editProfile({
+                  email: currentUser.email,
+                  username: 'username',
+                  fullname: 'firstname lastname',
+                  mobilenumber: '991 8999999999',
+                });
+                setUser({
+                  countrycode: '991',
+                  email: currentUser.email,
+                  firstname: 'sorstname',
+                  lastname: 'lastname',
+                  mobile: '8999999999',
+                  password: '123',
+                  username: 'username',
+                });
+              }}
+            >
+              Save
+            </button>
+          </div>
         </div>
       </div>
     </ModalBack>
