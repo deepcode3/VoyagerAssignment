@@ -43,7 +43,7 @@ const Menu = () => {
     cartItems,
     addItem,
     deleteItem,
-    clearCartContext,
+    removeAllRestaurantItems,
     increaseItemQuantity,
     decreaseItemQuantity,
   } = useContext(cartContext);
@@ -215,7 +215,9 @@ const Menu = () => {
                   <div className='menuCartHeader'>My Order</div>
                   <div
                     className='menuClearCart'
-                    onClick={clearCartContext}
+                    onClick={() => {
+                      removeAllRestaurantItems(restaurant);
+                    }}
                     role='button'
                     onKeyDown={null}
                   >
