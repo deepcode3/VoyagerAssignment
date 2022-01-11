@@ -7,25 +7,23 @@ import data from './data';
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterAligner>
-        <FlexRow>
-          <Logo />
-          <Number> 24</Number>
-          <Text>CITIES</Text>
-          <VerticalLine />
-          <Number>4</Number>
-          <Text>COUNTRIES</Text>
-        </FlexRow>
-        <FlexRowLinks>
-          {data.map((element) => {
-            return (
-              <FooterLink key={element} to={element.toLowerCase().replaceAll(' ', '-')}>
-                {element}
-              </FooterLink>
-            );
-          })}
-        </FlexRowLinks>
-      </FooterAligner>
+      <FlexRow>
+        <Logo />
+        <Number> 24</Number>
+        <Text>CITIES</Text>
+        <VerticalLine />
+        <Number>4</Number>
+        <Text>COUNTRIES</Text>
+      </FlexRow>
+      <FlexRowLinks>
+        {data.map((element) => {
+          return (
+            <FooterLink key={element} to={element.toLowerCase().replaceAll(' ', '-')}>
+              {element}
+            </FooterLink>
+          );
+        })}
+      </FlexRowLinks>
     </FooterContainer>
   );
 };
@@ -39,12 +37,12 @@ const FooterContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
-const FooterAligner = styled.div`
-  width: 960px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-`;
+// const FooterAligner = styled.div`
+//   width: 960px;
+//   position: relative;
+//   margin-left: auto;
+//   margin-right: auto;
+// `;
 const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
