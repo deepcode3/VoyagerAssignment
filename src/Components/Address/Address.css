@@ -606,6 +606,8 @@ input[type="radio"] {
   top: 950px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .Cactive {

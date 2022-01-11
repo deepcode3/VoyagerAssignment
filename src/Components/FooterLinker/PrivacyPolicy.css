@@ -137,4 +137,6 @@
   top: 1270px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }

@@ -955,9 +955,13 @@
   top: 250px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 .footerDivGallery {
   top: 270px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }

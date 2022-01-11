@@ -786,6 +786,8 @@
   top: 1420px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* .testpaynowbutton {
   height: 45px;
