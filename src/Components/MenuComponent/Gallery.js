@@ -144,6 +144,7 @@ const GalleryModal = ({
               onClick={() => {
                 setImage(galleryData[imgIndex - 1].img);
                 setImgIndex(imgIndex - 1);
+                setIsGalleryModalOpen(true);
               }}
               onKeyDown={null}
               role='button'
@@ -154,6 +155,7 @@ const GalleryModal = ({
               onClick={() => {
                 setImage(galleryData[imgIndex + 1].img);
                 setImgIndex(imgIndex + 1);
+                setIsGalleryModalOpen(true);
               }}
               onKeyDown={null}
               role='button'

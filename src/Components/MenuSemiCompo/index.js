@@ -32,7 +32,7 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
               <SearchBar searchValue={searchKey} from='menu' />
             </div>
             <div className='restaurantLocation' from='menu'>
-              <LocationSetter locationValue={location} />
+              <LocationSetter locationValue={location} from='menu' />
             </div>
             <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
           </div>

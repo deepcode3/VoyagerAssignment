@@ -46,7 +46,7 @@ const Restaurant = ({ data, searchKey, location }) => {
               <SearchBar searchValue={searchKey} from='restaurant' />
             </div>
             <div className='restaurantLocation' from='restaurant'>
-              <LocationSetter locationValue={location} />
+              <LocationSetter locationValue={location} from='restaurant' />
             </div>
             <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
           </div>
