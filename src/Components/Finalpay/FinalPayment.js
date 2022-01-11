@@ -24,11 +24,14 @@ const FinalPayment = () => {
   const showDetails = () => {
     setCardDetails(true);
   };
+  const hideCard = () => {
+    setCardDetails(false);
+  };
   return (
     <div className='finalpaymentbg'>
       <p className='paytext'>Payment</p>
       <div className='finalpaycontainer'>
-        <PaymentOption cardDisplay={showDetails} />
+        <PaymentOption cardDisplay={showDetails} hideDetails={hideCard} />
         {cardDetails
           ? (
         // eslint-disable-next-line react/jsx-wrap-multilines

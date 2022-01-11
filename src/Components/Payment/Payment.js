@@ -25,6 +25,9 @@ const Payment = () => {
   const showCardDetails = () => {
     setEnterCardDetails(true);
   };
+  const HideCardDetails = () => {
+    setEnterCardDetails(false);
+  };
   console.log(enterCardDetails);
   return (
     <>
@@ -33,7 +36,7 @@ const Payment = () => {
       </div>
       <div className='paymentcontainer'>
         <div className='Preferdpaymentdiv'>
-          <PaymentOption cardDisplay={showCardDetails} />
+          <PaymentOption cardDisplay={showCardDetails} hideDetails={HideCardDetails} />
         </div>
         <div className='carddetailscontainer'>
           {enterCardDetails

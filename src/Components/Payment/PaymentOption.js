@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import cashicon from '../../Assets/Icons/cashicon.png';
 import creditcardicon from '../../Assets/Icons/creditcardicon.png';
 
-const PaymentOption = ({ cardDisplay }) => {
+const PaymentOption = ({ cardDisplay, hideDetails }) => {
   return (
     <>
       <div className='preferdway'>
@@ -12,7 +12,7 @@ const PaymentOption = ({ cardDisplay }) => {
       </div>
       <div className='cashcarddiv'>
         <div className='cashdiv'>
-          <input type='radio' name='payment' className='cashradio' />
+          <input type='radio' name='payment' className='cashradio' onClick={hideDetails} />
           <div className='cash'>
             <img src={cashicon} className='cashicons' alt='' />
           </div>
@@ -37,6 +37,7 @@ export default PaymentOption;
 
 PaymentOption.propTypes = {
   cardDisplay: PropTypes.func.isRequired,
+  hideDetails: PropTypes.func.isRequired,
   // display: PropTypes.func,
 };
 // PaymentOption.defaultProps = {
