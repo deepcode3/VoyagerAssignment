@@ -8,6 +8,10 @@ export const cartContext = createContext({
   clearCartContext: () => {},
   increaseItemQuantity: () => {},
   decreaseItemQuantity: () => {},
+  restaurantItemsCount: () => {},
+  totalPrice: () => {},
+  removeAllRestaurantItems: () => {},
+  itemsOfRestaurant: () => {},
 });
 
 const CartContextProvider = (props) => {
@@ -24,19 +28,7 @@ const CartContextProvider = (props) => {
       });
     }
   };
-  // const spliceFunction = (arr, index) => {
-  //   arr.splice(index, 1);
-  //   return arr;
-  // };
-  // const deleteItem = (id, restaurant) => {
-  //   console.log(id, restaurant);
-  //   const objIndex = cartItems.findIndex((obj) => {
-  //     return obj.item === id && obj.restaurant === restaurant;
-  //   });
-  //   console.log(objIndex);
-  //   delete cartItems[objIndex];
-  //   setCartItems(spliceFunction(cartItems, objIndex));
-  // };
+
   const deleteItem = (id, restaurant) => {
     setCartItems(
       cartItems.filter((item) => {
@@ -45,10 +37,6 @@ const CartContextProvider = (props) => {
     );
   };
 
-  const clearCartContext = () => {
-    localStorage.clear('cartItems');
-    window.location.reload();
-  };
   const increaseItemQuantity = (id, restaurant) => {
     const updatedArray = [...cartItems];
     const index = updatedArray.findIndex((item) => {
@@ -63,7 +51,8 @@ const CartContextProvider = (props) => {
       return item.item === id && item.restaurant === restaurant;
     });
     updatedArray[index].quantity -= 1;
-    setCartItems(updatedArray);
+    if (updatedArray[index].quantity === 0) deleteItem(id, restaurant);
+    else setCartItems(updatedArray);
   };
   const itemsOfRestaurant = (restaurantName) => {
     if (cartItems === null) {
@@ -114,7 +103,6 @@ const CartContextProvider = (props) => {
     cartItems,
     addItem,
     deleteItem,
-    clearCartContext,
     increaseItemQuantity,
     decreaseItemQuantity,
     restaurantItemsCount,

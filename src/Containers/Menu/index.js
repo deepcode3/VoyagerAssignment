@@ -423,7 +423,7 @@ const Menu = () => {
                                 item.bestSeller ? 'addAgainToCartButton' : 'addAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name);
+                                return increaseItemQuantity(item.name, restaurant);
                               }}
                               role='button'
                               onKeyDown={null}
@@ -605,7 +605,7 @@ const Menu = () => {
                                   : 'soupsAddAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name);
+                                return increaseItemQuantity(item.name, restaurant);
                               }}
                               onKeyDown={null}
                               role='button'
