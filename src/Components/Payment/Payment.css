@@ -879,3 +879,11 @@
   margin: 0px;
   padding: 0px;
 }
+
+.whiteBg {
+  color: white;
+  height: 339px;
+  width: 560px;
+  position: relative;
+  top: 50px;
+}

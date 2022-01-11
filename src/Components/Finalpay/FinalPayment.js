@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PaymentOption from '../Payment/PaymentOption';
 import PaymentPoints from '../Payment/PaymentPoints';
@@ -20,38 +20,48 @@ const FinalPayment = () => {
   const prepay = () => {
     history.goBack('/payment');
   };
+  const [cardDetails, setCardDetails] = useState(false);
+  const showDetails = () => {
+    setCardDetails(true);
+  };
   return (
     <div className='finalpaymentbg'>
       <p className='paytext'>Payment</p>
       <div className='finalpaycontainer'>
-        <PaymentOption />
-        <p className='mycards'>My Card</p>
-        <div className='payaddnew'>
-          <p
-            className='payaddnewtext'
-            onKeyDown={null}
-            onClick={() => {
-              history.push('/profile/profile-Pay');
-            }}
-          >
-            ADD NEW
-          </p>
-        </div>
-        <div>
-          <div className='pay_container'>
-            <div className='pay_scroller'>
-              <ul className='list'>
-                {paymentItems.map((item, index) => {
-                  return (
-                    <li key={index.toString()}>
-                      <PaymentCardCart item={item} index={index} />
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        </div>
+        <PaymentOption cardDisplay={showDetails} />
+        {cardDetails
+          ? (
+        // eslint-disable-next-line react/jsx-wrap-multilines
+            <>
+              <p className='mycards'>My Card</p>
+              <div className='payaddnew'>
+                <p
+                  className='payaddnewtext'
+                  onKeyDown={null}
+                  onClick={() => {
+                    history.push('/profile/profile-Pay');
+                  }}
+                >
+                  ADD NEW
+                </p>
+              </div>
+              <div>
+                <div className='pay_container'>
+                  <div className='pay_scroller'>
+                    <ul className='list'>
+                      {paymentItems.map((item, index) => {
+                        return (
+                          <li key={index.toString()}>
+                            <PaymentCardCart item={item} index={index} />
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </>)
+          : (null)}
         <div className='Fpaypoints'>
           <PaymentPoints />
         </div>
