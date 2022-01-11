@@ -46,6 +46,8 @@ const Menu = () => {
     removeAllRestaurantItems,
     increaseItemQuantity,
     decreaseItemQuantity,
+    totalPrice,
+    itemsOfRestaurant,
   } = useContext(cartContext);
   const data = [
     {
@@ -169,25 +171,21 @@ const Menu = () => {
     }
     return false;
   };
-  const getTotalPriceWithDiscount = () => {
-    let totalPrice = 0;
+  const getTotalPriceWithDiscount = (restaurant) => {
     const discount = 24.22;
-    if (cartItems) {
-      for (const item of Object.values(cartItems)) {
-        totalPrice += item.price * item.quantity;
-      }
-    }
-    return totalPrice + 10 - discount.toFixed(2);
+    const totalprice = totalPrice(restaurant);
+    if (totalprice !== 0) return totalprice + 10 - discount;
+    return 0;
   };
-  const getTotalPrice = () => {
-    let totalPrice = 0;
-    if (cartItems) {
-      for (const item of cartItems) {
-        totalPrice += item.price * item.quantity;
-      }
-    }
-    return totalPrice;
-  };
+  // const getTotalPrice = (restaurant) => {
+  //   let totalPrice = 0;
+  //   if (cartItems) {
+  //     for (const item of cartItems) {
+  //       if (item.restaurant === restaurant) totalPrice += item.price * item.quantity;
+  //     }
+  //   }
+  //   return totalPrice;
+  // };
   return (
     <>
       <MenuHalfCompo
@@ -210,7 +208,7 @@ const Menu = () => {
             />
             <img src={searchIcon} alt='' className='menuSearchIcon' />
             <div className='menuCart'>
-              {cartItems !== null ? (
+              {itemsOfRestaurant(restaurant) !== null ? (
                 <>
                   <div className='menuCartHeader'>My Order</div>
                   <div
@@ -310,7 +308,7 @@ const Menu = () => {
                     <span className='priceLabel'>To Pay</span>
                     <div className='totalPriceDiscount'>
                       AED
-                      {getTotalPriceWithDiscount().toFixed(2)}
+                      {getTotalPriceWithDiscount(restaurant).toFixed(2)}
                     </div>
                     <img
                       src={costShowHideButton}
@@ -332,7 +330,7 @@ const Menu = () => {
                         <span className='itemsTotalLabel'>Items Total</span>
                         <span className='totalAmount'>
                           AED
-                          {getTotalPrice().toFixed(2)}
+                          {totalPrice(restaurant).toFixed(2)}
                         </span>
                       </div>
                       <div className='charges'>

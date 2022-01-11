@@ -55,7 +55,7 @@ const CartContextProvider = (props) => {
     else setCartItems(updatedArray);
   };
   const itemsOfRestaurant = (restaurantName) => {
-    if (cartItems === null) {
+    if (cartItems === null || cartItems.length === 0) {
       return null;
     }
     const result = cartItems.filter((obj) => {
