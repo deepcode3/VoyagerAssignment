@@ -48,7 +48,7 @@ const Header = ({ isHome }) => {
                 history.push('/profile');
               }}
             >
-              {currentUser.firstname.toUpperCase()}
+              {currentUser.username.toUpperCase()}
             </User>
             <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>

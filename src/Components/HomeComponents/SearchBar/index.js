@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Geocode from 'react-geocode';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -102,18 +102,13 @@ export const LocationSetter = ({ locationValue, from }) => {
 
 export const DateTimeSetter = () => {
   const [date, setDate] = useState('');
+  useEffect(() => {
+    setDate(moment(new Date()).format('[Today, ]DD[ ]MMMM[, ]YYYY[ ]'));
+  });
   return (
     <div className='dateTime'>
       <div className='dateText'>{date}</div>
-      <img
-        src={dateTime}
-        alt='date'
-        onClick={() => {
-          setDate(moment(new Date()).format('[Today, ]DD[ ]MMMM[, ]YYYY[ ]'));
-        }}
-        className='dateButton'
-        onKeyDown={null}
-      />
+      <img src={dateTime} alt='date' className='dateButton' onKeyDown={null} />
     </div>
   );
 };
