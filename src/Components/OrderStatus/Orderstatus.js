@@ -264,7 +264,7 @@ const Orderstatus = () => {
           <img src={trackline} alt='' className='trackline3' />
         </div>
       </div>
-      {openModal && <Modal closemodal={setOpenModal} />}
+      {openModal && <Modal closemodal={setOpenModal} restaurantName={location.state.restaurant} />}
       <div className='footerDivStatus'>
         <Footer />
       </div>
