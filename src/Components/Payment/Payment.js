@@ -2,6 +2,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './Payment.css';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import visaicon from '../../Assets/Icons/visaicon.png';
 import PaymentOption from './PaymentOption';
 import PaymentPoints from './PaymentPoints';
@@ -13,10 +14,10 @@ import cactive from '../../Assets/Icons/Active state.png';
 import activeline from '../../Assets/Icons/Activeline.png';
 
 const Payment = () => {
-  // const history={useHistory}
+  const location = useLocation();
   const history = useHistory();
   const loadfinalpay = () => {
-    history.push('/finalpay');
+    history.push({ pathname: '/finalpay', state: { restaurant: location.state.restaurant } });
   };
   const loadaddress = () => {
     history.goBack('/address');
@@ -31,9 +32,7 @@ const Payment = () => {
           <PaymentOption />
         </div>
         <div className='carddetailscontainer'>
-          <p className='entercarddetailstext'>
-            Enter Credit/Debit card details
-          </p>
+          <p className='entercarddetailstext'>Enter Credit/Debit card details</p>
           <div className='cardnumberdiv'>
             <p className='cardnumbertext'>Card number</p>
             <input type='text' className='cardnumber' />
@@ -66,22 +65,12 @@ const Payment = () => {
         <PaymentPoints />
         <p className='paymentdeliverydetails'>Delivery Details</p>
         <PaymentDeliveryDetails />
-        <PaymentresDetails />
+        <PaymentresDetails restaurantName={location.state.restaurant} />
 
-        <div
-          className='paybackbutton'
-          onClick={loadaddress}
-          role='button'
-          onKeyDown={null}
-        >
+        <div className='paybackbutton' onClick={loadaddress} role='button' onKeyDown={null}>
           <img src={payback} alt='' />
         </div>
-        <div
-          className='paynowbutton'
-          onClick={loadfinalpay}
-          role='button'
-          onKeyDown={null}
-        >
+        <div className='paynowbutton' onClick={loadfinalpay} role='button' onKeyDown={null}>
           <img src={paynow} alt='' />
         </div>
         <div className='payactive'>

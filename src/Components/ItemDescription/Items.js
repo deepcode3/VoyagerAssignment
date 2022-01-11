@@ -7,7 +7,7 @@ import vegicon from '../../Assets/Icons/vegicon.png';
 import nonveg from '../../Assets/Icons/nonveg.png';
 
 // eslint-disable-next-line object-curly-newline
-const Items = ({ item, price, quantity, isVeg, from }) => {
+const Items = ({ item, price, quantity, isVeg, from, restaurant }) => {
   const { deleteItem, increaseItemQuantity, decreaseItemQuantity } = useContext(cartContext);
 
   return (
@@ -37,7 +37,7 @@ const Items = ({ item, price, quantity, isVeg, from }) => {
         <div
           className='decbutton'
           onClick={() => {
-            return decreaseItemQuantity(item);
+            return decreaseItemQuantity(item, restaurant);
           }}
           role='button'
           onKeyDown={null}
@@ -48,7 +48,7 @@ const Items = ({ item, price, quantity, isVeg, from }) => {
         <div
           className='incbutton'
           onClick={() => {
-            return increaseItemQuantity(item);
+            return increaseItemQuantity(item, restaurant);
           }}
           role='button'
           onKeyDown={null}
@@ -63,7 +63,7 @@ const Items = ({ item, price, quantity, isVeg, from }) => {
       <div
         className='remove'
         onClick={() => {
-          return deleteItem(item);
+          return deleteItem(item, restaurant);
         }}
         role='button'
         onKeyDown={null}
@@ -82,4 +82,5 @@ Items.propTypes = {
   quantity: PropTypes.number.isRequired,
   isVeg: PropTypes.number.isRequired,
   from: PropTypes.string.isRequired,
+  restaurant: PropTypes.string.isRequired,
 };

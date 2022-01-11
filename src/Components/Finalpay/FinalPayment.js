@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import PaymentOption from '../Payment/PaymentOption';
 import PaymentPoints from '../Payment/PaymentPoints';
 import PaymentDeliveryDetails from '../Payment/PaymentDeliveryDetails';
@@ -15,6 +16,7 @@ import cactive from '../../Assets/Icons/Active state.png';
 import activeline from '../../Assets/Icons/Activeline.png';
 
 const FinalPayment = () => {
+  const location = useLocation();
   const history = useHistory();
   const { paymentItems } = useContext(ProfileContext);
   const prepay = () => {
@@ -53,7 +55,7 @@ const FinalPayment = () => {
           <PaymentDeliveryDetails />
         </div>
         <div className='fpayres'>
-          <PaymentresDetails />
+          <PaymentresDetails restaurantName={location.state.restaurant} />
         </div>
         <div className='fpayback' onClick={prepay} role='button' onKeyDown={null}>
           <img src={payback} alt='' />
@@ -61,7 +63,7 @@ const FinalPayment = () => {
         <div
           className='fpaynow'
           onClick={() => {
-            history.push('/status');
+            history.push({ pathname: '/status', state: { restaurant: location.state.restaurant } });
           }}
           role='button'
           onKeyDown={null}
