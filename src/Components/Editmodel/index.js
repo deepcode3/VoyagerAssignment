@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { useForm } from 'react-hook-form';
 import icnAddPhoto from '../../Assets/Icons/icn_add_photo.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
 import icnBeer from '../../Assets/Icons/icn_beer.png';
@@ -21,10 +20,45 @@ import { UserContext } from '../../Context/UserContext';
 const EditModal = ({ setOpen }) => {
   const { editProfile } = useContext(AccountsContext);
   const { currentUser, setUser } = useContext(UserContext);
-  const { register, handleSubmit } = useForm({});
-  const submitForm = (data) => {
-    console.log(data);
-    // setUser(data);
+
+  const initialFormData = Object.freeze({
+    username: '',
+    fullname: '',
+    mobilenumber: '',
+  });
+  const [values, setValues] = useState(initialFormData);
+  const handleChange = (e) => {
+    e.persist();
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    editProfile({
+      email: currentUser.email,
+      username: values.username,
+      firstname: currentUser.firstname,
+      lastname: currentUser.lastname,
+      mobilenumber: `${currentUser.countrycode}-${values.mobilenumber}`,
+    });
+    setUser({
+      countrycode: '991',
+      email: currentUser.email,
+      firstname: values.username,
+      lastname: currentUser.lastname,
+      mobile: `${currentUser.countrycode}-${values.mobilenumber}`,
+      password: '123',
+      username: 'username',
+    });
+    setValues({
+      username: '',
+      fullname: '',
+      mobilenumber: '',
+    });
   };
   return (
     <ModalBack>
@@ -38,14 +72,17 @@ const EditModal = ({ setOpen }) => {
               <img src={icnAddPhoto} alt='add_photo' className='pic' />
             </div>
           </div>
-          <form className='form' onSubmit={handleSubmit(submitForm)}>
+          <form className='form' onSubmit={handleSubmit}>
             <div className='field'>
               <label className='label'>Username</label>
               <input
                 type='text'
                 className='input'
                 placeholder='Abdulla'
-                {...register('username')}
+                name='username'
+                value={values.username}
+                required
+                onChange={handleChange}
               />
             </div>
             <div className='field'>
@@ -55,7 +92,9 @@ const EditModal = ({ setOpen }) => {
                 className='input'
                 placeholder='Abdulla Mohammad'
                 name='fullname'
-                {...register('fullname')}
+                value={values.fullname}
+                required
+                onChange={handleChange}
               />
             </div>
             <div className='field'>
@@ -65,8 +104,22 @@ const EditModal = ({ setOpen }) => {
                 className='input'
                 placeholder='7975312513'
                 name='mobilenumber'
-                {...register('mobilenumber')}
+                value={values.mobilenumber}
+                required
+                onChange={handleChange}
               />
+            </div>
+            <div className='save-button'>
+              <button
+                className='save'
+                type='submit'
+                onKeyDown={null}
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                Save
+              </button>
             </div>
           </form>
           <hr className='line-3' />
@@ -89,21 +142,6 @@ const EditModal = ({ setOpen }) => {
               onKeyDown={null}
               onClick={() => {
                 setOpen(false);
-                editProfile({
-                  email: currentUser.email,
-                  username: 'username',
-                  fullname: 'firstname lastname',
-                  mobilenumber: '991 8999999999',
-                });
-                setUser({
-                  countrycode: '991',
-                  email: currentUser.email,
-                  firstname: 'sorstname',
-                  lastname: 'lastname',
-                  mobile: '8999999999',
-                  password: '123',
-                  username: 'username',
-                });
               }}
             >
               Save

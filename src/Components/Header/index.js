@@ -141,6 +141,8 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
   .smallLine {
     height: 30px;
   }
