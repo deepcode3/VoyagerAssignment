@@ -55,12 +55,13 @@ const CartContextProvider = (props) => {
     else setCartItems(updatedArray);
   };
   const itemsOfRestaurant = (restaurantName) => {
-    if (cartItems === null || cartItems.length === 0) {
+    if (cartItems === null) {
       return null;
     }
     const result = cartItems.filter((obj) => {
       return obj.restaurant === restaurantName;
     });
+    if (result.length === 0) return null;
     return result;
   };
   const restaurantItemsCount = (restaurantName) => {
