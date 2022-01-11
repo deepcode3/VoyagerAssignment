@@ -348,7 +348,7 @@ const Menu = () => {
                     src={proceedToCheckOutButton}
                     alt=''
                     onClick={() => {
-                      history.push('/address');
+                      history.push({ pathname: '/address', state: { restaurant } });
                     }}
                     onKeyDown={null}
                   />
