@@ -9,7 +9,7 @@ const LogoWithText = () => {
       <Text>easiest a way to get</Text>
       <Line>
         <BoldText>great food</BoldText>
-        <Text>Delivered</Text>
+        <Text className='noLeftMargin'>Delivered</Text>
       </Line>
     </Wrapper>
   );
@@ -21,42 +21,57 @@ const Wrapper = styled.div`
   height: 588px;
   width: 480px;
   text-align: left;
-  padding-left: 4%;
-  margin-right: -4%;
+  .noLeftMargin {
+    margin-left: -4%;
+    padding-top: 0.5%;
+  }
+  @media (max-width: 550px) {
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    .noLeftMargin {
+      margin-left: 0%;
+    }
+  }
 `;
 
 const Lorem = styled.p`
-  height: 60px;
-  width: 103px;
+  height: 3.75rem;
+  width: 6.4375rem;
   color: #ffffff;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 50px;
+  font-size: 3.125rem;
   margin-bottom: 10.5%;
   margin-top: 35%;
   font-weight: 400;
   transform: scaleY(1.1);
+  margin-left: 6%;
+  @media (max-width: 550px) {
+    margin-top: 20%;
+  }
 `;
 const Text = styled.p`
-  width: 323px;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
-  font-size: 32px;
+  font-size: 2rem;
   letter-spacing: -0.57px;
   text-shadow: 0 0 9px 0 #ffffff;
   font-weight: 100;
   margin-bottom: 1%;
   margin-top: 0;
+  margin-left: 6%;
 `;
 const BoldText = styled.p`
   width: 40%;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
-  font-size: 34px;
+  font-size: 2.125rem;
   letter-spacing: -0.57px;
   text-shadow: 0 0 9px 0 #ffffff;
   font-weight: 600;
   margin-bottom: 1%;
   margin-top: 0;
+  margin-left: 6%;
 `;
 const Line = styled.div`
   display: flex;

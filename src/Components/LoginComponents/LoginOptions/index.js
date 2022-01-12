@@ -21,6 +21,9 @@ const LoginOptionsLinkContainer = styled.div`
   width: 79.5%;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 550px) {
+    width: 83%;
+  }
 `;
 const Facebook = styled.a`
   height: 50px;
@@ -32,11 +35,16 @@ const Facebook = styled.a`
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   color: #2c79bd;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  @media (max-width: 550px) {
+    height: 20px;
+    padding: 0;
+    width: 110px;
+  }
 `;
 const Google = styled.a`
   height: 50px;
@@ -48,9 +56,14 @@ const Google = styled.a`
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   color: #d34836;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  @media (max-width: 550px) {
+    height: 20px;
+    padding: 0;
+    width: 110px;
+  }
 `;

@@ -12,12 +12,17 @@ const CommonButton = styled.button`
   justify-content: space-around;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.3px;
   line-height: 22px;
   text-align: center;
   text-shadow: 0 0 9px 0 #ffffff;
   padding-top: 15px;
+  @media (max-width: 550px) {
+    width: 250px;
+    height: 30px;
+    padding-top: 3%;
+  }
 `;
 export default CommonButton;

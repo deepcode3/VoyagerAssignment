@@ -98,6 +98,9 @@ const FormContainer = styled.div`
     }
     border-bottom: 1px solid #ed1b2e;
   }
+  @media (max-width: 550px) {
+    width: 250px;
+  }
 `;
 
 const Textbox = styled.input`
@@ -131,7 +134,7 @@ const Label = styled.label`
   width: 86.36px;
   color: #858585;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: -0.27px;
   line-height: 22px;
   cursor: text;
