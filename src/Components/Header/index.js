@@ -134,13 +134,13 @@ Header.propTypes = {
 Header.defaultProps = { isHome: false };
 const HeaderWrapper = styled.div`
   background-color: transparent;
-  height: 60px;
+  height: 3.75rem;
   width: 97%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start
   align-items: center;
-  margin-left: 30px;
+  margin-left: 3%;
   .smallLine {
     height: 30px;
   }
@@ -153,8 +153,17 @@ const LinkContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 30%;
-  margin-right: -2%;
+  right: 0px;
   align-items: center;
+  margin-left: 70%;
+  @media (max-width: 1470px) {
+    width: 40%;
+    margin-left: 50%;
+  }
+  @media (max-width: 550px) {
+    width: 30%;
+    margin-left: 30%;
+  }
 `;
 const ProfileConatiner = styled.div`
   width: 38px;
@@ -173,7 +182,7 @@ const User = styled.button`
   height: 19px;
   color: #303134;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   line-height: 19px;
@@ -186,7 +195,7 @@ const Button = styled.button`
   background-color: transparent;
   border: none;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   padding: 0;
@@ -215,20 +224,22 @@ const CartLink = styled(NavLink)`
   width: 37px;
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   line-height: 19px;
   text-decoration: none;
+  margin-right: 5%;
 `;
 const CartLinkOrange = styled(NavLink)`
   height: 19px;
   width: 37px;
   color: #fda5a3;
   font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   line-height: 19px;
   text-decoration: none;
+  margin-right: 5%;
 `;
