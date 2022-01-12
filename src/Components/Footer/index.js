@@ -46,7 +46,7 @@ const FooterContainer = styled.div`
 const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
-  width: 50%
+  width: 50%;
   height: 50%;
   justify-content: flex-start;
   align-items: center;

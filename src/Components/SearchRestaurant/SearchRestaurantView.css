@@ -25,7 +25,7 @@
   height: 17px;
   width: 78px;
   color: #3f3f40;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -48,7 +48,7 @@
   height: 17px;
   width: 961px;
   color: #6f6f6f;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   font-weight: 600;
   line-height: 17px;
@@ -56,4 +56,10 @@
   left: 810px;
   top: 14px;
   word-spacing: 3px;
+}
+.headerDivSearchRest {
+  position: relative;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }

@@ -1,17 +1,19 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React from 'react';
 import Footer from '../../Components/Footer';
 import Header from '../../Components/Header';
-import Profile from './Profile';
-import EditModal from '../../Components/Editmodel/index';
+// import Profile from './Profile';
+// import EditModal from '../../Components/Editmodel/index';
 
 const ProfileMain = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   return (
     <Div>
-      <Header />
-      <Profile open={open} setOpen={setOpen} />
-      {open && <EditModal setOpen={setOpen} />}
+      <div className='headerDivProfile'>
+        <Header />
+      </div>
+      {/* <Profile open={open} setOpen={setOpen} />
+      {open && <EditModal setOpen={setOpen} />} */}
       <Footer />
     </Div>
   );
@@ -19,7 +21,14 @@ const ProfileMain = () => {
 export default ProfileMain;
 
 const Div = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: relative;
+  .headerDivProfile {
+    width: 100%;
+    position: relative;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
 `;

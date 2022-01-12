@@ -10,7 +10,9 @@ import './SearchRestaurantView.css';
 const SearchRestaurantView = ({ data, searchKey, location }) => {
   return (
     <>
-      <Header />
+      <div className='headerDivSearchRest'>
+        <Header />
+      </div>
       <img src={menuSemiBg} alt='semiBg' className='csemiBg' />
       <div className='restaurantSearchBar'>
         <span className='crestaurantsInfo'>Delivery ASAP</span>
