@@ -11,7 +11,7 @@
 }
 .menuKebabImage {
   height: 336px;
-  width: 920px;
+  width: 960px;
   position: relative;
   top: -300px;
   left: 00px;
@@ -209,8 +209,8 @@
   height: 12.91px;
   width: 12.91px;
   position: relative;
-  left: 5px;
-  top: 5px;
+  top: 3.5px;
+  left: 8px;
 }
 .menuRating1 {
   height: 17px;
@@ -222,8 +222,8 @@
   letter-spacing: 0;
   line-height: 17px;
   position: relative;
-  top: -13px;
-  left: 25px;
+  top: -14px;
+  left: 27px;
 }
 .menuRating2 {
   height: 17px;
@@ -235,8 +235,8 @@
   letter-spacing: 0;
   line-height: 17px;
   position: relative;
-  top: -13px;
-  left: 25px;
+  top: -14px;
+  left: 27px;
 }
 .menuRating3 {
   height: 17px;
@@ -248,8 +248,8 @@
   letter-spacing: 0;
   line-height: 17px;
   position: relative;
-  top: -13px;
-  left: 25px;
+  top: -14px;
+  left: 27px;
 }
 
 .menuKebab {

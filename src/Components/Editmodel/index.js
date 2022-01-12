@@ -1,7 +1,10 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useContext } from 'react';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import icnAddPhoto from '../../Assets/Icons/icn_add_photo.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
@@ -14,60 +17,104 @@ import icnDonut from '../../Assets/Icons/icn_donut.png';
 import icnFrenchfries from '../../Assets/Icons/icn_frenchfries.png';
 import icnIcecream from '../../Assets/Icons/icn_icecream.png';
 import icnPizza from '../../Assets/Icons/icn_pizza.png';
+import { AccountsContext } from '../../Context/AccountsContext';
+import { UserContext } from '../../Context/UserContext';
+import InputField from '../LoginComponents/InputField';
+import StyledButton from '../CommonButton/index';
+import OutsideAlerter from '../OutsideClickAlerter';
 
 const EditModal = ({ setOpen }) => {
+  const schema = yup.object().shape({
+    username: yup.string().required('Username is required'),
+    mobilenumber: yup.string().required('mobile number is required'),
+    fullname: yup.string().required('Name is required'),
+  });
+  const { editProfile } = useContext(AccountsContext);
+  const { currentUser, setUser } = useContext(UserContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const submitForm = (data) => {
+    console.log(data);
+    editProfile({
+      email: currentUser.email,
+      username: data.username,
+      fullname: data.fullname,
+      mobilenumber: data.mobilenumber,
+    });
+    setUser({
+      countrycode: data.mobilenumber.split(' ')[0],
+      email: currentUser.email,
+      firstname: data.fullname.split(' ')[0],
+      lastname: data.fullname.split(' ')[1],
+      mobile: data.mobilenumber.split(' ')[1],
+      password: currentUser.password,
+      username: data.username,
+    });
+    setOpen(false);
+  };
   return (
     <ModalBack>
       <div className='ModalContainer'>
         <span className='edit'> Edit Profile</span>
-
-        <div className='card'>
-          <div className='rectangle-3 '>
-            <div className='mask'>
-              <img src={profilePic} alt='pic' className='profile_img' />
-              <img src={icnAddPhoto} alt='add_photo' className='pic' />
+        <OutsideAlerter
+          handlePress={() => {
+            return setOpen(false);
+          }}
+        >
+          <form className='card' onSubmit={handleSubmit(submitForm)}>
+            <div className='left'>
+              <div className='rectangle-3 '>
+                <div className='mask'>
+                  <img src={profilePic} alt='pic' className='profile_img' />
+                  <img src={icnAddPhoto} alt='add_photo' className='pic' />
+                </div>
+              </div>
+              <div className='data'>
+                <InputField
+                  name='username'
+                  register={register}
+                  msg={errors.username?.message}
+                  label='Username'
+                />
+                <InputField
+                  name='fullname'
+                  register={register}
+                  msg={errors.fullname?.message}
+                  label='Name'
+                />
+                <InputField
+                  name='mobilenumber'
+                  register={register}
+                  msg={errors.mobilenumber?.message}
+                  label='Phone Number'
+                />
+              </div>
             </div>
-          </div>
-          <form className='form'>
-            <div className='field'>
-              <label className='label'>Username</label>
-              <input type='text' className='input' placeholder='Abdulla' />
-            </div>
-            <div className='field'>
-              <label className='label'>Name</label>
-              <input type='text' className='input' placeholder='Abdulla Mohammad' />
-            </div>
-            <div className='field'>
-              <label className='label'>Phone Number</label>
-              <input type='text' className='input' placeholder='7975312513' />
+            <div className='right'>
+              <hr className='line-3' />
+              <span className='avtar_text'>Choose a user avatar</span>
+              <div className='avtars'>
+                <img src={icnBeer} alt='avtars' />
+                <img src={icnBread} alt='avtars' />
+                <img src={icnBurger} alt='avtars' />
+                <img src={icnChicken} alt='avtars' />
+                <img src={icnCupcake} alt='avtars' />
+                <img src={icnDonut} alt='avtars' />
+                <img src={icnFrenchfries} alt='avtars' />
+                <img src={icnIcecream} alt='avtars' />
+                <img src={icnPizza} alt='avtars' />
+              </div>
+              <div className='save-button'>
+                <StyledButton type='submit'>SAVE</StyledButton>
+              </div>
             </div>
           </form>
-          <hr className='line-3' />
-          <span className='avtar_text'>Choose a user avatar</span>
-          <div className='avtars'>
-            <img src={icnBeer} alt='avtars' />
-            <img src={icnBread} alt='avtars' />
-            <img src={icnBurger} alt='avtars' />
-            <img src={icnChicken} alt='avtars' />
-            <img src={icnCupcake} alt='avtars' />
-            <img src={icnDonut} alt='avtars' />
-            <img src={icnFrenchfries} alt='avtars' />
-            <img src={icnIcecream} alt='avtars' />
-            <img src={icnPizza} alt='avtars' />
-          </div>
-          <div className='save-button'>
-            <span
-              className='save'
-              onClick={() => {
-                setOpen(false);
-              }}
-              role='button'
-              onKeyDown={null}
-            >
-              Save
-            </span>
-          </div>
-        </div>
+        </OutsideAlerter>
       </div>
     </ModalBack>
   );
@@ -109,6 +156,20 @@ const ModalBack = styled.div`
     right: 13px;
     top: 13px;
   }
+  .left {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .data {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 30%;
+    margin-top: 35%;
+  }
   .card {
     height: 628px;
     width: 961px;
@@ -119,6 +180,8 @@ const ModalBack = styled.div`
     justify-content: center;
     align-items: start;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .mask {
@@ -155,7 +218,7 @@ const ModalBack = styled.div`
     left: 79px;
   }
   .form {
-    position: absolute;
+    display: flex;
     top: 204px;
     left: 84px;
   }
@@ -174,12 +237,12 @@ const ModalBack = styled.div`
   }
   input[type='text'] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 0;
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid #4a4a4a;
     opacity: 0.53;
+    margin-bottom: 10px;
   }
   .line-3 {
     box-sizing: border-box;

@@ -30,13 +30,19 @@ const Footer = () => {
 export default Footer;
 const FooterContainer = styled.div`
   height: 227px;
-  width: 1895px;
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 `;
+// const FooterAligner = styled.div`
+//   width: 960px;
+//   position: relative;
+//   margin-left: auto;
+//   margin-right: auto;
+// `;
 const FlexRow = styled.div`
   display: flex;
   flex-direction: row;

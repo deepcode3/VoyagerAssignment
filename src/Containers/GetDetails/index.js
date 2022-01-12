@@ -5,7 +5,6 @@ import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
-
 import StyledButton from '../../Components/CommonButton/index';
 import InputField from '../../Components/LoginComponents/InputField';
 import TelephonePicker from '../../Components/TelephonePicker/index';

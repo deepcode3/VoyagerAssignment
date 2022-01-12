@@ -15,9 +15,11 @@
 .homeInfo {
   width: 730px;
   height: 166px;
-  position: absolute;
-  top: 227px;
-  left: 413px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: -70px;
+  top: 150px;
 }
 .homeInfo1 {
   height: 166px;
@@ -44,11 +46,11 @@
 .homeSearchBar {
   height: 175px;
   width: 611px;
-  position: absolute;
-  left: 420px;
-  top: 456px;
-  margin-left: auto;
+  position: relative;
+  left: -130px;
+  top: 230px;
   margin-right: auto;
+  margin-left: auto;
 }
 .homeLocation {
   position: relative;
@@ -89,4 +91,6 @@
   top: 900px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }

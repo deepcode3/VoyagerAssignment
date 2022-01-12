@@ -449,6 +449,8 @@
   top: 1100px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .Fpactive {

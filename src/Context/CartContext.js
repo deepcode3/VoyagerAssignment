@@ -8,6 +8,10 @@ export const cartContext = createContext({
   clearCartContext: () => {},
   increaseItemQuantity: () => {},
   decreaseItemQuantity: () => {},
+  restaurantItemsCount: () => {},
+  totalPrice: () => {},
+  removeAllRestaurantItems: () => {},
+  itemsOfRestaurant: () => {},
 });
 
 const CartContextProvider = (props) => {
@@ -24,45 +28,49 @@ const CartContextProvider = (props) => {
       });
     }
   };
-  const deleteItem = (id) => {
+
+  const deleteItem = (id, restaurant) => {
     setCartItems(
       cartItems.filter((item) => {
-        return item.item !== id;
+        return !(item.item === id && item.restaurant === restaurant);
       })
     );
   };
-  const clearCartContext = () => {
-    localStorage.clear('cartItems');
-    window.location.reload();
-  };
-  const increaseItemQuantity = (id) => {
+
+  const increaseItemQuantity = (id, restaurant) => {
     const updatedArray = [...cartItems];
     const index = updatedArray.findIndex((item) => {
-      return item.item === id;
+      return item.item === id && item.restaurant === restaurant;
     });
     updatedArray[index].quantity += 1;
     setCartItems(updatedArray);
   };
-  const decreaseItemQuantity = (id) => {
+  const decreaseItemQuantity = (id, restaurant) => {
     const updatedArray = [...cartItems];
     const index = updatedArray.findIndex((item) => {
-      return item.item === id;
+      return item.item === id && item.restaurant === restaurant;
     });
     updatedArray[index].quantity -= 1;
-    setCartItems(updatedArray);
+    if (updatedArray[index].quantity === 0) deleteItem(id, restaurant);
+    else setCartItems(updatedArray);
   };
-
-  const restaurantItemsCount = (restaurantName) => {
+  const itemsOfRestaurant = (restaurantName) => {
     if (cartItems === null) {
-      return 0;
+      return null;
     }
     const result = cartItems.filter((obj) => {
       return obj.restaurant === restaurantName;
     });
-    console.log(result);
+    if (result.length === 0) return null;
+    return result;
+  };
+  const restaurantItemsCount = (restaurantName) => {
+    const result = itemsOfRestaurant(restaurantName);
+    if (result === null) {
+      return 0;
+    }
     return result.length;
   };
-
   const totalPrice = (restaurantName) => {
     if (cartItems === null) {
       return 0;
@@ -96,12 +104,12 @@ const CartContextProvider = (props) => {
     cartItems,
     addItem,
     deleteItem,
-    clearCartContext,
     increaseItemQuantity,
     decreaseItemQuantity,
     restaurantItemsCount,
     totalPrice,
     removeAllRestaurantItems,
+    itemsOfRestaurant,
   };
   // eslint-disable-next-line react/destructuring-assignment
   return <cartContext.Provider value={value}>{props.children}</cartContext.Provider>;

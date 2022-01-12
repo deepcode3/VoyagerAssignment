@@ -5,6 +5,7 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable no-shadow */
 /* eslint-disable no-restricted-syntax */
+/* eslint-disable operator-linebreak */
 import React, { useContext, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
@@ -42,9 +43,11 @@ const Menu = () => {
     cartItems,
     addItem,
     deleteItem,
-    clearCartContext,
+    removeAllRestaurantItems,
     increaseItemQuantity,
     decreaseItemQuantity,
+    totalPrice,
+    itemsOfRestaurant,
   } = useContext(cartContext);
   const data = [
     {
@@ -161,32 +164,28 @@ const Menu = () => {
     if (cartItems) {
       // eslint-disable-next-line no-restricted-syntax
       for (const value of Object.values(cartItems)) {
-        if (value.item === item.name && value.status === true) {
+        if (value.item === item.name && value.restaurant === restaurant && value.status === true) {
           return true;
         }
       }
     }
     return false;
   };
-  const getTotalPriceWithDiscount = () => {
-    let totalPrice = 0;
+  const getTotalPriceWithDiscount = (restaurant) => {
     const discount = 24.22;
-    if (cartItems) {
-      for (const item of Object.values(cartItems)) {
-        totalPrice += item.price * item.quantity;
-      }
-    }
-    return totalPrice + 10 - discount.toFixed(2);
+    const totalprice = totalPrice(restaurant);
+    if (totalprice !== 0) return totalprice + 10 - discount;
+    return 0;
   };
-  const getTotalPrice = () => {
-    let totalPrice = 0;
-    if (cartItems) {
-      for (const item of cartItems) {
-        totalPrice += item.price * item.quantity;
-      }
-    }
-    return totalPrice;
-  };
+  // const getTotalPrice = (restaurant) => {
+  //   let totalPrice = 0;
+  //   if (cartItems) {
+  //     for (const item of cartItems) {
+  //       if (item.restaurant === restaurant) totalPrice += item.price * item.quantity;
+  //     }
+  //   }
+  //   return totalPrice;
+  // };
   return (
     <>
       <MenuHalfCompo
@@ -209,12 +208,14 @@ const Menu = () => {
             />
             <img src={searchIcon} alt='' className='menuSearchIcon' />
             <div className='menuCart'>
-              {cartItems !== null ? (
+              {itemsOfRestaurant(restaurant) !== null ? (
                 <>
                   <div className='menuCartHeader'>My Order</div>
                   <div
                     className='menuClearCart'
-                    onClick={clearCartContext}
+                    onClick={() => {
+                      removeAllRestaurantItems(restaurant);
+                    }}
                     role='button'
                     onKeyDown={null}
                   >
@@ -226,7 +227,7 @@ const Menu = () => {
                       // eslint-disable-next-line array-callback-return
                       // eslint-disable-next-line consistent-return
                       .filter((value) => {
-                        if (value.status === true) {
+                        if (value.status === true && value.restaurant === restaurant) {
                           return value;
                         }
                       })
@@ -250,7 +251,7 @@ const Menu = () => {
                                 className='decreseButton'
                                 alt=''
                                 onClick={() => {
-                                  return decreaseItemQuantity(item.item);
+                                  return decreaseItemQuantity(item.item, restaurant);
                                 }}
                                 onKeyDown={null}
                               />
@@ -260,7 +261,7 @@ const Menu = () => {
                                 className='increaseButton'
                                 alt=''
                                 onClick={() => {
-                                  return increaseItemQuantity(item.item);
+                                  return increaseItemQuantity(item.item, restaurant);
                                 }}
                                 onKeyDown={null}
                               />
@@ -283,7 +284,7 @@ const Menu = () => {
                                   : 'menuCartRemove2'
                               }
                               onClick={() => {
-                                return deleteItem(item.item);
+                                return deleteItem(item.item, restaurant);
                               }}
                               role='button'
                               onKeyDown={null}
@@ -307,7 +308,7 @@ const Menu = () => {
                     <span className='priceLabel'>To Pay</span>
                     <div className='totalPriceDiscount'>
                       AED
-                      {getTotalPriceWithDiscount().toFixed(2)}
+                      {getTotalPriceWithDiscount(restaurant).toFixed(2)}
                     </div>
                     <img
                       src={costShowHideButton}
@@ -329,7 +330,7 @@ const Menu = () => {
                         <span className='itemsTotalLabel'>Items Total</span>
                         <span className='totalAmount'>
                           AED
-                          {getTotalPrice().toFixed(2)}
+                          {totalPrice(restaurant).toFixed(2)}
                         </span>
                       </div>
                       <div className='charges'>
@@ -347,7 +348,7 @@ const Menu = () => {
                     src={proceedToCheckOutButton}
                     alt=''
                     onClick={() => {
-                      history.push('/address');
+                      history.push({ pathname: '/address', state: { restaurant } });
                     }}
                     onKeyDown={null}
                   />
@@ -420,7 +421,7 @@ const Menu = () => {
                                 item.bestSeller ? 'addAgainToCartButton' : 'addAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name);
+                                return increaseItemQuantity(item.name, restaurant);
                               }}
                               role='button'
                               onKeyDown={null}
@@ -518,7 +519,7 @@ const Menu = () => {
                                   : 'apptizeraddAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name);
+                                return increaseItemQuantity(item.name, restaurant);
                               }}
                               role='button'
                               onKeyDown={null}
@@ -602,7 +603,7 @@ const Menu = () => {
                                   : 'soupsAddAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name);
+                                return increaseItemQuantity(item.name, restaurant);
                               }}
                               onKeyDown={null}
                               role='button'

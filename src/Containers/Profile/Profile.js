@@ -22,7 +22,7 @@ const Profile = ({ setOpen }) => {
             <img src={profilePic} alt='pic' className='profile_img' />
           </div>
           <div className='name-section'>
-            <span className='username'>{currentUser.firstname}</span>
+            <span className='username'>{currentUser.username}</span>
             <span
               className='edit'
               type='button'

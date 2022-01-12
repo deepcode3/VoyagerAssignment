@@ -17,9 +17,9 @@ const Cartlist = ({ Hotelname, hoteladdress, totalproduct, productcost }) => {
         className='cartremovebtn'
         onKeyDown={null}
         type='button'
-        onClick={(() => {
+        onClick={() => {
           removeAllRestaurantItems(Hotelname);
-        })}
+        }}
       >
         Remove
       </button>
@@ -38,7 +38,7 @@ const Cartlist = ({ Hotelname, hoteladdress, totalproduct, productcost }) => {
       <div
         className='cartproceedbtn'
         onClick={() => {
-          return history.push('/cart');
+          history.push({ pathname: '/cart', state: { restaurant: Hotelname } });
         }}
         role='button'
         onKeyDown={null}
