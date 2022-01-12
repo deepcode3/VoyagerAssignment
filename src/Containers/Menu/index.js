@@ -177,15 +177,6 @@ const Menu = () => {
     if (totalprice !== 0) return totalprice + 10 - discount;
     return 0;
   };
-  // const getTotalPrice = (restaurant) => {
-  //   let totalPrice = 0;
-  //   if (cartItems) {
-  //     for (const item of cartItems) {
-  //       if (item.restaurant === restaurant) totalPrice += item.price * item.quantity;
-  //     }
-  //   }
-  //   return totalPrice;
-  // };
   return (
     <>
       <MenuHalfCompo
