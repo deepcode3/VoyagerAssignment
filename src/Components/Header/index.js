@@ -147,6 +147,9 @@ const HeaderWrapper = styled.div`
   .createNew {
     margin-right: 7.75%;
   }
+  @media (max-width: 550px) {
+    margin-top:10%;
+  }
 `;
 const LinkContainer = styled.div`
   display: flex;

@@ -7,18 +7,13 @@
   left: 00px;
   padding-top: 2%;
 }
-.homeLogo {
-  position: relative;
-  left: 33px;
-  top: 19px;
-}
 .homeInfo {
   width: 730px;
   height: 166px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  left: -70px;
+  left: 00px;
   top: 150px;
 }
 .homeInfo1 {
@@ -45,9 +40,8 @@
 }
 .homeSearchBar {
   height: 175px;
-  width: 611px;
+  width: 730px;
   position: relative;
-  left: -130px;
   top: 230px;
   margin-right: auto;
   margin-left: auto;
@@ -63,12 +57,13 @@
   top: -20px;
 }
 .scroller {
-  width: 119px;
+  width: 200px;
   height: 77px;
-  position: absolute;
-  left: 901px;
-  top: 807px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
   align-items: center;
+  top: 350px;
 }
 .scrollInfo {
   height: 18px;
@@ -106,4 +101,66 @@
   margin-left: auto;
   margin-right: auto;
   top: 400px;
+}
+/*Mobile Screen*/
+@media only screen and (max-width: 500px) {
+  .homeBg {
+    background-image: url('../../Assets/Images/home-loginBg.png');
+    width: 100%;
+    overflow: hidden;
+  }
+  .homeInfo {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 00px;
+  }
+  .homeInfo1 {
+    height: 20px;
+    width: 200px;
+    color: #4c4c4c;
+    font-family: 'Open Sans';
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 80px;
+    text-shadow: 0 0 9px 0 #ffffff;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .homeInfo2 {
+    height: 20px;
+    width: fit-content;
+    color: #4c4c4c;
+    font-family: 'Open Sans';
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-shadow: 0 0 9px 0 #ffffff;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .homeSearchBar {
+    width: 200px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .scroller {
+    width: 200px;
+    height: 77px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    top: 450px;
+    left: 20%;
+  }
+  .footerDivHome {
+    display: none;
+  }
+  .headerDivHome {
+    display: none;
+  }
 }
