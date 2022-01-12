@@ -28,7 +28,7 @@ const Text = styled.p`
   height: 15px;
   color: #4a4a4a;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 100;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -43,7 +43,7 @@ const Button = styled.button`
   height: 20px;
   color: #f67e03;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: -0.24px;
   text-align: center;

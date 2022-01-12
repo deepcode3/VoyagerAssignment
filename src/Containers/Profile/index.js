@@ -9,7 +9,9 @@ const ProfileMain = () => {
   const [open, setOpen] = useState(false);
   return (
     <Div>
-      <Header />
+      <div className='headerDivProfile'>
+        <Header />
+      </div>
       <Profile open={open} setOpen={setOpen} />
       {open && <EditModal setOpen={setOpen} />}
       <Footer />
@@ -19,7 +21,14 @@ const ProfileMain = () => {
 export default ProfileMain;
 
 const Div = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: relative;
+  .headerDivProfile {
+    width: 100%;
+    position: relative;
+    align-items: center;
+    right: 0;
+    left: auto;
+  }
 `;

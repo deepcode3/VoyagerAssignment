@@ -120,6 +120,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   border-radius: 0 7px 7px 0;
   align-items: center;
+  @media (max-width: 550px) {
+    width: 300px;
+    height: 300px;
+    border-radius: 0px 0px 8px 8px;
+  }
 `;
 const BackButton = styled.button`
   height: 17px;
@@ -143,28 +148,38 @@ const DataContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media (max-width: 550px) {
+    height: 70%;
+  }
 `;
 const BlackText = styled.p`
   height: 1%;
   width: 100%;
   color: #2a2c30;
   font-family: 'Open Sans', sans-serif;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10%;
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
+  @media (max-width: 550px) {
+    margin-bottom: 5%;
+    margin-top: 0;
+  }
 `;
 const Description = styled.p`
   width: 100%;
   color: #4a4a4a;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: -0.24px;
   line-height: 19px;
   text-align: center;
   font-weight: 100;
   padding: 0;
   margin: 0;
+  @media (max-width: 550px) {
+    line-height: 15px;
+  }
 `;

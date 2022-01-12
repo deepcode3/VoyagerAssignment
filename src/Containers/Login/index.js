@@ -99,6 +99,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   border-radius: 0 7px 7px 0;
   align-items: center;
+  @media (max-width: 550px) {
+    width: 300px;
+    height: 300px;
+    border-radius: 0px 0px 8px 8px;
+  }
 `;
 const Button = styled.button`
   width: 5%;
@@ -109,13 +114,17 @@ const Button = styled.button`
   position: absolute;
   top: 3%;
   cursor: pointer;
+  @media (max-width: 550px) {
+    right: 2%;
+    top: 1%;
+  }
 `;
 const BlackText = styled.p`
   height: 38px;
   width: 220px;
   color: #2a2c30;
   font-family: 'Open Sans', sans-serif;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 800;
   line-height: 38px;
   text-shadow: 0 0 9px 0 #ffffff;
@@ -124,6 +133,11 @@ const BlackText = styled.p`
   margin-right: 35%;
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
+  @media (max-width: 550px) {
+    margin-top: 5%;
+    margin-right: 12%;
+    margin-bottom: 5%;
+  }
 `;
 const Form = styled.form`
   height: 50%;
@@ -138,7 +152,7 @@ const ForgotButton = styled.button`
   color: #4a4a4a;
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -148,4 +162,9 @@ const ForgotButton = styled.button`
   margin-left: 60%;
   margin-top: -8%;
   cursor: pointer;
+  @media (max-width: 550px) {
+    margin-left: 40%;
+    margin-top: -4%;
+    margin-bottom: 3%;
+  }
 `;

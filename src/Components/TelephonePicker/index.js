@@ -90,7 +90,7 @@ const FormContainerTel = styled.div`
     margin-left: 34%;
     color: #ed1b2e;
     font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: -0.2px;
     height: 10px;
@@ -98,6 +98,10 @@ const FormContainerTel = styled.div`
   }
   .redBorder {
     border-bottom: 1px solid #ed1b2e;
+  }
+  @media (max-width: 550px) {
+    height: 40px;
+    width: 250px;
   }
 `;
 const NumContainer = styled.div`
@@ -157,11 +161,15 @@ const OptionWrapper = styled.div`
 const Flag = styled.img`
   height: 20px;
   width: 29px;
+  @media (max-width: 550px) {
+    height: 10px;
+    width: 20px;
+  }
 `;
 const Code = styled.p`
   color: #000000;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: -0.27px;
   line-height: 22px;
   font-weight: 100;
@@ -172,6 +180,9 @@ const OptionSelected = styled.div`
   width: 90px;
   display: flex;
   flex-direction: row;
+  @media (max-width: 550px) {
+    width: 70px;
+  }
 `;
 const DropDownContainer = styled.div`
   z-index: 99;
@@ -195,7 +206,7 @@ const MobileNumber = styled.input`
   border-bottom: 1px solid #a4a4a4;
   color: #000000;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 100;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -209,4 +220,9 @@ const MobileNumber = styled.input`
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s !important;
+  }
+  @media (max-width: 550px) {
+    height: 30%;
+    width: 60%;
+  }
 `;
