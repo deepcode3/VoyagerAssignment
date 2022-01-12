@@ -12,7 +12,9 @@ const Home = () => {
   return (
     <>
       <div className='homeBg'>
-        <Header isHome />
+        <div className='headerHome'>
+          <Header isHome />
+        </div>
         <div className='homeInfo'>
           <span className='homeInfo1'>Order your food</span>
           <br />
