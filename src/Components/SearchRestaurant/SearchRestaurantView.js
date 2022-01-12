@@ -22,7 +22,7 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
         </div>
         <div className='clsetter'>
           <div className='restaurantLocation' from='restaurant'>
-            <LocationSetter locationValue={location} />
+            <LocationSetter locationValue={location} from='restaurant' />
           </div>
         </div>
         <img className='crestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
