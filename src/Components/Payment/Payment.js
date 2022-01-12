@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Payment.css';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
@@ -14,6 +14,8 @@ import cactive from '../../Assets/Icons/Active state.png';
 import activeline from '../../Assets/Icons/Activeline.png';
 
 const Payment = () => {
+  const [enterCardDetails, setEnterCardDetails] = useState(false);
+  // const history={useHistory}
   const location = useLocation();
   const history = useHistory();
   const loadfinalpay = () => {
@@ -22,6 +24,13 @@ const Payment = () => {
   const loadaddress = () => {
     history.goBack('/address');
   };
+  const showCardDetails = () => {
+    setEnterCardDetails(true);
+  };
+  const HideCardDetails = () => {
+    setEnterCardDetails(false);
+  };
+  console.log(enterCardDetails);
   return (
     <>
       <div className='paymentheading'>
@@ -29,39 +38,47 @@ const Payment = () => {
       </div>
       <div className='paymentcontainer'>
         <div className='Preferdpaymentdiv'>
-          <PaymentOption />
+          <PaymentOption cardDisplay={showCardDetails} hideDetails={HideCardDetails} />
         </div>
         <div className='carddetailscontainer'>
-          <p className='entercarddetailstext'>Enter Credit/Debit card details</p>
-          <div className='cardnumberdiv'>
-            <p className='cardnumbertext'>Card number</p>
-            <input type='text' className='cardnumber' />
-            <img src={visaicon} className='Visaicon' alt='' />
-            <div className='cardnumberline' />
-          </div>
-          <div className='nameoncarddiv'>
-            <p className='nameoncard'>Name on card</p>
-            <input type='text' className='namecard' />
-            <div className='namecardline' />
-          </div>
-          <div className='expirydatediv'>
-            <p className='expiry'>Expiry</p>
-            <p className='security'>Security card</p>
-            <input type='text' className='date' />
-            <div className='datelines' />
-            <div className='bar'>/</div>
-            <input type='text' className='year' />
-            <input type='text' className='code' />
+          {enterCardDetails
+          // eslint-disable-next-line react/jsx-wrap-multilines
+            ? (
+          // eslint-disable-next-line react/jsx-wrap-multilines
+              <>
+                <p className='entercarddetailstext'>
+                  Enter Credit/Debit card details
+                </p>
+                <div className='cardnumberdiv'>
+                  <p className='cardnumbertext'>Card number</p>
+                  <input type='text' className='cardnumber' />
+                  <img src={visaicon} className='Visaicon' alt='' />
+                  <div className='cardnumberline' />
+                </div>
+                <div className='nameoncarddiv'>
+                  <p className='nameoncard'>Name on card</p>
+                  <input type='text' className='namecard' />
+                  <div className='namecardline' />
+                </div>
+                <div className='expirydatediv'>
+                  <p className='expiry'>Expiry</p>
+                  <p className='security'>Security card</p>
+                  <input type='text' className='date' />
+                  <div className='datelines' />
+                  <div className='bar'>/</div>
+                  <input type='text' className='year' />
+                  <input type='text' className='code' />
 
-            <div className='yearline' />
-            <div className='codeline' />
-          </div>
-          <div className='sometext'>
-            <input type='radio' className='somename' />
-            <p className='addtosave'>Add this card to saved cards</p>
-          </div>
+                  <div className='yearline' />
+                  <div className='codeline' />
+                </div>
+                <div className='sometext'>
+                  <input type='radio' className='somename' />
+                  <p className='addtosave'>Add this card to saved cards</p>
+                </div>
+              </>)
+            : (null)}
         </div>
-
         <PaymentPoints />
         <p className='paymentdeliverydetails'>Delivery Details</p>
         <PaymentDeliveryDetails />
