@@ -29,6 +29,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 300px;
     height: 300px;
+    border-radius: 0 8px 0px 0px;
     .noLeftMargin {
       margin-left: 0%;
     }

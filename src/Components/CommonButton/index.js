@@ -22,7 +22,7 @@ const CommonButton = styled.button`
   @media (max-width: 550px) {
     width: 250px;
     height: 30px;
-    padding-top: 3%;
+    padding-top: 1.5%;
   }
 `;
 export default CommonButton;

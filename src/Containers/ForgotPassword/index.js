@@ -166,6 +166,11 @@ const Wrapper = styled.div`
     color: #000000;
     font-weight: 600;
   }
+  @media (max-width: 550px) {
+    width: 300px;
+    height: 300px;
+    border-radius: 0px 0px 8px 8px;
+  }
 `;
 const BackButton = styled.button`
   height: 17px;
@@ -187,13 +192,17 @@ const StyledImg = styled.img`
   padding-top: 6%;
   padding-bottom: 10%;
   padding-left: 2%;
+  @media (max-width: 550px) {
+    padding-top: 0;
+    padding-bottom: 3%;
+  }
 `;
 const BlackText = styled.p`
   height: 5%;
   width: 60%;
   color: #2a2c30;
   font-family: 'Open Sans', sans-serif;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
   letter-spacing: -0.37px;
   text-align: center;
@@ -207,7 +216,7 @@ const Description = styled.p`
   width: 60%;
   color: #4a4a4a;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: -0.24px;
   line-height: 19px;
   text-align: center;
@@ -215,6 +224,11 @@ const Description = styled.p`
   margin-top: 7%;
   margin-bottom: 6%;
   transform: scaleX(1.02);
+  @media (max-width: 550px) {
+    line-height: 15px;
+    margin-bottom: 0%;
+    margin-top: 3%;
+  }
 `;
 const Container = styled.div`
   width: 100%;
@@ -231,18 +245,25 @@ const Navbar = styled.div`
   margin-left: 10.5%;
   width: 40%;
   justify-content: space-between;
+  @media (max-width: 550px) {
+    margin-left: 8%;
+    width: 45%;
+  }
 `;
 const TypeContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 20px;
+  @media (max-width: 550px) {
+    height: 15px;
+  }
 `;
 const InputTypeButton = styled.button`
   height: 24px;
   opacity: 0.66;
   color: #4a4a4a;
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: -0.43px;
   line-height: 24px;
   background-color: transparent;
@@ -255,6 +276,9 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 550px) {
+    height: 60%;
+  }
 `;
 const Border = styled.img`
   height: 4px;

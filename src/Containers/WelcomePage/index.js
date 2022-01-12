@@ -51,6 +51,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   border-radius: 0 7px 7px 0;
   align-items: center;
+  @media (max-width: 550px) {
+    width: 300px;
+    height: 300px;
+    border-radius: 0px 0px 8px 8px;
+  }
 `;
 const Button = styled.button`
   width: 5%;
@@ -61,19 +66,28 @@ const Button = styled.button`
   position: absolute;
   top: 3%;
   cursor: pointer;
+  @media (max-width: 550px) {
+    right: 2%;
+    top: 1%;
+  }
 `;
 const StyledImg = styled.img`
   height: 30%;
   width: 35%;
   padding-top: 20%;
   padding-bottom: 5%;
+  @media (max-width: 550px) {
+    height: 20%;
+    width: 25%;
+    padding-top: 10%;
+  }
 `;
 const BlackText = styled.p`
   height: 5%;
   width: 50%;
   color: #2a2c30;
   font-family: 'Open Sans', sans-serif;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: bold;
   letter-spacing: -0.37px;
   text-align: center;
@@ -86,11 +100,14 @@ const Description = styled.p`
   width: 227px;
   color: #4a4a4a;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: -0.24px;
   line-height: 19px;
   text-align: center;
   font-weight: 100;
   margin-top: 7%;
   margin-bottom: 18.5%;
+  @media (max-width: 550px) {
+    line-height: 15px;
+  }
 `;

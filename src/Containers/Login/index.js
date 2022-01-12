@@ -102,6 +102,7 @@ const Wrapper = styled.div`
   @media (max-width: 550px) {
     width: 300px;
     height: 300px;
+    border-radius: 0px 0px 8px 8px;
   }
 `;
 const Button = styled.button`
