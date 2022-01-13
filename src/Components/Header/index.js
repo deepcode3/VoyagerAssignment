@@ -19,6 +19,8 @@ import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import icnMenu from '../../Assets/Icons/menu.png';
 import { UserContext } from '../../Context/UserContext';
 import LoginLayout from '../LoginLayout';
+import data from '../Footer/data';
+import closeButton from '../../Assets/Icons/close_button.png';
 
 const Header = ({ isHome }) => {
   const { currentUser, signOut } = useContext(UserContext);
@@ -138,6 +140,13 @@ const Header = ({ isHome }) => {
           </MenuIcon>
           {dropDownStatus ? (
             <DropDowm>
+              <Closebutton
+                onClick={() => {
+                  setDropDownStatus(false);
+                }}
+              >
+                <img src={closeButton} alt='close' />
+              </Closebutton>
               <LinkTo
                 onClick={() => {
                   setModalIsOpen(true);
@@ -163,6 +172,18 @@ const Header = ({ isHome }) => {
               >
                 CART
               </LinkTo>
+              {data.map((element) => {
+                return (
+                  <LinkTo
+                    key={element}
+                    onClick={() => {
+                      history.push(`/${element.toLowerCase().replaceAll(' ', '-')}`);
+                    }}
+                  >
+                    {element.toUpperCase()}
+                  </LinkTo>
+                );
+              })}
             </DropDowm>
           ) : null}
         </>
@@ -177,6 +198,13 @@ const Header = ({ isHome }) => {
           </MenuIcon>
           {dropDownStatus ? (
             <DropDowm>
+              <Closebutton
+                onClick={() => {
+                  setDropDownStatus(false);
+                }}
+              >
+                <img src={closeButton} alt='close' />
+              </Closebutton>
               <LinkTo
                 onClick={() => {
                   history.push('/profile');
@@ -193,6 +221,19 @@ const Header = ({ isHome }) => {
               >
                 CART
               </LinkTo>
+
+              {data.map((element) => {
+                return (
+                  <LinkTo
+                    key={element}
+                    onClick={() => {
+                      history.push(`/${element.toLowerCase().replaceAll(' ', '-')}`);
+                    }}
+                  >
+                    {element.toUpperCase()}
+                  </LinkTo>
+                );
+              })}
               <LinkTo
                 onClick={() => {
                   handleLogout();
@@ -261,8 +302,17 @@ const DropDowm = styled.div`
   margin-left: 180px;
   padding: 4px;
 `;
+const Closebutton = styled.button`
+  width: 5%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 3%;
+  right: 5%;
+`;
 const LinkTo = styled.button`
-  width: auto;
+  width: 90%;
   height: 25px;
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
