@@ -270,7 +270,7 @@ const HeaderWrapper = styled.div`
     margin-right: 7.75%;
   }
   @media (max-width: 550px) {
-    margin-top:10%;
+    margin-top:5%;
   }
 `;
 const MenuIcon = styled.button`
