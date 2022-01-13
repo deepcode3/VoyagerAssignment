@@ -247,7 +247,7 @@ const Navbar = styled.div`
   justify-content: space-between;
   @media (max-width: 550px) {
     margin-left: 8%;
-    width: 45%;
+    width: 43%;
   }
 `;
 const TypeContainer = styled.div`
@@ -255,7 +255,7 @@ const TypeContainer = styled.div`
   flex-direction: column;
   height: 20px;
   @media (max-width: 550px) {
-    height: 15px;
+    height: 8px;
   }
 `;
 const InputTypeButton = styled.button`
@@ -277,7 +277,7 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 550px) {
-    height: 60%;
+    height: 57%;
   }
 `;
 const Border = styled.img`

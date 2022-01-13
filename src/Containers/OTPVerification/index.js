@@ -92,6 +92,11 @@ const StyledImg = styled.img`
   padding-top: 6%;
   padding-bottom: 6%;
   padding-left: 2%;
+  @media (max-width: 550px) {
+    height: 15%;
+    width: 20%;
+    padding-top: 3%;
+  }
 `;
 const BlackText = styled.p`
   height: 5%;
@@ -123,8 +128,8 @@ const Description = styled.p`
   margin-bottom: 20%;
   transform: scaleX(1.02);
   @media (max-width: 550px) {
-    margin-bottom: 0%;
-    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-top: 3%;
     line-height: 15px;
   }
 `;

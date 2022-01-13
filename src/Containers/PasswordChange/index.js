@@ -124,6 +124,9 @@ const BlackText = styled.p`
   padding-bottom: 3%;
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
+  @media (max-width: 550px) {
+    margin-bottom: 2.5%;
+  }
 `;
 const Description = styled.p`
   color: #4a4a4a;
@@ -147,6 +150,6 @@ const DataContainer = styled.form`
   justify-content: space-around;
   align-items: center;
   @media (max-width: 550px) {
-    margin-top: 2%;
+    margin-top: 5%;
   }
 `;

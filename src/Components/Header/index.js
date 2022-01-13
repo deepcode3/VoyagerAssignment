@@ -164,7 +164,7 @@ const LinkContainer = styled.div`
     margin-left: 50%;
   }
   @media (max-width: 550px) {
-    width: 30%;
+    width: 40%;
     margin-left: 30%;
   }
 `;
@@ -215,6 +215,9 @@ const CartIcon = styled.img`
   height: 27px;
   width: 20px;
   margin-right: 8%;
+  @media (max-width: 550px) {
+    background-color: #fda5a3;
+  }
 `;
 const CartIconOrange = styled.img`
   height: 27px;
@@ -233,6 +236,9 @@ const CartLink = styled(NavLink)`
   line-height: 19px;
   text-decoration: none;
   margin-right: 5%;
+  @media (max-width: 550px) {
+    color: #fda5a3;
+  }
 `;
 const CartLinkOrange = styled(NavLink)`
   height: 19px;
