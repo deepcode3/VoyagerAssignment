@@ -137,6 +137,10 @@ const BackButton = styled.button`
   .backArrow {
     height: 17px;
     width: 17px;
+    @media (max-width: 550px) {
+      width: 12px;
+      height: 12px;
+    }
   }
 `;
 const DataContainer = styled.form`
@@ -149,7 +153,10 @@ const DataContainer = styled.form`
   flex-direction: column;
   justify-content: space-around;
   @media (max-width: 550px) {
-    height: 70%;
+    height: 80%;
+    margin-left: 16.5%;
+    justify-content: space-between;
+    margin-top: -1px;
   }
 `;
 const BlackText = styled.p`
@@ -165,7 +172,7 @@ const BlackText = styled.p`
   letter-spacing: 0.5px;
   @media (max-width: 550px) {
     margin-bottom: 5%;
-    margin-top: 0;
+    margin-top: -10px;
   }
 `;
 const Description = styled.p`
@@ -180,6 +187,6 @@ const Description = styled.p`
   padding: 0;
   margin: 0;
   @media (max-width: 550px) {
-    line-height: 15px;
+    line-height: 12px;
   }
 `;

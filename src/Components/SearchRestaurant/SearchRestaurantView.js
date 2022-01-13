@@ -9,7 +9,7 @@ import './SearchRestaurantView.css';
 
 const SearchRestaurantView = ({ data, searchKey, location }) => {
   return (
-    <>
+    <div className='outContainer'>
       <div className='headerDivSearchRest'>
         <Header />
       </div>
@@ -32,7 +32,7 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
       <div className='crestaurantLocators'>
         <div className='crestaurantLocatorInfo'>Home UAE Explore Great breakfasts My Cart</div>
       </div>
-    </>
+    </div>
   );
 };
 

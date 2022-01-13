@@ -125,6 +125,7 @@ const BlackText = styled.p`
   @media (max-width: 550px) {
     margin-top: 0;
     margin-bottom: 0;
+    line-height: 25px;
   }
 `;
 const Description = styled.p`
@@ -153,5 +154,6 @@ const DataContainer = styled.form`
   @media (max-width: 550px) {
     height: 33.5%;
     margin-bottom: 4%;
+    margin-top: 4.5%;
   }
 `;

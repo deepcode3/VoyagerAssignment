@@ -95,13 +95,17 @@ const FormContainerTel = styled.div`
     letter-spacing: -0.2px;
     height: 10px;
     margin-top: 0px;
+    @media (max-width: 550px) {
+      margin-left:39%
+    }
   }
   .redBorder {
     border-bottom: 1px solid #ed1b2e;
   }
   @media (max-width: 550px) {
-    height: 40px;
+    height: 30px;
     width: 250px;
+    margin-bottom:7px;
   }
 `;
 const NumContainer = styled.div`
@@ -116,6 +120,9 @@ const DropDown = styled.img`
   width: 11px;
   margin-top: 8px;
   margin-left: 10px;
+  @media (max-width: 550px) {
+    margin-top: 2px;
+  }
 `;
 
 const Label = styled.label`
@@ -129,6 +136,9 @@ const Label = styled.label`
   pointer-events: none;
   top: -0.5rem;
   position: relative;
+  @media (max-width: 550px) {
+    line-height: 7px;
+  }
 `;
 const DropDownWindow = styled.div`
   overflow-y: scroll;
@@ -157,6 +167,9 @@ const OptionWrapper = styled.div`
   :hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
+  @media (max-width: 550px) {
+    margin-bottom: -3px;
+  }
 `;
 const Flag = styled.img`
   height: 20px;
@@ -174,6 +187,9 @@ const Code = styled.p`
   line-height: 22px;
   font-weight: 100;
   margin-top: 0;
+  @media (max-width: 550px) {
+    margin-top: -6px;
+  }
 `;
 const OptionSelected = styled.div`
   border-bottom: 1px solid #a4a4a4;
@@ -222,7 +238,9 @@ const MobileNumber = styled.input`
     transition: background-color 5000s ease-in-out 0s !important;
   }
   @media (max-width: 550px) {
-    height: 30%;
+    height: 20%;
     width: 60%;
+    margin-bottom: -10px;
+    padding-bottom: 0;
   }
 `;
