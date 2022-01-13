@@ -138,8 +138,11 @@ const BackButton = styled.button`
     height: 17px;
     width: 17px;
     @media (max-width: 550px) {
-      width: 12px;
-      height: 12px;
+      width: 15px;
+      height: 13px;
+      position: relative;
+      top: -220px;
+   
     }
   }
 `;

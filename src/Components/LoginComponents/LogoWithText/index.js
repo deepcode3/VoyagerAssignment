@@ -48,7 +48,8 @@ const Lorem = styled.p`
   transform: scaleY(1.1);
   margin-left: 6%;
   @media (max-width: 550px) {
-    margin-top: 7%;
+    margin-top: 8%;
+    margin-left: 10%;
   }
 `;
 const Text = styled.p`
@@ -61,6 +62,9 @@ const Text = styled.p`
   margin-bottom: 1%;
   margin-top: 0;
   margin-left: 6%;
+  @media (max-width: 550px) {
+    margin-left: 10%;
+  }
 `;
 const BoldText = styled.p`
   width: 40%;
@@ -75,6 +79,7 @@ const BoldText = styled.p`
   margin-left: 6%;
   @media (max-width: 550px) {
     margin-right: 2%;
+    margin-left: 10%;
   }
 `;
 const Line = styled.div`
