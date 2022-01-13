@@ -126,6 +126,7 @@ const Header = ({ isHome }) => {
           <PasswordChangeSuccess />
         ) : null}
       </LoginLayout>
+
       {currentUser === null ? (
         <>
           <MenuIcon
@@ -247,22 +248,22 @@ const MenuIcon = styled.button`
   }
 `;
 const DropDowm = styled.div`
-  width: 150px;
+  width: 180px;
   height: auto;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   z-index: 99;
   position: absolute;
   justify-content: space-around;
-  top: 40px;
-  margin-left: 220px;
+  top: 3px;
+  margin-left: 180px;
   padding: 4px;
 `;
 const LinkTo = styled.button`
-  width: 100%;
-  height: 20px;
+  width: auto;
+  height: 25px;
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
@@ -270,6 +271,7 @@ const LinkTo = styled.button`
   border: none;
   font-weight: 900;
   cursor: pointer;
+  text-align: left;
 `;
 const LinkContainer = styled.div`
   display: flex;
