@@ -37,11 +37,11 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
             <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
           </div>
         </div>
-        <div className='restaurantLocators'>
-          <div className='restaurantLocatorInfo'>
-            Home UAE Explore Great Breakfasts
-            {restaurant}
-          </div>
+      </div>
+      <div className='menuLocators'>
+        <div className='menuLocatorsInfo'>
+          Home UAE Explore Great Breakfasts
+          {restaurant}
         </div>
       </div>
       <img src={halfBg} alt='' className='menuHalfBgImage' />

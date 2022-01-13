@@ -2,12 +2,34 @@
   height: 267px;
   width: 100%;
   position: relative;
-  top: -80px;
+  top: -89px;
 }
 .semiBgComponentSeperator {
   width: 961px;
   margin-left: auto;
   margin-right: auto;
+}
+.menuLocators {
+  position: relative;
+  top: -92px;
+  height: 44px;
+  width: 100%;
+  background-color: #c5cae238;
+}
+.menuLocatorsInfo {
+  height: 17px;
+  width: 961px;
+  color: #6f6f6f;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 13px;
+  word-spacing: 3px;
+  position: relative;
+  top: 10px;
 }
 .menuKebabImage {
   height: 336px;
