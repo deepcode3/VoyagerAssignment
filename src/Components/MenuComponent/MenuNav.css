@@ -965,3 +965,11 @@
   margin-right: auto;
   margin-left: auto;
 }
+@media all and (max-width: 550px) {
+  .footerDivGallery {
+    display: none;
+  }
+  .footerDivReview {
+    display: none;
+  }
+}

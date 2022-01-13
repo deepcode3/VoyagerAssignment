@@ -89,6 +89,9 @@ const FormContainer = styled.div`
     letter-spacing: -0.2px;
     line-height: 17px;
     margin-top: 25px;
+    @media (max-width: 550px) {
+      margin-top: 13px;
+    }
   }
   .moveUpWithRedBorder {
     ~ .form-label {
@@ -127,6 +130,9 @@ const Textbox = styled.input`
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s !important;
+  }
+  @media (max-width: 550px) {
+    height: 70%;
   }
 `;
 

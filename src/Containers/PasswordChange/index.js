@@ -83,7 +83,7 @@ const Wrapper = styled.div`
   align-items: center;
   @media (max-width: 550px) {
     width: 300px;
-    height: 300px;
+    height: 70%;
     border-radius: 0px 0px 8px 8px;
   }
 `;
@@ -98,6 +98,13 @@ const BackButton = styled.button`
   .backArrow {
     height: 17px;
     width: 17px;
+    @media (max-width: 550px) {
+      width: 15px;
+      height: 13px;
+      position: relative;
+      top: -220px;
+
+    }
   }
 `;
 const StyledImg = styled.img`
@@ -108,8 +115,8 @@ const StyledImg = styled.img`
   padding-left: 5%;
   @media (max-width: 550px) {
     height: 15%;
-    width: 20%;
-    padding-bottom: 4%;
+    width: 25%;
+    padding-bottom: 10%;
   }
 `;
 const BlackText = styled.p`
@@ -124,6 +131,9 @@ const BlackText = styled.p`
   padding-bottom: 3%;
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
+  @media (max-width: 550px) {
+    margin-bottom: 5%;
+  }
 `;
 const Description = styled.p`
   color: #4a4a4a;
@@ -147,6 +157,6 @@ const DataContainer = styled.form`
   justify-content: space-around;
   align-items: center;
   @media (max-width: 550px) {
-    margin-top: 2%;
+    margin-top: 10%;
   }
 `;

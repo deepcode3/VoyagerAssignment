@@ -168,7 +168,7 @@ const Wrapper = styled.div`
   }
   @media (max-width: 550px) {
     width: 300px;
-    height: 300px;
+    height: 70%;
     border-radius: 0px 0px 8px 8px;
   }
 `;
@@ -183,6 +183,12 @@ const BackButton = styled.button`
   .backArrow {
     height: 17px;
     width: 17px;
+    @media (max-width: 550px) {
+      width: 15px;
+      height: 13px;
+      position: relative;
+      top: -220px;
+    }
   }
 `;
 
@@ -194,7 +200,7 @@ const StyledImg = styled.img`
   padding-left: 2%;
   @media (max-width: 550px) {
     padding-top: 0;
-    padding-bottom: 3%;
+    padding-bottom: 4%;
   }
 `;
 const BlackText = styled.p`
@@ -226,8 +232,8 @@ const Description = styled.p`
   transform: scaleX(1.02);
   @media (max-width: 550px) {
     line-height: 15px;
-    margin-bottom: 0%;
-    margin-top: 3%;
+    margin-bottom: 5%;
+    margin-top: 5%;
   }
 `;
 const Container = styled.div`
@@ -237,6 +243,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 550px) {
+    height: 85%;
+  }
 `;
 const Navbar = styled.div`
   display: flex;
@@ -247,16 +256,13 @@ const Navbar = styled.div`
   justify-content: space-between;
   @media (max-width: 550px) {
     margin-left: 8%;
-    width: 45%;
+    width: 43%;
   }
 `;
 const TypeContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 20px;
-  @media (max-width: 550px) {
-    height: 15px;
-  }
 `;
 const InputTypeButton = styled.button`
   height: 24px;
@@ -277,7 +283,7 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 550px) {
-    height: 60%;
+    height: 57%;
   }
 `;
 const Border = styled.img`

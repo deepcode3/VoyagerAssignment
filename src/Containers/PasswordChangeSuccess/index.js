@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   align-items: center;
   @media (max-width: 550px) {
     width: 300px;
-    height: 300px;
+    height: 70%;
     border-radius: 0px 0px 8px 8px;
   }
 `;
@@ -89,6 +89,7 @@ const BlackText = styled.p`
   padding-left: 1%;
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
+
 `;
 const Description = styled.p`
   height: 38px;
@@ -102,6 +103,7 @@ const Description = styled.p`
   margin-bottom: 22.75%;
   @media (max-width: 550px) {
     line-height: 15px;
-    margin-bottom: 13%;
+    margin-bottom:30%;
+    margin-top:6.25%
   }
 `;

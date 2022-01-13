@@ -158,3 +158,8 @@
     left: 20%;
   }
 }
+@media all and (max-width: 550px) {
+  .footerDivHome {
+    display: none;
+  }
+}

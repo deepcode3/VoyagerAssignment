@@ -36,6 +36,9 @@ const FooterContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 550px) {
+    height: 150px;
+  }
 `;
 // const FooterAligner = styled.div`
 //   width: 960px;
