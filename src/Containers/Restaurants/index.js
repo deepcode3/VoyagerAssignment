@@ -16,6 +16,7 @@ import downArrow from '../../Assets/Icons/downArrow.png';
 import hideButton from '../../Assets/Icons/hide.png';
 import showButton from '../../Assets/Icons/show.png';
 import checkBox from '../../Assets/Icons/checkBox.png';
+import filterIcon from '../../Assets/Icons/filterIcon.png';
 import './Restaurants.css';
 import Footer from '../../Components/Footer';
 
@@ -25,6 +26,7 @@ const Restaurant = ({ data, searchKey, location }) => {
   const [deliveryTimevalue, setDeliveryTimeValue] = useState('30');
   const [averageMealCostValue, setAveregaeMealCostValue] = useState('30');
   const [minimumOrderValue, setMinimumOrderValue] = useState('60');
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
   const history = useHistory();
   const theme = createTheme({
     palette: {
@@ -68,10 +70,19 @@ const Restaurant = ({ data, searchKey, location }) => {
                   Rating
                   <img src={downArrow} alt='downArrow' className='downArrow' />
                 </span>
+                <img
+                  src={filterIcon}
+                  alt=''
+                  className='resFilterIcon'
+                  onClick={() => {
+                    setIsFilterVisible(true);
+                  }}
+                  onKeyDown={null}
+                />
               </div>
             </div>
             <div className='restaurantBody'>
-              <div className='filterBox'>
+              <div className={isFilterVisible ? 'mobileFilterBox' : 'filterBox'}>
                 <div className='filterHeading'>Filters</div>
                 <div
                   className='resetAll'
