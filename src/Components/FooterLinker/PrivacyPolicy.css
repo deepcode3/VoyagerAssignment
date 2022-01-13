@@ -140,3 +140,8 @@
   margin-right: auto;
   margin-left: auto;
 }
+@media all and (max-width: 550px) {
+  .footerDivPricayPolicy{
+    display: none;
+  }
+}
