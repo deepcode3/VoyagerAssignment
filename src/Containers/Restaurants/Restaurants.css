@@ -171,6 +171,17 @@
   max-height: 665px;
   overflow-y: scroll;
 }
+.filterCloseButton {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left: 535px;
+  top: -110px;
+}
+
+.hideFilterCloseButton {
+  display: none;
+}
 .filterHeading {
   height: 27px;
   width: 60px;

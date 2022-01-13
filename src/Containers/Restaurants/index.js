@@ -17,6 +17,7 @@ import hideButton from '../../Assets/Icons/hide.png';
 import showButton from '../../Assets/Icons/show.png';
 import checkBox from '../../Assets/Icons/checkBox.png';
 import filterIcon from '../../Assets/Icons/filterIcon.png';
+import filterCloseButton from '../../Assets/Icons/dismiss button@3x.png';
 import './Restaurants.css';
 import Footer from '../../Components/Footer';
 
@@ -82,6 +83,15 @@ const Restaurant = ({ data, searchKey, location }) => {
               </div>
             </div>
             <div className='restaurantBody'>
+              <img
+                src={filterCloseButton}
+                className={isFilterVisible ? 'filterCloseButton' : 'hideFilterCloseButton'}
+                alt=''
+                onClick={() => {
+                  setIsFilterVisible(false);
+                }}
+                onKeyDown={null}
+              />
               <div className={isFilterVisible ? 'mobileFilterBox' : 'filterBox'}>
                 <div className='filterHeading'>Filters</div>
                 <div
