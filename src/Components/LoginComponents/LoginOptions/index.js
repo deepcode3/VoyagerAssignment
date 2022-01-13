@@ -41,8 +41,8 @@ const Facebook = styled.a`
   text-decoration: none;
   cursor: pointer;
   @media (max-width: 550px) {
-    height: 20px;
-    padding: 0;
+    height: 30px;
+    padding: 2%;
     width: 110px;
   }
 `;
@@ -62,8 +62,8 @@ const Google = styled.a`
   text-decoration: none;
   cursor: pointer;
   @media (max-width: 550px) {
-    height: 20px;
-    padding: 0;
+    height: 30px;
+    padding: 2%;
     width: 110px;
   }
 `;

@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   @media (max-width: 550px) {
     flex-direction: column;
     width: 300px;
-    height: 300px;
+    height: 40%;
     border-radius: 0 8px 0px 0px;
     .noLeftMargin {
       margin-left: 0%;
@@ -48,7 +48,7 @@ const Lorem = styled.p`
   transform: scaleY(1.1);
   margin-left: 6%;
   @media (max-width: 550px) {
-    margin-top: 20%;
+    margin-top: 7%;
   }
 `;
 const Text = styled.p`
@@ -73,6 +73,9 @@ const BoldText = styled.p`
   margin-bottom: 1%;
   margin-top: 0;
   margin-left: 6%;
+  @media (max-width: 550px) {
+    margin-right: 2%;
+  }
 `;
 const Line = styled.div`
   display: flex;

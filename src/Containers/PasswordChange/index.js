@@ -83,7 +83,7 @@ const Wrapper = styled.div`
   align-items: center;
   @media (max-width: 550px) {
     width: 300px;
-    height: 300px;
+    height: 70%;
     border-radius: 0px 0px 8px 8px;
   }
 `;
@@ -112,8 +112,8 @@ const StyledImg = styled.img`
   padding-left: 5%;
   @media (max-width: 550px) {
     height: 15%;
-    width: 20%;
-    padding-bottom: 4%;
+    width: 25%;
+    padding-bottom: 10%;
   }
 `;
 const BlackText = styled.p`
@@ -129,7 +129,7 @@ const BlackText = styled.p`
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
   @media (max-width: 550px) {
-    margin-bottom: 2.5%;
+    margin-bottom: 5%;
   }
 `;
 const Description = styled.p`
@@ -154,6 +154,6 @@ const DataContainer = styled.form`
   justify-content: space-around;
   align-items: center;
   @media (max-width: 550px) {
-    margin-top: 7%;
+    margin-top: 10%;
   }
 `;

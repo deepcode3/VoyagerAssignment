@@ -168,7 +168,7 @@ const Wrapper = styled.div`
   }
   @media (max-width: 550px) {
     width: 300px;
-    height: 300px;
+    height: 70%;
     border-radius: 0px 0px 8px 8px;
   }
 `;
@@ -230,8 +230,8 @@ const Description = styled.p`
   transform: scaleX(1.02);
   @media (max-width: 550px) {
     line-height: 15px;
-    margin-bottom: 3%;
-    margin-top: 3%;
+    margin-bottom: 5%;
+    margin-top: 5%;
   }
 `;
 const Container = styled.div`

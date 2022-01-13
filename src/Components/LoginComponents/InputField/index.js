@@ -90,7 +90,7 @@ const FormContainer = styled.div`
     line-height: 17px;
     margin-top: 25px;
     @media (max-width: 550px) {
-      margin-top: 10px;
+      margin-top: 13px;
     }
   }
   .moveUpWithRedBorder {

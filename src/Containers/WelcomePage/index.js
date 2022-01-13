@@ -53,7 +53,7 @@ const Wrapper = styled.div`
   align-items: center;
   @media (max-width: 550px) {
     width: 300px;
-    height: 300px;
+    height: 70%;
     border-radius: 0px 0px 8px 8px;
   }
 `;
@@ -79,7 +79,8 @@ const StyledImg = styled.img`
   @media (max-width: 550px) {
     height: 20%;
     width: 25%;
-    padding-top: 10%;
+    padding-top: 15%;
+    padding-bottom: 10%;
   }
 `;
 const BlackText = styled.p`
@@ -94,7 +95,9 @@ const BlackText = styled.p`
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
   margin: 0;
- 
+  @media (max-width: 550px) {
+    width: 70%;
+  }
 `;
 const Description = styled.p`
   height: 38px;
@@ -110,7 +113,7 @@ const Description = styled.p`
   margin-bottom: 18.5%;
   @media (max-width: 550px) {
     line-height: 15px;
-    margin-bottom: 19.25%;
-    margin-top: 10%;
+    margin-bottom: 25%;
+    margin-top: 11%;
   }
 `;
