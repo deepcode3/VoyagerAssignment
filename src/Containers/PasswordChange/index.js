@@ -98,6 +98,10 @@ const BackButton = styled.button`
   .backArrow {
     height: 17px;
     width: 17px;
+    @media (max-width: 550px) {
+      width: 12px;
+      height: 12px;
+    }
   }
 `;
 const StyledImg = styled.img`
@@ -150,6 +154,6 @@ const DataContainer = styled.form`
   justify-content: space-around;
   align-items: center;
   @media (max-width: 550px) {
-    margin-top: 5%;
+    margin-top: 7%;
   }
 `;

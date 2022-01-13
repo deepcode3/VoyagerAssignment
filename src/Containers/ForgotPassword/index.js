@@ -183,6 +183,10 @@ const BackButton = styled.button`
   .backArrow {
     height: 17px;
     width: 17px;
+    @media (max-width: 550px) {
+      width: 12px;
+      height: 12px;
+    }
   }
 `;
 
@@ -194,7 +198,7 @@ const StyledImg = styled.img`
   padding-left: 2%;
   @media (max-width: 550px) {
     padding-top: 0;
-    padding-bottom: 3%;
+    padding-bottom: 4%;
   }
 `;
 const BlackText = styled.p`
@@ -226,7 +230,7 @@ const Description = styled.p`
   transform: scaleX(1.02);
   @media (max-width: 550px) {
     line-height: 15px;
-    margin-bottom: 0%;
+    margin-bottom: 3%;
     margin-top: 3%;
   }
 `;
@@ -237,6 +241,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 550px) {
+    height: 85%;
+  }
 `;
 const Navbar = styled.div`
   display: flex;
@@ -254,9 +261,6 @@ const TypeContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 20px;
-  @media (max-width: 550px) {
-    height: 8px;
-  }
 `;
 const InputTypeButton = styled.button`
   height: 24px;

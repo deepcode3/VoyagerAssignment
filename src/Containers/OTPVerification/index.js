@@ -83,7 +83,12 @@ const BackButton = styled.button`
   .backArrow {
     height: 17px;
     width: 17px;
+    @media (max-width: 550px) {
+      width: 12px;
+      height: 12px;
+    }
   }
+
 `;
 
 const StyledImg = styled.img`
@@ -129,7 +134,7 @@ const Description = styled.p`
   transform: scaleX(1.02);
   @media (max-width: 550px) {
     margin-bottom: 2%;
-    margin-top: 3%;
+    margin-top: 8%;
     line-height: 15px;
   }
 `;

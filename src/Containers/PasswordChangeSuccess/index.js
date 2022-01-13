@@ -102,6 +102,6 @@ const Description = styled.p`
   margin-bottom: 22.75%;
   @media (max-width: 550px) {
     line-height: 15px;
-    margin-bottom: 13.25%;
+    margin-bottom: 15.5%;
   }
 `;
