@@ -68,7 +68,7 @@ const Wrapper = styled.div`
   align-items: center;
   @media (max-width: 550px) {
     width: 300px;
-    height: 300px;
+    height: 70%;
     border-radius: 0px 0px 8px 8px;
   }
 `;
@@ -84,8 +84,10 @@ const BackButton = styled.button`
     height: 17px;
     width: 17px;
     @media (max-width: 550px) {
-      width: 12px;
-      height: 12px;
+      width: 15px;
+      height: 13px;
+      position: relative;
+      top: -220px;
     }
   }
 
@@ -99,8 +101,8 @@ const StyledImg = styled.img`
   padding-left: 2%;
   @media (max-width: 550px) {
     height: 15%;
-    width: 20%;
-    padding-top: 3%;
+    width: 23%;
+    padding-top: 4%;
   }
 `;
 const BlackText = styled.p`
@@ -133,8 +135,8 @@ const Description = styled.p`
   margin-bottom: 20%;
   transform: scaleX(1.02);
   @media (max-width: 550px) {
-    margin-bottom: 2%;
-    margin-top: 8%;
+    margin-bottom: 12%;
+    margin-top: 9%;
     line-height: 15px;
   }
 `;
@@ -146,6 +148,6 @@ const Container = styled.form`
   justify-content: space-around;
   align-items: center;
   @media (max-width: 550px) {
-    height: 45%;
+    height: 40%;
   }
 `;

@@ -101,7 +101,7 @@ const Wrapper = styled.div`
   align-items: center;
   @media (max-width: 550px) {
     width: 300px;
-    height: 300px;
+    height: 70%;
     border-radius: 0px 0px 8px 8px;
   }
 `;
@@ -136,7 +136,7 @@ const BlackText = styled.p`
   @media (max-width: 550px) {
     margin-top: 5%;
     margin-right: 12%;
-    margin-bottom: 5%;
+    margin-bottom: 7%;
   }
 `;
 const Form = styled.form`
@@ -144,6 +144,9 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media (max-width: 550px) {
+    height: 52.75%;
+  }
 `;
 
 const ForgotButton = styled.button`
@@ -164,7 +167,6 @@ const ForgotButton = styled.button`
   cursor: pointer;
   @media (max-width: 550px) {
     margin-left: 40%;
-    margin-top: -4%;
     margin-bottom: 3%;
   }
 `;
