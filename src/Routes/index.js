@@ -77,6 +77,10 @@ const Routing = () => {
                 <Route path='/privacy-policy' component={PrivacyPolicy} />
                 <Route path='/terms-&-conditions' component={Terms} />
                 <Route path='/contact' component={Contacts} />
+                <Route path='/careers' component={Error} />
+                <Route path='/mobile-app' component={Error} />
+                <Route path='/blog' component={Error} />
+                <Route path='/sitemap' component={Error} />
                 <Route exact path='/cart'>
                   <CartContextProvider>
                     <CartLayout Component={Cart} />
@@ -128,11 +132,6 @@ const Routing = () => {
                   <CartLayout />
                 </Route>
               </Suspense>
-              <Route path='*' component={Error} />
-              <Route path='/careers' component={Error} />
-              <Route path='/mobile-app' component={Error} />
-              <Route path='/blog' component={Error} />
-              <Route path='/sitemap' component={Error} />
             </Switch>
           </CartContextProvider>
         </AccountsContextProvider>
