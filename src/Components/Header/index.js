@@ -399,6 +399,9 @@ const CartIcon = styled.img`
   height: 27px;
   width: 20px;
   margin-right: 8%;
+  @media (max-width: 1470px) {
+    background-color: #fda5a3;
+  }
   @media (max-width: 550px) {
     display: none;
   }
