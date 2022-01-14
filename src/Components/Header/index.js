@@ -299,7 +299,7 @@ const DropDowm = styled.div`
   position: absolute;
   justify-content: space-around;
   top: 3px;
-  margin-left: 180px;
+  margin-left: 45%;
   padding: 4px;
 `;
 const Closebutton = styled.button`
