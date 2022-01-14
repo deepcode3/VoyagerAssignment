@@ -104,8 +104,11 @@ const Routing = () => {
                     <CartLayout Component={CartHome} />
                   </CartContextProvider>
                 </Route>
+
                 <Route path='/status'>
-                  <Orderstatus />
+                  <CartContextProvider>
+                    <Orderstatus />
+                  </CartContextProvider>
                 </Route>
                 <Route path='/:searchKey/:location/menu/:restaurant/:item'>
                   <CartContextProvider>
