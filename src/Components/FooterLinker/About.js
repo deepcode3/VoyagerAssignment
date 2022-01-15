@@ -12,8 +12,10 @@ import Footer from '../Footer';
 
 const About = () => {
   return (
-    <>
-      <Header />
+    <div className='aboutContainer'>
+      <div className='headerContainerAbout'>
+        <Header />
+      </div>
       <PageHeader />
       <div className='aboutbackground'>
         <div className='aboutcontainer'>
@@ -48,7 +50,7 @@ const About = () => {
       <div className='footerDivAbout'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 
