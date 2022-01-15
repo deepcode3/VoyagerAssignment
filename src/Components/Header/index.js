@@ -299,7 +299,7 @@ const DropDowm = styled.div`
   position: absolute;
   justify-content: space-around;
   top: 3px;
-  margin-left: 180px;
+  margin-left: 46%;
   padding: 4px;
 `;
 const Closebutton = styled.button`
@@ -313,15 +313,19 @@ const Closebutton = styled.button`
 `;
 const LinkTo = styled.button`
   width: 90%;
-  height: 25px;
+  height: 2.4rem;
   background-color: transparent;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
   color: #dd5335;
   border: none;
-  font-weight: 900;
   cursor: pointer;
   text-align: left;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.5px;
+  background-clip: text;
+  background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 const LinkContainer = styled.div`
   display: flex;
@@ -399,6 +403,9 @@ const CartIcon = styled.img`
   height: 27px;
   width: 20px;
   margin-right: 8%;
+  @media (max-width: 1470px) {
+    background-color: #fda5a3;
+  }
   @media (max-width: 550px) {
     display: none;
   }
