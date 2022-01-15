@@ -658,3 +658,14 @@
   top: 12px;
   left: 100px;
 }
+.footerDivRest {
+  position: relative;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 550px) {
+  .footerDivRest {
+    display: none;
+  }
+}
