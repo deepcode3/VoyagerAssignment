@@ -677,7 +677,7 @@
 }
 
 /*Restaurant Mobile Responsive*/
-@media only screen and (max-width: 500px) {
+@media all and (max-width: 500px) {
   .semiBg {
     height: 130px;
     width: 100%;
@@ -686,20 +686,22 @@
   .body {
     width: 100%;
     position: relative;
+    top: -12vh;
     display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
+    padding-top: 100px;
   }
   .bodySeperator {
     width: 300px;
-    position: relative;
     margin-left: auto;
     margin-right: auto;
   }
   .restaurantSearchBar {
     height: 76px;
-    width: fit-content;
+    width: 300px;
     position: relative;
   }
   .restaurantsInfo {

@@ -41,19 +41,19 @@ const Restaurant = ({ data, searchKey, location }) => {
     <>
       <Header />
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
-      <div className='body'>
-        <div className='bodySeperator'>
-          <div className='restaurantSearchBar'>
-            <span className='restaurantsInfo'>Delivery ASAP</span>
-            <div className='restaurantSearch'>
-              <SearchBar searchValue={searchKey} from='restaurant' />
-            </div>
-            <div className='restaurantLocation' from='restaurant'>
-              <LocationSetter locationValue={location} from='restaurant' />
-            </div>
-            <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
+      <div className='bodySeperator'>
+        <div className='restaurantSearchBar'>
+          <span className='restaurantsInfo'>Delivery ASAP</span>
+          <div className='restaurantSearch'>
+            <SearchBar searchValue={searchKey} from='restaurant' />
           </div>
+          <div className='restaurantLocation' from='restaurant'>
+            <LocationSetter locationValue={location} from='restaurant' />
+          </div>
+          <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
         </div>
+      </div>
+      <div className='body'>
         <div className='restaurantLocators'>
           <div className='restaurantLocatorInfo'>Home UAE Explore Great Breakfasts</div>
         </div>
@@ -320,7 +320,6 @@ const Restaurant = ({ data, searchKey, location }) => {
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );

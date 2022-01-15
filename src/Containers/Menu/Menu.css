@@ -1,26 +1,21 @@
-.menuBody {
-  width: 100%;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  top: 230px;
-  left: 40px;
-  height: 2000px;
-}
 .menuBg {
   background-color: #c5cae238;
   width: 100%;
   height: fit-content;
   position: absolute;
-  top: 500px;
-  padding-bottom: 300px;
+  top: 200px;
+  padding-bottom: 10px;
 }
 .menuSeperator {
   width: 961px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  left: 6vh;
+  top: 580px;
+  left: 50px;
 }
-.menuSearchBar {
+.menuSearch {
   height: 50px;
   width: 580px;
   border-radius: 4px;
@@ -30,8 +25,8 @@
   padding-left: 65px;
   outline: none;
   position: relative;
-  left: -55px;
   top: 20px;
+  left: -50px;
 }
 .menuSearchBar::placeholder {
   height: 19px;
@@ -876,14 +871,24 @@
   cursor: pointer;
 }
 .footerDivMenu {
-  top: 1300px;
   position: relative;
   align-items: center;
   margin-right: auto;
   margin-left: auto;
+  overflow: hidden;
 }
-@media all and (max-width: 550px) {
+
+/*Restaurant Mobile Responsive*/
+
+@media only screen and (max-width: 500px) {
   .footerDivMenu {
     display: none;
+  }
+  .menuBg {
+    position: relative;
+    top: -150vh;
+  }
+  .menuSeperator {
+    width: 300px;
   }
 }
