@@ -85,28 +85,30 @@ const Payment = () => {
         <PaymentresDetails restaurantName={location.state.restaurant} />
 
         <div className='paybackbutton' onClick={loadaddress} role='button' onKeyDown={null}>
-          <img src={payback} alt='' />
+          <img src={payback} alt='' className='imgpayback' />
         </div>
         <div className='paynowbutton' onClick={loadfinalpay} role='button' onKeyDown={null}>
-          <img src={paynow} alt='' />
+          <img src={paynow} alt='' className='imgpaynow' />
         </div>
-        <div className='payactive'>
-          <img src={cactive} alt='' className='Pactive' />
-          <p className='pcart'>Cart</p>
-        </div>
-        <div className='pActiveeline'>
-          <img src={activeline} alt='' className='pactiveline' />
-        </div>
-        <div className='payactive2'>
-          <img src={cactive} alt='' className='Pactive2' />
-          <p className='padresstext'>Address Details</p>
-        </div>
-        <div className='Pactiveline2'>
-          <img src={activeline} alt='' className='pactiveline2' />
-        </div>
-        <div className='pactive3'>
-          <img src={cactive} alt='' className='pactivestate3' />
-          <p className='Ppaymenttext'>Payment</p>
+        <div className='paymentprogressbar'>
+          <div className='payactive'>
+            <img src={cactive} alt='' className='Pactive' />
+            <p className='pcart'>Cart</p>
+          </div>
+          <div className='pActiveeline'>
+            <img src={activeline} alt='' className='pactiveline' />
+          </div>
+          <div className='payactive2'>
+            <img src={cactive} alt='' className='Pactive2' />
+            <p className='padresstext'>Address Details</p>
+          </div>
+          <div className='Pactiveline2'>
+            <img src={activeline} alt='' className='pactiveline2' />
+          </div>
+          <div className='pactive3'>
+            <img src={cactive} alt='' className='pactivestate3' />
+            <p className='Ppaymenttext'>Payment</p>
+          </div>
         </div>
       </div>
     </>

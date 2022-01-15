@@ -694,3 +694,9 @@ input[type="radio"] {
   margin: 0px;
   padding: 0px;
 }
+
+.addressprogressbar {
+  position: absolute;
+  top: 0px;
+  width: 634px;
+}
