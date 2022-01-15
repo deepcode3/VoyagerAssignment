@@ -1,7 +1,7 @@
 .layoutBg {
   position: absolute;
   height: 1250px;
-  width: 1920px;
+  width: 100%;
   top: 236px;
   background-color: #f1f3fb;
   margin-left: auto;
@@ -14,7 +14,7 @@
   position: absolute;
   top: 0px;
   height: 203px;
-  width: 1920px;
+  width: 100%;
 }
 
 .layoutFooter {
@@ -1083,8 +1083,12 @@
     top: 200px;
     left: 220px;
   }
-
-  /* .crestaurantLocatorInfo {
+}
+/* .crestaurantLocatorInfo {
     width: 0px;
   } */
+@media all and (max-width: 550px) {
+  .layoutFooter {
+    display: none;
+  }
 }

@@ -90,14 +90,22 @@ const FormContainerTel = styled.div`
     margin-left: 34%;
     color: #ed1b2e;
     font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: -0.2px;
     height: 10px;
     margin-top: 0px;
+    @media (max-width: 550px) {
+      margin-left: 39%;
+    }
   }
   .redBorder {
     border-bottom: 1px solid #ed1b2e;
+  }
+  @media (max-width: 550px) {
+    height: 30px;
+    width: 250px;
+    margin-bottom: 15px;
   }
 `;
 const NumContainer = styled.div`
@@ -112,6 +120,9 @@ const DropDown = styled.img`
   width: 11px;
   margin-top: 8px;
   margin-left: 10px;
+  @media (max-width: 550px) {
+    margin-top: 5px;
+  }
 `;
 
 const Label = styled.label`
@@ -125,6 +136,9 @@ const Label = styled.label`
   pointer-events: none;
   top: -0.5rem;
   position: relative;
+  @media (max-width: 550px) {
+    line-height: 10px;
+  }
 `;
 const DropDownWindow = styled.div`
   overflow-y: scroll;
@@ -157,21 +171,32 @@ const OptionWrapper = styled.div`
 const Flag = styled.img`
   height: 20px;
   width: 29px;
+  @media (max-width: 550px) {
+    height: 10px;
+    width: 20px;
+    padding-top: 8%;
+  }
 `;
 const Code = styled.p`
   color: #000000;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: -0.27px;
   line-height: 22px;
   font-weight: 100;
   margin-top: 0;
+  @media (max-width: 550px) {
+    margin-top: -2px;
+  }
 `;
 const OptionSelected = styled.div`
   border-bottom: 1px solid #a4a4a4;
   width: 90px;
   display: flex;
   flex-direction: row;
+  @media (max-width: 550px) {
+    width: 70px;
+  }
 `;
 const DropDownContainer = styled.div`
   z-index: 99;
@@ -195,7 +220,7 @@ const MobileNumber = styled.input`
   border-bottom: 1px solid #a4a4a4;
   color: #000000;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 100;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -209,4 +234,10 @@ const MobileNumber = styled.input`
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s !important;
+  }
+  @media (max-width: 550px) {
+    height: 20%;
+    width: 60%;
+    padding-bottom: 5%;
+  }
 `;

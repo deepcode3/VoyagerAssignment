@@ -9,8 +9,10 @@ import './SearchRestaurantView.css';
 
 const SearchRestaurantView = ({ data, searchKey, location }) => {
   return (
-    <>
-      <Header />
+    <div className='outContainer'>
+      <div className='headerDivSearchRest'>
+        <Header />
+      </div>
       <img src={menuSemiBg} alt='semiBg' className='csemiBg' />
       <div className='restaurantSearchBar'>
         <span className='crestaurantsInfo'>Delivery ASAP</span>
@@ -22,7 +24,7 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
         </div>
         <div className='clsetter'>
           <div className='restaurantLocation' from='restaurant'>
-            <LocationSetter locationValue={location} />
+            <LocationSetter locationValue={location} from='restaurant' />
           </div>
         </div>
         <img className='crestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
@@ -30,7 +32,7 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
       <div className='crestaurantLocators'>
         <div className='crestaurantLocatorInfo'>Home UAE Explore Great breakfasts My Cart</div>
       </div>
-    </>
+    </div>
   );
 };
 
