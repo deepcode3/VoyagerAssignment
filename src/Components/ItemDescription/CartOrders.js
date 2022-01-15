@@ -86,23 +86,25 @@ const Cart = () => {
           </div>
         </div>
       )}
-      <div className='Cartactive'>
-        <img src={cactive} alt='' className='cartActive' />
-        <p className='progresscart'>Cart</p>
-      </div>
-      <div className='Cartparatialactiveline'>
-        <img src={partialActive} alt='' className='cartpartialactiveline' />
-      </div>
-      <div className='cartdeactive2'>
-        <img src={deactive} alt='' className='Cdeactive2' />
-        <p className='cartadresstext'>Address Details</p>
-      </div>
-      <div className='deactiveline'>
-        <div className='cartdeactiveline' />
-      </div>
-      <div className='cartdeactive3'>
-        <img src={deactive} alt='' className='cartdeactivestate' />
-        <p className='cartpaymenttext'>Payment</p>
+      <div className='cartprogressbar '>
+        <div className='Cartactive'>
+          <img src={cactive} alt='' className='cartActive' />
+          <p className='progresscart'>Cart</p>
+        </div>
+        <div className='Cartparatialactiveline'>
+          <img src={partialActive} alt='' className='cartpartialactiveline' />
+        </div>
+        <div className='cartdeactive2'>
+          <img src={deactive} alt='' className='Cdeactive2' />
+          <p className='cartadresstext'>Address Details</p>
+        </div>
+        <div className='deactiveline'>
+          <div className='cartdeactiveline' />
+        </div>
+        <div className='cartdeactive3'>
+          <img src={deactive} alt='' className='cartdeactivestate' />
+          <p className='cartpaymenttext'>Payment</p>
+        </div>
       </div>
     </div>
   );

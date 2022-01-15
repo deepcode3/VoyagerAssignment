@@ -85,10 +85,10 @@ const Payment = () => {
         <PaymentresDetails restaurantName={location.state.restaurant} />
 
         <div className='paybackbutton' onClick={loadaddress} role='button' onKeyDown={null}>
-          <img src={payback} alt='' />
+          <img src={payback} alt='' className='imgpayback' />
         </div>
         <div className='paynowbutton' onClick={loadfinalpay} role='button' onKeyDown={null}>
-          <img src={paynow} alt='' />
+          <img src={paynow} alt='' className='imgpaynow' />
         </div>
         <div className='payactive'>
           <img src={cactive} alt='' className='Pactive' />

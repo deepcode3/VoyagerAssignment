@@ -24,8 +24,6 @@
   margin-left: auto;
 }
 
-
-
 @media all and (max-width: 1900px) {
   .layoutBg {
     position: absolute;
@@ -154,7 +152,7 @@
     left: 400px;
   }
   .addressprogressbar {
-    left: -250px;
+    left: -450px;
   }
   .paymentcontainer {
     left: 400px;
@@ -300,7 +298,8 @@
     left: 250px;
   }
   .addressprogressbar {
-    left: -400px;
+    position: absolute;
+    left: 200px;
   }
   .addressheading {
     left: 250px;
@@ -335,6 +334,10 @@
   } */
 }
 @media all and (max-width: 1140px) {
+  .addressProgressbar {
+    position: relative;
+    left: 100px;
+  }
   .layoutBg {
     position: absolute;
     height: 1270px;
