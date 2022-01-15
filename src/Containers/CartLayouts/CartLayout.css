@@ -24,6 +24,8 @@
   margin-left: auto;
 }
 
+
+
 @media all and (max-width: 1900px) {
   .layoutBg {
     position: absolute;
