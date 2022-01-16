@@ -31,11 +31,9 @@ const Payment = () => {
           <PaymentOption />
         </div>
         <div className='carddetailscontainer'>
-          <p className='entercarddetailstext'>
-            Enter Credit/Debit card details
-          </p>
+          <p className='entercarddetailstext'>Enter Credit/Debit card details</p>
           <div className='cardnumberdiv'>
-            <p className='cardnumbertext'>Card number</p>
+            <p className='cardnumbertext'>Card Digits</p>
             <input type='text' className='cardnumber' />
             <img src={visaicon} className='Visaicon' alt='' />
             <div className='cardnumberline' />
@@ -68,20 +66,10 @@ const Payment = () => {
         <PaymentDeliveryDetails />
         <PaymentresDetails />
 
-        <div
-          className='paybackbutton'
-          onClick={loadaddress}
-          role='button'
-          onKeyDown={null}
-        >
+        <div className='paybackbutton' onClick={loadaddress} role='button' onKeyDown={null}>
           <img src={payback} alt='' />
         </div>
-        <div
-          className='paynowbutton'
-          onClick={loadfinalpay}
-          role='button'
-          onKeyDown={null}
-        >
+        <div className='paynowbutton' onClick={loadfinalpay} role='button' onKeyDown={null}>
           <img src={paynow} alt='' />
         </div>
         <div className='payactive'>

@@ -35,6 +35,9 @@
       {
         "ObjectPattern": { "multiline": true, "minProperties": 8 }
       }
-    ]
+    ],
+    "operator-linebreak": [2, "before", { "overrides": { "=": "after" } }],
+    "indent": [0, "tab"],
+    "no-tabs": 0
   }
 }

@@ -1,41 +1,43 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
 
-const AddressCard = ({ item, removeItem, index }) => {
-  const buttonMap = {
-    active: true,
-    unactive: false,
+const AddressCard = ({ item, removeItem, index, values, setValues }) => {
+  // primary, handleClick
+  // const [primary, setPrimary] = useState(null);
+  // const handleClick = (active) => {
+  //   return primary === active ? setPrimary(null) : setPrimary(active);
+  //   // setPrimary((state) => {
+  //   //   return state === active ? null : active;
+  //   // });
+  // };
+  const handleClick = (active) => {
+    return values === active ? setValues(null) : setValues(active);
   };
-  const [primary, setPrimary] = useState(buttonMap.unactive);
-  const handleClick = (button) => {
-    if (button === index.toString()) {
-      setPrimary(buttonMap.active);
-    }
-  };
+
   return (
     <Div key={index.toString()}>
       <span className='home'>{`${item.addressLabel}`}</span>
       <div
         className='primary-1'
-        onClick={() => {
-          return handleClick(buttonMap.active);
-        }}
         role='button'
         onKeyDown={null}
+        onClick={() => {
+          handleClick(index.toString());
+        }}
       >
         <img
-          src={primary === buttonMap.active ? icnCheckActive : icnCheckInactive}
+          src={values === index.toString() ? icnCheckActive : icnCheckInactive}
           alt='icn'
           style={{ float: 'left' }}
         />
         <span
           className='primary'
           style={{
-            color: `${primary === buttonMap.button2 ? '#6A6A6A' : '#B8B8B8'}`,
+            color: `${values === index.toString() ? '#6A6A6A' : '#B8B8B8'}`,
           }}
         >
           Primary
@@ -61,6 +63,8 @@ AddressCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.string).isRequired,
   removeItem: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
+  setValues: PropTypes.func.isRequired,
+  values: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 const Div = styled.div`
@@ -70,9 +74,17 @@ const Div = styled.div`
      border-radius: 6px;
      background-color: #ffffff;
      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-     margin: 7px;
+    // margin: 7px;
      position:relative;
      flex: 1;
+     margin: 1%;
+     @media screen and (max-width: 393px) {
+      // display:none;
+      left:-67px;
+      margin: 2%;
+      height: 240px;
+      width: 247px;
+     }
     }
     .home {
       height: 19px;
@@ -85,11 +97,12 @@ const Div = styled.div`
       position: absolute;
       top:29px;
       left:26px;
-    }
-    .primary-1{
-      position: absolute;
-      top:21px;
-      left:367px;
+      @media screen and (max-width: 393px) {
+        //display:none;
+        position: absolute;
+        top:29px;
+        left:26px;
+      }
     }
     .primary {
       height: 19px;
@@ -100,6 +113,22 @@ const Div = styled.div`
       letter-spacing: -0.27px;
       line-height: 19px;  
       padding-left:11px;
+      background-color:green;
+      @media screen and (max-width: 393px) {
+       position: absolute;
+       top:21px;
+       left:50px;
+      }
+    }
+    .primary-1{
+      position: absolute;
+      top:21px;
+      left:367px;
+      @media screen and (max-width: 393px) {
+       position: absolute;
+       top:21px;
+       left:100px;
+      }
     }
     .address{
       height: 84px;
@@ -112,6 +141,14 @@ const Div = styled.div`
       position: absolute;
       top:59px;
       left:26px;
+      @media screen and (max-width: 393px) {
+        position: absolute;
+        top:59px;
+        left:11px;
+        height: 84px;
+        width: 230px;
+        background-color:red;
+      }
     }
     .edit {
       height: 22px;
@@ -126,6 +163,12 @@ const Div = styled.div`
       position: absolute;
       top:143px;
       left:343px;
+      @media screen and (max-width: 393px) {
+       // display:none;
+       position: absolute;
+       top:143px;
+       left:43px;
+      }
     }
     .delete {
       height: 22px;
@@ -143,5 +186,8 @@ const Div = styled.div`
       padding: 0;
       border: none;
       background: none;
+      @media screen and (max-width: 393px) {
+        display:none;
+      }
     }
 }`;

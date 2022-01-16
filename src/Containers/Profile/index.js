@@ -5,13 +5,6 @@ import Header from '../../Components/Header';
 import Profile from './Profile';
 import EditModal from '../../Components/Editmodel';
 
-// const Profile = React.lazy(() => {
-//   import('./Profile');
-// });
-// const EditModal = React.lazy(() => {
-//   import('../../Components/Editmodel/index');
-// });
-
 const ProfileMain = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -30,9 +23,11 @@ const ProfileMain = () => {
 export default ProfileMain;
 
 const Div = styled.div`
-  width: 100%;
-  height: 100vh;
   position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  overflow-x: hidden;
   margin-right: auto;
   margin-left: auto;
 `;

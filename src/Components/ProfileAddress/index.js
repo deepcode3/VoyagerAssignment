@@ -14,8 +14,10 @@ const Address = () => {
     area: '',
     address: '',
     addressLabel: '',
+    primary: null,
   });
   const [values, setValues] = useState(initialFormData);
+  console.log('addressItems', addressItems);
   return (
     <Div>
       <div className='recommendation-1'>
@@ -38,7 +40,15 @@ const Address = () => {
             {addressItems.map((item, index) => {
               return (
                 <li key={index.toString()} className='list'>
-                  <AddressCard item={item} removeItem={removeItem1} index={index} />
+                  <AddressCard
+                    item={item}
+                    removeItem={removeItem1}
+                    index={index}
+                    values={values}
+                    setValues={setValues}
+                    // primary={primary}
+                    // handleClick={handleClick}
+                  />
                 </li>
               );
             })}
@@ -52,26 +62,32 @@ const Address = () => {
 export default Address;
 
 const Div = styled.div`
-    height: 100vh;
-    weidth: 100vw;
-    display: flex;
-    align-items: center;
-    padding-top:75px;
-    flex-direction:column;
-    background-color: #f1f3fb;
+height: 100vh;
+weidth: 100wh;
+display: flex;
+align-items: center;
+padding: 75px 0;
+flex-direction: column;
+position: relative;
+background-color: #f1f3fb;
+margin-right: auto;
+margin-left: auto;
+@media screen and (max-width: 393px) {
+  height: 60vh;
+}
     .recommendation-1 {
         width: 930px;
         display:flex;
-    }
-    .recommendation-2 {
-        height: 536px;
-        width: 1050px;
-        overflow-y: scroll;
-        position: relative;
-    }
-    .order-1 {
-       width: 1050px;
-       max-height: 100%;
+        height: 24px;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        @media screen and (max-width: 393px) {
+          display:block;
+          width: 320px;
+          position:absolute;
+          top:10px;
+        }
     }
     .my-addresses-2 {
        height: 22px;
@@ -93,19 +109,41 @@ const Div = styled.div`
        line-height: 19px;
        text-align: right;
        margin-left:720px;
+       @media screen and (max-width: 393px) {
+        display: block;
+        position:absolute;
+        top:2px;
+        margin-left:230px;
+       }
      }
-    .home {
-      height: 19px;
-      width: 39px;
-      color: #6A6A6A;
-      font-family: "Open Sans";
-      font-size: 14px;
-      letter-spacing: -0.27px;
-      line-height: 19px;
-      position: absolute;
-      top:29px;
-      left:26px;
-    }
+     .recommendation-2 {
+      // width: 1050px;
+       width: 80%;
+       height: 536px;
+       display: flex;
+       text-align: center;
+       margin-right: auto;
+       margin-left: auto;
+       padding: 0 12%;
+       overflow-y: scroll;
+       position: relative;
+       @media screen and (max-width: 393px) {
+         width:72%;
+        background-color:red;
+        position: relative;
+        padding: 0;
+       }
+   }
+   .order-1 {
+    //  width: 1050px;
+      width: 100%;
+      max-height: 100%;
+      padding-left: 11%;
+      @media screen and (max-width: 393px) {
+        background-color:green;
+        width: 100%;
+       }
+   }
   .list{
     list-style-type: none;
   }

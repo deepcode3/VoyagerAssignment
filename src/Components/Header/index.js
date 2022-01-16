@@ -18,6 +18,7 @@ import iconCart from '../../Assets/Icons/icn_cart.png';
 import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import { UserContext } from '../../Context/UserContext';
 import LoginLayout from '../LoginLayout';
+import Device from '../../DeviceSize';
 
 const Header = ({ isHome }) => {
   const { currentUser, signOut } = useContext(UserContext);
@@ -48,7 +49,7 @@ const Header = ({ isHome }) => {
                 history.push('/profile');
               }}
             >
-              {currentUser.firstname.toUpperCase()}
+              {currentUser.username.toUpperCase()}
             </User>
             <VerticalLine className={!isHome ? 'smallLine' : null} />
           </>
@@ -132,22 +133,34 @@ Header.propTypes = {
   isHome: PropTypes.bool,
 };
 Header.defaultProps = { isHome: false };
+
 const HeaderWrapper = styled.div`
   background-color: transparent;
   height: 60px;
-  width: 97%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-left: 30px;
-  margin-right: auto;
-  margin-left: auto;
-  .smallLine {
-    height: 30px;
+  //margin-left: 30px;
+  //margin-right: auto;
+  // .smallLine {
+  //   height: 30px;
+  // }
+  // .createNew {
+  //   margin-right: 7.75%;
+  // }
+  @media ${Device.mobile} {
+    max-width: 390px;
   }
-  .createNew {
-    margin-right: 7.75%;
+  @media ${Device.tablet} {
+    max-width: 954px;
+  }
+  @media ${Device.desktop} {
+    max-width: 1400px;
+  }
+  @media ${Device.desktopL} {
+    max-width: 100%;
   }
 `;
 const LinkContainer = styled.div`

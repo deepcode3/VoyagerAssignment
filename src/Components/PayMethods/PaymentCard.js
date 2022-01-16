@@ -1,21 +1,14 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 // import visaicon from '../../Assets/Icons/visaicon.png';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
 
-const PaymentCard = ({ item, removeItem, index }) => {
-  const buttonMap = {
-    button1: 'button1',
-    button2: 'button2',
-  };
-  const [primary, setPrimary] = useState(buttonMap);
-  const handleClick = (button) => {
-    if (button === index.toString()) {
-      setPrimary(buttonMap);
-    }
+const PaymentCard = ({ item, removeItem, index, values, setValues }) => {
+  const handleClick = (active) => {
+    return values === active ? setValues(null) : setValues(active);
   };
   return (
     <Div key={index.toString()}>
@@ -24,6 +17,28 @@ const PaymentCard = ({ item, removeItem, index }) => {
         alt={index.toString()}
         className='bitmap'
       />
+      <div
+        className='primary-1'
+        onClick={() => {
+          handleClick(index.toString());
+        }}
+        onKeyDown={null}
+        role='button'
+      >
+        <img
+          src={values === index.toString() ? icnCheckActive : icnCheckInactive}
+          alt='icn'
+          style={{ float: 'left' }}
+        />
+        <span
+          className='primary'
+          style={{
+            color: `${values === index.toString() ? '#6A6A6A' : '#B8B8B8'}`,
+          }}
+        >
+          Primary
+        </span>
+      </div>
       <span className='account'>{`${item.cardNumber}`}</span>
       <span className='card'>{`${item.cardName}`}</span>
       <span className='card' style={{ left: '280px' }}>
@@ -32,28 +47,6 @@ const PaymentCard = ({ item, removeItem, index }) => {
       <span className='card' style={{ top: '110px', fontSize: '18px' }}>
         {`cvv:${item.securityNumber}`}
       </span>
-      <div
-        className='primary-1'
-        onClick={() => {
-          return handleClick(buttonMap.button1);
-        }}
-        onKeyDown={null}
-        role='button'
-      >
-        <img
-          src={primary === buttonMap.button1 ? icnCheckActive : icnCheckInactive}
-          alt='icn'
-          style={{ float: 'left' }}
-        />
-        <span
-          className='primary'
-          style={{
-            color: `${primary === buttonMap.button1 ? '#6A6A6A' : '#B8B8B8'}`,
-          }}
-        >
-          Primary
-        </span>
-      </div>
 
       <span className='edit'>Edit</span>
       <button
@@ -74,6 +67,8 @@ PaymentCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
   removeItem: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
+  setValues: PropTypes.func.isRequired,
+  values: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 const Div = styled.div`
@@ -83,7 +78,7 @@ float: left;
 border-radius: 6px;
 background-color: #ffffff;
 box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-margin: 7px;
+margin: 1%;
 position:relative;
 flex: 1;
     }

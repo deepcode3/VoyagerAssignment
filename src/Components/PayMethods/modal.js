@@ -21,8 +21,8 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
     e.preventDefault();
     addItem(values);
     setValues({
-      cardNumber: '',
-      cardName: '',
+      cardDigit: '',
+      Name: '',
       expiaryDate: '',
       expiaryYear: '',
       securityNumber: '',
@@ -46,28 +46,28 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
         </div>
         <div className='enter-cards'>
           <div className='card-body'>
+            <span className='enter-credit'>Enter Credit/Debit card details</span>
             <form onSubmit={handleSubmit}>
-              <span className='enter-credit'>Enter Credit/Debit card details</span>
               <div className='field'>
-                <label className='label'>Card number</label>
+                <label className='label'>Card Nvmber</label>
                 <input
-                  type='text'
-                  name='cardNumber'
-                  value={values.cardNumber}
                   className='input'
-                  placeholder='4022 8888 8888 1881'
+                  type='text'
+                  name='cardDigit'
+                  value={values.cardDigit}
                   onChange={handleChange}
+                  placeholder='4022 8888 8888 1881'
                   required
                 />
                 <img src={visaicon} className='Visaicon' alt='visa' />
                 <div className='line' />
               </div>
               <div className='field-1'>
-                <label className='label'>Name on card</label>
+                <label className='label'>Holder Name</label>
                 <input
                   type='text'
-                  name='cardName'
-                  value={values.cardName}
+                  name='Name'
+                  value={values.Name}
                   className='input'
                   placeholder='Abdullah'
                   onChange={handleChange}
@@ -77,7 +77,7 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
               </div>
               <div className='field-2'>
                 <div className='extra'>
-                  <label className='label-1'>Expiary</label>
+                  <label className='label-1'>Expiray Date</label>
                   <input
                     type='text'
                     name='expiaryDate'
@@ -140,7 +140,7 @@ export default Model;
 Model.propTypes = {
   setOpen: PropTypes.func.isRequired,
   setValues: PropTypes.func.isRequired,
-  values: PropTypes.objectOf(PropTypes.any).isRequired,
+  values: PropTypes.objectOf(PropTypes.string).isRequired,
   addItem: PropTypes.func.isRequired,
 };
 

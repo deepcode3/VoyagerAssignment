@@ -66,7 +66,7 @@ const Restaurant = ({ data, searchKey, location }) => {
                 <span className='sortBy'>Sort by :</span>
                 <span className='sortByOption'>
                   Rating
-                  <img src={downArrow} alt='downArrow' />
+                  <img src={downArrow} alt='downArrow' className='downArrow' />
                 </span>
               </div>
             </div>
@@ -266,11 +266,16 @@ const Restaurant = ({ data, searchKey, location }) => {
                       <div className='resLocation'>{res.location}</div>
                       <div className='resUnderline' />
                       <div className='resItem'>{res.item}</div>
-                      <div className='resStatus'>{res.status}</div>
+                      <div className='resStatus'>
+                        {res.status.charAt(0).toUpperCase() + res.status.slice(1)}
+                      </div>
                       <div className='resDetails'>
-                        {res.delivery_time}
-                        {res.openedtill}
-                        {res.mealcost}
+                        <div className='restaurantDot1' />
+                        <div className='resDeliveryTime'>{res.delivery_time}</div>
+                        <div className='restaurantDot2' />
+                        <div className='restOpenedTill'>{res.openedtill}</div>
+                        <div className='restaurantDot3' />
+                        <div className='resMealCost'>{res.mealcost}</div>
                       </div>
                       <div className='resRating'>
                         <div className='ratingInfo'>{res.ratings}</div>

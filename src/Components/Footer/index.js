@@ -3,39 +3,61 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/index';
 import data from './data';
+import Device from '../../DeviceSize';
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <FlexRow>
-        <Logo />
-        <Number> 24</Number>
-        <Text>CITIES</Text>
-        <VerticalLine />
-        <Number>4</Number>
-        <Text>COUNTRIES</Text>
-      </FlexRow>
-      <FlexRowLinks>
-        {data.map((element) => {
-          return (
-            <FooterLink key={element} to={element.toLowerCase().replaceAll(' ', '-')}>
-              {element}
-            </FooterLink>
-          );
-        })}
-      </FlexRowLinks>
+      <FooterAligner>
+        <FlexRow>
+          <Logo />
+          <Number> 24</Number>
+          <Text>CITIES</Text>
+          <VerticalLine />
+          <Number>4</Number>
+          <Text>COUNTRIES</Text>
+        </FlexRow>
+        <FlexRowLinks>
+          {data.map((element) => {
+            return (
+              <FooterLink key={element} to={element.toLowerCase().replaceAll(' ', '-')}>
+                {element}
+              </FooterLink>
+            );
+          })}
+        </FlexRowLinks>
+      </FooterAligner>
     </FooterContainer>
   );
 };
 export default Footer;
 const FooterContainer = styled.div`
   height: 227px;
-  width: 1895px;
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  @media ${Device.mobile} {
+    max-width: 390px;
+  }
+  @media ${Device.tablet} {
+    max-width: 954px;
+  }
+  @media ${Device.desktop} {
+    max-width: 1400px;
+  }
+  @media ${Device.desktopL} {
+    max-width: 2500px;
+  }
+`;
+const FooterAligner = styled.div`
+  width: 960px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const FlexRow = styled.div`
   display: flex;
