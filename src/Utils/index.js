@@ -2,14 +2,12 @@ import store from '../Store';
 
 export const checkIfAccountExists = (data) => {
   const { accounts } = store.getState();
-  console.log(accounts);
   if (accounts.length === 0) {
     return 'Email id is not registered';
   }
   const result = accounts.filter((obj) => {
     return obj.email === data.email;
   });
-  console.log(result);
   if (result.length === 0) {
     return 'Email id is not registered';
   }
