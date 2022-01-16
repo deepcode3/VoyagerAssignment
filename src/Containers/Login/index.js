@@ -1,7 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import { React } from 'react';
 import { useDispatch } from 'react-redux';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -15,7 +14,6 @@ import closeButton from '../../Assets/Icons/close_button.png';
 import { checkIfAccountExists } from '../../Utils';
 import { signIn } from '../../Actions/LoginActions';
 
-Modal.setAppElement('#root');
 const Login = ({ setModalIsOpen, setPageStatus }) => {
   const dispatch = useDispatch();
   const schema = yup.object().shape({

@@ -2,7 +2,6 @@ import { React, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
@@ -12,7 +11,6 @@ import TelephonePicker from '../../Components/TelephonePicker/index';
 import BackIcon from '../../Assets/Icons/back_icon.png';
 import { addAccount } from '../../Actions/AccountActions';
 
-Modal.setAppElement('#root');
 const GetDetails = ({ setPageStatus, email, setName }) => {
   const dispatch = useDispatch();
   const [selectedCode, setSelectedCode] = useState('91');
