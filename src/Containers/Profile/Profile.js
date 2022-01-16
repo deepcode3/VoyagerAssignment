@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import banner from '../../Assets/Images/Profilebackground.png';
 import phoneicn from '../../Assets/Icons/phone_icn.png';
@@ -9,11 +10,11 @@ import mailicn from '../../Assets/Icons/mail_icn.png';
 import icnInfo from '../../Assets/Icons/icn_info_small.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
 import Profileroute from '../../Components/Profilerouter/index';
-import { UserContext } from '../../Context/UserContext/index';
 
 const Profile = ({ setOpen }) => {
-  const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
   return (
     <>
       <Profilediv>
