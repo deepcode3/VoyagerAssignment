@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 import Logo from '../Logo';
@@ -27,6 +27,7 @@ const Header = ({ isHome }) => {
   const currentUser = useSelector((state) => {
     return state.currentUser;
   });
+  const dispatch = useDispatch();
   const history = useHistory();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
@@ -37,7 +38,7 @@ const Header = ({ isHome }) => {
   const [selectedCode, setSelectedCode] = useState('91');
   const [dropDownStatus, setDropDownStatus] = useState(false);
   const handleLogout = () => {
-    signOut();
+    dispatch(signOut());
     history.push('/');
   };
   return (
