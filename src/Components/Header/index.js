@@ -1,8 +1,9 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable no-nested-ternary */
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 import Logo from '../Logo';
@@ -17,13 +18,15 @@ import PasswordChangeSuccess from '../../Containers/PasswordChangeSuccess/index'
 import iconCart from '../../Assets/Icons/icn_cart.png';
 import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import icnMenu from '../../Assets/Icons/menu.png';
-import { UserContext } from '../../Context/UserContext';
+import { signOut } from '../../Actions/LoginActions';
 import LoginLayout from '../LoginLayout';
 import data from '../Footer/data';
 import closeButton from '../../Assets/Icons/close_button.png';
 
 const Header = ({ isHome }) => {
-  const { currentUser, signOut } = useContext(UserContext);
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
   const history = useHistory();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [pageStatus, setPageStatus] = useState('login');
@@ -37,7 +40,6 @@ const Header = ({ isHome }) => {
     signOut();
     history.push('/');
   };
-
   return (
     <HeaderWrapper>
       {isHome ? <Logo /> : <Logo afterLogin />}
