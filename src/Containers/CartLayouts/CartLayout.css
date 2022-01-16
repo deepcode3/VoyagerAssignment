@@ -1,7 +1,7 @@
 .layoutBg {
   position: absolute;
-  height: 1400px;
-  width: 1920px;
+  height: 1250px;
+  width: 100%;
   top: 236px;
   background-color: #f1f3fb;
 }
@@ -10,13 +10,17 @@
   position: absolute;
   top: 0px;
   height: 203px;
-  width: 1920px;
+  width: 100%;
 }
 
 .layoutFooter {
-  position: absolute;
+  position: relative;
   top: 1500px;
-  height: 227px;
-  width: 2023px;
-  background-color: #ffffff;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media all and (max-width: 550px) {
+  .layoutFooter {
+    display: none;
+  }
 }

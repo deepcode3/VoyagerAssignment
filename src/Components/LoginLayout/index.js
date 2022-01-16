@@ -15,7 +15,7 @@ const LoginLayout = ({ modalIsOpen, setModalIsOpen, setPageStatus, children }) =
         setPageStatus('login');
         setModalIsOpen(false);
       }}
-      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)' } }}
+      style={{ overlay: { backgroundColor: 'rgba(0,0,0,0.7)', zIndex: 1 } }}
     >
       <Wrapper>
         <LogoWithText />
@@ -45,4 +45,9 @@ const Wrapper = styled.div`
   bottom: 0;
   right: 0;
   margin: auto;
+  @media (max-width: 550px) {
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+  }
 `;

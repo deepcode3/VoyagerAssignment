@@ -606,6 +606,8 @@ input[type="radio"] {
   top: 950px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .Cactive {
@@ -691,4 +693,9 @@ input[type="radio"] {
   left: 1230px;
   margin: 0px;
   padding: 0px;
+}
+@media all and (max-width: 550px) {
+  .footerDivAddress {
+    display: none;
+  }
 }

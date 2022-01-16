@@ -955,9 +955,21 @@
   top: 250px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 .footerDivGallery {
   top: 270px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media all and (max-width: 550px) {
+  .footerDivGallery {
+    display: none;
+  }
+  .footerDivReview {
+    display: none;
+  }
 }

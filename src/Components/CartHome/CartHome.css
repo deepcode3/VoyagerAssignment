@@ -156,4 +156,6 @@
   top: 700px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }

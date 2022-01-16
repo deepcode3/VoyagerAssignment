@@ -9,13 +9,11 @@ const ProfileMain = () => {
   const [open, setOpen] = useState(false);
   return (
     <Div>
-      <Header />
-      <Suspense fallback={<div>Loading...</div>}>
-        <>
-          <Profile open={open} setOpen={setOpen} />
-          {open && <EditModal setOpen={setOpen} />}
-        </>
-      </Suspense>
+      <div className='headerDivProfile'>
+        <Header />
+      </div>
+      <Profile open={open} setOpen={setOpen} />
+      {open && <EditModal setOpen={setOpen} />}
       <Footer />
     </Div>
   );
@@ -23,11 +21,14 @@ const ProfileMain = () => {
 export default ProfileMain;
 
 const Div = styled.div`
-  position: relative;
   width: 100%;
   height: 100%;
-  padding: 0px;
-  overflow-x: hidden;
-  margin-right: auto;
-  margin-left: auto;
+  position: relative;
+  .headerDivProfile {
+    width: 100%;
+    position: relative;
+    align-items: center;
+    right: 0;
+    left: auto;
+  }
 `;

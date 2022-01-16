@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import PaymentOption from '../Payment/PaymentOption';
 import PaymentPoints from '../Payment/PaymentPoints';
 import PaymentDeliveryDetails from '../Payment/PaymentDeliveryDetails';
@@ -15,35 +16,57 @@ import cactive from '../../Assets/Icons/Active state.png';
 import activeline from '../../Assets/Icons/Activeline.png';
 
 const FinalPayment = () => {
+  const location = useLocation();
   const history = useHistory();
   const { paymentItems } = useContext(ProfileContext);
   const prepay = () => {
     history.goBack('/payment');
   };
+  const [cardDetails, setCardDetails] = useState(false);
+  const showDetails = () => {
+    setCardDetails(true);
+  };
+  const hideCard = () => {
+    setCardDetails(false);
+  };
   return (
     <div className='finalpaymentbg'>
       <p className='paytext'>Payment</p>
       <div className='finalpaycontainer'>
-        <PaymentOption />
-        <p className='mycards'>My Card</p>
-        <div className='payaddnew'>
-          <p className='payaddnewtext'>ADD NEW</p>
-        </div>
-        <div>
-          <div className='pay_container'>
-            <div className='pay_scroller'>
-              <ul className='list'>
-                {paymentItems.map((item, index) => {
-                  return (
-                    <li key={index.toString()}>
-                      <PaymentCardCart item={item} index={index} />
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        </div>
+        <PaymentOption cardDisplay={showDetails} hideDetails={hideCard} />
+        {cardDetails
+          ? (
+        // eslint-disable-next-line react/jsx-wrap-multilines
+            <>
+              <p className='mycards'>My Card</p>
+              <div className='payaddnew'>
+                <p
+                  className='payaddnewtext'
+                  onKeyDown={null}
+                  onClick={() => {
+                    history.push('/profile/profile-Pay');
+                  }}
+                >
+                  ADD NEW
+                </p>
+              </div>
+              <div>
+                <div className='pay_container'>
+                  <div className='pay_scroller'>
+                    <ul className='list'>
+                      {paymentItems.map((item, index) => {
+                        return (
+                          <li key={index.toString()}>
+                            <PaymentCardCart item={item} index={index} />
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </>)
+          : (null)}
         <div className='Fpaypoints'>
           <PaymentPoints />
         </div>
@@ -53,7 +76,7 @@ const FinalPayment = () => {
           <PaymentDeliveryDetails />
         </div>
         <div className='fpayres'>
-          <PaymentresDetails />
+          <PaymentresDetails restaurantName={location.state.restaurant} />
         </div>
         <div className='fpayback' onClick={prepay} role='button' onKeyDown={null}>
           <img src={payback} alt='' />
@@ -61,7 +84,7 @@ const FinalPayment = () => {
         <div
           className='fpaynow'
           onClick={() => {
-            history.push('/status');
+            history.push({ pathname: '/status', state: { restaurant: location.state.restaurant } });
           }}
           role='button'
           onKeyDown={null}

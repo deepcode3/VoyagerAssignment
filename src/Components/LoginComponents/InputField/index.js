@@ -84,11 +84,14 @@ const FormContainer = styled.div`
     height: 17px;
     color: #ed1b2e;
     font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: -0.2px;
     line-height: 17px;
     margin-top: 25px;
+    @media (max-width: 550px) {
+      margin-top: 13px;
+    }
   }
   .moveUpWithRedBorder {
     ~ .form-label {
@@ -97,6 +100,9 @@ const FormContainer = styled.div`
       position: relative;
     }
     border-bottom: 1px solid #ed1b2e;
+  }
+  @media (max-width: 550px) {
+    width: 250px;
   }
 `;
 
@@ -111,7 +117,7 @@ const Textbox = styled.input`
   border-bottom: 1px solid #a4a4a4;
   color: #000000;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 100;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -125,13 +131,16 @@ const Textbox = styled.input`
   &:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s !important;
   }
+  @media (max-width: 550px) {
+    height: 70%;
+  }
 `;
 
 const Label = styled.label`
   width: 86.36px;
   color: #858585;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: -0.27px;
   line-height: 22px;
   cursor: text;

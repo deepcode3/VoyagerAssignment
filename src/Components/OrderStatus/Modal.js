@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useContext } from 'react';
 import './Modal.css';
 import PropTypes from 'prop-types';
@@ -5,13 +6,15 @@ import StarIcon from '@mui/icons-material/Star';
 import Items from '../ItemDescription/Items';
 import { cartContext } from '../../Context/CartContext';
 
-const Modal = ({ closemodal }) => {
-  const { cartItems } = useContext(cartContext);
+const Modal = ({ closemodal, restaurantName }) => {
+  const { itemsOfRestaurant } = useContext(cartContext);
   const [star1, setStar1] = useState(false);
   const [star2, setStar2] = useState(false);
   const [star3, setStar3] = useState(false);
   const [star4, setStar4] = useState(false);
   const [star5, setStar5] = useState(false);
+  const resdata = itemsOfRestaurant(restaurantName);
+
   return (
     <div className='modalbackground'>
       <div className='modalbgs'>
@@ -27,9 +30,15 @@ const Modal = ({ closemodal }) => {
         <p className='statusorderdetails'>Order Details</p>
         <p className='statusitems'>Items</p>
         <div className='statusitemsrectangle'>
-          {cartItems.map((curritem) => {
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            return <Items key={curritem.id} {...curritem} from='orderDetails' />;
+          {resdata.map((curritem) => {
+            return (
+              <Items
+                key={curritem.id}
+                restaurant={restaurantName}
+                {...curritem}
+                from='orderDetails'
+              />
+            );
           })}
         </div>
         <p className='statusmaount'>Amount</p>
@@ -218,5 +227,6 @@ const Modal = ({ closemodal }) => {
 
 Modal.propTypes = {
   closemodal: PropTypes.func.isRequired,
+  restaurantName: PropTypes.string.isRequired,
 };
 export default Modal;

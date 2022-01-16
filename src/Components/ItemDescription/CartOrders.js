@@ -2,6 +2,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
+import Proptypes from 'prop-types';
 import Items from './Items';
 import { cartContext } from '../../Context/CartContext';
 import empty from '../../Assets/Images/empty.png';
@@ -11,13 +13,13 @@ import partialActive from '../../Assets/Icons/partialactive.png';
 import deactive from '../../Assets/Icons/deactive state.png';
 
 const Cart = () => {
+  const location = useLocation();
   const history = useHistory();
-
-  const { cartItems } = useContext(cartContext);
-
+  const { itemsOfRestaurant } = useContext(cartContext);
+  const items = itemsOfRestaurant(location.state.restaurant);
   return (
     <div className='dbgbody'>
-      {cartItems === null ? (
+      {items === null ? (
         <div className='emptyimgcart'>
           <img src={empty} alt='' />
           <p className='emptytext'>Cart is empty</p>
@@ -25,7 +27,7 @@ const Cart = () => {
       ) : (
         <div className='firstmain'>
           <div className='restaurent'>
-            <p className='restaurentname'>The Botique Kitchen</p>
+            <p className='restaurentname'>{location.state.restaurant}</p>
           </div>
           <div className='estimated-delivery-t'>
             <p className='edtime'>Estimated Delivery time - 60 - 80 min</p>
@@ -33,9 +35,14 @@ const Cart = () => {
           <div className='descriptioncontainer'>
             <div className='orderdisplay_rectangle'>
               <div className='dispitemsdiv'>
-                {cartItems.map((curritem) => {
+                {items.map((curritem) => {
                   return (
-                    <Items key={curritem.id} {...curritem} from='cart' />
+                    <Items
+                      key={curritem.id}
+                      restaurant={location.state.restaurant}
+                      {...curritem}
+                      from='cart'
+                    />
                   );
                 })}
               </div>
@@ -45,11 +52,7 @@ const Cart = () => {
                   <p className='cookinginstext'>Cooking instructions?</p>
                 </div>
                 <div className='mentioninput'>
-                  <input
-                    type='text'
-                    className='mention'
-                    placeholder='Mention it here...'
-                  />
+                  <input type='text' className='mention' placeholder='Mention it here...' />
                   <div className='mentiongreyline' />
                 </div>
                 <div className='cfinalgreyline' />
@@ -69,7 +72,10 @@ const Cart = () => {
                 <p
                   className='chooseadd'
                   onClick={() => {
-                    history.push('/address');
+                    history.push({
+                      pathname: '/address',
+                      state: { restaurant: location.state.restaurant },
+                    });
                   }}
                   onKeyDown={null}
                 >
@@ -103,3 +109,6 @@ const Cart = () => {
 };
 
 export default Cart;
+Cart.propTypes = {
+  location: Proptypes.string.isRequired,
+};

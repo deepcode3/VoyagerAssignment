@@ -470,4 +470,11 @@ input.placeholder::after {
   top: 1300px;
   position: relative;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media all and (max-width: 550px) {
+  .footerDiv {
+    display: none;
+  }
 }

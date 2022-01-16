@@ -2,6 +2,7 @@
 import { React, useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
 import { ProfileContext } from '../../Context/ProfileContext';
@@ -17,6 +18,7 @@ import deactive from '../../Assets/Icons/deactive state.png';
 import './Address.css';
 
 const CartAddress = () => {
+  const location = useLocation();
   const mobileSchema = yup.object().shape({
     mobile: yup
       .string()
@@ -35,7 +37,7 @@ const CartAddress = () => {
   const { addressItems, removeItem1 } = useContext(ProfileContext);
 
   const history = useHistory();
-
+  const [displayAddress, setDisplayAddress] = useState(false);
   return (
     <div className='addressbg'>
       <div className='adress'>
@@ -56,6 +58,7 @@ const CartAddress = () => {
               value='delivertome'
               name='deliveryoption'
               className='delivertomebtn'
+              onClick={() => { setDisplayAddress(true); }}
             />
             <p className='delivertometxt'>Deliver to me</p>
           </div>
@@ -63,41 +66,49 @@ const CartAddress = () => {
             <div className='pickup'>
               <img src={pickupicon} className='pickupicon' alt='pickupicon' />
             </div>
-            <input type='radio' value='pickup' name='deliveryoption' className='pickupbtn' />
+            <input type='radio' value='pickup' name='deliveryoption' className='pickupbtn' onClick={() => { setDisplayAddress(false); }} />
             <p className='pickuptext'>Pick up</p>
           </div>
         </div>
-        <div className='myadd'>
-          <p className='myaddtxt'>
-            My Addresses
-            <span>( )</span>
-          </p>
-        </div>
-        <div className='addnew'>
-          <img src={addnewbtn} className='addnewbtn' alt='adnewbtn' />
-          <p
-            onKeyDown={null}
-            className='addnewtext'
-            onClick={() => {
-              history.push('/profile/profile-address');
-            }}
-          >
-            ADD NEW
-          </p>
-          <div className='address_container'>
-            <div className='address_scroller'>
-              <ul className='list'>
-                {addressItems.map((item, index) => {
-                  return (
-                    <li key={index.toString()}>
-                      <AddressCard item={item} removeItem={removeItem1} index={index} />
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        </div>
+        {
+        displayAddress
+          ? (
+          // eslint-disable-next-line react/jsx-wrap-multilines
+            <>
+              <div className='myadd'>
+                <p className='myaddtxt'>
+                  My Addresses
+                  <span>( )</span>
+                </p>
+              </div>
+              <div className='addnew'>
+                <img src={addnewbtn} className='addnewbtn' alt='adnewbtn' />
+                <p
+                  onKeyDown={null}
+                  className='addnewtext'
+                  onClick={() => {
+                    history.push('/profile/profile-address');
+                  }}
+                >
+                  ADD NEW
+                </p>
+                <div className='address_container'>
+                  <div className='address_scroller'>
+                    <ul className='list'>
+                      {addressItems.map((item, index) => {
+                        return (
+                          <li key={index.toString()}>
+                            <AddressCard item={item} removeItem={removeItem1} index={index} />
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </>)
+          : (null)
+        }
         <form className='contactdetailsdiv'>
           <p className='contactdetails'>Contact Details</p>
           <div className='namediv'>
@@ -136,7 +147,10 @@ const CartAddress = () => {
         <div
           className='aChoosepayment'
           onClick={() => {
-            history.push('/payment');
+            history.push({
+              pathname: '/payment',
+              state: { restaurant: location.state.restaurant },
+            });
           }}
           role='button'
           onKeyDown={null}

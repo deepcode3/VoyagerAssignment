@@ -22,7 +22,9 @@ const Error404 = () => {
           <ButtonImage src={takeHome} alt='takeHomeButton' />
         </TakeHomeButton>
       </ErrorContainer>
-      <Footer />
+      <div className='footerDivError'>
+        <Footer />
+      </div>
     </Wrapper>
   );
 };
@@ -30,25 +32,30 @@ export default Error404;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 1714px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  .footerDivError {
+    width: 100%;
+    @media (max-width: 550px) {
+      display: none;
+    }
+  }
 `;
 
 const ErrorStatus = styled.img`
-  height: 175px;
-  width: 450px;
+  height: 10%;
+  width: 20%;
 `;
 const ErrorMessage = styled.p`
-  height: 27px;
-  width: 367px;
   color: #3e3e3e;
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   letter-spacing: 0;
   line-height: 27px;
+  text-align: center;
 `;
 const TakeHomeButton = styled.button`
   height: 56px;
@@ -60,8 +67,13 @@ const TakeHomeButton = styled.button`
 const ButtonImage = styled.img`
   height: 56px;
   width: 156px;
+  @media (max-width: 550px) {
+    height: 36px;
+    width: 100px;
+  }
 `;
 const ErrorContainer = styled.div`
+  height: 100%;
   background-color: #e3e6f0;
   display: flex;
   flex-direction: column;
@@ -71,4 +83,9 @@ const ErrorContainer = styled.div`
   padding-top: 14%;
   padding-bottom: 34%;
   margin-top: -80px;
+  justify-content: center;
+  @media (max-width: 550px) {
+    margin-top: 0;
+    height: 500px;
+  }
 `;
