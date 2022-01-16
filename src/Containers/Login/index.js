@@ -1,4 +1,6 @@
-import { React, useContext } from 'react';
+/* eslint-disable react/forbid-prop-types */
+import { React } from 'react';
+import { useDispatch } from 'react-redux';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
@@ -10,13 +12,12 @@ import StyledButton from '../../Components/CommonButton/index';
 import LoginOptions from '../../Components/LoginComponents/LoginOptions/index';
 import TextWithButton from '../../Components/LoginComponents/TextWithButton/index';
 import closeButton from '../../Assets/Icons/close_button.png';
-import { AccountsContext } from '../../Context/AccountsContext';
-import { UserContext } from '../../Context/UserContext';
+import { checkIfAccountExists } from '../../Utils';
+import { signIn } from '../../Actions/LoginActions';
 
 Modal.setAppElement('#root');
 const Login = ({ setModalIsOpen, setPageStatus }) => {
-  const { checkIfAccountExists } = useContext(AccountsContext);
-  const { signIn } = useContext(UserContext);
+  const dispatch = useDispatch();
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required('Email id is required'),
     password: yup.string().required('Password is required'),
@@ -39,7 +40,7 @@ const Login = ({ setModalIsOpen, setPageStatus }) => {
     } else if (result === 'Incorrect password entered') {
       setError('password', { type: 'manual', message: result });
     } else {
-      signIn(result);
+      dispatch(signIn(result));
       setModalIsOpen(false);
     }
   };
@@ -82,6 +83,7 @@ const Login = ({ setModalIsOpen, setPageStatus }) => {
     </Wrapper>
   );
 };
+
 export default Login;
 Login.propTypes = {
   setModalIsOpen: PropTypes.func,
