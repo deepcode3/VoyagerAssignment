@@ -1,4 +1,4 @@
-import store from '../Store';
+import { store } from '../Store';
 
 export const checkIfAccountExists = (data) => {
   const { accounts } = store.getState();
