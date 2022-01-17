@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import './Modal.css';
 import PropTypes from 'prop-types';
 import StarIcon from '@mui/icons-material/Star';
 import Items from '../ItemDescription/Items';
-import { cartContext } from '../../Context/CartContext';
+import { itemsOfRestaurant } from '../../Utils';
 
 const Modal = ({ closemodal, restaurantName }) => {
-  const { itemsOfRestaurant } = useContext(cartContext);
   const [star1, setStar1] = useState(false);
   const [star2, setStar2] = useState(false);
   const [star3, setStar3] = useState(false);
