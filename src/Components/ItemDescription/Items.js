@@ -1,15 +1,16 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import './Description.css';
-import { cartContext } from '../../Context/CartContext';
 import vegicon from '../../Assets/Icons/vegicon.png';
 import nonveg from '../../Assets/Icons/nonveg.png';
-
+import { removeItem, increaseItemQuantity, decreaseItemQuantity } from '../../Actions/CartActions';
+import { findIndex } from '../../Utils';
 // eslint-disable-next-line object-curly-newline
 const Items = ({ item, price, quantity, isVeg, from, restaurant }) => {
-  const { deleteItem, increaseItemQuantity, decreaseItemQuantity } = useContext(cartContext);
-
+  const index = findIndex();
+  const dispatch = useDispatch();
   return (
     <div className='orderitems'>
       <div className='item'>
@@ -37,7 +38,7 @@ const Items = ({ item, price, quantity, isVeg, from, restaurant }) => {
         <div
           className='decbutton'
           onClick={() => {
-            return decreaseItemQuantity(item, restaurant);
+            return dispatch(decreaseItemQuantity(item, restaurant, index));
           }}
           role='button'
           onKeyDown={null}
@@ -48,7 +49,7 @@ const Items = ({ item, price, quantity, isVeg, from, restaurant }) => {
         <div
           className='incbutton'
           onClick={() => {
-            return increaseItemQuantity(item, restaurant);
+            return dispatch(increaseItemQuantity(item, restaurant, index));
           }}
           role='button'
           onKeyDown={null}
@@ -63,7 +64,7 @@ const Items = ({ item, price, quantity, isVeg, from, restaurant }) => {
       <div
         className='remove'
         onClick={() => {
-          return deleteItem(item, restaurant);
+          return dispatch(removeItem(item, restaurant, index));
         }}
         role='button'
         onKeyDown={null}
