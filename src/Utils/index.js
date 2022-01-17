@@ -51,3 +51,23 @@ export const itemsOfRestaurant = (restaurantName) => {
   if (result.length === 0) return null;
   return result;
 };
+
+export const totalPrice = (restaurantName) => {
+  const { currentUser } = store.getState();
+  if (currentUser.cart.length === 0) {
+    return 0;
+  }
+  const result = itemsOfRestaurant(restaurantName);
+  if (result === null) {
+    return 0;
+  }
+  function amount(item) {
+    return item.price * item.quantity;
+  }
+  function sum(prev, next) {
+    return prev + next;
+  }
+
+  const total = result.map(amount).reduce(sum, 0);
+  return total;
+};
