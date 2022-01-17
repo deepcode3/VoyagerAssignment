@@ -42,10 +42,12 @@ const GetDetails = ({ setPageStatus, email, setName }) => {
       dispatch(
         addAccount({
           firstname: data.firstName,
+          username: data.firstName,
           lastname: data.lastName,
           email,
           password: data.password,
           cart: [],
+          address: [],
         })
       );
     } else {
@@ -59,6 +61,7 @@ const GetDetails = ({ setPageStatus, email, setName }) => {
           countrycode: selectedCode,
           mobile: data.mobile,
           cart: [],
+          address: [],
         })
       );
     }
