@@ -8,7 +8,7 @@
 /* eslint-disable operator-linebreak */
 import React, { useContext, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
 import { cartContext } from '../../Context/CartContext';
 import searchIcon from '../../Assets/Icons/searchIcon.png';
@@ -31,11 +31,20 @@ import proceedToCheckOutButton from '../../Assets/Icons/proceedToCheckOut.png';
 import emptyImg from '../../Assets/Images/empty.png';
 import './Menu.css';
 import Footer from '../../Components/Footer';
-import { addItem } from '../../Actions/CartActions';
-import { findIndex } from '../../Utils';
+import {
+  addItem,
+  removeItem,
+  increaseItemQuantity,
+  decreaseItemQuantity,
+  removeAllRestaurantItems,
+} from '../../Actions/CartActions';
+import { findIndex, itemsOfRestaurant } from '../../Utils';
 
 const Menu = () => {
   const index = findIndex();
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
   const dispatch = useDispatch();
   const { searchKey } = useParams();
   const { location } = useParams();
@@ -44,15 +53,7 @@ const Menu = () => {
   const [searchItem, setSearchItem] = useState('');
   const [costDeatilsButton, setcostDetailsButton] = useState(false);
   const history = useHistory();
-  const {
-    cartItems,
-    deleteItem,
-    removeAllRestaurantItems,
-    increaseItemQuantity,
-    decreaseItemQuantity,
-    totalPrice,
-    itemsOfRestaurant,
-  } = useContext(cartContext);
+  const { totalPrice } = useContext(cartContext);
   const data = [
     {
       name: 'Chilli Cheese Meal',
@@ -165,9 +166,9 @@ const Menu = () => {
     },
   ];
   const isItemInCart = (item) => {
-    if (cartItems) {
+    if (currentUser.cart.length !== 0) {
       // eslint-disable-next-line no-restricted-syntax
-      for (const value of Object.values(cartItems)) {
+      for (const value of Object.values(currentUser.cart)) {
         if (value.item === item.name && value.restaurant === restaurant && value.status === true) {
           return true;
         }
@@ -209,7 +210,7 @@ const Menu = () => {
                   <div
                     className='menuClearCart'
                     onClick={() => {
-                      removeAllRestaurantItems(restaurant);
+                      dispatch(removeAllRestaurantItems(restaurant, index));
                     }}
                     role='button'
                     onKeyDown={null}
@@ -218,7 +219,7 @@ const Menu = () => {
                   </div>
                   <div className='menuCartLine1' />
                   <div className='menuCartItems'>
-                    {Object.values(cartItems)
+                    {Object.values(currentUser.cart)
                       // eslint-disable-next-line array-callback-return
                       // eslint-disable-next-line consistent-return
                       .filter((value) => {
@@ -246,7 +247,9 @@ const Menu = () => {
                                 className='decreseButton'
                                 alt=''
                                 onClick={() => {
-                                  return decreaseItemQuantity(item.item, restaurant);
+                                  return dispatch(
+                                    decreaseItemQuantity(item.item, restaurant, index)
+                                  );
                                 }}
                                 onKeyDown={null}
                               />
@@ -256,7 +259,9 @@ const Menu = () => {
                                 className='increaseButton'
                                 alt=''
                                 onClick={() => {
-                                  return increaseItemQuantity(item.item, restaurant);
+                                  return dispatch(
+                                    increaseItemQuantity(item.item, restaurant, index)
+                                  );
                                 }}
                                 onKeyDown={null}
                               />
@@ -279,7 +284,7 @@ const Menu = () => {
                                   : 'menuCartRemove2'
                               }
                               onClick={() => {
-                                return deleteItem(item.item, restaurant);
+                                return dispatch(removeItem(item.item, restaurant, index));
                               }}
                               role='button'
                               onKeyDown={null}
@@ -416,7 +421,7 @@ const Menu = () => {
                                 item.bestSeller ? 'addAgainToCartButton' : 'addAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name, restaurant);
+                                return dispatch(increaseItemQuantity(item.name, restaurant, index));
                               }}
                               role='button'
                               onKeyDown={null}
@@ -519,7 +524,7 @@ const Menu = () => {
                                   : 'apptizeraddAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name, restaurant);
+                                return dispatch(increaseItemQuantity(item.name, restaurant, index));
                               }}
                               role='button'
                               onKeyDown={null}
@@ -608,7 +613,7 @@ const Menu = () => {
                                   : 'soupsAddAgainToCartButton1'
                               }
                               onClick={() => {
-                                return increaseItemQuantity(item.name, restaurant);
+                                return dispatch(increaseItemQuantity(item.name, restaurant, index));
                               }}
                               onKeyDown={null}
                               role='button'
