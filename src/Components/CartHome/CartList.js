@@ -1,15 +1,12 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useContext } from 'react';
+import React from 'react';
 import Proptypes from 'prop-types';
 import './CartHome.css';
-
 import { useHistory } from 'react-router-dom';
-import { cartContext } from '../../Context/CartContext';
-
+import { removeAllRestaurantItems } from '../../Actions/CartActions';
 // eslint-disable-next-line object-curly-newline
 const Cartlist = ({ Hotelname, hoteladdress, totalproduct, productcost }) => {
   const history = useHistory();
-  const { removeAllRestaurantItems } = useContext(cartContext);
   return (
     <div className='cartdiv'>
       <p className='cartresname'>{Hotelname}</p>
