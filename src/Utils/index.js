@@ -30,10 +30,24 @@ export const checkIfNumberExists = (data) => {
   }
   return result[0];
 };
+
 export const findIndex = () => {
   const { currentUser, accounts } = store.getState();
   const objIndex = accounts.findIndex((obj) => {
     return obj.email === currentUser.email;
   });
   return objIndex;
+};
+
+export const itemsOfRestaurant = (restaurantName) => {
+  const { currentUser } = store.getState();
+  if (currentUser.cart.length === 0) {
+    return null;
+  }
+
+  const result = currentUser.cart.filter((obj) => {
+    return obj.restaurant === restaurantName;
+  });
+  if (result.length === 0) return null;
+  return result;
 };
