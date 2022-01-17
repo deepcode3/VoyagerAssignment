@@ -1,15 +1,11 @@
-import { React, useContext } from 'react';
+import { React } from 'react';
 // import Cartdata from './CartData';
 import Cartlist from './CartList';
 import './CartHome.css';
-import { cartContext } from '../../Context/CartContext';
 import data from '../RestaurentsData/data';
+import { restaurantItemsCount, totalPrice } from '../../Utils';
 
 const CartHome = () => {
-  // const [cartifo] = useState(Cartdata);
-  const { cartItems, restaurantItemsCount, totalPrice } = useContext(cartContext);
-  console.log(cartItems);
-  console.log(restaurantItemsCount('Iran Zamin Restaurent and Cafe'));
   const resdata = data.filter((obj) => {
     return restaurantItemsCount(obj.name) !== 0;
   });
