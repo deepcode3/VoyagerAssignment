@@ -42,16 +42,67 @@ const rootReducer = (state = initState, action) => {
       return { ...state, accounts: newAccounts };
     }
     case 'ADD_ITEM': {
-      console.log(action.payload);
       const updatedCart = [...state.accounts[action.payload.index].cart, action.payload.item];
-      const updatedAccount = state.accounts[action.payload.index];
-      updatedAccount.cart = updatedCart;
-      const newAccounts = [...state.accounts];
-      newAccounts[action.payload.index] = updatedAccount;
       const updatedUser = { ...state.currentUser, cart: updatedCart };
+      const newAccounts = [...state.accounts];
+      newAccounts[action.payload.index] = updatedUser;
       return { ...state, accounts: newAccounts, currentUser: updatedUser };
     }
+    case 'REMOVE_ITEM': {
+      const currentCart = [...state.currentUser.cart];
+      const updatedCart = currentCart.filter((item) => {
+        return !(
+          item.item === action.payload.item && item.restaurant === action.payload.restaurant
+        );
+      });
+      const updatedUser = { ...state.currentUser, cart: updatedCart };
+      const newAccounts = [...state.accounts];
+      newAccounts[action.payload.index] = updatedUser;
+      return { ...state, accounts: newAccounts, currentUser: updatedUser };
+    }
+    case 'INCREASE_ITEM_QUANTITY': {
+      const currentCart = [...state.currentUser.cart];
+      const indexTobeUpdated = currentCart.findIndex((item) => {
+        return item.item === action.payload.item && item.restaurant === action.payload.restaurant;
+      });
+      currentCart[indexTobeUpdated].quantity += 1;
+      const updatedUser = { ...state.currentUser, cart: currentCart };
+      const newAccounts = [...state.accounts];
+      newAccounts[action.payload.index] = updatedUser;
+      return { ...state, accounts: newAccounts, currentUser: updatedUser };
+    }
+    case 'DECREASE_ITEM_QUANTITY': {
+      const currentCart = [...state.currentUser.cart];
+      let updatedCart = currentCart;
+      const indexTobeUpdated = currentCart.findIndex((item) => {
+        return item.item === action.payload.item && item.restaurant === action.payload.restaurant;
+      });
+      if (currentCart[indexTobeUpdated].quantity === 1) {
+        updatedCart = currentCart.filter((item) => {
+          return !(
+            item.item === action.payload.item && item.restaurant === action.payload.restaurant
+          );
+        });
+      } else {
+        updatedCart = currentCart;
+        updatedCart[indexTobeUpdated].quantity -= 1;
+      }
+      const updatedUser = { ...state.currentUser, cart: updatedCart };
+      const newAccounts = [...state.accounts];
+      newAccounts[action.payload.index] = updatedUser;
+      return { ...state, accounts: newAccounts, currentUser: updatedUser };
+    }
+    case 'CLEAR_CART': {
+      const currentCart = [...state.currentUser.cart];
+      const updatedCart = currentCart.filter((item) => {
+        return item.restaurant !== action.payload.restaurant;
+      });
 
+      const updatedUser = { ...state.currentUser, cart: updatedCart };
+      const newAccounts = [...state.accounts];
+      newAccounts[action.payload.index] = updatedUser;
+      return { ...state, accounts: newAccounts, currentUser: updatedUser };
+    }
     default:
       return state;
   }
