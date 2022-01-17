@@ -159,3 +159,17 @@
   margin-right: auto;
   margin-left: auto;
 }
+/* .cardscroller {
+  width: 800px;
+  scroll-behavior: auto;
+} */
+/* .rec2 {
+  position: relative;
+  width: 340px;
+  left: 20px;
+  float: bottom;
+  top: 100px;
+  margin-bottom: 15px;
+  background-color: red;
+  overflow-x: scroll;
+} */

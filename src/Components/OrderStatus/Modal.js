@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import StarIcon from '@mui/icons-material/Star';
 import Items from '../ItemDescription/Items';
 import { cartContext } from '../../Context/CartContext';
+import PaymentDeliveryDetails from '../Payment/PaymentDeliveryDetails';
 
 const Modal = ({ closemodal, restaurantName }) => {
   const { itemsOfRestaurant } = useContext(cartContext);
@@ -58,7 +59,9 @@ const Modal = ({ closemodal, restaurantName }) => {
           </div>
         </div>
         <p className='statusdeldeatils'>Delivery Details</p>
-        <div className='statusdelrct' />
+        <div className='statusdelrct'>
+          <PaymentDeliveryDetails />
+        </div>
         <div className='statusratingrect ' />
         <p className='ratedeliverytext'>Rate your Delivery</p>
 

@@ -16,7 +16,7 @@
   height: 33px;
   width: 150px;
   color: #4c4c4c;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.34px;
@@ -53,7 +53,7 @@
   height: 22px;
   width: 44px;
   color: #565454;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0;
@@ -82,7 +82,7 @@
   height: 22px;
   width: 63px;
   color: #565454;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0;
@@ -118,7 +118,7 @@
   height: 22px;
   width: 33px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 22px;
@@ -132,7 +132,7 @@
   height: 22px;
   width: 93px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
@@ -148,7 +148,7 @@
   height: 17px;
   width: 60px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -162,7 +162,7 @@
   height: 17px;
   width: 61px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -177,7 +177,7 @@
   height: 17px;
   width: 71px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -191,7 +191,7 @@
   height: 27px;
   width: 74px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 27px;
@@ -206,7 +206,7 @@
   height: 17px;
   width: 50px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -220,7 +220,7 @@
   height: 17px;
   width: 74px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -235,7 +235,7 @@
   height: 22px;
   width: 138px;
   color: #223136;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 22px;
@@ -249,7 +249,7 @@
   height: 22px;
   width: 141px;
   color: #223136;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
@@ -276,7 +276,7 @@
   height: 19px;
   width: 54px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
@@ -292,7 +292,7 @@
   height: 22px;
   width: 121px;
   color: #565454;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0;
@@ -308,7 +308,7 @@
   height: 157px;
   width: 441px;
   border: 1px solid #979797;
-  opacity: 0.25;
+  /* opacity: 0.25; */
   border-radius: 5px;
   position: absolute;
   top: 741px;
@@ -331,7 +331,7 @@
   height: 22px;
   width: 138px;
   color: #565454;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -353,7 +353,7 @@
   height: 17px;
   width: 86px;
   color: #858585;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -369,7 +369,7 @@
   height: 22px;
   width: 405px;
   color: #4a4a4a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -421,7 +421,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -459,7 +459,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -496,7 +496,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -532,7 +532,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -568,7 +568,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -605,7 +605,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -644,7 +644,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -683,7 +683,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -722,7 +722,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -761,7 +761,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -771,3 +771,22 @@ input::placeholder {
   top: 2px;
   margin: 0px;
 }
+/* .locationtimediv {
+  position: relative;
+  top: -180px;
+  height: 155px;
+  width: 437px;
+  left: -20px;
+} */
+/* .payonegreyline,
+.paydateandtime {
+  width: 426px;
+  left: 8px;
+}
+.paydeliverylocation {
+  left: 10px;
+}
+.paychange,
+.datetimedivchange {
+  left: 320px;
+} */

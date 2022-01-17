@@ -9,7 +9,7 @@ const AddressCard = ({ item, removeItem, index }) => {
     <div key={index.toString()} className='address_card'>
       <span className='home'>{`${item.addressLabel}`}</span>
       <div className='check_address'>
-        <img src={icnCheckActive} alt='icn' style={{ float: 'left' }} />
+        <img src={icnCheckActive} alt='icn' style={{ float: 'left' }} className='addresscardcheckicn' />
       </div>
       <span className='addressline'>{`${item.location}, -${item.city} - ${item.area} - ${item.address}, `}</span>
       <div className='editbtn'>Edit</div>
