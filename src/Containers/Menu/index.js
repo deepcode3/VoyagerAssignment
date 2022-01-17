@@ -8,6 +8,7 @@
 /* eslint-disable operator-linebreak */
 import React, { useContext, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
 import { cartContext } from '../../Context/CartContext';
 import searchIcon from '../../Assets/Icons/searchIcon.png';
@@ -30,8 +31,12 @@ import proceedToCheckOutButton from '../../Assets/Icons/proceedToCheckOut.png';
 import emptyImg from '../../Assets/Images/empty.png';
 import './Menu.css';
 import Footer from '../../Components/Footer';
+import { addItem } from '../../Actions/CartActions';
+import { findIndex } from '../../Utils';
 
 const Menu = () => {
+  const index = findIndex();
+  const dispatch = useDispatch();
   const { searchKey } = useParams();
   const { location } = useParams();
   const { restaurant } = useParams();
@@ -41,7 +46,6 @@ const Menu = () => {
   const history = useHistory();
   const {
     cartItems,
-    addItem,
     deleteItem,
     removeAllRestaurantItems,
     increaseItemQuantity,
@@ -424,16 +428,21 @@ const Menu = () => {
                           <div
                             className={item.bestSeller ? 'addToCart' : 'addToCart1'}
                             onClick={() => {
-                              return addItem({
-                                restaurant,
-                                item: item.name,
-                                price: item.cost,
-                                icon: item.image,
-                                isCustomizable: item.customizable,
-                                isVeg: item.Type === 'non-veg',
-                                status: true,
-                                quantity: 1,
-                              });
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
                             }}
                             role='button'
                             onKeyDown={null}
@@ -522,16 +531,21 @@ const Menu = () => {
                           <div
                             className={item.bestSeller ? 'apptizeraddToCart' : 'apptizeraddToCart'}
                             onClick={() => {
-                              return addItem({
-                                restaurant,
-                                item: item.name,
-                                price: item.cost,
-                                icon: item.image,
-                                isCustomizable: item.customizable,
-                                isVeg: item.Type === 'non-veg',
-                                status: true,
-                                quantity: 1,
-                              });
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
                             }}
                             role='button'
                             onKeyDown={null}
@@ -606,16 +620,21 @@ const Menu = () => {
                           <div
                             className={item.bestSeller ? 'soupsAddToCart' : 'soupsAddToCart1'}
                             onClick={() => {
-                              return addItem({
-                                restaurant,
-                                item: item.name,
-                                price: item.cost,
-                                icon: item.image,
-                                isCustomizable: item.customizable,
-                                isVeg: item.Type === 'non-veg',
-                                status: true,
-                                quantity: 1,
-                              });
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
                             }}
                             role='button'
                             onKeyDown={null}

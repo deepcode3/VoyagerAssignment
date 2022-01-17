@@ -41,6 +41,17 @@ const rootReducer = (state = initState, action) => {
       newAccounts[objIndex].username = action.data.username;
       return { ...state, accounts: newAccounts };
     }
+    case 'ADD_ITEM': {
+      console.log(action.payload);
+      const updatedCart = [...state.accounts[action.payload.index].cart, action.payload.item];
+      const updatedAccount = state.accounts[action.payload.index];
+      updatedAccount.cart = updatedCart;
+      const newAccounts = [...state.accounts];
+      newAccounts[action.payload.index] = updatedAccount;
+      const updatedUser = { ...state.currentUser, cart: updatedCart };
+      return { ...state, accounts: newAccounts, currentUser: updatedUser };
+    }
+
     default:
       return state;
   }

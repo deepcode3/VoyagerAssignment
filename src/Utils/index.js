@@ -30,10 +30,10 @@ export const checkIfNumberExists = (data) => {
   }
   return result[0];
 };
-export const findIndex = (email) => {
-  const { accounts } = store.getState();
+export const findIndex = () => {
+  const { currentUser, accounts } = store.getState();
   const objIndex = accounts.findIndex((obj) => {
-    return obj.email === email;
+    return obj.email === currentUser.email;
   });
   return objIndex;
 };
