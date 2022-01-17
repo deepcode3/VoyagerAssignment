@@ -3,9 +3,13 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import './CartHome.css';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { removeAllRestaurantItems } from '../../Actions/CartActions';
+import { findIndex } from '../../Utils';
 // eslint-disable-next-line object-curly-newline
 const Cartlist = ({ Hotelname, hoteladdress, totalproduct, productcost }) => {
+  const index = findIndex();
+  const dispatch = useDispatch();
   const history = useHistory();
   return (
     <div className='cartdiv'>
@@ -15,7 +19,7 @@ const Cartlist = ({ Hotelname, hoteladdress, totalproduct, productcost }) => {
         onKeyDown={null}
         type='button'
         onClick={() => {
-          removeAllRestaurantItems(Hotelname);
+          dispatch(removeAllRestaurantItems(Hotelname, index));
         }}
       >
         Remove
