@@ -6,11 +6,10 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable operator-linebreak */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
-import { cartContext } from '../../Context/CartContext';
 import searchIcon from '../../Assets/Icons/searchIcon.png';
 import item1 from '../../Assets/Images/item1.png';
 import item2 from '../../Assets/Images/item2.jpeg';
@@ -38,7 +37,7 @@ import {
   decreaseItemQuantity,
   removeAllRestaurantItems,
 } from '../../Actions/CartActions';
-import { findIndex, itemsOfRestaurant } from '../../Utils';
+import { findIndex, itemsOfRestaurant, totalPrice } from '../../Utils';
 
 const Menu = () => {
   const index = findIndex();
@@ -53,7 +52,6 @@ const Menu = () => {
   const [searchItem, setSearchItem] = useState('');
   const [costDeatilsButton, setcostDetailsButton] = useState(false);
   const history = useHistory();
-  const { totalPrice } = useContext(cartContext);
   const data = [
     {
       name: 'Chilli Cheese Meal',
