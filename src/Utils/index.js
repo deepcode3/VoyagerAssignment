@@ -44,7 +44,6 @@ export const itemsOfRestaurant = (restaurantName) => {
   if (currentUser.cart.length === 0) {
     return null;
   }
-
   const result = currentUser.cart.filter((obj) => {
     return obj.restaurant === restaurantName;
   });
@@ -67,7 +66,14 @@ export const totalPrice = (restaurantName) => {
   function sum(prev, next) {
     return prev + next;
   }
-
   const total = result.map(amount).reduce(sum, 0);
   return total;
+};
+
+export const restaurantItemsCount = (restaurantName) => {
+  const result = itemsOfRestaurant(restaurantName);
+  if (result === null) {
+    return 0;
+  }
+  return result.length;
 };
