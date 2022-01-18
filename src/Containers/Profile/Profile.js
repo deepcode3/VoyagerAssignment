@@ -40,7 +40,7 @@ const Profile = ({ setOpen }) => {
                 <FaTimes
                   className='close'
                   onClick={handleClick1}
-                  style={{ color: 'white', position: 'absolute', left: '600px', top: '20px' }}
+                  style={{ color: 'white', position: 'absolute', left: '600px', top: '40px' }}
                 />
               ) : null}
             </div>
@@ -59,14 +59,16 @@ const Profile = ({ setOpen }) => {
             >
               Edit
             </span>
-            <span className='username'>{currentUser.firstname}</span>
+            <span className='username' onClick={handleClick1} role='button' onKeyDown={null}>
+              {currentUser.firstname}
+            </span>
             <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
             <span className='num'>
               <img className='phone-icn' src={phoneicn} alt='icn' />
               {`+${currentUser.countrycode} ${currentUser.mobile}`}
             </span>
             <hr className='line-1 ' />
-            <span className='abdulla-foodie-com '>
+            <span className='email'>
               <img className='mail-icn' src={mailicn} alt='icn' />
               {currentUser.email}
             </span>
@@ -161,69 +163,50 @@ const NavMenu = styled.ul`
   text-align: center;
   align-items: center;
   @media screen and (max-width: 393px) {
-    display: flex;
+    display: table;
     position: absolute;
-    flex-direction: column;
+    // flex-direction: column;
     width: 100%;
     overflow-y: auto;
-    height: 90vh;
-    top: -16px;
+    height: 45vh;
+    padding-top: 100px;
+    top: -5px;
     left: ${({ click }) => {
       return click ? 0 : '-100%';
     }};
     opacity: 1;
     transition: all 0.5s ease;
-    background: #101522;
+    background: #000000;
     z-index: 1;
+    border: none;
   }
 `;
 const NavItem = styled.li`
   list-style: none;
   @media screen and (max-width: 393px) {
     width: 100%;
+    float: left;
+    display: table-cell;
+    text-align: center;
     &:hover {
       border: none;
     }
   }
 `;
 const NavLinks = styled(Link)`
-    color: #ffffff;
-    display: flex;
-    align-items:center;
-    text-decoration: none;
-    text-align: center; 
-    position: relative;
-    font-family: 'Open Sans';
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 1.5rem;
-    margin-right: 2.2rem;
-    &:hover:before {
-      content: '';
-      height: 4px;
-      width: 38px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      border-radius: 2px;
-      background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
-      box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-    }
-    @media screen and (max-width: 954px) {
-      text-align:center;
-      padding:2rem;
-      width:100%;
-      display:table;
-      &:hover{
-        color: #ffffff;
-        transition:all 0.3s ease;
-      }
-   }
-
-  }
-
-  .Link:hover:before {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  font-family: 'Open Sans';
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  margin-right: 2.2rem;
+  &:hover:before {
     content: '';
     height: 4px;
     width: 38px;
@@ -234,13 +217,20 @@ const NavLinks = styled(Link)`
     background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
     box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
   }
-  .Link span {
+  @media screen and (max-width: 393px) {
+    text-align: center;
+    padding: 2rem;
+    width: 95%;
     display: block;
-    width: 100px;
-    height: 40px;
-    padding-top: 20px;
+    font-size: 1.5rem;
+    color: #f57c00;
+    background-color: #f1f3fb;
+    &:hover {
+      transition: all 0.3s ease;
+    }
   }
 `;
+
 const Container = styled.div`
   height: 261px;
   width: 940px;
@@ -285,7 +275,7 @@ const ProfileList = styled.div`
     }};
     opacity: 1;
     transition: all 0.5s ease;
-    background: #101522;
+    background: #000000;
     z-index: 1;
   }
   .clsoe {
@@ -395,7 +385,7 @@ const ProfileList = styled.div`
       display: none;
     }
   }
-  .abdulla-foodie-com {
+  .email {
     height: 22px;
     color: #ffffff;
     font-family: 'Open Sans';
@@ -409,6 +399,7 @@ const ProfileList = styled.div`
       display: flex;
       left: 330px;
       top: 380px;
+      font-size: 12px;
     }
   }
 
@@ -464,8 +455,8 @@ const ProfileList = styled.div`
     position: absolute;
     @media screen and (max-width: 393px) {
       display: flex;
-      left: 330px;
-      top: 17px;
+      left: 400px;
+      top: 500px;
     }
   }
   .edit {

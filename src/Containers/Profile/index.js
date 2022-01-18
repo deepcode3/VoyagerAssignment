@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Footer from '../../Components/Footer';
 import Header from '../../Components/Header';

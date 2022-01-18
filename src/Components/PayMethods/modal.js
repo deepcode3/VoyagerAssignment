@@ -3,7 +3,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import icnSaveCardUnchecked from '../../Assets/Icons/icn_save_card_unchecked.png';
 import visaicon from '../../Assets/Icons/visaicon.png';
 
 const Model = ({ setOpen, values, setValues, addItem }) => {
@@ -42,7 +41,7 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
           X
         </span>
         <div className='navbar'>
-          <h1 className='add-new-address '>Add New Card</h1>
+          <h1 className='add-new-card '>Add New Card</h1>
         </div>
         <div className='enter-cards'>
           <div className='card-body'>
@@ -173,12 +172,20 @@ const ModalContainer = styled.div`
   flex-direction: column;
   position: relative;
   //padding: 40px;
+  @media screen and (max-width: 393px) {
+    display: block;
+    width: 350px;
+  }
   .dismiss-button {
     height: 12px;
     width: 12px;
     position: absolute;
     right: 13px;
     top: 13px;
+    @media screen and (max-width: 393px) {
+      height: 20px;
+      width: 20px;
+    }
   }
   .navbar {
     height: 33px;
@@ -187,8 +194,11 @@ const ModalContainer = styled.div`
     text-align: center;
     top: 43px;
     left: 183px;
+    @media screen and (max-width: 393px) {
+      left: 83px;
+    }
   }
-  .add-new-address {
+  .add-new-card {
     height: 33px;
     width: 193px;
     color: #4c4c4c;
@@ -198,6 +208,14 @@ const ModalContainer = styled.div`
     letter-spacing: -0.34px;
     line-height: 33px;
     margin: 0 auto;
+    @media screen and (max-width: 393px) {
+      font-size: 20px;
+    }
+  }
+  .card-body {
+    position: relative;
+    @media screen and (max-width: 393px) {
+    }
   }
   .enter-cards {
     height: 459px;
@@ -205,9 +223,10 @@ const ModalContainer = styled.div`
     position: absolute;
     padding-left: 30px;
     top: 100px;
-  }
-  .card-body {
-    position: relative;
+    @media screen and (max-width: 393px) {
+      width: 300px;
+      margin-left: 10px;
+    }
   }
 
   .enter-credit {
@@ -218,6 +237,8 @@ const ModalContainer = styled.div`
     font-size: 17px;
     letter-spacing: -0.41px;
     line-height: 23px;
+    @media screen and (max-width: 393px) {
+    }
   }
 
   .input {
@@ -234,6 +255,8 @@ const ModalContainer = styled.div`
     margin: 0px;
     border: 0px;
     outline: none;
+    @media screen and (max-width: 393px) {
+    }
   }
   .line {
     box-sizing: border-box;
@@ -243,11 +266,16 @@ const ModalContainer = styled.div`
     opacity: 0.53;
     position: absolute;
     bottom: 0px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .input-image {
     height: 12px;
     width: 40px;
     padding: 41px 0 0 200px;
+    @media screen and (max-width: 393px) {
+      padding: 20px 0 0 100px;
+    }
   }
   .label {
     height: 17px;
@@ -257,29 +285,42 @@ const ModalContainer = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .field {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 39px;
+    @media screen and (max-width: 393px) {
+      width: 300px;
+    }
   }
   .field-1 {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 130px;
+    @media screen and (max-width: 393px) {
+      width: 300px;
+    }
   }
   .field-2 {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 221px;
+    @media screen and (max-width: 393px) {
+      width: 300px;
+    }
   }
   .extra {
     height: 67px;
     width: 502px;
     position: relative;
+    @media screen and (max-width: 393px) {
+    }
   }
   .label-1 {
     height: 17px;
@@ -291,6 +332,8 @@ const ModalContainer = styled.div`
     line-height: 17px;
     position: absolute;
     top: 0px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .label-2 {
     height: 17px;
@@ -301,8 +344,10 @@ const ModalContainer = styled.div`
     letter-spacing: -0.24px;
     line-height: 17px;
     position: absolute;
-    top: 24px;
+    top: 0px;
     left: 160px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .input-1[type='text'] {
     width: 8%;
@@ -314,6 +359,8 @@ const ModalContainer = styled.div`
     opacity: 0.53;
     position: absolute;
     top: 18px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .input-2[type='text'] {
     width: 50%;
@@ -326,11 +373,16 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 18px;
     left: 160px;
+    @media screen and (max-width: 393px) {
+      width: 28%;
+    }
   }
   .dash {
     position: absolute;
     top: 35px;
     left: 47px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .line {
     box-sizing: border-box;
@@ -338,6 +390,9 @@ const ModalContainer = styled.div`
     width: 498px;
     border: 1px solid #4a4a4a;
     opacity: 0.53;
+    @media screen and (max-width: 393px) {
+      width: 300px;
+    }
   }
   .add-this-card-to-sav {
     height: 22px;
@@ -351,6 +406,8 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 320px;
     left: 0px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .save-check {
     border: 2px solid white;
@@ -381,6 +438,10 @@ const ModalContainer = styled.div`
     position: absolute;
     left: 97px;
     top: 370px;
+    @media screen and (max-width: 393px) {
+      width: 235px;
+      left: 27px;
+    }
   }
   .save-address {
     height: 19px;

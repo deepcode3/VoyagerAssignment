@@ -5,9 +5,6 @@ import styled from 'styled-components';
 import Modal from './modal';
 import PaymentCard from './PaymentCard';
 import { ProfileContext } from '../../Context/ProfileContext';
-import Device from '../../DeviceSize';
-// import visaicon from '../../Assets/Icons/visaicon.png';
-// import mastercard from '../../Assets/Iconsmastercard_icon.png'
 
 const PayAmount = () => {
   const { paymentItems, addItem2, removeItem2 } = useContext(ProfileContext);
@@ -19,12 +16,6 @@ const PayAmount = () => {
     expiaryYear: '',
     securityNumber: '',
     primary: null,
-    cardIcon: [
-      {
-        visa: '../../Assets/Icons/visaicon.png',
-        masterCard: '../../Assets/Iconsmastercard_icon.png',
-      },
-    ],
   });
   const [values, setValues] = useState(initialFormData);
   return (
@@ -79,17 +70,8 @@ const Div = styled.div`
   background-color: #f1f3fb;
   margin-right: auto;
   margin-left: auto;
-  @media ${Device.mobile} {
-    max-width: 390px;
-  }
-  @media ${Device.tablet} {
-    max-width: 954px;
-  }
-  @media ${Device.desktop} {
-    max-width: 1400px;
-  }
-  @media ${Device.desktopL} {
-    max-width: 2500px;
+  @media screen and (max-width: 393px) {
+    height: 60vh;
   }
   .recommendation-1 {
     width: 930px;
@@ -100,24 +82,12 @@ const Div = styled.div`
     margin-left: auto;
     display: flex;
     justify-content: space-between;
-  }
-  .recommendation-2 {
-    // width: 1050px;
-    width: 80%;
-    height: 536px;
-    display: flex;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 12%;
-    overflow-y: scroll;
-    position: relative;
-  }
-  .order-1 {
-    // width: 1050px;
-    width: 100%;
-    max-height: 100%;
-    padding-left: 11%;
+    @media screen and (max-width: 393px) {
+      display: block;
+      width: 320px;
+      position: absolute;
+      top: 10px;
+    }
   }
   .pay-methods {
     height: 22px;
@@ -137,7 +107,38 @@ const Div = styled.div`
     letter-spacing: 0;
     line-height: 19px;
     text-align: right;
-    //margin-left: 720px;
+    @media screen and (max-width: 393px) {
+      display: block;
+      position: absolute;
+      top: 2px;
+      margin-left: 230px;
+    }
+  }
+  .recommendation-2 {
+    // width: 1050px;
+    width: 80%;
+    height: 536px;
+    display: flex;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 12%;
+    overflow-y: scroll;
+    position: relative;
+    @media screen and (max-width: 393px) {
+      width: 72%;
+      position: relative;
+      padding: 0;
+    }
+  }
+  .order-1 {
+    // width: 1050px;
+    width: 100%;
+    max-height: 100%;
+    padding-left: 11%;
+    @media screen and (max-width: 393px) {
+      width: 100%;
+    }
   }
   .list {
     list-style-type: none;

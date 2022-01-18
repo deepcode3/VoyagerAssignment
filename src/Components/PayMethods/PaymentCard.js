@@ -2,23 +2,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import visaicon from '../../Assets/Icons/visaicon.png';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
+import Visa from '../../Assets/Icons/visa.png';
+import Mastercard from '../../Assets/Icons/mastercard.png';
 
 const PaymentCard = ({ item, removeItem, index, values, setValues }) => {
   const handleClick = (active) => {
     return values === active ? setValues(null) : setValues(active);
   };
   return (
-    <Div key={index.toString()}>
-      <img
-        src={index.toString() % 2 === 0 ? item.cardIcon.visa : item.cardIcon.masterCard}
-        alt={index.toString()}
-        className='bitmap'
-      />
-      <div
-        className='primary-1'
+    <CardDiv key={index.toString()}>
+      <Bitmap src={index.toString() % 2 === 0 ? Visa : Mastercard} alt={index.toString()} />
+      <Primary1
         onClick={() => {
           handleClick(index.toString());
         }}
@@ -30,26 +26,22 @@ const PaymentCard = ({ item, removeItem, index, values, setValues }) => {
           alt='icn'
           style={{ float: 'left' }}
         />
-        <span
+        <Primary
           className='primary'
           style={{
             color: `${values === index.toString() ? '#6A6A6A' : '#B8B8B8'}`,
           }}
         >
           Primary
-        </span>
-      </div>
-      <span className='account'>{`${item.cardNumber}`}</span>
-      <span className='card'>{`${item.cardName}`}</span>
-      <span className='card' style={{ left: '280px' }}>
-        {` Expiary:${item.expiaryDate}/${item.expiaryYear}`}
-      </span>
-      <span className='card' style={{ top: '110px', fontSize: '18px' }}>
-        {`cvv:${item.securityNumber}`}
-      </span>
+        </Primary>
+      </Primary1>
+      <Account>{`${item.cardDigit}`}</Account>
+      <Name>{`${item.Name}`}</Name>
+      <Date>{` Expiary: ${item.expiaryDate}/${item.expiaryYear}`}</Date>
+      <Num>{`cvv:${item.securityNumber}`}</Num>
 
-      <span className='edit'>Edit</span>
-      <button
+      <Edit>Edit</Edit>
+      <Delete
         className='delete'
         type='button'
         onKeyDown={null}
@@ -58,8 +50,8 @@ const PaymentCard = ({ item, removeItem, index, values, setValues }) => {
         }}
       >
         Delete
-      </button>
-    </Div>
+      </Delete>
+    </CardDiv>
   );
 };
 export default PaymentCard;
@@ -71,92 +63,174 @@ PaymentCard.propTypes = {
   values: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
-const Div = styled.div`
-height: 186px;
-width: 469px;
-float: left;
-border-radius: 6px;
-background-color: #ffffff;
-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-margin: 1%;
-position:relative;
-flex: 1;
-    }
-  .bitmap {
-    height: 24.65px;
-    width: 76.64px;
-    position:absolute;
-    top:50px;
-    left:24px;
+const CardDiv = styled.div`
+  height: 186px;
+  width: 469px;
+  float: left;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  margin: 1%;
+  position: relative;
+  flex: 1;
+  @media screen and (max-width: 393px) {
+    display: block;
+    position: relative;
+    left: -67px;
+    margin: 2%;
+    height: 240px;
+    width: 242px;
   }
-  .account {
-    height: 28px;
-    width: 200px;
-    color: #2D2D2D;
-    font-family: "Open Sans";
-    font-size: 18px;
-    letter-spacing: -0.3px;
-    line-height: 28px;
-    position:absolute;
-    top:42px;
-    left:131px;
-  }
-  .card {
-    height: 19px;
-    width: 150px;
-    color: #6A6A6A;
-    font-family: "Open Sans";
-    font-size: 14px;
-    letter-spacing: -0.27px;
-    line-height: 19px;
-    position:absolute;
-    top:74px;
-    left:130px;
-  }
-  .primary-1{
+`;
+const Bitmap = styled.img`
+  height: 24.65px;
+  width: 76.64px;
+  position: absolute;
+  top: 50px;
+  left: 24px;
+  @media screen and (max-width: 393px) {
+    display: block;
     position: absolute;
-    top:21px;
-    left:367px;
   }
-  .primary {
-    height: 19px;
-    width: 52px;
-    font-family: "Open Sans";
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: -0.27px;
-    line-height: 19px;  
-    padding-left:11px;
-  }
-  .edit {
-    height: 22px;
-    width: 30px;
-    color: #F57C00;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 22px;
-    text-align: center;
+`;
+
+const Account = styled.span`
+  height: 28px;
+  width: 200px;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  line-height: 28px;
+  position: absolute;
+  top: 42px;
+  left: 131px;
+  @media screen and (max-width: 393px) {
     position: absolute;
-    top:143px;
-    left:343px;
+    top: 80px;
+    left: -10px;
   }
-  .delete {
-    height: 22px;
-    width: 51px;
-    color: #F57C00;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 22px;
-    text-align: center;
+`;
+
+const Name = styled.span`
+  height: 19px;
+  width: 150px;
+  color: #6a6a6a;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.27px;
+  line-height: 19px;
+  position: absolute;
+  top: 74px;
+  left: 130px;
+  @media screen and (max-width: 393px) {
     position: absolute;
-    top:143px;
-    left:400px;
-    padding: 0;
-    border: none;
-    background: none;
+    top: 110px;
+    left: -24px;
   }
-  `;
+`;
+const Date = styled.span`
+  height: 19px;
+  width: 150px;
+  color: #6a6a6a;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.27px;
+  line-height: 19px;
+  position: absolute;
+  top: 74px;
+  left: 280px;
+  @media screen and (max-width: 393px) {
+    position: absolute;
+    top: 140px;
+    left: 10px;
+  }
+`;
+const Num = styled.span`
+  height: 19px;
+  width: 150px;
+  color: #6a6a6a;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.27px;
+  line-height: 19px;
+  position: absolute;
+  fontsize: 18px;
+  top: 110px;
+  left: 130px;
+  @media screen and (max-width: 393px) {
+    position: absolute;
+    top: 170px;
+    left: -20px;
+  }
+`;
+
+const Primary1 = styled.div`
+  position: absolute;
+  top: 21px;
+  left: 367px;
+  @media screen and (max-width: 393px) {
+    position: absolute;
+    width: 22px;
+    top: 10px;
+    left: 150px;
+    padding-left: 0px;
+  }
+`;
+
+const Primary = styled.span`
+  height: 19px;
+  width: 52px;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.27px;
+  line-height: 19px;
+  padding-left: 11px;
+  @media screen and (max-width: 393px) {
+    position: absolute;
+    top: 1px;
+    left: 17px;
+  }
+`;
+const Edit = styled.span`
+  height: 22px;
+  width: 30px;
+  color: #f57c00;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: center;
+  position: absolute;
+  top: 143px;
+  left: 343px;
+  @media screen and (max-width: 393px) {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+  }
+`;
+const Delete = styled.button`
+  height: 22px;
+  width: 51px;
+  color: #f57c00;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: center;
+  position: absolute;
+  top: 143px;
+  left: 400px;
+  padding: 0;
+  border: none;
+  background: none;
+  @media screen and (max-width: 393px) {
+    position: absolute;
+    top: 200px;
+    left: 90px;
+  }
+`;

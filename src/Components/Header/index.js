@@ -267,9 +267,6 @@ const HeaderWrapper = styled.div`
   .smallLine {
     height: 30px;
   }
-  @media ${Device.desktopL} {
-    max-width: 100%;
-  }
   @media (max-width: 550px) {
     margin-top:5%;
   }

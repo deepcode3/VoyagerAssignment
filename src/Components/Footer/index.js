@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/index';
 import data from './data';
-import Device from '../../DeviceSize';
 
 const Footer = () => {
   return (
