@@ -24,31 +24,15 @@
   margin-left: auto;
 }
 
-/* @media all and (max-width: 1900px) {
+@media all and (max-width: 1900px) {
   .layoutBg {
     position: absolute;
     height: 1270px;
- 
     top: 236px;
     margin-left: auto;
     margin-right: auto;
   }
-  .layoutRestaurentView {
-    position: absolute;
-  
-  }
-
-  .crestaurantLocators {
-    position: relative;
-   
-  }
-  .statusbg {
-    position: absolute;
-
-    margin-right: auto;
-    margin-left: auto;
-  }
-} */
+}
 /* 
 @media all and (max-width: 1700px) {
   .layoutBg {
@@ -75,7 +59,7 @@
     width: 1700px;
   }
 } */
-/* @media all and (max-width: 1569px) {
+@media all and (max-width: 1569px) {
   .layoutBg {
     position: absolute;
     height: 1270px;
@@ -84,7 +68,23 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .layoutRestaurentView {
+  .restaurantLocationInput {
+    position: absolute;
+    left: -130px;
+  }
+  .retsurantGpsTracker {
+    position: absolute;
+    left: 85px;
+  }
+  .retsurantLocation {
+    position: absolute;
+    left: -110px;
+  }
+  .crestaurantsInfo {
+    position: relative;
+    left: -18px;
+  }
+  /* .layoutRestaurentView {
     position: absolute;
   }
 
@@ -159,9 +159,9 @@
   }
   .orderid {
     left: 300px;
-  }
+  } */
 }
-@media all and (max-width: 1300px) {
+/* @media all and (max-width: 1300px) {
   .layoutBg {
     position: absolute;
     height: 1270px;
