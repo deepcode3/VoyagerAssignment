@@ -103,6 +103,24 @@ const rootReducer = (state = initState, action) => {
       newAccounts[action.payload.index] = updatedUser;
       return { ...state, accounts: newAccounts, currentUser: updatedUser };
     }
+    case 'ADD_ADDRESS': {
+      const updatedAddress = [...state.accounts[action.payload.index].address, action.payload.item];
+      const updatedUser = { ...state.currentUser, address: updatedAddress };
+      const newAccounts = [...state.accounts];
+      newAccounts[action.payload.index] = updatedUser;
+      return { ...state, accounts: newAccounts, currentUser: updatedUser };
+    }
+    case 'REMOVE_ADDRESS': {
+      const currentAddress = [...state.currentUser.address];
+      const updatedAddress = currentAddress.filter((item) => {
+        return !(item === action.payload.item);
+      });
+      const updatedUser = { ...state.currentUser, address: updatedAddress };
+      const newAccounts = [...state.accounts];
+      newAccounts[action.payload.index] = updatedUser;
+      return { ...state, accounts: newAccounts, currentUser: updatedUser };
+    }
+
     default:
       return state;
   }
