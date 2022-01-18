@@ -675,7 +675,12 @@
   top: 12px;
   left: 100px;
 }
-
+.footerDivRest {
+  position: relative;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
 /*Restaurant Mobile Responsive*/
 @media all and (max-width: 500px) {
   .semiBg {
@@ -882,5 +887,10 @@
   .restaurantBody {
     height: fit-content;
     padding-bottom: 200px;
+  }
+}
+@media (max-width: 550px) {
+  .footerDivRest {
+    display: none;
   }
 }

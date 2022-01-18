@@ -320,7 +320,9 @@ const Restaurant = ({ data, searchKey, location }) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className='footerDivRest'>
+        <Footer />
+      </div>
     </>
   );
 };
