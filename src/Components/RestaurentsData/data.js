@@ -15,7 +15,7 @@ const data = [
     ratings: 3.8,
   },
   {
-    name: 'Iran Zamin Restaurent and Cafe',
+    name: 'Iran Zamin Restaurent',
     location: 'sheik Zayed road, Dubai UAE',
     item: 'India pakistan kebab',
     status: 'open now',

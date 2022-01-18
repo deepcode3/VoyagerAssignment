@@ -2,12 +2,80 @@
   height: 267px;
   width: 100%;
   position: relative;
-  top: -80px;
+  top: -89px;
+}
+
+.semiBg {
+  width: 100%;
+  height: 8vw;
 }
 .semiBgComponentSeperator {
   width: 961px;
   margin-left: auto;
   margin-right: auto;
+}
+.menuSearchBar {
+  height: 76px;
+  width: 961px;
+  position: relative;
+  top: -115px;
+  display: flex;
+  flex-direction: column;
+}
+.menuSearchSeperator {
+  width: 960px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menuSearchInfo {
+  width: 78px;
+  color: #636364;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 17px;
+  position: relative;
+  top: -10px;
+  left: 00px;
+}
+.menuSearchInput {
+  height: 50px;
+  width: 605px;
+}
+.menuDateAndTimeButton {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: -9.3vh;
+  margin-left: 91%;
+}
+.menuBody {
+  position: relative;
+  width: 100%;
+}
+.menuLocators {
+  position: relative;
+  top: -92px;
+  height: 44px;
+  width: 100%;
+  background-color: #c5cae238;
+}
+.menuLocatorsInfo {
+  height: 17px;
+  width: 961px;
+  color: #6f6f6f;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 13px;
+  word-spacing: 3px;
+  position: relative;
+  top: 10px;
 }
 .menuKebabImage {
   height: 336px;
@@ -29,8 +97,8 @@
   height: 203px;
   width: 800px;
   position: relative;
-  top: -600px;
-  left: 40px;
+  top: -690px;
+  left: 150px;
   z-index: 1;
 }
 .menuRestaurantName {
@@ -74,6 +142,11 @@
   position: relative;
   left: -30px;
   top: 13px;
+}
+.menuRestDetails {
+  position: relative;
+  top: 10px;
+  left: 14px;
 }
 .menuDot {
   height: 4px;
@@ -264,7 +337,7 @@
   width: 490px;
   position: relative;
   top: -870px;
-  left: 5px;
+  left: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -376,4 +449,189 @@
   letter-spacing: 0;
   line-height: 19px;
   cursor: pointer;
+}
+
+/*Mobile responsive  */
+@media only screen and (max-width: 500px) {
+  .semiBg {
+    height: 130px;
+    width: 100%;
+    margin-top: 10%;
+  }
+  .menuSearchSeperator {
+    width: 300px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: -3px;
+  }
+  .menuSearchInfo {
+    width: 78px;
+    color: #636364;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    line-height: 17px;
+    position: relative;
+    top: -10px;
+    left: -30px;
+  }
+  .menuSearchInput {
+    height: 40px;
+    width: 300px;
+    position: relative;
+    top: -5px;
+    left: -25px;
+  }
+  .menuDateAndTimeButton {
+    position: relative;
+    left: 00px;
+  }
+  .menuLocators {
+    position: relative;
+    height: 44px;
+    width: 100%;
+    background-color: #c5cae238;
+  }
+  .menuLocatorsInfo {
+    position: relative;
+    left: 20px;
+  }
+  .menuDateAndTimeButton {
+    margin-left: 30%;
+    margin-top: 0%;
+    height: 40px;
+    width: 40px;
+  }
+  .semiBgComponentSeperator {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 17vh;
+  }
+  .menuKebabImage {
+    height: 200px;
+    width: 350px;
+    position: relative;
+    top: -390px;
+    left: 00px;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .menuHalfBgImage {
+    height: 180px;
+    width: 100%;
+    position: relative;
+    top: -89px;
+  }
+  .spoonPoke {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: -69vh;
+    left: 1vh;
+  }
+  .restaurantDetails {
+    height: 203px;
+    width: 300px;
+    position: relative;
+    top: -600px;
+    left: 50px;
+    z-index: 1;
+  }
+  .menuRestaurantName {
+    height: 36px;
+    width: fit-content;
+    color: #1c1c1c;
+    font-family: 'Open Sans';
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 36px;
+    position: relative;
+    top: -40px;
+    left: 20px;
+  }
+  .menuItemName {
+    height: 19px;
+    width: 156px;
+    color: #757575;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 19px;
+    position: relative;
+    top: -30px;
+    left: 25px;
+  }
+  .greenRect {
+    position: relative;
+    top: -48px;
+    left: 180px;
+    height: 23px;
+    width: 42px;
+  }
+  .menuRestaurantRating {
+    height: 20px;
+    width: 22px;
+    color: #ffffff;
+    font-family: 'Open Sans';
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: relative;
+    top: -55px;
+    left: 150px;
+  }
+  .menuRestDetails {
+    position: relative;
+    top: -50px;
+    left: -30px;
+  }
+  .deliveryRatings {
+    height: 17px;
+    width: 174px;
+    color: #6a6a6a;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 17px;
+    position: relative;
+    top: -30px;
+    left: -35px;
+  }
+  .menuLine {
+    box-sizing: border-box;
+    height: 3px;
+    width: 297px;
+    border: 1px solid #ededed;
+    position: relative;
+    top: -20px;
+    left: -35px;
+  }
+  .menuRatingStars {
+    width: 305px;
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    top: 00px;
+    left: -36px;
+  }
+  .navBar {
+    height: 34px;
+    width: 350px;
+    position: relative;
+    top: -112vh;
+    left: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1;
+  }
 }
