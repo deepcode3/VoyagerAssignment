@@ -2,7 +2,7 @@
   height: 30px;
   width: 219px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.33px;
@@ -29,7 +29,7 @@
   position: absolute;
   top: 115px;
   height: 1450px;
-  width: 1895px;
+  width: 100%;
 }
 
 .imgcontainer {
@@ -78,7 +78,7 @@
   width: 116px;
   /* color: #ffffff; */
   color: #575252;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 900;
   letter-spacing: -0.2px;
@@ -106,7 +106,7 @@
   height: 19px;
   width: 58px;
   /* color: #FFFFFF; */
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -137,7 +137,7 @@
   width: 111px;
   /* color: #d35d26; */
   color: rgb(214, 89, 43);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -154,7 +154,7 @@
   height: 27px;
   width: 231px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.48px;
@@ -302,7 +302,7 @@
   height: 22px;
   width: 176px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -318,7 +318,7 @@
   height: 22px;
   width: 176px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -334,7 +334,7 @@
   height: 22px;
   width: 176px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -350,7 +350,7 @@
   height: 22px;
   width: 123px;
   color: #a6a6a6;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -365,7 +365,7 @@
   height: 22px;
   width: 123px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -380,7 +380,7 @@
   height: 22px;
   width: 176px;
   color: #a6a6a6;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -394,7 +394,7 @@
   height: 22px;
   width: 176px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -409,7 +409,7 @@
   height: 22px;
   width: 146px;
   color: #a6a6a6;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -424,7 +424,7 @@
   height: 22px;
   width: 176px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -448,7 +448,7 @@
   height: 22px;
   width: 148px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -484,7 +484,7 @@
   height: 27px;
   width: 231px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.48px;
@@ -505,7 +505,7 @@
   height: 38px;
   width: 141.5px;
   color: #a6a6a6;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -520,7 +520,7 @@
   height: 38px;
   width: 141.5px;
   color: #a6a6a6;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -535,7 +535,7 @@
   height: 38px;
   width: 141.5px;
   color: #a6a6a6;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -550,7 +550,7 @@
   height: 38px;
   width: 141.5px;
   color: #a6a6a6;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -564,7 +564,7 @@
   height: 19px;
   width: 164px;
   color: #f57c00;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -578,7 +578,7 @@
   height: 19px;
   width: 89px;
   color: #ed1b2e;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
