@@ -18,7 +18,7 @@ const Footer = () => {
       <FlexRowLinks>
         {data.map((element) => {
           return (
-            <FooterLink key={element} to={element.toLowerCase().replaceAll(' ', '-')}>
+            <FooterLink key={element} to={`/${element.toLowerCase().replaceAll(' ', '-')}`}>
               {element}
             </FooterLink>
           );
