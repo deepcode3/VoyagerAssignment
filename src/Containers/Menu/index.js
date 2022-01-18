@@ -44,6 +44,7 @@ const Menu = () => {
   const currentUser = useSelector((state) => {
     return state.currentUser;
   });
+
   const dispatch = useDispatch();
   const { searchKey } = useParams();
   const { location } = useParams();
@@ -202,7 +203,7 @@ const Menu = () => {
             />
             <img src={searchIcon} alt='' className='menuSearchIcon' />
             <div className='menuCart'>
-              {itemsOfRestaurant(restaurant) !== null ? (
+              {itemsOfRestaurant(restaurant, currentUser) !== null ? (
                 <>
                   <div className='menuCartHeader'>My Order</div>
                   <div

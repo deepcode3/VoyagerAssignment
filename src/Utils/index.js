@@ -39,8 +39,8 @@ export const findIndex = () => {
   return objIndex;
 };
 
-export const itemsOfRestaurant = (restaurantName) => {
-  const { currentUser } = store.getState();
+export const itemsOfRestaurant = (restaurantName, currentUser) => {
+  console.log(currentUser);
   if (currentUser.cart.length === 0) {
     return null;
   }
@@ -56,7 +56,7 @@ export const totalPrice = (restaurantName) => {
   if (currentUser.cart.length === 0) {
     return 0;
   }
-  const result = itemsOfRestaurant(restaurantName);
+  const result = itemsOfRestaurant(restaurantName, currentUser);
   if (result === null) {
     return 0;
   }
@@ -70,8 +70,8 @@ export const totalPrice = (restaurantName) => {
   return total;
 };
 
-export const restaurantItemsCount = (restaurantName) => {
-  const result = itemsOfRestaurant(restaurantName);
+export const restaurantItemsCount = (restaurantName, currentUser) => {
+  const result = itemsOfRestaurant(restaurantName, currentUser);
   if (result === null) {
     return 0;
   }
