@@ -67,7 +67,7 @@ const Gallery = () => {
     });
   };
   return (
-    <>
+    <div className='galleryContainer'>
       <MenuHalfCompo
         searchKey={searchKey}
         location={location}
@@ -80,17 +80,19 @@ const Gallery = () => {
           <div className='galleryFilterButton'>
             <span className='allPhotos'>All Photos</span>
             <div className='galleryArrow' />
-            <div className='galleryView'>
-              <div className='row'>{galleryDisplay()}</div>
-              <br />
-              <div className='row'>{galleryDisplay()}</div>
-              <br />
-              <div className='row'>{galleryDisplay()}</div>
-              <br />
-              <div className='row'>{galleryDisplay()}</div>
-              <br />
-            </div>
-            <span className='viewAllText'>View more</span>
+          </div>
+          <div className='galleryView'>
+            <div className='row'>{galleryDisplay()}</div>
+            <br />
+            <div className='row'>{galleryDisplay()}</div>
+            <br />
+            <div className='row'>{galleryDisplay()}</div>
+            <br />
+            <div className='row'>{galleryDisplay()}</div>
+            <br />
+          </div>
+          <div className='viewAllPhotos'>
+            <span className='viewAllText'>Viewmore</span>
             <span className='viewAllArrow'>{'>'}</span>
           </div>
         </div>
@@ -98,7 +100,7 @@ const Gallery = () => {
       <div className='footerDivGallery'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 export default Gallery;
@@ -182,9 +184,16 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   position: fixed;
-  left: 0;
+  left: 45px;
   top: 0;
   bottom: 0;
   right: 0;
   margin: auto;
+  justify-cointent: center;
+  @media (max-width: 500px) {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    left: -150px;
+  }
 `;
