@@ -48,6 +48,7 @@ const GetDetails = ({ setPageStatus, email, setName }) => {
           password: data.password,
           cart: [],
           address: [],
+          cards: [],
         })
       );
     } else {
@@ -62,6 +63,7 @@ const GetDetails = ({ setPageStatus, email, setName }) => {
           mobile: data.mobile,
           cart: [],
           address: [],
+          cards: [],
         })
       );
     }
