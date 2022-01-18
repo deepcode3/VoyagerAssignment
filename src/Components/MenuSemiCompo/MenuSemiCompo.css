@@ -14,6 +14,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.menuCommonBody {
+  width: 100%;
+}
 .menuSearchBar {
   height: 76px;
   width: 961px;
@@ -21,10 +24,6 @@
   top: -115px;
   display: flex;
   flex-direction: column;
-}
-.menuSearchSeperator {
-  width: 960px;
-  position: relative;
   margin-left: auto;
   margin-right: auto;
 }
@@ -458,12 +457,15 @@
     width: 100%;
     margin-top: 10%;
   }
-  .menuSearchSeperator {
+  .menuSearchBar {
+    height: 76px;
     width: 300px;
     position: relative;
+    top: -115px;
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    top: -3px;
   }
   .menuSearchInfo {
     width: 78px;
@@ -486,7 +488,7 @@
   }
   .menuDateAndTimeButton {
     position: relative;
-    left: 00px;
+    left: 52vw;
   }
   .menuLocators {
     position: relative;
