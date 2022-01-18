@@ -16,6 +16,8 @@ import downArrow from '../../Assets/Icons/downArrow.png';
 import hideButton from '../../Assets/Icons/hide.png';
 import showButton from '../../Assets/Icons/show.png';
 import checkBox from '../../Assets/Icons/checkBox.png';
+import filterIcon from '../../Assets/Icons/filterIcon.png';
+import filterCloseButton from '../../Assets/Icons/dismiss button@3x.png';
 import './Restaurants.css';
 import Footer from '../../Components/Footer';
 
@@ -25,6 +27,7 @@ const Restaurant = ({ data, searchKey, location }) => {
   const [deliveryTimevalue, setDeliveryTimeValue] = useState('30');
   const [averageMealCostValue, setAveregaeMealCostValue] = useState('30');
   const [minimumOrderValue, setMinimumOrderValue] = useState('60');
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
   const history = useHistory();
   const theme = createTheme({
     palette: {
@@ -35,22 +38,22 @@ const Restaurant = ({ data, searchKey, location }) => {
     },
   });
   return (
-    <>
+    <div className='restMainDiv'>
       <Header />
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
-      <div className='body'>
-        <div className='bodySeperator'>
-          <div className='restaurantSearchBar'>
-            <span className='restaurantsInfo'>Delivery ASAP</span>
-            <div className='restaurantSearch'>
-              <SearchBar searchValue={searchKey} from='restaurant' />
-            </div>
-            <div className='restaurantLocation' from='restaurant'>
-              <LocationSetter locationValue={location} from='restaurant' />
-            </div>
-            <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
+      <div className='bodySeperator'>
+        <div className='restaurantSearchBar'>
+          <span className='restaurantsInfo'>Delivery ASAP</span>
+          <div className='restaurantSearch'>
+            <SearchBar searchValue={searchKey} from='restaurant' />
           </div>
+          <div className='restaurantLocation' from='restaurant'>
+            <LocationSetter locationValue={location} from='restaurant' />
+          </div>
+          <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
         </div>
+      </div>
+      <div className='body'>
         <div className='restaurantLocators'>
           <div className='restaurantLocatorInfo'>Home UAE Explore Great Breakfasts</div>
         </div>
@@ -68,10 +71,28 @@ const Restaurant = ({ data, searchKey, location }) => {
                   Rating
                   <img src={downArrow} alt='downArrow' className='downArrow' />
                 </span>
+                <img
+                  src={filterIcon}
+                  alt=''
+                  className='resFilterIcon'
+                  onClick={() => {
+                    setIsFilterVisible(true);
+                  }}
+                  onKeyDown={null}
+                />
               </div>
             </div>
             <div className='restaurantBody'>
-              <div className='filterBox'>
+              <img
+                src={filterCloseButton}
+                className={isFilterVisible ? 'filterCloseButton' : 'hideFilterCloseButton'}
+                alt=''
+                onClick={() => {
+                  setIsFilterVisible(false);
+                }}
+                onKeyDown={null}
+              />
+              <div className={isFilterVisible ? 'mobileFilterBox' : 'filterBox'}>
                 <div className='filterHeading'>Filters</div>
                 <div
                   className='resetAll'
@@ -302,7 +323,7 @@ const Restaurant = ({ data, searchKey, location }) => {
       <div className='footerDivRest'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 export default Restaurant;

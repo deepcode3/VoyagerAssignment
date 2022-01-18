@@ -22,28 +22,29 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
   const [navSelected, setNavSelected] = useState(from);
   return (
     <>
-      <Header />
+      <div className='menuHeader'>
+        <Header />
+      </div>
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
-      <div className='body'>
-        <div className='bodySeperator'>
-          <div className='restaurantSearchBar'>
-            <span className='restaurantsInfo'>Delivery ASAP</span>
-            <div className='restaurantSearch'>
-              <SearchBar searchValue={searchKey} from='menu' />
-            </div>
-            <div className='restaurantLocation' from='menu'>
-              <LocationSetter locationValue={location} from='menu' />
-            </div>
-            <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
+      <div className='menuSearchSeperator'>
+        <div className='menuSearchBar'>
+          <span className='menuSearchInfo'>Delivery ASAP</span>
+          <div className='menuSearchInput'>
+            <SearchBar searchValue={searchKey} from='menu' />
           </div>
-        </div>
-        <div className='restaurantLocators'>
-          <div className='restaurantLocatorInfo'>
-            Home UAE Explore Great Breakfasts
-            {restaurant}
+          <div className='restaurantLocation' from='menu'>
+            <LocationSetter locationValue={location} from='menu' />
           </div>
+          <img className='menuDateAndTimeButton' alt='schedule-button' src={dateTime} />
         </div>
       </div>
+      <div className='menuLocators'>
+        <div className='menuLocatorsInfo'>
+          Home UAE Explore Great Breakfasts
+          {restaurant}
+        </div>
+      </div>
+
       <img src={halfBg} alt='' className='menuHalfBgImage' />
       <div className='semiBgComponentSeperator'>
         <img src={menuKebab} alt='' className='menuKebabImage' />
@@ -55,12 +56,14 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
           <div className='menuRatingDetails'>
             <img src={greenRectange} className='greenRect' alt='' />
             <span className='menuRestaurantRating'>4.3</span>
-            <span className='menuDot' />
-            <span className='menuTimming'>63 mins</span>
-            <span className='menuDot1' />
-            <span className='menuMinOrder'>AED30 min order</span>
-            <img src={timing} className='timming' alt='' />
-            <span className='timmingaText'>11:00 AM - 10:00 PM</span>
+            <div className='menuRestDetails'>
+              <span className='menuDot' />
+              <span className='menuTimming'>63 mins</span>
+              <span className='menuDot1' />
+              <span className='menuMinOrder'>AED30 min order</span>
+              <img src={timing} className='timming' alt='' />
+              <span className='timmingaText'>11:00 AM - 10:00 PM</span>
+            </div>
           </div>
           <span className='deliveryRatings'>Delivery rating for last 5 orders</span>
           <div className='menuLine' />
