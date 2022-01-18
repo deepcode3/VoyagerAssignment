@@ -40,7 +40,6 @@ export const findIndex = () => {
 };
 
 export const itemsOfRestaurant = (restaurantName, currentUser) => {
-  console.log(currentUser);
   if (currentUser.cart.length === 0) {
     return null;
   }
@@ -51,8 +50,7 @@ export const itemsOfRestaurant = (restaurantName, currentUser) => {
   return result;
 };
 
-export const totalPrice = (restaurantName) => {
-  const { currentUser } = store.getState();
+export const totalPrice = (restaurantName, currentUser) => {
   if (currentUser.cart.length === 0) {
     return 0;
   }

@@ -177,7 +177,7 @@ const Menu = () => {
   };
   const getTotalPriceWithDiscount = (restaurant) => {
     const discount = 24.22;
-    const totalprice = totalPrice(restaurant);
+    const totalprice = totalPrice(restaurant, currentUser);
     if (totalprice !== 0) return totalprice + 10 - discount;
     return 0;
   };

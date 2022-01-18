@@ -27,7 +27,7 @@ const CartHome = () => {
             Hotelname={val.name}
             hoteladdress={val.location}
             totalproduct={restaurantItemsCount(val.name, currentUser)}
-            productcost={totalPrice(val.name)}
+            productcost={totalPrice(val.name, currentUser)}
           />
         );
       })}
