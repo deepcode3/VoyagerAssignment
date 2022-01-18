@@ -11,8 +11,6 @@ import Home from '../Containers/Home';
 
 import ReviewContext from '../Context/ReviewContext';
 
-import ProfileContextProvider from '../Context/ProfileContext';
-
 const Cart = lazy(() => {
   return import('../Components/ItemDescription/CartOrders');
 });
@@ -81,17 +79,13 @@ const Routing = () => {
             <CartLayout Component={Cart} />
           </Route>
           <Route exact path='/address'>
-            <ProfileContextProvider>
-              <CartLayout Component={CartAddress} />
-            </ProfileContextProvider>
+            <CartLayout Component={CartAddress} />
           </Route>
           <Route path='/payment'>
             <CartLayout Component={Payment} />
           </Route>
           <Route path='/finalpay'>
-            <ProfileContextProvider>
-              <CartLayout Component={FinalPayment} />
-            </ProfileContextProvider>
+            <CartLayout Component={FinalPayment} />
           </Route>
           <Route path='/cart-home'>
             <CartLayout Component={CartHome} />
@@ -115,9 +109,7 @@ const Routing = () => {
             <Gallery />
           </Route>
           <Route path='/profile'>
-            <ProfileContextProvider>
-              <ProfileMain />
-            </ProfileContextProvider>
+            <ProfileMain />
           </Route>
           <Route path='/cart-layout'>
             <CartLayout />
