@@ -26,7 +26,7 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
         <Header />
       </div>
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
-      <div className='menuSearchSeperator'>
+      <div className='menuCommonBody'>
         <div className='menuSearchBar'>
           <span className='menuSearchInfo'>Delivery ASAP</span>
           <div className='menuSearchInput'>
