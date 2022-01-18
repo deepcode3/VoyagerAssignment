@@ -6,7 +6,7 @@ import Footer from '../../Components/Footer/index';
 // eslint-disable-next-line  react/prop-types
 const CartLayout = ({ Component }) => {
   return (
-    <>
+    <div className='cartcomp'>
       <div className='layoutBg' />
       <div className='layoutRestaurentView'>
         <SearchRestaurantView />
@@ -15,7 +15,7 @@ const CartLayout = ({ Component }) => {
       <div className='layoutFooter'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 

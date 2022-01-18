@@ -121,7 +121,7 @@
   height: 19px;
   width: 200px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2.26px;
@@ -135,7 +135,7 @@
   height: 17px;
   width: 50.64px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -149,7 +149,7 @@
   height: 17px;
   width: 73.85px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -164,7 +164,7 @@
   width: 77.27px;
   color: #ffffff;
   /* color: #000000; */
-  font-family: 'SF UI Text';
+  font-family: "SF UI Text";
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0;
@@ -233,8 +233,8 @@
 
 .Fpaydeldetails {
   position: absolute;
-  top: 296px;
-  height: 20px;
+  top: 520px;
+  left: 21px;
 }
 
 .fpayres {

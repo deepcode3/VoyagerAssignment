@@ -23,6 +23,10 @@
   margin-right: auto;
   margin-left: auto;
 }
+.cartcomp {
+  width: 100%;
+  height: 100%;
+}
 
 @media all and (max-width: 1900px) {
   .layoutBg {
@@ -51,6 +55,7 @@
     margin-right: auto;
     margin-left: auto;
   }
+
   /* .locationtimediv {
     top: -180px;
     width: 437px;
@@ -372,6 +377,13 @@
   .modalbgs {
     left: 300px;
   }
+  /* .modaldelivery {
+    width: 300px;
+  } */
+  /* .locationtimediv {
+    left: 0px;
+    width: 430px;
+  } */
 }
 @media all and (max-width: 1060px) {
   .layoutBg {
@@ -527,10 +539,10 @@
   .itemtotalcost {
     left: 400px;
   }
-  .incdeccount {
-    left: 370px;
+  /* .incdeccount {
+    left: 420px;
     height: 30px;
-  }
+  } */
   .remove {
     left: 410px;
     width: 0px;
@@ -1109,8 +1121,8 @@
     height: 15px;
   }
   .locationtimediv {
-    left: -5px;
-    width: 436px;
+    left: 0px;
+    width: 430px;
   }
 
   /* .crestaurantLocatorInfo {
@@ -1585,7 +1597,7 @@
   }
   .locationtimediv {
     width: 270px;
-    left: -17px;
+    left: 2px;
     /* top: -180px; */
     height: 154px;
   }
@@ -1889,5 +1901,18 @@
   }
   .closinbutton {
     left: 250px;
+  }
+  .payoitemsorderdfrom {
+    width: 300px;
+  }
+  .cartcomp {
+    width: 100%;
+    height: 100%;
+  }
+  .modaldelivery {
+    width: 270px;
+  }
+  .mdelgreyline {
+    width: 250px;
   }
 }

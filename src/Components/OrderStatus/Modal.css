@@ -305,8 +305,8 @@
 
 .statusdelrct {
   box-sizing: border-box;
-  height: 157px;
-  width: 441px;
+  height: 167px;
+  width: 435px;
   border: 1px solid #979797;
   /* opacity: 0.25; */
   border-radius: 5px;
@@ -314,6 +314,7 @@
   top: 741px;
   left: 33px;
   margin: 0px;
+  padding-left: 5px;
 }
 
 .statusratingrect {
@@ -770,6 +771,76 @@ input::placeholder {
   left: 27px;
   top: 2px;
   margin: 0px;
+}
+.modaldelivery {
+  position: absolute;
+  background-color: lightcoral;
+  height: 160px;
+  width: 430px;
+  left: 2px;
+  top: 2px;
+}
+.mdeliverylocation {
+  height: 17px;
+  width: 153.81px;
+  color: #6a6a6a;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  margin: 0px;
+}
+.mdeliveryaddress {
+  height: 19px;
+  width: 383.66px;
+  color: #2d2d2d;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  margin: 0px;
+}
+.mdelgreyline {
+  box-sizing: border-box;
+  height: 3px;
+  width: 410px;
+  border: 1px solid #ededed;
+  position: absolute;
+  left: 10px;
+  top: 75px;
+  background-color: lightsteelblue;
+  margin: 0px;
+}
+.mdatetimetext {
+  height: 17px;
+  width: 115.79px;
+  color: #6a6a6a;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  top: 95px;
+  left: 10px;
+  margin: 0px;
+}
+.mdatetime {
+  height: 19px;
+  width: 200.47px;
+  color: #2d2d2d;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  top: 100px;
+  left: 10px;
 }
 /* .locationtimediv {
   position: relative;

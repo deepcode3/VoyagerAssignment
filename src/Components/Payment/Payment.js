@@ -81,7 +81,9 @@ const Payment = () => {
         </div>
         <PaymentPoints />
         <p className='paymentdeliverydetails'>Delivery Details</p>
-        <PaymentDeliveryDetails />
+        <div className='paymentdeliverydetailsdiv'>
+          <PaymentDeliveryDetails />
+        </div>
         <PaymentresDetails restaurantName={location.state.restaurant} />
 
         <div className='paybackbutton' onClick={loadaddress} role='button' onKeyDown={null}>
