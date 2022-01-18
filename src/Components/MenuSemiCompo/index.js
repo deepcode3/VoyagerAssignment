@@ -91,7 +91,6 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
           </div>
         </div>
         <div className='menuKebab' />
-        <img src='' className='menuButton' alt='' />
         <div className='navBar'>
           <div
             className={navSelected === 'menu' ? 'menu' : 'notMenu'}

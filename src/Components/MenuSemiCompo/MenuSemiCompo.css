@@ -38,7 +38,7 @@
   line-height: 17px;
   position: relative;
   top: -10px;
-  left: -25px;
+  left: 00px;
 }
 .menuSearchInput {
   height: 50px;
@@ -623,6 +623,15 @@
     left: -36px;
   }
   .navBar {
-    display: none;
+    height: 34px;
+    width: 350px;
+    position: relative;
+    top: -112vh;
+    left: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1;
   }
 }
