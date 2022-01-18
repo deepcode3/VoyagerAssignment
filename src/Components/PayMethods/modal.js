@@ -2,11 +2,16 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { addCard } from '../../Actions/CardActions';
 // import icnSaveCardUnchecked from '../../Assets/Icons/icn_save_card_unchecked.png';
 import visaicon from '../../Assets/Icons/visaicon.png';
+import { findIndex } from '../../Utils';
 
-const Model = ({ setOpen, values, setValues, addItem }) => {
+const Model = ({ setOpen, values, setValues }) => {
+  const indx = findIndex();
+  const dispatch = useDispatch();
   console.log(values);
   const handleChange = (e) => {
     e.persist();
@@ -19,7 +24,7 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addItem(values);
+    dispatch(addCard(values, indx));
     setValues({
       cardNumber: '',
       cardName: '',
@@ -141,7 +146,6 @@ Model.propTypes = {
   setOpen: PropTypes.func.isRequired,
   setValues: PropTypes.func.isRequired,
   values: PropTypes.objectOf(PropTypes.any).isRequired,
-  addItem: PropTypes.func.isRequired,
 };
 
 const ModalBack = styled.div`

@@ -122,7 +122,7 @@ const rootReducer = (state = initState, action) => {
     }
     case 'ADD_CARD': {
       const updatedCards = [...state.accounts[action.payload.index].cards, action.payload.item];
-      const updatedUser = { ...state.currentUser, address: updatedCards };
+      const updatedUser = { ...state.currentUser, cards: updatedCards };
       const newAccounts = [...state.accounts];
       newAccounts[action.payload.index] = updatedUser;
       return { ...state, accounts: newAccounts, currentUser: updatedUser };
@@ -132,7 +132,7 @@ const rootReducer = (state = initState, action) => {
       const updatedCards = currentCards.filter((item) => {
         return !(item === action.payload.item);
       });
-      const updatedUser = { ...state.currentUser, address: updatedCards };
+      const updatedUser = { ...state.currentUser, cards: updatedCards };
       const newAccounts = [...state.accounts];
       newAccounts[action.payload.index] = updatedUser;
       return { ...state, accounts: newAccounts, currentUser: updatedUser };

@@ -1,15 +1,19 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Modal from './modal';
 import PaymentCard from './PaymentCard';
-import { ProfileContext } from '../../Context/ProfileContext';
+
 // import visaicon from '../../Assets/Icons/visaicon.png';
 // import mastercard from '../../Assets/Iconsmastercard_icon.png'
 
 const PayAmount = () => {
-  const { paymentItems, addItem2, removeItem2 } = useContext(ProfileContext);
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
+  const paymentItems = [...currentUser.cards];
   const [open, setOpen] = useState(false);
   const initialFormData = Object.freeze({
     cardNumber: '',
@@ -47,14 +51,14 @@ const PayAmount = () => {
             {paymentItems.map((item, index) => {
               return (
                 <li key={index.toString()} className='list'>
-                  <PaymentCard item={item} removeItem={removeItem2} index={index} />
+                  <PaymentCard item={item} index={index} />
                 </li>
               );
             })}
           </ul>
         </div>
       </div>
-      {open && <Modal setOpen={setOpen} values={values} setValues={setValues} addItem={addItem2} />}
+      {open && <Modal setOpen={setOpen} values={values} setValues={setValues} />}
     </Div>
   );
 };

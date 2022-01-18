@@ -1,12 +1,17 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 // import visaicon from '../../Assets/Icons/visaicon.png';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
+import { removeCard } from '../../Actions/CardActions';
+import { findIndex } from '../../Utils';
 
-const PaymentCard = ({ item, removeItem, index }) => {
+const PaymentCard = ({ item, index }) => {
+  const indx = findIndex();
+  const dispatch = useDispatch();
   const buttonMap = {
     button1: 'button1',
     button2: 'button2',
@@ -61,7 +66,7 @@ const PaymentCard = ({ item, removeItem, index }) => {
         type='button'
         onKeyDown={null}
         onClick={() => {
-          removeItem(item);
+          dispatch(removeCard(item, indx));
         }}
       >
         Delete
@@ -72,7 +77,7 @@ const PaymentCard = ({ item, removeItem, index }) => {
 export default PaymentCard;
 PaymentCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
-  removeItem: PropTypes.func.isRequired,
+
   index: PropTypes.number.isRequired,
 };
 
