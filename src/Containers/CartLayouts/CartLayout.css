@@ -24,31 +24,31 @@
   margin-left: auto;
 }
 
-@media all and (max-width: 1900px) {
+/* @media all and (max-width: 1900px) {
   .layoutBg {
     position: absolute;
     height: 1270px;
-    /* width: 1800px; */
+ 
     top: 236px;
     margin-left: auto;
     margin-right: auto;
   }
   .layoutRestaurentView {
     position: absolute;
-    /* width: 1800px; */
+  
   }
 
   .crestaurantLocators {
     position: relative;
-    /* width: 2140px; */
+   
   }
   .statusbg {
     position: absolute;
-    /* width: 1800px; */
+
     margin-right: auto;
     margin-left: auto;
   }
-}
+} */
 /* 
 @media all and (max-width: 1700px) {
   .layoutBg {
@@ -75,26 +75,21 @@
     width: 1700px;
   }
 } */
-@media all and (max-width: 1569px) {
+/* @media all and (max-width: 1569px) {
   .layoutBg {
     position: absolute;
     height: 1270px;
-    /* width: 1399px; */
+
     top: 236px;
     margin-left: auto;
     margin-right: auto;
   }
   .layoutRestaurentView {
     position: absolute;
-    /* width: 1300px; */
   }
-  /* .csemiBg {
-    position: relative;
-    width: 1099px;
-  } */
+
   .crestaurantLocators {
     position: relative;
-    /* width: 1740px; */
   }
   .crestaurantsInfo {
     position: absolute;
@@ -115,31 +110,7 @@
     left: 1140px;
     top: -78px;
   }
-  /* .orderdisplay_rectangle {
-    position: relative;
 
-    left: -500px;
-    top: 312px;
-  } */
-  .firstmain {
-    left: 140px;
-  }
-  .orderdisplay_rectangle {
-    position: absolute;
-    left: 00px;
-  }
-  .restaurent {
-    position: absolute;
-
-    left: -180px;
-    top: -15px;
-  }
-  .estimated-delivery-t {
-    position: absolute;
-
-    left: -180px;
-    top: 0px;
-  }
   .cartprogressbar {
     position: absolute;
     left: -45px;
@@ -203,10 +174,7 @@
     position: absolute;
     width: 1200px;
   }
-  /* .csemiBg {
-    position: relative;
-    width: 1299px;
-  } */
+
   .crestaurantLocators {
     position: relative;
     width: 1640px;
@@ -231,7 +199,7 @@
     position: relative;
     left: -200px;
   }
-}
+} */
 
 /* @media all and (max-width: 1238px) {
   .layoutBg {

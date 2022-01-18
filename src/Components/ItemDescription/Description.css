@@ -1,9 +1,14 @@
 .firstmain {
   position: absolute;
-  top: 0px;
+  /* top: 200px; */
   /* left: 479px; */
   width: 100%;
   /* left: 100%; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ed1b2e;
 }
 .desbg {
   position: absolute;
@@ -23,7 +28,7 @@
   letter-spacing: 0;
   line-height: 30px;
   position: relative;
-  left: 630px;
+  left: -150px;
   top: 380px;
   padding: 0px;
   margin-top: 0px;
@@ -40,7 +45,7 @@
   line-height: 17px;
   position: relative;
   top: 400px;
-  left: 630px;
+  /* left: 630px; */
   margin-bottom: 0px;
   margin-top: 0px;
 }
@@ -494,7 +499,8 @@ input[type="text"]:focus {
 }
 
 .cartprogressbar {
-  position: absolute;
-  width: 634px;
+  position: relative;
+  /* width: 634px; */
   top: 0px;
+  /* left: -500px; */
 }
