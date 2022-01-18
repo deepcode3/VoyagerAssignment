@@ -38,7 +38,7 @@ const Restaurant = ({ data, searchKey, location }) => {
     },
   });
   return (
-    <>
+    <div className='restMainDiv'>
       <Header />
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
       <div className='bodySeperator'>
@@ -323,7 +323,7 @@ const Restaurant = ({ data, searchKey, location }) => {
       <div className='footerDivRest'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 export default Restaurant;

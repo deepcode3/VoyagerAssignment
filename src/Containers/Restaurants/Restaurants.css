@@ -1,3 +1,7 @@
+.restMainDiv {
+  width: 100%;
+  overflow: hidden;
+}
 .header {
   height: 70px;
   width: 1700px;

@@ -28,6 +28,8 @@ import decreaseButton from '../../Assets/Icons/decreaseButton.png';
 import costShowHideButton from '../../Assets/Icons/collapseButton.png';
 import proceedToCheckOutButton from '../../Assets/Icons/proceedToCheckOut.png';
 import emptyImg from '../../Assets/Images/empty.png';
+import catButton from '../../Assets/Icons/cart.png';
+import menuCartCloseButton from '../../Assets/Icons/dismissButton.png';
 import './Menu.css';
 import Footer from '../../Components/Footer';
 
@@ -38,6 +40,7 @@ const Menu = () => {
   const { item } = useParams();
   const [searchItem, setSearchItem] = useState('');
   const [costDeatilsButton, setcostDetailsButton] = useState(false);
+  const [isCartClicked, setIsCartClicked] = useState(false);
   const history = useHistory();
   const {
     cartItems,
@@ -178,13 +181,14 @@ const Menu = () => {
     return 0;
   };
   return (
-    <>
+    <div className='mainMenuDiv'>
       <MenuHalfCompo
         searchKey={searchKey}
         location={location}
         restaurant={restaurant}
         item={item}
         from='menu'
+        setIsCartClicked={setIsCartClicked}
       />
       <div className='menuBg'>
         <div className='menuSeperator'>
@@ -197,7 +201,28 @@ const Menu = () => {
             }}
           />
           <img src={searchIcon} alt='' className='menuSearchIcon' />
-          <div className='menuCart'>
+          {!isCartClicked ? (
+            <img
+              src={catButton}
+              alt=''
+              className='cartButton'
+              onClick={() => {
+                setIsCartClicked(true);
+              }}
+              onKeyDown={null}
+            />
+          ) : (
+            <img
+              src={menuCartCloseButton}
+              alt=''
+              className='menuCartCloseButton'
+              onClick={() => {
+                setIsCartClicked(false);
+              }}
+              onKeyDown={null}
+            />
+          )}
+          <div className={isCartClicked ? 'dispMenuCart' : 'menuCart'}>
             {itemsOfRestaurant(restaurant) !== null ? (
               <>
                 <div className='menuCartHeader'>My Order</div>
@@ -632,7 +657,7 @@ const Menu = () => {
           <Footer />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
