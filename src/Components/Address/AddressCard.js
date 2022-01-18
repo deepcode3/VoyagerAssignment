@@ -1,10 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
 // import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
 import './Address.css';
+import { findIndex } from '../../Utils';
+import { removeAddress } from '../../Actions/AddressActions';
 
-const AddressCard = ({ item, removeItem, index }) => {
+const AddressCard = ({ item, index }) => {
+  const indx = findIndex();
+  // const currentUser = useSelector((state) => {
+  //   return state.currentUser;
+  // });
+  const dispatch = useDispatch();
   return (
     <div key={index.toString()} className='address_card'>
       <span className='home'>{`${item.addressLabel}`}</span>
@@ -18,7 +26,7 @@ const AddressCard = ({ item, removeItem, index }) => {
         type='button'
         onKeyDown={null}
         onClick={() => {
-          removeItem(item);
+          dispatch(removeAddress(item, indx));
         }}
       >
         Delete
@@ -29,6 +37,6 @@ const AddressCard = ({ item, removeItem, index }) => {
 export default AddressCard;
 AddressCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.string).isRequired,
-  removeItem: PropTypes.func.isRequired,
+
   index: PropTypes.number.isRequired,
 };
