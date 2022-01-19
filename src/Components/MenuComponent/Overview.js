@@ -11,7 +11,7 @@ const OverView = () => {
   const { restaurant } = useParams();
   const { item } = useParams();
   return (
-    <>
+    <div className='overViewContainer'>
       <MenuHalfCompo
         searchKey={searchKey}
         location={location}
@@ -88,8 +88,10 @@ const OverView = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+      <div className='footerDivOverview'>
+        <Footer />
+      </div>
+    </div>
   );
 };
 export default OverView;
