@@ -878,7 +878,7 @@
   width: fit-content;
   position: relative;
   left: -23vw;
-  top: 70vh;
+  top: 65vh;
 }
 .viewAllText {
   position: relative;
@@ -986,11 +986,11 @@
   cursor: pointer;
 }
 .footerDivReview {
-  top: 250px;
   position: relative;
   align-items: center;
   margin-right: auto;
   margin-left: auto;
+  display: block;
 }
 .footerDivGallery {
   top: 270px;
@@ -1271,5 +1271,37 @@
   .galleryContainer {
     width: 100%;
     overflow: hidden;
+  }
+}
+@media all and (max-width: 1000px) {
+  .galleryFilterButton {
+    position: relative;
+    left: 69vw;
+  }
+  .viewAllPhotos {
+    position: relative;
+    left: -23vw;
+    top: 63vh;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .viewAllPhotos {
+    position: relative;
+    left: -23vw;
+    top: 53vh;
+  }
+}
+@media all and (max-width: 1400px) {
+  .galleryFilterButton {
+    display: none;
+  }
+  .galleryView {
+    position: relative;
+    left: 3vw;
+  }
+  .viewAllPhotos {
+    position: relative;
+    left: -17vw;
+    top: 70vh;
   }
 }

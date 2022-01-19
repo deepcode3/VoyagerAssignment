@@ -21,7 +21,7 @@
   height: 76px;
   width: 961px;
   position: relative;
-  top: -115px;
+  top: -125px;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -635,5 +635,34 @@
     justify-content: space-between;
     cursor: pointer;
     z-index: 1;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .menuSearchBar {
+    position: relative;
+    top: -5vh;
+  }
+  .menuSearchInfo {
+    position: relative;
+    top: 9px;
+  }
+  .menuDateAndTimeButton {
+    position: relative;
+    top: -10.5vh;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .menuSearchBar {
+    position: relative;
+    top: -11vh;
+  }
+  .menuSearchInfo {
+    position: relative;
+    top: 5px;
+  }
+  .menuDateAndTimeButton {
+    position: relative;
+    top: -10.5vh;
   }
 }

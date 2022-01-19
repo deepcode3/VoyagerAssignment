@@ -1235,9 +1235,9 @@
     z-index: 1;
   }
 }
-@media all and (min-width: 1400px) {
+@media all and (min-width: 1000px) {
   .menuSeperator {
     position: relative;
-    top: 65vh;
+    top: 63vh;
   }
 }
