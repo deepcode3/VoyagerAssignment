@@ -63,10 +63,14 @@ const Profile = ({ setOpen }) => {
               {currentUser.firstname}
             </span>
             <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
-            <span className='num'>
-              <img className='phone-icn' src={phoneicn} alt='icn' />
-              {`+${currentUser.countrycode} ${currentUser.mobile}`}
-            </span>
+
+            {currentUser.mobile !== undefined ? (
+              <span className='num'>
+                <img className='phone-icn' src={phoneicn} alt='icn' />
+                {`+${currentUser.countrycode} ${currentUser.mobile}`}
+              </span>
+            ) : null}
+
             <hr className='line-1 ' />
             <span className='email'>
               <img className='mail-icn' src={mailicn} alt='icn' />
