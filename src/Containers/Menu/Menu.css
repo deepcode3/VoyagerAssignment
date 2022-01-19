@@ -1235,3 +1235,9 @@
     z-index: 1;
   }
 }
+@media all and (min-width: 1400px) {
+  .menuSeperator {
+    position: relative;
+    top: 65vh;
+  }
+}
