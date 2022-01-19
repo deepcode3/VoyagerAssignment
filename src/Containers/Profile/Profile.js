@@ -270,8 +270,8 @@ const ProfileList = styled.div`
     flex-direction: column;
     width: 80%;
     overflow-y: auto;
-    height: 90vh;
-    top: -2px;
+    height: 100vh;
+    top: -105px;
     left: ${({ click1 }) => {
       return click1 ? 0 : '-100%';
     }};
