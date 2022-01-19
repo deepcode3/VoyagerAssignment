@@ -34,6 +34,7 @@ const Model = ({ setOpen, values, setValues }) => {
       address: '',
       addressLabel: '',
     });
+    setOpen(false);
   };
   const findMyLocation = () => {
     navigator.geolocation.watchPosition((pos) => {

@@ -32,6 +32,7 @@ const Model = ({ setOpen, values, setValues }) => {
       expiaryYear: '',
       securityNumber: '',
     });
+    setOpen(false);
   };
   return (
     <ModalBack>
