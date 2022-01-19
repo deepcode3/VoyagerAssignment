@@ -333,13 +333,21 @@ const LinkContainer = styled.div`
   right: 0px;
   align-items: center;
   margin-left: 70%;
-  @media (max-width: 1470px) {
+  @media (max-width: 1750px) {
+    width: 50%;
+    margin-left: 60%;
+  }
+  @media (max-width: 1400px) {
     width: 60%;
     margin-left: 50%;
   }
-  @media (max-width: 550px) {
-    width: 90%;
-    margin-left: 5%;
+  @media (max-width: 1100px) {
+    width: 70%;
+    margin-left: 40%;
+  }
+  @media (max-width: 900px) {
+    width: 80%;
+    margin-left: 30%;
   }
 `;
 const ProfileConatiner = styled.div`
@@ -401,7 +409,7 @@ const CartIcon = styled.img`
   height: 27px;
   width: 20px;
   margin-right: 8%;
-  @media (max-width: 1470px) {
+  @media (max-width: 1450px) {
     background-color: #fda5a3;
   }
   @media (max-width: 550px) {
@@ -428,7 +436,7 @@ const CartLink = styled(NavLink)`
   line-height: 19px;
   text-decoration: none;
   margin-right: 5%;
-  @media (max-width: 1470px) {
+  @media (max-width: 1400px) {
     color: #fda5a3;
   }
   @media (max-width: 550px) {
