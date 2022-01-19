@@ -213,6 +213,10 @@ const ModalBack = styled.div`
     width: 501px;
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 393px) {
+      display: block;
+      width: 350px;
+    }
   }
   .line {
     box-sizing: border-box;
@@ -221,6 +225,9 @@ const ModalBack = styled.div`
     //margin: 15px auto;
     position: absolute;
     left: 5px;
+    @media screen and (max-width: 393px) {
+      display: none;
+    }
   }
   .modal-content {
     height: 1211px;
@@ -230,6 +237,11 @@ const ModalBack = styled.div`
     flex-direction: row;
     align=items: center;
     position: relative;
+    @media screen and (max-width: 393px) {
+      // display: none;
+      width: 350px;
+      position: relative;
+    }
   }
   .dismiss-button {
     height: 12px;
@@ -237,6 +249,10 @@ const ModalBack = styled.div`
     position: absolute;
     right: 10px;
     top: 10px;
+    @media screen and (max-width: 393px) {
+      height: 15px;
+      width: 15px;
+    }
   }
   .order-details {
     height: 33px;
@@ -250,6 +266,14 @@ const ModalBack = styled.div`
     position: absolute;
     top: 43px;
     left: 176px;
+    @media screen and (max-width: 393px) {
+      //display: none;
+      position: absolute;
+      height: 25px;
+      font-size: 17px;
+      top: 43px;
+      left: 16px;
+    }
   }
   .side-headding {
     position: absolute;
@@ -260,6 +284,9 @@ const ModalBack = styled.div`
     font-weight: 600;
     letter-spacing: 0;
     line-height: 22px;
+    @media screen and (max-width: 393px) {
+      position: absolute;
+    }
   }
   .box-1 {
     box-sizing: border-box;
@@ -269,6 +296,10 @@ const ModalBack = styled.div`
     position: absolute;
     top: 127px;
     left: 30px;
+    @media screen and (max-width: 393px) {
+      position: absolute;
+      width: 300px;
+    }
   }
   .order-1 {
     width: 400px;
@@ -277,6 +308,10 @@ const ModalBack = styled.div`
     flex-direction: column;
     align-items: start;
     position: relative;
+    @media screen and (max-width: 393px) {
+      position: relative;
+      width: 300px;
+    }
   }
 
   .food {
@@ -287,20 +322,30 @@ const ModalBack = styled.div`
     font-weight: 600;
     letter-spacing: 0;
     line-height: 19px;
+    @media screen and (max-width: 393px) {
+      height: 13px;
+      font-size: 11px;
+    }
   }
   .dot {
     height: 8px;
     width: 8px;
     margin-right: 7px;
+    @media screen and (max-width: 393px) {
+      margin-right: 3.5px;
+    }
   }
   .AED {
-    //height: 27px;
     width: 213px;
     color: #2d2d2d;
     font-family: 'Open Sans';
     font-size: 12px;
     letter-spacing: 0;
     line-height: 27px;
+    @media screen and (max-width: 393px) {
+      font-size: 10px;
+      line-height: 20px;
+    }
   }
   .add-on {
     //height: 30px;
@@ -310,6 +355,9 @@ const ModalBack = styled.div`
     font-size: 11px;
     letter-spacing: 0;
     line-height: 15px;
+    @media screen and (max-width: 393px) {
+      font-size: 10px;
+    }
   }
   .AED-1 {
     height: 17px;
@@ -323,6 +371,11 @@ const ModalBack = styled.div`
     position: absolute;
     top: 45px;
     left: 345px;
+    @media screen and (max-width: 393px) {
+      position: absolute;
+      top: 10px;
+      left: 208px;
+    }
   }
   .box-2 {
     box-sizing: border-box;
@@ -336,11 +389,20 @@ const ModalBack = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 393px) {
+      position: absolute;
+      width: 300px;
+      height: 140px;
+    }
   }
   .to-pay {
     height: 164px;
     width: 403px;
     position: relative;
+    @media screen and (max-width: 393px) {
+      width: 300px;
+      height: 130px;
+    }
   }
   .pay {
     height: 22px;
@@ -351,6 +413,11 @@ const ModalBack = styled.div`
     letter-spacing: 0;
     line-height: 22px;
     position: absolute;
+    @media screen and (max-width: 393px) {
+      height: 17px;
+      font-size: 12px;
+      position: absolute;
+    }
   }
   .pay-value {
     height: 22px;
@@ -363,6 +430,10 @@ const ModalBack = styled.div`
     line-height: 22px;
     text-align: right;
     position: absolute;
+    @media screen and (max-width: 393px) {
+      height: 17px;
+      font-size: 13px;
+    }
   }
   .pay-items {
     height: 17px;
@@ -373,6 +444,11 @@ const ModalBack = styled.div`
     letter-spacing: 0;
     line-height: 17px;
     position: absolute;
+    @media screen and (max-width: 393px) {
+      height: 12px;
+      font-size: 11px;
+      line-height: 13px;
+    }
   }
   .box-3 {
     box-sizing: border-box;
@@ -386,11 +462,19 @@ const ModalBack = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 393px) {
+      width: 300px;
+      height: 160px;
+    }
   }
   .to-delivary {
     height: 120px;
     width: 403px;
     position: relative;
+    @media screen and (max-width: 393px) {
+      width: 300px;
+      height: 110px;
+    }
   }
   .delivary-location {
     height: 37px;
@@ -399,6 +483,10 @@ const ModalBack = styled.div`
     flex-direction: column;
     align-items: start;
     position: absolute;
+    @media screen and (max-width: 393px) {
+      height: 27px;
+      width: 180px;
+    }
   }
   .pickup-location {
     height: 37px;
@@ -408,6 +496,10 @@ const ModalBack = styled.div`
     align-items: start;
     position: absolute;
     top: 80px;
+    @media screen and (max-width: 393px) {
+      height: 27px;
+      width: 90px;
+    }
   }
 
   .span-1 {
@@ -418,6 +510,10 @@ const ModalBack = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
+    @media screen and (max-width: 393px) {
+      height: 14px;
+      line-height: 14px;
+    }
   }
   .span-2 {
     height: 19px;
@@ -427,6 +523,10 @@ const ModalBack = styled.div`
     font-size: 14px;
     letter-spacing: -0.24px;
     line-height: 19px;
+    @media screen and (max-width: 393px) {
+      line-height: 14px;
+      height: 14px;
+    }
   }
 
   .rectangle-7 {
@@ -440,6 +540,11 @@ const ModalBack = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media screen and (max-width: 393px) {
+      width: 346px;
+      height: 280px;
+      position: relative;
+    }
   }
   .rate-your-delivery {
     height: 22px;
@@ -453,6 +558,14 @@ const ModalBack = styled.div`
     position: absolute;
     top: 14px;
     left: 33px;
+    @media screen and (max-width: 393px) {
+      height: 18px;
+      line-height: 18px;
+      font-size: 15px;
+      position: absolute;
+      top: 7px;
+      left: 14px;
+    }
   }
   .ratings {
     height: 21px;
@@ -463,6 +576,60 @@ const ModalBack = styled.div`
     position: absolute;
     top: 51px;
     left: 31px;
+    @media screen and (max-width: 393px) {
+      width: 200px;
+      position: absolute;
+      top: 20px;
+      left: 10px;
+    }
+  }
+
+  .field {
+    height: 67px;
+    width: 432px;
+    position: absolute;
+    top: 98px;
+    left: 32px;
+    @media screen and (max-width: 393px) {
+      position: absolute;
+      width: 290px;
+      height: 40px;
+      top: 98px;
+      left: 20px;
+    }
+  }
+  .review[type='text'] {
+    width: 100%;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #a4a4a4;
+    opacity: 0.53;
+    @media screen and (max-width: 393px) {
+      padding: 5px 5px;
+    }
+  }
+  .rectangle-copy {
+    height: 50px;
+    width: 217px;
+    border-radius: 4px;
+    background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
+    box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+    @media screen and (max-width: 393px) {
+      height: 33px;
+      width: 200px;
+    }
+  }
+
+  .ratings {
+    height: 21px;
+    width: 245px;
+    @media screen and (max-width: 393px) {
+      position: absolute;
+      top: 58px;
+      left: 20px;
+    }
   }
   .group-2 {
     box-sizing: border-box;
@@ -473,39 +640,15 @@ const ModalBack = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    @media screen and (max-width: 393px) {
+      //background-color: pink;
+    }
   }
   .star {
     height: 11px;
     width: 12.1px;
-  }
-
-  .field {
-    height: 67px;
-    width: 432px;
-    position: absolute;
-    top: 98px;
-    left: 32px;
-  }
-  .review[type='text'] {
-    width: 100%;
-    padding: 20px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid #a4a4a4;
-    opacity: 0.53;
-  }
-  .rectangle-copy {
-    height: 50px;
-    width: 217px;
-    border-radius: 4px;
-    background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
-    box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-  }
-
-  .ratings {
-    height: 21px;
-    width: 245px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .write-a-review {
     height: 17px;
@@ -515,6 +658,8 @@ const ModalBack = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
+    @media screen and (max-width: 393px) {
+    }
   }
   .submit-button {
     height: 50px;
@@ -528,6 +673,11 @@ const ModalBack = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 393px) {
+      position: absolute;
+      top: 205px;
+      left: 67px;
+    }
   }
   .submit {
     height: 19px;
@@ -539,5 +689,7 @@ const ModalBack = styled.div`
     letter-spacing: 0;
     line-height: 19px;
     text-align: center;
+    @media screen and (max-width: 393px) {
+    }
   }
 `;

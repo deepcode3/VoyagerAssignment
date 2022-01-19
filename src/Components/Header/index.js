@@ -254,6 +254,7 @@ Header.propTypes = {
   isHome: PropTypes.bool,
 };
 Header.defaultProps = { isHome: false };
+
 const HeaderWrapper = styled.div`
   background-color: transparent;
   height: 3.75rem;
@@ -265,9 +266,6 @@ const HeaderWrapper = styled.div`
   margin-left: 3%;
   .smallLine {
     height: 30px;
-  }
-  .createNew {
-    margin-right: 7.75%;
   }
   @media (max-width: 550px) {
     margin-top:5%;

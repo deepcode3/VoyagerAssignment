@@ -121,7 +121,7 @@ const EditModal = ({ setOpen }) => {
 };
 export default EditModal;
 EditModal.propTypes = {
-  setOpen: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
 
 const ModalBack = styled.div`

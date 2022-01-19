@@ -63,30 +63,66 @@ const Orders = () => {
 export default Orders;
 
 const Div = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: 75px 0;
+  padding: 5rem 0;
   flex-direction: column;
   position: relative;
   background-color: #f1f3fb;
+  @media screen and (max-width: 500px) {
+    display: flex;
+    position: relative;
+    height: 60vh;
+  }
   .align-1 {
-    width: 940px;
+    // width: 940px;
+    width: 66%;
     height: 33px;
     display: flex;
     position: relative;
-    justify-content: start;
+    // justify-content: start;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 12%;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      position: absolute;
+      top: 10px;
+      width: 50%;
+      padding-left: 2%;
+    }
   }
   .align-2 {
-    height: 536px;
-    width: 980px;
+    height: 540px;
+    //width: 980px;
+    width: 65%;
     overflow-y: scroll;
+    align-items: center;
+    display: flex;
     position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 12%;
+    @media screen and (max-width: 500px) {
+      position: absolute;
+      top: 60px;
+      width: 320px;
+      overflow-y: scroll;
+      padding-left: 0%;
+    }
   }
   .rectangle-2 {
     width: 980px;
     max-height: 100%;
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-height: 100%;
+      padding-left: 0%;
+    }
   }
   .rectangle-3 {
     height: 248px;
@@ -97,7 +133,11 @@ const Div = styled.div`
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
     margin: 7px;
     position: relative;
-    flex: 1;
+    @media screen and (max-width: 500px) {
+      height: 255px;
+      width: 290px;
+      padding-left: 0%;
+    }
   }
   .active-orders {
     height: 22px;
@@ -113,24 +153,23 @@ const Div = styled.div`
     outline: 0px;
     position: absolute;
   }
-  .ao {
-    color: #f57c00;
-    font-family: 'Open Sans';
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 22px;
-  }
-  .right-arrow {
-    height: 10px;
-    width: 6.17px;
-    transform: rotate(180deg);
-    padding: 2px;
-  }
+  // .ao {
+  //   color: #f57c00;
+  //   font-family: 'Open Sans';
+  //   font-size: 16px;
+  //   font-weight: 600;
+  //   letter-spacing: 0;
+  //   line-height: 22px;
+  // }
+  // .right-arrow {
+  //   height: 10px;
+  //   width: 6.17px;
+  //   transform: rotate(180deg);
+  //   padding: 2px;
+  // }
 
   .order-id {
     height: 30px;
-    width: 219px;
     color: #313131;
     font-family: 'Open Sans';
     font-size: 22px;
@@ -140,10 +179,16 @@ const Div = styled.div`
     position: absolute;
     top: 27px;
     left: 30px;
+    @media screen and (max-width: 500px) {
+      display: block;
+      position: absolute;
+      top: 27px;
+      left: 30px;
+    }
   }
   .kitchen-type {
     height: 23px;
-    width: 165px;
+    // width: 165px;
     color: #4c4c4c;
     font-family: 'Open Sans';
     font-size: 17px;
@@ -152,10 +197,16 @@ const Div = styled.div`
     position: absolute;
     top: 67px;
     left: 30px;
+    @media screen and (max-width: 500px) {
+      display: block;
+      position: absolute;
+      top: 67px;
+      left: 30px;
+    }
   }
   .road {
-    height: 18px;
-    width: 188px;
+    height: 36px;
+    width: 200px;
     color: #909090;
     font-family: 'Open Sans';
     font-size: 13px;
@@ -164,6 +215,12 @@ const Div = styled.div`
     position: absolute;
     top: 100px;
     left: 30px;
+    @media screen and (max-width: 500px) {
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 30px;
+    }
   }
   .itemsAED {
     height: 19px;
@@ -177,10 +234,16 @@ const Div = styled.div`
     position: absolute;
     top: 129px;
     left: 30px;
+    @media screen and (max-width: 500px) {
+      display: block;
+      position: absolute;
+      top: 134px;
+      left: 30px;
+    }
   }
   .delivery-status-text {
     height: 19px;
-    width: 108px;
+   / width: 108px;
     color: #72b000;
     font-family: 'Open Sans';
     font-size: 14px;
@@ -191,6 +254,12 @@ const Div = styled.div`
     position: absolute;
     top: 37px;
     left: 330px;
+    @media screen and (max-width: 500px) {
+       display: block;
+      position: absolute;
+      top: 8px;
+      left: 160px;
+    }
   }
   .details {
     height: 36px;
@@ -204,6 +273,12 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 500px) {
+      //display: none;
+      position: absolute;
+      top: 191px;
+      left: 25px;
+    }
   }
   .detail-text {
     height: 19px;
@@ -217,6 +292,9 @@ const Div = styled.div`
     line-height: 19px;
     text-align: center;
     text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+    @media screen and (max-width: 500px) {
+      //display: none;
+    }
   }
   .status {
     height: 36px;
@@ -230,6 +308,12 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 500px) {
+      //display: none;
+      position: absolute;
+      top: 191px;
+      left: 153px;
+    }
   }
   .status-text {
     height: 19px;
@@ -244,5 +328,8 @@ const Div = styled.div`
     line-height: 19px;
     text-align: center;
     text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+    @media screen and (max-width: 500px) {
+      //display: none;
+    }
   }
 `;

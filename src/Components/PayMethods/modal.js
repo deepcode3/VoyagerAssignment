@@ -3,7 +3,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// import icnSaveCardUnchecked from '../../Assets/Icons/icn_save_card_unchecked.png';
 import visaicon from '../../Assets/Icons/visaicon.png';
 
 const Model = ({ setOpen, values, setValues, addItem }) => {
@@ -21,8 +20,8 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
     e.preventDefault();
     addItem(values);
     setValues({
-      cardNumber: '',
-      cardName: '',
+      cardDigit: '',
+      Name: '',
       expiaryDate: '',
       expiaryYear: '',
       securityNumber: '',
@@ -42,32 +41,32 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
           X
         </span>
         <div className='navbar'>
-          <h1 className='add-new-address '>Add New Card</h1>
+          <h1 className='add-new-card '>Add New Card</h1>
         </div>
         <div className='enter-cards'>
           <div className='card-body'>
+            <span className='enter-credit'>Enter Credit/Debit card details</span>
             <form onSubmit={handleSubmit}>
-              <span className='enter-credit'>Enter Credit/Debit card details</span>
               <div className='field'>
-                <label className='label'>Card number</label>
+                <label className='label'>Card Nvmber</label>
                 <input
-                  type='text'
-                  name='cardNumber'
-                  value={values.cardNumber}
                   className='input'
-                  placeholder='4022 8888 8888 1881'
+                  type='text'
+                  name='cardDigit'
+                  value={values.cardDigit}
                   onChange={handleChange}
+                  placeholder='4022 8888 8888 1881'
                   required
                 />
                 <img src={visaicon} className='Visaicon' alt='visa' />
                 <div className='line' />
               </div>
               <div className='field-1'>
-                <label className='label'>Name on card</label>
+                <label className='label'>Holder Name</label>
                 <input
                   type='text'
-                  name='cardName'
-                  value={values.cardName}
+                  name='Name'
+                  value={values.Name}
                   className='input'
                   placeholder='Abdullah'
                   onChange={handleChange}
@@ -77,7 +76,7 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
               </div>
               <div className='field-2'>
                 <div className='extra'>
-                  <label className='label-1'>Expiary</label>
+                  <label className='label-1'>Expiray Date</label>
                   <input
                     type='text'
                     name='expiaryDate'
@@ -140,11 +139,12 @@ export default Model;
 Model.propTypes = {
   setOpen: PropTypes.func.isRequired,
   setValues: PropTypes.func.isRequired,
-  values: PropTypes.objectOf(PropTypes.any).isRequired,
+  values: PropTypes.objectOf(PropTypes.string).isRequired,
   addItem: PropTypes.func.isRequired,
 };
 
 const ModalBack = styled.div`
+  width: 100%;
   position: fixed;
   align-items: center;
   justify-content: center;
@@ -173,12 +173,20 @@ const ModalContainer = styled.div`
   flex-direction: column;
   position: relative;
   //padding: 40px;
+  @media screen and (max-width: 500px) {
+    display: block;
+    width: 350px;
+  }
   .dismiss-button {
     height: 12px;
     width: 12px;
     position: absolute;
     right: 13px;
     top: 13px;
+    @media screen and (max-width: 500px) {
+      height: 20px;
+      width: 20px;
+    }
   }
   .navbar {
     height: 33px;
@@ -187,8 +195,11 @@ const ModalContainer = styled.div`
     text-align: center;
     top: 43px;
     left: 183px;
+    @media screen and (max-width: 500px) {
+      left: 83px;
+    }
   }
-  .add-new-address {
+  .add-new-card {
     height: 33px;
     width: 193px;
     color: #4c4c4c;
@@ -198,6 +209,14 @@ const ModalContainer = styled.div`
     letter-spacing: -0.34px;
     line-height: 33px;
     margin: 0 auto;
+    @media screen and (max-width: 500px) {
+      font-size: 20px;
+    }
+  }
+  .card-body {
+    position: relative;
+    @media screen and (max-width: 500px) {
+    }
   }
   .enter-cards {
     height: 459px;
@@ -205,9 +224,10 @@ const ModalContainer = styled.div`
     position: absolute;
     padding-left: 30px;
     top: 100px;
-  }
-  .card-body {
-    position: relative;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+      margin-left: 10px;
+    }
   }
 
   .enter-credit {
@@ -218,6 +238,8 @@ const ModalContainer = styled.div`
     font-size: 17px;
     letter-spacing: -0.41px;
     line-height: 23px;
+    @media screen and (max-width: 500px) {
+    }
   }
 
   .input {
@@ -234,6 +256,8 @@ const ModalContainer = styled.div`
     margin: 0px;
     border: 0px;
     outline: none;
+    @media screen and (max-width: 500px) {
+    }
   }
   .line {
     box-sizing: border-box;
@@ -243,11 +267,16 @@ const ModalContainer = styled.div`
     opacity: 0.53;
     position: absolute;
     bottom: 0px;
+    @media screen and (max-width: 500px) {
+    }
   }
   .input-image {
     height: 12px;
     width: 40px;
     padding: 41px 0 0 200px;
+    @media screen and (max-width: 500px) {
+      padding: 20px 0 0 100px;
+    }
   }
   .label {
     height: 17px;
@@ -257,29 +286,42 @@ const ModalContainer = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
+    @media screen and (max-width: 500px) {
+    }
   }
   .field {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 39px;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .field-1 {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 130px;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .field-2 {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 221px;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .extra {
     height: 67px;
     width: 502px;
     position: relative;
+    @media screen and (max-width: 500px) {
+    }
   }
   .label-1 {
     height: 17px;
@@ -291,6 +333,8 @@ const ModalContainer = styled.div`
     line-height: 17px;
     position: absolute;
     top: 0px;
+    @media screen and (max-width: 500px) {
+    }
   }
   .label-2 {
     height: 17px;
@@ -301,8 +345,10 @@ const ModalContainer = styled.div`
     letter-spacing: -0.24px;
     line-height: 17px;
     position: absolute;
-    top: 24px;
+    top: 0px;
     left: 160px;
+    @media screen and (max-width: 500px) {
+    }
   }
   .input-1[type='text'] {
     width: 8%;
@@ -314,6 +360,8 @@ const ModalContainer = styled.div`
     opacity: 0.53;
     position: absolute;
     top: 18px;
+    @media screen and (max-width: 500px) {
+    }
   }
   .input-2[type='text'] {
     width: 50%;
@@ -326,11 +374,16 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 18px;
     left: 160px;
+    @media screen and (max-width: 500px) {
+      width: 28%;
+    }
   }
   .dash {
     position: absolute;
     top: 35px;
     left: 47px;
+    @media screen and (max-width: 500px) {
+    }
   }
   .line {
     box-sizing: border-box;
@@ -338,6 +391,9 @@ const ModalContainer = styled.div`
     width: 498px;
     border: 1px solid #4a4a4a;
     opacity: 0.53;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .add-this-card-to-sav {
     height: 22px;
@@ -351,6 +407,8 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 320px;
     left: 0px;
+    @media screen and (max-width: 500px) {
+    }
   }
   .save-check {
     border: 2px solid white;
@@ -381,6 +439,10 @@ const ModalContainer = styled.div`
     position: absolute;
     left: 97px;
     top: 370px;
+    @media screen and (max-width: 500px) {
+      width: 235px;
+      left: 27px;
+    }
   }
   .save-address {
     height: 19px;

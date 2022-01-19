@@ -13,6 +13,7 @@ export const ProfileContext = createContext({
 const ProfileContextProvider = (props) => {
   const [addressItems, setAddressItems] = useState([]);
   const [paymentItems, setPaymentItems] = useState([]);
+
   useEffect(() => {
     const storedvalues1 = JSON.parse(localStorage.getItem('address'));
     if (storedvalues1) {
