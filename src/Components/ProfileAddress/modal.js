@@ -153,6 +153,7 @@ Model.propTypes = {
 
 const ModalBack = styled.div`
   height: 100%;
+  width: 100%;
   position: fixed;
   align-items: center;
   justify-content: center;
@@ -180,12 +181,20 @@ const ModalContainer = styled.div`
   align-items: start;
   flex-direction: column;
   position: relative;
+  @media screen and (max-width: 500px) {
+    height: 650px;
+    width: 300px;
+  }
   .dismiss-button {
     height: 12px;
     width: 12px;
     position: absolute;
     right: 13px;
     top: 13px;
+    @media screen and (max-width: 500px) {
+      height: 20px;
+      width: 20px;
+    }
   }
   .navbar {
     height: 33px;
@@ -194,6 +203,11 @@ const ModalContainer = styled.div`
     text-align: center;
     top: 43px;
     left: 183px;
+    @media screen and (max-width: 500px) {
+      position: absolute;
+      top: 43px;
+      left: 92px;
+    }
   }
   .add-new-address {
     height: 33px;
@@ -205,6 +219,9 @@ const ModalContainer = styled.div`
     letter-spacing: -0.34px;
     line-height: 33px;
     margin: 0 auto;
+    @media screen and (max-width: 500px) {
+      font-size: 20px;
+    }
   }
   .location_settter {
     height: 70px;
@@ -217,6 +234,9 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 121px;
     left: 42px;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .icn_pin {
     padding: 10px;
@@ -230,11 +250,17 @@ const ModalContainer = styled.div`
     letter-spacing: -0.24px;
     line-height: 19px;
     border: none;
+    @media screen and (max-width: 500px) {
+      width: 200px;
+    }
   }
   .icn_gps {
     height: 20px;
     width: 20px;
     margin-left: 200px;
+    @media screen and (max-width: 500px) {
+      margin-left: 60px;
+    }
   }
   .input[type='text'] {
     width: 100%;
@@ -244,6 +270,9 @@ const ModalContainer = styled.div`
     border: none;
     border-bottom: 2px solid #4a4a4a;
     opacity: 0.53;
+    @media screen and (max-width: 500px) {
+      padding: 10px 0px;
+    }
   }
   .label {
     height: 17px;
@@ -253,30 +282,44 @@ const ModalContainer = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
+    @media screen and (max-width: 500px) {
+    }
   }
   .field {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 219px;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .field-1 {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 310px;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .field-2 {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 401px;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .field-3 {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 492px;
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
   }
   .line {
     box-sizing: border-box;
@@ -295,6 +338,11 @@ const ModalContainer = styled.div`
     position: absolute;
     left: 118px;
     bottom: 50px;
+    @media screen and (max-width: 500px) {
+      width: 205px;
+      position: absolute;
+      left: 95px;
+    }
   }
   .save-address {
     height: 19px;
