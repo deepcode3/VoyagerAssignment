@@ -28,7 +28,6 @@ const Div = styled.div`
   position: relative;
   top: 0px;
   left: 00px;
-  padding-top: 2%;
   .headerDivProfile {
     width: 100%;
     position: relative;

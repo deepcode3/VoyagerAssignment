@@ -12,6 +12,7 @@
   -webkit-text-fill-color: transparent;
 }
 .logosmalllorem {
+  padding-top: 10px;
   height: 2.6875rem;
   width: 4.56rem;
   position: relative;
@@ -34,5 +35,6 @@
     height: 3.7rem;
     width: 8.4375rem;
     font-size: 4rem;
+    padding-top: 0px;
   }
 }
