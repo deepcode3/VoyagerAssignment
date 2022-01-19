@@ -277,7 +277,7 @@ const MenuIcon = styled.button`
   border: none;
   background-color: transparent;
   margin-right: 20px;
-  margin-top: 3px;
+  margin-top: 10px;
   .menuIcon {
     width: 25px;
     height: 25px;
