@@ -68,13 +68,12 @@ const CardDiv = styled.div`
   position: relative;
   flex: 1;
   margin: 1%;
-  @media screen and (max-width: 393px) {
-    // display:none;
+  @media screen and (max-width: 500px) {
     position: relative;
     left: -67px;
     margin: 2%;
     height: 240px;
-    width: 242px;
+    width: 302px;
   }
 `;
 const Home = styled.span`
@@ -88,7 +87,7 @@ const Home = styled.span`
   position: absolute;
   top: 29px;
   left: 26px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     //display:none;
     position: absolute;
     top: 29px;
@@ -96,10 +95,13 @@ const Home = styled.span`
   }
 `;
 const PrimaryDiv = styled.div`
-  height: 19px;
-  width: 52px;
-  padding-left: 11px;
-  @media screen and (max-width: 393px) {
+  // height: 19px;
+  // width: 52px;
+  // padding-left: 11px;
+  position: absolute;
+  top: 21px;
+  left: 367px;
+  @media screen and (max-width: 500px) {
     position: absolute;
     width: 22px;
     top: 10px;
@@ -109,15 +111,19 @@ const PrimaryDiv = styled.div`
 `;
 
 const Primary = styled.span`
-  position: absolute;
-  top: 21px;
-  left: 367px;
+  // position: absolute;
+  // top: 21px;
+  //left: 367px;
   font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.27px;
   line-height: 19px;
-  @media screen and (max-width: 393px) {
+
+  height: 19px;
+  width: 52px;
+  padding-left: 11px;
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 1px;
     left: 27px;
@@ -134,7 +140,7 @@ const Address = styled.span`
   position: absolute;
   top: 59px;
   left: 26px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     height: 130px;
     width: 220px;
     position: absolute;
@@ -155,7 +161,7 @@ const Edit = styled.span`
   position: absolute;
   top: 143px;
   left: 343px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 200px;
     left: 26px;
@@ -178,7 +184,7 @@ const Delete = styled.button`
   padding: 0;
   border: none;
   background: none;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 200px;
     left: 90px;

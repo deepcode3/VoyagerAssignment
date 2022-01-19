@@ -63,7 +63,7 @@ const Orders = () => {
 export default Orders;
 
 const Div = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@ const Div = styled.div`
   flex-direction: column;
   position: relative;
   background-color: #f1f3fb;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     display: flex;
     position: relative;
     height: 60vh;
@@ -86,7 +86,7 @@ const Div = styled.div`
     margin-right: auto;
     margin-left: auto;
     padding-left: 12%;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       position: absolute;
       top: 10px;
@@ -105,7 +105,7 @@ const Div = styled.div`
     margin-right: auto;
     margin-left: auto;
     padding-left: 12%;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       position: absolute;
       top: 60px;
       width: 320px;
@@ -116,7 +116,7 @@ const Div = styled.div`
   .rectangle-2 {
     width: 980px;
     max-height: 100%;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       flex-direction: column;
       align-items: center;
       width: 100%;
@@ -133,7 +133,7 @@ const Div = styled.div`
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
     margin: 7px;
     position: relative;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       height: 255px;
       width: 290px;
       padding-left: 0%;
@@ -179,7 +179,7 @@ const Div = styled.div`
     position: absolute;
     top: 27px;
     left: 30px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
       top: 27px;
@@ -197,7 +197,7 @@ const Div = styled.div`
     position: absolute;
     top: 67px;
     left: 30px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
       top: 67px;
@@ -215,7 +215,7 @@ const Div = styled.div`
     position: absolute;
     top: 100px;
     left: 30px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
       top: 100px;
@@ -234,7 +234,7 @@ const Div = styled.div`
     position: absolute;
     top: 129px;
     left: 30px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
       top: 134px;
@@ -254,7 +254,7 @@ const Div = styled.div`
     position: absolute;
     top: 37px;
     left: 330px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
        display: block;
       position: absolute;
       top: 8px;
@@ -273,7 +273,7 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       //display: none;
       position: absolute;
       top: 191px;
@@ -292,7 +292,7 @@ const Div = styled.div`
     line-height: 19px;
     text-align: center;
     text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       //display: none;
     }
   }
@@ -308,7 +308,7 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       //display: none;
       position: absolute;
       top: 191px;
@@ -328,7 +328,7 @@ const Div = styled.div`
     line-height: 19px;
     text-align: center;
     text-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       //display: none;
     }
   }

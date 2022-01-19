@@ -108,14 +108,14 @@ Profile.propTypes = {
 
 const Profilediv = styled.div`
   height: 262px;
-  //width: 1400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url(${banner});
   background-color: white;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     height: 100px;
   }
 `;
@@ -129,7 +129,7 @@ const MobileProfile = styled.div`
   position: absolute;
   top: 38px;
   left: 0px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     height: 29px;
     width: 29px;
     border: 1px solid #ffffff;
@@ -144,7 +144,7 @@ const MobileProfile = styled.div`
 const MobileIcon = styled.div`
   display: none;
   backround-color: red;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     display: block;
     position: absolute;
     top: 100px;
@@ -162,15 +162,15 @@ const NavMenu = styled.ul`
   top: 209px;
   text-align: center;
   align-items: center;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     display: table;
     position: absolute;
     // flex-direction: column;
     width: 100%;
     overflow-y: auto;
-    height: 45vh;
+    height: 90vh;
     padding-top: 100px;
-    top: -5px;
+    top: -2px;
     left: ${({ click }) => {
       return click ? 0 : '-100%';
     }};
@@ -178,12 +178,11 @@ const NavMenu = styled.ul`
     transition: all 0.5s ease;
     background: #000000;
     z-index: 1;
-    border: none;
   }
 `;
 const NavItem = styled.li`
   list-style: none;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     width: 100%;
     float: left;
     display: table-cell;
@@ -217,14 +216,14 @@ const NavLinks = styled(Link)`
     background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
     box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     text-align: center;
     padding: 2rem;
     width: 95%;
     display: block;
     font-size: 1.5rem;
     color: #f57c00;
-    background-color: #f1f3fb;
+    // background-color: #f1f3fb;
     &:hover {
       transition: all 0.3s ease;
     }
@@ -262,7 +261,7 @@ const ProfileList = styled.div`
   top: 38px;
   left: 164px;
   padding: 1px;
-  @media screen and (max-width: 954px) {
+  @media screen and (max-width: 500px) {
     display: flex;
     position: absolute;
     flex-direction: column;
@@ -286,7 +285,7 @@ const ProfileList = styled.div`
   }
   .profile {
     display: none;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: block;
       height: 109px;
       width: 109px;
@@ -310,7 +309,7 @@ const ProfileList = styled.div`
     line-height: 42px;
     position: absolute;
     left: 1px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 330px;
       top: 200px;
@@ -329,7 +328,7 @@ const ProfileList = styled.div`
     justify-content: space-between;
     position: absolute;
     left: 1px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 330px;
       top: 260px;
@@ -345,7 +344,7 @@ const ProfileList = styled.div`
     display: flex;
     position: absolute;
     top: 86px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 330px;
       top: 320px;
@@ -360,7 +359,7 @@ const ProfileList = styled.div`
     position: absolute;
     top: 77px;
     left: 173px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: none;
     }
   }
@@ -368,7 +367,7 @@ const ProfileList = styled.div`
     height: 22px;
     width: 16.5px;
     padding-right: 10px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
     }
   }
@@ -381,7 +380,7 @@ const ProfileList = styled.div`
     position: absolute;
     top: 77px;
     left: 487px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: none;
     }
   }
@@ -395,7 +394,7 @@ const ProfileList = styled.div`
     position: absolute;
     top: 86px;
     left: 200px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 330px;
       top: 380px;
@@ -407,7 +406,7 @@ const ProfileList = styled.div`
     height: 18px;
     width: 25px;
     padding-right: 10px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 330px;
       top: 260px;
@@ -423,7 +422,7 @@ const ProfileList = styled.div`
     top: 86px;
     left: 510px;
     position: absolute;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 330px;
       top: 440px;
@@ -441,7 +440,7 @@ const ProfileList = styled.div`
     top: 79px;
     left: 630px;
     position: absolute;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 450px;
       top: 435px;
@@ -453,7 +452,7 @@ const ProfileList = styled.div`
     top: 89px;
     left: 680px;
     position: absolute;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 400px;
       top: 500px;
@@ -472,7 +471,7 @@ const ProfileList = styled.div`
     position: absolute;
     top: 18px;
     left: 160px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: flex;
       left: 330px;
       top: 500px;
@@ -484,7 +483,7 @@ const ProfileList = styled.div`
     width: 0.5px;
     color: 1px solid #ffffff;
     opacity: 0.37;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: none;
     }
   }

@@ -73,13 +73,13 @@ const CardDiv = styled.div`
   margin: 1%;
   position: relative;
   flex: 1;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     display: block;
     position: relative;
     left: -67px;
     margin: 2%;
     height: 240px;
-    width: 242px;
+    width: 300px;
   }
 `;
 const Bitmap = styled.img`
@@ -88,7 +88,7 @@ const Bitmap = styled.img`
   position: absolute;
   top: 50px;
   left: 24px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     display: block;
     position: absolute;
   }
@@ -105,7 +105,7 @@ const Account = styled.span`
   position: absolute;
   top: 42px;
   left: 131px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 80px;
     left: -10px;
@@ -123,7 +123,7 @@ const Name = styled.span`
   position: absolute;
   top: 74px;
   left: 130px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 110px;
     left: -24px;
@@ -140,7 +140,7 @@ const Date = styled.span`
   position: absolute;
   top: 74px;
   left: 280px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 140px;
     left: 10px;
@@ -158,7 +158,7 @@ const Num = styled.span`
   fontsize: 18px;
   top: 110px;
   left: 130px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 170px;
     left: -20px;
@@ -169,7 +169,7 @@ const Primary1 = styled.div`
   position: absolute;
   top: 21px;
   left: 367px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     width: 22px;
     top: 10px;
@@ -187,7 +187,7 @@ const Primary = styled.span`
   letter-spacing: -0.27px;
   line-height: 19px;
   padding-left: 11px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 1px;
     left: 17px;
@@ -206,7 +206,7 @@ const Edit = styled.span`
   position: absolute;
   top: 143px;
   left: 343px;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 200px;
     left: 30px;
@@ -228,7 +228,7 @@ const Delete = styled.button`
   padding: 0;
   border: none;
   background: none;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     position: absolute;
     top: 200px;
     left: 90px;

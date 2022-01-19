@@ -24,7 +24,9 @@ const Div = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  .headerDivProfile {
+  top: 0px;
+  left: 00px;
+  padding-top: 2% .headerDivProfile {
     width: 100%;
     position: relative;
     align-items: center;

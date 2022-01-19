@@ -153,6 +153,7 @@ Model.propTypes = {
 
 const ModalBack = styled.div`
   height: 100%;
+  width: 100%;
   position: fixed;
   align-items: center;
   justify-content: center;
@@ -180,7 +181,7 @@ const ModalContainer = styled.div`
   align-items: start;
   flex-direction: column;
   position: relative;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     height: 650px;
     width: 300px;
   }
@@ -190,7 +191,7 @@ const ModalContainer = styled.div`
     position: absolute;
     right: 13px;
     top: 13px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       height: 20px;
       width: 20px;
     }
@@ -202,7 +203,7 @@ const ModalContainer = styled.div`
     text-align: center;
     top: 43px;
     left: 183px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       position: absolute;
       top: 43px;
       left: 92px;
@@ -218,7 +219,7 @@ const ModalContainer = styled.div`
     letter-spacing: -0.34px;
     line-height: 33px;
     margin: 0 auto;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       font-size: 20px;
     }
   }
@@ -233,7 +234,7 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 121px;
     left: 42px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 300px;
     }
   }
@@ -249,7 +250,7 @@ const ModalContainer = styled.div`
     letter-spacing: -0.24px;
     line-height: 19px;
     border: none;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 200px;
     }
   }
@@ -257,7 +258,7 @@ const ModalContainer = styled.div`
     height: 20px;
     width: 20px;
     margin-left: 200px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       margin-left: 60px;
     }
   }
@@ -269,7 +270,7 @@ const ModalContainer = styled.div`
     border: none;
     border-bottom: 2px solid #4a4a4a;
     opacity: 0.53;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       padding: 10px 0px;
     }
   }
@@ -281,7 +282,7 @@ const ModalContainer = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
     }
   }
   .field {
@@ -289,7 +290,7 @@ const ModalContainer = styled.div`
     width: 502px;
     position: absolute;
     top: 219px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 300px;
     }
   }
@@ -298,7 +299,7 @@ const ModalContainer = styled.div`
     width: 502px;
     position: absolute;
     top: 310px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 300px;
     }
   }
@@ -307,7 +308,7 @@ const ModalContainer = styled.div`
     width: 502px;
     position: absolute;
     top: 401px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 300px;
     }
   }
@@ -316,7 +317,7 @@ const ModalContainer = styled.div`
     width: 502px;
     position: absolute;
     top: 492px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 300px;
     }
   }
@@ -337,7 +338,7 @@ const ModalContainer = styled.div`
     position: absolute;
     left: 118px;
     bottom: 50px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 205px;
       position: absolute;
       left: 95px;

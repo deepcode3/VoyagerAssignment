@@ -61,7 +61,7 @@ export default Address;
 
 const Div = styled.div`
   height: 100vh;
-  weidth: 100wh;
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 75px 0;
@@ -70,7 +70,7 @@ const Div = styled.div`
   background-color: #f1f3fb;
   margin-right: auto;
   margin-left: auto;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 500px) {
     height: 60vh;
   }
   .recommendation-1 {
@@ -80,7 +80,7 @@ const Div = styled.div`
     margin-right: auto;
     margin-left: auto;
     justify-content: space-between;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: block;
       width: 320px;
       position: absolute;
@@ -107,7 +107,7 @@ const Div = styled.div`
     line-height: 19px;
     text-align: right;
     margin-left: 720px;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
       top: 2px;
@@ -125,7 +125,7 @@ const Div = styled.div`
     padding: 0 12%;
     overflow-y: scroll;
     position: relative;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 72%;
       position: relative;
       padding: 0;
@@ -136,7 +136,7 @@ const Div = styled.div`
     width: 100%;
     max-height: 100%;
     padding-left: 11%;
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 500px) {
       width: 100%;
     }
   }
