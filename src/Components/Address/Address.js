@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import { React, useState, useContext } from 'react';
+import { React, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useHistory } from 'react-router-dom';
-import { ProfileContext } from '../../Context/ProfileContext';
 import AddressCard from './AddressCard';
 import TelephonePicker from '../TelephonePicker/index';
 import delivericon from '../../Assets/Icons/delivericon.png';
@@ -19,6 +19,10 @@ import './Address.css';
 
 const CartAddress = () => {
   const location = useLocation();
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
+  const addressItems = [...currentUser.address];
   const mobileSchema = yup.object().shape({
     mobile: yup
       .string()
@@ -34,7 +38,6 @@ const CartAddress = () => {
   } = useForm({
     resolver: yupResolver(mobileSchema),
   });
-  const { addressItems, removeItem1 } = useContext(ProfileContext);
 
   const history = useHistory();
   const [displayAddress, setDisplayAddress] = useState(false);
@@ -58,7 +61,9 @@ const CartAddress = () => {
               value='delivertome'
               name='deliveryoption'
               className='delivertomebtn'
-              onClick={() => { setDisplayAddress(true); }}
+              onClick={() => {
+                setDisplayAddress(true);
+              }}
             />
             <p className='delivertometxt'>Deliver to me</p>
           </div>
@@ -66,49 +71,54 @@ const CartAddress = () => {
             <div className='pickup'>
               <img src={pickupicon} className='pickupicon' alt='pickupicon' />
             </div>
-            <input type='radio' value='pickup' name='deliveryoption' className='pickupbtn' onClick={() => { setDisplayAddress(false); }} />
+            <input
+              type='radio'
+              value='pickup'
+              name='deliveryoption'
+              className='pickupbtn'
+              onClick={() => {
+                setDisplayAddress(false);
+              }}
+            />
             <p className='pickuptext'>Pick up</p>
           </div>
         </div>
-        {
-        displayAddress
-          ? (
+        {displayAddress ? (
           // eslint-disable-next-line react/jsx-wrap-multilines
-            <>
-              <div className='myadd'>
-                <p className='myaddtxt'>
-                  My Addresses
-                  <span>( )</span>
-                </p>
-              </div>
-              <div className='addnew'>
-                <img src={addnewbtn} className='addnewbtn' alt='adnewbtn' />
-                <p
-                  onKeyDown={null}
-                  className='addnewtext'
-                  onClick={() => {
-                    history.push('/profile/profile-address');
-                  }}
-                >
-                  ADD NEW
-                </p>
-                <div className='address_container'>
-                  <div className='address_scroller'>
-                    <ul className='list'>
-                      {addressItems.map((item, index) => {
-                        return (
-                          <li key={index.toString()}>
-                            <AddressCard item={item} removeItem={removeItem1} index={index} />
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
+          <>
+            <div className='myadd'>
+              <p className='myaddtxt'>
+                My Addresses
+                <span>( )</span>
+              </p>
+            </div>
+            <div className='addnew'>
+              <img src={addnewbtn} className='addnewbtn' alt='adnewbtn' />
+              <p
+                onKeyDown={null}
+                className='addnewtext'
+                onClick={() => {
+                  history.push('/profile/profile-address');
+                }}
+              >
+                ADD NEW
+              </p>
+              <div className='address_container'>
+                <div className='address_scroller'>
+                  <ul className='list'>
+                    {addressItems.map((item, index) => {
+                      return (
+                        <li key={index.toString()}>
+                          <AddressCard item={item} index={index} />
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               </div>
-            </>)
-          : (null)
-        }
+            </div>
+          </>
+        ) : null}
         <form className='contactdetailsdiv'>
           <p className='contactdetails'>Contact Details</p>
           <div className='namediv'>
@@ -158,23 +168,25 @@ const CartAddress = () => {
           <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
         </div>
       </div>
-      <div className='cartactive'>
-        <img src={cactive} alt='' className='Cactive' />
-        <p className='acart'>Cart</p>
-      </div>
-      <div className='Activeeline'>
-        <img src={activeline} alt='' className='cactiveline' />
-      </div>
-      <div className='cartactive2'>
-        <img src={cactive} alt='' className='Cactive2' />
-        <p className='cadresstext'>Address Details</p>
-      </div>
-      <div className='Paratialactiveline'>
-        <img src={partialActive} alt='' className='cpartialactiveline' />
-      </div>
-      <div className='Deactive'>
-        <img src={deactive} alt='' className='deactivestate' />
-        <p className='cpaymenttext'>Payment</p>
+      <div className='addressprogressbar'>
+        <div className='cartactive'>
+          <img src={cactive} alt='' className='Cactive' />
+          <p className='acart'>Cart</p>
+        </div>
+        <div className='Activeeline'>
+          <img src={activeline} alt='' className='cactiveline' />
+        </div>
+        <div className='cartactive2'>
+          <img src={cactive} alt='' className='Cactive2' />
+          <p className='cadresstext'>Address Details</p>
+        </div>
+        <div className='Paratialactiveline'>
+          <img src={partialActive} alt='' className='cpartialactiveline' />
+        </div>
+        <div className='Deactive'>
+          <img src={deactive} alt='' className='deactivestate' />
+          <p className='cpaymenttext'>Payment</p>
+        </div>
       </div>
     </div>
   );

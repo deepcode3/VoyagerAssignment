@@ -1,13 +1,18 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
+import { removeCard } from '../../Actions/CardActions';
+import { findIndex } from '../../Utils';
 import Visa from '../../Assets/Icons/visa.png';
 import Mastercard from '../../Assets/Icons/mastercard.png';
 
-const PaymentCard = ({ item, removeItem, index, values, setValues }) => {
+const PaymentCard = ({ item, index, values, setValues }) => {
+  const indx = findIndex();
+  const dispatch = useDispatch();
   const handleClick = (active) => {
     return values === active ? setValues(null) : setValues(active);
   };
@@ -46,7 +51,7 @@ const PaymentCard = ({ item, removeItem, index, values, setValues }) => {
         type='button'
         onKeyDown={null}
         onClick={() => {
-          removeItem(item);
+          dispatch(removeCard(item, indx));
         }}
       >
         Delete
@@ -57,7 +62,6 @@ const PaymentCard = ({ item, removeItem, index, values, setValues }) => {
 export default PaymentCard;
 PaymentCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
-  removeItem: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
   setValues: PropTypes.func.isRequired,
   values: PropTypes.objectOf(PropTypes.string).isRequired,

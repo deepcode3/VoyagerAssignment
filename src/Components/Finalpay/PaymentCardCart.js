@@ -25,6 +25,7 @@ const PaymentCardCart = ({ item, index }) => {
     </div>
   );
 };
+
 export default PaymentCardCart;
 PaymentCardCart.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,

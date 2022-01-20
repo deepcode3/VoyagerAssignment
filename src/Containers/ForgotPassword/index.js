@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
@@ -10,7 +10,7 @@ import BackIcon from '../../Assets/Icons/back_icon.png';
 import InputField from '../../Components/LoginComponents/InputField';
 import border from '../../Assets/Icons/border.png';
 import TelephonePicker from '../../Components/TelephonePicker/index';
-import { AccountsContext } from '../../Context/AccountsContext';
+import { checkIfAccountExists, checkIfNumberExists } from '../../Utils';
 
 const ForgotPassword = ({
   setPageStatus,
@@ -21,7 +21,6 @@ const ForgotPassword = ({
   selectedCode,
   setSelectedCode,
 }) => {
-  const { checkIfAccountExists, checkIfNumberExists } = useContext(AccountsContext);
   const emailSchema = yup.object().shape({
     email: yup.string().required('Email id is required ').email('Invalid email address'),
   });

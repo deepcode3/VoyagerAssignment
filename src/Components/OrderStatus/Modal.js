@@ -1,20 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import './Modal.css';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import StarIcon from '@mui/icons-material/Star';
 import Items from '../ItemDescription/Items';
-import { cartContext } from '../../Context/CartContext';
+import { itemsOfRestaurant } from '../../Utils';
 
 const Modal = ({ closemodal, restaurantName }) => {
-  const { itemsOfRestaurant } = useContext(cartContext);
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
   const [star1, setStar1] = useState(false);
   const [star2, setStar2] = useState(false);
   const [star3, setStar3] = useState(false);
   const [star4, setStar4] = useState(false);
   const [star5, setStar5] = useState(false);
-  const resdata = itemsOfRestaurant(restaurantName);
-
+  const resdata = itemsOfRestaurant(restaurantName, currentUser);
   return (
     <div className='modalbackground'>
       <div className='modalbgs'>
@@ -58,7 +60,16 @@ const Modal = ({ closemodal, restaurantName }) => {
           </div>
         </div>
         <p className='statusdeldeatils'>Delivery Details</p>
-        <div className='statusdelrct' />
+        <div className='statusdelrct'>
+          <div className='modaldelivery'>
+            <p className='mdeliverylocation'>Delivery Location</p>
+            <p className='mdeliveryaddress'>Downtown Burj Khalifa, Dubai, UAE</p>
+            <div className='mdelgreyline' />
+            <p className='mdatetimetext'>Date & Time</p>
+            <p className='mdatetime'>Today at 11:30 AM</p>
+          </div>
+        </div>
+
         <div className='statusratingrect ' />
         <p className='ratedeliverytext'>Rate your Delivery</p>
 

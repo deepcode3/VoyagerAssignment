@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import moment from 'moment';
 import MenuHalfCompo from '../MenuSemiCompo';
 import { reviewsContext } from '../../Context/ReviewContext';
@@ -18,6 +19,9 @@ import './MenuNav.css';
 import Footer from '../Footer';
 
 const Reviews = () => {
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
   const { searchKey } = useParams();
   const { location } = useParams();
   const { restaurant } = useParams();

@@ -1,11 +1,16 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
+import { findIndex } from '../../Utils';
+import { removeAddress } from '../../Actions/AddressActions';
 
-const AddressCard = ({ item, removeItem, index, values, setValues }) => {
+const AddressCard = ({ item, index, values, setValues }) => {
+  const indx = findIndex();
+  const dispatch = useDispatch();
   const handleClick = (active) => {
     return values === active ? setValues(null) : setValues(active);
   };
@@ -40,7 +45,7 @@ const AddressCard = ({ item, removeItem, index, values, setValues }) => {
         type='button'
         onKeyDown={null}
         onClick={() => {
-          removeItem(item);
+          dispatch(removeAddress(item, indx));
         }}
       >
         Delete
@@ -51,7 +56,6 @@ const AddressCard = ({ item, removeItem, index, values, setValues }) => {
 export default AddressCard;
 AddressCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.string).isRequired,
-  removeItem: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
   setValues: PropTypes.func.isRequired,
   values: PropTypes.objectOf(PropTypes.string).isRequired,

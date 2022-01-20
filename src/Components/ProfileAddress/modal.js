@@ -2,13 +2,18 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Geocode from 'react-geocode';
 import locationImg from '../../Assets/Icons/location.png';
 import gps from '../../Assets/Icons/gps.png';
 // import { LocationSetter } from '../homeComponents/searchbar';
+import { addAddress } from '../../Actions/AddressActions';
+import { findIndex } from '../../Utils';
 
-const Model = ({ setOpen, values, setValues, addItem }) => {
+const Model = ({ setOpen, values, setValues }) => {
+  const index = findIndex();
+  const dispatch = useDispatch();
   console.log(values);
   const handleChange = (e) => {
     e.persist();
@@ -21,7 +26,7 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addItem(values);
+    dispatch(addAddress(values, index));
     setValues({
       location: '',
       city: '',
@@ -29,6 +34,7 @@ const Model = ({ setOpen, values, setValues, addItem }) => {
       address: '',
       addressLabel: '',
     });
+    setOpen(false);
   };
   const findMyLocation = () => {
     navigator.geolocation.watchPosition((pos) => {
@@ -148,7 +154,6 @@ Model.propTypes = {
   setOpen: PropTypes.func.isRequired,
   setValues: PropTypes.func.isRequired,
   values: PropTypes.objectOf(PropTypes.string).isRequired,
-  addItem: PropTypes.func.isRequired,
 };
 
 const ModalBack = styled.div`

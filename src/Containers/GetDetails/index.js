@@ -1,7 +1,7 @@
-import { React, useState, useContext } from 'react';
+import { React, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
@@ -9,11 +9,10 @@ import StyledButton from '../../Components/CommonButton/index';
 import InputField from '../../Components/LoginComponents/InputField';
 import TelephonePicker from '../../Components/TelephonePicker/index';
 import BackIcon from '../../Assets/Icons/back_icon.png';
-import { AccountsContext } from '../../Context/AccountsContext';
+import { addAccount } from '../../Actions/AccountActions';
 
-Modal.setAppElement('#root');
 const GetDetails = ({ setPageStatus, email, setName }) => {
-  const { addAccount } = useContext(AccountsContext);
+  const dispatch = useDispatch();
   const [selectedCode, setSelectedCode] = useState('91');
   const schema = yup.object().shape({
     firstName: yup.string().required('First name is required'),
@@ -40,22 +39,35 @@ const GetDetails = ({ setPageStatus, email, setName }) => {
   const submitForm = (data) => {
     setName(data.firstName);
     if (data.mobile === '') {
-      addAccount({
-        firstname: data.firstName,
-        lastname: data.lastName,
-        email,
-        password: data.password,
-      });
+      dispatch(
+        addAccount({
+          firstname: data.firstName,
+          username: data.firstName,
+          lastname: data.lastName,
+          email,
+          password: data.password,
+          cart: [],
+          address: [],
+          cards: [],
+        })
+      );
     } else {
-      addAccount({
-        firstname: data.firstName,
-        lastname: data.lastName,
-        email,
-        password: data.password,
-        countrycode: selectedCode,
-        mobile: data.mobile,
-      });
+      dispatch(
+        addAccount({
+          firstname: data.firstName,
+          username: data.firstName,
+          lastname: data.lastName,
+          email,
+          password: data.password,
+          countrycode: selectedCode,
+          mobile: data.mobile,
+          cart: [],
+          address: [],
+          cards: [],
+        })
+      );
     }
+
     setPageStatus('welcome-page');
   };
   return (
@@ -142,7 +154,6 @@ const BackButton = styled.button`
       height: 13px;
       position: relative;
       top: -220px;
-   
     }
   }
 `;
@@ -175,8 +186,7 @@ const BlackText = styled.p`
   letter-spacing: 0.5px;
   @media (max-width: 550px) {
     margin-bottom: 8%;
-    margin-top:-3%;
-    
+    margin-top: -3%;
   }
 `;
 const Description = styled.p`
