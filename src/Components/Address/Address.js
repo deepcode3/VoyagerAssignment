@@ -158,23 +158,25 @@ const CartAddress = () => {
           <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
         </div>
       </div>
-      <div className='cartactive'>
-        <img src={cactive} alt='' className='Cactive' />
-        <p className='acart'>Cart</p>
-      </div>
-      <div className='Activeeline'>
-        <img src={activeline} alt='' className='cactiveline' />
-      </div>
-      <div className='cartactive2'>
-        <img src={cactive} alt='' className='Cactive2' />
-        <p className='cadresstext'>Address Details</p>
-      </div>
-      <div className='Paratialactiveline'>
-        <img src={partialActive} alt='' className='cpartialactiveline' />
-      </div>
-      <div className='Deactive'>
-        <img src={deactive} alt='' className='deactivestate' />
-        <p className='cpaymenttext'>Payment</p>
+      <div className='addressprogressbar'>
+        <div className='cartactive'>
+          <img src={cactive} alt='' className='Cactive' />
+          <p className='acart'>Cart</p>
+        </div>
+        <div className='Activeeline'>
+          <img src={activeline} alt='' className='cactiveline' />
+        </div>
+        <div className='cartactive2'>
+          <img src={cactive} alt='' className='Cactive2' />
+          <p className='cadresstext'>Address Details</p>
+        </div>
+        <div className='Paratialactiveline'>
+          <img src={partialActive} alt='' className='cpartialactiveline' />
+        </div>
+        <div className='Deactive'>
+          <img src={deactive} alt='' className='deactivestate' />
+          <p className='cpaymenttext'>Payment</p>
+        </div>
       </div>
     </div>
   );
