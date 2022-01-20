@@ -63,10 +63,14 @@ const Profile = ({ setOpen }) => {
               {currentUser.firstname}
             </span>
             <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
-            <span className='num'>
-              <img className='phone-icn' src={phoneicn} alt='icn' />
-              {`+${currentUser.countrycode} ${currentUser.mobile}`}
-            </span>
+
+            {currentUser.mobile !== undefined ? (
+              <span className='num'>
+                <img className='phone-icn' src={phoneicn} alt='icn' />
+                {`+${currentUser.countrycode} ${currentUser.mobile}`}
+              </span>
+            ) : null}
+
             <hr className='line-1 ' />
             <span className='email'>
               <img className='mail-icn' src={mailicn} alt='icn' />
@@ -116,6 +120,7 @@ const Profilediv = styled.div`
   background-image: url(${banner});
   background-color: white;
   @media screen and (max-width: 500px) {
+    margin-top: 20px;
     height: 100px;
   }
 `;
@@ -137,7 +142,7 @@ const MobileProfile = styled.div`
     border-radius: 50%;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     position: absolute;
-    top: 110px;
+    top: 35px;
     left: 300px;
   }
 `;
@@ -147,7 +152,7 @@ const MobileIcon = styled.div`
   @media screen and (max-width: 500px) {
     display: block;
     position: absolute;
-    top: 100px;
+    top: 35px;
     right: 290px;
     transform: translate(-100%, 60%);
     cursor: pointer;
@@ -170,10 +175,11 @@ const NavMenu = styled.ul`
     overflow-y: auto;
     height: 90vh;
     padding-top: 100px;
-    top: -2px;
+    top: -110px;
     left: ${({ click }) => {
       return click ? 0 : '-100%';
     }};
+
     opacity: 1;
     transition: all 0.5s ease;
     background: #000000;
@@ -241,10 +247,11 @@ const Container = styled.div`
     // display: none;
     position: absolute;
     cursor: pointer;
+    height: 100px;
   }
   .profile_img {
-    height: 100%;
     width: 100%;
+    height: 100%;
     display: inline-block;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     background-position: 50% 50%;
@@ -267,8 +274,8 @@ const ProfileList = styled.div`
     flex-direction: column;
     width: 80%;
     overflow-y: auto;
-    height: 90vh;
-    top: -2px;
+    height: 100vh;
+    top: -105px;
     left: ${({ click1 }) => {
       return click1 ? 0 : '-100%';
     }};

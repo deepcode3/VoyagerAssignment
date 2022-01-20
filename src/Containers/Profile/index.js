@@ -14,7 +14,9 @@ const ProfileMain = () => {
       </div>
       <Profile open={open} setOpen={setOpen} />
       {open && <EditModal setOpen={setOpen} />}
-      <Footer />
+      <div className='footerDivProfile'>
+        <Footer />
+      </div>
     </Div>
   );
 };
@@ -26,11 +28,20 @@ const Div = styled.div`
   position: relative;
   top: 0px;
   left: 00px;
-  padding-top: 2% .headerDivProfile {
+  .headerDivProfile {
     width: 100%;
     position: relative;
     align-items: center;
     right: 0;
     left: auto;
+  }
+  .footerDivProfile {
+    position: relative;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    @media all and (max-width: 550px) {
+      display: none;
+    }
   }
 `;
