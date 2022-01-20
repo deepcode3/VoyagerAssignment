@@ -1,13 +1,16 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 import Modal from './modal';
 import PaymentCard from './PaymentCard';
-import { ProfileContext } from '../../Context/ProfileContext';
 
 const PayAmount = () => {
-  const { paymentItems, removeItem2 } = useContext(ProfileContext);
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
+  const paymentItems = [...currentUser.cards];
   const [open, setOpen] = useState(false);
   const initialFormData = Object.freeze({
     cardDigit: '',
@@ -40,13 +43,7 @@ const PayAmount = () => {
             {paymentItems.map((item, index) => {
               return (
                 <li key={index.toString()} className='list'>
-                  <PaymentCard
-                    item={item}
-                    removeItem={removeItem2}
-                    index={index}
-                    values={values}
-                    setValues={setValues}
-                  />
+                  <PaymentCard item={item} index={index} values={values} setValues={setValues} />
                 </li>
               );
             })}

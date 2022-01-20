@@ -26,3 +26,4 @@ const Nav = styled.nav`
     color: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
   }
 `;
+
