@@ -98,7 +98,7 @@
   height: 206px;
   width: 441px;
   border: 1px solid #979797;
-  opacity: 0.25;
+  /* opacity: 0.25; */
   border-radius: 5px;
   position: absolute;
   top: 479px;
@@ -308,7 +308,7 @@
   height: 157px;
   width: 441px;
   border: 1px solid #979797;
-  opacity: 0.25;
+  /* opacity: 0.25; */
   border-radius: 5px;
   position: absolute;
   top: 741px;
@@ -770,4 +770,177 @@ input::placeholder {
   left: 27px;
   top: 2px;
   margin: 0px;
+}
+.mdelgreyline {
+  box-sizing: border-box;
+  height: 3px;
+  width: 410px;
+  border: 1px solid #ededed;
+  position: absolute;
+  left: 10px;
+  top: 75px;
+  background-color: lightsteelblue;
+  margin: 0px;
+}
+
+.modaldelivery {
+  position: absolute;
+
+  height: 160px;
+  width: 430px;
+  left: 2px;
+  top: 2px;
+}
+.mdeliverylocation {
+  height: 17px;
+  width: 153.81px;
+  color: #6a6a6a;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  margin: 0px;
+}
+.mdeliveryaddress {
+  height: 19px;
+  width: 383.66px;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  margin: 0px;
+}
+.mdelgreyline {
+  box-sizing: border-box;
+  height: 3px;
+  width: 410px;
+  border: 1px solid #ededed;
+  position: absolute;
+  left: 10px;
+  top: 75px;
+  background-color: lightsteelblue;
+  margin: 0px;
+}
+.mdatetimetext {
+  height: 17px;
+  width: 115.79px;
+  color: #6a6a6a;
+  font-family: 'Open Sans';
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  top: 95px;
+  left: 10px;
+  margin: 0px;
+}
+.mdatetime {
+  height: 19px;
+  width: 200.47px;
+  color: #2d2d2d;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  letter-spacing: -0.24px;
+  line-height: 19px;
+  position: absolute;
+  top: 100px;
+  left: 10px;
+}
+@media all and (max-width: 1400px) {
+  .modalbgs {
+    left: 445px;
+    width: 500px;
+  }
+}
+@media all and (max-width: 400px) {
+  .modalbgs {
+    left: 45px;
+    width: 300px;
+  }
+  .statusitemsrectangle {
+    width: 260px;
+    left: 20px;
+  }
+  .orderDetailsTotalCost {
+    left: 165px;
+  }
+  /* .incdeccount {
+    left: 165px;
+  } */
+  /* .remove {
+    left: 165px;
+  } */
+  .spaidamount {
+    left: 140px;
+  }
+  .sfeeamount,
+  .sdiscountamount {
+    left: 150px;
+  }
+  .stotalamount {
+    left: 163px;
+  }
+  .spaymentmethod {
+    top: 120px;
+    left: 50px;
+  }
+  .scredittext {
+    left: 40px;
+  }
+  .statusamountrect {
+    width: 260px;
+    left: 20px;
+  }
+  .statusdelrct {
+    left: 15px;
+    width: 280px;
+  }
+
+  .statusratingrect {
+    width: 290px;
+  }
+  .rectstar5 {
+    left: 242px;
+  }
+  .statusreview {
+    width: 250px;
+  }
+  .statuslastline {
+    width: 250px;
+  }
+  .statussubmit {
+    left: 100px;
+    width: 100px;
+  }
+  .statussubtext {
+    left: 19px;
+    font-size: 16px;
+  }
+  .statusorderdetails {
+    left: 20px;
+    font-size: 17px;
+  }
+  .closinbutton {
+    left: 250px;
+  }
+  .payoitemsorderdfrom {
+    width: 300px;
+  }
+  .cartcomp {
+    width: 100%;
+    height: 100%;
+  }
+  .modaldelivery {
+    width: 270px;
+  }
+  .mdelgreyline {
+    width: 250px;
+  }
 }
