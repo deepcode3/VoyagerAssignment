@@ -53,6 +53,7 @@ const Profile = ({ setOpen }) => {
               type='button'
               onClick={() => {
                 setOpen(true);
+                setClick1(!click1);
               }}
               role='button'
               onKeyDown={null}
