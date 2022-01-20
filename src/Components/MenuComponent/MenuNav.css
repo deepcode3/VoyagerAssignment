@@ -912,7 +912,9 @@
   height: 600px;
   width: 1110px;
   position: relative;
-  left: 45px;
+  left: 43px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cancelButton {
   height: 20px;
@@ -1252,7 +1254,7 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    left: 20vw;
+    left: 15vw;
     top: -10vh;
     border-radius: 5px;
   }
@@ -1287,8 +1289,9 @@
 @media only screen and (max-width: 500px) {
   .viewAllPhotos {
     position: relative;
-    left: -23vw;
-    top: 53vh;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10vh;
   }
 }
 @media all and (max-width: 1400px) {
@@ -1303,5 +1306,61 @@
     position: relative;
     left: -17vw;
     top: 70vh;
+  }
+}
+@media only screen and(max-width: 474px) {
+  .modalImage {
+    height: 300px;
+    width: 500px;
+    position: relative;
+    left: 43px;
+    top: 0vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cancelButton {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: -40px;
+    left: 810px;
+    cursor: pointer;
+  }
+  .nextPrevButton {
+    width: 160px;
+    height: 60px;
+    position: relative;
+    left: -280px;
+    top: 510px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media all and (max-width: 1250px) {
+  .modalImage {
+    height: 500px;
+    width: 600px;
+    position: relative;
+    left: 43px;
+    top: 0vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cancelButton {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: -40px;
+    left: 810px;
+    cursor: pointer;
+  }
+  .nextPrevButton {
+    width: 160px;
+    height: 60px;
+    position: relative;
+    left: -280px;
+    top: 510px;
+    display: flex;
+    flex-direction: row;
   }
 }
