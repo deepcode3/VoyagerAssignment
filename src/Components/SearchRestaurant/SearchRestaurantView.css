@@ -2,6 +2,7 @@
   position: relative;
   left: 460px;
   top: 6px;
+  width: 100%;
 }
 
 .clsetter {
@@ -17,15 +18,15 @@
 }
 
 .csemiBg {
-  width: 1920px;
+  width: 100%;
   height: 133px;
 }
 
 .crestaurantsInfo {
   height: 17px;
-  width: 78px;
+  /* width: 78px; */
   color: #3f3f40;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -38,22 +39,22 @@
 .crestaurantLocators {
   position: relative;
   top: -80px;
-  left: -342px;
+  left: 0px;
   height: 44px;
-  width: 2260px;
+  width: 100%;
   background-color: #c5cae238;
 }
 
 .crestaurantLocatorInfo {
   height: 17px;
-  width: 961px;
+  width: 300px;
   color: #6f6f6f;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: 600;
   line-height: 17px;
   position: relative;
-  left: 810px;
+  left: 470px;
   top: 14px;
   word-spacing: 3px;
 }
@@ -63,6 +64,6 @@
   margin-right: auto;
   margin-left: auto;
 }
-.outContainer {
+/* .outContainer {
   width: 100%;
-}
+} */

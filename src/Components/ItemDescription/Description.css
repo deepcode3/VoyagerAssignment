@@ -1,10 +1,14 @@
 .firstmain {
-  /* height: 593px; */
-  width: 634px;
-  /* background-color: blue; */
   position: absolute;
-  top: 134px;
-  left: 479px;
+  top: 240px;
+  /* left: 479px; */
+  width: 100%;
+
+  /* left: 100%; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .desbg {
   position: absolute;
@@ -24,8 +28,8 @@
   letter-spacing: 0;
   line-height: 30px;
   position: relative;
-  left: 150px;
-  top: 230px;
+  left: -141px;
+  top: 180px;
   padding: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -40,36 +44,32 @@
   letter-spacing: 0;
   line-height: 17px;
   position: relative;
-  top: 240px;
-  left: 150px;
+  top: 200px;
+  left: -212px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-.discriptioncontainer {
+/* .discriptioncontainer {
   height: 918px;
-  width: 634px;
+  width: 100%;
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 181px;
+  top: 621px;
   left: 477px;
-}
+} */
 
 .orderdisplay_rectangle {
-  /* height: 1000px; */
-  /* height: 519px; */
-  /* height: 100%; */
   height: fit-content;
   width: 634px;
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   position: relative;
-  /* left: 0px; */
-  left: 150px;
-  top: 270px;
+  left: 0px;
+  top: 220px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
@@ -77,7 +77,6 @@
 .orderitems {
   height: 100px;
   width: 614px;
-
   position: relative;
   top: 20px;
   left: 20px;
@@ -497,4 +496,219 @@ input[type='text']:focus {
   left: 1205px;
   margin: 0px;
   padding: 0px;
+}
+
+.cartprogressbar {
+  position: relative;
+  /* width: 634px; */
+  top: -200px;
+  /* left: -500px; */
+  left: -945px;
+}
+@media all and (max-width: 1060px) {
+  .cartprogressbar {
+    position: relative;
+    left: -875px;
+  }
+  .cartActive {
+    width: 20px;
+    top: 285px;
+    left: 626px;
+  }
+  .cartpartialactiveline {
+    width: 220px;
+    left: 645px;
+  }
+  .Cdeactive2 {
+    width: 20px;
+    position: absolute;
+    top: 287px;
+    left: 865px;
+  }
+  .cartdeactiveline {
+    width: 200px;
+    left: 885px;
+  }
+  .cartdeactivestate {
+    width: 20px;
+    position: absolute;
+    top: 287px;
+    left: 1085px;
+  }
+  .progresscart {
+    height: 12px;
+    left: 623px;
+  }
+  .cartadresstext {
+    height: 12px;
+    left: 833px;
+  }
+  .cartpaymenttext {
+    height: 12px;
+    left: 1063px;
+  }
+  .orderdisplay_rectangle {
+    position: relative;
+    left: 0px;
+    width: 500px;
+    top: 190px;
+  }
+  .dispitemsdiv {
+    width: 500px;
+    left: 170px;
+  }
+  .mention {
+    width: 470px;
+  }
+  .mentiongreyline {
+    width: 470px;
+  }
+  .backbutton {
+    width: 80px;
+    height: 30px;
+    left: 270px;
+  }
+  .back {
+    left: 20px;
+    top: 5px;
+  }
+  .choseaddbtn {
+    width: 120px;
+    height: 30px;
+    top: 20px;
+    left: 365px;
+    margin-bottom: 20px;
+  }
+  .chooseadd {
+    font-size: 12px;
+    left: 8px;
+    top: 7px;
+  }
+  .itemname {
+    font-size: 15px;
+  }
+  .itemtotalcost {
+    left: 400px;
+  }
+  .remove {
+    left: 410px;
+    width: 0px;
+  }
+  .restaurentname {
+    font-size: 20px;
+    left: -72px;
+    top: 160px;
+  }
+  .edtime {
+    left: -143px;
+    top: 170px;
+  }
+}
+@media all and (max-width: 400px) {
+  .cartprogressbar {
+    position: absolute;
+    left: -550px;
+  }
+  .cartActive {
+    width: 15px;
+    left: 610px;
+  }
+  .cartpartialactiveline {
+    width: 120px;
+    left: 625px;
+    top: 292px;
+  }
+  .Cdeactive2 {
+    top: 286px;
+    left: 740px;
+    width: 17px;
+  }
+  .cartdeactiveline {
+    width: 120px;
+    left: 756px;
+    top: 292px;
+  }
+  .cartdeactivestate {
+    top: 286px;
+    left: 876px;
+    width: 17px;
+  }
+  .progresscart {
+    left: 608px;
+    top: 310px;
+  }
+  .cartadresstext {
+    left: 708px;
+    top: 310px;
+  }
+  .cartpaymenttext {
+    left: 858px;
+    top: 310px;
+  }
+  .restaurentname {
+    font-size: 16px;
+    left: 30px;
+  }
+  .edtime {
+    left: -40px;
+  }
+  .dispitemsdiv {
+    left: 15px;
+    width: 330px;
+  }
+  .orderdisplay_rectangle {
+    width: 330px;
+    left: 15px;
+  }
+  .incdeccount {
+    left: 240px;
+    width: 50px;
+    height: 20px;
+  }
+  .number {
+    left: 10px;
+    top: -7px;
+  }
+  .decbutton {
+    top: -3px;
+  }
+  .incbutton {
+    left: 35px;
+    top: 6px;
+  }
+  .itemtotalcost {
+    left: 240px;
+  }
+  .remove {
+    left: 245px;
+  }
+  .addons {
+    font-size: 8px;
+  }
+  .itemname {
+    font-size: 13px;
+  }
+  .mention {
+    width: 300px;
+  }
+  .backbutton {
+    left: 150px;
+    width: 60px;
+  }
+  .back {
+    font-size: 13px;
+    left: 12px;
+  }
+  .choseaddbtn {
+    left: 220px;
+    width: 100px;
+  }
+  .chooseadd {
+    font-size: 11px;
+    left: 2px;
+    top: 5px;
+  }
+  .mentiongreyline {
+    width: 300px;
+  }
 }
