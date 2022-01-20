@@ -7,6 +7,7 @@ import PaymentOption from '../Payment/PaymentOption';
 import PaymentPoints from '../Payment/PaymentPoints';
 import PaymentDeliveryDetails from '../Payment/PaymentDeliveryDetails';
 import PaymentresDetails from '../Payment/PaymentresDetails';
+import { ProfileContext } from '../../Context/ProfileContext';
 import PaymentCardCart from './PaymentCardCart';
 import payback from '../../Assets/Images/payback.png';
 import paynow from '../../Assets/Images/paynow.png';
@@ -81,7 +82,7 @@ const FinalPayment = () => {
           <PaymentresDetails restaurantName={location.state.restaurant} />
         </div>
         <div className='fpayback' onClick={prepay} role='button' onKeyDown={null}>
-          <img src={payback} alt='' />
+          <img src={payback} alt='' className='imgfpayback' />
         </div>
         <div
           className='fpaynow'
@@ -91,26 +92,28 @@ const FinalPayment = () => {
           role='button'
           onKeyDown={null}
         >
-          <img src={paynow} alt='' />
+          <img src={paynow} alt='' className='imgfpaynow' />
         </div>
       </div>
-      <div className='fpayactive'>
-        <img src={cactive} alt='' className='Fpactive' />
-        <p className='fcart'>Cart</p>
-      </div>
-      <div className='FActiveeline'>
-        <img src={activeline} alt='' className='fpactiveline' />
-      </div>
-      <div className='fpayactive2'>
-        <img src={cactive} alt='' className='fpactive2' />
-        <p className='fpadresstext'>Address Details</p>
-      </div>
-      <div className='Fpactiveline2'>
-        <img src={activeline} alt='' className='fpactiveline2' />
-      </div>
-      <div className='fpactive3'>
-        <img src={cactive} alt='' className='fpactivestate3' />
-        <p className='Fpaymenttext'>Payment</p>
+      <div className='finalPayprogressbar'>
+        <div className='fpayactive'>
+          <img src={cactive} alt='' className='Fpactive' />
+          <p className='fcart'>Cart</p>
+        </div>
+        <div className='FActiveeline'>
+          <img src={activeline} alt='' className='fpactiveline' />
+        </div>
+        <div className='fpayactive2'>
+          <img src={cactive} alt='' className='fpactive2' />
+          <p className='fpadresstext'>Address Details</p>
+        </div>
+        <div className='Fpactiveline2'>
+          <img src={activeline} alt='' className='fpactiveline2' />
+        </div>
+        <div className='fpactive3'>
+          <img src={cactive} alt='' className='fpactivestate3' />
+          <p className='Fpaymenttext'>Payment</p>
+        </div>
       </div>
     </div>
   );

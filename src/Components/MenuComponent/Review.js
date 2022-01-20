@@ -13,6 +13,8 @@ import saved from '../../Assets/Icons/saved.png';
 import like from '../../Assets/Icons/like.png';
 import empty from '../../Assets/Images/empty.png';
 import unSelectedLike from '../../Assets/Icons/unSelectedLike.png';
+import reviewButton from '../../Assets/Icons/reviewButton.png';
+import closeButton from '../../Assets/Icons/dismissButton.png';
 import './MenuNav.css';
 import Footer from '../Footer';
 
@@ -40,11 +42,12 @@ const Reviews = () => {
   const [serviceRating, setServiceRating] = useState();
   const [comment, setComment] = useState('');
   const [isLiked, setIsLiked] = useState(false);
+  const [reviewSubmitterClicked, setReviewSubmitterClicked] = useState(false);
   // eslint-disable-next-line object-curly-newline
   const { addReview, reviews, incrementLikes, decrementLikes } = useContext(reviewsContext);
 
   return (
-    <>
+    <div className='menuReviewContainer'>
       <MenuHalfCompo
         searchKey={searchKey}
         location={location}
@@ -53,13 +56,34 @@ const Reviews = () => {
         from='reviews'
       />
       <div className='menuCommomBg'>
-        <div className='overViewBody'>
+        <div className='reViewBody'>
           <span className='reviewsHeading'>Reviews</span>
           <div className='showRecent'>
             <span className='show'>Show :</span>
             <span className='recent'> Recent</span>
           </div>
-          <div className='reviewDisplayer'>
+          {!reviewSubmitterClicked ? (
+            <img
+              src={reviewButton}
+              alt=''
+              className='reviewButton'
+              onClick={() => {
+                setReviewSubmitterClicked(true);
+              }}
+              onKeyDown={null}
+            />
+          ) : (
+            <img
+              src={closeButton}
+              alt=''
+              className='reviewCloseButton'
+              onClick={() => {
+                setReviewSubmitterClicked(false);
+              }}
+              onKeyDown={null}
+            />
+          )}
+          <div className={reviewSubmitterClicked ? 'hideReviewDisplayer' : 'reviewDisplayer'}>
             {reviews ? (
               reviews.map((review) => {
                 return (
@@ -102,7 +126,7 @@ const Reviews = () => {
               </div>
             )}
           </div>
-          <div className='reviewsSubmiter'>
+          <div className={reviewSubmitterClicked ? 'showReviewsSubmiter' : 'reviewsSubmiter'}>
             <span className='reviewsSubmiterHeader'>Rate your experience</span>
             <span className='reviewsSubmiterHeader2'>Food</span>
             <div className='reveiwerBox'>
@@ -370,7 +394,6 @@ const Reviews = () => {
                 className='textArea'
                 cols='40'
                 rows='5'
-                v
                 onChange={(e) => {
                   setComment(e.target.value);
                 }}
@@ -388,9 +411,10 @@ const Reviews = () => {
                     serviceRatings: serviceRating,
                     ratingComment: comment,
                     profile: null,
-                    name: ` ${currentUser.firstname} ${currentUser.lastname}`,
+                    name: 'John Doe',
                     numberOfLikes: 40,
                   });
+                  setReviewSubmitterClicked(false);
                 }
               }}
               role='button'
@@ -404,7 +428,7 @@ const Reviews = () => {
       <div className='footerDivReview'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 export default Reviews;

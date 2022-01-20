@@ -29,7 +29,7 @@
   position: absolute;
   top: 115px;
   height: 1450px;
-  width: 1895px;
+  width: 100%;
 }
 
 .imgcontainer {
@@ -608,5 +608,457 @@
 @media all and (max-width: 550px) {
   .footerDivStatus {
     display: none;
+  }
+}
+@media all and (max-width: 1060px) {
+  .statusbg {
+    width: 100%;
+  }
+  .statuscontainer {
+    width: 700px;
+    height: 500px;
+    left: 150px;
+  }
+  .orderid {
+    font-size: 18px;
+    font-weight: bold;
+    left: 155px;
+  }
+  .orderplacedimg {
+    width: 700px;
+    height: 270px;
+  }
+  .greenicon1 {
+    height: 20px;
+    width: 20px;
+    left: 70px;
+    top: 328px;
+  }
+  .greenicon2 {
+    height: 20px;
+    width: 20px;
+    left: 70px;
+    top: 328px;
+  }
+  .greenicon3 {
+    height: 20px;
+    width: 20px;
+    left: 70px;
+    top: 328px;
+  }
+  .greenicon4 {
+    height: 20px;
+    width: 20px;
+    left: 241px;
+    top: 328px;
+  }
+  .greyicon {
+    height: 20px;
+    width: 20px;
+    left: 241px;
+    top: 328px;
+  }
+  .greyicon2 {
+    height: 20px;
+    width: 20px;
+    left: 410px;
+    top: 328px;
+  }
+  .yellowicon {
+    height: 20px;
+    width: 20px;
+    left: 241px;
+    top: 328px;
+  }
+  .yellowicon2 {
+    height: 20px;
+    width: 20px;
+    left: 410px;
+    top: 328px;
+  }
+  .yellowicon6 {
+    height: 20px;
+    width: 20px;
+    left: 410px;
+    top: 328px;
+  }
+  .greyicon3 {
+    height: 20px;
+    width: 20px;
+    left: 580px;
+    top: 328px;
+  }
+  .greenicondel {
+    height: 20px;
+    width: 20px;
+    left: 580px;
+    top: 328px;
+  }
+  .greeniconbeforedel {
+    height: 20px;
+    width: 20px;
+    left: 410px;
+    top: 328px;
+  }
+  .trackline1 {
+    width: 150px;
+    left: 90px;
+    top: 337px;
+  }
+  .trackline2 {
+    width: 150px;
+    left: 260px;
+    top: 337px;
+  }
+  .trackline3 {
+    width: 150px;
+    left: 430px;
+    top: 337px;
+  }
+  .oispalcedtext {
+    font-size: 12.5px;
+    left: 2px;
+    top: 355px;
+  }
+  .owaitingtext {
+    font-size: 12.5px;
+    left: 2px;
+    top: 355px;
+  }
+  .oaccepttext {
+    font-size: 12.5px;
+    left: 2px;
+    top: 355px;
+  }
+  .inkitchenbefore {
+    font-size: 12.5px;
+    left: 200px;
+    top: 355px;
+  }
+  .inkitchenafter {
+    font-size: 12.5px;
+    left: 200px;
+    top: 355px;
+  }
+  .oaccepttextbefore {
+    font-size: 12.5px;
+    left: 350px;
+    top: 355px;
+  }
+  .oaccepttextafter {
+    font-size: 12.5px;
+    left: 350px;
+    top: 355px;
+  }
+  .outfordeliverytext {
+    font-size: 12.5px;
+    left: 350px;
+    top: 355px;
+  }
+  .deliveredicontext {
+    font-size: 12.5px;
+    left: 530px;
+    top: 355px;
+  }
+  .owaitingfordelafter {
+    font-size: 12.5px;
+    left: 530px;
+    top: 355px;
+  }
+  .owaitingfordelbefore {
+    font-size: 12.5px;
+    left: 530px;
+    top: 355px;
+  }
+  .datetime {
+    font-size: 11.5px;
+    left: 20px;
+    top: 375px;
+  }
+  .datetime2 {
+    font-size: 11.5px;
+    left: 175px;
+    top: 375px;
+  }
+  .datetime3 {
+    font-size: 11.5px;
+    left: 340px;
+    top: 375px;
+  }
+  .datetime4 {
+    font-size: 11.5px;
+    left: 518px;
+    top: 375px;
+  }
+  .cancelordertext {
+    font-size: 12.5px;
+    left: 43px;
+    top: 365px;
+  }
+  .sbacktoorders {
+    width: 100px;
+    top: 450px;
+  }
+  .btext {
+    font-size: 10.5px;
+    left: -7px;
+  }
+  .chatbtn {
+    width: 80px;
+    top: 450px;
+    left: 480px;
+  }
+  .chattxt {
+    font-size: 11.5px;
+    left: 10px;
+  }
+  .orderdlts {
+    width: 90px;
+    top: 450px;
+    left: 580px;
+  }
+  .ordrdlts {
+    font-size: 10.5px;
+    left: -9px;
+  }
+  .statusgreyline {
+    width: 700px;
+    top: 440px;
+  }
+  .ratings {
+    font-size: 12px;
+    top: 405px;
+    left: 520px;
+  }
+  .ohasdeltext {
+    font-size: 18px;
+    top: 200px;
+    left: 220px;
+  }
+}
+@media all and (max-width: 1400px) {
+  .statuscontainer {
+    left: 300px;
+  }
+  .statusbg {
+    width: 1569px;
+  }
+  .orderid {
+    left: 300px;
+  }
+  .modalbgs {
+    left: -45px;
+  }
+}
+@media all and (max-width: 400px) {
+  .statusbg {
+    width: 390px;
+  }
+  .imgcontainer {
+    position: relative;
+    left: 100px;
+    width: 350px;
+  }
+  .orderplacedimg {
+    position: relative;
+    left: -100px;
+    width: 350px;
+  }
+  .statuscontainer {
+    position: relative;
+    width: 350px;
+    left: 10px;
+  }
+  .greenicon1,
+  .greenicon2,
+  .greenicon3,
+  .greenicon4,
+  .greeniconbeforedel,
+  .greenicondel,
+  .greyicon,
+  .greyicon2,
+  .greyicon3,
+  .yellowicon,
+  .yellowicon2,
+  .yellowicon6,
+  .trackline1,
+  .trackline2,
+  .trackline3 {
+    display: none;
+  }
+  .oispalcedtext,
+  .owaitingtext,
+  .oaccepttext {
+    top: 290px;
+    left: -20px;
+  }
+  .cancelordertext,
+  .datetime {
+    top: 310px;
+    left: 0px;
+  }
+  .inkitchenbefore,
+  .inkitchenafter {
+    top: 290px;
+  }
+  .datetime2 {
+    top: 310px;
+  }
+  .oaccepttextbefore,
+  .oaccepttextafter,
+  .outfordeliverytext {
+    left: 10px;
+  }
+  .datetime3 {
+    left: 10px;
+  }
+  .owaitingfordelafter,
+  .owaitingfordelbefore,
+  .deliveredicontext {
+    left: 200px;
+  }
+  .datetime4,
+  .ratings {
+    left: 180px;
+  }
+  .orderid {
+    left: 80px;
+  }
+  .ohasdeltext {
+    left: -30px;
+  }
+  .statusgreyline {
+    width: 345px;
+  }
+  .sbacktoorders {
+    left: 10px;
+  }
+  .chatbtn {
+    left: 160px;
+  }
+  .orderdlts {
+    left: 250px;
+  }
+  .outContainer {
+    width: 390px;
+  }
+  .layoutRestaurentView {
+    width: 300px;
+  }
+  .restaurantSearchBar {
+    width: 300px;
+  }
+  .searchCard {
+    width: 0px;
+  }
+  .restaurantSearch {
+    width: 150px;
+  }
+  .crestaurantLocatorInfo {
+    width: 300px;
+  }
+  .item {
+    width: 200px;
+  }
+  .itemname {
+    width: 200px;
+  }
+  .orderitems {
+    width: 300px;
+  }
+  .remove {
+    width: 30px;
+  }
+  .addons {
+    width: 300px;
+  }
+  .cookinginsdiv {
+    width: 300px;
+  }
+  .choseaddbtn {
+    width: 100px;
+  }
+  .modalbgs {
+    left: 45px;
+    width: 300px;
+  }
+  .statusitemsrectangle {
+    width: 260px;
+    left: 20px;
+  }
+  .orderDetailsTotalCost {
+    left: 165px;
+  }
+  /* .incdeccount {
+    left: 165px;
+  } */
+  /* .remove {
+    left: 165px;
+  } */
+  .spaidamount {
+    left: 140px;
+  }
+  .sfeeamount,
+  .sdiscountamount {
+    left: 150px;
+  }
+  .stotalamount {
+    left: 163px;
+  }
+  .spaymentmethod {
+    top: 120px;
+    left: 50px;
+  }
+  .scredittext {
+    left: 40px;
+  }
+  .statusamountrect {
+    width: 260px;
+    left: 20px;
+  }
+  .statusdelrct {
+    left: 15px;
+    width: 280px;
+  }
+
+  .statusratingrect {
+    width: 290px;
+  }
+  .rectstar5 {
+    left: 242px;
+  }
+  .statusreview {
+    width: 250px;
+  }
+  .statuslastline {
+    width: 250px;
+  }
+  .statussubmit {
+    left: 100px;
+    width: 100px;
+  }
+  .statussubtext {
+    left: 19px;
+    font-size: 16px;
+  }
+  .statusorderdetails {
+    left: 20px;
+    font-size: 17px;
+  }
+  .closinbutton {
+    left: 250px;
+  }
+  .payoitemsorderdfrom {
+    width: 300px;
+  }
+  .cartcomp {
+    width: 100%;
+    height: 100%;
+  }
+  .modaldelivery {
+    width: 270px;
+  }
+  .mdelgreyline {
+    width: 250px;
   }
 }

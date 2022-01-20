@@ -1,38 +1,27 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import Modal from './modal';
 import PaymentCard from './PaymentCard';
-
-// import visaicon from '../../Assets/Icons/visaicon.png';
-// import mastercard from '../../Assets/Iconsmastercard_icon.png'
+import { ProfileContext } from '../../Context/ProfileContext';
 
 const PayAmount = () => {
-  const currentUser = useSelector((state) => {
-    return state.currentUser;
-  });
-  const paymentItems = [...currentUser.cards];
+  const { paymentItems, addItem2, removeItem2 } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
   const initialFormData = Object.freeze({
-    cardNumber: '',
-    cardName: '',
+    cardDigit: '',
+    Name: '',
     expiaryDate: '',
     expiaryYear: '',
     securityNumber: '',
-    cardIcon: [
-      {
-        visa: '../../Assets/Icons/visaicon.png',
-        masterCard: '../../Assets/Iconsmastercard_icon.png',
-      },
-    ],
+    primary: null,
   });
   const [values, setValues] = useState(initialFormData);
   return (
     <Div>
       <div className='recommendation-1'>
-        <span className='my-addresses-2'>Payment Methods</span>
+        <span className='pay-methods'>Payment Methods</span>
         <span
           className='add-new'
           type='button'
@@ -51,7 +40,13 @@ const PayAmount = () => {
             {paymentItems.map((item, index) => {
               return (
                 <li key={index.toString()} className='list'>
-                  <PaymentCard item={item} index={index} />
+                  <PaymentCard
+                    item={item}
+                    removeItem={removeItem2}
+                    index={index}
+                    values={values}
+                    setValues={setValues}
+                  />
                 </li>
               );
             })}
@@ -66,50 +61,86 @@ export default PayAmount;
 
 const Div = styled.div`
   height: 100vh;
-  weidth: 100wh;
+  weidth: 100%;
   display: flex;
   align-items: center;
-  padding:75px 0;
-  flex-direction:column;
+  padding: 75px 0;
+  flex-direction: column;
   position: relative;
   background-color: #f1f3fb;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width: 500px) {
+    height: 60vh;
+  }
   .recommendation-1 {
     width: 930px;
-    display:flex;
+    //width: 80%;
+    height: 24px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 500px) {
+      display: block;
+      width: 320px;
+      position: absolute;
+      top: 10px;
+    }
   }
-  .my-addresses-2 {
+  .pay-methods {
     height: 22px;
-    width: 160px;
     color: #6f6f6f;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-size: 16px;
     letter-spacing: -0.27px;
     line-height: 22px;
-    margin
   }
   .add-new {
     height: 19px;
     width: 83px;
     color: #fda200;
-    font-family: "SF UI Text";
+    font-family: 'SF UI Text';
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 19px;
     text-align: right;
-    margin-left:720px;
+    @media screen and (max-width: 500px) {
+      display: block;
+      position: absolute;
+      top: 2px;
+      margin-left: 230px;
+    }
   }
   .recommendation-2 {
+    // width: 1050px;
+    width: 80%;
     height: 536px;
-    width: 1050px;
+    display: flex;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 12%;
     overflow-y: scroll;
     position: relative;
+    @media screen and (max-width: 500px) {
+      width: 72%;
+      position: relative;
+      padding: 0;
+    }
   }
   .order-1 {
-    width: 1050px;
+    // width: 1050px;
+    width: 100%;
     max-height: 100%;
-  }  
-  .list{
+    padding-left: 11%;
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+  }
+  .list {
     list-style-type: none;
   }
 `;

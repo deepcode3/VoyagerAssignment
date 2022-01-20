@@ -1,28 +1,55 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import banner from '../../Assets/Images/Profilebackground.png';
 import phoneicn from '../../Assets/Icons/phone_icn.png';
 import mailicn from '../../Assets/Icons/mail_icn.png';
 import icnInfo from '../../Assets/Icons/icn_info_small.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
 import Profileroute from '../../Components/Profilerouter/index';
+import { UserContext } from '../../Context/UserContext/index';
+// import Device from '../../DeviceSize';
 
 const Profile = ({ setOpen }) => {
   const currentUser = useSelector((state) => {
     return state.currentUser;
   });
+  console.log(currentUser);
+  const [click, setClick] = useState(false);
+  const [click1, setClick1] = useState(false);
+  const handleClick = () => {
+    setClick(!click);
+  };
+  const handleClick1 = () => {
+    setClick1(!click1);
+  };
   return (
     <>
       <Profilediv>
-        <div className='align'>
-          <div className='mask'>
+        <Container>
+          <MobileProfile onClick={handleClick1} click1={click1}>
             <img src={profilePic} alt='pic' className='profile_img' />
-          </div>
-          <div className='name-section'>
+          </MobileProfile>
+          <MobileIcon onClick={handleClick} click={click}>
+            {click ? <FaTimes /> : <FaBars style={{ color: '#fda200' }} />}
+          </MobileIcon>
+          <ProfileList click1={click1}>
+            <div>
+              {click1 ? (
+                <FaTimes
+                  className='close'
+                  onClick={handleClick1}
+                  style={{ color: 'white', position: 'absolute', left: '600px', top: '40px' }}
+                />
+              ) : null}
+            </div>
+            <div className='profile'>
+              <img src={profilePic} alt='pic' className='profile_img' />
+            </div>
             <span className='username'>{currentUser.username}</span>
             <span
               className='edit'
@@ -35,40 +62,47 @@ const Profile = ({ setOpen }) => {
             >
               Edit
             </span>
-            <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
-            <span className='num'>
-              <img className='phone-icn' src={phoneicn} alt='icn' />
-              {`+${currentUser.countrycode} ${currentUser.mobile}`}
+            <span className='username' onClick={handleClick1} role='button' onKeyDown={null}>
+              {currentUser.firstname}
             </span>
-            <br className='line-3 ' />
-            <span className='abdulla-foodie-com '>
+            <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
+
+            {currentUser.mobile !== undefined ? (
+              <span className='num'>
+                <img className='phone-icn' src={phoneicn} alt='icn' />
+                {`+${currentUser.countrycode} ${currentUser.mobile}`}
+              </span>
+            ) : null}
+
+            <hr className='line-1 ' />
+            <span className='email'>
               <img className='mail-icn' src={mailicn} alt='icn' />
               {currentUser.email}
             </span>
-            <br className='line-3 ' />
+            <hr className='line-2 ' />
             <span className='credits-earned'>Credits earned-</span>
             <span className='credits-num'>256</span>
             <img className='icn-info-small' src={icnInfo} alt='icn' />
-          </div>
+          </ProfileList>
 
-          <ul className='list-container'>
-            <Link to='/profile' className='Link'>
-              <li className='span'>Order</li>
-            </Link>
-            <Link to='/profile/profile-address' className='Link'>
-              <li className='span'>Address</li>
-            </Link>
-            <Link to='/profile/profile-Pay' className='Link'>
-              <li className='span'>Payment Methods</li>
-            </Link>
-            <Link to='/profile-reviews' className='Link'>
-              <li className='span'>Reviews</li>
-            </Link>
-            <Link to='/profile-gallary' className='Link'>
-              <li className='span'>Gallary</li>
-            </Link>
-          </ul>
-        </div>
+          <NavMenu onClick={handleClick} click={click}>
+            <NavLinks to='/profile'>
+              <NavItem>Order</NavItem>
+            </NavLinks>
+            <NavLinks to='/profile/profile-address'>
+              <NavItem>Address</NavItem>
+            </NavLinks>
+            <NavLinks to='/profile/profile-Pay'>
+              <NavItem> Payment Methods</NavItem>
+            </NavLinks>
+            <NavLinks to='/profile-reviews'>
+              <NavItem>Reviews</NavItem>
+            </NavLinks>
+            <NavLinks to='/profile-gallary'>
+              <NavItem>Gallary</NavItem>
+            </NavLinks>
+          </NavMenu>
+        </Container>
       </Profilediv>
       <Profileroute />
     </>
@@ -80,55 +114,107 @@ Profile.propTypes = {
 };
 
 const Profilediv = styled.div`
-  //weidth:100vw;
   height: 262px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url(${banner});
-
-  .align {
-    height: 261px;
-    width: 940px;
-    display: flex;
-    position: relative;
+  background-color: white;
+  @media screen and (max-width: 500px) {
+    margin-top: 20px;
+    height: 100px;
   }
-  .list-container {
-    display: flex;
-    height: 35px;
-    list-style-type: none;
-    padding-left: 0;
+`;
+const MobileProfile = styled.div`
+  height: 109px;
+  width: 109px;
+  border: 3px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 38px;
+  left: 0px;
+  @media screen and (max-width: 500px) {
+    height: 29px;
+    width: 29px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     position: absolute;
-    top: 209px;
-    .list-item {
-      list-style: none;
-      //height: 40px;
-      &:hover {
-        margin-right: 50px;
-        height: 4px;
-        width: 38px;
-        border-radius: 2px;
-        background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
-        box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
-      }
+    top: 35px;
+    left: 300px;
+  }
+`;
+const MobileIcon = styled.div`
+  display: none;
+  backround-color: red;
+  @media screen and (max-width: 500px) {
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: 290px;
+    transform: translate(-100%, 60%);
+    cursor: pointer;
+  }
+`;
+const NavMenu = styled.ul`
+  display: flex;
+  height: 35px;
+  list-style-type: none;
+  padding-left: 0;
+  position: absolute;
+  top: 209px;
+  text-align: center;
+  align-items: center;
+  @media screen and (max-width: 500px) {
+    display: table;
+    position: absolute;
+    // flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+    height: 90vh;
+    padding-top: 100px;
+    top: -110px;
+    left: ${({ click }) => {
+      return click ? 0 : '-100%';
+    }};
+
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: #000000;
+    z-index: 1;
+  }
+`;
+const NavItem = styled.li`
+  list-style: none;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    float: left;
+    display: table-cell;
+    text-align: center;
+    &:hover {
+      border: none;
     }
   }
-  .Link {
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    text-align: center;
-    color: #ffffff;
-    font-family: 'Open Sans';
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 24px;
-    margin-right: 35px;
-  }
-
-  .Link:hover:before {
+`;
+const NavLinks = styled(Link)`
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  font-family: 'Open Sans';
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  margin-right: 2.2rem;
+  &:hover:before {
     content: '';
     height: 4px;
     width: 38px;
@@ -139,27 +225,36 @@ const Profilediv = styled.div`
     background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
     box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
   }
-
-  .Link span {
+  @media screen and (max-width: 500px) {
+    text-align: center;
+    padding: 2rem;
+    width: 95%;
     display: block;
-    width: 100px;
-    height: 40px;
-    padding-top: 20px;
+    font-size: 1.5rem;
+    color: #f57c00;
+    // background-color: #f1f3fb;
+    &:hover {
+      transition: all 0.3s ease;
+    }
   }
-  .mask {
-    height: 109px;
-    width: 109px;
-    border: 3px solid #ffffff;
-    box-sizing: border-box;
-    border-radius: 50%;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+`;
+
+const Container = styled.div`
+  height: 261px;
+  width: 940px;
+  display: flex;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width: 954px) {
+    // display: none;
     position: absolute;
-    top: 38px;
-    left: 0px;
+    cursor: pointer;
+    height: 100px;
   }
   .profile_img {
-    height: 100%;
     width: 100%;
+    height: 100%;
     display: inline-block;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     background-position: 50% 50%;
@@ -167,13 +262,51 @@ const Profilediv = styled.div`
     border-radius: 50%;
     //position: absolute;
   }
-  .name-section {
-    height: 113px;
-    width: 663px;
+`;
+const ProfileList = styled.div`
+  display: flex;
+  height: 113px;
+  width: 663px;
+  position: absolute;
+  top: 38px;
+  left: 164px;
+  padding: 1px;
+  @media screen and (max-width: 500px) {
+    display: flex;
     position: absolute;
-    top: 38px;
-    left: 164px;
-    padding: 1px;
+    flex-direction: column;
+    width: 80%;
+    overflow-y: auto;
+    height: 100vh;
+    top: -105px;
+    left: ${({ click1 }) => {
+      return click1 ? 0 : '-100%';
+    }};
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: #000000;
+    z-index: 1;
+  }
+  .clsoe {
+    display: none;
+    @media screen and (max-width: 954px) {
+      display: block;
+    }
+  }
+  .profile {
+    display: none;
+    @media screen and (max-width: 500px) {
+      display: block;
+      height: 109px;
+      width: 109px;
+      border: 3px solid #ffffff;
+      box-sizing: border-box;
+      border-radius: 50%;
+      box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+      position: absolute;
+      top: 50px;
+      left: 409px;
+    }
   }
   .username {
     height: 42px;
@@ -186,6 +319,11 @@ const Profilediv = styled.div`
     line-height: 42px;
     position: absolute;
     left: 1px;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 330px;
+      top: 200px;
+    }
   }
   .name {
     height: 22px;
@@ -200,6 +338,11 @@ const Profilediv = styled.div`
     justify-content: space-between;
     position: absolute;
     left: 1px;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 330px;
+      top: 260px;
+    }
   }
   .num {
     height: 22px;
@@ -211,18 +354,47 @@ const Profilediv = styled.div`
     display: flex;
     position: absolute;
     top: 86px;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 330px;
+      top: 320px;
+    }
+  }
+  .line-1 {
+    box-sizing: border-box;
+    height: 21px;
+    width: 0.5px;
+    color: 1px solid #ffffff;
+    opacity: 0.37;
+    position: absolute;
+    top: 77px;
+    left: 173px;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
   .phone-icn {
     height: 22px;
     width: 16.5px;
     padding-right: 10px;
+    @media screen and (max-width: 500px) {
+      display: flex;
+    }
   }
-  .mail-icn {
-    height: 18px;
-    width: 25px;
-    padding-right: 10px;
+  .line-2 {
+    box-sizing: border-box;
+    height: 21px;
+    width: 0.5px;
+    color: 1px solid #ffffff;
+    opacity: 0.37;
+    position: absolute;
+    top: 77px;
+    left: 487px;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
-  .abdulla-foodie-com {
+  .email {
     height: 22px;
     color: #ffffff;
     font-family: 'Open Sans';
@@ -231,7 +403,24 @@ const Profilediv = styled.div`
     line-height: 22px;
     position: absolute;
     top: 86px;
-    left: 213px;
+    left: 200px;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 330px;
+      top: 380px;
+      font-size: 12px;
+    }
+  }
+
+  .mail-icn {
+    height: 18px;
+    width: 25px;
+    padding-right: 10px;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 330px;
+      top: 260px;
+    }
   }
   .credits-earned {
     height: 22px;
@@ -241,8 +430,13 @@ const Profilediv = styled.div`
     letter-spacing: 0;
     line-height: 22px;
     top: 86px;
-    left: 443px;
+    left: 510px;
     position: absolute;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 330px;
+      top: 440px;
+    }
   }
   .credits-num {
     height: 33px;
@@ -254,15 +448,25 @@ const Profilediv = styled.div`
     letter-spacing: 0;
     line-height: 33px;
     top: 79px;
-    left: 565px;
+    left: 630px;
     position: absolute;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 450px;
+      top: 435px;
+    }
   }
   .icn-info-small {
     height: 19px;
     width: 19px;
     top: 89px;
-    left: 620px;
+    left: 680px;
     position: absolute;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 400px;
+      top: 500px;
+    }
   }
   .edit {
     height: 19px;
@@ -276,13 +480,21 @@ const Profilediv = styled.div`
     text-align: right;
     position: absolute;
     top: 18px;
-    left: 148px;
+    left: 160px;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      left: 330px;
+      top: 500px;
+    }
   }
   .line-3 {
     box-sizing: border-box;
     height: 21px;
-    width: 3px;
-    border: 1px solid #ffffff;
+    width: 0.5px;
+    color: 1px solid #ffffff;
     opacity: 0.37;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
 `;

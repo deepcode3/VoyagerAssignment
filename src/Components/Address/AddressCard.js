@@ -6,7 +6,6 @@ import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import './Address.css';
 import { findIndex } from '../../Utils';
 import { removeAddress } from '../../Actions/AddressActions';
-
 const AddressCard = ({ item, index }) => {
   const indx = findIndex();
   // const currentUser = useSelector((state) => {
@@ -17,7 +16,12 @@ const AddressCard = ({ item, index }) => {
     <div key={index.toString()} className='address_card'>
       <span className='home'>{`${item.addressLabel}`}</span>
       <div className='check_address'>
-        <img src={icnCheckActive} alt='icn' style={{ float: 'left' }} />
+        <img
+          src={icnCheckActive}
+          alt='icn'
+          style={{ float: 'left' }}
+          className='addresscardcheckbtn'
+        />
       </div>
       <span className='addressline'>{`${item.location}, -${item.city} - ${item.area} - ${item.address}, `}</span>
       <div className='editbtn'>Edit</div>
@@ -37,6 +41,5 @@ const AddressCard = ({ item, index }) => {
 export default AddressCard;
 AddressCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.string).isRequired,
-
   index: PropTypes.number.isRequired,
 };

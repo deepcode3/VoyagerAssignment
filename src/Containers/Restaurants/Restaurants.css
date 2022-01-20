@@ -1,3 +1,7 @@
+.restMainDiv {
+  width: 100%;
+  overflow: hidden;
+}
 .header {
   height: 70px;
   width: 1700px;
@@ -52,7 +56,7 @@
 }
 .restaurantLocators {
   position: relative;
-  top: -80px;
+  top: -83px;
   height: 44px;
   width: 100%;
   background-color: #c5cae238;
@@ -69,9 +73,11 @@
   margin-right: auto;
   margin-top: 13px;
   word-spacing: 3px;
+  position: relative;
+  top: 00px;
 }
 .restaurantHalfBg {
-  top: -78px;
+  top: -80px;
   position: relative;
   background-color: #c5cae238;
   width: 100%;
@@ -146,7 +152,7 @@
   top: 10px;
 }
 .restaurantBody {
-  height: 1140px;
+  height: 800px;
   width: 1150px;
   position: relative;
   top: 50px;
@@ -156,6 +162,7 @@
   margin-left: auto;
   margin-right: auto;
   justify-content: space-between, 10px;
+  padding-bottom: 100px;
 }
 .filterBox {
   height: 665px;
@@ -167,6 +174,17 @@
   left: 270px;
   max-height: 665px;
   overflow-y: scroll;
+}
+.filterCloseButton {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left: 535px;
+  top: -110px;
+}
+
+.hideFilterCloseButton {
+  display: none;
 }
 .filterHeading {
   height: 27px;
@@ -394,6 +412,9 @@
   left: 7px;
 }
 /* Filters Css */
+.resFilterIcon {
+  display: none;
+}
 .timeAndAverageMealCost {
   height: 19px;
   width: 260px;
@@ -663,6 +684,214 @@
   align-items: center;
   margin-right: auto;
   margin-left: auto;
+}
+/*Restaurant Mobile Responsive*/
+@media all and (max-width: 500px) {
+  .semiBg {
+    height: 130px;
+    width: 100%;
+    margin-top: 10%;
+  }
+  .body {
+    width: 100%;
+    position: relative;
+    top: -12vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding-top: 100px;
+  }
+  .bodySeperator {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .restaurantSearchBar {
+    height: 76px;
+    width: 300px;
+    position: relative;
+  }
+  .restaurantsInfo {
+    width: 78px;
+    color: #636364;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    line-height: 17px;
+    position: relative;
+    top: -10px;
+    left: -30px;
+  }
+  .restaurantSearch {
+    height: 40px;
+    width: 300px;
+    position: relative;
+    top: -5px;
+    left: -25px;
+  }
+  .restaurantDateTimeButton {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: -85px;
+    left: 288px;
+  }
+  .restaurantLocators {
+    width: 100%;
+  }
+  .restaurantLocatorInfo {
+    height: 17px;
+    width: 300px;
+    color: #6f6f6f;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13px;
+    word-spacing: 3px;
+    position: relative;
+    left: -20px;
+  }
+  .heading {
+    height: 34px;
+    width: 300px;
+    color: #636364;
+    font-family: 'Open Sans';
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 10px;
+    left: -20px;
+  }
+  .filterBox {
+    display: none;
+  }
+  .mobileFilterBox {
+    height: 590px;
+    width: 304px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 260px;
+    top: -80px;
+    max-height: 665px;
+    overflow-y: scroll;
+    z-index: 1;
+  }
+  .filterOption {
+    position: relative;
+    left: -40px;
+  }
+  .resFilterIcon {
+    display: block;
+    position: relative;
+    top: -25px;
+    left: 205px;
+    width: 30px;
+    height: 30px;
+  }
+  .resBox {
+    height: 166.79px;
+    width: 340px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 210px;
+  }
+  .resImage {
+    height: 80.48px;
+    width: 80.82px;
+    border-radius: 4px;
+    position: relative;
+    left: 15px;
+    top: -15px;
+  }
+  .resName {
+    height: 30px;
+    width: 250px;
+    color: #223136;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: relative;
+    left: 110px;
+  }
+  .resLocation {
+    height: 17px;
+    width: 175px;
+    color: #858484;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 17px;
+    position: relative;
+    top: -70px;
+    left: 110px;
+    text-transform: capitalize;
+  }
+  .resUnderline {
+    box-sizing: border-box;
+    height: 2px;
+    width: 230.3px;
+    border: 1px solid #979797;
+    opacity: 0.1;
+    position: relative;
+    left: 110px;
+    top: -65px;
+  }
+  .resItem {
+    position: relative;
+    left: 110px;
+    top: -55px;
+  }
+  .resStatus {
+    position: relative;
+    left: 20px;
+    top: -25px;
+  }
+  .resDetails {
+    position: relative;
+    left: 20px;
+    top: -65px;
+  }
+  .resRating {
+    position: relative;
+    left: 300px;
+    top: -145px;
+    width: 30px;
+    height: 20px;
+  }
+  .ratingInfo {
+    align-items: center;
+    font-size: 13px;
+    position: relative;
+    left: 3px;
+    top: -2px;
+  }
+  .menuButton {
+    position: relative;
+    left: 250px;
+    top: -75px;
+    height: 25.43px;
+    width: 80.14px;
+  }
+  .restaurantBody {
+    height: fit-content;
+    padding-bottom: 200px;
+  }
 }
 @media (max-width: 550px) {
   .footerDivRest {
