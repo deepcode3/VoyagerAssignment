@@ -7,10 +7,11 @@ import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
 import { findIndex } from '../../Utils';
 import { removeAddress } from '../../Actions/AddressActions';
+
 const AddressCard = ({ item, index, values, setValues }) => {
+  const indx = findIndex();
+  const dispatch = useDispatch();
   const handleClick = (active) => {
-    const indx = findIndex();
-    const dispatch = useDispatch();
     return values === active ? setValues(null) : setValues(active);
   };
 

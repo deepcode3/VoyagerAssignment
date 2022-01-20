@@ -11,7 +11,7 @@ import mailicn from '../../Assets/Icons/mail_icn.png';
 import icnInfo from '../../Assets/Icons/icn_info_small.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
 import Profileroute from '../../Components/Profilerouter/index';
-import { UserContext } from '../../Context/UserContext/index';
+
 // import Device from '../../DeviceSize';
 
 const Profile = ({ setOpen }) => {
@@ -180,14 +180,13 @@ const NavMenu = styled.ul`
     padding-top: 100px;
     top: -110px;
     left: ${({ click }) => {
-      return click ? 0 : '-100%';
-    }};
-
-    opacity: 1;
-    transition: all 0.5s ease;
-    background: #000000;
-    z-index: 1;
-  }
+    return click ? 0 : '-100%';
+  }};
+  opacity: 1;
+  transition: all 0.5s ease;
+  background: #000000;
+  z-index: 1;
+}
 `;
 const NavItem = styled.li`
   list-style: none;
@@ -280,8 +279,8 @@ const ProfileList = styled.div`
     height: 100vh;
     top: -105px;
     left: ${({ click1 }) => {
-      return click1 ? 0 : '-100%';
-    }};
+    return click1 ? 0 : '-100%';
+  }};
     opacity: 1;
     transition: all 0.5s ease;
     background: #000000;

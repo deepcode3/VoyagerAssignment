@@ -6,6 +6,7 @@ import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import './Address.css';
 import { findIndex } from '../../Utils';
 import { removeAddress } from '../../Actions/AddressActions';
+
 const AddressCard = ({ item, index }) => {
   const indx = findIndex();
   // const currentUser = useSelector((state) => {

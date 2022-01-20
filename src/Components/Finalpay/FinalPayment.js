@@ -7,7 +7,6 @@ import PaymentOption from '../Payment/PaymentOption';
 import PaymentPoints from '../Payment/PaymentPoints';
 import PaymentDeliveryDetails from '../Payment/PaymentDeliveryDetails';
 import PaymentresDetails from '../Payment/PaymentresDetails';
-import { ProfileContext } from '../../Context/ProfileContext';
 import PaymentCardCart from './PaymentCardCart';
 import payback from '../../Assets/Images/payback.png';
 import paynow from '../../Assets/Images/paynow.png';

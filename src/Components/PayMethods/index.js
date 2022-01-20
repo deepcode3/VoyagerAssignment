@@ -7,7 +7,7 @@ import PaymentCard from './PaymentCard';
 import { ProfileContext } from '../../Context/ProfileContext';
 
 const PayAmount = () => {
-  const { paymentItems, addItem2, removeItem2 } = useContext(ProfileContext);
+  const { paymentItems, removeItem2 } = useContext(ProfileContext);
   const [open, setOpen] = useState(false);
   const initialFormData = Object.freeze({
     cardDigit: '',

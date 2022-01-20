@@ -10,7 +10,7 @@ import { findIndex } from '../../Utils';
 import Visa from '../../Assets/Icons/visa.png';
 import Mastercard from '../../Assets/Icons/mastercard.png';
 
-const PaymentCard = ({ item, removeItem, index, values, setValues }) => {
+const PaymentCard = ({ item, index, values, setValues }) => {
   const indx = findIndex();
   const dispatch = useDispatch();
   const handleClick = (active) => {

@@ -146,7 +146,6 @@ Model.propTypes = {
   setOpen: PropTypes.func.isRequired,
   setValues: PropTypes.func.isRequired,
   values: PropTypes.objectOf(PropTypes.string).isRequired,
-  addItem: PropTypes.func.isRequired,
 };
 
 const ModalBack = styled.div`
