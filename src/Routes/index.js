@@ -9,8 +9,6 @@ import CartHome from '../Components/CartHome/CartHome';
 import CartAddress from '../Components/Address/Address';
 import Home from '../Containers/Home';
 
-import ReviewContext from '../Context/ReviewContext';
-
 const Cart = lazy(() => {
   return import('../Components/ItemDescription/CartOrders');
 });
@@ -101,9 +99,7 @@ const Routing = () => {
             <OverView />
           </Route>
           <Route path='/:searchKey/:location/reviews/:restaurant/:item'>
-            <ReviewContext>
-              <Reviews />
-            </ReviewContext>
+            <Reviews />
           </Route>
           <Route path='/:searchKey/:location/gallery/:restaurant/:item'>
             <Gallery />
