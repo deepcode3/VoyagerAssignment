@@ -20,7 +20,6 @@ import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import icnMenu from '../../Assets/Icons/menu.png';
 import { signOut } from '../../Actions/LoginActions';
 import LoginLayout from '../LoginLayout';
-import data from '../Footer/data';
 import closeButton from '../../Assets/Icons/close_button.png';
 
 const Header = ({ isHome }) => {
@@ -176,18 +175,6 @@ const Header = ({ isHome }) => {
               >
                 CART
               </LinkTo>
-              {data.map((element) => {
-                return (
-                  <LinkTo
-                    key={element}
-                    onClick={() => {
-                      history.push(`/${element.toLowerCase().replaceAll(' ', '-')}`);
-                    }}
-                  >
-                    {element.toUpperCase()}
-                  </LinkTo>
-                );
-              })}
             </DropDowm>
           ) : null}
         </>
@@ -226,18 +213,6 @@ const Header = ({ isHome }) => {
                 CART
               </LinkTo>
 
-              {data.map((element) => {
-                return (
-                  <LinkTo
-                    key={element}
-                    onClick={() => {
-                      history.push(`/${element.toLowerCase().replaceAll(' ', '-')}`);
-                    }}
-                  >
-                    {element.toUpperCase()}
-                  </LinkTo>
-                );
-              })}
               <LinkTo
                 onClick={() => {
                   handleLogout();

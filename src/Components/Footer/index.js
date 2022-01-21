@@ -9,9 +9,12 @@ const Footer = () => {
     <FooterContainer>
       <FlexRow>
         <Logo />
+
         <Number> 24</Number>
         <Text>CITIES</Text>
+
         <VerticalLine />
+
         <Number>4</Number>
         <Text>COUNTRIES</Text>
       </FlexRow>
@@ -48,10 +51,11 @@ const FlexRow = styled.div`
   height: 50%;
   justify-content: flex-start;
   align-items: center;
-  @media (max-width: 1200px) {
+  @media (max-width: 700px) {
     width: 100%;
   }
 `;
+
 const FlexRowLinks = styled.div`
   display: flex;
   flex-direction: row;
@@ -60,7 +64,7 @@ const FlexRowLinks = styled.div`
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgba(151, 151, 151, 0.19);
-  @media (max-width: 1200px) {
+  @media (max-width: 700px) {
     width: 100%;
   }
 `;
@@ -72,6 +76,7 @@ const FooterLink = styled(NavLink)`
   line-height: 1.1875rem;
   text-decoration: none;
 `;
+
 const Number = styled.p`
   margin-left: 5%;
   padding: 0;

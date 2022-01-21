@@ -1039,15 +1039,7 @@
     padding-bottom: 50vh;
     overflow: hidden;
   }
-  .footerDivGallery {
-    display: none;
-  }
-  .footerDivReview {
-    display: none;
-  }
-  .footerDivOverview {
-    display: none;
-  }
+  
   .menuCommomBg {
     background-color: #c5cae238;
     width: 100%;

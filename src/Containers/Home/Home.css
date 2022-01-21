@@ -158,11 +158,7 @@
     left: 20%;
   }
 }
-@media all and (max-width: 550px) {
-  .footerDivHome {
-    display: none;
-  }
-}
+
 @media all and (max-width: 1400px) {
   .homeBg {
     background-image: url('../../Assets/Images/home-loginBg.png');

@@ -605,11 +605,7 @@
   margin-right: auto;
   margin-left: auto;
 }
-@media all and (max-width: 550px) {
-  .footerDivStatus {
-    display: none;
-  }
-}
+
 @media all and (max-width: 1060px) {
   .statusbg {
     width: 100%;
