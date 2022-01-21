@@ -40,12 +40,7 @@ const FooterContainer = styled.div`
     height: 150px;
   }
 `;
-// const FooterAligner = styled.div`
-//   width: 960px;
-//   position: relative;
-//   margin-left: auto;
-//   margin-right: auto;
-// `;
+
 const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -61,6 +56,7 @@ const FlexRowLinks = styled.div`
   display: flex;
   flex-direction: row;
   width: 50%;
+  height: 30%;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgba(151, 151, 151, 0.19);

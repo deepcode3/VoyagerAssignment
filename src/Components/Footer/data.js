@@ -1,11 +1,2 @@
-const array = [
-  'About',
-  'Careers',
-  'Privacy policy',
-  'Terms & Conditions',
-  'Mobile app',
-  'Blog',
-  'Contact',
-  'Sitemap',
-];
+const array = ['About', 'Privacy policy', 'Terms & Conditions', 'Contact'];
 export default array;
