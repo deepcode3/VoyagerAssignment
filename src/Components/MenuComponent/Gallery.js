@@ -29,8 +29,8 @@ const galleryData = [
 ];
 const Gallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [img, setImg] = useState();
-  const [imgIndex, setIndex] = useState();
+  const [img, setImg] = useState('');
+  const [imgIndex, setIndex] = useState(null);
   const { searchKey } = useParams();
   const { location } = useParams();
   const { restaurant } = useParams();
@@ -75,7 +75,7 @@ const Gallery = () => {
         item={item}
         from='gallery'
       />
-      <div className='menuCommomBg'>
+      <div className='galleryBg'>
         <div className='galleryBody'>
           <div className='galleryFilterButton'>
             <span className='allPhotos'>All Photos</span>
@@ -96,9 +96,9 @@ const Gallery = () => {
             <span className='viewAllArrow'>{'>'}</span>
           </div>
         </div>
-      </div>
-      <div className='footerDivGallery'>
-        <Footer />
+        <div className='footerDivGallery'>
+          <Footer />
+        </div>
       </div>
     </div>
   );

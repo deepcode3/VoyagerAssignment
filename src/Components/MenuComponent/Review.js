@@ -1,11 +1,17 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import moment from 'moment';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addReview,
+  incrementReviewLikes,
+  decrementReviewLikes,
+} from '../../Actions/ReviewsActions';
 import MenuHalfCompo from '../MenuSemiCompo';
-import { reviewsContext } from '../../Context/ReviewContext';
+import Footer from '../Footer';
+import { getRestaurantReviews } from '../../Utils';
 import selectedRatingStar from '../../Assets/Icons/ratingStar.png';
 import nonSelectedRatingStar from '../../Assets/Icons/icn_star_red.png';
 import whiteStar from '../../Assets/Icons/whiteStar.png';
@@ -16,12 +22,15 @@ import unSelectedLike from '../../Assets/Icons/unSelectedLike.png';
 import reviewButton from '../../Assets/Icons/reviewButton.png';
 import closeButton from '../../Assets/Icons/dismissButton.png';
 import './MenuNav.css';
-import Footer from '../Footer';
 
 const Reviews = () => {
+  const reviews = useSelector((state) => {
+    return state.reviews;
+  });
   const currentUser = useSelector((state) => {
     return state.currentUser;
   });
+  const dispatch = useDispatch();
   const { searchKey } = useParams();
   const { location } = useParams();
   const { restaurant } = useParams();
@@ -43,8 +52,6 @@ const Reviews = () => {
   const [comment, setComment] = useState('');
   const [isLiked, setIsLiked] = useState(false);
   const [reviewSubmitterClicked, setReviewSubmitterClicked] = useState(false);
-  // eslint-disable-next-line object-curly-newline
-  const { addReview, reviews, incrementLikes, decrementLikes } = useContext(reviewsContext);
 
   return (
     <div className='menuReviewContainer'>
@@ -55,7 +62,7 @@ const Reviews = () => {
         item={item}
         from='reviews'
       />
-      <div className='menuCommomBg'>
+      <div className='reviewsBg'>
         <div className='reViewBody'>
           <span className='reviewsHeading'>Reviews</span>
           <div className='showRecent'>
@@ -84,41 +91,56 @@ const Reviews = () => {
             />
           )}
           <div className={reviewSubmitterClicked ? 'hideReviewDisplayer' : 'reviewDisplayer'}>
-            {reviews ? (
-              reviews.map((review) => {
-                return (
-                  <div className='reviewCard'>
-                    <div className='profilePic' />
-                    <div className='userName'>{review.name}</div>
-                    <span className='reviewsAndRatings'>2 reviews, 30 Ratings</span>
-                    <div className='ratingBox'>
-                      <img src={whiteStar} alt='' className='whiteStar' />
-                      <span className='ratingNumber'>
-                        {((review.rating + review.serviceRatings) / 2).toFixed(0)}
-                      </span>
-                    </div>
-                    <p className='cartComment'>{review.ratingComment}</p>
-                    <div className='commentDate'>
-                      {moment(new Date()).format('MMMM[ ]DD[, ]YYYY')}
-                    </div>
-                    <div
-                      className='likeBox'
-                      onClick={() => {
-                        setIsLiked(true);
-                      }}
-                      role='button'
-                      onKeyDown={null}
-                    >
-                      <img src={isLiked ? like : unSelectedLike} alt='' className='selectedLike' />
-                      <span
-                        className={isLiked ? 'selectedNumberOfLikes' : 'unSelectedNumberOfLikes'}
+            {reviews.length !== 0 && getRestaurantReviews(restaurant) > 0 ? (
+              reviews
+                .filter((review) => {
+                  return review.restaurant === restaurant;
+                })
+                .map((review, index) => {
+                  return (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <div className='reviewCard' key={index}>
+                      <div className='profilePic' />
+                      <div className='userName'>{review.name}</div>
+                      <span className='reviewsAndRatings'>2 reviews, 30 Ratings</span>
+                      <div className='ratingBox'>
+                        <img src={whiteStar} alt='' className='whiteStar' />
+                        <span className='ratingNumber'>
+                          {((review.rating + review.serviceRatings) / 2).toFixed(0)}
+                        </span>
+                      </div>
+                      <p className='cartComment'>{review.ratingComment}</p>
+                      <div className='commentDate'>
+                        {moment(new Date()).format('MMMM[ ]DD[, ]YYYY')}
+                      </div>
+                      <div
+                        className='likeBox'
+                        onClick={() => {
+                          setIsLiked(true);
+                        }}
+                        role='button'
+                        onKeyDown={null}
                       >
-                        40
-                      </span>
+                        <img
+                          src={isLiked ? like : unSelectedLike}
+                          alt=''
+                          className='selectedLike'
+                          onClick={
+                            !isLiked
+                              ? useDispatch(incrementReviewLikes(index))
+                              : useDispatch(decrementReviewLikes(index))
+                          }
+                          onKeyDown={null}
+                        />
+                        <span
+                          className={isLiked ? 'selectedNumberOfLikes' : 'unSelectedNumberOfLikes'}
+                        >
+                          40
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                );
-              })
+                  );
+                })
             ) : (
               <div className='emptyReviews'>
                 <img src={empty} alt='' className='reviewEmptyImg' />
@@ -405,17 +427,25 @@ const Reviews = () => {
             <div
               className='submitButton'
               onClick={() => {
-                if (foodSaved && serviceSaved) {
-                  addReview({
-                    rating: foodRating,
-                    serviceRatings: serviceRating,
-                    ratingComment: comment,
-                    profile: null,
-                    name: 'John Doe',
-                    numberOfLikes: 40,
-                  });
-                  setReviewSubmitterClicked(false);
+                if (currentUser) {
+                  if (foodSaved && serviceSaved) {
+                    setReviewSubmitterClicked(false);
+                    return dispatch(
+                      addReview({
+                        restaurant,
+                        rating: foodRating,
+                        serviceRatings: serviceRating,
+                        ratingComment: comment,
+                        name: currentUser.firstname,
+                        email: currentUser.email,
+                        numberOfLikes: 0,
+                      })
+                    );
+                  }
+                } else {
+                  alert('PLEASE LOGIN TO REVIEW');
                 }
+                return null;
               }}
               role='button'
               onKeyDown={null}
@@ -424,9 +454,9 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className='footerDivReview'>
-        <Footer />
+        <div className='footerDivReview'>
+          <Footer />
+        </div>
       </div>
     </div>
   );
