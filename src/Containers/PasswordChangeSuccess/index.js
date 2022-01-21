@@ -89,7 +89,6 @@ const BlackText = styled.p`
   padding-left: 1%;
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
-
 `;
 const Description = styled.p`
   height: 38px;
@@ -103,7 +102,7 @@ const Description = styled.p`
   margin-bottom: 22.75%;
   @media (max-width: 550px) {
     line-height: 15px;
-    margin-bottom:30%;
-    margin-top:6.25%
+    margin-bottom: 30%;
+    margin-top: 6.25%;
   }
 `;

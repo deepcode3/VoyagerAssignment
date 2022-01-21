@@ -64,7 +64,7 @@ const OverView = () => {
             </div>
           </div>
           <div className='openingHours'>
-            <span openingHoursText>Opening Hours</span>
+            <span className='openingHoursText'>Opening Hours</span>
             <div className='openingHoursDiv'>
               <div className='presentDayTimming'>
                 <span className='presentDate'>
@@ -87,9 +87,9 @@ const OverView = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className='footerDivOverview'>
-        <Footer />
+        <div className='footerDivOverview'>
+          <Footer />
+        </div>
       </div>
     </div>
   );

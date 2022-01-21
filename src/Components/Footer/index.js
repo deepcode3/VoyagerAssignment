@@ -64,7 +64,6 @@ const FlexRowLinks = styled.div`
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgba(151, 151, 151, 0.19);
-  padding-top: 2%;
   @media (max-width: 1200px) {
     width: 100%;
   }

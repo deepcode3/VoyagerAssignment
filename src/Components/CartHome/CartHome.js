@@ -1,36 +1,46 @@
-import { React, useContext } from 'react';
+import { React } from 'react';
 // import Cartdata from './CartData';
+import { useSelector } from 'react-redux';
 import Cartlist from './CartList';
 import './CartHome.css';
-import { cartContext } from '../../Context/CartContext';
 import data from '../RestaurentsData/data';
+import { restaurantItemsCount, totalPrice } from '../../Utils';
 
 const CartHome = () => {
-  // const [cartifo] = useState(Cartdata);
-  const { cartItems, restaurantItemsCount, totalPrice } = useContext(cartContext);
-  console.log(cartItems);
-  console.log(restaurantItemsCount('Iran Zamin Restaurent and Cafe'));
-  const resdata = data.filter((obj) => {
-    return restaurantItemsCount(obj.name) !== 0;
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
   });
+  let resdata = null;
+  if (currentUser !== null) {
+    resdata = data.filter((obj) => {
+      return restaurantItemsCount(obj.name, currentUser) !== 0;
+    });
+  }
+
   return (
     <div className='cartbg'>
-      <p className='mycarttext'>
-        My Cart
-        <span>{`(${resdata.length})`}</span>
-      </p>
-      {resdata.map((val) => {
-        // eslint-disable-next-line react/jsx-wrap-multilines
-        return (
-          <Cartlist
-            key={val.name}
-            Hotelname={val.name}
-            hoteladdress={val.location}
-            totalproduct={restaurantItemsCount(val.name)}
-            productcost={totalPrice(val.name)}
-          />
-        );
-      })}
+      {currentUser === null ? (
+        <p className='logintext'>Please login to check your cart</p>
+      ) : (
+        <>
+          <p className='mycarttext'>
+            My Cart
+            <span>{`(${resdata.length})`}</span>
+          </p>
+          {resdata.map((val) => {
+            // eslint-disable-next-line react/jsx-wrap-multilines
+            return (
+              <Cartlist
+                key={val.name}
+                Hotelname={val.name}
+                hoteladdress={val.location}
+                totalproduct={restaurantItemsCount(val.name, currentUser)}
+                productcost={totalPrice(val.name, currentUser)}
+              />
+            );
+          })}
+        </>
+      )}
     </div>
   );
 };

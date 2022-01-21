@@ -90,7 +90,6 @@ const BackButton = styled.button`
       top: -220px;
     }
   }
-
 `;
 
 const StyledImg = styled.img`

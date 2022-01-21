@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -8,10 +9,10 @@ import StyledButton from '../../Components/CommonButton/index';
 import icnVerified from '../../Assets/Icons/icn_verified_icon.png';
 import InputField from '../../Components/LoginComponents/InputField';
 import BackIcon from '../../Assets/Icons/back_icon.png';
-import { AccountsContext } from '../../Context/AccountsContext';
+import { changePassword } from '../../Actions/AccountActions';
 
 const PasswordChange = ({ setPageStatus, email, mobile, selectedCode, inputType }) => {
-  const { changePassword } = useContext(AccountsContext);
+  const dispatch = useDispatch();
   const schema = yup.object().shape({
     password: yup.string().required('Password is required'),
   });
@@ -24,14 +25,16 @@ const PasswordChange = ({ setPageStatus, email, mobile, selectedCode, inputType 
   });
   const submitForm = (data) => {
     if (inputType === 'email') {
-      changePassword({ email, password: data.password, type: 'email' });
+      dispatch(changePassword({ email, password: data.password, type: 'email' }));
     } else {
-      changePassword({
-        countrycode: selectedCode,
-        mobile,
-        password: data.password,
-        type: 'mobile',
-      });
+      dispatch(
+        changePassword({
+          countrycode: selectedCode,
+          mobile,
+          password: data.password,
+          type: 'mobile',
+        })
+      );
     }
     setPageStatus('password-change-success');
   };
@@ -103,7 +106,6 @@ const BackButton = styled.button`
       height: 13px;
       position: relative;
       top: -220px;
-
     }
   }
 `;

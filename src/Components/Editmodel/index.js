@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useContext } from 'react';
+import React from 'react';
 import * as yup from 'yup';
+import { useDispatch, useSelector } from 'react-redux';
 import { yupResolver } from '@hookform/resolvers/yup';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
@@ -17,11 +18,11 @@ import icnDonut from '../../Assets/Icons/icn_donut.png';
 import icnFrenchfries from '../../Assets/Icons/icn_frenchfries.png';
 import icnIcecream from '../../Assets/Icons/icn_icecream.png';
 import icnPizza from '../../Assets/Icons/icn_pizza.png';
-import { AccountsContext } from '../../Context/AccountsContext';
-import { UserContext } from '../../Context/UserContext';
 import InputField from '../LoginComponents/InputField';
 import StyledButton from '../CommonButton/index';
 import OutsideAlerter from '../OutsideClickAlerter';
+import { editProfile } from '../../Actions/AccountActions';
+import { signIn } from '../../Actions/LoginActions';
 
 const EditModal = ({ setOpen }) => {
   const schema = yup.object().shape({
@@ -29,8 +30,10 @@ const EditModal = ({ setOpen }) => {
     mobilenumber: yup.string().required('mobile number is required'),
     fullname: yup.string().required('Name is required'),
   });
-  const { editProfile } = useContext(AccountsContext);
-  const { currentUser, setUser } = useContext(UserContext);
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -39,22 +42,24 @@ const EditModal = ({ setOpen }) => {
     resolver: yupResolver(schema),
   });
   const submitForm = (data) => {
-    console.log(data);
-    editProfile({
-      email: currentUser.email,
-      username: data.username,
-      fullname: data.fullname,
-      mobilenumber: data.mobilenumber,
-    });
-    setUser({
-      countrycode: data.mobilenumber.split(' ')[0],
-      email: currentUser.email,
-      firstname: data.fullname.split(' ')[0],
-      lastname: data.fullname.split(' ')[1],
-      mobile: data.mobilenumber.split(' ')[1],
-      password: currentUser.password,
-      username: data.username,
-    });
+    dispatch(
+      editProfile({
+        email: currentUser.email,
+        username: data.username,
+        fullname: data.fullname,
+        mobilenumber: data.mobilenumber,
+      })
+    );
+    dispatch(
+      signIn({
+        ...currentUser,
+        countrycode: data.mobilenumber.split(' ')[0],
+        firstname: data.fullname.split(' ')[0],
+        lastname: data.fullname.split(' ')[1],
+        mobile: data.mobilenumber.split(' ')[1],
+        username: data.username,
+      })
+    );
     setOpen(false);
   };
   return (

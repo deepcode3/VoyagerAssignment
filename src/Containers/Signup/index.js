@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useForm } from 'react-hook-form';
@@ -10,10 +10,9 @@ import StyledButton from '../../Components/CommonButton/index';
 import TextWithButton from '../../Components/LoginComponents/TextWithButton';
 import LoginOptions from '../../Components/LoginComponents/LoginOptions';
 import closeButton from '../../Assets/Icons/close_button.png';
-import { AccountsContext } from '../../Context/AccountsContext';
+import { checkIfAccountExists } from '../../Utils';
 
 const Signup = ({ setModalIsOpen, setPageStatus, setEmail }) => {
-  const { checkIfAccountExists } = useContext(AccountsContext);
   const schema = yup.object().shape({
     email: yup.string().email('Invalid email address').required(),
   });
@@ -34,7 +33,6 @@ const Signup = ({ setModalIsOpen, setPageStatus, setEmail }) => {
   };
   const submitForm = (data) => {
     const result = checkIfAccountExists(data);
-
     if (result === 'Email id is not registered') {
       setEmail(data.email);
       setPageStatus('otp-verification');
@@ -123,7 +121,6 @@ const BlackText = styled.p`
   text-shadow: 1px 0 #2a2c30;
   letter-spacing: 0.5px;
   @media (max-width: 550px) {
-   
     line-height: 25px;
   }
 `;
@@ -151,7 +148,6 @@ const DataContainer = styled.form`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 550px) {
-  
     margin-bottom: 3.5%;
     margin-top: 4.5%;
   }

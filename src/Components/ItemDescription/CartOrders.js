@@ -1,22 +1,25 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import Proptypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Items from './Items';
-import { cartContext } from '../../Context/CartContext';
 import empty from '../../Assets/Images/empty.png';
 import './Description.css';
 import cactive from '../../Assets/Icons/Active state.png';
 import partialActive from '../../Assets/Icons/partialactive.png';
 import deactive from '../../Assets/Icons/deactive state.png';
+import { itemsOfRestaurant } from '../../Utils';
 
 const Cart = () => {
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
   const location = useLocation();
   const history = useHistory();
-  const { itemsOfRestaurant } = useContext(cartContext);
-  const items = itemsOfRestaurant(location.state.restaurant);
+  const items = itemsOfRestaurant(location.state.restaurant, currentUser);
   return (
     <div className='dbgbody'>
       {items === null ? (

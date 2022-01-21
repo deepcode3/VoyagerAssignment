@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useState, useContext } from 'react';
+/* eslint-disable indent */
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import banner from '../../Assets/Images/Profilebackground.png';
@@ -10,11 +12,12 @@ import mailicn from '../../Assets/Icons/mail_icn.png';
 import icnInfo from '../../Assets/Icons/icn_info_small.png';
 import profilePic from '../../Assets/Images/profile_pic.png';
 import Profileroute from '../../Components/Profilerouter/index';
-import { UserContext } from '../../Context/UserContext/index';
 // import Device from '../../DeviceSize';
 
 const Profile = ({ setOpen }) => {
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
   console.log(currentUser);
   const [click, setClick] = useState(false);
   const [click1, setClick1] = useState(false);

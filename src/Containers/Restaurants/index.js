@@ -328,7 +328,7 @@ const Restaurant = ({ data, searchKey, location }) => {
 };
 export default Restaurant;
 Restaurant.propTypes = {
-  data: PropTypes.arrayOf.isRequired,
+  data: PropTypes.instanceOf(Object).isRequired,
   searchKey: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
 };

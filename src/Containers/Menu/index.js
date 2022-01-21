@@ -6,10 +6,11 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable operator-linebreak */
-import React, { useContext, useState } from 'react';
+/* eslint-disable no-alert */
+import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
-import { cartContext } from '../../Context/CartContext';
 import searchIcon from '../../Assets/Icons/searchIcon.png';
 import item1 from '../../Assets/Images/item1.png';
 import item2 from '../../Assets/Images/item2.jpeg';
@@ -32,8 +33,24 @@ import catButton from '../../Assets/Icons/cart.png';
 import menuCartCloseButton from '../../Assets/Icons/dismissButton.png';
 import './Menu.css';
 import Footer from '../../Components/Footer';
+import {
+  addItem,
+  removeItem,
+  increaseItemQuantity,
+  decreaseItemQuantity,
+  removeAllRestaurantItems,
+} from '../../Actions/CartActions';
+import { findIndex, itemsOfRestaurant, totalPrice } from '../../Utils';
 
 const Menu = () => {
+  let index = 0;
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
+  if (currentUser !== null) {
+    index = findIndex();
+  }
+  const dispatch = useDispatch();
   const { searchKey } = useParams();
   const { location } = useParams();
   const { restaurant } = useParams();
@@ -42,16 +59,6 @@ const Menu = () => {
   const [costDeatilsButton, setcostDetailsButton] = useState(false);
   const [isCartClicked, setIsCartClicked] = useState(false);
   const history = useHistory();
-  const {
-    cartItems,
-    addItem,
-    deleteItem,
-    removeAllRestaurantItems,
-    increaseItemQuantity,
-    decreaseItemQuantity,
-    totalPrice,
-    itemsOfRestaurant,
-  } = useContext(cartContext);
   const data = [
     {
       name: 'Chilli Cheese Meal',
@@ -164,9 +171,9 @@ const Menu = () => {
     },
   ];
   const isItemInCart = (item) => {
-    if (cartItems) {
+    if (currentUser.cart.length !== 0) {
       // eslint-disable-next-line no-restricted-syntax
-      for (const value of Object.values(cartItems)) {
+      for (const value of Object.values(currentUser.cart)) {
         if (value.item === item.name && value.restaurant === restaurant && value.status === true) {
           return true;
         }
@@ -176,7 +183,7 @@ const Menu = () => {
   };
   const getTotalPriceWithDiscount = (restaurant) => {
     const discount = 24.22;
-    const totalprice = totalPrice(restaurant);
+    const totalprice = totalPrice(restaurant, currentUser);
     if (totalprice !== 0) return totalprice + 10 - discount;
     return 0;
   };
@@ -223,13 +230,13 @@ const Menu = () => {
             />
           )}
           <div className={isCartClicked ? 'dispMenuCart' : 'menuCart'}>
-            {itemsOfRestaurant(restaurant) !== null ? (
+            {currentUser !== null && itemsOfRestaurant(restaurant, currentUser) !== null ? (
               <>
                 <div className='menuCartHeader'>My Order</div>
                 <div
                   className='menuClearCart'
                   onClick={() => {
-                    removeAllRestaurantItems(restaurant);
+                    dispatch(removeAllRestaurantItems(restaurant, index));
                   }}
                   role='button'
                   onKeyDown={null}
@@ -238,7 +245,7 @@ const Menu = () => {
                 </div>
                 <div className='menuCartLine1' />
                 <div className='menuCartItems'>
-                  {Object.values(cartItems)
+                  {Object.values(currentUser.cart)
                     // eslint-disable-next-line array-callback-return
                     // eslint-disable-next-line consistent-return
                     .filter((value) => {
@@ -266,7 +273,7 @@ const Menu = () => {
                               className='decreseButton'
                               alt=''
                               onClick={() => {
-                                return decreaseItemQuantity(item.item, restaurant);
+                                return dispatch(decreaseItemQuantity(item.item, restaurant, index));
                               }}
                               onKeyDown={null}
                             />
@@ -276,7 +283,7 @@ const Menu = () => {
                               className='increaseButton'
                               alt=''
                               onClick={() => {
-                                return increaseItemQuantity(item.item, restaurant);
+                                return dispatch(increaseItemQuantity(item.item, restaurant, index));
                               }}
                               onKeyDown={null}
                             />
@@ -299,7 +306,7 @@ const Menu = () => {
                                 : 'menuCartRemove2'
                             }
                             onClick={() => {
-                              return deleteItem(item.item, restaurant);
+                              return dispatch(removeItem(item.item, restaurant, index));
                             }}
                             role='button'
                             onKeyDown={null}
@@ -423,7 +430,7 @@ const Menu = () => {
                       ) : (
                         <div className='bestSellerIcon' />
                       )}
-                      {isItemInCart(item) ? (
+                      {currentUser !== null && isItemInCart(item) ? (
                         <>
                           <span
                             className={item.bestSeller ? 'alreadyInCart' : 'alreadyInCart1'}
@@ -436,7 +443,7 @@ const Menu = () => {
                               item.bestSeller ? 'addAgainToCartButton' : 'addAgainToCartButton1'
                             }
                             onClick={() => {
-                              return increaseItemQuantity(item.name, restaurant);
+                              return dispatch(increaseItemQuantity(item.name, restaurant, index));
                             }}
                             role='button'
                             onKeyDown={null}
@@ -448,16 +455,25 @@ const Menu = () => {
                         <div
                           className={item.bestSeller ? 'addToCart' : 'addToCart1'}
                           onClick={() => {
-                            return addItem({
-                              restaurant,
-                              item: item.name,
-                              price: item.cost,
-                              icon: item.image,
-                              isCustomizable: item.customizable,
-                              isVeg: item.Type === 'non-veg',
-                              status: true,
-                              quantity: 1,
-                            });
+                            if (currentUser === null) {
+                              alert('Please login to your account');
+                            } else {
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
+                            }
                           }}
                           role='button'
                           onKeyDown={null}
@@ -517,7 +533,7 @@ const Menu = () => {
                       ) : (
                         <div className='bestSellerIcon' />
                       )}
-                      {isItemInCart(item) ? (
+                      {currentUser !== null && isItemInCart(item) ? (
                         <>
                           <span
                             className={
@@ -534,7 +550,7 @@ const Menu = () => {
                                 : 'apptizeraddAgainToCartButton1'
                             }
                             onClick={() => {
-                              return increaseItemQuantity(item.name, restaurant);
+                              return dispatch(increaseItemQuantity(item.name, restaurant, index));
                             }}
                             role='button'
                             onKeyDown={null}
@@ -546,16 +562,25 @@ const Menu = () => {
                         <div
                           className={item.bestSeller ? 'apptizeraddToCart' : 'apptizeraddToCart'}
                           onClick={() => {
-                            return addItem({
-                              restaurant,
-                              item: item.name,
-                              price: item.cost,
-                              icon: item.image,
-                              isCustomizable: item.customizable,
-                              isVeg: item.Type === 'non-veg',
-                              status: true,
-                              quantity: 1,
-                            });
+                            if (currentUser === null) {
+                              alert('Please login to your account');
+                            } else {
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
+                            }
                           }}
                           role='button'
                           onKeyDown={null}
@@ -601,7 +626,7 @@ const Menu = () => {
                       {item.bestSeller === true ? (
                         <img className='bestSellerIcon' src={bestSeller} alt='' />
                       ) : null}
-                      {isItemInCart(item) ? (
+                      {currentUser !== null && isItemInCart(item) ? (
                         <>
                           <span
                             className={
@@ -618,7 +643,7 @@ const Menu = () => {
                                 : 'soupsAddAgainToCartButton1'
                             }
                             onClick={() => {
-                              return increaseItemQuantity(item.name, restaurant);
+                              return dispatch(increaseItemQuantity(item.name, restaurant, index));
                             }}
                             onKeyDown={null}
                             role='button'
@@ -630,16 +655,25 @@ const Menu = () => {
                         <div
                           className={item.bestSeller ? 'soupsAddToCart' : 'soupsAddToCart1'}
                           onClick={() => {
-                            return addItem({
-                              restaurant,
-                              item: item.name,
-                              price: item.cost,
-                              icon: item.image,
-                              isCustomizable: item.customizable,
-                              isVeg: item.Type === 'non-veg',
-                              status: true,
-                              quantity: 1,
-                            });
+                            if (currentUser === null) {
+                              alert('Please login to your account');
+                            } else {
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
+                            }
                           }}
                           role='button'
                           onKeyDown={null}

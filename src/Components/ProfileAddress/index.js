@@ -1,12 +1,15 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ProfileContext } from '../../Context/ProfileContext';
+import { useSelector } from 'react-redux';
 import Modal from './modal';
 import AddressCard from './AddressCard';
 
 const Address = () => {
-  const { addressItems, addItem1, removeItem1 } = useContext(ProfileContext);
+  const currentUser = useSelector((state) => {
+    return state.currentUser;
+  });
+  const addressItems = [...currentUser.address];
   const [open, setOpen] = useState(false);
   const initialFormData = Object.freeze({
     location: '',
@@ -40,20 +43,14 @@ const Address = () => {
             {addressItems.map((item, index) => {
               return (
                 <li key={index.toString()} className='list'>
-                  <AddressCard
-                    item={item}
-                    removeItem={removeItem1}
-                    index={index}
-                    values={values}
-                    setValues={setValues}
-                  />
+                  <AddressCard item={item} index={index} values={values} setValues={setValues} />
                 </li>
               );
             })}
           </ul>
         </div>
       </div>
-      {open && <Modal setOpen={setOpen} values={values} setValues={setValues} addItem={addItem1} />}
+      {open && <Modal setOpen={setOpen} values={values} setValues={setValues} />}
     </Div>
   );
 };
