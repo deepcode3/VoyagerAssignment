@@ -452,6 +452,12 @@
 
 /*Mobile responsive  */
 @media only screen and (max-width: 500px) {
+  .menuHeader {
+    position: relative;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .semiBg {
     height: 130px;
     width: 100%;

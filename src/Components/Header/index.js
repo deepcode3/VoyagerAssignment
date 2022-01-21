@@ -266,7 +266,7 @@ const MenuIcon = styled.button`
   }
 `;
 const DropDowm = styled.div`
-  width: 180px;
+  width: 50%;
   height: auto;
   background-color: #ffffff;
   border-radius: 5px;
@@ -275,8 +275,8 @@ const DropDowm = styled.div`
   z-index: 99;
   position: absolute;
   justify-content: space-around;
-  top: 3px;
-  margin-left: 46%;
+  top: 20%;
+  margin-left: 43%;
   padding: 4px;
 `;
 const Closebutton = styled.button`
@@ -285,19 +285,19 @@ const Closebutton = styled.button`
   background-color: transparent;
   border: none;
   position: absolute;
-  top: 3%;
+  top: 3px;
   right: 5%;
 `;
 const LinkTo = styled.button`
   width: 90%;
-  height: 2.4rem;
+  height: 2.7rem;
   background-color: transparent;
   color: #dd5335;
   border: none;
   cursor: pointer;
   text-align: left;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   letter-spacing: 0.5px;
   background-clip: text;
   background: -webkit-linear-gradient(138.33deg, #feb456 0%, #ee4e78 100%);

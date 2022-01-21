@@ -9,12 +9,9 @@ const Footer = () => {
     <FooterContainer>
       <FlexRow>
         <Logo />
-
         <Number> 24</Number>
         <Text>CITIES</Text>
-
         <VerticalLine />
-
         <Number>4</Number>
         <Text>COUNTRIES</Text>
       </FlexRow>
