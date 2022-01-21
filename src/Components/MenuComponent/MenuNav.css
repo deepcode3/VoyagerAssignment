@@ -4,7 +4,24 @@
   height: fit-content;
   position: absolute;
   top: 500px;
-  padding-bottom: 800px;
+  padding-bottom: 45%;
+}
+.reviewsBg {
+  background-color: #c5cae238;
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 450px;
+  margin-bottom: 10px;
+  padding-bottom: 20%;
+}
+.galleryBg {
+  background-color: #c5cae238;
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 500px;
+  padding-bottom: 50vh;
 }
 .overViewContainer {
   width: 100%;
@@ -188,6 +205,16 @@
   position: absolute;
   top: 400px;
   left: 10px;
+}
+.openingHoursText {
+  height: 22px;
+  width: 115px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
 }
 .openingHoursDiv {
   height: 178px;
@@ -989,19 +1016,29 @@
 }
 .footerDivReview {
   position: relative;
-  align-items: center;
   margin-right: auto;
   margin-left: auto;
   display: block;
+  top: 45vh;
 }
 .footerDivGallery {
-  top: 270px;
+  top: 80vh;
   position: relative;
-  align-items: center;
-  margin-right: auto;
-  margin-left: auto;
+}
+.footerDivOverview {
+  position: relative;
+  top: 80vh;
 }
 @media all and (max-width: 500px) {
+  .galleryBg {
+    background-color: #c5cae238;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 470px;
+    padding-bottom: 50vh;
+    overflow: hidden;
+  }
   .footerDivGallery {
     display: none;
   }
@@ -1017,7 +1054,8 @@
     height: fit-content;
     position: absolute;
     top: 450px;
-    padding-bottom: 800px;
+    padding-bottom: 120%;
+    overflow: hidden;
   }
   .overViewBody {
     height: auto;
@@ -1070,6 +1108,14 @@
     position: relative;
     top: 80vh;
     left: -67vh;
+  }
+  .reviewsBg {
+    background-color: #c5cae238;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 450px;
+    overflow: hidden;
   }
   .reViewBody {
     height: auto;
@@ -1274,6 +1320,16 @@
     width: 100%;
     overflow: hidden;
   }
+  .viewAllPhotos {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10vh;
+  }
+  .menuReviewContainer {
+    width: 100%;
+    overflow: hidden;
+  }
 }
 @media all and (max-width: 1000px) {
   .galleryFilterButton {
@@ -1284,14 +1340,6 @@
     position: relative;
     left: -23vw;
     top: 63vh;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .viewAllPhotos {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    top: 10vh;
   }
 }
 @media all and (max-width: 1400px) {
@@ -1306,6 +1354,9 @@
     position: relative;
     left: -17vw;
     top: 70vh;
+  }
+  .menuReviewContainer {
+    overflow: hidden;
   }
 }
 @media only screen and(max-width: 474px) {
@@ -1335,6 +1386,9 @@
     display: flex;
     flex-direction: row;
   }
+  .menuReviewContainer {
+    overflow: hidden;
+  }
 }
 @media all and (max-width: 1250px) {
   .modalImage {
@@ -1362,5 +1416,9 @@
     top: 510px;
     display: flex;
     flex-direction: row;
+  }
+
+  .menuReviewContainer {
+    overflow: hidden;
   }
 }

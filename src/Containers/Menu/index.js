@@ -10,7 +10,6 @@ import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
-
 import searchIcon from '../../Assets/Icons/searchIcon.png';
 import item1 from '../../Assets/Images/item1.png';
 import item2 from '../../Assets/Images/item2.jpeg';

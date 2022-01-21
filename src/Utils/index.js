@@ -43,7 +43,7 @@ export const itemsOfRestaurant = (restaurantName, currentUser) => {
   if (currentUser.cart.length === 0) {
     return null;
   }
-  const result = currentUser.cart.filter((obj) => {
+  const result = currentUser?.cart.filter((obj) => {
     return obj.restaurant === restaurantName;
   });
   if (result.length === 0) return null;
@@ -74,4 +74,12 @@ export const restaurantItemsCount = (restaurantName, currentUser) => {
     return 0;
   }
   return result.length;
+};
+
+export const getRestaurantReviews = (restaurantName) => {
+  const { reviews } = store.getState();
+  const reviewList = reviews.filter((review) => {
+    return restaurantName === review.restaurant;
+  });
+  return reviewList.length;
 };

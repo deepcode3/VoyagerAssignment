@@ -1,10 +1,11 @@
 /* eslint-disable  default-param-last */
 /* eslint-disable prefer-destructuring */
 const initState = {
+  reviews: [],
   currentUser: null,
   accounts: [],
 };
-
+console.log(initState.reviews);
 const rootReducer = (state = initState, action) => {
   if (action === undefined) return state;
   switch (action.type) {
@@ -136,6 +137,22 @@ const rootReducer = (state = initState, action) => {
       const newAccounts = [...state.accounts];
       newAccounts[action.payload.index] = updatedUser;
       return { ...state, accounts: newAccounts, currentUser: updatedUser };
+    }
+    case 'ADD_REVIEWS': {
+      if (state.reviews.length === 0) {
+        return { ...state, reviews: [action.review] };
+      }
+      return { ...state, reviews: [...state.reviews, action.review] };
+    }
+    case 'INCREMENT_REVIEW_LIKES': {
+      const updatedReview = [...state.reviews];
+      updatedReview[action.reviewIndeex].likes += 1;
+      return { ...state, reviews: updatedReview };
+    }
+    case 'DECREMENT_REVIEW_LIKES': {
+      const updatedReview = [...state.reviews];
+      updatedReview[action.reviewIndeex].likes -= 1;
+      return { ...state, reviews: updatedReview };
     }
     default:
       return state;
