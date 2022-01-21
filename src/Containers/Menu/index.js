@@ -6,6 +6,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable operator-linebreak */
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -42,11 +43,13 @@ import {
 import { findIndex, itemsOfRestaurant, totalPrice } from '../../Utils';
 
 const Menu = () => {
-  const index = findIndex();
+  let index = 0;
   const currentUser = useSelector((state) => {
     return state.currentUser;
   });
-
+  if (currentUser !== null) {
+    index = findIndex();
+  }
   const dispatch = useDispatch();
   const { searchKey } = useParams();
   const { location } = useParams();
@@ -227,7 +230,7 @@ const Menu = () => {
             />
           )}
           <div className={isCartClicked ? 'dispMenuCart' : 'menuCart'}>
-            {itemsOfRestaurant(restaurant, currentUser) !== null ? (
+            {currentUser !== null && itemsOfRestaurant(restaurant, currentUser) !== null ? (
               <>
                 <div className='menuCartHeader'>My Order</div>
                 <div
@@ -427,7 +430,7 @@ const Menu = () => {
                       ) : (
                         <div className='bestSellerIcon' />
                       )}
-                      {isItemInCart(item) ? (
+                      {currentUser !== null && isItemInCart(item) ? (
                         <>
                           <span
                             className={item.bestSeller ? 'alreadyInCart' : 'alreadyInCart1'}
@@ -452,21 +455,25 @@ const Menu = () => {
                         <div
                           className={item.bestSeller ? 'addToCart' : 'addToCart1'}
                           onClick={() => {
-                            return dispatch(
-                              addItem(
-                                {
-                                  restaurant,
-                                  item: item.name,
-                                  price: item.cost,
-                                  icon: item.image,
-                                  isCustomizable: item.customizable,
-                                  isVeg: item.Type === 'non-veg',
-                                  status: true,
-                                  quantity: 1,
-                                },
-                                index
-                              )
-                            );
+                            if (currentUser === null) {
+                              alert('Please login to your account');
+                            } else {
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
+                            }
                           }}
                           role='button'
                           onKeyDown={null}
@@ -526,7 +533,7 @@ const Menu = () => {
                       ) : (
                         <div className='bestSellerIcon' />
                       )}
-                      {isItemInCart(item) ? (
+                      {currentUser !== null && isItemInCart(item) ? (
                         <>
                           <span
                             className={
@@ -555,21 +562,25 @@ const Menu = () => {
                         <div
                           className={item.bestSeller ? 'apptizeraddToCart' : 'apptizeraddToCart'}
                           onClick={() => {
-                            return dispatch(
-                              addItem(
-                                {
-                                  restaurant,
-                                  item: item.name,
-                                  price: item.cost,
-                                  icon: item.image,
-                                  isCustomizable: item.customizable,
-                                  isVeg: item.Type === 'non-veg',
-                                  status: true,
-                                  quantity: 1,
-                                },
-                                index
-                              )
-                            );
+                            if (currentUser === null) {
+                              alert('Please login to your account');
+                            } else {
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
+                            }
                           }}
                           role='button'
                           onKeyDown={null}
@@ -615,7 +626,7 @@ const Menu = () => {
                       {item.bestSeller === true ? (
                         <img className='bestSellerIcon' src={bestSeller} alt='' />
                       ) : null}
-                      {isItemInCart(item) ? (
+                      {currentUser !== null && isItemInCart(item) ? (
                         <>
                           <span
                             className={
@@ -644,21 +655,25 @@ const Menu = () => {
                         <div
                           className={item.bestSeller ? 'soupsAddToCart' : 'soupsAddToCart1'}
                           onClick={() => {
-                            return dispatch(
-                              addItem(
-                                {
-                                  restaurant,
-                                  item: item.name,
-                                  price: item.cost,
-                                  icon: item.image,
-                                  isCustomizable: item.customizable,
-                                  isVeg: item.Type === 'non-veg',
-                                  status: true,
-                                  quantity: 1,
-                                },
-                                index
-                              )
-                            );
+                            if (currentUser === null) {
+                              alert('Please login to your account');
+                            } else {
+                              return dispatch(
+                                addItem(
+                                  {
+                                    restaurant,
+                                    item: item.name,
+                                    price: item.cost,
+                                    icon: item.image,
+                                    isCustomizable: item.customizable,
+                                    isVeg: item.Type === 'non-veg',
+                                    status: true,
+                                    quantity: 1,
+                                  },
+                                  index
+                                )
+                              );
+                            }
                           }}
                           role='button'
                           onKeyDown={null}
