@@ -110,6 +110,7 @@ const Routing = () => {
           <Route path='/cart-layout'>
             <CartLayout />
           </Route>
+          <Route path='*' component={Error} />
         </Suspense>
       </Switch>
     </Router>
