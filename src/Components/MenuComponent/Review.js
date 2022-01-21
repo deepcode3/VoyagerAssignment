@@ -427,20 +427,23 @@ const Reviews = () => {
             <div
               className='submitButton'
               onClick={() => {
-                console.log('hai iam clicked');
-                if (foodSaved && serviceSaved) {
-                  setReviewSubmitterClicked(false);
-                  return dispatch(
-                    addReview({
-                      restaurant,
-                      rating: foodRating,
-                      serviceRatings: serviceRating,
-                      ratingComment: comment,
-                      name: currentUser.firstname,
-                      email: currentUser.email,
-                      numberOfLikes: 0,
-                    })
-                  );
+                if (currentUser) {
+                  if (foodSaved && serviceSaved) {
+                    setReviewSubmitterClicked(false);
+                    return dispatch(
+                      addReview({
+                        restaurant,
+                        rating: foodRating,
+                        serviceRatings: serviceRating,
+                        ratingComment: comment,
+                        name: currentUser.firstname,
+                        email: currentUser.email,
+                        numberOfLikes: 0,
+                      })
+                    );
+                  }
+                } else {
+                  alert('PLEASE LOGIN TO REVIEW');
                 }
                 return null;
               }}
