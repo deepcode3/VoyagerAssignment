@@ -328,6 +328,18 @@ const LinkContainer = styled.div`
     width: 80%;
     margin-left: 30%;
   }
+  @media (max-width: 900px) {
+    width: 80%;
+    margin-left: 30%;
+  }
+  @media (max-width: 755px) {
+    width: 90%;
+    margin-left: 20%;
+  }
+  @media (max-width: 655px) {
+    width: 90%;
+    margin-left: 10%;
+  }
 `;
 const ProfileConatiner = styled.div`
   width: 38px;
