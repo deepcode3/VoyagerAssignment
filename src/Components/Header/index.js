@@ -84,12 +84,26 @@ const Header = ({ isHome }) => {
         <VerticalLine className={!isHome ? 'smallLine' : null} />
         {isHome ? (
           <>
-            <CartIcon src={iconCart} alt='icon' />
+            <CartIcon
+              src={iconCart}
+              alt='icon'
+              onClick={() => {
+                history.push('/cart-home');
+                setDropDownStatus(false);
+              }}
+            />
             <CartLink to='/cart-home'>CART</CartLink>
           </>
         ) : (
           <>
-            <CartIconOrange src={iconCart} alt='icon' />
+            <CartIconOrange
+              src={iconCart}
+              alt='icon'
+              onClick={() => {
+                history.push('/cart-home');
+                setDropDownStatus(false);
+              }}
+            />
             <CartLinkOrange to='/cart-home'>CART</CartLinkOrange>
           </>
         )}
@@ -212,7 +226,6 @@ const Header = ({ isHome }) => {
               >
                 CART
               </LinkTo>
-
               <LinkTo
                 onClick={() => {
                   handleLogout();
@@ -332,13 +345,13 @@ const LinkContainer = styled.div`
     width: 80%;
     margin-left: 30%;
   }
-  @media (max-width: 755px) {
+  @media (max-width: 760px) {
     width: 90%;
     margin-left: 20%;
   }
-  @media (max-width: 655px) {
+  @media (max-width: 670px) {
     width: 90%;
-    margin-left: 10%;
+    margin-left: 5%;
   }
 `;
 const ProfileConatiner = styled.div`
@@ -400,7 +413,8 @@ const CartIcon = styled.img`
   height: 27px;
   width: 20px;
   margin-right: 8%;
-  @media (max-width: 1450px) {
+  cursor: pointer;
+  @media (max-width: 1455px) {
     background-color: #fda5a3;
   }
   @media (max-width: 550px) {
@@ -412,6 +426,7 @@ const CartIconOrange = styled.img`
   width: 20px;
   margin-right: 8%;
   background-color: #fda5a3;
+  cursor: pointer;
   @media (max-width: 550px) {
     display: none;
   }
