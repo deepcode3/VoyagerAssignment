@@ -40,8 +40,5 @@ const Div = styled.div`
     align-items: center;
     margin-right: auto;
     margin-left: auto;
-    @media all and (max-width: 550px) {
-      display: none;
-    }
   }
 `;

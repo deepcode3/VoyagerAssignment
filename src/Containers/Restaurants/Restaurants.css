@@ -893,8 +893,3 @@
     padding-bottom: 200px;
   }
 }
-@media (max-width: 550px) {
-  .footerDivRest {
-    display: none;
-  }
-}

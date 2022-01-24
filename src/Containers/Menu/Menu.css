@@ -813,9 +813,7 @@
 /*Restaurant Mobile Responsive*/
 
 @media only screen and (max-width: 500px) {
-  .footerDivMenu {
-    display: none;
-  }
+
   .menuBg {
     background-color: #c5cae238;
     width: 100%;

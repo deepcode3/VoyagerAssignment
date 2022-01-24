@@ -88,7 +88,6 @@ const Routing = () => {
           <Route path='/cart-home'>
             <CartLayout Component={CartHome} />
           </Route>
-
           <Route path='/status'>
             <Orderstatus />
           </Route>
