@@ -103,7 +103,7 @@
   top: 400px;
 }
 /* Home Mobile Screen */
-@media all and (max-width: 1400px) {
+@media all and (max-width: 1500px) {
   .homeBg {
     background-image: url('../../Assets/Images/home-loginBg.png');
     width: 100%;
