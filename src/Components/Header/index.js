@@ -415,18 +415,15 @@ const CartIcon = styled.img`
   }
 `;
 const Count = styled.p`
-  /* position: absolute;
-  margin-left: 16.9%;
-  margin-top: 1.2%;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600; */
   margin-left: -11.75%;
   margin-top: 4%;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   margin-right: 8%;
+  @media (max-width: 550px) {
+    display: none;
+  }
 `;
 const CartLink = styled(NavLink)`
   height: 19px;
