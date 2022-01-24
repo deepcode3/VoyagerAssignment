@@ -814,6 +814,9 @@
 
 /*Restaurant Mobile Responsive*/
 
+@media only screen and (max-width: 1040px) {
+}
+
 @media only screen and (max-width: 500px) {
   .menuBg {
     background-color: #c5cae238;
@@ -1232,11 +1235,5 @@
     top: -101.9vh;
     left: 62vw;
     z-index: 1;
-  }
-}
-@media all and (min-width: 1000px) {
-  .menuSeperator {
-    position: relative;
-    top: 63vh;
   }
 }
