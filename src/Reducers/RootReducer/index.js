@@ -47,12 +47,9 @@ const rootReducer = (state = initState, action) => {
         return obj.email === action.data.email;
       });
       const newAccounts = [...state.accounts];
-      newAccounts[objIndex].firstname = action.data.fullname.split(' ')[0];
-      newAccounts[objIndex].lastname = action.data.fullname.split(' ')[1];
-      newAccounts[objIndex].countrycode = action.data.mobilenumber.split(' ')[0];
-      newAccounts[objIndex].mobile = action.data.mobilenumber.split(' ')[1];
-      newAccounts[objIndex].username = action.data.username;
-      return { ...state, accounts: newAccounts };
+      newAccounts[objIndex] = { ...state.currentUser, ...action.data };
+      const updatedUser = { ...state.currentUser, ...action.data };
+      return { ...state, accounts: newAccounts, currentUser: updatedUser };
     }
     case 'ADD_ITEM': {
       const updatedCart = [...state.accounts[action.payload.index].cart, action.payload.item];
