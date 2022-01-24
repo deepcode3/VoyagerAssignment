@@ -15,7 +15,7 @@ import OTPVerification from '../../Containers/OTPVerification/index';
 import GetDetails from '../../Containers/GetDetails/index';
 import WelcomePage from '../../Containers/WelcomePage/index';
 import PasswordChangeSuccess from '../../Containers/PasswordChangeSuccess/index';
-import iconCart from '../../Assets/Icons/icn_cart.png';
+import iconCart from '../../Assets/Icons/cart_icon.png';
 import icnProfile from '../../Assets/Icons/icn_profile.svg';
 import icnMenu from '../../Assets/Icons/menu.png';
 import { signOut } from '../../Actions/LoginActions';
@@ -82,30 +82,19 @@ const Header = ({ isHome }) => {
           </Button>
         )}
         <VerticalLine className={!isHome ? 'smallLine' : null} />
+        <CartIcon
+          src={iconCart}
+          alt='icon'
+          onClick={() => {
+            history.push('/cart-home');
+            setDropDownStatus(false);
+          }}
+        />
+        {currentUser !== null ? <Count>{currentUser.cart.length}</Count> : null}
         {isHome ? (
-          <>
-            <CartIcon
-              src={iconCart}
-              alt='icon'
-              onClick={() => {
-                history.push('/cart-home');
-                setDropDownStatus(false);
-              }}
-            />
-            <CartLink to='/cart-home'>CART</CartLink>
-          </>
+          <CartLink to='/cart-home'>CART</CartLink>
         ) : (
-          <>
-            <CartIconOrange
-              src={iconCart}
-              alt='icon'
-              onClick={() => {
-                history.push('/cart-home');
-                setDropDownStatus(false);
-              }}
-            />
-            <CartLinkOrange to='/cart-home'>CART</CartLinkOrange>
-          </>
+          <CartLinkOrange to='/cart-home'>CART</CartLinkOrange>
         )}
       </LinkContainer>
       <LoginLayout
@@ -329,6 +318,10 @@ const LinkContainer = styled.div`
     width: 50%;
     margin-left: 60%;
   }
+  @media (max-width: 1550px) {
+    width: 45%;
+    margin-left: 60%;
+  }
   @media (max-width: 1400px) {
     width: 60%;
     margin-left: 50%;
@@ -343,15 +336,15 @@ const LinkContainer = styled.div`
   }
   @media (max-width: 900px) {
     width: 80%;
-    margin-left: 30%;
+    margin-left: 25%;
   }
   @media (max-width: 760px) {
     width: 90%;
-    margin-left: 20%;
+    margin-left: 15%;
   }
   @media (max-width: 670px) {
     width: 90%;
-    margin-left: 5%;
+    margin-left: 7%;
   }
 `;
 const ProfileConatiner = styled.div`
@@ -396,6 +389,9 @@ const Button = styled.button`
   padding: 0;
   margin-right: 8%;
   cursor: pointer;
+  @media (max-width: 670px) {
+    margin-right: 5%;
+  }
   @media (max-width: 550px) {
     display: none;
   }
@@ -411,25 +407,26 @@ const VerticalLine = styled.div`
 `;
 const CartIcon = styled.img`
   height: 27px;
-  width: 20px;
+  width: 27px;
   margin-right: 8%;
   cursor: pointer;
-  @media (max-width: 1455px) {
-    background-color: #fda5a3;
-  }
   @media (max-width: 550px) {
     display: none;
   }
 `;
-const CartIconOrange = styled.img`
-  height: 27px;
-  width: 20px;
+const Count = styled.p`
+  /* position: absolute;
+  margin-left: 16.9%;
+  margin-top: 1.2%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600; */
+  margin-left: -11.75%;
+  margin-top: 4%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
   margin-right: 8%;
-  background-color: #fda5a3;
-  cursor: pointer;
-  @media (max-width: 550px) {
-    display: none;
-  }
 `;
 const CartLink = styled(NavLink)`
   height: 19px;
