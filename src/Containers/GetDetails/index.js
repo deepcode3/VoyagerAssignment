@@ -174,6 +174,9 @@ const DataContainer = styled.form`
   @media (max-width: 990px) {
     margin-left: 6%;
   }
+  @media (max-width: 850px) {
+    margin-left: 21%;
+  }
   @media (max-width: 550px) {
     height: 75%;
     margin-left: 17%;
