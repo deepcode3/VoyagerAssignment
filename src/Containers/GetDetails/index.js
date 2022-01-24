@@ -132,6 +132,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   border-radius: 0 7px 7px 0;
   align-items: center;
+  @media (max-width: 850px) {
+    width: 480px;
+    height: 588px;
+    border-radius: 0px 0px 8px 8px;
+  }
   @media (max-width: 550px) {
     width: 300px;
     height: 70%;
@@ -166,7 +171,7 @@ const DataContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  @media (max-width: 960px) {
+  @media (max-width: 990px) {
     margin-left: 6%;
   }
   @media (max-width: 550px) {

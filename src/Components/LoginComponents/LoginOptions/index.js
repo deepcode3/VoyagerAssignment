@@ -40,7 +40,7 @@ const Facebook = styled.a`
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  @media (max-width: 960px) {
+  @media (max-width: 990px) {
     width: 150px;
   }
   @media (max-width: 550px) {
@@ -64,7 +64,7 @@ const Google = styled.a`
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  @media (max-width: 960px) {
+  @media (max-width: 990px) {
     width: 150px;
   }
   @media (max-width: 550px) {
