@@ -166,6 +166,9 @@ const DataContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media (max-width: 960px) {
+    margin-left: 6%;
+  }
   @media (max-width: 550px) {
     height: 75%;
     margin-left: 17%;

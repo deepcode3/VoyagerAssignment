@@ -77,6 +77,10 @@ const BoldText = styled.p`
   margin-bottom: 1%;
   margin-top: 0;
   margin-left: 6%;
+  @media (max-width: 960px) {
+    margin-right: 5%;
+    margin-left: 6%;
+  }
   @media (max-width: 550px) {
     margin-right: 2%;
     margin-left: 10%;
