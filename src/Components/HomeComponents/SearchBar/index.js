@@ -18,9 +18,9 @@ const SearchBar = ({ searchValue, from }) => {
   return (
     <>
       <div className='searchCard'>
-        <div className={from === 'home' ? 'searchBox' : 'restaurantSearchBox1'}>
+        <div className={from === 'home' ? 'searchBox' : 'restaurantSearchBox'}>
           <input
-            className={from === 'home' ? 'searchInput' : 'restaurantSearchInput1'}
+            className={from === 'home' ? 'searchInput' : 'restaurantSearchInput'}
             type='text'
             placeholder='Search your restaurants or cuisines'
             onChange={(e) => {

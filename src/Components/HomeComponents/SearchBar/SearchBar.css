@@ -97,14 +97,14 @@
 }
 
 /*Search bar placements other then home page */
-.restaurantSearchBox1 {
+.restaurantSearchBox {
   height: 50px;
   width: 570px;
   position: relative;
   left: 275px;
   top: 9px;
 }
-.restaurantSearchInput1 {
+.restaurantSearchInput {
   height: 50px;
   width: 570px;
   border-radius: 10px;
