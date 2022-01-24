@@ -1,5 +1,17 @@
 /* eslint-disable  default-param-last */
 /* eslint-disable prefer-destructuring */
+// const initialUser = {
+//   username: '',
+//   firstname: '',
+//   lastname: '',
+//   email: '',
+//   mobile: '',
+//   countrycode: '',
+//   password: '',
+//   cart: [],
+//   address: [],
+//   cards: [],
+// };
 const initState = {
   reviews: [],
   currentUser: null,
