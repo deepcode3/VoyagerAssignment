@@ -684,6 +684,8 @@
   align-items: center;
   margin-right: auto;
   margin-left: auto;
+  position: relative;
+  top: 10px;
 }
 /*Restaurant Mobile Responsive*/
 @media all and (max-width: 500px) {
