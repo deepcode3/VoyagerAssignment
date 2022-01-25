@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import bgImg from '../../../Assets/Images/login-background.png';
 
 const LogoWithText = () => {
   return (
@@ -17,7 +18,7 @@ const LogoWithText = () => {
 
 export default LogoWithText;
 const Wrapper = styled.div`
-  background-image: url('../assets/images/login-background.png');
+  background-image: url(${bgImg});
   height: 588px;
   width: 480px;
   text-align: left;
