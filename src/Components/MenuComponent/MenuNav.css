@@ -1619,24 +1619,24 @@
   }
 
   .modalImage {
-    width: 300px;
-    height: 300px;
+    width: 70vw;
+    height: 70vh;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    left: -270px;
-    top: 70px;
+    left: 20px;
+    top: -150px;
     border-radius: 5px;
   }
   .cancelButton {
     position: relative;
-    left: 350px;
-    top: 30px;
+    left: 370px;
+    top: -200px;
   }
   .nextPrevButton {
     position: relative;
-    top: 400px;
-    left: -740px;
+    top: 490px;
+    left: -130px;
   }
   .galleryContainer {
     width: 100%;
@@ -1689,7 +1689,7 @@
     left: -100px;
   }
 }
-@media all and (max-width: 410px) {
+@media all and (max-width: 420px) {
   .overViewBody {
     position: relative;
     left: 20px;
@@ -1722,5 +1722,26 @@
   .ratingLine3 {
     position: relative;
     left: 20px;
+  }
+  .galleryView {
+    position: relative;
+    left: 45px;
+  }
+  .modalImage {
+    width: 70vw;
+    height: 50vh;
+    position: relative;
+    left: 70px;
+    top: -100px;
+  }
+  .cancelButton {
+    position: relative;
+    left: 350px;
+    top: -130px;
+  }
+  .nextPrevButton {
+    position: relative;
+    left: -80px;
+    top: 350px;
   }
 }

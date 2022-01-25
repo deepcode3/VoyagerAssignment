@@ -713,5 +713,6 @@
   .navBar {
     position: relative;
     left: 115px;
+    top: -930px;
   }
 }
