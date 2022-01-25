@@ -50,7 +50,7 @@ const Profile = ({ setOpen }) => {
             <div className='profile'>
               <img src={profilePic} alt='pic' className='profile_img' />
             </div>
-            <span className='username'>{currentUser.username}</span>
+
             <span
               className='edit'
               type='button'
@@ -63,7 +63,7 @@ const Profile = ({ setOpen }) => {
               Edit
             </span>
             <span className='username' onClick={handleClick1} role='button' onKeyDown={null}>
-              {currentUser.firstname}
+              {currentUser.username}
             </span>
             <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
 
