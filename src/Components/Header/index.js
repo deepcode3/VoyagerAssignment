@@ -415,7 +415,7 @@ const CartIcon = styled.img`
   }
 `;
 const Count = styled.p`
-  margin-left: -11.75%;
+  margin-left: -11.5%;
   margin-top: 4%;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8rem;
