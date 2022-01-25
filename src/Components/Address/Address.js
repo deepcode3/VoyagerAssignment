@@ -16,6 +16,7 @@ import activeline from '../../Assets/Icons/Activeline.png';
 import partialActive from '../../Assets/Icons/partialactive.png';
 import deactive from '../../Assets/Icons/deactive state.png';
 import './Address.css';
+import InputField from '../LoginComponents/InputField';
 
 const CartAddress = () => {
   const location = useLocation();
@@ -23,24 +24,42 @@ const CartAddress = () => {
     return state.currentUser;
   });
   const addressItems = [...currentUser.address];
-  const mobileSchema = yup.object().shape({
+  const Schema = yup.object().shape({
     mobile: yup
       .string()
-      .required()
+      .required('phone number is required')
       .matches(/^[0-9]+$/, 'Must be only digits')
       .min(10, 'Invalid mobile number')
-      .max(10, 'Invalid mobile number'),
+      .max(10, 'Invalid mobile number')
+      .matches(/^[0-9]+$/, {
+        message: 'Phone not valid',
+        excludeEmptyString: true,
+      })
+      .matches(/^\d{10}$/, {
+        message: 'Phone not valid',
+        excludeEmptyString: true,
+      }),
+    name: yup.string().required('name is required'),
   });
   const [selectedCode, setSelectedCode] = useState('91');
   const {
-    register: register2,
-    formState: { errors: errors2 },
+    register,
+    formState: { errors },
+    handleSubmit,
   } = useForm({
-    resolver: yupResolver(mobileSchema),
+    resolver: yupResolver(Schema),
   });
 
   const history = useHistory();
   const [displayAddress, setDisplayAddress] = useState(false);
+  const formSubmit = (data) => {
+    console.log(data);
+    history.push({
+      pathname: '/payment',
+      state: { restaurant: location.state.restaurant },
+    });
+  };
+
   return (
     <div className='addressbg'>
       <div className='adress'>
@@ -55,7 +74,6 @@ const CartAddress = () => {
             <div className='deliver'>
               <img src={delivericon} className='scootericon' alt='deliveryicon' />
             </div>
-
             <input
               type='radio'
               value='delivertome'
@@ -119,54 +137,46 @@ const CartAddress = () => {
             </div>
           </>
         ) : null}
-        <form className='contactdetailsdiv'>
+        <form className='contactdetailsdiv' onSubmit={handleSubmit(formSubmit)}>
           <p className='contactdetails'>Contact Details</p>
-          <div className='namediv'>
-            <p className='name'>Name</p>
-            <input name='name' type='text' className='personname' />
-            <div className='blackline' />
+          <div className='inputname'>
+            <div className='namediv'>
+              {/* <p className='name'>Name</p> */}
+              <InputField name='name' register={register} msg={errors.name?.message} label='Name' />
+              {/* <div className='blackline' /> */}
+            </div>
           </div>
           <div className='mobnumdiv'>
             <TelephonePicker
               name='mobile'
-              register={register2}
-              msg={errors2.mobile?.message}
+              register={register}
+              msg={errors.mobile?.message}
               label='Mobile no.'
               selectedCode={selectedCode}
               setSelectedCode={setSelectedCode}
             />
           </div>
+          <div className='delins'>
+            <p className='deliveryins'>Delivery Instructions?</p>
+          </div>
+          <div className='mention'>
+            <textarea type='text' placeholder='Mention it here...' className='mntn' />
+            <div className='mentiongreyline1' />
+          </div>
+          <div
+            className='aBackbuttondiv'
+            onClick={() => {
+              history.goBack('/description');
+            }}
+            role='button'
+            onKeyDown={null}
+          >
+            <p className='aBACKtext'>BACK</p>
+          </div>
+          <button className='aChoosepayment' type='submit' onKeyDown={null}>
+            <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
+          </button>
         </form>
-        <div className='delins'>
-          <p className='deliveryins'>Delivery Instructions?</p>
-        </div>
-        <div className='mention'>
-          <textarea type='text' placeholder='Mention it here...' className='mntn' />
-          <div className='mentiongreyline1' />
-        </div>
-        <div
-          className='aBackbuttondiv'
-          onClick={() => {
-            history.goBack('/description');
-          }}
-          role='button'
-          onKeyDown={null}
-        >
-          <p className='aBACKtext'>BACK</p>
-        </div>
-        <div
-          className='aChoosepayment'
-          onClick={() => {
-            history.push({
-              pathname: '/payment',
-              state: { restaurant: location.state.restaurant },
-            });
-          }}
-          role='button'
-          onKeyDown={null}
-        >
-          <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
-        </div>
       </div>
       <div className='addressprogressbar'>
         <div className='cartactive'>

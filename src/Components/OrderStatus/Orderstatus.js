@@ -93,6 +93,10 @@ const Orderstatus = () => {
   return (
     <div className='orderbody'>
       <Header />
+      <div className='orderbreadcrumb'>
+        <p className='ocrumbs'>Home UAE Explore Great breakfasts My Cart</p>
+        <div className='crumbline' />
+      </div>
       <div className='statusbg'>
         <p className='orderid'>Order id: 1234567890</p>
         <div className='statuscontainer'>

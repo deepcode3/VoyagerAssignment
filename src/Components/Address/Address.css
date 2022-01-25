@@ -204,6 +204,9 @@
   width: 634px;
   max-height: 100%;
 }
+/* ::-webkit-scrollbar {
+  display: none;
+} */
 .list {
   list-style-type: none;
   padding: 0;
@@ -362,7 +365,20 @@
   left: 23px;
   margin: 0px;
 }
-.name {
+.inputname {
+  height: 17px;
+  width: 33px;
+  color: #858585;
+  font-family: "Open Sans";
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 17px;
+  position: absolute;
+  top: 430px;
+  left: 23px;
+  margin: 0px;
+}
+/* .name {
   height: 17px;
   width: 33px;
   color: #858585;
@@ -374,7 +390,7 @@
   top: 431px;
   left: 23px;
   margin: 0px;
-}
+} */
 
 .personname {
   height: 22px;
@@ -532,6 +548,8 @@
   position: absolute;
   top: 715px;
   left: 416px;
+  border: none;
+  outline: none;
 }
 
 .aChoosepaymenttext {
@@ -544,8 +562,8 @@
   letter-spacing: 0;
   line-height: 19px;
   position: relative;
-  left: 30px;
-  top: 12px;
+  left: 15px;
+  top: 2px;
   margin: 0px;
   cursor: pointer;
 }
@@ -694,6 +712,7 @@ input[type="radio"] {
   margin: 0px;
   padding: 0px;
 }
+
 @media all and (max-width: 550px) {
   .footerDivAddress {
     display: none;

@@ -2,7 +2,7 @@
   height: 30px;
   width: 95px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0;
@@ -36,7 +36,7 @@
   height: 23px;
   width: 63px;
   color: #000000;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 17px;
   letter-spacing: -0.41px;
   line-height: 23px;
@@ -62,7 +62,7 @@
   width: 95px;
   /* color: #ffffff; */
   color: orange;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -100,6 +100,7 @@
   border-radius: 6px;
   background: linear-gradient(146.86deg, #c365f2 0%, #6241d0 100%);
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
 }
 .mask1 {
   height: 165px;
@@ -121,7 +122,7 @@
   height: 19px;
   width: 200px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2.26px;
@@ -135,7 +136,7 @@
   height: 17px;
   width: 50.64px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -149,7 +150,7 @@
   height: 17px;
   width: 73.85px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -164,7 +165,7 @@
   width: 77.27px;
   color: #ffffff;
   /* color: #000000; */
-  font-family: 'SF UI Text';
+  font-family: "SF UI Text";
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0;
@@ -276,7 +277,7 @@
   height: 19px;
   width: 200px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2.26px;
@@ -291,7 +292,7 @@
   height: 17px;
   width: 50.64px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -305,7 +306,7 @@
   height: 17px;
   width: 73.85px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -320,7 +321,7 @@
   width: 132.97px;
   color: #ffffff;
 
-  font-family: 'SF UI Text';
+  font-family: "SF UI Text";
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0;
@@ -368,7 +369,7 @@
   height: 19px;
   width: 200px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2.26px;
@@ -382,7 +383,7 @@
   height: 17px;
   width: 50.64px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -396,7 +397,7 @@
   height: 17px;
   width: 73.85px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -411,7 +412,7 @@
   width: 77.27px;
   color: #ffffff;
   /* color: #000000; */
-  font-family: 'SF UI Text';
+  font-family: "SF UI Text";
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0;
@@ -464,7 +465,7 @@
   height: 17px;
   width: 24px;
   color: #6f6e6e;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -495,7 +496,7 @@
   height: 17px;
   width: 87px;
   color: #6f6e6e;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -525,7 +526,7 @@
   height: 17px;
   width: 50px;
   color: #6f6e6e;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;

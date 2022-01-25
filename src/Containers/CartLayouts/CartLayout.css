@@ -34,7 +34,7 @@
   }
 }
 
-@media all and (max-width: 1680px) {
+/* @media all and (max-width: 1680px) {
   .layoutBg {
     position: absolute;
     height: 1270px;
@@ -43,41 +43,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .restaurantLocationInput {
-    position: absolute;
-    left: -150px;
-  }
-  .retsurantGpsTracker {
-    position: absolute;
-    left: 75px;
-  }
-  .retsurantLocation {
-    position: absolute;
-    left: -130px;
-  }
-  .crestaurantsInfo {
-    position: relative;
-    margin-left: -150px;
-  }
-  .restaurantSearchInput {
-    position: relative;
-    left: -145px;
-  }
-  .restaurantSearchIcon {
-    position: relative;
-    left: 400px;
-    top: -32px;
-  }
-  .crestaurantDateTimeButton {
-    position: relative;
-    margin-left: -150px;
-    margin-top: 3px;
-  }
-  .crestaurantLocatorInfo {
-    position: relative;
-    margin-left: -150px;
-  }
-}
+} */
 @media all and (max-width: 1569px) {
   .layoutBg {
     position: absolute;
@@ -86,44 +52,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .restaurantLocationInput {
-    position: absolute;
-    left: -180px;
-  }
-  .retsurantGpsTracker {
-    position: absolute;
-    left: 45px;
-  }
-  .retsurantLocation {
-    position: absolute;
-    left: -160px;
-  }
-  /* .crestaurantsInfo {
-    position: relative;
-    margin-right: 200px;
-  } */
-  .crestaurantsInfo {
-    position: relative;
-    margin-left: -180px;
-  }
-  .restaurantSearchInput {
-    position: relative;
-    left: -175px;
-  }
-  .restaurantSearchIcon {
-    position: relative;
-    left: 360px;
-    top: -32px;
-  }
-  .crestaurantDateTimeButton {
-    position: relative;
-    margin-left: -180px;
-    margin-top: 3px;
-  }
-  .crestaurantLocatorInfo {
-    position: relative;
-    margin-left: -180px;
-  }
+
   .addresscontainer {
     left: 450px;
   }
@@ -245,51 +174,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .restaurantLocation {
-    width: 0px;
-  }
-  .clsetter {
-    width: 0px;
-  }
-  .csearch {
-    width: 0px;
-    left: 100px;
-  }
-  .restaurantSearchBox {
-    width: 0px;
-  }
 
-  .restaurantLocationInput {
-    position: absolute;
-    left: -280px;
-  }
-  .retsurantGpsTracker {
-    position: absolute;
-    left: -55px;
-  }
-  .retsurantLocation {
-    position: absolute;
-    left: -270px;
-  }
-  .restaurantSearchInput {
-    position: absolute;
-    left: -280px;
-    top: 1px;
-  }
-  .restaurantSearchIcon {
-    position: absolute;
-    left: 270px;
-    top: 20px;
-  }
-  .crestaurantDateTimeButton {
-    position: absolute;
-    margin-left: -280px;
-    margin-top: 5px;
-  }
-  .crestaurantLocatorInfo {
-    position: relative;
-    margin-left: -280px;
-  }
   /* .cartprogressbar {
     position: relative;
 
@@ -341,12 +226,7 @@
   .finalPayprogressbar {
     left: -400px;
   }
-  .mycarttext {
-    left: 200px;
-  }
-  .cartdiv {
-    left: 200px;
-  }
+
   /* .statusbg {
     width: 1300px;
   } */
@@ -374,6 +254,7 @@
     width: 1482px;
   }
 } */
+
 @media all and (max-width: 1060px) {
   .layoutBg {
     position: absolute;
@@ -385,46 +266,6 @@
     overflow-y: hidden;
   }
 
-  .restaurantLocationInput {
-    position: absolute;
-    left: -270px;
-    width: 100px;
-    height: 40px;
-    top: 5px;
-  }
-  .retsurantGpsTracker {
-    position: absolute;
-    left: -160px;
-  }
-  .retsurantLocation {
-    position: absolute;
-    left: -260px;
-  }
-  .restaurantSearchInput {
-    position: absolute;
-    width: 340px;
-    left: -390px;
-    top: 5px;
-    height: 40px;
-  }
-  .restaurantSearchIcon {
-    position: absolute;
-    left: -70px;
-    top: 15px;
-  }
-  .crestaurantDateTimeButton {
-    position: relative;
-    margin-left: -620px;
-    height: 50px;
-    margin-top: 8px;
-  }
-  .crestaurantsInfo {
-    position: relative;
-    margin-left: -270px;
-  }
-  .crestaurantLocators {
-    width: 1348px;
-  }
   .cartprogressbar {
     position: absolute;
 
@@ -784,32 +625,7 @@
   .mycards {
     font-size: 15px;
   }
-  .mycarttext {
-    font-size: 17px;
-    left: 180px;
-  }
-  .cartdiv {
-    left: 180px;
-    width: 300px;
-    height: 130px;
-  }
-  .cartremovebtn {
-    left: 220px;
-  }
-  .cartresname {
-    font-size: 13px;
-  }
-  .cartproceedbtn {
-    height: 20px;
-    width: 80px;
-    top: 100px;
-    left: 200px;
-  }
-  .cartproceedtext {
-    font-size: 12px;
-    left: 4px;
-    top: 2px;
-  }
+
   .address_card {
     width: 250px;
   }
@@ -1113,6 +929,72 @@
     display: none;
   }
 }
+
+@media all and (max-width: 750px) {
+  .addresscontainer {
+    position: absolute;
+    left: 120px;
+  }
+  .addressheading {
+    left: 120px;
+  }
+  .addressprogressbar {
+    left: -535px;
+  }
+  .paymentcontainer {
+    left: 120px;
+  }
+  .paymenttext {
+    left: 120px;
+  }
+  .finalpaycontainer {
+    left: 120px;
+  }
+  .paytext {
+    left: 120px;
+  }
+  .finalPayprogressbar {
+    left: -530px;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .addresscontainer {
+    position: absolute;
+    left: 20px;
+    width: 450px;
+  }
+  .address_container {
+    width: 440px;
+  }
+  .mntn {
+    width: 420px;
+  }
+  .addressheading {
+    left: 24px;
+  }
+  .addressprogressbar {
+    left: -640px;
+  }
+  .paymentcontainer {
+    left: 20px;
+    width: 460px;
+  }
+  .paymenttext {
+    left: 22px;
+  }
+  .finalpaycontainer {
+    left: 20px;
+    width: 460px;
+  }
+  .paytext {
+    left: 23px;
+  }
+  .finalPayprogressbar {
+    left: -640px;
+  }
+}
+
 /* @media all and (max-width: 508px) {
   .restaurantLocationInput {
     position: relative;
@@ -1177,15 +1059,13 @@
   }
 } */
 @media all and (max-width: 400px) {
-  .restaurantSearch {
+  /* .restaurantSearch {
     position: relative;
     width: 0px;
     left: 0px;
   }
 
-  /* .csearch {
-    margin-left: -500px;
-  } */
+
   .crestaurantsInfo {
     margin-left: -450px;
     margin-top: -25px;
@@ -1205,11 +1085,7 @@
     top: -35px;
     height: 15px;
   }
-  /* .crestaurantsInfo {
-    position: relative;
-    margin-left: -400px;
-    margin-top: -40px;
-  } */
+ 
   .restaurantLocationSetter {
     width: 0px;
   }
@@ -1252,7 +1128,7 @@
     width: 120px;
     left: 625px;
     top: 292px;
-  }
+  } */
   /* .layoutBg {
     width: 393px;
     height: 2000px;

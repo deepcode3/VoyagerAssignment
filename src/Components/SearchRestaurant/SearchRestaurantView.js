@@ -15,19 +15,21 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
       </div>
       <img src={menuSemiBg} alt='semiBg' className='csemiBg' />
       <div className='restaurantSearchBar'>
-        <span className='crestaurantsInfo'>Delivery ASAP</span>
+        <span className='cartrestaurantsInfo'>Delivery ASAP</span>
         {console.log(data)}
         <div className='csearch'>
-          <div className='restaurantSearch'>
+          <div className='cartrestaurantSearch'>
             <SearchBar searchValue={searchKey} from='restaurant' />
           </div>
         </div>
         <div className='clsetter'>
-          <div className='restaurantLocation' from='restaurant'>
-            <LocationSetter locationValue={location} from='restaurant' />
+          <div className='crestaurantLocation' from='restaurant'>
+            <div className='cartreslocationsetter'>
+              <LocationSetter locationValue={location} from='restaurant' />
+            </div>
           </div>
         </div>
-        <img className='crestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
+        <img className='cartrestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
       </div>
       <div className='crestaurantLocators'>
         <div className='crestaurantLocatorInfo'>Home UAE Explore Great breakfasts My Cart</div>
