@@ -439,7 +439,7 @@
   .searchIcon {
     position: relative;
     left: -13px;
-    top: -7.4vh;
+    top: -8.4vh;
   }
   .locationInput {
     height: 50px;
@@ -457,12 +457,12 @@
   .gpsTracker {
     position: relative;
     left: 250px;
-    top: -10.9vh;
+    top: -11.9vh;
   }
   .location {
     position: relative;
     left: -10px;
-    top: -10.9vh;
+    top: -11.9vh;
   }
   .dateTime {
     width: 320px;

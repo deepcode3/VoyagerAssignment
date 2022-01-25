@@ -1172,4 +1172,11 @@
     position: relative;
     left: -40px;
   }
+  .restaurantBody {
+    width: 140px;
+    position: relative;
+    left: -310px;
+    height: fit-content;
+    padding-bottom: 200px;
+  }
 }
