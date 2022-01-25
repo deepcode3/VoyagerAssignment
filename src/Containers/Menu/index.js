@@ -197,6 +197,7 @@ const Menu = () => {
         from='menu'
         setIsCartClicked={setIsCartClicked}
       />
+
       <div className='menuBg'>
         <div className='menuSeperator'>
           <input
@@ -453,7 +454,13 @@ const Menu = () => {
                         </>
                       ) : (
                         <div
-                          className={item.bestSeller ? 'addToCart' : 'addToCart1'}
+                          className={
+                            item.bestSeller && item.customizable
+                              ? 'addToCart'
+                              : item.bestSeller
+                              ? 'addToCart1'
+                              : 'addToCart2'
+                          }
                           onClick={() => {
                             if (currentUser === null) {
                               alert('Please login to your account');

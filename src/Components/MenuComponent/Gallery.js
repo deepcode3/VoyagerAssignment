@@ -77,10 +77,6 @@ const Gallery = () => {
       />
       <div className='galleryBg'>
         <div className='galleryBody'>
-          <div className='galleryFilterButton'>
-            <span className='allPhotos'>All Photos</span>
-            <div className='galleryArrow' />
-          </div>
           <div className='galleryView'>
             <div className='row'>{galleryDisplay()}</div>
             <br />
