@@ -50,7 +50,7 @@ const Profile = ({ setOpen }) => {
             <div className='profile'>
               <img src={profilePic} alt='pic' className='profile_img' />
             </div>
-            <span className='username'>{currentUser.username}</span>
+
             <span
               className='edit'
               type='button'
@@ -96,10 +96,10 @@ const Profile = ({ setOpen }) => {
             <NavLinks to='/profile/profile-Pay'>
               <NavItem> Payment Methods</NavItem>
             </NavLinks>
-            <NavLinks to='/profile-reviews'>
+            <NavLinks to='/profile/profile-Review'>
               <NavItem>Reviews</NavItem>
             </NavLinks>
-            <NavLinks to='/profile-gallary'>
+            <NavLinks to='/profile/profile-Gallary'>
               <NavItem>Gallary</NavItem>
             </NavLinks>
           </NavMenu>

@@ -78,7 +78,7 @@ export const restaurantItemsCount = (restaurantName, currentUser) => {
 
 export const getRestaurantReviews = (restaurantName) => {
   const { reviews } = store.getState();
-  const reviewList = reviews.filter((review) => {
+  const reviewList = Object.values(reviews).filter((review) => {
     return restaurantName === review.restaurant;
   });
   return reviewList.length;

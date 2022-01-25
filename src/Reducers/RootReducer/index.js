@@ -154,6 +154,14 @@ const rootReducer = (state = initState, action) => {
       updatedReview[action.reviewIndeex].likes -= 1;
       return { ...state, reviews: updatedReview };
     }
+    case 'REMOVE_REVIEW': {
+      const deleteReview = [...state.reviews];
+      const deletedReview = deleteReview.filter((item) => {
+        return !(item === action.review);
+      });
+      // const updatedReview = { ...state.reviews, card: deletedReview };
+      return { ...state, reviews: deletedReview };
+    }
     default:
       return state;
   }
