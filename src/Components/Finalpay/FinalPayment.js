@@ -37,7 +37,11 @@ const FinalPayment = () => {
     <div className='finalpaymentbg'>
       <p className='paytext'>Payment</p>
       <div className='finalpaycontainer'>
-        <PaymentOption cardDisplay={showDetails} hideDetails={hideCard} />
+        <PaymentOption
+          cardDisplay={showDetails}
+          hideDetails={hideCard}
+          enterCardDetails={cardDetails}
+        />
         {cardDetails ? (
           // eslint-disable-next-line react/jsx-wrap-multilines
           <>
@@ -47,7 +51,15 @@ const FinalPayment = () => {
                 className='payaddnewtext'
                 onKeyDown={null}
                 onClick={() => {
-                  history.push('/profile/profile-Pay');
+                  history.push({
+                    pathname: '/payment',
+                    state: {
+                      restaurant: location.state.restaurant,
+                      selectedAddress: location.state.selectedAddress,
+                      deliveryType: location.state.deliveryType,
+                      paymentType: 'Credit/Debit Card',
+                    },
+                  });
                 }}
               >
                 ADD NEW

@@ -14,17 +14,18 @@ import cactive from '../../Assets/Icons/Active state.png';
 import activeline from '../../Assets/Icons/Activeline.png';
 
 const Payment = () => {
-  const [enterCardDetails, setEnterCardDetails] = useState(false);
+  const [enterCardDetails, setEnterCardDetails] = useState(true);
   // const history={useHistory}
   const location = useLocation();
   const history = useHistory();
   const loadfinalpay = () => {
     history.push({
-      pathname: '/finalpay',
+      pathname: '/status',
       state: {
         restaurant: location.state.restaurant,
         selectedAddress: location.state.selectedAddress,
         deliveryType: location.state.deliveryType,
+        paymentType: location.state.paymentType,
       },
     });
   };
@@ -35,7 +36,16 @@ const Payment = () => {
     setEnterCardDetails(true);
   };
   const HideCardDetails = () => {
-    setEnterCardDetails(false);
+    history.push({
+      pathname: '/finalpay',
+      state: {
+        restaurant: location.state.restaurant,
+        selectedAddress: location.state.selectedAddress,
+        deliveryType: location.state.deliveryType,
+        paymentType: 'Credit/Debit Card',
+      },
+    });
+    // setEnterCardDetails(false);
   };
   console.log(enterCardDetails);
   return (
@@ -45,7 +55,12 @@ const Payment = () => {
       </div>
       <div className='paymentcontainer'>
         <div className='Preferdpaymentdiv'>
-          <PaymentOption cardDisplay={showCardDetails} hideDetails={HideCardDetails} />
+          <PaymentOption
+            from='payment'
+            cardDisplay={showCardDetails}
+            enterCardDetails={enterCardDetails}
+            hideDetails={HideCardDetails}
+          />
         </div>
         <div className='carddetailscontainer'>
           {enterCardDetails ? (

@@ -41,7 +41,7 @@ const CartAddress = () => {
   });
 
   const history = useHistory();
-  const [displayAddress, setDisplayAddress] = useState(false);
+  const [displayAddress, setDisplayAddress] = useState(true);
   return (
     <div className='addressbg'>
       <div className='adress'>
@@ -62,6 +62,7 @@ const CartAddress = () => {
               value='delivertome'
               name='deliveryoption'
               className='delivertomebtn'
+              defaultChecked
               onClick={() => {
                 setDisplayAddress(true);
               }}
@@ -164,7 +165,7 @@ const CartAddress = () => {
           className='aChoosepayment'
           onClick={() => {
             history.push({
-              pathname: '/payment',
+              pathname: '/finalpay',
               state: {
                 restaurant: location.state.restaurant,
                 selectedAddress,
