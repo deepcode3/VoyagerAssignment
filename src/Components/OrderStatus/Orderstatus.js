@@ -269,7 +269,7 @@ const Orderstatus = () => {
           closemodal={setOpenModal}
           restaurantName={location.state.restaurant}
           deliveryType={location.state.deliveryType}
-          selectedAddress={location.state.selectedAddress}
+          location={location.state.selectedAddress}
         />
       )}
       <div className='footerDivStatus'>

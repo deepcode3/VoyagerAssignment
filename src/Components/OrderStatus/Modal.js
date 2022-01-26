@@ -64,7 +64,6 @@ const Modal = ({ closemodal, restaurantName, location, deliveryType }) => {
           <div className='modaldelivery'>
             <p className='mdeliverylocation'>Delivery Location</p>
             <p className='mdeliveryaddress'>
-              {' '}
               {deliveryType === 'pickUp'
                 ? 'Pick up'
                 : `${location.location}, -${location.city} - ${location.area} - ${location.address}`}
