@@ -234,7 +234,7 @@ const Menu = () => {
                       <span className='itemsTotalLabel'>Items Total</span>
                       <span className='totalAmount'>
                         AED
-                        {totalPrice(restaurant).toFixed(2)}
+                        {totalPrice(restaurant, currentUser).toFixed(2)}
                       </span>
                     </div>
                     <div className='charges'>
