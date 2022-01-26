@@ -23,7 +23,7 @@ const CartAddress = () => {
     return state.currentUser;
   });
   const addressItems = [...currentUser.address];
-  const [selectedAddress, setSelectedAddress] = useState();
+  const [selectedAddress, setSelectedAddress] = useState(addressItems[0]);
   const mobileSchema = yup.object().shape({
     mobile: yup
       .string()
