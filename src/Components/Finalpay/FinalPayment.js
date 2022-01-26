@@ -22,6 +22,7 @@ const FinalPayment = () => {
     return state.currentUser;
   });
   const paymentItems = [...currentUser.cards];
+  const [selectedCard, setSelectedCard] = useState(paymentItems[0]);
   const prepay = () => {
     history.goBack('/payment');
   };
@@ -59,7 +60,12 @@ const FinalPayment = () => {
                     {paymentItems.map((item, index) => {
                       return (
                         <li key={index.toString()}>
-                          <PaymentCardCart item={item} index={index} />
+                          <PaymentCardCart
+                            item={item}
+                            index={index}
+                            selectedCard={selectedCard}
+                            setSelectedCard={setSelectedCard}
+                          />
                         </li>
                       );
                     })}
