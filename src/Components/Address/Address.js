@@ -23,6 +23,7 @@ const CartAddress = () => {
     return state.currentUser;
   });
   const addressItems = [...currentUser.address];
+  const [selectedAddress, setSelectedAddress] = useState();
   const mobileSchema = yup.object().shape({
     mobile: yup
       .string()
@@ -109,7 +110,12 @@ const CartAddress = () => {
                     {addressItems.map((item, index) => {
                       return (
                         <li key={index.toString()}>
-                          <AddressCard item={item} index={index} />
+                          <AddressCard
+                            item={item}
+                            index={index}
+                            setSelectedAddress={setSelectedAddress}
+                            selectedAddress={selectedAddress}
+                          />
                         </li>
                       );
                     })}
