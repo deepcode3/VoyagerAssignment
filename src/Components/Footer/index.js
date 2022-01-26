@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/index';
-import data from './data';
+import data from './Data/data.json';
 
 const Footer = () => {
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
         <Text>COUNTRIES</Text>
       </FlexRow>
       <FlexRowLinks>
-        {data.map((element) => {
+        {data.footerLinks.map((element) => {
           return (
             <FooterLink key={element} to={`/${element.toLowerCase().replaceAll(' ', '-')}`}>
               {element}
