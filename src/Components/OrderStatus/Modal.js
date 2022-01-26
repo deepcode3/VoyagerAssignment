@@ -8,7 +8,7 @@ import StarIcon from '@mui/icons-material/Star';
 import Items from '../ItemDescription/Items';
 import { itemsOfRestaurant, getTotalPriceWithDiscount, totalPrice } from '../../Utils';
 
-const Modal = ({ closemodal, restaurantName, location, deliveryType }) => {
+const Modal = ({ closemodal, restaurantName, location, deliveryType, paymentType }) => {
   const currentUser = useSelector((state) => {
     return state.currentUser;
   });
@@ -65,7 +65,7 @@ const Modal = ({ closemodal, restaurantName, location, deliveryType }) => {
             <p className='sdiscountamount'>AED24.22</p>
 
             <p className='spaymentmethod'>Payment Method</p>
-            <p className='scredittext'>Credit/Debit Card</p>
+            <p className='scredittext'>{paymentType}</p>
           </div>
         </div>
         <p className='statusdeldeatils'>Delivery Details</p>
@@ -254,5 +254,6 @@ Modal.propTypes = {
   restaurantName: PropTypes.string.isRequired,
   location: PropTypes.objectOf(PropTypes.string).isRequired,
   deliveryType: PropTypes.string.isRequired,
+  paymentType: PropTypes.string.isRequired,
 };
 export default Modal;

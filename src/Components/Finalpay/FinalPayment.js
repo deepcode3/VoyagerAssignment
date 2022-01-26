@@ -101,6 +101,7 @@ const FinalPayment = () => {
                 restaurant: location.state.restaurant,
                 selectedAddress: location.state.selectedAddress,
                 deliveryType: location.state.deliveryType,
+                paymentType: cardDetails ? 'Credit/Debit Card' : 'Cash',
               },
             });
           }}

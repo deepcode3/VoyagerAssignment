@@ -270,6 +270,7 @@ const Orderstatus = () => {
           restaurantName={location.state.restaurant}
           deliveryType={location.state.deliveryType}
           location={location.state.selectedAddress}
+          paymentType={location.state.paymentType}
         />
       )}
       <div className='footerDivStatus'>
