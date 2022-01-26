@@ -165,7 +165,7 @@ const CartAddress = () => {
           onClick={() => {
             history.push({
               pathname: '/payment',
-              state: { restaurant: location.state.restaurant },
+              state: { restaurant: location.state.restaurant, selectedAddress },
             });
           }}
           role='button'

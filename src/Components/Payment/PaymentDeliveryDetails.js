@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Payment.css';
 
-const PaymentDeliveryDetails = () => {
+const PaymentDeliveryDetails = ({ location }) => {
   return (
     <div className='paydeliverydetails'>
       <div className='locationtimediv'>
         <div className='paydeliverylocation'>
           <p className='paydeliverylocationtext'>Delivery location</p>
-          <p className='paydeliveryaddress'>Downtown Burj Khalifa, Dubai, UAE</p>
+          <p className='paydeliveryaddress'>{`${location.location}, -${location.city} - ${location.area} - ${location.address}`}</p>
           <div className='paychange'>Change</div>
         </div>
         <div className='payonegreyline' />
@@ -22,3 +23,6 @@ const PaymentDeliveryDetails = () => {
 };
 
 export default PaymentDeliveryDetails;
+PaymentDeliveryDetails.propTypes = {
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+};
