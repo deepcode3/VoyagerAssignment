@@ -9,8 +9,8 @@
       "openedtill": "AED40 min order",
       "mealcost": "AED60 avg meal cost",
       "city": "sandur",
-      "image": "breakfast1.png",
-      "ratings": "3.8"
+      "image": "breakfast1",
+      "ratings": 3.8
     },
     {
       "name": "Iran Zamin Restaurent",
@@ -21,8 +21,8 @@
       "openedtill": "AED40 min order",
       "mealcost": "AED 60 avg meal cost",
       "city": "sandur",
-      "image": "breakfast2.png",
-      "ratings": "3.8"
+      "image": "breakfast2",
+      "ratings": 3.8
     }
   ]
 }
