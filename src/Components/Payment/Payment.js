@@ -24,6 +24,7 @@ const Payment = () => {
       state: {
         restaurant: location.state.restaurant,
         selectedAddress: location.state.selectedAddress,
+        deliveryType: location.state.deliveryType,
       },
     });
   };
@@ -84,7 +85,10 @@ const Payment = () => {
         </div>
         <PaymentPoints />
         <p className='paymentdeliverydetails'>Delivery Details</p>
-        <PaymentDeliveryDetails location={location.state.selectedAddress} />
+        <PaymentDeliveryDetails
+          location={location.state.selectedAddress}
+          deliveryType={location.state.deliveryType}
+        />
         <PaymentresDetails restaurantName={location.state.restaurant} />
 
         <div className='paybackbutton' onClick={loadaddress} role='button' onKeyDown={null}>

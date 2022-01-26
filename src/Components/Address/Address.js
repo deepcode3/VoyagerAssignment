@@ -165,7 +165,11 @@ const CartAddress = () => {
           onClick={() => {
             history.push({
               pathname: '/payment',
-              state: { restaurant: location.state.restaurant, selectedAddress },
+              state: {
+                restaurant: location.state.restaurant,
+                selectedAddress,
+                deliveryType: displayAddress ? 'deliverToMe' : 'pickUp',
+              },
             });
           }}
           role='button'

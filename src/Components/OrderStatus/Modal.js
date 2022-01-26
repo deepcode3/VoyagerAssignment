@@ -7,7 +7,7 @@ import StarIcon from '@mui/icons-material/Star';
 import Items from '../ItemDescription/Items';
 import { itemsOfRestaurant } from '../../Utils';
 
-const Modal = ({ closemodal, restaurantName }) => {
+const Modal = ({ closemodal, restaurantName, location, deliveryType }) => {
   const currentUser = useSelector((state) => {
     return state.currentUser;
   });
@@ -63,7 +63,12 @@ const Modal = ({ closemodal, restaurantName }) => {
         <div className='statusdelrct'>
           <div className='modaldelivery'>
             <p className='mdeliverylocation'>Delivery Location</p>
-            <p className='mdeliveryaddress'>Downtown Burj Khalifa, Dubai, UAE</p>
+            <p className='mdeliveryaddress'>
+              {' '}
+              {deliveryType === 'pickUp'
+                ? 'Pick up'
+                : `${location.location}, -${location.city} - ${location.area} - ${location.address}`}
+            </p>
             <div className='mdelgreyline' />
             <p className='mdatetimetext'>Date & Time</p>
             <p className='mdatetime'>Today at 11:30 AM</p>
@@ -239,5 +244,7 @@ const Modal = ({ closemodal, restaurantName }) => {
 Modal.propTypes = {
   closemodal: PropTypes.func.isRequired,
   restaurantName: PropTypes.string.isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+  deliveryType: PropTypes.string.isRequired,
 };
 export default Modal;

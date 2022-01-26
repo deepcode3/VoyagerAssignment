@@ -75,7 +75,10 @@ const FinalPayment = () => {
 
         <p className='Fpaymentdeliverydetails'>Delivery Details</p>
         <div className='Fpaydeldetails'>
-          <PaymentDeliveryDetails location={location.state.selectedAddress} />
+          <PaymentDeliveryDetails
+            location={location.state.selectedAddress}
+            deliveryType={location.state.deliveryType}
+          />
         </div>
         <div className='fpayres'>
           <PaymentresDetails restaurantName={location.state.restaurant} />
@@ -86,7 +89,14 @@ const FinalPayment = () => {
         <div
           className='fpaynow'
           onClick={() => {
-            history.push({ pathname: '/status', state: { restaurant: location.state.restaurant } });
+            history.push({
+              pathname: '/status',
+              state: {
+                restaurant: location.state.restaurant,
+                selectedAddress: location.state.selectedAddress,
+                deliveryType: location.state.deliveryType,
+              },
+            });
           }}
           role='button'
           onKeyDown={null}
