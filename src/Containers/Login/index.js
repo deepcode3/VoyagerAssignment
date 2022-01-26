@@ -119,6 +119,10 @@ const Button = styled.button`
   position: absolute;
   top: 3%;
   cursor: pointer;
+  @media (max-width: 850px) {
+    right: 1%;
+    top: 1%;
+  }
   @media (max-width: 550px) {
     right: 2%;
     top: 1%;
