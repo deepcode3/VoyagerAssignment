@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from 'react';
 import './Modal.css';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import StarIcon from '@mui/icons-material/Star';
 import Items from '../ItemDescription/Items';
-import { itemsOfRestaurant } from '../../Utils';
+import { itemsOfRestaurant, getTotalPriceWithDiscount, totalPrice } from '../../Utils';
 
 const Modal = ({ closemodal, restaurantName, location, deliveryType }) => {
   const currentUser = useSelector((state) => {
@@ -47,13 +48,21 @@ const Modal = ({ closemodal, restaurantName, location, deliveryType }) => {
         <div className='statusamountrect'>
           <div className='sadiv'>
             <p className='spaidtext'>Paid</p>
-            <p className='spaidamount'>AED 85.76</p>
+            <p className='spaidamount'>
+              {`AED
+            ${getTotalPriceWithDiscount(restaurantName, currentUser).toFixed(2)}`}
+            </p>
             <p className='sitemstotaltext'>Items total</p>
-            <p className='stotalamount'>AED 118.0</p>
+            <p className='stotalamount'>
+              {' '}
+              {`AED
+           ${totalPrice(restaurantName, currentUser).toFixed(2)}`}
+            </p>
+
             <p className='sfeetext'>Fee/charges</p>
-            <p className='sfeeamount'>AED 10.76</p>
+            <p className='sfeeamount'>AED10.00</p>
             <p className='sdiscounttext'>Discount</p>
-            <p className='sdiscountamount'>AED 42.24</p>
+            <p className='sdiscountamount'>AED24.22</p>
 
             <p className='spaymentmethod'>Payment Method</p>
             <p className='scredittext'>Credit/Debit Card</p>
