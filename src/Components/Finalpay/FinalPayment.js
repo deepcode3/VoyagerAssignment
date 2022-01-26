@@ -75,7 +75,7 @@ const FinalPayment = () => {
 
         <p className='Fpaymentdeliverydetails'>Delivery Details</p>
         <div className='Fpaydeldetails'>
-          <PaymentDeliveryDetails />
+          <PaymentDeliveryDetails location={location.state.selectedAddress} />
         </div>
         <div className='fpayres'>
           <PaymentresDetails restaurantName={location.state.restaurant} />
