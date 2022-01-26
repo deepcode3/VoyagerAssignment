@@ -1,80 +1,80 @@
 {
   "items": [
     {
-      "name ": "Chilli Cheese Meal",
-      "cost ": 27.0,
-      "description ": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce",
-      "bestSeller ": true,
-      "category ": "recomended",
-      "image ": "item1.png",
-      "customizable ": true,
-      "type ": "non-veg"
-    },
-    {
-      "name ": "Canapes and Crostini",
-      "cost ": 27.0,
-      "description ": "Clams, mussels, calamari & shrimp w/ white wine & garlic",
-      "bestSeller ": false,
-      "category ": "recomended",
-      "image ": "item2.jpeg",
-      "customizable ": false,
-      "type ": "veg"
-    },
-    {
-      "name ": "Herb spiced chiken sandwitch",
-      "cost ": 27.0,
-      "description ": "Roasted chick peas, julienne carrots, wild mushrooms & manchego w/ cider vinaigrette",
-      "bestSeller ": true,
+      "name": "Chilli Cheese Meal",
+      "cost": 27.0,
+      "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce",
+      "bestSeller": true,
       "category": "recomended",
-      "image ": "item3.jpeg ",
-      "customizable ": false,
-      "type ": "non-veg"
-    },
-    {
-      "name": "Canapes",
-      " cost": 27.0,
-      "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
-      "bestSeller": false,
-      " category ": "Appetizers",
-      "image ": "item4.jpeg ",
-      " customizable ": true,
-      " type ": "non-veg"
-    },
-    {
-      "name": "Stuffed Cherry Peppers",
-      "cost ": 27.0,
-      "description ": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
-      "bestSeller ": false,
-      "category ": "Appetizers",
-      "image ": "item5.jpeg ",
-      "customizable ": false,
-      "type ": "non-veg"
-    },
-    {
-      " name ": "Broiled Brie with Cranberry Chutney",
-      "cost ": 27.0,
-      "description ": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
-      "bestSeller ": false,
-      "category ": "Appetizers",
-      " image ": " item6.jpeg ",
-      "customizable ": true,
-      "type ": "non-veg"
-    },
-    {
-      "name": "Charred Spanish Octopus",
-      "cost ": 27.0,
-      "description ": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
-      " bestSeller ": false,
-      "category ": "Soups",
-      " image ": "item8.jpeg",
+      "image": "item1.png",
       "customizable": true,
       "type": "non-veg"
     },
     {
-      "  name": "Oysters on the Half Shell",
+      "name": "Canapes and Crostini",
+      "cost": 27.0,
+      "description": "Clams, mussels, calamari & shrimp w/ white wine & garlic",
+      "bestSeller": false,
+      "category": "recomended",
+      "image": "item2.jpeg",
+      "customizable": false,
+      "type": "veg"
+    },
+    {
+      "name": "Herb spiced chiken sandwitch",
+      "cost": 27.0,
+      "description": "Roasted chick peas, julienne carrots, wild mushrooms & manchego w/ cider vinaigrette",
+      "bestSeller": true,
+      "category": "recomended",
+      "image": "item3.jpeg ",
+      "customizable": false,
+      "type": "non-veg"
+    },
+    {
+      "name": "Canapes",
       "cost": 27.0,
       "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
-      " bestSeller": true,
+      "bestSeller": false,
+      "category": "Appetizers",
+      "image": "item4.jpeg ",
+      " customizable": true,
+      " type": "non-veg"
+    },
+    {
+      "name": "Stuffed Cherry Peppers",
+      "cost": 27.0,
+      "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
+      "bestSeller": false,
+      "category": "Appetizers",
+      "image": "item5.jpeg ",
+      "customizable": false,
+      "type": "non-veg"
+    },
+    {
+      "name": "Broiled Brie with Cranberry Chutney",
+      "cost": 27.0,
+      "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
+      "bestSeller": false,
+      "category": "Appetizers",
+      "image": "item6.jpeg ",
+      "customizable": true,
+      "type": "non-veg"
+    },
+    {
+      "name": "Charred Spanish Octopus",
+      "cost": 27.0,
+      "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
+      "bestSeller": false,
+      "category": "Soups",
+      "image": "item8.jpeg",
+      "customizable": true,
+      "type": "non-veg"
+    },
+    {
+      "name": "Oysters on the Half Shell",
+      "cost": 27.0,
+      "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
+      "bestSeller": true,
       "category": "Soups",
       "image": "item9.jpeg ",
       "customizable": true,
@@ -84,21 +84,21 @@
       "name": "Chicken Tortilla",
       "cost": 27.0,
       "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
-      " bestSeller": true,
+      "bestSeller": true,
       "category": "Soups",
       "image": "item7.jpeg ",
       "customizable": true,
       "type": "non-veg"
     },
     {
-      "name ": "Charred Spanish",
-      "cost ": 27.0,
-      "description ": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
-      "bestSeller ": false,
-      "category ": "Soups",
-      "image ": "item2.jpeg",
-      "customizable ": true,
-      "type ": "non-veg"
+      "name": "Charred Spanish",
+      "cost": 27.0,
+      "description": "Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.",
+      "bestSeller": false,
+      "category": "Soups",
+      "image": "item2.jpeg",
+      "customizable": true,
+      "type": "non-veg"
     }
   ]
 }
