@@ -1146,7 +1146,7 @@
     height: 25px;
     position: relative;
     top: 19.5vh;
-    left: 55vw;
+    left: 50vw;
     display: block;
   }
   .reviewButton {
@@ -1273,7 +1273,7 @@
     width: 25px;
     height: 25px;
     position: relative;
-    top: 14.5vh;
+    top: 19.5vh;
     left: 42vw;
     display: block;
   }
@@ -1707,10 +1707,20 @@
     flex-direction: row;
     padding-bottom: 500px;
   }
+  .reviewCloseButton {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 18.5vh;
+    left: 200px;
+    display: block;
+  }
+
   .reviewButton {
     position: relative;
     left: 210px;
   }
+
   .ratingLine {
     position: relative;
     left: 10px;
