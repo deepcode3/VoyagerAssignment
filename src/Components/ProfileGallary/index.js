@@ -185,6 +185,97 @@ const Wrapper = styled.div`
     position: fixed;
     left: -150px;
   }
+  .cancelButton {
+    height: 20px;
+    width: 20px;
+  }
+  .modalImage {
+    height: 600px;
+    width: 1110px;
+    position: relative;
+    left: 43px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nextPrevButton {
+    width: 160px;
+    height: 60px;
+    position: relative;
+    left: -100px;
+    top: 600px;
+    display: flex;
+    flex-direction: row;
+  }
+  .index {
+    height: 24px;
+    width: 38px;
+    color: #d6d3d3;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 20px;
+    left: -100px;
+  }
+  .nextPrevBox {
+    height: 57px;
+    width: 111px;
+    border-radius: 9px;
+    background-color: #ffffff;
+    box-shadow: 1px 2px 11px 0 rgba(198, 188, 188, 0.17);
+    display: flex;
+    flex-direction: row;
+  }
+  .seperateLine {
+    box-sizing: border-box;
+    height: 57px;
+    width: 3px;
+    border: 1px solid #979797;
+    opacity: 0.29;
+    position: relative;
+    left: 40px;
+  }
+  .prevButton {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #3e3e3e;
+    border-left: 2px solid #3e3e3e;
+    transform: rotate(-45deg);
+    position: relative;
+    left: 25px;
+    top: 20px;
+    cursor: pointer;
+  }
+  .nextButton {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #3e3e3e;
+    border-left: 2px solid #3e3e3e;
+    transform: rotate(135deg);
+    position: relative;
+    left: 55px;
+    top: 20px;
+    cursor: pointer;
+  }
+  .footerDivReview {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    top: 45vh;
+  }
+  .footerDivGallery {
+    top: 80vh;
+    position: relative;
+  }
+  .footerDivOverview {
+    position: relative;
+    top: 80vh;
+  }
 `;
 
 const Div = styled.div`
