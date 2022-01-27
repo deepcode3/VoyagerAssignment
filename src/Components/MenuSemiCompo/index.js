@@ -15,27 +15,26 @@ import greenStar from '../../Assets/Icons/ratingStar.png';
 import yellowStar from '../../Assets/Icons/yellowStar.png';
 import redStar from '../../Assets/Icons/redStar.png';
 import './MenuSemiCompo.css';
+import '../../Containers/Restaurants/Restaurants.css';
 
 // eslint-disable-next-line object-curly-newline
 const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
   const history = useHistory();
   const [navSelected, setNavSelected] = useState(from);
   return (
-    <>
-      <div className='menuHeader'>
-        <Header />
-      </div>
+    <div className='menuSemiContainer'>
+      <Header />
       <img src={menuSemiBg} alt='semiBg' className='semiBg' />
-      <div className='menuCommonBody'>
-        <div className='menuSearchBar'>
-          <span className='menuSearchInfo'>Delivery ASAP</span>
-          <div className='menuSearchInput'>
-            <SearchBar searchValue={searchKey} from='menu' />
+      <div className='bodySeperator'>
+        <div className='restaurantSearchBar1'>
+          <span className='restaurantsInfo'>Delivery ASAP</span>
+          <div className='restaurantSearch'>
+            <SearchBar searchValue={searchKey} from='restaurant' />
           </div>
-          <div className='restaurantLocation' from='menu'>
-            <LocationSetter locationValue={location} from='menu' />
+          <div className='restaurantLocation' from='restaurant'>
+            <LocationSetter locationValue={location} from='restaurant' />
           </div>
-          <img className='menuDateAndTimeButton' alt='schedule-button' src={dateTime} />
+          <img className='restaurantDateTimeButton' alt='schedule-button' src={dateTime} />
         </div>
       </div>
       <div className='menuLocators'>
@@ -44,7 +43,6 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
           {restaurant}
         </div>
       </div>
-
       <img src={halfBg} alt='' className='menuHalfBgImage' />
       <div className='semiBgComponentSeperator'>
         <img src={menuKebab} alt='' className='menuKebabImage' />
@@ -138,7 +136,7 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default MenuHalfCompo;
