@@ -108,7 +108,7 @@ const FinalPayment = () => {
         <div
           className='fpaynow'
           onClick={() => {
-            if (paymentItems.length === 0) {
+            if (paymentItems.length === 0 && cardDetails === true) {
               alert('Please add card details');
             } else {
               history.push({

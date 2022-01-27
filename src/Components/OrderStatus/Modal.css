@@ -979,7 +979,7 @@ input::placeholder {
     width: 100px;
   }
   .modalbgs {
-    left: 115px;
+    left: 105px;
     width: 300px;
   }
   .statusitemsrectangle {
@@ -1065,5 +1065,11 @@ input::placeholder {
 @media all and (max-width: 420px) {
   .modalbgs {
     left: 70px;
+  }
+}
+
+@media all and (max-width: 395px) {
+  .modalbgs {
+    left: 35px;
   }
 }

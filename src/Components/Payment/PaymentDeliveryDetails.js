@@ -7,10 +7,12 @@ const PaymentDeliveryDetails = ({ location, deliveryType }) => {
     <div className='paydeliverydetails'>
       <div className='locationtimediv'>
         <div className='paydeliverylocation'>
-          <p className='paydeliverylocationtext'>Delivery location</p>
+          {deliveryType !== 'pickUp' ? (
+            <p className='paydeliverylocationtext'>Delivery location</p>
+          ) : null}
           <p className='paydeliveryaddress'>
             {deliveryType === 'pickUp'
-              ? 'Pick up'
+              ? 'You chose to pick up'
               : `${location.location}, -${location.city} - ${location.area} - ${location.address}`}
           </p>
           <div className='paychange'>Change</div>

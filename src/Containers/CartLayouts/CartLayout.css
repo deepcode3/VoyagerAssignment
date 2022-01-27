@@ -452,8 +452,8 @@
   }
   .aChoosepaymenttext {
     font-size: 10.5px;
-    left: -23px;
-    top: 0px;
+    left: 15px;
+    top: 5px;
   }
   .Pactive {
     height: 20px;
@@ -947,11 +947,11 @@
     left: 80px;
   }
 }
-@media all and (max-width: 550px) {
+/* @media all and (max-width: 550px) {
   .layoutFooter {
     display: none;
   }
-}
+} */
 
 @media all and (max-width: 750px) {
   .addresscontainer {
@@ -1835,8 +1835,8 @@
     left: 310px;
   }
   .aChoosepaymenttext {
-    left: -2px;
-    top: 0px;
+    left: 6px;
+    top: 5px;
     font-size: 12px;
     width: 110px;
   }
