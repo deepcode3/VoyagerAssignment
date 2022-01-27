@@ -91,7 +91,7 @@ const CartAddress = () => {
             <div className='myadd'>
               <p className='myaddtxt'>
                 My Addresses
-                <span>( )</span>
+                <span>{`(${addressItems.length})`}</span>
               </p>
             </div>
             <div className='addnew'>
