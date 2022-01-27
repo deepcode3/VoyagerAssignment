@@ -14,12 +14,20 @@ import cactive from '../../Assets/Icons/Active state.png';
 import activeline from '../../Assets/Icons/Activeline.png';
 
 const Payment = () => {
-  const [enterCardDetails, setEnterCardDetails] = useState(false);
+  const [enterCardDetails, setEnterCardDetails] = useState(true);
   // const history={useHistory}
   const location = useLocation();
   const history = useHistory();
   const loadfinalpay = () => {
-    history.push({ pathname: '/finalpay', state: { restaurant: location.state.restaurant } });
+    history.push({
+      pathname: '/status',
+      state: {
+        restaurant: location.state.restaurant,
+        selectedAddress: location.state.selectedAddress,
+        deliveryType: location.state.deliveryType,
+        paymentType: location.state.paymentType,
+      },
+    });
   };
   const loadaddress = () => {
     history.goBack('/address');
@@ -28,7 +36,16 @@ const Payment = () => {
     setEnterCardDetails(true);
   };
   const HideCardDetails = () => {
-    setEnterCardDetails(false);
+    history.push({
+      pathname: '/finalpay',
+      state: {
+        restaurant: location.state.restaurant,
+        selectedAddress: location.state.selectedAddress,
+        deliveryType: location.state.deliveryType,
+        paymentType: 'Credit/Debit Card',
+      },
+    });
+    // setEnterCardDetails(false);
   };
   console.log(enterCardDetails);
   return (
@@ -38,50 +55,55 @@ const Payment = () => {
       </div>
       <div className='paymentcontainer'>
         <div className='Preferdpaymentdiv'>
-          <PaymentOption cardDisplay={showCardDetails} hideDetails={HideCardDetails} />
+          <PaymentOption
+            from='payment'
+            cardDisplay={showCardDetails}
+            enterCardDetails={enterCardDetails}
+            hideDetails={HideCardDetails}
+          />
         </div>
         <div className='carddetailscontainer'>
-          {enterCardDetails
-          // eslint-disable-next-line react/jsx-wrap-multilines
-            ? (
-          // eslint-disable-next-line react/jsx-wrap-multilines
-              <>
-                <p className='entercarddetailstext'>
-                  Enter Credit/Debit card details
-                </p>
-                <div className='cardnumberdiv'>
-                  <p className='cardnumbertext'>Card number</p>
-                  <input type='text' className='cardnumber' />
-                  <img src={visaicon} className='Visaicon' alt='' />
-                  <div className='cardnumberline' />
-                </div>
-                <div className='nameoncarddiv'>
-                  <p className='nameoncard'>Name on card</p>
-                  <input type='text' className='namecard' />
-                  <div className='namecardline' />
-                </div>
-                <div className='expirydatediv'>
-                  <p className='expiry'>Expiry</p>
-                  <p className='security'>Security card</p>
-                  <input type='text' className='date' />
-                  <div className='datelines' />
-                  <div className='bar'>/</div>
-                  <input type='text' className='year' />
-                  <input type='text' className='code' />
+          {enterCardDetails ? (
+            // eslint-disable-next-line react/jsx-wrap-multilines
+            // eslint-disable-next-line react/jsx-wrap-multilines
+            <>
+              <p className='entercarddetailstext'>Enter Credit/Debit card details</p>
+              <div className='cardnumberdiv'>
+                <p className='cardnumbertext'>Card number</p>
+                <input type='text' className='cardnumber' />
+                <img src={visaicon} className='Visaicon' alt='' />
+                <div className='cardnumberline' />
+              </div>
+              <div className='nameoncarddiv'>
+                <p className='nameoncard'>Name on card</p>
+                <input type='text' className='namecard' />
+                <div className='namecardline' />
+              </div>
+              <div className='expirydatediv'>
+                <p className='expiry'>Expiry</p>
+                <p className='security'>Security card</p>
+                <input type='text' className='date' />
+                <div className='datelines' />
+                <div className='bar'>/</div>
+                <input type='text' className='year' />
+                <input type='text' className='code' />
 
-                  <div className='yearline' />
-                  <div className='codeline' />
-                </div>
-                <div className='sometext'>
-                  <input type='radio' className='somename' />
-                  <p className='addtosave'>Add this card to saved cards</p>
-                </div>
-              </>)
-            : (null)}
+                <div className='yearline' />
+                <div className='codeline' />
+              </div>
+              <div className='sometext'>
+                <input type='radio' className='somename' />
+                <p className='addtosave'>Add this card to saved cards</p>
+              </div>
+            </>
+          ) : null}
         </div>
         <PaymentPoints />
         <p className='paymentdeliverydetails'>Delivery Details</p>
-        <PaymentDeliveryDetails />
+        <PaymentDeliveryDetails
+          location={location.state.selectedAddress}
+          deliveryType={location.state.deliveryType}
+        />
         <PaymentresDetails restaurantName={location.state.restaurant} />
 
         <div className='paybackbutton' onClick={loadaddress} role='button' onKeyDown={null}>

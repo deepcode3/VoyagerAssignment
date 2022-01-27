@@ -24,6 +24,7 @@ const CartAddress = () => {
     return state.currentUser;
   });
   const addressItems = [...currentUser.address];
+  const [selectedAddress, setSelectedAddress] = useState(addressItems[0]);
   const Schema = yup.object().shape({
     mobile: yup
       .string()
@@ -51,15 +52,19 @@ const CartAddress = () => {
   });
 
   const history = useHistory();
-  const [displayAddress, setDisplayAddress] = useState(false);
+  const [displayAddress, setDisplayAddress] = useState(true);
   const formSubmit = (data) => {
     console.log(data);
+
     history.push({
-      pathname: '/payment',
-      state: { restaurant: location.state.restaurant },
+      pathname: '/finalpay',
+      state: {
+        restaurant: location.state.restaurant,
+        selectedAddress,
+        deliveryType: displayAddress ? 'deliverToMe' : 'pickUp',
+      },
     });
   };
-
   return (
     <div className='addressbg'>
       <div className='adress'>
@@ -74,11 +79,13 @@ const CartAddress = () => {
             <div className='deliver'>
               <img src={delivericon} className='scootericon' alt='deliveryicon' />
             </div>
+
             <input
               type='radio'
               value='delivertome'
               name='deliveryoption'
               className='delivertomebtn'
+              defaultChecked
               onClick={() => {
                 setDisplayAddress(true);
               }}
@@ -107,7 +114,7 @@ const CartAddress = () => {
             <div className='myadd'>
               <p className='myaddtxt'>
                 My Addresses
-                <span>( )</span>
+                <span>{`(${addressItems.length})`}</span>
               </p>
             </div>
             <div className='addnew'>
@@ -127,7 +134,12 @@ const CartAddress = () => {
                     {addressItems.map((item, index) => {
                       return (
                         <li key={index.toString()}>
-                          <AddressCard item={item} index={index} />
+                          <AddressCard
+                            item={item}
+                            index={index}
+                            setSelectedAddress={setSelectedAddress}
+                            selectedAddress={selectedAddress}
+                          />
                         </li>
                       );
                     })}
@@ -141,9 +153,9 @@ const CartAddress = () => {
           <p className='contactdetails'>Contact Details</p>
           <div className='inputname'>
             <div className='namediv'>
-              {/* <p className='name'>Name</p> */}
+              {/* {/ <p className='name'>Name</p> /} */}
               <InputField name='name' register={register} msg={errors.name?.message} label='Name' />
-              {/* <div className='blackline' /> */}
+              {/* {/ <div className='blackline' /> /} */}
             </div>
           </div>
           <div className='mobnumdiv'>
@@ -156,6 +168,7 @@ const CartAddress = () => {
               setSelectedCode={setSelectedCode}
             />
           </div>
+
           <div className='delins'>
             <p className='deliveryins'>Delivery Instructions?</p>
           </div>
@@ -173,6 +186,7 @@ const CartAddress = () => {
           >
             <p className='aBACKtext'>BACK</p>
           </div>
+
           <button className='aChoosepayment' type='submit' onKeyDown={null}>
             <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
           </button>

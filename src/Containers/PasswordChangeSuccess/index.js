@@ -46,6 +46,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   border-radius: 0 7px 7px 0;
   align-items: center;
+  @media (max-width: 850px) {
+    width: 480px;
+    height: 588px;
+    border-radius: 0px 0px 8px 8px;
+  }
   @media (max-width: 550px) {
     width: 300px;
     height: 70%;
@@ -61,6 +66,10 @@ const Button = styled.button`
   position: absolute;
   top: 3%;
   cursor: pointer;
+  @media (max-width: 850px) {
+    right: 1%;
+    top: 1%;
+  }
   @media (max-width: 550px) {
     right: 2%;
     top: 1%;

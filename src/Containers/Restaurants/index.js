@@ -277,47 +277,44 @@ const Restaurant = ({ data, searchKey, location }) => {
             </div>
             {data.map((res) => {
               return (
-                <>
-                  <div key={res.name} className='resBox'>
-                    <div className='resName'>{res.name}</div>
-                    <img alt='items' className='resImage' src={res.image} />
-                    <div className='resLocation'>{res.location}</div>
-                    <div className='resUnderline' />
-                    <div className='resItem'>{res.item}</div>
-                    <div className='resStatus'>
-                      {res.status.charAt(0).toUpperCase() + res.status.slice(1)}
-                    </div>
-                    <div className='resDetails'>
-                      <div className='restaurantDot1' />
-                      <div className='resDeliveryTime'>{res.delivery_time}</div>
-                      <div className='restaurantDot2' />
-                      <div className='restOpenedTill'>{res.openedtill}</div>
-                      <div className='restaurantDot3' />
-                      <div className='resMealCost'>{res.mealcost}</div>
-                    </div>
-                    <div className='resRating'>
-                      <div className='ratingInfo'>{res.ratings}</div>
-                    </div>
-
-                    <img
-                      className='menuButton'
-                      alt='menuButton'
-                      src={menuButton}
-                      onClick={() => {
-                        history.push(`/${searchKey}/${location}/menu/${res.name}/${res.item}`);
-                      }}
-                      onKeyDown={null}
-                    />
+                <div key={res.name} className='resBox'>
+                  <div className='resName'>{res.name}</div>
+                  <img src={`/assets/images/${res.image}.png`} alt='items' className='resImage' />
+                  <div className='resLocation'>{res.location}</div>
+                  <div className='resUnderline' />
+                  <div className='resItem'>{res.item}</div>
+                  <div className='resStatus'>
+                    {res.status.charAt(0).toUpperCase() + res.status.slice(1)}
                   </div>
-                  <br />
-                </>
+                  <div className='resDetails'>
+                    <div className='restaurantDot1' />
+                    <div className='resDeliveryTime'>{res.delivery_time}</div>
+                    <div className='restaurantDot2' />
+                    <div className='restOpenedTill'>{res.openedtill}</div>
+                    <div className='restaurantDot3' />
+                    <div className='resMealCost'>{res.mealcost}</div>
+                  </div>
+                  <div className='resRating'>
+                    <div className='ratingInfo'>{res.ratings}</div>
+                  </div>
+
+                  <img
+                    className='menuButton'
+                    alt='menuButton'
+                    src={menuButton}
+                    onClick={() => {
+                      history.push(`/${searchKey}/${location}/menu/${res.name}/${res.item}`);
+                    }}
+                    onKeyDown={null}
+                  />
+                </div>
               );
             })}
           </div>
+          <div className='footerDivRest'>
+            <Footer />
+          </div>
         </div>
-      </div>
-      <div className='footerDivRest'>
-        <Footer />
       </div>
     </div>
   );

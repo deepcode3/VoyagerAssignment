@@ -536,3 +536,12 @@
   margin: 0px;
   padding: 0px;
 }
+.checkCard {
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  top: 10px;
+  left: 250px;
+  border: none;
+  background-color: transparent;
+}

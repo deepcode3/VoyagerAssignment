@@ -22,6 +22,7 @@ const FinalPayment = () => {
     return state.currentUser;
   });
   const paymentItems = [...currentUser.cards];
+  const [selectedCard, setSelectedCard] = useState(paymentItems[0]);
   const prepay = () => {
     history.goBack('/payment');
   };
@@ -36,7 +37,11 @@ const FinalPayment = () => {
     <div className='finalpaymentbg'>
       <p className='paytext'>Payment</p>
       <div className='finalpaycontainer'>
-        <PaymentOption cardDisplay={showDetails} hideDetails={hideCard} />
+        <PaymentOption
+          cardDisplay={showDetails}
+          hideDetails={hideCard}
+          enterCardDetails={cardDetails}
+        />
         {cardDetails ? (
           // eslint-disable-next-line react/jsx-wrap-multilines
           <>
@@ -46,7 +51,15 @@ const FinalPayment = () => {
                 className='payaddnewtext'
                 onKeyDown={null}
                 onClick={() => {
-                  history.push('/profile/profile-Pay');
+                  history.push({
+                    pathname: '/payment',
+                    state: {
+                      restaurant: location.state.restaurant,
+                      selectedAddress: location.state.selectedAddress,
+                      deliveryType: location.state.deliveryType,
+                      paymentType: 'Credit/Debit Card',
+                    },
+                  });
                 }}
               >
                 ADD NEW
@@ -59,7 +72,12 @@ const FinalPayment = () => {
                     {paymentItems.map((item, index) => {
                       return (
                         <li key={index.toString()}>
-                          <PaymentCardCart item={item} index={index} />
+                          <PaymentCardCart
+                            item={item}
+                            index={index}
+                            selectedCard={selectedCard}
+                            setSelectedCard={setSelectedCard}
+                          />
                         </li>
                       );
                     })}
@@ -75,7 +93,10 @@ const FinalPayment = () => {
 
         <p className='Fpaymentdeliverydetails'>Delivery Details</p>
         <div className='Fpaydeldetails'>
-          <PaymentDeliveryDetails />
+          <PaymentDeliveryDetails
+            location={location.state.selectedAddress}
+            deliveryType={location.state.deliveryType}
+          />
         </div>
         <div className='fpayres'>
           <PaymentresDetails restaurantName={location.state.restaurant} />
@@ -86,7 +107,15 @@ const FinalPayment = () => {
         <div
           className='fpaynow'
           onClick={() => {
-            history.push({ pathname: '/status', state: { restaurant: location.state.restaurant } });
+            history.push({
+              pathname: '/status',
+              state: {
+                restaurant: location.state.restaurant,
+                selectedAddress: location.state.selectedAddress,
+                deliveryType: location.state.deliveryType,
+                paymentType: cardDetails ? 'Credit/Debit Card' : 'Cash',
+              },
+            });
           }}
           role='button'
           onKeyDown={null}

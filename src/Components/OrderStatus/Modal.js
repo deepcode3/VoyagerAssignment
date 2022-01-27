@@ -1,13 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from 'react';
 import './Modal.css';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import StarIcon from '@mui/icons-material/Star';
 import Items from '../ItemDescription/Items';
-import { itemsOfRestaurant } from '../../Utils';
+import { itemsOfRestaurant, getTotalPriceWithDiscount, totalPrice } from '../../Utils';
 
-const Modal = ({ closemodal, restaurantName }) => {
+const Modal = ({ closemodal, restaurantName, location, deliveryType, paymentType }) => {
   const currentUser = useSelector((state) => {
     return state.currentUser;
   });
@@ -47,23 +48,35 @@ const Modal = ({ closemodal, restaurantName }) => {
         <div className='statusamountrect'>
           <div className='sadiv'>
             <p className='spaidtext'>Paid</p>
-            <p className='spaidamount'>AED 85.76</p>
+            <p className='spaidamount'>
+              {`AED
+            ${getTotalPriceWithDiscount(restaurantName, currentUser).toFixed(2)}`}
+            </p>
             <p className='sitemstotaltext'>Items total</p>
-            <p className='stotalamount'>AED 118.0</p>
+            <p className='stotalamount'>
+              {' '}
+              {`AED
+           ${totalPrice(restaurantName, currentUser).toFixed(2)}`}
+            </p>
+
             <p className='sfeetext'>Fee/charges</p>
-            <p className='sfeeamount'>AED 10.76</p>
+            <p className='sfeeamount'>AED10.00</p>
             <p className='sdiscounttext'>Discount</p>
-            <p className='sdiscountamount'>AED 42.24</p>
+            <p className='sdiscountamount'>AED24.22</p>
 
             <p className='spaymentmethod'>Payment Method</p>
-            <p className='scredittext'>Credit/Debit Card</p>
+            <p className='scredittext'>{paymentType}</p>
           </div>
         </div>
         <p className='statusdeldeatils'>Delivery Details</p>
         <div className='statusdelrct'>
           <div className='modaldelivery'>
             <p className='mdeliverylocation'>Delivery Location</p>
-            <p className='mdeliveryaddress'>Downtown Burj Khalifa, Dubai, UAE</p>
+            <p className='mdeliveryaddress'>
+              {deliveryType === 'pickUp'
+                ? 'Pick up'
+                : `${location.location}, -${location.city} - ${location.area} - ${location.address}`}
+            </p>
             <div className='mdelgreyline' />
             <p className='mdatetimetext'>Date & Time</p>
             <p className='mdatetime'>Today at 11:30 AM</p>
@@ -239,5 +252,8 @@ const Modal = ({ closemodal, restaurantName }) => {
 Modal.propTypes = {
   closemodal: PropTypes.func.isRequired,
   restaurantName: PropTypes.string.isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+  deliveryType: PropTypes.string.isRequired,
+  paymentType: PropTypes.string.isRequired,
 };
 export default Modal;

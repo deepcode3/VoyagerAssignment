@@ -268,7 +268,15 @@ const Orderstatus = () => {
           <img src={trackline} alt='' className='trackline3' />
         </div>
       </div>
-      {openModal && <Modal closemodal={setOpenModal} restaurantName={location.state.restaurant} />}
+      {openModal && (
+        <Modal
+          closemodal={setOpenModal}
+          restaurantName={location.state.restaurant}
+          deliveryType={location.state.deliveryType}
+          location={location.state.selectedAddress}
+          paymentType={location.state.paymentType}
+        />
+      )}
       <div className='footerDivStatus'>
         <Footer />
       </div>
