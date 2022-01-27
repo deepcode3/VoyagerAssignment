@@ -106,9 +106,11 @@ export const DateTimeSetter = () => {
     setDate(moment(new Date()).format('[Today, ]DD[ ]MMMM[, ]YYYY[ ]'));
   });
   return (
-    <div className='dateTime'>
-      <div className='dateText'>{date}</div>
-      <img src={dateTime} alt='date' className='dateButton' onKeyDown={null} />
+    <div className='dateTimePositioning'>
+      <div className='dateTime'>
+        <div className='dateText'>{date}</div>
+        <img src={dateTime} alt='date' className='dateButton' onKeyDown={null} />
+      </div>
     </div>
   );
 };
