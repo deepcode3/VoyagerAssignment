@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
 import icnCheckInActive from '../../Assets/Icons/icn_check_inactive.png';
 import './Address.css';
@@ -11,6 +12,7 @@ import { removeAddress } from '../../Actions/AddressActions';
 const AddressCard = ({ item, index, selectedAddress, setSelectedAddress }) => {
   const indx = findIndex();
   const dispatch = useDispatch();
+   const history = useHistory();
   return (
     <div key={index.toString()} className='address_card'>
       <span className='home'>{`${item.addressLabel}`}</span>
@@ -34,7 +36,7 @@ const AddressCard = ({ item, index, selectedAddress, setSelectedAddress }) => {
         />
       </button>
       <span className='addressline'>{`${item.location}, -${item.city} - ${item.area} - ${item.address}, `}</span>
-      <div className='editbtn'>Edit</div>
+      <div className='editbtn' onClick={() => { history.push('/profile/profile-address'); }} onKeyDown={null}>Edit</div>
       <button
         className='deletebtn'
         type='button'

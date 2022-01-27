@@ -9,28 +9,27 @@ import './SearchRestaurantView.css';
 
 const SearchRestaurantView = ({ data, searchKey, location }) => {
   return (
-    <div className='outContainer'>
-      <div className='headerDivSearchRest'>
+    <div className='cartmaindiv'>
+      <div className='cartheaderDivSearchRest'>
         <Header />
       </div>
-      <img src={menuSemiBg} alt='semiBg' className='csemiBg' />
-      <div className='restaurantSearchBar'>
-        <span className='crestaurantsInfo'>Delivery ASAP</span>
-        {console.log(data)}
-        <div className='csearch'>
-          <div className='restaurantSearch'>
+      <img src={menuSemiBg} alt='semiBg' className='cartsemiBg' />
+      <div className='cartbodySeperator'>
+        <div className='cartrestaurantSearchBar1'>
+          <span className='cartrestaurantsInfo'>Delivery ASAP</span>
+          {console.log(data)}
+          <div className='cartrestaurantSearch'>
             <SearchBar searchValue={searchKey} from='restaurant' />
           </div>
-        </div>
-        <div className='clsetter'>
-          <div className='restaurantLocation' from='restaurant'>
+          <div className='cartrestaurantLocation' from='restaurant'>
             <LocationSetter locationValue={location} from='restaurant' />
           </div>
+          <img className='cartrestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
         </div>
-        <img className='crestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
       </div>
-      <div className='crestaurantLocators'>
-        <div className='crestaurantLocatorInfo'>Home UAE Explore Great breakfasts My Cart</div>
+      <div className='cartbreadcrumbsarea'>
+        <p className='cartbreadcrumbs'>Home    UAE    Explore   Great breakfasts    My Cart</p>
+        <div className='cartcrumbline' />
       </div>
     </div>
   );
