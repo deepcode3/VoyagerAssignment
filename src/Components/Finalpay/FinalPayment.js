@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable  no-alert */
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -107,15 +108,19 @@ const FinalPayment = () => {
         <div
           className='fpaynow'
           onClick={() => {
-            history.push({
-              pathname: '/status',
-              state: {
-                restaurant: location.state.restaurant,
-                selectedAddress: location.state.selectedAddress,
-                deliveryType: location.state.deliveryType,
-                paymentType: cardDetails ? 'Credit/Debit Card' : 'Cash',
-              },
-            });
+            if (paymentItems.length === 0) {
+              alert('Please add card details');
+            } else {
+              history.push({
+                pathname: '/status',
+                state: {
+                  restaurant: location.state.restaurant,
+                  selectedAddress: location.state.selectedAddress,
+                  deliveryType: location.state.deliveryType,
+                  paymentType: cardDetails ? 'Credit/Debit Card' : 'Cash',
+                },
+              });
+            }
           }}
           role='button'
           onKeyDown={null}

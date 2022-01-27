@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable  no-alert */
 import { React, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
@@ -164,14 +165,17 @@ const CartAddress = () => {
         <div
           className='aChoosepayment'
           onClick={() => {
-            history.push({
-              pathname: '/finalpay',
-              state: {
-                restaurant: location.state.restaurant,
-                selectedAddress,
-                deliveryType: displayAddress ? 'deliverToMe' : 'pickUp',
-              },
-            });
+            if (addressItems.length === 0) alert('Please select/add address to deliver');
+            else {
+              history.push({
+                pathname: '/finalpay',
+                state: {
+                  restaurant: location.state.restaurant,
+                  selectedAddress,
+                  deliveryType: displayAddress ? 'deliverToMe' : 'pickUp',
+                },
+              });
+            }
           }}
           role='button'
           onKeyDown={null}
