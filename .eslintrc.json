@@ -38,6 +38,7 @@
     ],
     "operator-linebreak": [2, "before", { "overrides": { "=": "after" } }],
     "indent": [0, "tab"],
-    "no-tabs": 0
+    "no-tabs": 0,
+    "no-nested-ternary": 0
   }
 }

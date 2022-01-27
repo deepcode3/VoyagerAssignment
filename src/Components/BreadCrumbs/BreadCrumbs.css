@@ -8,3 +8,6 @@
   letter-spacing: 0;
   line-height: 17px;
 }
+.MuiBreadcrumbs-separator {
+  color: #ffa500;
+}

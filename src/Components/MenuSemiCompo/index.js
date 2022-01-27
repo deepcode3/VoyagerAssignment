@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import Header from '../Header';
+import BreadCrumb from '../BreadCrumbs';
 import SearchBar, { LocationSetter } from '../HomeComponents/SearchBar';
 import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
@@ -21,6 +22,13 @@ import '../../Containers/Restaurants/Restaurants.css';
 const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
   const history = useHistory();
   const [navSelected, setNavSelected] = useState(from);
+  const menuBreadCrumbData = [
+    { data: 'Home', path: '/' },
+    { data: location, path: '' },
+    { data: 'Expolre', path: '' },
+    { data: 'Great breakfast', path: `/restaurants/${searchKey}/:${location}` },
+    { data: restaurant, path: `/${searchKey}/${location}/menu/${restaurant}/${item}` },
+  ];
   return (
     <div className='menuSemiContainer'>
       <Header />
@@ -39,8 +47,7 @@ const MenuHalfCompo = ({ searchKey, location, restaurant, item, from }) => {
       </div>
       <div className='menuLocators'>
         <div className='menuLocatorsInfo'>
-          Home UAE Explore Great Breakfasts
-          {restaurant}
+          <BreadCrumb BreadCrumbdata={menuBreadCrumbData} />
         </div>
       </div>
       <img src={halfBg} alt='' className='menuHalfBgImage' />
