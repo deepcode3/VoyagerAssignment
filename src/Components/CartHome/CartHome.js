@@ -3,7 +3,7 @@ import { React } from 'react';
 import { useSelector } from 'react-redux';
 import Cartlist from './CartList';
 import './CartHome.css';
-import data from '../RestaurentsData/Data/data.json';
+import data from '../RestaurentsData/data';
 import { restaurantItemsCount, totalPrice } from '../../Utils';
 
 const CartHome = () => {
@@ -12,7 +12,7 @@ const CartHome = () => {
   });
   let resdata = null;
   if (currentUser !== null) {
-    resdata = data.restaurants.filter((obj) => {
+    resdata = data.filter((obj) => {
       return restaurantItemsCount(obj.name, currentUser) !== 0;
     });
   }

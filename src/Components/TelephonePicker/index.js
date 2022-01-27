@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import iconDropdown from '../../Assets/Icons/icon_dropdown.png';
-import data from './Data/data.json';
+import array from './data';
 import OutsideAlerter from '../OutsideClickAlerter';
 
 // eslint-disable-next-line object-curly-newline
@@ -13,7 +13,7 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
   const handleSelection = (e) => {
     setSelectedCountry(e.currentTarget.id);
     setSelectedCode(
-      data.countryWithCode.find((element) => {
+      array.find((element) => {
         return element.country === e.currentTarget.id;
       }).code
     );
@@ -43,7 +43,7 @@ const TelephonePicker = ({ name, register, msg, label, selectedCode, setSelected
           >
             <DropDownContainer>
               <DropDownWindow>
-                {data.countryWithCode.map((element) => {
+                {array.map((element) => {
                   return (
                     <OptionWrapper
                       key={element.country}
