@@ -17,6 +17,7 @@ import { addCard } from '../../Actions/CardActions';
 import { findIndex } from '../../Utils';
 
 const Payment = () => {
+  const [saveStatus, setSaveStatus] = useState(false);
   const dispatch = useDispatch();
   const indx = findIndex();
   const initialFormData = Object.freeze({
@@ -42,7 +43,9 @@ const Payment = () => {
   const history = useHistory();
   const loadfinalpay = (e) => {
     e.preventDefault();
-    dispatch(addCard(values, indx));
+    if (saveStatus === true) {
+      dispatch(addCard(values, indx));
+    }
     history.push({
       pathname: '/status',
       state: {
@@ -153,7 +156,14 @@ const Payment = () => {
                   <div className='codeline' />
                 </div>
                 <div className='sometext'>
-                  <input type='radio' className='somename' />
+                  <input
+                    type='radio'
+                    name='save'
+                    className='somename'
+                    onClick={() => {
+                      setSaveStatus(true);
+                    }}
+                  />
                   <p className='addtosave'>Add this card to saved cards</p>
                 </div>
               </>
