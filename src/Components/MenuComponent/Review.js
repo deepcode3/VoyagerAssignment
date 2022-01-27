@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';

@@ -511,6 +511,7 @@ input[type="text"]:focus {
   /* left: -500px; */
   left: -945px;
 }
+
 @media all and (max-width: 1060px) {
   .cartprogressbar {
     position: relative;
@@ -716,5 +717,257 @@ input[type="text"]:focus {
   }
   .mentiongreyline {
     width: 300px;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .dbgbody {
+    width: 100%;
+    overflow: hidden;
+  }
+  .restaurentname {
+    left: -50px;
+    top: 150px;
+  }
+  .orderitems {
+    width: 500px;
+  }
+  .edtime {
+    left: -120px;
+    top: 155px;
+  }
+  .orderdisplay_rectangle {
+    width: 450px;
+    top: 170px;
+  }
+  .dispitemsdiv {
+    width: 450px;
+  }
+  .remove {
+    left: 360px;
+  }
+  .incdeccount {
+    left: 320px;
+  }
+  .itemtotalcost {
+    left: 350px;
+  }
+  .cookinginsdiv {
+    width: 430px;
+  }
+  .mention {
+    width: 410px;
+  }
+  .mentiongreyline {
+    width: 400px;
+  }
+  .backbutton {
+    left: 210px;
+  }
+  .choseaddbtn {
+    left: 310px;
+    width: 110px;
+  }
+  .chooseadd {
+    width: 110px;
+    font-size: 11px;
+  }
+  .cartprogressbar {
+    left: -862px;
+  }
+  .cartpaymenttext {
+    left: 1050px;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .cartprogressbar {
+    left: -820px;
+  }
+  .cartActive {
+    left: 660px;
+  }
+  .cartpartialactiveline {
+    width: 130px;
+    left: 680px;
+    top: 292px;
+  }
+  .Cdeactive2 {
+    top: 286px;
+    left: 800px;
+    width: 20px;
+  }
+  .cartdeactiveline {
+    width: 130px;
+    left: 816px;
+    top: 292px;
+  }
+  .cartdeactivestate {
+    top: 286px;
+    left: 940px;
+    width: 20px;
+  }
+  .progresscart {
+    left: 658px;
+    top: 315px;
+  }
+  .cartadresstext {
+    left: 768px;
+    top: 315px;
+  }
+  .cartpaymenttext {
+    left: 918px;
+    top: 315px;
+  }
+  .restaurentname {
+    left: 10px;
+  }
+  .edtime {
+    left: -65px;
+  }
+  .orderdisplay_rectangle {
+    width: 370px;
+  }
+  .dispitemsdiv {
+    width: 370px;
+  }
+  .incdeccount {
+    left: 250px;
+  }
+  .remove {
+    left: 270px;
+  }
+  .itemtotalcost {
+    left: 270px;
+  }
+  .cookinginsdiv {
+    width: 300px;
+  }
+  .mention {
+    width: 300px;
+  }
+  .mentiongreyline {
+    width: 330px;
+  }
+  .backbutton {
+    left: 150px;
+  }
+  .choseaddbtn {
+    left: 250px;
+  }
+}
+@media all and (max-width: 395px) {
+  .cartprogressbar {
+    left: -630px;
+  }
+  .orderdisplay_rectangle {
+    width: 330px;
+    left: 0px;
+  }
+  .dispitemsdiv {
+    width: 330px;
+    left: 0px;
+  }
+  .incdeccount {
+    left: 250px;
+  }
+  .itemtotalcost {
+    left: 250px;
+  }
+  .remove {
+    left: 250px;
+  }
+  .orderitems {
+    width: 300px;
+  }
+  .mentiongreyline {
+    width: 300px;
+  }
+  .backbutton {
+    left: 135px;
+  }
+  .choseaddbtn {
+    left: 210px;
+  }
+}
+
+@media all and (max-width: 290px) {
+  .cartprogressbar {
+    left: -657px;
+  }
+
+  .cartActive {
+    left: 670px;
+  }
+  .cartpartialactiveline {
+    width: 110px;
+    left: 680px;
+    top: 292px;
+  }
+  .Cdeactive2 {
+    top: 286px;
+    left: 780px;
+    width: 17px;
+  }
+  .cartdeactiveline {
+    width: 110px;
+    left: 796px;
+    top: 292px;
+  }
+  .cartdeactivestate {
+    top: 286px;
+    left: 905px;
+    width: 17px;
+  }
+  .progresscart {
+    left: 668px;
+    top: 315px;
+  }
+  .cartadresstext {
+    left: 750px;
+    top: 315px;
+  }
+  .cartpaymenttext {
+    left: 880px;
+    top: 315px;
+  }
+
+  .orderdisplay_rectangle {
+    width: 260px;
+    left: 0px;
+  }
+  .dispitemsdiv {
+    width: 260px;
+    left: 0px;
+  }
+  .incdeccount {
+    left: 180px;
+  }
+  .itemtotalcost {
+    left: 180px;
+  }
+  .remove {
+    left: 180px;
+  }
+  .orderitems {
+    width: 300px;
+  }
+  .mention {
+    width: 200px;
+  }
+  .mentiongreyline {
+    width: 230px;
+  }
+  .backbutton {
+    left: 75px;
+  }
+  .choseaddbtn {
+    left: 145px;
+  }
+  .restaurentname {
+    left: 45px;
+  }
+  .edtime {
+    left: -25px;
   }
 }

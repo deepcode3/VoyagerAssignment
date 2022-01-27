@@ -712,9 +712,3 @@ input[type="radio"] {
   margin: 0px;
   padding: 0px;
 }
-
-@media all and (max-width: 550px) {
-  .footerDivAddress {
-    display: none;
-  }
-}

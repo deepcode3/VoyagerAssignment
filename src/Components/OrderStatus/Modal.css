@@ -16,7 +16,7 @@
   height: 33px;
   width: 150px;
   color: #4c4c4c;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.34px;
@@ -53,7 +53,7 @@
   height: 22px;
   width: 44px;
   color: #565454;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0;
@@ -82,7 +82,7 @@
   height: 22px;
   width: 63px;
   color: #565454;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0;
@@ -118,7 +118,7 @@
   height: 22px;
   width: 33px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 22px;
@@ -132,7 +132,7 @@
   height: 22px;
   width: 93px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
@@ -148,7 +148,7 @@
   height: 17px;
   width: 60px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -162,7 +162,7 @@
   height: 17px;
   width: 61px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -177,7 +177,7 @@
   height: 17px;
   width: 71px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -191,7 +191,7 @@
   height: 27px;
   width: 74px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 27px;
@@ -206,7 +206,7 @@
   height: 17px;
   width: 50px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -220,7 +220,7 @@
   height: 17px;
   width: 74px;
   color: black;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -235,7 +235,7 @@
   height: 22px;
   width: 138px;
   color: #223136;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 22px;
@@ -249,7 +249,7 @@
   height: 22px;
   width: 141px;
   color: #223136;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
@@ -276,7 +276,7 @@
   height: 19px;
   width: 54px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
@@ -292,7 +292,7 @@
   height: 22px;
   width: 121px;
   color: #565454;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0;
@@ -331,7 +331,7 @@
   height: 22px;
   width: 138px;
   color: #565454;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.24px;
@@ -353,7 +353,7 @@
   height: 17px;
   width: 86px;
   color: #858585;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -369,7 +369,7 @@
   height: 22px;
   width: 405px;
   color: #4a4a4a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   letter-spacing: -0.27px;
   line-height: 22px;
@@ -421,7 +421,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -459,7 +459,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -496,7 +496,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -532,7 +532,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -568,7 +568,7 @@ input::placeholder {
   height: 17px;
   width: 10.04px;
   color: #c2c2c2;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -605,7 +605,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -644,7 +644,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -683,7 +683,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -722,7 +722,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -761,7 +761,7 @@ input::placeholder {
   width: 10.04px;
   color: #5fb700;
 
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -795,7 +795,7 @@ input::placeholder {
   height: 17px;
   width: 153.81px;
   color: #6a6a6a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -808,7 +808,7 @@ input::placeholder {
   height: 19px;
   width: 383.66px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -832,7 +832,7 @@ input::placeholder {
   height: 17px;
   width: 115.79px;
   color: #6a6a6a;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 17px;
@@ -845,7 +845,7 @@ input::placeholder {
   height: 19px;
   width: 200.47px;
   color: #2d2d2d;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 14px;
   letter-spacing: -0.24px;
   line-height: 19px;
@@ -853,10 +853,21 @@ input::placeholder {
   top: 100px;
   left: 10px;
 }
-@media all and (max-width: 1400px) {
+@media all and (max-width: 1450px) {
   .modalbgs {
-    left: 445px;
+    left: 345px;
     width: 500px;
+  }
+}
+@media all and (max-width: 1060px) {
+  .modalbgs {
+    left: 300px;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .modalbgs {
+    left: 100px;
   }
 }
 @media all and (max-width: 400px) {
@@ -942,5 +953,117 @@ input::placeholder {
   }
   .mdelgreyline {
     width: 250px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .item {
+    width: 200px;
+  }
+  .itemname {
+    width: 200px;
+  }
+  .orderitems {
+    width: 300px;
+  }
+  .remove {
+    width: 30px;
+  }
+  .addons {
+    width: 300px;
+  }
+  .cookinginsdiv {
+    width: 300px;
+  }
+  .choseaddbtn {
+    width: 100px;
+  }
+  .modalbgs {
+    left: 115px;
+    width: 300px;
+  }
+  .statusitemsrectangle {
+    width: 260px;
+    left: 20px;
+  }
+  .orderDetailsTotalCost {
+    left: 165px;
+  }
+  /* .incdeccount {
+    left: 165px;
+  } */
+  /* .remove {
+    left: 165px;
+  } */
+  .spaidamount {
+    left: 140px;
+  }
+  .sfeeamount,
+  .sdiscountamount {
+    left: 150px;
+  }
+  .stotalamount {
+    left: 163px;
+  }
+  .spaymentmethod {
+    top: 120px;
+    left: 50px;
+  }
+  .scredittext {
+    left: 40px;
+  }
+  .statusamountrect {
+    width: 260px;
+    left: 20px;
+  }
+  .statusdelrct {
+    left: 15px;
+    width: 280px;
+  }
+
+  .statusratingrect {
+    width: 290px;
+  }
+  .rectstar5 {
+    left: 242px;
+  }
+  .statusreview {
+    width: 250px;
+  }
+  .statuslastline {
+    width: 250px;
+  }
+  .statussubmit {
+    left: 100px;
+    width: 100px;
+  }
+  .statussubtext {
+    left: 19px;
+    font-size: 16px;
+  }
+  .statusorderdetails {
+    left: 20px;
+    font-size: 17px;
+  }
+  .closinbutton {
+    left: 250px;
+  }
+  .payoitemsorderdfrom {
+    width: 300px;
+  }
+  .cartcomp {
+    width: 100%;
+    height: 100%;
+  }
+  .modaldelivery {
+    width: 270px;
+  }
+  .mdelgreyline {
+    width: 250px;
+  }
+}
+@media all and (max-width: 420px) {
+  .modalbgs {
+    left: 70px;
   }
 }

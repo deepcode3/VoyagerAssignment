@@ -3,6 +3,7 @@
   top: 247px;
   width: 100%;
   height: 800px;
+  overflow: hidden;
 }
 
 .mycarttext {
@@ -169,7 +170,7 @@
   }
 } */
 
-@media all and (max-width: 1238px) {
+@media all and (max-width: 1308px) {
   .mycarttext {
     left: 200px;
   }
@@ -216,5 +217,19 @@
   .mycarttext {
     font-size: 17px;
     left: 100px;
+  }
+}
+@media all and (max-width: 720px) {
+  .cartdiv {
+    position: relative;
+    left: 100px;
+  }
+}
+@media all and (max-width: 840px) {
+  .mycarttext {
+    left: 150px;
+  }
+  .cartdiv {
+    left: 150px;
   }
 }

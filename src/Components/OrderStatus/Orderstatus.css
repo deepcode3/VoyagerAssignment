@@ -594,6 +594,7 @@
   top: 70px;
   height: 44px;
   width: 100%;
+  left: 10px;
   background-color: #dee6ed;
 }
 .ocrumbs {
@@ -633,24 +634,62 @@
   margin-right: auto;
   margin-left: auto;
 }
-@media all and (max-width: 550px) {
-  .footerDivStatus {
-    display: none;
+
+@media all and (max-width: 1450px) {
+  .orderbreadcrumb {
+    width: 100%;
+    background-color: #dee6ed;
+  }
+  .ocrumbs {
+    width: 300px;
+    left: 225px;
+  }
+  .crumbline {
+    width: 100%;
+    /* background-color: #6f6f6f; */
+  }
+  /* .statusbg {
+    width: 100%;
+  } */
+
+  .statuscontainer {
+    left: 240px;
+  }
+  .statusbg {
+    width: 100%;
+  }
+  .orderid {
+    left: 240px;
+  }
+  /* .orderid {
+    position: absolute;
+    left: 80px;
+    width: 240px;
+  } */
+  .modalbgs {
+    left: -45px;
   }
 }
 @media all and (max-width: 1060px) {
   .statusbg {
     width: 100%;
   }
+  .ocrumbs {
+    width: 300px;
+    left: 140px;
+  }
   .statuscontainer {
     width: 700px;
     height: 500px;
     left: 150px;
   }
+  .imgcontainer {
+    width: 700px;
+  }
   .orderid {
     font-size: 18px;
     font-weight: bold;
-    left: 155px;
+    left: 150px;
   }
   .orderplacedimg {
     width: 700px;
@@ -864,23 +903,364 @@
     left: 220px;
   }
 }
-@media all and (max-width: 1400px) {
-  .statuscontainer {
-    left: 300px;
-  }
+
+@media all and (max-width: 850px) {
   .statusbg {
-    width: 1569px;
+    width: 100%;
+  }
+  .imgcontainer {
+    position: relative;
+
+    width: 550px;
   }
   .orderid {
-    left: 300px;
+    left: 70px;
   }
-  .modalbgs {
-    left: -45px;
+
+  .ocrumbs {
+    left: 70px;
   }
+  .orderplacedimg {
+    position: relative;
+
+    width: 550px;
+  }
+  .statuscontainer {
+    position: relative;
+    width: 550px;
+    left: 70px;
+  }
+  .greenicon1 {
+    height: 20px;
+    width: 20px;
+    left: 10px;
+    top: 328px;
+  }
+  .greenicon2 {
+    height: 20px;
+    width: 20px;
+    left: 10px;
+    top: 328px;
+  }
+  .greenicon3 {
+    height: 20px;
+    width: 20px;
+    left: 10px;
+    top: 328px;
+  }
+  .greenicon4 {
+    height: 20px;
+    width: 20px;
+    left: 191px;
+    top: 328px;
+  }
+  .greyicon {
+    height: 20px;
+    width: 20px;
+    left: 191px;
+    top: 328px;
+  }
+  .greyicon2 {
+    height: 20px;
+    width: 20px;
+    left: 360px;
+    top: 328px;
+  }
+  .yellowicon {
+    height: 20px;
+    width: 20px;
+    left: 191px;
+    top: 328px;
+  }
+  .yellowicon2 {
+    height: 20px;
+    width: 20px;
+    left: 360px;
+    top: 328px;
+  }
+  .yellowicon6 {
+    height: 20px;
+    width: 20px;
+    left: 360px;
+    top: 328px;
+  }
+  .greyicon3 {
+    height: 20px;
+    width: 20px;
+    left: 520px;
+    top: 328px;
+  }
+  .greenicondel {
+    height: 20px;
+    width: 20px;
+    left: 520px;
+    top: 328px;
+  }
+  .greeniconbeforedel {
+    height: 20px;
+    width: 20px;
+    left: 360px;
+    top: 328px;
+  }
+  .trackline1 {
+    width: 158px;
+    left: 32px;
+    top: 337px;
+  }
+  .trackline2 {
+    width: 148px;
+    left: 212px;
+    top: 337px;
+  }
+  .trackline3 {
+    width: 140px;
+    left: 380px;
+    top: 337px;
+  }
+  .oispalcedtext {
+    font-size: 12.5px;
+    left: -40px;
+    top: 355px;
+  }
+  .owaitingtext {
+    font-size: 12.5px;
+    left: -40px;
+    top: 355px;
+  }
+  .oaccepttext {
+    font-size: 12.5px;
+    left: -40px;
+    top: 355px;
+  }
+  .inkitchenbefore {
+    font-size: 12.5px;
+    left: 150px;
+    top: 355px;
+  }
+  .inkitchenafter {
+    font-size: 12.5px;
+    left: 150px;
+    top: 355px;
+  }
+  .oaccepttextbefore {
+    font-size: 12.5px;
+    left: 290px;
+    top: 355px;
+  }
+  .oaccepttextafter {
+    font-size: 12.5px;
+    left: 290px;
+    top: 355px;
+  }
+  .outfordeliverytext {
+    font-size: 12.5px;
+    left: 290px;
+    top: 355px;
+  }
+  .deliveredicontext {
+    font-size: 12.5px;
+    left: 440px;
+    top: 355px;
+  }
+  .owaitingfordelafter {
+    font-size: 12.5px;
+    left: 440px;
+    top: 355px;
+  }
+  .owaitingfordelbefore {
+    font-size: 12.5px;
+    left: 440px;
+    top: 355px;
+  }
+  .datetime {
+    font-size: 11.5px;
+    left: -20px;
+    top: 375px;
+  }
+  .datetime2 {
+    font-size: 11.5px;
+    left: 130px;
+    top: 375px;
+  }
+  .datetime3 {
+    font-size: 11.5px;
+    left: 280px;
+    top: 375px;
+  }
+  .datetime4 {
+    font-size: 11.5px;
+    left: 428px;
+    top: 375px;
+  }
+  .cancelordertext {
+    font-size: 12.5px;
+    left: 3px;
+    top: 365px;
+  }
+  .sbacktoorders {
+    width: 100px;
+    top: 450px;
+    left: 0px;
+  }
+  .btext {
+    font-size: 10.5px;
+    left: -7px;
+  }
+  .chatbtn {
+    width: 80px;
+    top: 450px;
+    left: 360px;
+  }
+  .chattxt {
+    font-size: 11.5px;
+    left: 10px;
+  }
+  .orderdlts {
+    width: 90px;
+    top: 450px;
+    left: 450px;
+  }
+  .ordrdlts {
+    font-size: 10.5px;
+    left: -9px;
+  }
+  .statusgreyline {
+    width: 547px;
+    top: 440px;
+  }
+  .ratings {
+    font-size: 12px;
+    top: 405px;
+    left: 420px;
+  }
+  .ohasdeltext {
+    font-size: 18px;
+    top: 200px;
+    left: 170px;
+  }
+}
+@media all and (max-width: 600px) {
+  .ocrumbs {
+    left: 60px;
+  }
+  .orderbreadcrumb {
+    width: 100%;
+  }
+  .statusbg {
+    width: 100%;
+  }
+  .imgcontainer {
+    position: relative;
+
+    width: 350px;
+  }
+  .orderplacedimg {
+    position: relative;
+
+    width: 350px;
+  }
+  .statuscontainer {
+    position: relative;
+    width: 350px;
+    left: 70px;
+  }
+  .greenicon1,
+  .greenicon2,
+  .greenicon3,
+  .greenicon4,
+  .greeniconbeforedel,
+  .greenicondel,
+  .greyicon,
+  .greyicon2,
+  .greyicon3,
+  .yellowicon,
+  .yellowicon2,
+  .yellowicon6,
+  .trackline1,
+  .trackline2,
+  .trackline3 {
+    display: none;
+  }
+  .oispalcedtext,
+  .owaitingtext,
+  .oaccepttext {
+    top: 290px;
+    left: -20px;
+  }
+  .cancelordertext {
+    left: 20px;
+    top: 300px;
+  }
+  .datetime {
+    top: 310px;
+    left: 0px;
+  }
+  .inkitchenbefore,
+  .inkitchenafter {
+    top: 290px;
+    left: 205px;
+  }
+  .datetime2 {
+    top: 310px;
+    left: 180px;
+  }
+  .oaccepttextbefore,
+  .oaccepttextafter,
+  .outfordeliverytext {
+    left: 10px;
+  }
+  .datetime3 {
+    left: 10px;
+  }
+  .owaitingfordelafter,
+  .owaitingfordelbefore,
+  .deliveredicontext {
+    left: 200px;
+  }
+  .datetime4,
+  .ratings {
+    left: 180px;
+  }
+  .orderid {
+    left: 80px;
+  }
+  .ohasdeltext {
+    left: 45px;
+  }
+  .statusgreyline {
+    width: 345px;
+  }
+  .sbacktoorders {
+    left: 10px;
+  }
+  .chatbtn {
+    left: 160px;
+  }
+  .orderdlts {
+    left: 250px;
+  }
+  .outContainer {
+    width: 390px;
+  }
+  .layoutRestaurentView {
+    width: 300px;
+  }
+  /* .restaurantSearchBar {
+    width: 300px;
+  }
+  .searchCard {
+    width: 0px;
+  }
+  .restaurantSearch {
+    width: 150px;
+  }
+  .crestaurantLocatorInfo {
+    width: 300px;
+  } */
 }
 @media all and (max-width: 400px) {
   .statusbg {
-    width: 390px;
+    width: 100%;
   }
   .imgcontainer {
     position: relative;
@@ -973,7 +1353,7 @@
   .layoutRestaurentView {
     width: 300px;
   }
-  .restaurantSearchBar {
+  /* .restaurantSearchBar {
     width: 300px;
   }
   .searchCard {
@@ -984,7 +1364,7 @@
   }
   .crestaurantLocatorInfo {
     width: 300px;
-  }
+  } */
   .item {
     width: 200px;
   }
@@ -1088,5 +1468,103 @@
   }
   .mdelgreyline {
     width: 250px;
+  }
+}
+@media all and (max-width: 420px) {
+  .statuscontainer {
+    left: 40px;
+  }
+  .orderid {
+    left: 40px;
+  }
+}
+
+@media all and (max-width: 395px) {
+  .statuscontainer {
+    left: 5px;
+  }
+  .orderid {
+    left: 5px;
+  }
+}
+
+@media all and (max-width: 290px) {
+  .orderplacedimg {
+    position: relative;
+
+    width: 250px;
+  }
+  .statuscontainer {
+    position: relative;
+    width: 250px;
+    left: 10px;
+  }
+  .imgcontainer {
+    position: relative;
+    left: 100px;
+    width: 250px;
+  }
+
+  .oispalcedtext,
+  .owaitingtext,
+  .oaccepttext {
+    top: 280px;
+    left: -30px;
+  }
+  .cancelordertext {
+    top: 300px;
+    left: 10px;
+  }
+  .datetime {
+    top: 300px;
+    left: 0px;
+  }
+  .inkitchenbefore,
+  .inkitchenafter {
+    top: 280px;
+    left: 150px;
+  }
+  .datetime2 {
+    top: 300px;
+    left: 120px;
+  }
+  .oaccepttextbefore,
+  .oaccepttextafter,
+  .outfordeliverytext {
+    left: 0px;
+  }
+  .datetime3 {
+    left: 0px;
+  }
+  .owaitingfordelafter,
+  .owaitingfordelbefore,
+  .deliveredicontext {
+    left: 134px;
+  }
+  .datetime4 {
+    left: 130px;
+  }
+  .ratings {
+    left: 120px;
+  }
+  .ohasdeltext {
+    left: -80px;
+  }
+  .statusgreyline {
+    width: 245px;
+  }
+  .sbacktoorders {
+    left: 0px;
+    width: 80px;
+  }
+  .btext {
+    font-size: 8px;
+    left: -15px;
+  }
+  .chatbtn {
+    left: 85px;
+  }
+  .orderdlts {
+    left: 165px;
   }
 }
