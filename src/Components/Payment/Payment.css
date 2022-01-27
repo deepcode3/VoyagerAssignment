@@ -776,7 +776,8 @@
 .paynowbutton {
   height: 45px;
   width: 130px;
-
+  background-color: transparent;
+  border: none;
   position: absolute;
   left: 470px;
   bottom: 28px;

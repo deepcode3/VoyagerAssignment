@@ -32,7 +32,7 @@ import {
   decreaseItemQuantity,
   removeAllRestaurantItems,
 } from '../../Actions/CartActions';
-import { findIndex, itemsOfRestaurant, totalPrice } from '../../Utils';
+import { findIndex, itemsOfRestaurant, totalPrice, getTotalPriceWithDiscount } from '../../Utils';
 
 const Menu = () => {
   let index = 0;
@@ -63,12 +63,7 @@ const Menu = () => {
     }
     return false;
   };
-  const getTotalPriceWithDiscount = (restaurant) => {
-    const discount = 24.22;
-    const totalprice = totalPrice(restaurant, currentUser);
-    if (totalprice !== 0) return totalprice + 10 - discount;
-    return 0;
-  };
+
   return (
     <div className='mainMenuDiv'>
       <MenuHalfCompo
@@ -212,7 +207,7 @@ const Menu = () => {
                   <span className='priceLabel'>To Pay</span>
                   <div className='totalPriceDiscount'>
                     AED
-                    {getTotalPriceWithDiscount(restaurant).toFixed(2)}
+                    {getTotalPriceWithDiscount(restaurant, currentUser).toFixed(2)}
                   </div>
                   <img
                     src={costShowHideButton}
@@ -234,7 +229,7 @@ const Menu = () => {
                       <span className='itemsTotalLabel'>Items Total</span>
                       <span className='totalAmount'>
                         AED
-                        {totalPrice(restaurant).toFixed(2)}
+                        {totalPrice(restaurant, currentUser).toFixed(2)}
                       </span>
                     </div>
                     <div className='charges'>

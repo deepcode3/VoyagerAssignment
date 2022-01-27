@@ -1,29 +1,38 @@
+/* eslint-disable  jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import icnCheckActive from '../../Assets/Icons/icn_check.png';
-// import icnCheckInactive from '../../Assets/Icons/icn_check_inactive.png';
+import icnCheckInActive from '../../Assets/Icons/icn_check_inactive.png';
 import './Address.css';
 import { findIndex } from '../../Utils';
 import { removeAddress } from '../../Actions/AddressActions';
 
-const AddressCard = ({ item, index }) => {
+const AddressCard = ({ item, index, selectedAddress, setSelectedAddress }) => {
   const indx = findIndex();
-  // const currentUser = useSelector((state) => {
-  //   return state.currentUser;
-  // });
   const dispatch = useDispatch();
   return (
     <div key={index.toString()} className='address_card'>
       <span className='home'>{`${item.addressLabel}`}</span>
-      <div className='check_address'>
+      <button
+        type='button'
+        className='check_address'
+        onKeyDown={null}
+        onClick={() => {
+          setSelectedAddress(item);
+        }}
+      >
         <img
-          src={icnCheckActive}
+          src={
+            JSON.stringify(item) === JSON.stringify(selectedAddress)
+              ? icnCheckActive
+              : icnCheckInActive
+          }
           alt='icn'
           style={{ float: 'left' }}
           className='addresscardcheckbtn'
         />
-      </div>
+      </button>
       <span className='addressline'>{`${item.location}, -${item.city} - ${item.area} - ${item.address}, `}</span>
       <div className='editbtn'>Edit</div>
       <button
@@ -42,5 +51,7 @@ const AddressCard = ({ item, index }) => {
 export default AddressCard;
 AddressCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.string).isRequired,
+  setSelectedAddress: PropTypes.func.isRequired,
+  selectedAddress: PropTypes.objectOf(PropTypes.string).isRequired,
   index: PropTypes.number.isRequired,
 };
