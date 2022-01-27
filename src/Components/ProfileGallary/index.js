@@ -73,6 +73,14 @@ const Gallary = () => {
             <div className='row'>{galleryDisplay()}</div>
             <br />
           </div>
+          <div className='galleryView1'>
+            <div className='row'>{galleryDisplay()}</div>
+            <br />
+            <div className='row'>{galleryDisplay()}</div>
+            <br />
+            <div className='row'>{galleryDisplay()}</div>
+            <br />
+          </div>
           <div className='viewAllPhotos'>
             <span className='viewAllText'>Viewmore</span>
             <span className='viewAllArrow'>{'>'}</span>
@@ -183,24 +191,39 @@ const Div = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
+  display: flex;
+  padding: 75px 0;
   align-items: center;
   position: relative;
+  margin-right: auto;
+  margin-left: auto;
   background-color: #f1f3fb;
+  @media screen and (max-width: 1000px) {
+    height: 80vh;
+  }
+  @media screen and (max-width: 768px) {
+    height: 70vh;
+  }
   @media screen and (max-width: 500px) {
     height: 60vh;
   }
   .middle {
-    width: 90%;
+    width: 1000px;
     height: 636px;
     display: flex;
-    text-align: center;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 12%;
+    text-align: center;
     overflow-y: scroll;
     position: relative;
+    @media screen and (max-width: 1000px) {
+      width: 720px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 450px;
+    }
     @media screen and (max-width: 500px) {
-      width: 72%;
+      width: 80%;
       position: relative;
       padding: 0;
     }
@@ -215,6 +238,15 @@ const Div = styled.div`
     left: 00px;
     display: flex;
     flex-direction: row;
+    @media screen and (max-width: 1000px) {
+    }
+    @media screen and (max-width: 768px) {
+    }
+    @media screen and (max-width: 500px) {
+      width: 80%;
+      position: relative;
+      padding: 0;
+    }
   }
   .galleryFilterButton {
     height: 38px;
@@ -223,8 +255,14 @@ const Div = styled.div`
     background-color: #ffffff;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
     position: absolute;
-    left: 45vw;
+    left: 50%;
     top: 10px;
+    @media screen and (max-width: 1000px) {
+    }
+    @media screen and (max-width: 768px) {
+    }
+    @media screen and (max-width: 500px) {
+    }
   }
   .allPhotos {
     height: 19px;
@@ -238,6 +276,13 @@ const Div = styled.div`
     position: relative;
     left: 20px;
     top: 10px;
+    @media screen and (max-width: 1000px) {
+    }
+    @media screen and (max-width: 768px) {
+    }
+    @media screen and (max-width: 500px) {
+      left: 0px;
+    }
   }
   .galleryArrow {
     border: 6px solid #f5a623;
@@ -256,30 +301,68 @@ const Div = styled.div`
     cursor: pointer;
   }
   .galleryView {
-    width: 700px;
+    width: 650px;
     height: 600px;
     position: relative;
     top: 70px;
-    left: -40px;
+    left: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (max-width: 1000px) {
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+  }
+  .galleryView1 {
+    display: none;
+    @media screen and (max-width: 768px) {
+      width: 390px;
+      height: 500px;
+      position: relative;
+      top: 50px;
+      left: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media screen and (max-width: 500px) {
+      left: 0px;
+    }
   }
   .imageContainer {
     height: 131px;
     width: 140px;
-    margin-left: 20px;
-    margin-bottom: 20px;
     position: relative;
-    left: -10px;
-    top: 10px;
+    @media screen and (max-width: 768px) {
+      width: 110px;
+    }
+    @media screen and (max-width: 500px) {
+      height: 100px;
+      width: 100px;
+      padding: 4%;
+    }
   }
   .galleryImage {
     height: 131px;
     width: 140px;
     border-radius: 10px;
+    @media screen and (max-width: 768px) {
+      height: 110px;
+      width: 110px;
+    }
+    @media screen and (max-width: 500px) {
+      height: 90px;
+      width: 90px;
+    }
   }
   .row {
     display: flex;

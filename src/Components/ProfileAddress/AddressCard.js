@@ -68,16 +68,21 @@ const CardDiv = styled.div`
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  // margin: 7px;
   position: relative;
   flex: 1;
-  margin: 1%;
+  margin: 0.5%;
+  @media screen and (max-width: 1000px) {
+    height: 200px;
+    width: 333px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 186px;
+    width: 449px;
+  }
   @media screen and (max-width: 500px) {
     position: relative;
-    left: -67px;
-    margin: 2%;
-    height: 240px;
-    width: 302px;
+    height: 187px;
+    width: 308px;
   }
 `;
 const Home = styled.span`
@@ -91,8 +96,13 @@ const Home = styled.span`
   position: absolute;
   top: 29px;
   left: 26px;
+  @media screen and (max-width: 1000px) {
+  }
+  @media screen and (max-width: 768px) {
+    top: 34px;
+    left: 35px;
+  }
   @media screen and (max-width: 500px) {
-    //display:none;
     position: absolute;
     top: 29px;
     left: 26px;
@@ -105,6 +115,15 @@ const PrimaryDiv = styled.div`
   position: absolute;
   top: 21px;
   left: 367px;
+  @media screen and (max-width: 1000px) {
+    //display: none;
+    top: 10px;
+    left: 200px;
+  }
+  @media screen and (max-width: 768px) {
+    top: 35px;
+    left: 320px;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
     width: 22px;
@@ -135,15 +154,21 @@ const Primary = styled.span`
 `;
 const Address = styled.span`
   height: 84px;
-  width: 387px;
+  // width: 387px;
   color: #2d2d2d;
   font-family: 'Open Sans';
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: -0.3px;
   line-height: 28px;
   position: absolute;
   top: 59px;
   left: 26px;
+  @media screen and (max-width: 1000px) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    left: 35px;
+  }
   @media screen and (max-width: 500px) {
     height: 130px;
     width: 220px;
@@ -165,9 +190,20 @@ const Edit = styled.span`
   position: absolute;
   top: 143px;
   left: 343px;
+  @media screen and (max-width: 1000px) {
+    // display: none;
+    top: 150px;
+    left: 25px;
+  }
+  @media screen and (max-width: 768px) {
+    //display: none;
+    top: 140px;
+    left: 35px;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
-    top: 200px;
+    font-size: 1rem;
+    top: 150px;
     left: 26px;
   }
 `;
@@ -177,7 +213,7 @@ const Delete = styled.button`
   width: 51px;
   color: #f57c00;
   font-family: 'Open Sans';
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 22px;
@@ -188,9 +224,18 @@ const Delete = styled.button`
   padding: 0;
   border: none;
   background: none;
+  @media screen and (max-width: 1000px) {
+    top: 150px;
+    left: 100px;
+  }
+  @media screen and (max-width: 768px) {
+    top: 140px;
+    left: 100px;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
-    top: 200px;
+    font-size: 1rem;
+    top: 150px;
     left: 90px;
   }
 `;

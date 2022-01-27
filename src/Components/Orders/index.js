@@ -2,11 +2,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from './modal';
-import { Data } from '../Profiledata';
+// import { Data } from '../Profiledata';
+import Data from '../Profiledata/orserdata.json';
 
 const Orders = () => {
   const [open, setOpen] = useState(false);
   console.log('open state in orders:', open);
+  console.log('open state in orders:', Data);
   return (
     <Div>
       <div className='align-1'>
@@ -18,9 +20,9 @@ const Orders = () => {
       </div>
       <div className='align-2'>
         <div className='rectangle-2'>
-          {Data.map((data) => {
+          {Data.Orders.map((data) => {
             return (
-              <div key={data.orderId} className='rectangle-3'>
+              <div key={data.orderId} className='ordercard'>
                 <span className='order-id'>
                   Order id:
                   {data.orderId}
@@ -28,9 +30,9 @@ const Orders = () => {
                 <span className='kitchen-type'>{data.kitchen}</span>
                 <span className='road'>{data.address}</span>
                 <span className='itemsAED'>
-                  {data.items}
+                  {`${data.items}
                   Items | AED
-                  {data.cost}
+         ${data.cost}`}
                 </span>
                 <span className='delivery-status-text '>{data.status}</span>
                 <div className='details'>
@@ -64,7 +66,7 @@ export default Orders;
 
 const Div = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   padding: 5rem 0;
@@ -72,71 +74,30 @@ const Div = styled.div`
   position: relative;
   background-color: #f1f3fb;
   @media screen and (max-width: 500px) {
+    //background-color: pink;
     display: flex;
     position: relative;
     height: 60vh;
   }
   .align-1 {
-    // width: 940px;
-    width: 66%;
+    width: 1000px;
     height: 33px;
     display: flex;
     position: relative;
-    // justify-content: start;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 12%;
+    @media screen and (max-width: 998px) {
+      width: 800px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 300px;
+    }
     @media screen and (max-width: 500px) {
       display: flex;
       position: absolute;
       top: 10px;
       width: 50%;
       padding-left: 2%;
-    }
-  }
-  .align-2 {
-    height: 540px;
-    //width: 980px;
-    width: 65%;
-    overflow-y: scroll;
-    align-items: center;
-    display: flex;
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 12%;
-    @media screen and (max-width: 500px) {
-      position: absolute;
-      top: 60px;
-      width: 320px;
-      overflow-y: scroll;
-      padding-left: 0%;
-    }
-  }
-  .rectangle-2 {
-    width: 980px;
-    max-height: 100%;
-    @media screen and (max-width: 500px) {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-height: 100%;
-      padding-left: 0%;
-    }
-  }
-  .rectangle-3 {
-    height: 248px;
-    width: 469px;
-    float: left;
-    border-radius: 6px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-    margin: 7px;
-    position: relative;
-    @media screen and (max-width: 500px) {
-      height: 255px;
-      width: 290px;
-      padding-left: 0%;
     }
   }
   .active-orders {
@@ -153,32 +114,107 @@ const Div = styled.div`
     outline: 0px;
     position: absolute;
   }
-  // .ao {
-  //   color: #f57c00;
-  //   font-family: 'Open Sans';
-  //   font-size: 16px;
-  //   font-weight: 600;
-  //   letter-spacing: 0;
-  //   line-height: 22px;
-  // }
-  // .right-arrow {
-  //   height: 10px;
-  //   width: 6.17px;
-  //   transform: rotate(180deg);
-  //   padding: 2px;
-  // }
-
+  .align-2 {
+    height: 540px;
+    width: 1000px;
+    overflow-y: scroll;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    @media screen and (max-width: 1815px) {
+      width: 1000px;
+    }
+    @media screen and (max-width: 998px) {
+      width: 840px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 650px;
+    }
+    @media screen and (max-width: 500px) {
+      position: absolute;
+      top: 60px;
+      width: 320px;
+      overflow-y: scroll;
+      padding-left: 0%;
+    }
+  }
+  .rectangle-2 {
+    width: 980px;
+    max-height: 100%;
+    @media screen and (max-width: 1815px) {
+      width: 1000px;
+    }
+    @media screen and (max-width: 998px) {
+      width: 837px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 648px;
+    }
+    @media screen and (max-width: 608px) {
+      width: 400px;
+      padding-left: 20%;
+    }
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-height: 100%;
+      padding-left: 0%;
+    }
+  }
+  .ordercard {
+    height: 248px;
+    width: 469px;
+    float: left;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 7px;
+    position: relative;
+    @media screen and (max-width: 998px) {
+      height: 248px;
+      width: 400px;
+      //display:none;
+    }
+    @media screen and (max-width: 768px) {
+      height: 256px;
+      width: 300px;
+      // display:none;;
+    }
+    @media screen and (max-width: 608px) {
+      height: 260px;
+      width: 300px;
+    }
+    @media screen and (max-width: 500px) {
+      height: 255px;
+      width: 290px;
+      padding-left: 0%;
+    }
+  }
   .order-id {
-    height: 30px;
     color: #313131;
     font-family: 'Open Sans';
-    font-size: 22px;
     font-weight: 600;
     letter-spacing: -0.34px;
-    line-height: 30px;
+    font-size: 1.375rem;
+    line-height: 1.875;
     position: absolute;
     top: 27px;
     left: 30px;
+    @media screen and (max-width: 998px) {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
+    @media screen and (max-width: 608px) {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
     @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
@@ -191,12 +227,24 @@ const Div = styled.div`
     // width: 165px;
     color: #4c4c4c;
     font-family: 'Open Sans';
-    font-size: 17px;
+    font-size: 1rem;
     letter-spacing: -0.29px;
-    line-height: 23px;
+    line-height: 1.4rem;
     position: absolute;
     top: 67px;
     left: 30px;
+    @media screen and (max-width: 998px) {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+    }
+    @media screen and (max-width: 608px) {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+    }
     @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
@@ -206,15 +254,27 @@ const Div = styled.div`
   }
   .road {
     height: 36px;
-    width: 200px;
+    // width: 200px;
     color: #909090;
     font-family: 'Open Sans';
-    font-size: 13px;
+    font-size: 0.8rem;
     letter-spacing: -0.26px;
-    line-height: 18px;
+    line-height: 1.125rem;
     position: absolute;
     top: 100px;
     left: 30px;
+    @media screen and (max-width: 998px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
+    @media screen and (max-width: 608px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
     @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
@@ -224,16 +284,28 @@ const Div = styled.div`
   }
   .itemsAED {
     height: 19px;
-    width: 136px;
+    //width: 136px;
     color: #4c4c4c;
     font-family: 'Open Sans';
-    font-size: 14px;
+    font-size: 0.8;
     font-weight: 600;
     letter-spacing: 0;
-    line-height: 19px;
+    line-height: 1.188;
     position: absolute;
     top: 129px;
     left: 30px;
+    @media screen and (max-width: 998px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
+    @media screen and (max-width: 608px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
     @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
@@ -243,19 +315,35 @@ const Div = styled.div`
   }
   .delivery-status-text {
     height: 19px;
-   / width: 108px;
     color: #72b000;
     font-family: 'Open Sans';
-    font-size: 14px;
+    font-size: 0.875;
     font-weight: 600;
     letter-spacing: 0;
-    line-height: 19px;
+    line-height: 1.188rem;
     text-align: right;
     position: absolute;
     top: 37px;
     left: 330px;
+    @media screen and (max-width: 998px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+      left: 300px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+      top: 15px;
+      left: 206px;
+    }
+    @media screen and (max-width: 608px) {
+      font-size: 0.7rem;
+      line-height: 1rem;
+      top: 15px;
+      left: 206px;
+    }
     @media screen and (max-width: 500px) {
-       display: block;
+      display: block;
       position: absolute;
       top: 8px;
       left: 160px;
@@ -273,6 +361,15 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 998px) {
+      left: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      left: 20px;
+    }
+    @media screen and (max-width: 608px) {
+      left: 20px;
+    }
     @media screen and (max-width: 500px) {
       //display: none;
       position: absolute;
@@ -308,6 +405,15 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 998px) {
+      left: 207px;
+    }
+    @media screen and (max-width: 768px) {
+      left: 170px;
+    }
+    @media screen and (max-width: 608px) {
+      left: 170px;
+    }
     @media screen and (max-width: 500px) {
       //display: none;
       position: absolute;

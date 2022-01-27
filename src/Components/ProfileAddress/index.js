@@ -60,7 +60,6 @@ const Div = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
-  align-items: center;
   padding: 75px 0;
   flex-direction: column;
   position: relative;
@@ -71,39 +70,60 @@ const Div = styled.div`
     height: 60vh;
   }
   .recommendation-1 {
-    width: 930px;
+    width: 950px;
     display: flex;
+    position: relative;
     height: 24px;
     margin-right: auto;
     margin-left: auto;
-    justify-content: space-between;
+    @media screen and (max-width: 1000px) {
+      width: 670px;
+    }
+    @media screen and (max-width: 860px) {
+      width: 640px;
+    }
+    @media screen and (max-width: 670px) {
+      width: 440px;
+    }
     @media screen and (max-width: 500px) {
-      display: block;
       width: 320px;
-      position: absolute;
       top: 10px;
     }
   }
   .my-addresses-2 {
     height: 22px;
-    width: 122px;
     color: #6f6f6f;
     font-family: 'Open Sans';
     font-size: 16px;
     letter-spacing: -0.27px;
     line-height: 22px;
+    position: absolute;
+    display: flex;
+    left: 30px;
+    @media screen and (max-width: 1000px) {
+      left: 30px;
+    }
+    @media screen and (max-width: 670px) {
+      left: 15px;
+    }
+    @media screen and (max-width: 500px) {
+      left: 30px;
+    }
   }
   .add-new {
     height: 19px;
-    width: 83px;
     color: #fda200;
     font-family: 'SF UI Text';
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 19px;
-    text-align: right;
-    margin-left: 720px;
+    display: flex;
+    position: absolute;
+    right: 4px;
+    @media screen and (max-width: 670px) {
+      right: 5px;
+    }
     @media screen and (max-width: 500px) {
       display: block;
       position: absolute;
@@ -112,16 +132,20 @@ const Div = styled.div`
     }
   }
   .recommendation-2 {
-    // width: 1050px;
-    width: 80%;
+    width: 1000px;
     height: 536px;
     display: flex;
-    text-align: center;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 12%;
     overflow-y: scroll;
     position: relative;
+    @media screen and (max-width: 1000px) {
+      width: 720px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 550px;
+    }
+
     @media screen and (max-width: 500px) {
       width: 72%;
       position: relative;
@@ -129,10 +153,14 @@ const Div = styled.div`
     }
   }
   .order-1 {
-    //  width: 1050px;
-    width: 100%;
+    width: 1000px;
     max-height: 100%;
-    padding-left: 11%;
+    @media screen and (max-width: 1000px) {
+      width: 720px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 550px;
+    }
     @media screen and (max-width: 500px) {
       width: 100%;
     }

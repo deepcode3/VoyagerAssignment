@@ -146,10 +146,16 @@ const ModalBack = styled.div`
   .ModalContainer {
     height: 666px;
     width: 962px;
+    @media screen and (max-width: 1000px) {
+      width: 700px;
+      height: 666px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 480px;
+    }
     @media screen and (max-width: 500px) {
       width: 430px;
       height: 730px;
-      background-color: black;
     }
   }
   .card {
@@ -164,6 +170,14 @@ const ModalBack = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 1000px) {
+      height: 628px;
+      width: 700px;
+    }
+    @media screen and (max-width: 768px) {
+      height: 690px;
+      width: 480px;
+    }
     @media screen and (max-width: 500px) {
       width: 430px;
       height: 700px;
@@ -176,26 +190,24 @@ const ModalBack = styled.div`
     font-size: 18px;
     letter-spacing: -0.3px;
     line-height: 24px;
-    @media screen and (max-width: 500px) {
-    }
-  }
-  .dismiss-button {
-    height: 12px;
-    width: 12px;
-    position: absolute;
-    right: 13px;
-    top: 13px;
   }
   .left {
     height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    @media screen and (max-width: 1000px) {
+      height: 60%;
+      width: 50%;
+    }
+    @media screen and (max-width: 768px) {
+      height: 50%;
+      width: 50%;
+    }
     @media screen and (max-width: 500px) {
       position: relative;
       width: 50%;
       height: 50%;
-      //display: none;
     }
   }
   .data {
@@ -205,10 +217,18 @@ const ModalBack = styled.div`
     justify-content: space-around;
     margin-left: 30%;
     margin-top: 35%;
+    @media screen and (max-width: 1000px) {
+      margin-left: 10%;
+      margin-top: 15%;
+    }
+    @media screen and (max-width: 768px) {
+      margin-left: 5%;
+      margin-top: 15%;
+    }
     @media screen and (max-width: 500px) {
       position: absolute;
       align-items: center;
-      margin-left: 10%;
+      margin-left: 5%;
     }
   }
 
@@ -222,6 +242,14 @@ const ModalBack = styled.div`
     left: 100px;
     top: 50px;
     position: absolute;
+    @media screen and (max-width: 1000px) {
+      left: 100px;
+      top: 15px;
+    }
+    @media screen and (max-width: 768px) {
+      left: 50px;
+      top: 15px;
+    }
     @media screen and (max-width: 500px) {
       position: absolute;
       left: 50px;
@@ -233,16 +261,12 @@ const ModalBack = styled.div`
     height: 100%;
     width: 100%;
     display: inline-block;
-    //background-image: url("profile_pic ");
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     background-position: 50% 50%;
     background-size: cover;
     border-radius: 50%;
     z-index: 1;
     position: absolute;
-    @media screen and (max-width: 500px) {
-      //display: none;
-    }
   }
   .pic {
     height: 39px;
@@ -251,23 +275,15 @@ const ModalBack = styled.div`
     position: absolute;
     top: 75px;
     left: 79px;
-    @media screen and (max-width: 500px) {
-      //display: none;
-    }
   }
   .form {
     display: flex;
     top: 204px;
     left: 84px;
-    @media screen and (max-width: 500px) {
-    }
   }
   .field {
     height: 67px;
     width: 335px;
-    @media screen and (max-width: 500px) {
-      background-color: pink;
-    }
   }
   .label {
     height: 17px;
@@ -277,9 +293,6 @@ const ModalBack = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
-    @media screen and (max-width: 500px) {
-      // display: none;
-    }
   }
   input[type='text'] {
     width: 100%;
@@ -289,8 +302,13 @@ const ModalBack = styled.div`
     border-bottom: 2px solid #4a4a4a;
     opacity: 0.53;
     margin-bottom: 10px;
+    @media screen and (max-width: 1000px) {
+      width: 82%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 60%;
+    }
     @media screen and (max-width: 500px) {
-      //display: none;
       width: 70%;
     }
   }
@@ -302,6 +320,15 @@ const ModalBack = styled.div`
     opacity: 0.53;
     position: absolute;
     top: 125px;
+    left: 500px;
+    @media screen and (max-width: 1000px) {
+      top: 130px;
+      left: 352px;
+    }
+    @media screen and (max-width: 768px) {
+      top: 165px;
+      left: 246px;
+    }
     @media screen and (max-width: 500px) {
       top: 200px;
       left: 200px;
@@ -319,6 +346,16 @@ const ModalBack = styled.div`
     position: absolute;
     top: 118px;
     left: 563px;
+    @media screen and (max-width: 1000px) {
+      top: 100px;
+      left: 440px;
+      font-size: 16px;
+    }
+    @media screen and (max-width: 768px) {
+      top: 120px;
+      left: 280px;
+      font-size: 15px;
+    }
     @media screen and (max-width: 500px) {
       position: absolute;
       font-size: 14px;
@@ -333,6 +370,17 @@ const ModalBack = styled.div`
     position: absolute;
     top: 165px;
     left: 563px;
+    @media screen and (max-width: 1000px) {
+      width: 280px;
+      top: 165px;
+      left: 380px;
+    }
+    @media screen and (max-width: 768px) {
+      height: 470px;
+      width: 200px;
+      top: 160px;
+      left: 260px;
+    }
     @media screen and (max-width: 500px) {
       height: 470px;
       width: 185px;
@@ -352,8 +400,15 @@ const ModalBack = styled.div`
     position: absolute;
     top: 541px;
     left: 723px;
+    @media screen and (max-width: 1000px) {
+      top: 540px;
+      left: 500px;
+    }
+    @media screen and (max-width: 768px) {
+      top: 600px;
+      left: 40px;
+    }
     @media screen and (max-width: 500px) {
-      //display: none;
       position: absolute;
       top: 626px;
       left: 60px;

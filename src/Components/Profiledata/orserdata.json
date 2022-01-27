@@ -1,0 +1,28 @@
+{
+  "Orders": [
+    {
+      "orderId": 123456781,
+      "status": "Out for delivary",
+      "kitchen": "The Boutiqe Kitchen",
+      "address": "outlook town, up Road, , Dubai, UAE",
+      "items": 2,
+      "cost": 45.75
+    },
+    {
+      "orderId": 9876543210,
+      "status": "In Kitchen",
+      "kitchen": "The Boutiqe Kitchen",
+      "address": "sheik Zayed road, Dubai UAE",
+      "items": 4,
+      "cost": 87.75
+    },
+    {
+      "orderId": 9876543210,
+      "status": "Out for delivary",
+      "kitchen": "The Marvelous Kitchen",
+      "address": "sheik Zayed road, Dubai UAE",
+      "items": 4,
+      "cost": 17.85
+    }
+  ]
+}

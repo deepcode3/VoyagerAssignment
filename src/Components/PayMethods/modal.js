@@ -54,7 +54,7 @@ const Model = ({ setOpen, values, setValues }) => {
             <span className='enter-credit'>Enter Credit/Debit card details</span>
             <form onSubmit={handleSubmit}>
               <div className='field'>
-                <label className='label'>Card Nvmber</label>
+                <label className='label'>Card digit</label>
                 <input
                   className='input'
                   type='text'
@@ -167,8 +167,6 @@ const ModalBack = styled.div`
 const ModalContainer = styled.div`
   height: 592px;
   width: 580px;
-  //height: 552px;
-  //width: 530px;
   border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
@@ -177,7 +175,9 @@ const ModalContainer = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
-  //padding: 40px;
+  @media screen and (max-width: 700px) {
+    width: 470px;
+  }
   @media screen and (max-width: 500px) {
     display: block;
     width: 350px;
@@ -188,6 +188,10 @@ const ModalContainer = styled.div`
     position: absolute;
     right: 13px;
     top: 13px;
+    @media screen and (max-width: 700px) {
+      height: 20px;
+      width: 20px;
+    }
     @media screen and (max-width: 500px) {
       height: 20px;
       width: 20px;
@@ -200,6 +204,9 @@ const ModalContainer = styled.div`
     text-align: center;
     top: 43px;
     left: 183px;
+    @media screen and (max-width: 700px) {
+      left: 130px;
+    }
     @media screen and (max-width: 500px) {
       left: 83px;
     }
@@ -220,8 +227,6 @@ const ModalContainer = styled.div`
   }
   .card-body {
     position: relative;
-    @media screen and (max-width: 500px) {
-    }
   }
   .enter-cards {
     height: 459px;
@@ -229,12 +234,14 @@ const ModalContainer = styled.div`
     position: absolute;
     padding-left: 30px;
     top: 100px;
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 700px) {
       width: 300px;
-      margin-left: 10px;
+      left: 10px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 280px;
     }
   }
-
   .enter-credit {
     height: 23px;
     width: 227px;
@@ -243,10 +250,7 @@ const ModalContainer = styled.div`
     font-size: 17px;
     letter-spacing: -0.41px;
     line-height: 23px;
-    @media screen and (max-width: 500px) {
-    }
   }
-
   .input {
     height: 22px;
     width: 154px;
@@ -261,8 +265,6 @@ const ModalContainer = styled.div`
     margin: 0px;
     border: 0px;
     outline: none;
-    @media screen and (max-width: 500px) {
-    }
   }
   .line {
     box-sizing: border-box;
@@ -272,8 +274,6 @@ const ModalContainer = styled.div`
     opacity: 0.53;
     position: absolute;
     bottom: 0px;
-    @media screen and (max-width: 500px) {
-    }
   }
   .input-image {
     height: 12px;
@@ -291,14 +291,15 @@ const ModalContainer = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
-    @media screen and (max-width: 500px) {
-    }
   }
   .field {
     height: 67px;
     width: 502px;
     position: absolute;
     top: 39px;
+    @media screen and (max-width: 700px) {
+      width: 350px;
+    }
     @media screen and (max-width: 500px) {
       width: 300px;
     }
@@ -308,6 +309,9 @@ const ModalContainer = styled.div`
     width: 502px;
     position: absolute;
     top: 130px;
+    @media screen and (max-width: 700px) {
+      width: 350px;
+    }
     @media screen and (max-width: 500px) {
       width: 300px;
     }
@@ -317,6 +321,9 @@ const ModalContainer = styled.div`
     width: 502px;
     position: absolute;
     top: 221px;
+    @media screen and (max-width: 700px) {
+      width: 350px;
+    }
     @media screen and (max-width: 500px) {
       width: 300px;
     }
@@ -325,12 +332,15 @@ const ModalContainer = styled.div`
     height: 67px;
     width: 502px;
     position: relative;
+    @media screen and (max-width: 700px) {
+      width: 400px;
+    }
     @media screen and (max-width: 500px) {
+      width: 300px;
     }
   }
   .label-1 {
     height: 17px;
-    //width: 20px;
     color: #858585;
     font-family: 'Open Sans';
     font-size: 12px;
@@ -338,12 +348,9 @@ const ModalContainer = styled.div`
     line-height: 17px;
     position: absolute;
     top: 0px;
-    @media screen and (max-width: 500px) {
-    }
   }
   .label-2 {
     height: 17px;
-    //width: 20px;
     color: #858585;
     font-family: 'Open Sans';
     font-size: 12px;
@@ -352,8 +359,6 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 0px;
     left: 160px;
-    @media screen and (max-width: 500px) {
-    }
   }
   .input-1[type='text'] {
     width: 8%;
@@ -365,8 +370,6 @@ const ModalContainer = styled.div`
     opacity: 0.53;
     position: absolute;
     top: 18px;
-    @media screen and (max-width: 500px) {
-    }
   }
   .input-2[type='text'] {
     width: 50%;
@@ -387,8 +390,6 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 35px;
     left: 47px;
-    @media screen and (max-width: 500px) {
-    }
   }
   .line {
     box-sizing: border-box;
@@ -396,6 +397,9 @@ const ModalContainer = styled.div`
     width: 498px;
     border: 1px solid #4a4a4a;
     opacity: 0.53;
+    @media screen and (max-width: 700px) {
+      width: 390px;
+    }
     @media screen and (max-width: 500px) {
       width: 300px;
     }
@@ -412,8 +416,6 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 320px;
     left: 0px;
-    @media screen and (max-width: 500px) {
-    }
   }
   .save-check {
     border: 2px solid white;
@@ -444,6 +446,10 @@ const ModalContainer = styled.div`
     position: absolute;
     left: 97px;
     top: 370px;
+    @media screen and (max-width: 700px) {
+      width: 235px;
+      left: 70px;
+    }
     @media screen and (max-width: 500px) {
       width: 235px;
       left: 27px;

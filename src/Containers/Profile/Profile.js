@@ -30,12 +30,16 @@ const Profile = ({ setOpen }) => {
   return (
     <>
       <Profilediv>
-        <Container>
+        <ProfileDivCenter>
           <MobileProfile onClick={handleClick1} click1={click1}>
             <img src={profilePic} alt='pic' className='profile_img' />
           </MobileProfile>
           <MobileIcon onClick={handleClick} click={click}>
-            {click ? <FaTimes /> : <FaBars style={{ color: '#fda200' }} />}
+            {click ? (
+              <FaTimes />
+            ) : (
+              <FaBars style={{ color: '#fda200', height: '20px', width: '20px' }} />
+            )}
           </MobileIcon>
           <ProfileList click1={click1}>
             <div>
@@ -43,7 +47,14 @@ const Profile = ({ setOpen }) => {
                 <FaTimes
                   className='close'
                   onClick={handleClick1}
-                  style={{ color: 'white', position: 'absolute', left: '600px', top: '40px' }}
+                  style={{
+                    color: 'white',
+                    position: 'absolute',
+                    left: '350px',
+                    top: '60px',
+                    width: '20px',
+                    height: '20px',
+                  }}
                 />
               ) : null}
             </div>
@@ -103,7 +114,7 @@ const Profile = ({ setOpen }) => {
               <NavItem>Gallary</NavItem>
             </NavLinks>
           </NavMenu>
-        </Container>
+        </ProfileDivCenter>
       </Profilediv>
       <Profileroute />
     </>
@@ -117,6 +128,8 @@ Profile.propTypes = {
 const Profilediv = styled.div`
   height: 262px;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,17 +160,16 @@ const MobileProfile = styled.div`
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 35px;
-    left: 300px;
+    left: 40px;
   }
 `;
 const MobileIcon = styled.div`
   display: none;
-  backround-color: red;
   @media screen and (max-width: 500px) {
     display: block;
     position: absolute;
-    top: 35px;
-    right: 290px;
+    top: 25px;
+    left: 380px;
     transform: translate(-100%, 60%);
     cursor: pointer;
   }
@@ -174,19 +186,18 @@ const NavMenu = styled.ul`
   @media screen and (max-width: 500px) {
     display: table;
     position: absolute;
-    // flex-direction: column;
-    width: 100%;
     overflow-y: auto;
-    height: 90vh;
+    width: 100%;
+    height: 80vh;
     padding-top: 100px;
-    top: -110px;
+    top: -10px;
     left: ${({ click }) => {
-      return click ? 0 : '-100%';
+      return click ? 0 : '110%';
     }};
 
     opacity: 1;
     transition: all 0.5s ease;
-    background: #000000;
+    background: #3e3e3e;
     z-index: 1;
   }
 `;
@@ -233,25 +244,31 @@ const NavLinks = styled(Link)`
     display: block;
     font-size: 1.5rem;
     color: #f57c00;
-    // background-color: #f1f3fb;
-    &:hover {
+    &:hover:before {
+      height: 0px;
+      width: 0px;
       transition: all 0.3s ease;
     }
   }
 `;
 
-const Container = styled.div`
+const ProfileDivCenter = styled.div`
   height: 261px;
   width: 940px;
   display: flex;
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  @media screen and (max-width: 954px) {
-    // display: none;
-    position: absolute;
-    cursor: pointer;
-    height: 100px;
+  //background-color: red;
+  @media screen and (max-width: 998px) {
+    //background-color: purple;
+    width: 90%;
+  }
+  @media screen and (max-width: 768px) {
+    //  background-color: green;
+    width: 90%;
+  }
+  @media screen and (max-width: 500px) {
+    // background-color: pink;
+    width: 90%;
   }
   .profile_img {
     width: 100%;
@@ -276,19 +293,19 @@ const ProfileList = styled.div`
     display: flex;
     position: absolute;
     flex-direction: column;
-    width: 80%;
-    overflow-y: auto;
+    width: 100%;
     height: 100vh;
-    top: -105px;
+    overflow-y: auto;
+    top: 1px;
     left: ${({ click1 }) => {
-      return click1 ? 0 : '-100%';
+      return click1 ? 0 : '-110%';
     }};
     opacity: 1;
     transition: all 0.5s ease;
-    background: #000000;
+    background: #3e3e3e;
     z-index: 1;
   }
-  .clsoe {
+  .close {
     display: none;
     @media screen and (max-width: 954px) {
       display: block;
@@ -306,7 +323,7 @@ const ProfileList = styled.div`
       box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
       position: absolute;
       top: 50px;
-      left: 409px;
+      left: 160px;
     }
   }
   .username {
@@ -322,7 +339,7 @@ const ProfileList = styled.div`
     left: 1px;
     @media screen and (max-width: 500px) {
       display: flex;
-      left: 330px;
+      left: 100px;
       top: 200px;
     }
   }
@@ -341,24 +358,33 @@ const ProfileList = styled.div`
     left: 1px;
     @media screen and (max-width: 500px) {
       display: flex;
-      left: 330px;
+      left: 100px;
       top: 260px;
     }
   }
   .num {
-    height: 22px;
     color: #ffffff;
     font-family: 'Open Sans';
-    font-size: 16px;
     letter-spacing: 0;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.375rem;
     display: flex;
     position: absolute;
-    top: 86px;
+    top: 80%;
+    @media screen and (max-width: 998px) {
+      font-size: 0.85rem;
+      line-height: 1.275rem;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.75rem;
+      line-height: 1.075rem;
+    }
     @media screen and (max-width: 500px) {
       display: flex;
-      left: 330px;
+      left: 100px;
       top: 320px;
+      font-size: 1.2rem;
+      line-height: 2.075rem;
     }
   }
   .line-1 {
@@ -368,8 +394,14 @@ const ProfileList = styled.div`
     color: 1px solid #ffffff;
     opacity: 0.37;
     position: absolute;
-    top: 77px;
-    left: 173px;
+    top: 73%;
+    left: 26%;
+    @media screen and (max-width: 998px) {
+      left: 23%;
+    }
+    @media screen and (max-width: 768px) {
+      left: 19%;
+    }
     @media screen and (max-width: 500px) {
       display: none;
     }
@@ -389,8 +421,14 @@ const ProfileList = styled.div`
     color: 1px solid #ffffff;
     opacity: 0.37;
     position: absolute;
-    top: 77px;
-    left: 487px;
+    top: 73%;
+    left: 72%;
+    @media screen and (max-width: 998px) {
+      left: 62%;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
     @media screen and (max-width: 500px) {
       display: none;
     }
@@ -399,17 +437,28 @@ const ProfileList = styled.div`
     height: 22px;
     color: #ffffff;
     font-family: 'Open Sans';
-    font-size: 16px;
     letter-spacing: 0;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.375;
     position: absolute;
-    top: 86px;
-    left: 200px;
+    top: 80%;
+    left: 30%;
+    @media screen and (max-width: 998px) {
+      font-size: 0.85rem;
+      line-height: 1.275rem;
+      left: 25%;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.75rem;
+      line-height: 1.075rem;
+      left: 20%;
+    }
     @media screen and (max-width: 500px) {
       display: flex;
-      left: 330px;
+      left: 100px;
       top: 380px;
-      font-size: 12px;
+      font-size: 1.2rem;
+      line-height: 2.075rem;
     }
   }
 
@@ -427,15 +476,28 @@ const ProfileList = styled.div`
     height: 22px;
     color: #ffffff;
     font-family: 'Open Sans';
-    font-size: 16px;
     letter-spacing: 0;
-    line-height: 22px;
-    top: 86px;
-    left: 510px;
+    font-size: 1rem;
+    line-height: 1.375;
+    top: 80%;
+    left: 75%;
     position: absolute;
+    @media screen and (max-width: 998px) {
+      font-size: 0.85rem;
+      line-height: 1.275rem;
+      left: 63%;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.75rem;
+      line-height: 1.075rem;
+      top: 110%;
+      left: 0%;
+    }
     @media screen and (max-width: 500px) {
       display: flex;
-      left: 330px;
+      font-size: 1.2rem;
+      line-height: 2.075rem;
+      left: 100px;
       top: 440px;
     }
   }
@@ -448,24 +510,49 @@ const ProfileList = styled.div`
     font-weight: bold;
     letter-spacing: 0;
     line-height: 33px;
-    top: 79px;
+    top: 75%;
     left: 630px;
     position: absolute;
+    @media screen and (max-width: 998px) {
+      font-size: 0.85rem;
+      line-height: 1.275rem;
+      top: 80%;
+      left: 78%;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.75rem;
+      line-height: 1.075rem;
+      top: 110%;
+      left: 14%;
+    }
     @media screen and (max-width: 500px) {
       display: flex;
-      left: 450px;
-      top: 435px;
+      font-size: 1.5rem;
+      line-height: 2.075rem;
+      left: 230px;
+      top: 440px;
     }
   }
   .icn-info-small {
     height: 19px;
     width: 19px;
-    top: 89px;
+    top: 80%;
     left: 680px;
     position: absolute;
+    @media screen and (max-width: 998px) {
+      font-size: 0.85rem;
+      line-height: 1.275rem;
+      left: 82%;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 0.75rem;
+      line-height: 1.075rem;
+      top: 110%;
+      left: 20%;
+    }
     @media screen and (max-width: 500px) {
       display: flex;
-      left: 400px;
+      left: 170px;
       top: 500px;
     }
   }
@@ -484,7 +571,7 @@ const ProfileList = styled.div`
     left: 160px;
     @media screen and (max-width: 500px) {
       display: flex;
-      left: 330px;
+      left: 100px;
       top: 500px;
     }
   }
