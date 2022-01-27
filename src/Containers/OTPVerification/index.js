@@ -88,6 +88,10 @@ const BackButton = styled.button`
   .backArrow {
     height: 17px;
     width: 17px;
+    @media (max-width: 850px) {
+      position: relative;
+      top: -260px;
+    }
     @media (max-width: 550px) {
       width: 15px;
       height: 13px;

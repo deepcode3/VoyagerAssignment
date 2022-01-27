@@ -283,7 +283,11 @@ const Restaurant = ({ data, searchKey, location }) => {
                   <>
                     <div key={res.name} className='resBox'>
                       <div className='resName'>{res.name}</div>
-                      <img alt='items' className='resImage' src={res.image} />
+                      <img
+                        src={`/assets/images/${res.image}.png`}
+                        alt='items'
+                        className='resImage'
+                      />
                       <div className='resLocation'>{res.location}</div>
                       <div className='resUnderline' />
                       <div className='resItem'>{res.item}</div>
