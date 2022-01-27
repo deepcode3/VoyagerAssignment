@@ -5,6 +5,7 @@
   position: absolute;
   top: 500px;
   padding-bottom: 45%;
+  overflow: hidden;
 }
 .reviewsBg {
   background-color: #c5cae238;
@@ -839,7 +840,7 @@
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
   position: relative;
-  left: 68vw;
+  left: 1270px;
   top: -10px;
 }
 .allPhotos {
@@ -876,7 +877,7 @@
   height: 600px;
   position: relative;
   top: 70px;
-  left: -40px;
+  left: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -902,10 +903,10 @@
   flex-direction: row;
 }
 .viewAllPhotos {
-  width: fit-content;
+  width: 100px;
   position: relative;
-  left: -23vw;
-  top: 65vh;
+  left: -400px;
+  top: 600px;
 }
 .viewAllText {
   position: relative;
@@ -1029,7 +1030,331 @@
   position: relative;
   top: 80vh;
 }
-@media all and (max-width: 500px) {
+
+@media all and (max-width: 1920px) {
+  .viewAllPhotos {
+    position: relative;
+    left: -500px;
+  }
+}
+@media all and (max-width: 1120px) {
+  .overViewBody {
+    position: relative;
+    left: 60px;
+  }
+}
+@media all and (max-width: 1040px) {
+  .descriptionText {
+    height: 22px;
+    width: 89px;
+    color: #000000;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+  }
+  .overViewBody {
+    height: auto;
+    width: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 150px;
+    left: -110px;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 200px;
+  }
+  .descriptionParagraph {
+    height: 52px;
+    width: 650px;
+    color: #4a4a4a;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    top: 10px;
+  }
+  .overViewFlexBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 600px;
+    position: relative;
+    left: 00px;
+  }
+  .averasgeMealCost {
+    position: relative;
+    top: 310px;
+    left: 10px;
+  }
+  .phone {
+    position: relative;
+    top: 330px;
+    left: 10px;
+  }
+  .address {
+    position: relative;
+    top: 350px;
+    left: 10px;
+  }
+  .linebetween {
+    display: none;
+  }
+  .openingHours {
+    position: relative;
+    top: 900px;
+    left: -160px;
+  }
+  .reViewBody {
+    width: 300px;
+    position: relative;
+    left: -140px;
+  }
+  .reviewsHeading {
+    position: relative;
+    left: -10px;
+  }
+  .showRecent {
+    position: relative;
+    left: 450px;
+    display: flex;
+    flex-direction: row;
+  }
+  .reviewsSubmiter {
+    display: none;
+  }
+  .reviewCard {
+    position: relative;
+    left: -35px;
+  }
+  .showReviewsSubmiter {
+    height: 526px;
+    width: 300px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 200px;
+    left: 13vw;
+  }
+  .reviewCloseButton {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 19.5vh;
+    left: 50vw;
+    display: block;
+  }
+  .reviewButton {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    top: 8.5vh;
+    left: 420px;
+    cursor: pointer;
+    display: block;
+  }
+  .hideReviewDisplayer {
+    display: none;
+  }
+  .menuReviewContainer {
+    width: 100%;
+    overflow: hidden;
+  }
+  .submitButton {
+    position: relative;
+    left: 0px;
+  }
+  .imageAdder {
+    position: relative;
+    left: 180px;
+  }
+  .ratingLine {
+    position: relative;
+    left: 15px;
+  }
+  .ratingLine2 {
+    position: relative;
+    left: 15px;
+  }
+  .ratingLine3 {
+    position: relative;
+    left: 00px;
+  }
+  .galleryView {
+    width: 500px;
+    position: relative;
+    left: -20px;
+  }
+  .galleryImage {
+    height: 90px;
+    width: 90px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between 10;
+    position: relative;
+  }
+  .modalImage {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    left: 00px;
+    top: 100px;
+  }
+  .cancelButton {
+    position: relative;
+    left: 640px;
+    top: 60px;
+  }
+  .nextPrevButton {
+    position: relative;
+    top: 440px;
+    left: -470px;
+  }
+  .viewAllPhotos {
+    width: 100px;
+    position: relative;
+    left: -60px;
+    top: 600px;
+  }
+}
+@media all and (max-width: 720px) {
+  .descriptionParagraph {
+    width: 500px;
+  }
+  .overViewBody {
+    position: relative;
+    width: 400px;
+    left: -40px;
+    top: 80px;
+  }
+  .openingHours {
+    position: relative;
+    top: 850px;
+  }
+  .cuisinesOverview {
+    position: relative;
+    top: 280px;
+  }
+  .reViewBody {
+    width: 200px;
+    position: relative;
+    left: -120px;
+  }
+  .reviewCard {
+    width: 460px;
+    position: relative;
+    left: -35px;
+  }
+  .showRecent {
+    position: relative;
+    left: 290px;
+  }
+  .reviewButton {
+    position: relative;
+    left: 250px;
+  }
+  .showReviewsSubmiter {
+    height: 526px;
+    width: 300px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 200px;
+    left: -5vw;
+  }
+  .reviewCloseButton {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 19.5vh;
+    left: 42vw;
+    display: block;
+  }
+  .reviewButton {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    top: 8.5vh;
+    left: 250px;
+    cursor: pointer;
+    display: block;
+  }
+  .hideReviewDisplayer {
+    display: none;
+  }
+  .menuReviewContainer {
+    width: 100%;
+    overflow: hidden;
+  }
+  .likeBox {
+    position: relative;
+    left: 410px;
+  }
+  .menuReviewContainer {
+    width: 100%;
+    overflow: hidden;
+  }
+  .submitButton {
+    position: relative;
+    left: 0px;
+  }
+  .imageAdder {
+    position: relative;
+    left: 180px;
+  }
+  .ratingLine {
+    position: relative;
+    left: 15px;
+  }
+  .ratingLine2 {
+    position: relative;
+    left: 15px;
+  }
+  .ratingLine3 {
+    position: relative;
+    left: 00px;
+  }
+  .galleryView {
+    width: 400px;
+    position: relative;
+    left: 00px;
+    top: -10px;
+  }
+  .galleryImage {
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between 10;
+    position: relative;
+  }
+  .modalImage {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    left: -180px;
+    top: 100px;
+  }
+  .cancelButton {
+    position: relative;
+    left: 440px;
+    top: 60px;
+  }
+  .nextPrevButton {
+    position: relative;
+    top: 440px;
+    left: -650px;
+  }
+}
+@media all and (max-width: 550px) {
   .galleryBg {
     background-color: #c5cae238;
     width: 100%;
@@ -1039,7 +1364,7 @@
     padding-bottom: 50vh;
     overflow: hidden;
   }
-  
+
   .menuCommomBg {
     background-color: #c5cae238;
     width: 100%;
@@ -1051,12 +1376,12 @@
   }
   .overViewBody {
     height: auto;
-    width: 100%;
+    width: 300px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    top: 200px;
-    left: 70px;
+    top: 250px;
+    left: 10px;
     display: flex;
     flex-direction: row;
     padding-bottom: 200px;
@@ -1072,9 +1397,13 @@
   .overViewFlexBox {
     position: relative;
     top: -13vh;
-    left: -48vh;
+    left: -410px;
     flex-direction: column;
     justify-content: space-between;
+  }
+  .cuisinesOverview {
+    position: relative;
+    top: 260px;
   }
   .linebetween {
     display: none;
@@ -1099,7 +1428,7 @@
     justify-content: flex-start;
     position: relative;
     top: 80vh;
-    left: -67vh;
+    left: -570px;
   }
   .reviewsBg {
     background-color: #c5cae238;
@@ -1115,8 +1444,8 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    top: 00px;
-    left: 25px;
+    top: 40px;
+    left: 0px;
     display: flex;
     flex-direction: row;
     padding-bottom: 500px;
@@ -1127,7 +1456,7 @@
     left: -45px;
   }
   .reviewCard {
-    width: 88vw;
+    width: 360px;
     position: relative;
     left: 6vw;
   }
@@ -1152,7 +1481,7 @@
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
     position: relative;
     top: 200px;
-    left: -32vw;
+    left: -22vw;
   }
   .hideReviewDisplayer {
     display: none;
@@ -1162,7 +1491,7 @@
     height: 25px;
     position: relative;
     top: 19.5vh;
-    left: 48vw;
+    left: 42vw;
     display: block;
   }
   .reviewButton {
@@ -1170,7 +1499,7 @@
     width: 40px;
     position: relative;
     top: 17.5vh;
-    left: 50vw;
+    left: 225px;
     cursor: pointer;
     display: block;
   }
@@ -1198,7 +1527,7 @@
   }
   .reviewsSubmiterHeader2 {
     position: relative;
-    left: -51vw;
+    left: -39vw;
   }
   .reveiwerBox {
     position: relative;
@@ -1224,6 +1553,10 @@
     position: relative;
     left: 10px;
   }
+  .ratingLine3 {
+    position: relative;
+    left: 20px;
+  }
   .savedBox2 {
     position: relative;
     left: 56vw;
@@ -1236,10 +1569,9 @@
     position: relative;
     left: 0px;
   }
-
   .galleryBody {
     height: auto;
-    width: 300px;
+    width: 100%;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -1253,7 +1585,7 @@
     justify-content: space-between 5px;
     margin-left: auto;
     margin-right: auto;
-    left: 1vw;
+    left: 80px;
     top: 00px;
   }
   .galleryImage {
@@ -1288,25 +1620,23 @@
 
   .modalImage {
     width: 70vw;
-    height: 50vh;
+    height: 70vh;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    left: 15vw;
-    top: -10vh;
+    left: 20px;
+    top: -150px;
     border-radius: 5px;
   }
   .cancelButton {
-    display: none;
+    position: relative;
+    left: 370px;
+    top: -200px;
   }
   .nextPrevButton {
-    width: 160px;
-    height: 60px;
     position: relative;
-    left: -21vw;
-    top: 350px;
-    display: flex;
-    flex-direction: row;
+    top: 490px;
+    left: -130px;
   }
   .galleryContainer {
     width: 100%;
@@ -1323,94 +1653,105 @@
     overflow: hidden;
   }
 }
-@media all and (max-width: 1000px) {
-  .galleryFilterButton {
+
+@media all and (max-width: 460px) {
+  .galleryBody {
+    height: auto;
+    width: 100%;
     position: relative;
-    left: 69vw;
+    margin-left: auto;
+    margin-right: auto;
+    top: 150px;
+    left: -4vh;
   }
-  .viewAllPhotos {
+  .galleryView {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between 5px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 70px;
+    top: 00px;
+  }
+  .modalImage {
+    width: 400px;
+    height: 400px;
     position: relative;
-    left: -23vw;
-    top: 63vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50px;
+    top: 70px;
+    border-radius: 5px;
+  }
+  .nextPrevButton {
+    position: relative;
+    left: -100px;
   }
 }
-@media all and (max-width: 1400px) {
-  .galleryFilterButton {
-    display: none;
+@media all and (max-width: 420px) {
+  .overViewBody {
+    position: relative;
+    left: 20px;
+    top: 280px;
+  }
+  .reViewBody {
+    height: auto;
+    width: 300px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40px;
+    left: 15px;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 500px;
+  }
+  .reviewCloseButton {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 18.5vh;
+    left: 200px;
+    display: block;
+  }
+
+  .reviewButton {
+    position: relative;
+    left: 210px;
+  }
+
+  .ratingLine {
+    position: relative;
+    left: 10px;
+  }
+  .ratingLine2 {
+    position: relative;
+    left: 10px;
+  }
+  .ratingLine3 {
+    position: relative;
+    left: 20px;
   }
   .galleryView {
     position: relative;
-    left: 3vw;
+    left: 45px;
   }
-  .viewAllPhotos {
-    position: relative;
-    left: -17vw;
-    top: 70vh;
-  }
-  .menuReviewContainer {
-    overflow: hidden;
-  }
-}
-@media only screen and(max-width: 474px) {
   .modalImage {
-    height: 300px;
-    width: 500px;
+    width: 70vw;
+    height: 50vh;
     position: relative;
-    left: 43px;
-    top: 0vh;
-    margin-left: auto;
-    margin-right: auto;
+    left: 70px;
+    top: -100px;
   }
   .cancelButton {
-    height: 20px;
-    width: 20px;
     position: relative;
-    top: -40px;
-    left: 810px;
-    cursor: pointer;
+    left: 350px;
+    top: -130px;
   }
   .nextPrevButton {
-    width: 160px;
-    height: 60px;
     position: relative;
-    left: -280px;
-    top: 510px;
-    display: flex;
-    flex-direction: row;
-  }
-  .menuReviewContainer {
-    overflow: hidden;
-  }
-}
-@media all and (max-width: 1250px) {
-  .modalImage {
-    height: 500px;
-    width: 600px;
-    position: relative;
-    left: 43px;
-    top: 0vh;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .cancelButton {
-    height: 20px;
-    width: 20px;
-    position: relative;
-    top: -40px;
-    left: 810px;
-    cursor: pointer;
-  }
-  .nextPrevButton {
-    width: 160px;
-    height: 60px;
-    position: relative;
-    left: -280px;
-    top: 510px;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .menuReviewContainer {
-    overflow: hidden;
+    left: -80px;
+    top: 350px;
   }
 }

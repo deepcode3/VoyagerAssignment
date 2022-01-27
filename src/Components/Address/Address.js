@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable  no-alert */
 import { React, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
@@ -169,13 +170,13 @@ const CartAddress = () => {
             />
           </div>
 
-          <div className='delins'>
+          {/* <div className='delins'>
             <p className='deliveryins'>Delivery Instructions?</p>
           </div>
           <div className='mention'>
             <textarea type='text' placeholder='Mention it here...' className='mntn' />
             <div className='mentiongreyline1' />
-          </div>
+          </div> */}
           <div
             className='aBackbuttondiv'
             onClick={() => {
@@ -191,6 +192,43 @@ const CartAddress = () => {
             <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
           </button>
         </form>
+        <div className='delins'>
+          <p className='deliveryins'>Delivery Instructions?</p>
+        </div>
+        <div className='mention'>
+          <textarea type='text' placeholder='Mention it here...' className='mntn' />
+          <div className='mentiongreyline1' />
+        </div>
+        <div
+          className='aBackbuttondiv'
+          onClick={() => {
+            history.goBack('/description');
+          }}
+          role='button'
+          onKeyDown={null}
+        >
+          <p className='aBACKtext'>BACK</p>
+        </div>
+        <div
+          className='aChoosepayment'
+          onClick={() => {
+            if (addressItems.length === 0) alert('Please select/add address to deliver');
+            else {
+              history.push({
+                pathname: '/finalpay',
+                state: {
+                  restaurant: location.state.restaurant,
+                  selectedAddress,
+                  deliveryType: displayAddress ? 'deliverToMe' : 'pickUp',
+                },
+              });
+            }
+          }}
+          role='button'
+          onKeyDown={null}
+        >
+          <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
+        </div>
       </div>
       <div className='addressprogressbar'>
         <div className='cartactive'>
