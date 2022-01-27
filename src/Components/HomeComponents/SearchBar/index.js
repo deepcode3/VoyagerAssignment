@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useEffect, useState } from 'react';
 import Geocode from 'react-geocode';
 import PropTypes from 'prop-types';
@@ -14,44 +15,45 @@ let location;
 const SearchBar = ({ searchValue, from }) => {
   const history = useHistory();
   const [searchKey, setSearchKey] = useState(searchValue);
-  const [searchClicked, setSearchClicked] = useState(false);
+  const searchIconClicked = () => {
+    return searchKey && location
+      ? history.push(`/restaurants/${searchKey}/${location}`)
+      : alert('please provide search value and select the location');
+  };
   return (
-    <>
-      <div className='searchCard'>
-        <div className={from === 'home' ? 'searchBox' : 'restaurantSearchBox'}>
-          <input
-            className={from === 'home' ? 'searchInput' : 'restaurantSearchInput'}
-            type='text'
-            placeholder='Search your restaurants or cuisines'
-            onChange={(e) => {
-              setSearchKey(e.target.value);
-            }}
-            value={searchKey}
-          />
+    <div className='searchCard'>
+      <div className={from === 'home' ? 'searchBox' : 'restaurantSearchBox'}>
+        <input
+          className={from === 'home' ? 'searchInput' : 'restaurantSearchInput'}
+          type='text'
+          placeholder='Search your restaurants or cuisines'
+          onChange={(e) => {
+            setSearchKey(e.target.value);
+          }}
+          value={searchKey}
+        />
+        <img
+          className={from === 'home' ? 'searchIcon' : 'restaurantSearchIcon'}
+          alt='searchIcon'
+          src={searchIcon}
+          onClick={() => {
+            searchIconClicked();
+          }}
+          onKeyDown={null}
+        />
+        {searchKey || searchValue ? (
           <img
-            className={from === 'home' ? 'searchIcon' : 'restaurantSearchIcon'}
-            alt='searchIcon'
-            src={searchIcon}
+            alt='clearButton'
+            src={clearButton}
+            className={from === 'home' ? 'clearButton' : 'restaurantclearButton'}
             onClick={() => {
-              setSearchClicked(true);
+              setSearchKey('');
             }}
             onKeyDown={null}
           />
-          {searchKey || searchValue ? (
-            <img
-              alt='clearButton'
-              src={clearButton}
-              className={from === 'home' ? 'clearButton' : 'restaurantclearButton'}
-              onClick={() => {
-                setSearchKey('');
-              }}
-              onKeyDown={null}
-            />
-          ) : null}
-        </div>
+        ) : null}
       </div>
-      {searchKey && searchClicked ? history.push(`/restaurants/${searchKey}/${location}`) : null}
-    </>
+    </div>
   );
 };
 export const LocationSetter = ({ locationValue, from }) => {
