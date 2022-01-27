@@ -75,7 +75,7 @@ const Profile = ({ setOpen }) => {
               Edit
             </span>
             <span className='username' onClick={handleClick1} role='button' onKeyDown={null}>
-              {currentUser.firstname}
+              {currentUser.username}
             </span>
             <span className='name'>{`${currentUser.firstname} ${currentUser.lastname}`}</span>
 

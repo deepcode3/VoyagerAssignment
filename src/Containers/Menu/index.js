@@ -12,15 +12,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import MenuHalfCompo from '../../Components/MenuSemiCompo';
 import searchIcon from '../../Assets/Icons/searchIcon.png';
-import item1 from '../../Assets/Images/item1.png';
-import item2 from '../../Assets/Images/item2.jpeg';
-import item3 from '../../Assets/Images/item3.jpeg';
-import item4 from '../../Assets/Images/item4.jpeg';
-import item5 from '../../Assets/Images/item5.jpeg';
-import item6 from '../../Assets/Images/item6.jpeg';
-import item7 from '../../Assets/Images/item7.jpeg';
-import item8 from '../../Assets/Images/item8.jpeg';
-import item9 from '../../Assets/Images/item9.jpeg';
+import data from './Data/data.json';
 import bestSeller from '../../Assets/Icons/bestSeller.png';
 import nonVeg from '../../Assets/Icons/nonveg.png';
 import veg from '../../Assets/Icons/vegicon.png';
@@ -40,7 +32,7 @@ import {
   decreaseItemQuantity,
   removeAllRestaurantItems,
 } from '../../Actions/CartActions';
-import { findIndex, itemsOfRestaurant, totalPrice } from '../../Utils';
+import { findIndex, itemsOfRestaurant, totalPrice, getTotalPriceWithDiscount } from '../../Utils';
 
 const Menu = () => {
   let index = 0;
@@ -59,117 +51,7 @@ const Menu = () => {
   const [costDeatilsButton, setcostDetailsButton] = useState(false);
   const [isCartClicked, setIsCartClicked] = useState(false);
   const history = useHistory();
-  const data = [
-    {
-      name: 'Chilli Cheese Meal',
-      cost: 27.0,
-      description:
-        'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce',
-      bestSeller: true,
-      category: 'recomended',
-      image: item1,
-      customizable: true,
-      type: 'non-veg',
-    },
-    {
-      name: 'Canapes and Crostini',
-      cost: 27.0,
-      description: 'Clams, mussels, calamari & shrimp w/ white wine & garlic',
-      bestSeller: false,
-      category: 'recomended',
-      image: item2,
-      customizable: false,
-      type: 'veg',
-    },
-    {
-      name: 'Herb spiced chiken sandwitch',
-      cost: 27.0,
-      description:
-        'Roasted chick peas, julienne carrots, wild mushrooms & manchego w/ cider vinaigrette',
-      bestSeller: true,
-      category: 'recomended',
-      image: item3,
-      customizable: false,
-      type: 'non-veg',
-    },
-    {
-      name: 'Canapes',
-      cost: 27.0,
-      description:
-        'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.',
-      bestSeller: false,
-      category: 'Appetizers',
-      image: item4,
-      customizable: true,
-      type: 'non-veg',
-    },
-    {
-      name: 'Stuffed Cherry Peppers',
-      cost: 27.0,
-      description:
-        'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.',
-      bestSeller: false,
-      category: 'Appetizers',
-      image: item5,
-      customizable: false,
-      type: 'non-veg',
-    },
-    {
-      name: 'Broiled Brie with Cranberry Chutney',
-      cost: 27.0,
-      description:
-        'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.',
-      bestSeller: false,
-      category: 'Appetizers',
-      image: item6,
-      customizable: true,
-      type: 'non-veg',
-    },
-    {
-      name: 'Charred Spanish Octopus',
-      cost: 27.0,
-      description:
-        'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.',
-      bestSeller: false,
-      category: 'Soups',
-      image: item8,
-      customizable: true,
-      type: 'non-veg',
-    },
-    {
-      name: 'Oysters on the Half Shell',
-      cost: 27.0,
-      description:
-        'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.',
-      bestSeller: true,
-      category: 'Soups',
-      image: item9,
-      customizable: true,
-      type: 'non-veg',
-    },
-    {
-      name: 'Chicken Tortilla',
-      cost: 27.0,
-      description:
-        'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.',
-      bestSeller: true,
-      category: 'Soups',
-      image: item7,
-      customizable: true,
-      type: 'non-veg',
-    },
-    {
-      name: 'Charred Spanish',
-      cost: 27.0,
-      description:
-        'Panko breaded mac and cheese balls fried until golden brown and served with our homemade marinara sauce.',
-      bestSeller: false,
-      category: 'Soups',
-      image: item2,
-      customizable: true,
-      type: 'non-veg',
-    },
-  ];
+
   const isItemInCart = (item) => {
     if (currentUser.cart.length !== 0) {
       // eslint-disable-next-line no-restricted-syntax
@@ -181,12 +63,7 @@ const Menu = () => {
     }
     return false;
   };
-  const getTotalPriceWithDiscount = (restaurant) => {
-    const discount = 24.22;
-    const totalprice = totalPrice(restaurant, currentUser);
-    if (totalprice !== 0) return totalprice + 10 - discount;
-    return 0;
-  };
+
   return (
     <div className='mainMenuDiv'>
       <MenuHalfCompo
@@ -330,7 +207,7 @@ const Menu = () => {
                   <span className='priceLabel'>To Pay</span>
                   <div className='totalPriceDiscount'>
                     AED
-                    {getTotalPriceWithDiscount(restaurant).toFixed(2)}
+                    {getTotalPriceWithDiscount(restaurant, currentUser).toFixed(2)}
                   </div>
                   <img
                     src={costShowHideButton}
@@ -352,7 +229,7 @@ const Menu = () => {
                       <span className='itemsTotalLabel'>Items Total</span>
                       <span className='totalAmount'>
                         AED
-                        {totalPrice(restaurant).toFixed(2)}
+                        {totalPrice(restaurant, currentUser).toFixed(2)}
                       </span>
                     </div>
                     <div className='charges'>
@@ -385,7 +262,7 @@ const Menu = () => {
           <div className='menuList'>
             <div className='menuRecomended'>
               <span className='menuRecamendedLabel'>Recomended(3)</span>
-              {data
+              {data.items
                 .filter((item) => {
                   if (searchItem === '') {
                     return item;
@@ -397,7 +274,7 @@ const Menu = () => {
                 .map((item) => {
                   return item.category === 'recomended' ? (
                     <div className='menuRecomandedItemBox' key={item.name}>
-                      <img src={item.image} alt='' className='itemImage' />
+                      <img src={`/assets/images/${item.image}`} alt='' className='itemImage' />
                       <div className='recomendedItemName'>{item.name}</div>
                       {item.type === 'non-veg' ? (
                         <img src={nonVeg} alt='' className='nonVeg' />
@@ -487,7 +364,7 @@ const Menu = () => {
             </div>
             <div className='menuApptizers'>
               <span className='menuApptizersLabel'>Apptizers</span>
-              {data
+              {data.items
                 // eslint-disable-next-line consistent-return
                 .filter((item) => {
                   if (searchItem === '') {
@@ -500,7 +377,7 @@ const Menu = () => {
                 .map((item) => {
                   return item.category === 'Appetizers' ? (
                     <div className='menuApptizersItemBox' key={item.name}>
-                      <img src={item.image} alt='' className='itemImage' />
+                      <img src={`/assets/images/${item.image}`} alt='' className='itemImage' />
                       <div className='recomendedItemName'>{item.name}</div>
                       {item.type === 'non-veg' ? (
                         <img src={nonVeg} alt='' className='nonVeg' />
@@ -594,7 +471,7 @@ const Menu = () => {
             </div>
             <div className='menuSoups'>
               <span className='menuSoupsLabel'>Soups</span>
-              {data
+              {data.items
                 // eslint-disable-next-line consistent-return
                 .filter((item) => {
                   if (searchItem === '') {
@@ -607,7 +484,7 @@ const Menu = () => {
                 .map((item) => {
                   return item.category === 'Soups' ? (
                     <div className='menuSoupsItemBox' key={item.name}>
-                      <img src={item.image} alt='' className='itemImage' />
+                      <img src={`/assets/images/${item.image}`} alt='' className='itemImage' />
                       <div className='recomendedItemName'>{item.name}</div>
                       {item.type === 'non-veg' ? (
                         <img src={nonVeg} alt='' className='nonVeg' />

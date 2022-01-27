@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import bgImg from '../../../Assets/Images/login-background.png';
 
 const LogoWithText = () => {
   return (
@@ -17,7 +18,7 @@ const LogoWithText = () => {
 
 export default LogoWithText;
 const Wrapper = styled.div`
-  background-image: url('../assets/images/login-background.png');
+  background-image: url(${bgImg});
   height: 588px;
   width: 480px;
   text-align: left;
@@ -25,8 +26,13 @@ const Wrapper = styled.div`
     margin-left: -4%;
     padding-top: 0.5%;
   }
-  @media (max-width: 550px) {
+  @media (max-width: 850px) {
     flex-direction: column;
+    width: 480px;
+    height: 260px;
+    border-radius: 0 8px 0px 0px;
+  }
+  @media (max-width: 550px) {
     width: 300px;
     height: 40%;
     border-radius: 0 8px 0px 0px;
@@ -47,6 +53,11 @@ const Lorem = styled.p`
   font-weight: 400;
   transform: scaleY(1.1);
   margin-left: 6%;
+  @media (max-width: 850px) {
+    margin-top: 4%;
+    margin-left: 6%;
+    margin-bottom: 5%;
+  }
   @media (max-width: 550px) {
     margin-top: 8%;
     margin-left: 10%;
@@ -77,6 +88,14 @@ const BoldText = styled.p`
   margin-bottom: 1%;
   margin-top: 0;
   margin-left: 6%;
+  @media (max-width: 990px) {
+    margin-right: 5%;
+    margin-left: 6%;
+  }
+  @media (max-width: 850px) {
+    margin-left: 6%;
+    margin-right: 0;
+  }
   @media (max-width: 550px) {
     margin-right: 2%;
     margin-left: 10%;

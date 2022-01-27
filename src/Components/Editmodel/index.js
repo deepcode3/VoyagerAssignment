@@ -22,7 +22,6 @@ import InputField from '../LoginComponents/InputField';
 import StyledButton from '../CommonButton/index';
 import OutsideAlerter from '../OutsideClickAlerter';
 import { editProfile } from '../../Actions/AccountActions';
-import { signIn } from '../../Actions/LoginActions';
 
 const EditModal = ({ setOpen }) => {
   const schema = yup.object().shape({
@@ -46,18 +45,10 @@ const EditModal = ({ setOpen }) => {
       editProfile({
         email: currentUser.email,
         username: data.username,
-        fullname: data.fullname,
-        mobilenumber: data.mobilenumber,
-      })
-    );
-    dispatch(
-      signIn({
-        ...currentUser,
-        countrycode: data.mobilenumber.split(' ')[0],
         firstname: data.fullname.split(' ')[0],
         lastname: data.fullname.split(' ')[1],
         mobile: data.mobilenumber.split(' ')[1],
-        username: data.username,
+        countrycode: data.mobilenumber.split(' ')[0],
       })
     );
     setOpen(false);

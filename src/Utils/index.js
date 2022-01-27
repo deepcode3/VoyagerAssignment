@@ -67,6 +67,12 @@ export const totalPrice = (restaurantName, currentUser) => {
   const total = result.map(amount).reduce(sum, 0);
   return total;
 };
+export const getTotalPriceWithDiscount = (restaurant, currentUser) => {
+  const discount = 24.22;
+  const totalprice = totalPrice(restaurant, currentUser);
+  if (totalprice !== 0) return totalprice + 10 - discount;
+  return 0;
+};
 
 export const restaurantItemsCount = (restaurantName, currentUser) => {
   const result = itemsOfRestaurant(restaurantName, currentUser);

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/index';
-import data from './data';
+import data from './Data/data.json';
 
 const Footer = () => {
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
         <Text>COUNTRIES</Text>
       </FlexRow>
       <FlexRowLinks>
-        {data.map((element) => {
+        {data.footerLinks.map((element) => {
           return (
             <FooterLink key={element} to={`/${element.toLowerCase().replaceAll(' ', '-')}`}>
               {element}
@@ -40,12 +40,7 @@ const FooterContainer = styled.div`
     height: 150px;
   }
 `;
-// const FooterAligner = styled.div`
-//   width: 960px;
-//   position: relative;
-//   margin-left: auto;
-//   margin-right: auto;
-// `;
+
 const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -53,18 +48,20 @@ const FlexRow = styled.div`
   height: 50%;
   justify-content: flex-start;
   align-items: center;
-  @media (max-width: 1200px) {
+  @media (max-width: 700px) {
     width: 100%;
   }
 `;
+
 const FlexRowLinks = styled.div`
   display: flex;
   flex-direction: row;
   width: 50%;
+  height: 30%;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgba(151, 151, 151, 0.19);
-  @media (max-width: 1200px) {
+  @media (max-width: 700px) {
     width: 100%;
   }
 `;
@@ -76,6 +73,7 @@ const FooterLink = styled(NavLink)`
   line-height: 1.1875rem;
   text-decoration: none;
 `;
+
 const Number = styled.p`
   margin-left: 5%;
   padding: 0;
