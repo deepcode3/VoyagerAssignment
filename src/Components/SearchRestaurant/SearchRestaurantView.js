@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import Header from '../Header';
 import SearchBar, { LocationSetter } from '../HomeComponents/SearchBar';
 import '../../Containers/Restaurants/index';
+import BreadCrumb from '../BreadCrumbs';
 import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
 import './SearchRestaurantView.css';
 
 const SearchRestaurantView = ({ data, searchKey, location }) => {
+  const restaurantBreadCrumbData = [
+    { data: 'Home', path: '/' },
+    { data: 'UAE', path: '' },
+    { data: 'Expolre', path: '' },
+    { data: 'Great breakfast', path: `/restaurants/${searchKey}/:${location}` },
+    { data: 'My Cart', path: '/cart-home' },
+  ];
   return (
     <div className='cartmaindiv'>
       <div className='cartheaderDivSearchRest'>
@@ -28,7 +36,9 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
         </div>
       </div>
       <div className='cartbreadcrumbsarea'>
-        <p className='cartbreadcrumbs'>Home    UAE    Explore   Great breakfasts    My Cart</p>
+        <p className='cartbreadcrumbs'>
+          <BreadCrumb BreadCrumbdata={restaurantBreadCrumbData} />
+        </p>
         <div className='cartcrumbline' />
       </div>
     </div>
