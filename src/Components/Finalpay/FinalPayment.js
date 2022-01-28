@@ -25,7 +25,7 @@ const FinalPayment = () => {
   const paymentItems = [...currentUser.cards];
   const [selectedCard, setSelectedCard] = useState(paymentItems[0]);
   const prepay = () => {
-    history.goBack('/payment');
+    history.goBack();
   };
   const [cardDetails, setCardDetails] = useState(false);
   const showDetails = () => {
