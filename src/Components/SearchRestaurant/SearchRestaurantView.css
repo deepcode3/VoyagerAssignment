@@ -143,6 +143,9 @@
   /* .cartbodySeperator {
     width: 100%;
   } */
+  .cartsemiBg {
+    margin-top: 3%;
+  }
   .cartrestaurantSearchBar1 {
     width: 400px;
   }
@@ -173,6 +176,9 @@
   .cartbreadcrumbs {
     left: -32px;
     top: -4px;
+  }
+  .cartbreadcrumbsarea {
+    margin-top: 3%;
   }
   .restaurantSearchBox {
     width: 0px;
