@@ -34,15 +34,6 @@ const PaymentCardCart = ({ item, index, selectedCard, setSelectedCard }) => {
       <span className='vexpdate'>{`Expiary:${item.expiaryDate}/${item.expiaryYear}`}</span>
       <input type='text' className='ventercode' placeholder='Enter CVV' />
       <div className='vcardline' />
-
-      {/* <div className='mask'>
-              <img src={mastercardicon} alt='' className='mcardicon' />
-              <p className='cardnums'>54XX XXXX XXXX 1267</p>
-              <p className='mcardname'>Abdullah</p>
-              <p className='mexpdate'>Expiry:03/22</p>
-              <input type='text' className='entercode' placeholder='Enter security code' />
-              <div className='mcardline' />
-            </div> */}
     </div>
   );
 };

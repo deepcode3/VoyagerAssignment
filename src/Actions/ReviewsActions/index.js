@@ -8,3 +8,6 @@ export const incrementReviewLikes = (reviewIndex) => {
 export const decrementReviewLikes = (reviewIndex) => {
   return { type: 'DECREMENT_REVIEW_LIKES', reviewIndex };
 };
+export const deleteReview = (review) => {
+  return { type: 'REMOVE_REVIEW', review };
+};
