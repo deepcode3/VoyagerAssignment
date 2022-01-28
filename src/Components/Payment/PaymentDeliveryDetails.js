@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import './Payment.css';
 
 const PaymentDeliveryDetails = ({ location, deliveryType }) => {
+  const history = useHistory();
   return (
     <div className='paydeliverydetails'>
       <div className='locationtimediv'>
@@ -15,7 +17,7 @@ const PaymentDeliveryDetails = ({ location, deliveryType }) => {
               ? 'You chose to pick up'
               : `${location.location}, -${location.city} - ${location.area} - ${location.address}`}
           </p>
-          <div className='paychange'>Change</div>
+          <div className='paychange' onClick={() => { history.goBack(); }} onKeyDown={null} role='button' tabIndex={0}>Change</div>
         </div>
         <div className='payonegreyline' />
         <div className='paydateandtime'>

@@ -489,6 +489,10 @@
   .paymentcontainer {
     width: 465px;
   }
+  .paymentcardcheckbtn {
+    position: relative;
+    left: -55px;
+  }
   .earnedpointsdiv {
     width: 430px;
   }
