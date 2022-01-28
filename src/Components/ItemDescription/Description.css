@@ -610,6 +610,12 @@ input[type="text"]:focus {
     left: -143px;
     top: 170px;
   }
+  /* .cactus {
+    left: 200px;
+  } */
+  .emptyimgcart {
+    left: 400px;
+  }
 }
 @media all and (max-width: 400px) {
   .cartprogressbar {
@@ -778,6 +784,9 @@ input[type="text"]:focus {
   .cartpaymenttext {
     left: 1050px;
   }
+  .emptyimgcart {
+    left: 150px;
+  }
 }
 
 @media all and (max-width: 420px) {
@@ -855,6 +864,9 @@ input[type="text"]:focus {
   .choseaddbtn {
     left: 250px;
   }
+  .emptyimgcart {
+    left: 80px;
+  }
 }
 @media all and (max-width: 395px) {
   .cartprogressbar {
@@ -888,6 +900,9 @@ input[type="text"]:focus {
   }
   .choseaddbtn {
     left: 210px;
+  }
+  .emptyimgcart {
+    left: 70px;
   }
 }
 
@@ -969,5 +984,8 @@ input[type="text"]:focus {
   }
   .edtime {
     left: -25px;
+  }
+  .emptyimgcart {
+    left: 30px;
   }
 }

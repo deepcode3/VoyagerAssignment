@@ -25,7 +25,7 @@
 .cartrestaurantsInfo {
   height: 17px;
   color: #3f3f40;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -54,13 +54,13 @@
 .cartbreadcrumbs {
   height: 17px;
   color: #6f6f6f;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 12px;
   font-weight: 600;
   line-height: 17px;
   position: relative;
   display: flex;
-  left: -340px;
+  left: -318px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -115,20 +115,10 @@
     top: -103px;
   }
   .cartbreadcrumbs {
-    left: -127px;
+    left: -97px;
   }
 }
-@media all and (max-width: 550px) {
-  .cartmaindiv {
-    width: 100%;
-    overflow: hidden;
-  }
-  .cartbreadcrumbsarea {
-    position: absolute;
-    top: 199px;
-    height: 35px;
-  }
-}
+
 @media all and (max-width: 710px) {
   .cartrestaurantDateTimeButton {
     position: relative;
@@ -139,23 +129,20 @@
   }
 }
 
-@media all and (max-width: 580px) {
-  /* .cartbodySeperator {
-    width: 100%;
-  } */
+/* @media all and (max-width: 550px) {
   .cartrestaurantSearchBar1 {
     width: 400px;
   }
   .cartrestaurantSearch {
     position: relative;
-    left: 80px;
+    left: 180px;
     top: -5px;
     width: 400px;
   }
   .cartrestaurantLocation {
     position: relative;
-    top: -5px;
-    left: 105px;
+    top: -15px;
+    left: 05px;
     width: 300px;
   }
   .cartrestaurantDateTimeButton {
@@ -177,7 +164,7 @@
   .restaurantSearchBox {
     width: 0px;
   }
-}
+} */
 
 /* @media all and (max-width: 385px) {
   .cartsemiBg {
@@ -204,33 +191,10 @@
   }
 } */
 
-@media all and (max-width: 395px) {
-  .cartsemiBg {
-    width: 375px;
+@media all and (max-width: 580px) {
+  .cartrestaurantSearchBar1 {
+    width: 400px;
   }
-  .cartheaderDivSearchRest {
-    width: 100%;
-  }
-  .cartmaindiv {
-    width: 370px;
-  }
-
-  .cartrestaurantLocation {
-    left: 0px;
-  }
-  .cartrestaurantsInfo {
-    position: relative;
-    left: 0px;
-  }
-  .cartbreadcrumbsarea {
-    width: 375px;
-    top: 196px;
-  }
-  .cartcrumbline {
-    top: 36px;
-  }
-}
-/* @media all and (max-width: 580px) {
   .cartrestaurantSearch {
     position: relative;
     left: -200px;
@@ -245,7 +209,38 @@
     top: -99px;
     left: 500px;
   }
-} */
+  .cartbreadcrumbs {
+    left: -32px;
+    top: -4px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .cartmaindiv {
+    width: 100%;
+    overflow: hidden;
+  }
+  .cartbreadcrumbsarea {
+    position: absolute;
+    top: 199px;
+    height: 35px;
+  }
+  .cartbreadcrumbs {
+    left: 10px;
+  }
+  .cartrestaurantSearch {
+    left: 100px;
+    top: -5px;
+  }
+  .cartrestaurantLocation {
+    left: 125px;
+    top: -5px;
+  }
+  .cartrestaurantDateTimeButton {
+    left: 420px;
+    top: -95px;
+  }
+}
 @media all and (max-width: 420px) {
   .cartrestaurantSearch {
     position: relative;
@@ -264,17 +259,78 @@
   .cartrestaurantsInfo {
     left: 25px;
   }
+  .cartbreadcrumbs {
+    left: -20px;
+  }
 }
 
+@media all and (max-width: 395px) {
+  .cartsemiBg {
+    width: 100%;
+  }
+  .cartheaderDivSearchRest {
+    width: 100%;
+  }
+  .cartrestaurantSearchBar1 {
+    width: 100%;
+  }
+  .cartmaindiv {
+    width: 370px;
+  }
+
+  .cartrestaurantLocation {
+    left: 50px;
+  }
+  .cartrestaurantsInfo {
+    position: relative;
+    left: 0px;
+  }
+  .cartbreadcrumbsarea {
+    width: 375px;
+    top: 196px;
+  }
+  .cartcrumbline {
+    top: 36px;
+  }
+  .cartbreadcrumbs {
+    position: relative;
+    left: -10px;
+  }
+}
+@media all and (max-width: 393px) {
+  .cartmaindiv {
+    width: 393px;
+  }
+  .cartbreadcrumbsarea {
+    width: 393px;
+  }
+}
+@media all and (max-width: 360px) {
+  .cartmaindiv {
+    width: 360px;
+  }
+  .cartbreadcrumbsarea {
+    width: 360px;
+  }
+  .cartrestaurantSearch {
+    left: 10px;
+  }
+  .cartrestaurantLocation {
+    left: 35px;
+  }
+  .cartrestaurantDateTimeButton {
+    left: 320px;
+  }
+}
 @media all and (max-width: 285px) {
   .cartmaindiv {
-    width: 100%;
+    width: 285px;
   }
   .cartsemiBg {
     width: 280px;
   }
   .cartbreadcrumbsarea {
-    width: 100%;
+    width: 270px;
   }
   .cartbreadcrumbs {
     left: 10px;
