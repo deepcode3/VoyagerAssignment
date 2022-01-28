@@ -419,6 +419,13 @@
     top: 10px;
   }
 }
+/* @media all and (max-width: 580px) {
+  .restaurantSearchIcon {
+    position: relative;
+    left: 380px;
+    top: -30px;
+  }
+} */
 @media all and (max-width: 440px) {
   .searchInput {
     height: 50px;

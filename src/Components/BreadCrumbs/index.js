@@ -25,6 +25,7 @@ const BreadCrumb = ({ BreadCrumbdata }) => {
               <Link to={element.path} className='linkInfo' key={element.name}>
                 {element.data}
               </Link>
+              {console.log(element.data)}
             </div>
           );
         })}
