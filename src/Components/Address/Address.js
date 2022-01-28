@@ -201,16 +201,6 @@ const CartAddress = () => {
           <textarea type='text' placeholder='Mention it here...' className='mntn' />
           <div className='mentiongreyline1' />
         </div>
-        <div
-          className='aBackbuttondiv'
-          onClick={() => {
-            history.goBack('/description');
-          }}
-          role='button'
-          onKeyDown={null}
-        >
-          <p className='aBACKtext'>BACK</p>
-        </div>
       </div>
       <div className='addressprogressbar'>
         <div className='cartactive'>
