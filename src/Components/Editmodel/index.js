@@ -121,6 +121,7 @@ EditModal.propTypes = {
 };
 
 const ModalBack = styled.div`
+  width: 100%;
   position: fixed;
   align-items: center;
   justify-content: center;
@@ -136,35 +137,17 @@ const ModalBack = styled.div`
   .ModalContainer {
     height: 666px;
     width: 962px;
-  }
-  .edit {
-    height: 24px;
-    color: #ffffff;
-    font-family: 'Open Sans';
-    font-size: 18px;
-    letter-spacing: -0.3px;
-    line-height: 24px;
-  }
-  .dismiss-button {
-    height: 12px;
-    width: 12px;
-    position: absolute;
-    right: 13px;
-    top: 13px;
-  }
-  .left {
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .data {
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: 30%;
-    margin-top: 35%;
+    @media screen and (max-width: 1000px) {
+      width: 700px;
+      height: 666px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 480px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 430px;
+      height: 730px;
+    }
   }
   .card {
     height: 628px;
@@ -178,6 +161,66 @@ const ModalBack = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 1000px) {
+      height: 628px;
+      width: 700px;
+    }
+    @media screen and (max-width: 768px) {
+      height: 690px;
+      width: 480px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 430px;
+      height: 700px;
+    }
+  }
+  .edit {
+    height: 24px;
+    color: #ffffff;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    line-height: 24px;
+  }
+  .left {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    @media screen and (max-width: 1000px) {
+      height: 60%;
+      width: 50%;
+    }
+    @media screen and (max-width: 768px) {
+      height: 50%;
+      width: 50%;
+    }
+    @media screen and (max-width: 500px) {
+      position: relative;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  .data {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 30%;
+    margin-top: 35%;
+    @media screen and (max-width: 1000px) {
+      margin-left: 10%;
+      margin-top: 15%;
+    }
+    @media screen and (max-width: 768px) {
+      margin-left: 5%;
+      margin-top: 15%;
+    }
+    @media screen and (max-width: 500px) {
+      position: absolute;
+      align-items: center;
+      margin-left: 5%;
+    }
   }
 
   .mask {
@@ -190,14 +233,25 @@ const ModalBack = styled.div`
     left: 100px;
     top: 50px;
     position: absolute;
-    background-color: red;
+    @media screen and (max-width: 1000px) {
+      left: 100px;
+      top: 15px;
+    }
+    @media screen and (max-width: 768px) {
+      left: 50px;
+      top: 15px;
+    }
+    @media screen and (max-width: 500px) {
+      position: absolute;
+      left: 50px;
+      top: -140px;
+    }
   }
 
   .profile_img {
     height: 100%;
     width: 100%;
     display: inline-block;
-    //background-image: url("profile_pic ");
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     background-position: 50% 50%;
     background-size: cover;
@@ -239,6 +293,15 @@ const ModalBack = styled.div`
     border-bottom: 2px solid #4a4a4a;
     opacity: 0.53;
     margin-bottom: 10px;
+    @media screen and (max-width: 1000px) {
+      width: 82%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 60%;
+    }
+    @media screen and (max-width: 500px) {
+      width: 70%;
+    }
   }
   .line-3 {
     box-sizing: border-box;
@@ -248,6 +311,20 @@ const ModalBack = styled.div`
     opacity: 0.53;
     position: absolute;
     top: 125px;
+    left: 500px;
+    @media screen and (max-width: 1000px) {
+      top: 130px;
+      left: 352px;
+    }
+    @media screen and (max-width: 768px) {
+      top: 165px;
+      left: 246px;
+    }
+    @media screen and (max-width: 500px) {
+      top: 200px;
+      left: 200px;
+      width: 1px;
+    }
   }
   .avtar_text {
     height: 24px;
@@ -260,6 +337,23 @@ const ModalBack = styled.div`
     position: absolute;
     top: 118px;
     left: 563px;
+    @media screen and (max-width: 1000px) {
+      top: 100px;
+      left: 440px;
+      font-size: 16px;
+    }
+    @media screen and (max-width: 768px) {
+      top: 120px;
+      left: 280px;
+      font-size: 15px;
+    }
+    @media screen and (max-width: 500px) {
+      position: absolute;
+      font-size: 14px;
+      line-height: 19px;
+      top: 118px;
+      left: 243px;
+    }
   }
   .avtars {
     height: 311px;
@@ -267,6 +361,23 @@ const ModalBack = styled.div`
     position: absolute;
     top: 165px;
     left: 563px;
+    @media screen and (max-width: 1000px) {
+      width: 280px;
+      top: 165px;
+      left: 380px;
+    }
+    @media screen and (max-width: 768px) {
+      height: 470px;
+      width: 200px;
+      top: 160px;
+      left: 260px;
+    }
+    @media screen and (max-width: 500px) {
+      height: 470px;
+      width: 185px;
+      top: 150px;
+      left: 220px;
+    }
   }
   .save-button {
     height: 50px;
@@ -280,6 +391,19 @@ const ModalBack = styled.div`
     position: absolute;
     top: 541px;
     left: 723px;
+    @media screen and (max-width: 1000px) {
+      top: 540px;
+      left: 500px;
+    }
+    @media screen and (max-width: 768px) {
+      top: 600px;
+      left: 40px;
+    }
+    @media screen and (max-width: 500px) {
+      position: absolute;
+      top: 626px;
+      left: 60px;
+    }
   }
   .save {
     height: 22px;
@@ -292,5 +416,8 @@ const ModalBack = styled.div`
     line-height: 22px;
     text-align: center;
     text-shadow: 0 0 9px 0 #ffffff;
+    @media screen and (max-width: 500px) {
+      //display: none;
+    }
   }
 `;

@@ -74,16 +74,21 @@ const CardDiv = styled.div`
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  margin: 1%;
+  margin: 0.5%;
   position: relative;
   flex: 1;
+  @media screen and (max-width: 1000px) {
+    height: 200px;
+    width: 333px;
+  }
+  @media screen and (max-width: 768px) {
+    height: 186px;
+    width: 449px;
+  }
   @media screen and (max-width: 500px) {
-    display: block;
     position: relative;
-    left: -67px;
-    margin: 2%;
-    height: 240px;
-    width: 300px;
+    height: 187px;
+    width: 308px;
   }
 `;
 const Bitmap = styled.img`
@@ -92,7 +97,14 @@ const Bitmap = styled.img`
   position: absolute;
   top: 50px;
   left: 24px;
+  @media screen and (max-width: 1000px) {
+  }
+  @media screen and (max-width: 768px) {
+    //display: none;
+  }
   @media screen and (max-width: 500px) {
+    top: 30px;
+    left: 24px;
     display: block;
     position: absolute;
   }
@@ -103,16 +115,22 @@ const Account = styled.span`
   width: 200px;
   color: #2d2d2d;
   font-family: 'Open Sans';
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: -0.3px;
   line-height: 28px;
   position: absolute;
   top: 42px;
   left: 131px;
+  @media screen and (max-width: 1000px) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    //display: none;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
-    top: 80px;
-    left: -10px;
+    top: 60px;
+    left: 120px;
   }
 `;
 
@@ -127,10 +145,17 @@ const Name = styled.span`
   position: absolute;
   top: 74px;
   left: 130px;
+  @media screen and (max-width: 1000px) {
+    //display: none;
+  }
+  @media screen and (max-width: 768px) {
+    top: 80px;
+    left: 130px;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
-    top: 110px;
-    left: -24px;
+    top: 90px;
+    left: 120px;
   }
 `;
 const Date = styled.span`
@@ -144,10 +169,18 @@ const Date = styled.span`
   position: absolute;
   top: 74px;
   left: 280px;
+  @media screen and (max-width: 1000px) {
+    top: 74px;
+    left: 210px;
+  }
+  @media screen and (max-width: 768px) {
+    top: 80px;
+    left: 250px;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
-    top: 140px;
-    left: 10px;
+    top: 115px;
+    left: 120px;
   }
 `;
 const Num = styled.span`
@@ -162,10 +195,15 @@ const Num = styled.span`
   fontsize: 18px;
   top: 110px;
   left: 130px;
+  @media screen and (max-width: 1000px) {
+  }
+  @media screen and (max-width: 768px) {
+    //display: none;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
-    top: 170px;
-    left: -20px;
+    top: 140px;
+    left: 120px;
   }
 `;
 
@@ -173,12 +211,19 @@ const Primary1 = styled.div`
   position: absolute;
   top: 21px;
   left: 367px;
+  @media screen and (max-width: 1000px) {
+    top: 23px;
+    left: 230px;
+  }
+  @media screen and (max-width: 768px) {
+    top: 21px;
+    left: 350px;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
     width: 22px;
-    top: 10px;
-    left: 150px;
-    padding-left: 0px;
+    top: 17px;
+    left: 190px;
   }
 `;
 
@@ -210,9 +255,16 @@ const Edit = styled.span`
   position: absolute;
   top: 143px;
   left: 343px;
+  @media screen and (max-width: 1000px) {
+    top: 143px;
+  left: 130px;one;
+  }
+  @media screen and (max-width: 768px) {
+  // display: none;
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
-    top: 200px;
+    top: 80px;
     left: 30px;
   }
 `;
@@ -232,9 +284,15 @@ const Delete = styled.button`
   padding: 0;
   border: none;
   background: none;
+  @media screen and (max-width: 1000px) {
+    top: 143px;
+    left: 200px;
+  }
+  @media screen and (max-width: 768px) {
+  }
   @media screen and (max-width: 500px) {
     position: absolute;
-    top: 200px;
-    left: 90px;
+    top: 120px;
+    left: 30px;
   }
 `;

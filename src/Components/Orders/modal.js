@@ -133,7 +133,7 @@ const Modal = ({ setOpen }) => {
                   <span className='span-1'>Delivary location</span>
                   <span className='span-2'>Downtown Burj Khalifa, Dubai, UAE</span>
                 </div>
-                <hr className='line' style={{ top: '50px', left: '-10px' }} />
+                <hr className='line' style={{ top: '50px', left: '19px' }} />
                 <div className='pickup-location'>
                   <span className='span-1'>Date & Time</span>
                   <span className='span-2'>Today at 11:30AM</span>
@@ -213,7 +213,11 @@ const ModalBack = styled.div`
     width: 501px;
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 560px) {
+      width: 400px;
+    }
     @media screen and (max-width: 393px) {
+      background-color: gray;
       display: block;
       width: 350px;
     }
@@ -222,9 +226,12 @@ const ModalBack = styled.div`
     box-sizing: border-box;
     width: 422px;
     border-top: 1px solid #e3e3e3;
-    //margin: 15px auto;
     position: absolute;
     left: 5px;
+    @media screen and (max-width: 560px) {
+      width: 300px;
+      left: 20px;
+    }
     @media screen and (max-width: 393px) {
       display: none;
     }
@@ -237,6 +244,9 @@ const ModalBack = styled.div`
     flex-direction: row;
     align=items: center;
     position: relative;
+    @media screen and (max-width: 560px) {
+      width: 400px;
+    }
     @media screen and (max-width: 393px) {
       // display: none;
       width: 350px;
@@ -256,7 +266,6 @@ const ModalBack = styled.div`
   }
   .order-details {
     height: 33px;
-    width: 150px;
     color: #4c4c4c;
     font-family: 'Open Sans';
     font-size: 24px;
@@ -266,8 +275,10 @@ const ModalBack = styled.div`
     position: absolute;
     top: 43px;
     left: 176px;
+    @media screen and (max-width: 560px) {
+      left: 125px;
+    }
     @media screen and (max-width: 393px) {
-      //display: none;
       position: absolute;
       height: 25px;
       font-size: 17px;
@@ -284,6 +295,8 @@ const ModalBack = styled.div`
     font-weight: 600;
     letter-spacing: 0;
     line-height: 22px;
+    @media screen and (max-width: 560px) {
+    }
     @media screen and (max-width: 393px) {
       position: absolute;
     }
@@ -296,6 +309,9 @@ const ModalBack = styled.div`
     position: absolute;
     top: 127px;
     left: 30px;
+    @media screen and (max-width: 560px) {
+      width: 340px;
+    }
     @media screen and (max-width: 393px) {
       position: absolute;
       width: 300px;
@@ -308,6 +324,9 @@ const ModalBack = styled.div`
     flex-direction: column;
     align-items: start;
     position: relative;
+    @media screen and (max-width: 560px) {
+      width: 300px;
+    }
     @media screen and (max-width: 393px) {
       position: relative;
       width: 300px;
@@ -322,6 +341,7 @@ const ModalBack = styled.div`
     font-weight: 600;
     letter-spacing: 0;
     line-height: 19px;
+
     @media screen and (max-width: 393px) {
       height: 13px;
       font-size: 11px;
@@ -371,6 +391,9 @@ const ModalBack = styled.div`
     position: absolute;
     top: 45px;
     left: 345px;
+    @media screen and (max-width: 560px) {
+      left: 245px;
+    }
     @media screen and (max-width: 393px) {
       position: absolute;
       top: 10px;
@@ -389,6 +412,9 @@ const ModalBack = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 560px) {
+      width: 340px;
+    }
     @media screen and (max-width: 393px) {
       position: absolute;
       width: 300px;
@@ -399,6 +425,9 @@ const ModalBack = styled.div`
     height: 164px;
     width: 403px;
     position: relative;
+    @media screen and (max-width: 560px) {
+      width: 300px;
+    }
     @media screen and (max-width: 393px) {
       width: 300px;
       height: 130px;
@@ -462,6 +491,9 @@ const ModalBack = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 560px) {
+      width: 340px;
+    }
     @media screen and (max-width: 393px) {
       width: 300px;
       height: 160px;
@@ -471,6 +503,8 @@ const ModalBack = styled.div`
     height: 120px;
     width: 403px;
     position: relative;
+    @media screen and (max-width: 560px) {
+    }
     @media screen and (max-width: 393px) {
       width: 300px;
       height: 110px;
@@ -483,6 +517,9 @@ const ModalBack = styled.div`
     flex-direction: column;
     align-items: start;
     position: absolute;
+    @media screen and (max-width: 560px) {
+      left: 15px;
+    }
     @media screen and (max-width: 393px) {
       height: 27px;
       width: 180px;
@@ -496,6 +533,9 @@ const ModalBack = styled.div`
     align-items: start;
     position: absolute;
     top: 80px;
+    @media screen and (max-width: 560px) {
+      left: 15px;
+    }
     @media screen and (max-width: 393px) {
       height: 27px;
       width: 90px;
@@ -510,6 +550,8 @@ const ModalBack = styled.div`
     font-size: 12px;
     letter-spacing: -0.24px;
     line-height: 17px;
+    @media screen and (max-width: 560px) {
+    }
     @media screen and (max-width: 393px) {
       height: 14px;
       line-height: 14px;
@@ -523,6 +565,8 @@ const ModalBack = styled.div`
     font-size: 14px;
     letter-spacing: -0.24px;
     line-height: 19px;
+    @media screen and (max-width: 560px) {
+    }
     @media screen and (max-width: 393px) {
       line-height: 14px;
       height: 14px;
@@ -540,6 +584,9 @@ const ModalBack = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media screen and (max-width: 560px) {
+      width: 390px;
+    }
     @media screen and (max-width: 393px) {
       width: 346px;
       height: 280px;
@@ -590,6 +637,9 @@ const ModalBack = styled.div`
     position: absolute;
     top: 98px;
     left: 32px;
+    @media screen and (max-width: 560px) {
+      width: 300px;
+    }
     @media screen and (max-width: 393px) {
       position: absolute;
       width: 290px;
@@ -616,6 +666,7 @@ const ModalBack = styled.div`
     border-radius: 4px;
     background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
     box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);
+
     @media screen and (max-width: 393px) {
       height: 33px;
       width: 200px;
@@ -673,6 +724,10 @@ const ModalBack = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 560px) {
+      top: 205px;
+      left: 80px;
+    }
     @media screen and (max-width: 393px) {
       position: absolute;
       top: 205px;
