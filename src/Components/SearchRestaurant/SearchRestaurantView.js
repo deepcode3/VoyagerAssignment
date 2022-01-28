@@ -8,7 +8,7 @@ import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
 import './SearchRestaurantView.css';
 
-const SearchRestaurantView = ({ data, searchKey, location }) => {
+const SearchRestaurantView = ({ searchKey, location }) => {
   const restaurantBreadCrumbData = [
     { data: 'Home', path: '/' },
     { data: 'UAE', path: '' },
@@ -25,7 +25,6 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
       <div className='cartbodySeperator'>
         <div className='cartrestaurantSearchBar1'>
           <span className='cartrestaurantsInfo'>Delivery ASAP</span>
-          {console.log(data)}
           <div className='cartrestaurantSearch'>
             <SearchBar searchValue={searchKey} from='restaurant' />
           </div>
@@ -47,7 +46,6 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
 
 export default SearchRestaurantView;
 SearchRestaurantView.propTypes = {
-  data: PropTypes.arrayOf.isRequired,
   searchKey: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
 };

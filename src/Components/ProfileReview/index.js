@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unstable-nested-components */

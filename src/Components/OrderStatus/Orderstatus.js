@@ -2,7 +2,10 @@ import { React, useState, useEffect } from 'react';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
-import './Orderstatus.css';
+import Modal from './Modal';
+import Header from '../Header';
+import Footer from '../Footer';
+import BreadCrumb from '../BreadCrumbs';
 import waiting from '../../Assets/Images/waiting.png';
 import orderplaced from '../../Assets/Images/orderplaced.png';
 import delivery from '../../Assets/Images/delivered.png';
@@ -13,12 +16,11 @@ import greencircle from '../../Assets/Icons/greencircle.png';
 import greycheck from '../../Assets/Icons/greycheck.png';
 import yellowtime from '../../Assets/Icons/yellowtime.png';
 import trackline from '../../Assets/Images/trackline.png';
-import Modal from './Modal';
-import Header from '../Header';
-import Footer from '../Footer';
+import './Orderstatus.css';
 
 const Orderstatus = () => {
   const location = useLocation();
+  const searchKey = useLocation();
   const history = useHistory();
   const [openModal, setOpenModal] = useState(false);
   const [seconds, setSeconds] = useState(50);
@@ -35,6 +37,14 @@ const Orderstatus = () => {
   const [outfordelicon, setOutfordelicon] = useState(false);
   const [deliveredicon, setDeliveredicon] = useState(false);
 
+  const orderStatusBreadCrumbData = [
+    { data: 'Home', path: '/' },
+    { data: 'UAE', path: '/' },
+    { data: 'Expolre', path: '/' },
+    { data: 'Great breakfast', path: `/restaurants/${searchKey}/:${location}` },
+    { data: 'My Cart', path: '/cart-home' },
+    { data: 'OrderStatus', path: '/status' },
+  ];
   useEffect(() => {
     if (seconds > 0 && seconds > 50) {
       setTimeout(() => {
@@ -94,7 +104,9 @@ const Orderstatus = () => {
     <div className='orderbody'>
       <Header />
       <div className='orderbreadcrumb'>
-        <p className='ocrumbs'>Home UAE Explore Great breakfasts My Cart</p>
+        <p className='ocrumbs'>
+          <BreadCrumb BreadCrumbdata={orderStatusBreadCrumbData} />
+        </p>
         <div className='crumbline' />
       </div>
       <div className='statusbg'>
