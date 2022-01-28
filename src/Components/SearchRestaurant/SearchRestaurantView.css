@@ -471,7 +471,7 @@
 .cartrestaurantsInfo {
   height: 17px;
   color: #3f3f40;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.2px;
@@ -500,7 +500,7 @@
 .cartbreadcrumbs {
   height: 17px;
   color: #6f6f6f;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-size: 12px;
   font-weight: 600;
   line-height: 17px;
@@ -589,6 +589,9 @@
   /* .cartbodySeperator {
     width: 100%;
   } */
+  .cartsemiBg {
+    margin-top: 3%;
+  }
   .cartrestaurantSearchBar1 {
     width: 400px;
   }
@@ -619,6 +622,9 @@
   .cartbreadcrumbs {
     left: -32px;
     top: -4px;
+  }
+  .cartbreadcrumbsarea {
+    margin-top: 3%;
   }
   .restaurantSearchBox {
     width: 0px;
