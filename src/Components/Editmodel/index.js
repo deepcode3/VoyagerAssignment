@@ -142,11 +142,11 @@ const ModalBack = styled.div`
       height: 666px;
     }
     @media screen and (max-width: 768px) {
-      width: 480px;
+      width: 460px;
     }
-    @media screen and (max-width: 500px) {
-      width: 430px;
-      height: 730px;
+    @media screen and (max-width: 470px) {
+      width: 410px;
+      height: 695px;
     }
   }
   .card {
@@ -167,11 +167,11 @@ const ModalBack = styled.div`
     }
     @media screen and (max-width: 768px) {
       height: 690px;
-      width: 480px;
+      width: 460px;
     }
-    @media screen and (max-width: 500px) {
-      width: 430px;
-      height: 700px;
+    @media screen and (max-width: 470px) {
+      width: 410px;
+      height: 685px;
     }
   }
   .edit {
@@ -195,7 +195,7 @@ const ModalBack = styled.div`
       height: 50%;
       width: 50%;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       position: relative;
       width: 50%;
       height: 50%;
@@ -216,7 +216,7 @@ const ModalBack = styled.div`
       margin-left: 5%;
       margin-top: 15%;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       position: absolute;
       align-items: center;
       margin-left: 5%;
@@ -241,7 +241,7 @@ const ModalBack = styled.div`
       left: 50px;
       top: 15px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       position: absolute;
       left: 50px;
       top: -140px;
@@ -299,7 +299,7 @@ const ModalBack = styled.div`
     @media screen and (max-width: 768px) {
       width: 60%;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       width: 70%;
     }
   }
@@ -320,7 +320,7 @@ const ModalBack = styled.div`
       top: 165px;
       left: 246px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       top: 200px;
       left: 200px;
       width: 1px;
@@ -347,7 +347,7 @@ const ModalBack = styled.div`
       left: 280px;
       font-size: 15px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       position: absolute;
       font-size: 14px;
       line-height: 19px;
@@ -372,7 +372,7 @@ const ModalBack = styled.div`
       top: 160px;
       left: 260px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       height: 470px;
       width: 185px;
       top: 150px;
@@ -399,7 +399,7 @@ const ModalBack = styled.div`
       top: 600px;
       left: 40px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       position: absolute;
       top: 626px;
       left: 60px;
@@ -416,7 +416,7 @@ const ModalBack = styled.div`
     line-height: 22px;
     text-align: center;
     text-shadow: 0 0 9px 0 #ffffff;
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 470px) {
       //display: none;
     }
   }

@@ -96,7 +96,6 @@ const Profile = ({ setOpen }) => {
             <span className='credits-num'>256</span>
             <img className='icn-info-small' src={icnInfo} alt='icn' />
           </ProfileList>
-
           <NavMenu onClick={handleClick} click={click}>
             <NavLinks to='/profile'>
               <NavItem>Order</NavItem>
@@ -160,7 +159,7 @@ const MobileProfile = styled.div`
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 35px;
-    left: 40px;
+    left: 60px;
   }
 `;
 const MobileIcon = styled.div`
@@ -169,7 +168,7 @@ const MobileIcon = styled.div`
     display: block;
     position: absolute;
     top: 25px;
-    left: 380px;
+    left: 340px;
     transform: translate(-100%, 60%);
     cursor: pointer;
   }
@@ -226,13 +225,15 @@ const NavLinks = styled(Link)`
   letter-spacing: 0;
   line-height: 1.5rem;
   margin-right: 2.2rem;
-  &:hover:before {
+  z-index: 1;
+  position: relative;
+  &:hover:after {
     content: '';
     height: 4px;
     width: 38px;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -7px;
     border-radius: 2px;
     background: linear-gradient(138.33deg, #f3698e 0%, #feb456 100%);
     box-shadow: 0 4px 10px 0 rgba(246, 126, 126, 0.38);

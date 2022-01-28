@@ -319,11 +319,13 @@ const Div = styled.div`
     }
     @media screen and (max-width: 768px) {
       width: 450px;
+      background-color: red;
     }
     @media screen and (max-width: 500px) {
       width: 72%;
       position: relative;
       padding: 0;
+      background-color: green;
     }
   }
   .ratingdiv {
