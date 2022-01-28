@@ -56,15 +56,17 @@ const CartAddress = () => {
   const [displayAddress, setDisplayAddress] = useState(true);
   const formSubmit = (data) => {
     console.log(data);
-
-    history.push({
-      pathname: '/finalpay',
-      state: {
-        restaurant: location.state.restaurant,
-        selectedAddress,
-        deliveryType: displayAddress ? 'deliverToMe' : 'pickUp',
-      },
-    });
+    if (addressItems.length === 0) alert('Please select/add address to deliver');
+    else {
+      history.push({
+        pathname: '/finalpay',
+        state: {
+          restaurant: location.state.restaurant,
+          selectedAddress,
+          deliveryType: displayAddress ? 'deliverToMe' : 'pickUp',
+        },
+      });
+    }
   };
   return (
     <div className='addressbg'>
@@ -189,7 +191,7 @@ const CartAddress = () => {
           </div>
 
           <button className='aChoosepayment' type='submit' onKeyDown={null}>
-            <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
+            CHOOSE PAYMENT
           </button>
         </form>
         <div className='delins'>
@@ -198,36 +200,6 @@ const CartAddress = () => {
         <div className='mention'>
           <textarea type='text' placeholder='Mention it here...' className='mntn' />
           <div className='mentiongreyline1' />
-        </div>
-        <div
-          className='aBackbuttondiv'
-          onClick={() => {
-            history.goBack('/description');
-          }}
-          role='button'
-          onKeyDown={null}
-        >
-          <p className='aBACKtext'>BACK</p>
-        </div>
-        <div
-          className='aChoosepayment'
-          onClick={() => {
-            if (addressItems.length === 0) alert('Please select/add address to deliver');
-            else {
-              history.push({
-                pathname: '/finalpay',
-                state: {
-                  restaurant: location.state.restaurant,
-                  selectedAddress,
-                  deliveryType: displayAddress ? 'deliverToMe' : 'pickUp',
-                },
-              });
-            }
-          }}
-          role='button'
-          onKeyDown={null}
-        >
-          <p className='aChoosepaymenttext'>CHOOSE PAYMENT</p>
         </div>
       </div>
       <div className='addressprogressbar'>

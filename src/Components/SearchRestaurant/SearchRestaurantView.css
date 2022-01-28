@@ -118,6 +118,14 @@
     left: -97px;
   }
 }
+/* @media all and (max-width: 820px) {
+  .cartmaindiv {
+    width: 100%;
+  }
+  .cartbreadcrumbsarea {
+    width: 100%;
+  }
+} */
 
 @media all and (max-width: 710px) {
   .cartrestaurantDateTimeButton {
@@ -128,68 +136,6 @@
     top: -103px;
   }
 }
-
-/* @media all and (max-width: 550px) {
-  .cartrestaurantSearchBar1 {
-    width: 400px;
-  }
-  .cartrestaurantSearch {
-    position: relative;
-    left: 180px;
-    top: -5px;
-    width: 400px;
-  }
-  .cartrestaurantLocation {
-    position: relative;
-    top: -15px;
-    left: 05px;
-    width: 300px;
-  }
-  .cartrestaurantDateTimeButton {
-    position: relative;
-    left: 400px;
-    height: 45px;
-    width: 45px;
-    top: -93px;
-  }
-  .cartrestaurantsInfo {
-    position: relative;
-    left: 80px;
-    top: -8px;
-  }
-  .cartbreadcrumbs {
-    left: -32px;
-    top: -4px;
-  }
-  .restaurantSearchBox {
-    width: 0px;
-  }
-} */
-
-/* @media all and (max-width: 385px) {
-  .cartsemiBg {
-    width: 375px;
-  }
-  .cartrestaurantSearchBar1 {
-    width: 370px;
-  }
-  .cartrestaurantSearch {
-    position: relative;
-    left: 0px;
-    top: -5px;
-    width: 100px;
-  }
-  .restaurantSearchInput {
-    width: 273px;
-    left: -270px;
-  }
-  .cartrestaurantLocation {
-    position: relative;
-    top: -5px;
-    left: 15px;
-    width: 200px;
-  }
-} */
 
 @media all and (max-width: 580px) {
   .cartrestaurantSearchBar1 {
@@ -226,7 +172,7 @@
     height: 35px;
   }
   .cartbreadcrumbs {
-    left: 10px;
+    left: -10px;
   }
   .cartrestaurantSearch {
     left: 100px;
@@ -264,7 +210,18 @@
   }
 }
 
-@media all and (max-width: 395px) {
+@media all and (max-width: 393px) {
+  .cartmaindiv {
+    width: 393px;
+  }
+  .cartbreadcrumbsarea {
+    width: 393px;
+  }
+  .cartbreadcrumbs {
+    left: -15px;
+  }
+}
+@media all and (max-width: 375px) {
   .cartsemiBg {
     width: 100%;
   }
@@ -279,11 +236,14 @@
   }
 
   .cartrestaurantLocation {
-    left: 50px;
+    left: 40px;
+  }
+  .cartrestaurantSearch {
+    left: 15px;
   }
   .cartrestaurantsInfo {
     position: relative;
-    left: 0px;
+    left: 10px;
   }
   .cartbreadcrumbsarea {
     width: 375px;
@@ -294,15 +254,10 @@
   }
   .cartbreadcrumbs {
     position: relative;
-    left: -10px;
+    left: -15px;
   }
-}
-@media all and (max-width: 393px) {
-  .cartmaindiv {
-    width: 393px;
-  }
-  .cartbreadcrumbsarea {
-    width: 393px;
+  .cartrestaurantDateTimeButton {
+    left: 328px;
   }
 }
 @media all and (max-width: 360px) {

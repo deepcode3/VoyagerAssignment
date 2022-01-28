@@ -277,7 +277,6 @@ const DropDowm = styled.div`
   z-index: 99;
   position: absolute;
   justify-content: space-around;
-  top: 20%;
   margin-left: 43%;
   padding: 4px;
 `;
