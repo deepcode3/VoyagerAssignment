@@ -25,7 +25,7 @@ const FinalPayment = () => {
   const paymentItems = [...currentUser.cards];
   const [selectedCard, setSelectedCard] = useState(paymentItems[0]);
   const prepay = () => {
-    history.goBack('/payment');
+    history.goBack();
   };
   const [cardDetails, setCardDetails] = useState(false);
   const showDetails = () => {
@@ -108,7 +108,7 @@ const FinalPayment = () => {
         <div
           className='fpaynow'
           onClick={() => {
-            if (paymentItems.length === 0) {
+            if (paymentItems.length === 0 && cardDetails === true) {
               alert('Please add card details');
             } else {
               history.push({

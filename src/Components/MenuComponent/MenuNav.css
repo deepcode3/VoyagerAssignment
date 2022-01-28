@@ -1490,8 +1490,8 @@
     width: 25px;
     height: 25px;
     position: relative;
-    top: 19.5vh;
-    left: 42vw;
+    top: 18.5vh;
+    left: 39vw;
     display: block;
   }
   .reviewButton {
@@ -1641,6 +1641,7 @@
   .galleryContainer {
     width: 100%;
     overflow: hidden;
+    overflow: hidden;
   }
   .viewAllPhotos {
     position: relative;
@@ -1665,13 +1666,13 @@
     left: -4vh;
   }
   .galleryView {
-    width: 350px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between 5px;
     margin-left: auto;
     margin-right: auto;
-    left: 70px;
+    left: 20px;
     top: 00px;
   }
   .modalImage {
@@ -1734,8 +1735,13 @@
     left: 20px;
   }
   .galleryView {
-    position: relative;
-    left: 45px;
+    width: 200px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
   }
   .modalImage {
     width: 70vw;

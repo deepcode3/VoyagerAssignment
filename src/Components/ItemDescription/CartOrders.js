@@ -24,7 +24,7 @@ const Cart = () => {
     <div className='dbgbody'>
       {items === null ? (
         <div className='emptyimgcart'>
-          <img src={empty} alt='' />
+          <img src={empty} alt='' className='cactus' />
           <p className='emptytext'>Cart is empty</p>
         </div>
       ) : (

@@ -20,6 +20,7 @@ import filterIcon from '../../Assets/Icons/filterIcon.png';
 import filterCloseButton from '../../Assets/Icons/dismiss button@3x.png';
 import './Restaurants.css';
 import Footer from '../../Components/Footer';
+import BreadCrumb from '../../Components/BreadCrumbs';
 
 const Restaurant = ({ data, searchKey, location }) => {
   const [TimeSortHide, setTimeSortHide] = useState(false);
@@ -29,6 +30,13 @@ const Restaurant = ({ data, searchKey, location }) => {
   const [minimumOrderValue, setMinimumOrderValue] = useState('60');
   const [isFilterVisible, setIsFilterVisible] = useState(false);
   const history = useHistory();
+
+  const restaurantBreadCrumbData = [
+    { data: 'Home', path: '/' },
+    { data: location, path: '' },
+    { data: 'Expolre', path: '' },
+    { data: 'Great breakfast', path: `/restaurants/${searchKey}/:${location}` },
+  ];
   const theme = createTheme({
     palette: {
       primary: { main: '#FFA500' },
@@ -55,7 +63,9 @@ const Restaurant = ({ data, searchKey, location }) => {
       </div>
       <div className='body'>
         <div className='restaurantLocators'>
-          <div className='restaurantLocatorInfo'>Home UAE Explore Great Breakfasts</div>
+          <div className='restaurantLocatorInfo'>
+            <BreadCrumb BreadCrumbdata={restaurantBreadCrumbData} />
+          </div>
         </div>
         <div className='restaurantHalfBg'>
           <div className='heading'>Breakfast in Dubai</div>

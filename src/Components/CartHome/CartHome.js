@@ -25,7 +25,7 @@ const CartHome = () => {
         <>
           <p className='mycarttext'>
             My Cart
-            <span>{`(${resdata.length})`}</span>
+            <span>{` (${resdata.length}) `}</span>
           </p>
           {resdata.map((val) => {
             // eslint-disable-next-line react/jsx-wrap-multilines

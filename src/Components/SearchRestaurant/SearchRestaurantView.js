@@ -3,34 +3,42 @@ import PropTypes from 'prop-types';
 import Header from '../Header';
 import SearchBar, { LocationSetter } from '../HomeComponents/SearchBar';
 import '../../Containers/Restaurants/index';
+import BreadCrumb from '../BreadCrumbs';
 import menuSemiBg from '../../Assets/Images/menuSemiBg.png';
 import dateTime from '../../Assets/Icons/dateTime.png';
 import './SearchRestaurantView.css';
 
-const SearchRestaurantView = ({ data, searchKey, location }) => {
+const SearchRestaurantView = ({ searchKey, location }) => {
+  const restaurantBreadCrumbData = [
+    { data: 'Home', path: '/' },
+    { data: 'UAE', path: '' },
+    { data: 'Expolre', path: '' },
+    { data: 'Great breakfast', path: `/restaurants/${searchKey}/:${location}` },
+    { data: 'My Cart', path: '/cart-home' },
+  ];
   return (
-    <div className='outContainer'>
-      <div className='headerDivSearchRest'>
+    <div className='cartmaindiv'>
+      <div className='cartheaderDivSearchRest'>
         <Header />
       </div>
-      <img src={menuSemiBg} alt='semiBg' className='csemiBg' />
-      <div className='restaurantSearchBar'>
-        <span className='crestaurantsInfo'>Delivery ASAP</span>
-        {console.log(data)}
-        <div className='csearch'>
-          <div className='restaurantSearch'>
+      <img src={menuSemiBg} alt='semiBg' className='cartsemiBg' />
+      <div className='cartbodySeperator'>
+        <div className='cartrestaurantSearchBar1'>
+          <span className='cartrestaurantsInfo'>Delivery ASAP</span>
+          <div className='cartrestaurantSearch'>
             <SearchBar searchValue={searchKey} from='restaurant' />
           </div>
-        </div>
-        <div className='clsetter'>
-          <div className='restaurantLocation' from='restaurant'>
+          <div className='cartrestaurantLocation' from='restaurant'>
             <LocationSetter locationValue={location} from='restaurant' />
           </div>
+          <img className='cartrestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
         </div>
-        <img className='crestaurantDateTimeButton' alt='schedule-button' src={dateTime} />
       </div>
-      <div className='crestaurantLocators'>
-        <div className='crestaurantLocatorInfo'>Home UAE Explore Great breakfasts My Cart</div>
+      <div className='cartbreadcrumbsarea'>
+        <p className='cartbreadcrumbs'>
+          <BreadCrumb BreadCrumbdata={restaurantBreadCrumbData} />
+        </p>
+        <div className='cartcrumbline' />
       </div>
     </div>
   );
@@ -38,7 +46,6 @@ const SearchRestaurantView = ({ data, searchKey, location }) => {
 
 export default SearchRestaurantView;
 SearchRestaurantView.propTypes = {
-  data: PropTypes.arrayOf.isRequired,
   searchKey: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
 };

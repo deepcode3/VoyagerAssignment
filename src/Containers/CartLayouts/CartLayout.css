@@ -8,6 +8,7 @@
   margin-right: auto;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 
 .layoutRestaurentView {
@@ -23,7 +24,13 @@
   margin-right: auto;
   margin-left: auto;
 }
-
+@media all and (max-width: 500px) {
+  .layoutBg {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+  }
+}
 @media all and (max-width: 1900px) {
   .layoutBg {
     position: absolute;
@@ -34,7 +41,7 @@
   }
 }
 
-@media all and (max-width: 1680px) {
+/* @media all and (max-width: 1680px) {
   .layoutBg {
     position: absolute;
     height: 1270px;
@@ -43,41 +50,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .restaurantLocationInput {
-    position: absolute;
-    left: -150px;
-  }
-  .retsurantGpsTracker {
-    position: absolute;
-    left: 75px;
-  }
-  .retsurantLocation {
-    position: absolute;
-    left: -130px;
-  }
-  .crestaurantsInfo {
-    position: relative;
-    margin-left: -150px;
-  }
-  .restaurantSearchInput {
-    position: relative;
-    left: -145px;
-  }
-  .restaurantSearchIcon {
-    position: relative;
-    left: 400px;
-    top: -32px;
-  }
-  .crestaurantDateTimeButton {
-    position: relative;
-    margin-left: -150px;
-    margin-top: 3px;
-  }
-  .crestaurantLocatorInfo {
-    position: relative;
-    margin-left: -150px;
-  }
-}
+} */
 @media all and (max-width: 1569px) {
   .layoutBg {
     position: absolute;
@@ -86,44 +59,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .restaurantLocationInput {
-    position: absolute;
-    left: -180px;
-  }
-  .retsurantGpsTracker {
-    position: absolute;
-    left: 45px;
-  }
-  .retsurantLocation {
-    position: absolute;
-    left: -160px;
-  }
-  /* .crestaurantsInfo {
-    position: relative;
-    margin-right: 200px;
-  } */
-  .crestaurantsInfo {
-    position: relative;
-    margin-left: -180px;
-  }
-  .restaurantSearchInput {
-    position: relative;
-    left: -175px;
-  }
-  .restaurantSearchIcon {
-    position: relative;
-    left: 360px;
-    top: -32px;
-  }
-  .crestaurantDateTimeButton {
-    position: relative;
-    margin-left: -180px;
-    margin-top: 3px;
-  }
-  .crestaurantLocatorInfo {
-    position: relative;
-    margin-left: -180px;
-  }
+
   .addresscontainer {
     left: 450px;
   }
@@ -245,51 +181,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .restaurantLocation {
-    width: 0px;
-  }
-  .clsetter {
-    width: 0px;
-  }
-  .csearch {
-    width: 0px;
-    left: 100px;
-  }
-  .restaurantSearchBox {
-    width: 0px;
-  }
 
-  .restaurantLocationInput {
-    position: absolute;
-    left: -280px;
-  }
-  .retsurantGpsTracker {
-    position: absolute;
-    left: -55px;
-  }
-  .retsurantLocation {
-    position: absolute;
-    left: -270px;
-  }
-  .restaurantSearchInput {
-    position: absolute;
-    left: -280px;
-    top: 1px;
-  }
-  .restaurantSearchIcon {
-    position: absolute;
-    left: 270px;
-    top: 20px;
-  }
-  .crestaurantDateTimeButton {
-    position: absolute;
-    margin-left: -280px;
-    margin-top: 5px;
-  }
-  .crestaurantLocatorInfo {
-    position: relative;
-    margin-left: -280px;
-  }
   /* .cartprogressbar {
     position: relative;
 
@@ -341,12 +233,7 @@
   .finalPayprogressbar {
     left: -400px;
   }
-  .mycarttext {
-    left: 200px;
-  }
-  .cartdiv {
-    left: 200px;
-  }
+
   /* .statusbg {
     width: 1300px;
   } */
@@ -374,6 +261,7 @@
     width: 1482px;
   }
 } */
+
 @media all and (max-width: 1060px) {
   .layoutBg {
     position: absolute;
@@ -385,46 +273,6 @@
     overflow-y: hidden;
   }
 
-  .restaurantLocationInput {
-    position: absolute;
-    left: -270px;
-    width: 100px;
-    height: 40px;
-    top: 5px;
-  }
-  .retsurantGpsTracker {
-    position: absolute;
-    left: -160px;
-  }
-  .retsurantLocation {
-    position: absolute;
-    left: -260px;
-  }
-  .restaurantSearchInput {
-    position: absolute;
-    width: 340px;
-    left: -390px;
-    top: 5px;
-    height: 40px;
-  }
-  .restaurantSearchIcon {
-    position: absolute;
-    left: -70px;
-    top: 15px;
-  }
-  .crestaurantDateTimeButton {
-    position: relative;
-    margin-left: -620px;
-    height: 50px;
-    margin-top: 8px;
-  }
-  .crestaurantsInfo {
-    position: relative;
-    margin-left: -270px;
-  }
-  .crestaurantLocators {
-    width: 1348px;
-  }
   .cartprogressbar {
     position: absolute;
 
@@ -595,6 +443,7 @@
   .aBACKtext {
     left: 20px;
     top: 5px;
+    font-size: 11.5px;
   }
   .aChoosepayment {
     width: 120px;
@@ -602,8 +451,8 @@
     left: 330px;
   }
   .aChoosepaymenttext {
-    font-size: 12.5px;
-    left: 6px;
+    font-size: 10.5px;
+    left: 15px;
     top: 5px;
   }
   .Pactive {
@@ -639,6 +488,10 @@
   }
   .paymentcontainer {
     width: 465px;
+  }
+  .paymentcardcheckbtn {
+    position: relative;
+    left: -55px;
   }
   .earnedpointsdiv {
     width: 430px;
@@ -784,32 +637,7 @@
   .mycards {
     font-size: 15px;
   }
-  .mycarttext {
-    font-size: 17px;
-    left: 180px;
-  }
-  .cartdiv {
-    left: 180px;
-    width: 300px;
-    height: 130px;
-  }
-  .cartremovebtn {
-    left: 220px;
-  }
-  .cartresname {
-    font-size: 13px;
-  }
-  .cartproceedbtn {
-    height: 20px;
-    width: 80px;
-    top: 100px;
-    left: 200px;
-  }
-  .cartproceedtext {
-    font-size: 12px;
-    left: 4px;
-    top: 2px;
-  }
+
   .address_card {
     width: 250px;
   }
@@ -846,7 +674,7 @@
   .contactdetails {
     font-size: 15px;
   }
-  .csearch {
+  /* .csearch {
     width: 00px;
   }
   .restaurantLocation {
@@ -857,7 +685,7 @@
   }
   .restaurantSearchBox {
     width: 0px;
-  }
+  } */
   .pay-card {
     width: 230px;
     height: 110px;
@@ -882,7 +710,7 @@
   .vcardline {
     top: 102px;
   }
-  .statusbg {
+  /* .statusbg {
     width: 1060px;
   }
   .statuscontainer {
@@ -1105,14 +933,95 @@
     font-size: 18px;
     top: 200px;
     left: 220px;
+  } */
+}
+@media all and (max-width: 510px) {
+  .cartbg {
+    overflow: hidden;
+    width: 100%;
+  }
+  .cartdiv {
+    left: 80px;
+    width: 300px;
+    height: 130px;
+    margin-bottom: 10px;
+  }
+  .mycarttext {
+    font-size: 17px;
+    left: 80px;
   }
 }
-
-@media all and (max-width: 550px) {
+/* @media all and (max-width: 550px) {
   .layoutFooter {
     display: none;
   }
+} */
+
+@media all and (max-width: 750px) {
+  .addresscontainer {
+    position: absolute;
+    left: 120px;
+  }
+  .addressheading {
+    left: 120px;
+  }
+  .addressprogressbar {
+    left: -535px;
+  }
+  .paymentcontainer {
+    left: 120px;
+  }
+  .paymenttext {
+    left: 120px;
+  }
+  .finalpaycontainer {
+    left: 120px;
+  }
+  .paytext {
+    left: 120px;
+  }
+  .finalPayprogressbar {
+    left: -530px;
+  }
 }
+
+@media all and (max-width: 640px) {
+  .addresscontainer {
+    position: absolute;
+    left: 20px;
+    width: 450px;
+  }
+  .address_container {
+    width: 440px;
+  }
+  .mntn {
+    width: 420px;
+  }
+  .addressheading {
+    left: 24px;
+  }
+  .addressprogressbar {
+    left: -640px;
+  }
+  .paymentcontainer {
+    left: 20px;
+    width: 460px;
+  }
+  .paymenttext {
+    left: 22px;
+  }
+  .finalpaycontainer {
+    left: 20px;
+    width: 460px;
+  }
+  .paytext {
+    left: 23px;
+  }
+  .finalPayprogressbar {
+    left: -640px;
+  }
+}
+
 /* @media all and (max-width: 508px) {
   .restaurantLocationInput {
     position: relative;
@@ -1177,15 +1086,13 @@
   }
 } */
 @media all and (max-width: 400px) {
-  .restaurantSearch {
+  /* .restaurantSearch {
     position: relative;
     width: 0px;
     left: 0px;
   }
 
-  /* .csearch {
-    margin-left: -500px;
-  } */
+
   .crestaurantsInfo {
     margin-left: -450px;
     margin-top: -25px;
@@ -1205,11 +1112,7 @@
     top: -35px;
     height: 15px;
   }
-  /* .crestaurantsInfo {
-    position: relative;
-    margin-left: -400px;
-    margin-top: -40px;
-  } */
+ 
   .restaurantLocationSetter {
     width: 0px;
   }
@@ -1252,7 +1155,7 @@
     width: 120px;
     left: 625px;
     top: 292px;
-  }
+  } */
   /* .layoutBg {
     width: 393px;
     height: 2000px;
@@ -1810,7 +1713,7 @@
   .layoutRestaurentView {
     width: 300px;
   }
-  .restaurantSearchBar {
+  /* .restaurantSearchBar {
     width: 300px;
   }
   .searchCard {
@@ -1821,7 +1724,7 @@
   }
   .crestaurantLocatorInfo {
     width: 300px;
-  }
+  } */
   .item {
     width: 200px;
   }
@@ -1925,5 +1828,523 @@
   }
   .mdelgreyline {
     width: 250px;
+  }
+}
+
+@media all and (max-width: 510px) {
+  .aBackbuttondiv {
+    left: 220px;
+  }
+  .aChoosepayment {
+    left: 310px;
+  }
+  .aChoosepaymenttext {
+    left: 6px;
+    top: 5px;
+    font-size: 12px;
+    width: 110px;
+  }
+}
+
+@media all and (max-width: 1286px) {
+  .statuscontainer {
+    position: absolute;
+    left: 100px;
+    width: 600px;
+  }
+  .orderid {
+    left: 00px;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .Cactive {
+    position: relative;
+    left: 690px;
+  }
+  .cactiveline {
+    width: 130px;
+    left: 710px;
+  }
+  .Cactive2 {
+    left: 840px;
+  }
+  .cpartialactiveline {
+    width: 130px;
+    left: 860px;
+  }
+  .deactivestate {
+    left: 990px;
+  }
+  .acart {
+    left: 685px;
+  }
+  .cadresstext {
+    left: 805px;
+  }
+  .cpaymenttext {
+    left: 970px;
+  }
+  .addresscontainer {
+    width: 380px;
+  }
+  .address_container {
+    width: 330px;
+  }
+  .addnewbtn {
+    left: 280px;
+  }
+  .addnewtext {
+    left: 275px;
+  }
+  .mntn {
+    width: 340px;
+  }
+  .aBackbuttondiv {
+    left: 150px;
+  }
+  .aChoosepayment {
+    left: 250px;
+  }
+  .mentiongreyline1 {
+    width: 350px;
+  }
+  .paymentcontainer {
+    width: 370px;
+  }
+  .Pactive {
+    left: 20px;
+  }
+  .pactiveline {
+    width: 130px;
+    left: 40px;
+  }
+  .Pactive2 {
+    left: 171px;
+  }
+  .pactiveline2 {
+    left: 192px;
+    width: 130px;
+  }
+  .pactivestate3 {
+    left: 323px;
+  }
+  .pcart {
+    left: 20px;
+  }
+  .padresstext {
+    left: 140px;
+  }
+  .Ppaymenttext {
+    left: 310px;
+  }
+  .carddiv {
+    width: 180px;
+  }
+  .Cardtext {
+    font-size: 12px;
+  }
+  .carddetailscontainer {
+    width: 330px;
+  }
+  .earnedpointsdiv {
+    width: 330px;
+  }
+  .pcheckbox {
+    left: 210px;
+  }
+  .redeem {
+    left: 238px;
+  }
+  .paydeliverydetails {
+    width: 330px;
+  }
+  .paydateandtime {
+    width: 200px;
+  }
+  .locationtimediv {
+    width: 330px;
+  }
+  .paychange {
+    left: 225px;
+  }
+  .datetimedivchange {
+    left: 225px;
+  }
+  .paydeliveryaddress {
+    width: 300px;
+  }
+  .paydeliverylocation {
+    width: 300px;
+  }
+  .payonegreyline {
+    width: 300px;
+  }
+  .payoitemsorderdfrom {
+    width: 330px;
+  }
+  .subdiv {
+    width: 330px;
+  }
+  .paybackbutton {
+    left: 130px;
+  }
+  .paynowbutton {
+    left: 235px;
+  }
+  .finalpaycontainer {
+    width: 370px;
+  }
+  .fpayback {
+    left: 130px;
+  }
+  .fpaynow {
+    left: 230px;
+  }
+  .pay_container {
+    width: 270px;
+  }
+  .payaddnew {
+    left: 250px;
+  }
+  .Fpactive {
+    left: 690px;
+  }
+  .fpactiveline {
+    width: 140px;
+    left: 710px;
+  }
+  .fpactive2 {
+    left: 850px;
+  }
+  .fpactiveline2 {
+    width: 140px;
+    left: 870px;
+  }
+  .fpactivestate3 {
+    left: 1000px;
+  }
+  .fcart {
+    left: 690px;
+  }
+  .fpadresstext {
+    left: 820px;
+  }
+  .Fpaymenttext {
+    left: 980px;
+  }
+}
+
+/* @media all and (max-width: 914px) {
+  .paymentcontainer {
+    top: 360px;
+  }
+} */
+
+/* @media all and (max-width: 395px) {
+  .cartprogressbar {
+    left: 10px;
+  }
+} */
+@media all and (max-width: 395px) {
+  .addressprogressbar {
+    left: -665px;
+  }
+  .addresscontainer {
+    width: 330px;
+    left: 15px;
+  }
+  .address_container {
+    width: 280px;
+  }
+  .addnewtext {
+    left: 220px;
+  }
+  .addnewbtn {
+    left: 230px;
+  }
+  .mntn {
+    width: 300px;
+  }
+  .mentiongreyline1 {
+    width: 290px;
+  }
+  .deliveryins {
+    top: 600px;
+  }
+  .aBackbuttondiv {
+    left: 130px;
+  }
+  .aChoosepayment {
+    left: 200px;
+    width: 120px;
+  }
+  .addressheading {
+    left: 20px;
+  }
+  .paymentcontainer {
+    left: 15px;
+    width: 335px;
+  }
+  .carddetailscontainer {
+    width: 320px;
+  }
+  .earnedpointsdiv {
+    width: 305px;
+    left: 12px;
+  }
+  .locationtimediv {
+    left: -12px;
+    width: 310px;
+  }
+  .paychange {
+    left: 200px;
+  }
+  .datetimedivchange {
+    left: 200px;
+  }
+  .payonegreyline {
+    width: 280px;
+  }
+  .subdiv {
+    width: 310px;
+    left: -10px;
+  }
+  .paymenttext {
+    left: 20px;
+  }
+
+  .finalPayprogressbar {
+    left: -660px;
+  }
+  .finalpaycontainer {
+    left: 20px;
+    width: 330px;
+  }
+}
+
+@media all and (max-width: 290px) {
+  .Cactive {
+    position: relative;
+    left: 670px;
+  }
+  .cactiveline {
+    width: 110px;
+    left: 685px;
+  }
+  .Cactive2 {
+    left: 790px;
+  }
+  .cpartialactiveline {
+    width: 110px;
+    left: 805px;
+  }
+  .deactivestate {
+    left: 910px;
+  }
+  .acart {
+    left: 670px;
+  }
+  .cadresstext {
+    left: 765px;
+  }
+  .cpaymenttext {
+    left: 890px;
+  }
+  .addressheading {
+    font-size: 18px;
+  }
+  .addresscontainer {
+    width: 260px;
+  }
+  .preference {
+    width: 250px;
+  }
+  .pickupdiv {
+    left: 120px;
+  }
+  .address_container {
+    width: 210px;
+  }
+
+  .addnewbtn {
+    left: 180px;
+  }
+  .addnewtext {
+    left: 170px;
+  }
+  .mntn {
+    width: 230px;
+  }
+  .mentiongreyline1 {
+    width: 230px;
+  }
+
+  .aBackbuttondiv {
+    left: 60px;
+  }
+
+  .aChoosepayment {
+    left: 130px;
+  }
+
+  .Pactive {
+    left: 5px;
+  }
+  .pactiveline {
+    width: 110px;
+    left: 20px;
+  }
+  .Pactive2 {
+    left: 131px;
+  }
+  .pactiveline2 {
+    left: 148px;
+    width: 110px;
+  }
+  .pactivestate3 {
+    left: 253px;
+  }
+  .pcart {
+    left: 4px;
+  }
+  .padresstext {
+    left: 100px;
+  }
+  .Ppaymenttext {
+    left: 220px;
+  }
+  .paymenttext {
+    font-size: 18px;
+  }
+  .paymentcontainer {
+    width: 260px;
+  }
+  .carddetailscontainer {
+    width: 240px;
+  }
+  .cashcarddiv {
+    width: 250px;
+  }
+  .carddiv {
+    width: 100px;
+  }
+  .preferedtext {
+    width: 250px;
+  }
+
+  .cardnumberline {
+    width: 230px;
+  }
+  .Cardtext {
+    left: 0px;
+  }
+  .cardnumberdiv {
+    width: 250px;
+  }
+  .Visaicon {
+    left: 175px;
+  }
+
+  .namecardline {
+    width: 230px;
+  }
+  .nameoncarddiv {
+    width: 220px;
+  }
+  .expirydatediv {
+    width: 220px;
+  }
+  .codeline {
+    width: 80px;
+  }
+  .earnedpointsdiv {
+    width: 240px;
+  }
+  .pcheckbox {
+    left: 145px;
+  }
+  .redeem {
+    left: 170px;
+  }
+  .paydeliverydetails {
+    width: 240px;
+  }
+  .locationtimediv {
+    width: 240px;
+  }
+  .paydeliveryaddress {
+    width: 250px;
+  }
+  .paychange {
+    left: 140px;
+  }
+  .datetimedivchange {
+    left: 140px;
+  }
+  .payonegreyline {
+    width: 200px;
+  }
+  .payoitemsorderdfrom {
+    width: 240px;
+  }
+  .subdiv {
+    width: 240px;
+  }
+  .subdivresname {
+    width: 250px;
+  }
+  .paybackbutton {
+    left: 80px;
+  }
+  .paynowbutton {
+    left: 170px;
+  }
+
+  .Fpactive {
+    left: 670px;
+  }
+  .fpactiveline {
+    width: 110px;
+    left: 685px;
+  }
+  .fpactive2 {
+    left: 790px;
+  }
+  .fpactiveline2 {
+    width: 110px;
+    left: 805px;
+  }
+  .fpactivestate3 {
+    left: 910px;
+  }
+  .fcart {
+    left: 670px;
+  }
+  .fpadresstext {
+    left: 760px;
+  }
+  .Fpaymenttext {
+    left: 890px;
+  }
+  .paytext {
+    font-size: 18px;
+    left: 20px;
+  }
+  .finalpaycontainer {
+    width: 250px;
+  }
+
+  .pay_container {
+    width: 230px;
+  }
+  .payaddnew {
+    left: 170px;
+  }
+  .fpayback {
+    left: 80px;
+  }
+  .fpaynow {
+    left: 150px;
   }
 }
