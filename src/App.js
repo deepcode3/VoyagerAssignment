@@ -1,8 +1,7 @@
 import React from 'react';
-import Routing from './Routes/index';
 
 const App = () => {
-  return <Routing />;
+  return <div>Hello world</div>;
 };
 
 export default App;
