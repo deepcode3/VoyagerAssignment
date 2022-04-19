@@ -1,0 +1,149 @@
+@import 'Partial/common';
+
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.Headder {
+  width: 100vw;
+  height: 30px;
+  display: flex;
+  padding: 0 16px;
+}
+.nav {
+  font-size: 1.7rem;
+  color: rgb(18, 2, 57);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.Body {
+  // width: 100vw;
+  height: 100vh;
+  background-color: rgb(217, 233, 243);
+}
+.bread {
+  padding: 0 16px;
+}
+.LinkMainDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 70px;
+  align-items: center;
+}
+.Linkul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.Linkul li {
+  float: left;
+}
+.link {
+  display: inline;
+  color: rgb(151, 154, 155);
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+.activelink {
+  border-bottom: 2px solid rgb(53, 141, 235);
+  color: rgb(53, 141, 235);
+}
+.newMercent {
+  width: 160px;
+  height: 35px;
+  outline: none;
+  border: 0;
+  border-radius: 20px;
+  background-color: rgb(43, 138, 240);
+  color: white;
+  margin: 0 16px;
+}
+.buttonDiv {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+.leftSide {
+  display: flex;
+}
+.searchBar {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgb(241, 245, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  padding: 0 4px;
+}
+.searchBar input {
+  background-color: transparent;
+  border: 0;
+  flex: 1;
+  outline: none;
+  padding: 6px 7px;
+  font-size: 1.3rem;
+  color: rgb(51, 56, 56);
+}
+.searchButton {
+  @include buttonStyle(100px, 33px);
+  background-color: rgb(43, 138, 240);
+  color: white;
+  margin: 0 4px;
+}
+.rightSide {
+  display: flex;
+}
+.clearFilter {
+  @include buttonStyle(100px, 30px);
+  background-color: rgb(199, 204, 210);
+  color: rgb(48, 46, 46);
+  margin: 0 5px;
+}
+.Filter {
+  @include buttonStyle(80px, 30px);
+  background-color: rgb(40, 42, 44);
+  color: white;
+}
+.tableul {
+  @include ullist;
+  margin: 37px 16px 10px 16px;
+}
+.tableul li {
+  width: 100px;
+}
+.tableullist {
+  @include ullist;
+  align-items: center;
+  margin: 0 16px;
+  background-color: rgb(233, 225, 225);
+}
+.tableullist li {
+  width: 100px;
+  padding: 20px 0;
+}
+.circleRed {
+  background-color: rgb(238, 18, 14);
+  @include fooddot;
+}
+.circleGreen {
+  background-color: rgb(27, 125, 54);
+  @include fooddot;
+}
+
+/*Brands and Outlet*/
+.MainDiv {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

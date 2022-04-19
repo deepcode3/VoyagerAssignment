@@ -33,10 +33,10 @@
     "object-curly-newline": [
       "error",
       {
-        "ObjectPattern": { "multiline": true, "minProperties": 8 }
+        "ObjectPattern": { "multiline": true, "minProperties": 12 }
       }
     ],
-    "operator-linebreak": [2, "before", { "overrides": { "=": "after" } }],
+    "operator-linebreak": [2, "before", { "overrides": { "=": "after", "||": "after" } }],
     "indent": [0, "tab"],
     "no-tabs": 0,
     "no-nested-ternary": 0

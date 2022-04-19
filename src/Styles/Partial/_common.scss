@@ -1,0 +1,20 @@
+@mixin buttonStyle($width, $height) {
+  width: $width;
+  height: $height;
+  outline: none;
+  border: 0;
+  border-radius: 20px;
+}
+@mixin ullist {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+@mixin fooddot {
+  border: none;
+  border-radius: 18px;
+  height: 6px;
+  width: 6px;
+  margin-right: 2px;
+}

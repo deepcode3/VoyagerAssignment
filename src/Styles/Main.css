@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.Headder {
+  width: 100vw;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 16px;
+}
+
+.nav {
+  font-size: 1.7rem;
+  color: #120239;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Body {
+  height: 100vh;
+  background-color: #d9e9f3;
+}
+
+.bread {
+  padding: 0 16px;
+}
+
+.LinkMainDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100vw;
+  height: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Linkul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Linkul li {
+  float: left;
+}
+
+.link {
+  display: inline;
+  color: #979a9b;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.activelink {
+  border-bottom: 2px solid #358deb;
+  color: #358deb;
+}
+
+.newMercent {
+  width: 160px;
+  height: 35px;
+  outline: none;
+  border: 0;
+  border-radius: 20px;
+  background-color: #2b8af0;
+  color: white;
+  margin: 0 16px;
+}
+
+.buttonDiv {
+  width: 100vw;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 16px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.leftSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 400px;
+  background-color: #f1f5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 60px;
+  padding: 0 4px;
+}
+
+.searchBar input {
+  background-color: transparent;
+  border: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  outline: none;
+  padding: 6px 7px;
+  font-size: 1.3rem;
+  color: #333838;
+}
+
+.searchButton {
+  width: 100px;
+  height: 33px;
+  outline: none;
+  border: 0;
+  border-radius: 20px;
+  background-color: #2b8af0;
+  color: white;
+  margin: 0 4px;
+}
+
+.rightSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.clearFilter {
+  width: 100px;
+  height: 30px;
+  outline: none;
+  border: 0;
+  border-radius: 20px;
+  background-color: #c7ccd2;
+  color: #302e2e;
+  margin: 0 5px;
+}
+
+.Filter {
+  width: 80px;
+  height: 30px;
+  outline: none;
+  border: 0;
+  border-radius: 20px;
+  background-color: #282a2c;
+  color: white;
+}
+
+.tableul {
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 37px 16px 10px 16px;
+}
+
+.tableul li {
+  width: 100px;
+}
+
+.tableullist {
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 16px;
+  background-color: #e9e1e1;
+}
+
+.tableullist li {
+  width: 100px;
+  padding: 20px 0;
+}
+
+.circleRed {
+  background-color: #ee120e;
+  border: none;
+  border-radius: 18px;
+  height: 6px;
+  width: 6px;
+  margin-right: 2px;
+}
+
+.circleGreen {
+  background-color: #1b7d36;
+  border: none;
+  border-radius: 18px;
+  height: 6px;
+  width: 6px;
+  margin-right: 2px;
+}
+
+/*Brands and Outlet*/
+.MainDiv {
+  width: 100vw;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=Main.css.map */
