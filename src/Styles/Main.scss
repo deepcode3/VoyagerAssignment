@@ -139,11 +139,23 @@
   @include fooddot;
 }
 
-/*Brands and Outlet*/
+/*Brands*/
 .MainDiv {
   width: 100vw;
-  height: 70vh;
-  display: flex;
+  height: 100vh;
+  display: unset!;
   justify-content: center;
   align-items: center;
+  background-color: rgb(189, 163, 163);
 }
+/*modal*/
+// .modal {
+//   display: block;
+//   background-color: rgba(0, 0, 0, 0.5);
+// }
+// .modal-content {
+//   width: 500px;
+//   background-color: rgb(253, 255, 254);
+// }
+
+/* Outlet*/

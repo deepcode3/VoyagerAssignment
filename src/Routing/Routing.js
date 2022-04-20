@@ -6,6 +6,7 @@ import Brand from '../Containers/Brand';
 import Outlet from '../Containers/Outlet';
 
 const Routing = ({ Data, search }) => {
+  console.log('data', Data);
   return (
     <Switch>
       <Route exact path='/'>
@@ -23,6 +24,6 @@ const Routing = ({ Data, search }) => {
 export default Routing;
 
 Routing.propTypes = {
-  Data: PropTypes.objectOf(PropTypes.array).isRequired,
+  Data: PropTypes.arrayOf(PropTypes.object).isRequired,
   search: PropTypes.string.isRequired,
 };

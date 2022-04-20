@@ -67,6 +67,6 @@ const MercentList = ({ Data, search }) => {
 export default MercentList;
 
 MercentList.propTypes = {
-  Data: PropTypes.objectOf(PropTypes.array).isRequired,
+  Data: PropTypes.arrayOf(PropTypes.object).isRequired,
   search: PropTypes.string.isRequired,
 };
