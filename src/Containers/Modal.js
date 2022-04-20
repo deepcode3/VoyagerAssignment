@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import '../Styles/Main.css';
 
 const Modal = (props) => {
   const { show, onClose } = props;
@@ -11,9 +11,9 @@ const Modal = (props) => {
   console.log('anything happening', show);
 
   return (
-    <ModalDiv onClick={onClose}>
+    <div className=' ModalDiv' onClick={onClose} onKeyPress={null} role='button' tabIndex='0'>
       <div
-        className='modal-content'
+        className='ModalContent'
         onKeyPress={null}
         role='button'
         tabIndex='0'
@@ -22,37 +22,17 @@ const Modal = (props) => {
         }}
       >
         <button type='button' onClick={onClose} className='close'>
-          x
+          <h2>X</h2>
         </button>
-        content hello world
+        <div className='Content '>
+          Hello world.Income Tax Declaration submission for FY 2022-23. The employee are required to
+          note the following and comply with any necessary circumstances.
+        </div>
       </div>
-    </ModalDiv>
+    </div>
   );
 };
 export default Modal;
-
-const ModalDiv = styled.div`
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  .modal-content {
-    width: 500px;
-    height: 300px;
-    background-color: rgb(253, 255, 254);
-  }
-  .close {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-  }
-`;
 
 Modal.propTypes = {
   show: PropTypes.bool.isRequired,

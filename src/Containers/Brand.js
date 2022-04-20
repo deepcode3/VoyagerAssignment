@@ -13,6 +13,7 @@ const Brand = () => {
         onClick={() => {
           setShow(true);
         }}
+        className='showbutton'
       >
         Show Model
       </button>
