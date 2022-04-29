@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Styles/Main.css';
 import { BiFilter } from 'react-icons/bi';
 import { AiOutlineSearch } from 'react-icons/ai';
+import './Styles/Main.css';
 import Routing from './Routing/Routing';
 import Data from './Containers/table.json';
 
@@ -43,21 +43,9 @@ const App = () => {
           <div className='leftSide'>
             <form className='searchBar'>
               <AiOutlineSearch style={{ pading: '0 10px' }} />
-              <input
-                placeholder='Search'
-                type='text'
-                onChange={(e) => {
-                  return setValue(e.target.value);
-                }}
-              />
+              <input placeholder='Search' type='text' onChange={(e) => setValue(e.target.value)} />
             </form>
-            <button
-              type='button'
-              className='searchButton'
-              onClick={() => {
-                return setSearch(value);
-              }}
-            >
+            <button type='button' className='searchButton' onClick={() => setSearch(value)}>
               Search
             </button>
           </div>

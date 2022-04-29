@@ -310,4 +310,15 @@
   border-radius: 6px;
   overflow-y: hidden;
 }
+
+/*Outlet*/
+.MainDivOutlet {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+  padding: 10px;
+  background-color: white;
+}
 /*# sourceMappingURL=Main.css.map */

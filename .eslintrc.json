@@ -15,7 +15,7 @@
   "rules": {
     "import/no-named-as-default": 0,
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": ["error", "as-needed"],
     "jsx-quotes": ["error", "prefer-single"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }],
@@ -30,6 +30,7 @@
     "react/destructuring-assignment": ["error", "always"],
     "no-param-reassign": ["error", { "props": false }],
     "no-console": "off",
+    "react/jsx-wrap-multilines": 0,
     "object-curly-newline": [
       "error",
       {
@@ -39,7 +40,8 @@
     "operator-linebreak": [2, "before", { "overrides": { "=": "after", "||": "after" } }],
     "indent": [0, "tab"],
     "no-tabs": 0,
-    "no-nested-ternary": 0
+    "no-nested-ternary": 0,
+    "react/jsx-props-no-spreading": 0
   }
 }
 /*
